@@ -1,0 +1,919 @@
+[
+    {
+        "fields": [
+            {
+                "mode": "NULLABLE",
+                "name": "effective_date",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "FLOAT"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "bank_id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "type",
+                "type": "STRING"
+            }
+        ],
+        "mode": "REPEATED",
+        "name": "commissions",
+        "type": "RECORD"
+    },
+    {
+        "fields": [
+            {
+                "mode": "NULLABLE",
+                "name": "timestamp",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "google_client_id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "subid5",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "subid3",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "subid2",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "subid",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "hostname",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "hostname2",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "ip_address2",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "created_at",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "subid4",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "maxloan",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "campaign_group",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "campaign_term",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "ip_address",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "md5",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "referral",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "campaign",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "agent",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "device_type",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "brand",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "visit_id",
+                "type": "STRING"
+            }
+        ],
+        "mode": "NULLABLE",
+        "name": "visit",
+        "type": "RECORD"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "is_affi",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "isnewcustomer",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "global_isnewcustomer",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "doubleapplication",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "loanpurpose",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "loanamount",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "last_activity_datetime",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "cancelled",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "subid4",
+        "type": "STRING"
+    },
+    {
+        "fields": [
+            {
+                "fields": [
+                    {
+                        "mode": "NULLABLE",
+                        "name": "created_at",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "monthly_expenses",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "salary_monthly_net",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "salary_monthly_gross",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "applicant_id",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "id",
+                        "type": "STRING"
+                    }
+                ],
+                "mode": "NULLABLE",
+                "name": "spouse",
+                "type": "RECORD"
+            },
+            {
+                "fields": [
+                    {
+                        "mode": "NULLABLE",
+                        "name": "created_at",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "issuer",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "card_type",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "debt",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "limit",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "applicant_id",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "id",
+                        "type": "STRING"
+                    }
+                ],
+                "mode": "REPEATED",
+                "name": "cards",
+                "type": "RECORD"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "created_at",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "has_credit_remarks",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "address",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "education",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "is_main_applicant",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "dependents",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "bank_iban",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "data_id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "marital_status",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "bank_bic",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "last_name",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "adults",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "military",
+                "type": "STRING"
+            },
+            {
+                "fields": [
+                    {
+                        "mode": "NULLABLE",
+                        "name": "created_at",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "profession_area",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "profession",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "profession_class",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "is_current",
+                        "type": "BOOLEAN"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "start_date",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "id",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "business_id",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "occupation",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "employer",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "end_date",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "applicant_id",
+                        "type": "STRING"
+                    }
+                ],
+                "mode": "REPEATED",
+                "name": "employments",
+                "type": "RECORD"
+            },
+            {
+                "fields": [
+                    {
+                        "mode": "NULLABLE",
+                        "name": "created_at",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "description",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "issuer",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "amount_monthly",
+                        "type": "FLOAT"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "money_type",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "consolidation",
+                        "type": "BOOLEAN"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "amount",
+                        "type": "FLOAT"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "finance_source",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "finance_type",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "applicant_id",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "id",
+                        "type": "STRING"
+                    }
+                ],
+                "mode": "REPEATED",
+                "name": "financials",
+                "type": "RECORD"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "has_summer_house",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "is_pep",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "citizenship",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "post_code",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "dob",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "gender",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "first_name",
+                "type": "STRING"
+            },
+            {
+                "fields": [
+                    {
+                        "mode": "NULLABLE",
+                        "name": "created_at",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "accepted_datetime",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "consent_type",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "applicant_id",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "id",
+                        "type": "STRING"
+                    }
+                ],
+                "mode": "REPEATED",
+                "name": "consents",
+                "type": "RECORD"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "age",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "phone",
+                "type": "STRING"
+            },
+            {
+                "fields": [
+                    {
+                        "mode": "NULLABLE",
+                        "name": "moving_date",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "property_type",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "created_at",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "property_area",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "residency_type",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "applicant_id",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "id",
+                        "type": "STRING"
+                    }
+                ],
+                "mode": "REPEATED",
+                "name": "housings",
+                "type": "RECORD"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "email",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "ssn",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "city",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "is_anonymized",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "mode": "REPEATED",
+        "name": "applicants",
+        "type": "RECORD"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "ip_timestamp",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "global_double_application",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "subid",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "submit_loan",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "ip",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "device_type",
+        "type": "STRING"
+    },
+    {
+        "fields": [
+            {
+                "mode": "NULLABLE",
+                "name": "http_auth",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "double_redirect_url",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "status_url",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "reject_redirect_url",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "google_ua",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "is_active",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "has_affiliate_sales",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "settings",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "is_cpl",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "visible",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "brand",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "is_omatili",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "house",
+                "type": "BOOLEAN"
+            },
+            {
+                "fields": [
+                    {
+                        "mode": "NULLABLE",
+                        "name": "consolidation_loan_min",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "REPEATED",
+                        "name": "expenses_consolidation",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "monthly_payment_index",
+                        "type": "FLOAT"
+                    },
+                    {
+                        "mode": "REPEATED",
+                        "name": "expenses",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "month_salary_min",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "REPEATED",
+                        "name": "occupation",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "to_hour",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "REPEATED",
+                        "name": "days",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "from_hour",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "age_max",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "month_salary_after_expenses",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "age_min",
+                        "type": "STRING"
+                    }
+                ],
+                "mode": "NULLABLE",
+                "name": "affiliate_rules",
+                "type": "RECORD"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "domain",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "url",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "omatili_url",
+                "type": "STRING"
+            }
+        ],
+        "mode": "NULLABLE",
+        "name": "brand",
+        "type": "RECORD"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "data_id",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "repaymenttime",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "processed_datetime",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "timestamp",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "subid5",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "offers",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "yhteishakija",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "sent",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "cancelled_datetime",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "subid2",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "decision",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "is_valid",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "processed",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "aid",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "cpl_status",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "scoring",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "last_activity",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "visit_id",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "status",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "hide_application",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "subid3",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "datamd5",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "brand_id",
+        "type": "STRING"
+    }
+]

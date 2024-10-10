@@ -1,0 +1,184 @@
+[
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "log_id",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "state",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "application",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "bank_id",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "timestamp",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "offer_id",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "offer",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "data_id",
+        "type": "INTEGER"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "states",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "application",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "user_selected_datetime",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "approved",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "api_approved",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "badges",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "esign_link",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bank_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "is_new_for_provider",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "paid",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "apr",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "approved_amount",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "approved_datetime",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "interest_rate",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "administration_fee",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "opening_fee",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "status",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "monthly_payment",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "repayment_amount",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "repayment_time",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "esign_info",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "topup_amount",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "consolidation_amount",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "esign_txt",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "paid_datetime",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "api_approved_datetime",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "data_id",
+    "type": "INTEGER"
+  }
+]
