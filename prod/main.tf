@@ -3,75 +3,68 @@ provider "google" {
   region      = var.region
 }
 
-data "google_bigquery_dataset" "sambla_group_lvs_integration_legacy" {
-  dataset_id                  = "sambla_group_lvs_integration_legacy"
+
+module "lvs_bigquery_config" {
+  source = "./modules/lvs/bigquery"
+  project_id = var.project_id
+  region     = var.region
 }
+/*
+  resource "google_bigquery_job" "load_job_to_applications" {
+    job_id     = "load_job_to_applications_1"
+    location   = var.region
+    
 
-resource "google_bigquery_table" "applications" {
-  dataset_id                = data.google_bigquery_dataset.sambla_group_lvs_integration_legacy.dataset_id
-  table_id                  = "applications"
-  deletion_protection       = false
-  external_data_configuration {
-    autodetect    = false
-    source_format = "json"
+    query {
+      # SELECT * except(applicants) FROM sg-debi-key-management.sambla_group_pii.applications_lvs
+      query = "SELECT * except(applicants) FROM `${google_bigquery_table.applications.dataset_id}.${google_bigquery_table.applications.table_id}`"
 
-    source_uris = [
-      "gs://sambla-group-lvs-integration-legacy/applications/*"
-        ]
-    }
-  
-    time_partitioning {
-        type = "DAY"
-        field = "timestamp"
-    }
-    schema = file("schemas/applications_schema.json")
-}
+      destination_table {
+        project_id = google_bigquery_table.applications_r.project
+        dataset_id = google_bigquery_table.applications_r.dataset_id
+        table_id   = google_bigquery_table.applications_r.table_id
+      }
 
-resource "google_bigquery_table" "credit_remarks" {
-  dataset_id                = data.google_bigquery_dataset.sambla_group_lvs_integration_legacy.dataset_id
-  table_id                  = "credit_remarks"
-  deletion_protection       = false
-    external_data_configuration {
-    autodetect    = false
-    source_format = "json"
 
-    source_uris = [
-      "gs://sambla-group-lvs-integration-legacy/credit_remarks/*"
-        ]
-    }
-  
-  schema = file("schemas/credit_remarks_schema.json")
-}
+      write_disposition = "WRITE_TRUNCATE"
 
-resource "google_bigquery_table" "offers" {
-  dataset_id                = data.google_bigquery_dataset.sambla_group_lvs_integration_legacy.dataset_id
-  table_id                  = "offers"
-  deletion_protection       = false
-   external_data_configuration {
-    autodetect    = false
-    source_format = "json"
+      allow_large_results = true
+      flatten_results = true
 
-    source_uris = [
-      "gs://sambla-group-lvs-integration-legacy/offers/*"
-        ]
     }
 
+    
+    depends_on = [ google_bigquery_table.applications_r ]
+    
+  }
 
-  schema = file("schemas/offers_schema.json")
-}
+  resource "google_bigquery_job" "load_job_to_applicants" {
+    job_id     = "load_job_to_applicants_2"
+    location   = var.region
 
-resource "google_bigquery_table" "providers" {
-  dataset_id                = data.google_bigquery_dataset.sambla_group_lvs_integration_legacy.dataset_id
-  table_id                  = "providers"
-  deletion_protection       = false
-   external_data_configuration {
-    autodetect    = false
-    source_format = "json"
+    query {
+      #SELECT * except(applicants) FROM sg-debi-key-management.sambla_group_pii.applications_lvs
+      query = templatefile("${path.module}/load_applicants.sql.tpl", {
+        project_id = google_bigquery_table.applications.project
+        dataset_id = google_bigquery_table.applications.dataset_id
+        table_id = google_bigquery_table.applications.table_id
+      })
+      #file("load_applicants.sql") 
 
-    source_uris = [
-      "gs://sambla-group-lvs-integration-legacy/providers/*"
-        ]
+      destination_table {
+        project_id = google_bigquery_table.applicants_r.project
+        dataset_id = google_bigquery_table.applicants_r.dataset_id
+        table_id   = google_bigquery_table.applicants_r.table_id
+      }
+
+      write_disposition = "WRITE_TRUNCATE"
+
+      allow_large_results = true
+      flatten_results = true
+
     }
-  
-  schema = file("schemas/providers_schema.json")
-}
+
+    depends_on = [ google_bigquery_table.applicants_r ]
+  }
+
+*/

@@ -1,0 +1,419 @@
+[
+    {
+        "fields": [
+            {
+                "mode": "NULLABLE",
+                "name": "created_at",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "monthly_expenses",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "salary_monthly_net",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "salary_monthly_gross",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "applicant_id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "mode": "NULLABLE",
+        "name": "spouse",
+        "type": "RECORD"
+    },
+    {
+        "fields": [
+            {
+                "mode": "NULLABLE",
+                "name": "created_at",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "issuer",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "card_type",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "debt",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "limit",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "applicant_id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "mode": "REPEATED",
+        "name": "cards",
+        "type": "RECORD"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "created_at",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "has_credit_remarks",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "education",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "is_main_applicant",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "dependents",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "data_id",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "marital_status",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "bank_bic",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "adults",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "last_name",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "military",
+        "type": "STRING"
+    },
+    {
+        "fields": [
+            {
+                "mode": "NULLABLE",
+                "name": "created_at",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "profession_area",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "profession",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "profession_class",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "is_current",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "start_date",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "business_id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "occupation",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "employer",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "end_date",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "applicant_id",
+                "type": "STRING"
+            }
+        ],
+        "mode": "REPEATED",
+        "name": "employments",
+        "type": "RECORD"
+    },
+    {
+        "fields": [
+            {
+                "mode": "NULLABLE",
+                "name": "created_at",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "description",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "issuer",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "amount_monthly",
+                "type": "FLOAT"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "money_type",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "consolidation",
+                "type": "BOOLEAN"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "amount",
+                "type": "FLOAT"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "finance_source",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "finance_type",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "applicant_id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "mode": "REPEATED",
+        "name": "financials",
+        "type": "RECORD"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "has_summer_house",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "is_pep",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "citizenship",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "post_code",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "dob",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "gender",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "first_name",
+        "type": "STRING"
+    },
+    {
+        "fields": [
+            {
+                "mode": "NULLABLE",
+                "name": "created_at",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "accepted_datetime",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "consent_type",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "applicant_id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "mode": "REPEATED",
+        "name": "consents",
+        "type": "RECORD"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "age",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "phone",
+        "type": "STRING"
+    },
+    {
+        "fields": [
+            {
+                "mode": "NULLABLE",
+                "name": "moving_date",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "property_type",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "created_at",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "property_area",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "residency_type",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "applicant_id",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "mode": "REPEATED",
+        "name": "housings",
+        "type": "RECORD"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "email",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "ssn",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "bank_iban",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "address",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "city",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "is_anonymized",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "STRING"
+    }
+]
