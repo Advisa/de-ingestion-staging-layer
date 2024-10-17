@@ -4,13 +4,10 @@ resource "google_bigquery_data_transfer_config" "applications_query_config" {
   location               = "europe-north1"
   data_source_id         = "scheduled_query"
   service_account_name   = google_service_account.sa-data-transfer.email
-  schedule               = "every 24 hours"
+  schedule               = "1st monday of january 00:00"
   destination_dataset_id = google_bigquery_dataset.lvs_dataset.dataset_id
   params = {
-    destination_table_name_template = google_bigquery_table.applications_r.table_id
-    write_disposition               = "WRITE_TRUNCATE"
     # The SQL query to execute
-    #${google_bigquery_table.applications_r.table_id}S
     query                           = "CREATE OR REPLACE TABLE `${google_bigquery_table.applications_r.dataset_id}.test_applications` AS SELECT * EXCEPT(applicants) FROM `${google_bigquery_table.applications.dataset_id}.${google_bigquery_table.applications.table_id}`"
 
   }
@@ -23,12 +20,10 @@ resource "google_bigquery_data_transfer_config" "applicants_query_config" {
   display_name           = "lvs-applicants-query"
   location               = "europe-north1"
   data_source_id         = "scheduled_query"
-  schedule               = "every 24 hours"
+  schedule               = "1st monday of january 00:00"
   service_account_name = google_service_account.sa-data-transfer.email
   destination_dataset_id = google_bigquery_dataset.lvs_dataset.dataset_id
   params = {
-    destination_table_name_template = google_bigquery_table.applicants_r.table_id
-    write_disposition               = "WRITE_TRUNCATE"
     query = templatefile("${path.module}/load_applicants.sql.tpl", {
         project_id = google_bigquery_table.applications.project
         dataset_id = google_bigquery_table.applications.dataset_id
@@ -46,10 +41,9 @@ resource "google_bigquery_data_transfer_config" "applicants_query_config" {
 # If you need to run a new BigQuery SQL query for these tables or any others, uncomment the lifecycle policy and provide a unique `job_id`.
 
 resource "google_bigquery_job" "load_job_to_applications" {
-    job_id     = ""
+    job_id     = "load_job_to_applications_4"
     location   = var.region
     
-
     query {
       # SELECT * except(applicants) FROM sg-debi-key-management.sambla_group_pii.applications_lvs
       query = "SELECT * except(applicants) FROM `${google_bigquery_table.applications.dataset_id}.${google_bigquery_table.applications.table_id}`"

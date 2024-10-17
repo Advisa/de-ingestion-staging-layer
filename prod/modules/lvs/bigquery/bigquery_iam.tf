@@ -95,20 +95,25 @@ resource "google_bigquery_dataset_iam_member" "data-transfer-scheduled-query-sa-
       ]
     }
 }
-/* I need to have a project owner permission in order to create these roles and assign to the service acc
-# Add IAM permissions to the service account
+
+# Add IAM permissions to the service account in order to run the scheduled query against bigquery
 resource "google_project_iam_member" "project-permissions-data-transfer-agent-iam" {
   project    = var.project_id
   role               = "roles/bigquerydatatransfer.serviceAgent" # Grant permission to use the service account
   member = "serviceAccount:${google_service_account.sa-data-transfer.email}"  # Grant access to the service account
   
 }
-resource "google_project_iam_member" "project-permissions-data-transfer-jobuser-iam" {
+resource "google_project_iam_member" "project-permissions-bigquery-job-user-iam" {
   project    = var.project_id
-  role               = "rroles/bigquery.jobUser" # Grant permission to use the service account
+  role               = "roles/bigquery.jobUser" # Grant permission to use the service account
   member = "serviceAccount:${google_service_account.sa-data-transfer.email}"  # Grant access to the service account
   
 }
-*/
+resource "google_project_iam_member" "project-permissions-storage-object-viewer-iam" {
+  project    = var.project_id
+  role               = "roles/storage.objectViewer" # Grant permission to use the service account
+  member = "serviceAccount:${google_service_account.sa-data-transfer.email}"  # Grant access to the service account
+  
+}
 
 
