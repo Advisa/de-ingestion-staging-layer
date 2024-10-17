@@ -47,12 +47,21 @@ resource "google_bigquery_dataset_iam_binding" "bq-reader-iam" {
 resource "google_bigquery_dataset_iam_binding" "bq-editor-iam" {
   dataset_id = google_bigquery_dataset.lvs_dataset.dataset_id
   role       = "roles/bigquery.dataEditor"
-
+  project = var.project_id
   members = [
     "serviceAccount:${google_service_account.sa-editor.email}",  # Grant access to the service account
     "user:aruldharani.kumar@samblagroup.com",
   ]
   depends_on = [ google_bigquery_dataset.lvs_dataset ]
+   lifecycle {
+      prevent_destroy = true
+      ignore_changes = [
+        role,  # Ignore changes to prevent recreation
+        dataset_id,
+        project,
+        members,
+      ]
+    }
 
 }
 data "google_project" "project" {
@@ -76,7 +85,15 @@ resource "google_bigquery_dataset_iam_member" "data-transfer-scheduled-query-sa-
   dataset_id    = google_bigquery_dataset.lvs_dataset.dataset_id
   role               = "roles/bigquery.admin" # Grant permission to use the service account
   member = "serviceAccount:${google_service_account.sa-data-transfer.email}"  # Grant access to the service account
-  
+  lifecycle {
+      prevent_destroy = true
+      ignore_changes = [
+        role,  # Ignore changes to prevent recreation
+        dataset_id,
+        member,
+
+      ]
+    }
 }
 /* I need to have a project owner permission in order to create these roles and assign to the service acc
 # Add IAM permissions to the service account

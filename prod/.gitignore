@@ -1,9 +1,10 @@
 # Ignore Terraform state files
 *.tfstate
 *.tfstate.backup
-
+*.tfstate.*
 # Ignore .terraform directory (local caches and modules)
 .terraform/
 
+imports.tf.txt
 # Ignore sensitive var files (if they contain secrets)
 #values.tfvars

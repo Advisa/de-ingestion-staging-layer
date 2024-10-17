@@ -39,3 +39,39 @@ resource "google_bigquery_data_transfer_config" "applicants_query_config" {
   }
   depends_on = [ google_bigquery_table.applicants_r ]
 }
+
+# Resources to create a BigQuery job that loads data into the applicants and applications tables.
+# Note: BigQuery jobs are immutable — they cannot be modified or deleted after creation.
+# To prevent Terraform from recreating these jobs with each apply, we can use a lifecycle policy.
+# If you need to run a new BigQuery SQL query for these tables or any others, uncomment the lifecycle policy and provide a unique `job_id`.
+
+resource "google_bigquery_job" "load_job_to_applications" {
+    job_id     = ""
+    location   = var.region
+    
+
+    query {
+      # SELECT * except(applicants) FROM sg-debi-key-management.sambla_group_pii.applications_lvs
+      query = "SELECT * except(applicants) FROM `${google_bigquery_table.applications.dataset_id}.${google_bigquery_table.applications.table_id}`"
+
+      destination_table {
+        project_id = google_bigquery_table.applications_r.project
+        dataset_id = google_bigquery_table.applications_r.dataset_id
+        table_id   = google_bigquery_table.applications_r.table_id
+      }
+
+      write_disposition = "WRITE_TRUNCATE"
+
+      allow_large_results = true
+      flatten_results = true
+    }
+  
+    depends_on = [ google_bigquery_table.applications_r ]
+    lifecycle {
+      prevent_destroy = true
+      ignore_changes = [
+        job_id,  # Ignore changes to job_id to prevent recreation
+      ]
+    }
+
+  }
