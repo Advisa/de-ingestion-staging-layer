@@ -3,7 +3,7 @@ resource "google_bigquery_data_transfer_config" "applications_query_config" {
   display_name           = "lvs-applications-query"
   location               = "europe-north1"
   data_source_id         = "scheduled_query"
-  service_account_name   = google_service_account.sa-data-transfer.email
+  service_account_name   = google_service_account.sa_data_transfer.email
   schedule               = "1st monday of january 00:00"
   destination_dataset_id = google_bigquery_dataset.lvs_dataset.dataset_id
   params = {
@@ -21,7 +21,7 @@ resource "google_bigquery_data_transfer_config" "applicants_query_config" {
   location               = "europe-north1"
   data_source_id         = "scheduled_query"
   schedule               = "1st monday of january 00:00"
-  service_account_name = google_service_account.sa-data-transfer.email
+  service_account_name = google_service_account.sa_data_transfer.email
   destination_dataset_id = google_bigquery_dataset.lvs_dataset.dataset_id
   params = {
     query = templatefile("${path.module}/load_applicants.sql.tpl", {
