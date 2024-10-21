@@ -1,0 +1,57 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "original_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yhtio_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "syy",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "korko",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "paiva",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "hyvaksytty",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yhtio",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "maksuaika",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

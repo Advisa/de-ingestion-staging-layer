@@ -1,0 +1,67 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "identifier",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "arrive",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "campaign",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "adgroup",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "keyword",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "position",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "device",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "msclkid",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "type",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "added",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "updated",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

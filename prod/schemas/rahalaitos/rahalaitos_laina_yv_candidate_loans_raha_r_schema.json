@@ -1,0 +1,62 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "yv_order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_asuntolaina",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_opintolaina",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_muulaina",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_autolaina",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_korttilaina",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_aslainakulut",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_oplainakulut",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_lainakulut",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_atlainakulut",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_lklainakulut",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

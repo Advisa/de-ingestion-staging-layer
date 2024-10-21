@@ -1,0 +1,87 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "kansalaisuus",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "kieli",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "siviilisaaty",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "asevelvollisuus",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "lykkaysaika",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "asumismuoto",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "muuttopvm",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tilauslisatiedot",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "mista_kuulit",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "lapset",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "vuokra",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "koulutus",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "asunto",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "kesamokki",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "koti",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "enabled",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "added_at",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "brand_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

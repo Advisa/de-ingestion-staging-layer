@@ -1,0 +1,57 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yritysnimi",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ytunnus",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "rekpaiva",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "vastuu",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "koko",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "nettotulos",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "liikevaihto",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tilintarkastaja",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tarkastajapuh",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

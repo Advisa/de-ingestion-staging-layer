@@ -1,0 +1,52 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "fp",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "aff",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "send",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cn",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cn_fp",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cn_fp3",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cn_fp5",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cn_fp4",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

@@ -17,3 +17,9 @@ module "rahalaitos_gcs_config" {
   rahalaitos_bucket_name = var.rahalaitos_bucket_name
   data_domain_project_id = var.data_domain_project_id
 }
+
+module "rahalaitos_bq_config" {
+  source = "./modules/rahalaitos/bigquery"
+  project_id = var.project_id
+  region     = var.region
+}

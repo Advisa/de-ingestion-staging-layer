@@ -4,6 +4,9 @@ resource "google_bigquery_dataset" "lvs_dataset" {
   description                 = "Integration legacy dataset for lvs"
   friendly_name               = "LVS Integration Legacy"
   location                    = var.region
+  lifecycle {
+    prevent_destroy = true
+  }
   
 }
 # Creating the external table for applications data of lvs

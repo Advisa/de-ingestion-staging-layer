@@ -1,0 +1,47 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marketing_email",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marketing_email_updated",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marketing_sms",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marketing_sms_updated",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marketing_product",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marketing_product_updated",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]
