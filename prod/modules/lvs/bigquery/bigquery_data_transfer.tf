@@ -8,8 +8,11 @@ resource "google_bigquery_data_transfer_config" "applications_query_config" {
   destination_dataset_id = google_bigquery_dataset.lvs_dataset.dataset_id
   params = {
     # The SQL query to execute
-    query                           = "CREATE OR REPLACE TABLE `${google_bigquery_table.applications_r.dataset_id}.test_applications` AS SELECT * EXCEPT(applicants) FROM `${google_bigquery_table.applications.dataset_id}.${google_bigquery_table.applications.table_id}`"
+    query                           = "CREATE OR REPLACE TABLE `${google_bigquery_table.applications_r.dataset_id}.${google_bigquery_table.applications_r.table_id}` AS SELECT * EXCEPT(applicants) FROM `${google_bigquery_table.applications.dataset_id}.${google_bigquery_table.applications.table_id}`"
 
+  }
+  lifecycle {
+    prevent_destroy = true
   }
 
   depends_on = [ google_bigquery_table.applications_r ]
@@ -18,7 +21,7 @@ resource "google_bigquery_data_transfer_config" "applications_query_config" {
 # Configuration of the scheduled query for creating applicants_r table 
 resource "google_bigquery_data_transfer_config" "applicants_query_config" {
   display_name           = "lvs-applicants-query"
-  location               = "europe-north1"
+  location               = var.region
   data_source_id         = "scheduled_query"
   schedule               = "1st monday of january 00:00"
   service_account_name = google_service_account.sa_data_transfer.email
@@ -28,20 +31,23 @@ resource "google_bigquery_data_transfer_config" "applicants_query_config" {
         project_id = google_bigquery_table.applications.project
         dataset_id = google_bigquery_table.applications.dataset_id
         table_id = google_bigquery_table.applications.table_id
-        table_name="test_applicants"
-        #table_name = google_bigquery_table.applicants_r.table_id
+        table_name = google_bigquery_table.applicants_r.table_id
       })  
+  }
+  lifecycle {
+    prevent_destroy = true
   }
   depends_on = [ google_bigquery_table.applicants_r ]
 }
 
 # Resources to create a BigQuery job that loads data into the applicants and applications tables.
+# Note: BQ jobs are an alternative to the scheduled query, if needed please refer to this job resource.
 # Note: BigQuery jobs are immutable — they cannot be modified or deleted after creation.
 # To prevent Terraform from recreating these jobs with each apply, we can use a lifecycle policy.
 # If you need to run a new BigQuery SQL query for these tables or any others, uncomment the lifecycle policy and provide a unique `job_id`.
 
 resource "google_bigquery_job" "load_job_to_applications" {
-    job_id     = "load_job_to_applications_4"
+    job_id     = "load_job_to_applications_5"
     location   = var.region
     
     query {

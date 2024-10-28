@@ -1,15 +1,16 @@
 
-# Creating a service account for external applications to manage read-only access
+# This account is intended for external applications that need to read raw LVS data. 
 resource "google_service_account" "sa_reader" {
   account_id   = "de-compliance-lvs-reader"
   display_name = "lvs-reader"
-  description = "A service account that only approved users can use to access lvs raw data"
+  description = "A service account for read-only access to raw LVS data for approved external users"
 }
-# Creating a service account for external applications to manage developer access
+
+# This account is intended for external applications that need to read and edit raw LVS data. 
 resource "google_service_account" "sa_editor" {
   account_id   = "de-compliance-lvs-editor"
   display_name = "lvs-editor"
-  description = "A service account that only approved users can use to access & edit lvs raw data"
+  description = "A service account for editor (developer) access to raw LVS data for approved external users"
 }
 # Add individual users to IAM roles on read-only service accounts
 resource "google_service_account_iam_binding" "sa_permissions_reader_account_user" {
@@ -102,5 +103,8 @@ resource "google_project_iam_member" "gcs_permissions_data_transfer_bject_viewer
   member = "serviceAccount:${google_service_account.sa_data_transfer.email}"  # Grant access to the service account
   
 }
+
+
+
 
 
