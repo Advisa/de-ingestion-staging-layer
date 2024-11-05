@@ -126,7 +126,12 @@
     {
         "mode": "NULLABLE",
         "name": "last_name",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -280,7 +285,12 @@
     {
         "mode": "NULLABLE",
         "name": "post_code",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -295,7 +305,12 @@
     {
         "mode": "NULLABLE",
         "name": "first_name",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "fields": [
@@ -337,7 +352,12 @@
     {
         "mode": "NULLABLE",
         "name": "phone",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "fields": [
@@ -384,12 +404,22 @@
     {
         "mode": "NULLABLE",
         "name": "email",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "ssn",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -399,12 +429,22 @@
     {
         "mode": "NULLABLE",
         "name": "address",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "city",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",

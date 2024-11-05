@@ -1,47 +1,52 @@
 [
-  {
-    "mode": "NULLABLE",
-    "name": "id",
-    "type": "INTEGER"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "username",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "password",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "name",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "phone",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "added",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "updated",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "yubikey",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "inserted_at",
-    "type": "STRING"
-  }
+    {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "username",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "password",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "name",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "phone",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "added",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "updated",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "yubikey",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "inserted_at",
+        "type": "STRING"
+    }
 ]

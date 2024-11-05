@@ -1,47 +1,52 @@
 [
-  {
-    "mode": "NULLABLE",
-    "name": "email",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "added_to_list",
-    "type": "DATE"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "paidout_date",
-    "type": "DATE"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "paidout_ban_end",
-    "type": "DATE"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "added",
-    "type": "DATE"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "orderdate",
-    "type": "DATE"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "ocx_last_modified_date",
-    "type": "TIMESTAMP"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "ocx_unsubscribe_date",
-    "type": "TIMESTAMP"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "ongage_status",
-    "type": "STRING"
-  }
+    {
+        "mode": "NULLABLE",
+        "name": "email",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "added_to_list",
+        "type": "DATE"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "paidout_date",
+        "type": "DATE"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "paidout_ban_end",
+        "type": "DATE"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "added",
+        "type": "DATE"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "orderdate",
+        "type": "DATE"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "ocx_last_modified_date",
+        "type": "TIMESTAMP"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "ocx_unsubscribe_date",
+        "type": "TIMESTAMP"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "ongage_status",
+        "type": "STRING"
+    }
 ]

@@ -1,14 +1,3 @@
-# Creating the dataset for lvs
-resource "google_bigquery_dataset" "lvs_dataset" {
-  dataset_id                  = "lvs_integration_legacy"
-  description                 = "Integration legacy dataset for lvs"
-  friendly_name               = "LVS Integration Legacy"
-  location                    = var.region
-  lifecycle {
-    prevent_destroy = true
-  }
-  
-}
 # Creating the external table for applications data of lvs
 resource "google_bigquery_table" "applications" {
   dataset_id                = google_bigquery_dataset.lvs_dataset.dataset_id
@@ -17,13 +6,13 @@ resource "google_bigquery_table" "applications" {
   external_data_configuration {
     autodetect    = false
     source_format = "NEWLINE_DELIMITED_JSON"
-
+    connection_id = var.connection_id
     source_uris = [
       "gs://sambla-group-lvs-integration-legacy/applications/*"
         ]
     }
     # must to define a schema when we create a table
-    schema = file("schemas/lvs/applications_schema.json")
+    schema = file("schemas/lvs/applications_lvs_schema.json")
     depends_on = [ google_bigquery_dataset.lvs_dataset ]
 }
 
@@ -32,7 +21,7 @@ resource "google_bigquery_table" "applications_r" {
   dataset_id = google_bigquery_dataset.lvs_dataset.dataset_id
   table_id   = "applications_lvs_r"
   deletion_protection       = true
-  schema = file("schemas/lvs/applications_r_schema.json")
+  schema = file("schemas/lvs/applications_lvs_r_schema.json")
 
   depends_on = [ google_bigquery_table.applications ]
 
@@ -43,7 +32,7 @@ resource "google_bigquery_table" "applicants_r" {
   dataset_id = google_bigquery_dataset.lvs_dataset.dataset_id
   table_id   = "applicants_lvs_r"
   deletion_protection       = true
-  schema = file("schemas/lvs/applicants_r_schema.json")
+  schema = file("schemas/lvs/applicants_lvs_r_schema.json")
 
   depends_on = [ google_bigquery_table.applications ]
 
@@ -56,13 +45,13 @@ resource "google_bigquery_table" "credit_remarks" {
     external_data_configuration {
     autodetect    = false
     source_format = "NEWLINE_DELIMITED_JSON"
-
+    connection_id = var.connection_id
     source_uris = [
       "gs://sambla-group-lvs-integration-legacy/credit_remarks/*"
         ]
     }
   
-  schema = file("schemas/lvs/credit_remarks_schema.json")
+  schema = file("schemas/lvs/credit_remarks_lvs_r_schema.json")
   depends_on = [ google_bigquery_dataset.lvs_dataset ]
 }
 
@@ -74,14 +63,14 @@ resource "google_bigquery_table" "offers" {
    external_data_configuration {
     autodetect    = false
     source_format = "NEWLINE_DELIMITED_JSON"
-
+    connection_id = var.connection_id
     source_uris = [
       "gs://sambla-group-lvs-integration-legacy/offers/*"
         ]
     }
 
 
-  schema = file("schemas/lvs/offers_schema.json")
+  schema = file("schemas/lvs/offers_lvs_r_schema.json")
   depends_on = [ google_bigquery_dataset.lvs_dataset ]
 }
 
@@ -93,12 +82,14 @@ resource "google_bigquery_table" "providers" {
    external_data_configuration {
     autodetect    = false
     source_format = "NEWLINE_DELIMITED_JSON"
-
+    connection_id = var.connection_id
     source_uris = [
       "gs://sambla-group-lvs-integration-legacy/providers/*"
         ]
     }
   
-  schema = file("schemas/lvs/providers_schema.json")
+  schema = file("schemas/lvs/providers_lvs_r_schema.json")
   depends_on = [ google_bigquery_dataset.lvs_dataset ]
 }
+
+

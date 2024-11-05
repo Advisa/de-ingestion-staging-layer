@@ -17,6 +17,7 @@ locals {
     split(",", line)[0] => split(",", line)[1]
   })
 }
+
 # creating the external bigquery tables for the rahalaitos data
 resource "google_bigquery_table" "external_tables" {
   # iterate over the local variable to get the table_name and gcs bucket path for each line in the txt file
@@ -25,14 +26,12 @@ resource "google_bigquery_table" "external_tables" {
   # 'each.key' refers to the table name, and 'each.value' refers to the GCS location.
   table_id                  = "${each.key}"
   deletion_protection       = true
-  external_data_configuration {
+    external_data_configuration {
     autodetect    = false
     source_format = "NEWLINE_DELIMITED_JSON"
-    
-    source_uris = [
-        each.value
-        ]
-    }
+    connection_id = var.connection_id
+    source_uris   = [each.value]
+  }
     # must to define a schema when we create a table
     schema = file("schemas/rahalaitos/${each.key}_schema.json")
     depends_on = [ google_bigquery_dataset.rahalaitos_dataset ]

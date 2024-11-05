@@ -18,3 +18,8 @@ variable "data_domain_project_id" {
   description = "The name of the data-domain-data-warehouse project"
   type        = string
 }
+
+variable "kms_crypto_key_id" {
+  description = "The name of the fefault customer-managed key"
+  type        = string
+}

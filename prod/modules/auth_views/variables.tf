@@ -1,3 +1,4 @@
+
 variable "project_id" {
   description = "The GCP project ID"
   type        = string
@@ -5,6 +6,10 @@ variable "project_id" {
 
 variable "region" {
   description = "The GCP region"
+  type        = string
+}
+variable "kms_crypto_key_id" {
+  description = "The name of the fefault customer-managed key"
   type        = string
 }
 variable "connection_id" {
