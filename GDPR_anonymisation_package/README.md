@@ -2,6 +2,19 @@
 
 This repository contains the implementation of the GDPR Anonymization Service, which processes sensitive data based on the configurations in the provided YAML file. The service is deployed as a Google Cloud Function, triggered via Cloud Scheduler at a specified time. This flow is conceptual for now, and we plan to transition to Prefect for orchestrating the workflows. Once Prefect is integrated, we will migrate from Google Cloud Functions to Prefect workflows for more control over execution and better monitoring. Additionally, we will integrate CI/CD pipelines to automate the deployment process.
 
+├── anonymisation_service/
+│   ├── __init__.py              
+│   ├── helpers.py               
+│   └── templates/               
+│       ├── key_generation.sql   
+│       ├── update_vault.sql    
+├── config.yaml                 
+├── deploy_dev.sh               
+├── deploy_prod.sh              
+├── main.py                     
+└── requirements.txt            
+
+
 ## Folder Structure
 ### Key Files:
 1. **anonymisation_service/**: Contains the anonymization logic and helpers.
@@ -24,8 +37,14 @@ This repository contains the implementation of the GDPR Anonymization Service, w
 ## Dependencies
 
 Install the dependencies using `pip`:
-
-```bash
 pip install -r requirements.txt
+
+---
+
+## Deployment
+
+run sh deploy_prod.sh
+
+
 
 
