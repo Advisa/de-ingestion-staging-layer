@@ -13,7 +13,7 @@ locals {
 resource "google_storage_bucket_object" "taxonomy_csv_file" {
   name   = "${local.folder}taxonomy.csv"  # GCS path with folder prefix
   bucket = google_storage_bucket.taxonomy_bucket.name
-  source = "/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/modules/taxonomy/assign_policies_scripts/taxonomy.csv" # Replace with your local CSV file path
+  source = "/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/policy_tags_service/csv_exporter/outputs/taxonomy.csv" # Replace with your local CSV file path
   depends_on = [ google_storage_bucket.taxonomy_bucket ]
 }
 
@@ -21,7 +21,7 @@ resource "google_storage_bucket_object" "taxonomy_csv_file" {
 resource "google_storage_bucket_object" "policy_tags_csv_file" {
   name   = "${local.folder}policy_tags.csv"  # GCS path with folder prefix
   bucket = google_storage_bucket.taxonomy_bucket.name
-  source = "/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/modules/taxonomy/assign_policies_scripts/policy_tags.csv" # Replace with your local CSV file path
+  source = "/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/policy_tags_service/csv_exporter/outputs/policy_tags.csv" # Replace with your local CSV file path
   depends_on = [ google_storage_bucket.taxonomy_bucket ]
 }
 
@@ -41,7 +41,7 @@ resource "google_bigquery_table" "taxonomy_bq_table" {
     }
     
     # must to define a schema when we create a table
-    schema = file("/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/modules/taxonomy/assign_policies_scripts/schemas/taxonomy_schema.json")
+    schema = file("/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/schemas/taxonomy/taxonomy_schema.json")
     depends_on = [ google_storage_bucket_object.taxonomy_csv_file]
 }
 
@@ -60,6 +60,6 @@ resource "google_bigquery_table" "policy_tags_bq_table" {
     source_uris = ["gs://${google_storage_bucket.taxonomy_bucket.name}/${local.folder}policy_tags.csv"]
     }
     # must to define a schema when we create a table
-    schema = file("/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/modules/taxonomy/assign_policies_scripts/schemas/policy_tags_schema.json")
+    schema = file("/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/schemas/taxonomy/policy_tags_schema.json")
     depends_on = [ google_storage_bucket_object.policy_tags_csv_file]
 }
