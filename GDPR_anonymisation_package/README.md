@@ -6,8 +6,8 @@ This repository contains the implementation of the GDPR Anonymization Service, w
 │   ├── __init__.py              
 │   ├── helpers.py               
 │   └── templates/               
-│       ├── key_generation.sql   
-│       ├── update_vault.sql    
+│       ├── key_generation_template.sql   
+│       ├── update_vault_template.sql    
 ├── config.yaml                 
 ├── deploy_dev.sh               
 ├── deploy_prod.sh              
