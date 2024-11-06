@@ -6,7 +6,7 @@ WITH
     SELECT
       *
     FROM
-      `{{raw_layer_project}}.test_duygu.policy_tags`
+      `test_duygu.policy_tags`
     WHERE display_name!="name"
   )
 SELECT
