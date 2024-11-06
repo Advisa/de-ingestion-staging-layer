@@ -6,14 +6,16 @@ This repository contains the implementation of the **Authorized View Service**, 
 
 ├── anonymisation_service/
 │   ├── __init__.py    
-│   ├── config.yaml            
+|   ├── config.yaml            
 │   ├── helpers.py   
-│   ├── main.py                     
-│   └── requirements.txt              
+|   ├── main.py                     
+|   └── requirements.txt              
 │   └── templates/  
-│       ├── auth_view_mapping.txt                
+|       ├── auth_view_mapping.txt                
 │       ├── encryption_query_template.sql   
-│       └── generated_source_query.sql    
+│       ├── generated_source_query.sql    
+|           
+|                   
 
 
 ### Key Files:
@@ -34,11 +36,8 @@ This repository contains the implementation of the **Authorized View Service**, 
 ---
 
 ## Dependencies
-Update the service_account_key in the config.yaml file with a gcs-handler service account key file path
 
 Install the dependencies using `pip`:
 
 ```bash
 pip install -r requirements.txt
-
-

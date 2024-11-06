@@ -1,7 +1,0 @@
-Jinja2
-PyYAML
-google-cloud-bigquery
-google-auth
-jinja2
-pyyaml
-requests
