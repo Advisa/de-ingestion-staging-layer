@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `{{complaince_project}}.compilance_database.temp_encrypted_data` AS (
+CREATE OR REPLACE TABLE `{{compliance_project}}.compilance_database.temp_encrypted_data` AS (
     WITH unique_keys AS (
         SELECT 
             DISTINCT contacts.national_id AS ssn,
@@ -30,7 +30,7 @@ CREATE OR REPLACE TABLE `{{complaince_project}}.compilance_database.temp_encrypt
     ) AS contacts ON contacts.national_id = uk.ssn
 );
 
-INSERT INTO `{{complaince_project}}.compilance_database.gdpr_vault` (uuid, ssn, aead_key, encrypted_ssn, is_anonymized, ingestion_timestamp)
+INSERT INTO `{{compliance_project}}.compilance_database.gdpr_vault` (uuid, ssn, aead_key, encrypted_ssn, is_anonymized, ingestion_timestamp)
 SELECT 
     uuid,
     ssn,
@@ -38,9 +38,9 @@ SELECT
     encrypted_ssn,
     is_anonymized,
     ingestion_timestamp
-FROM `{{complaince_project}}.compilance_database.temp_encrypted_data` AS temp_data
+FROM `{{compliance_project}}.compilance_database.temp_encrypted_data` AS temp_data
 WHERE NOT EXISTS (
     SELECT 1
-    FROM `{{complaince_project}}.compilance_database.gdpr_vault` AS existing
+    FROM `{{compliance_project}}.compilance_database.gdpr_vault` AS existing
     WHERE existing.ssn = temp_data.ssn
 );
