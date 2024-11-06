@@ -10,5 +10,5 @@ policy_tags_schema.json
 taxonomy_schema.json
 **/service_accounts_keyfiles/*
 **/test_read_masked_data.py
-# Ignore sensitive var files (if they contain secrets)
-#values.tfvars
+
+**/__pycache__/helpers.cpython-311.pyc

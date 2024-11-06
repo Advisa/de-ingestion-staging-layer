@@ -1,319 +1,324 @@
 [
-  {
-      "fields": [
-          {
-              "fields": [
-                  {
-                      "fields": [
-                          {
-                              "mode": "NULLABLE",
-                              "name": "address",
-                              "type": "STRING"
-                          },
-                          {
-                              "mode": "NULLABLE",
-                              "name": "endDate",
-                              "type": "STRING"
-                          },
-                          {
-                              "mode": "NULLABLE",
-                              "name": "name",
-                              "type": "STRING"
-                          },
-                          {
-                              "mode": "NULLABLE",
-                              "name": "startDate",
-                              "type": "STRING"
-                          },
-                          {
-                              "mode": "NULLABLE",
-                              "name": "trusteeId",
-                              "type": "STRING"
-                          },
-                          {
-                              "mode": "NULLABLE",
-                              "name": "trusteeType",
-                              "type": "STRING"
-                          }
-                      ],
-                      "mode": "REPEATED",
-                      "name": "trustee",
-                      "type": "RECORD"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "guardianshipCode",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "guardianshipDescrEn",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "guardianshipDescrFi",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "source",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "startDate",
-                      "type": "STRING"
-                  }
-              ],
-              "mode": "NULLABLE",
-              "name": "infoOnGuardianship",
-              "type": "RECORD"
-          },
-          {
-              "fields": [
-                  {
-                      "mode": "NULLABLE",
-                      "name": "caseId",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "creditor",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "dateOfRemark",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "ref",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "remarkCode",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "remarkDescrEn",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "remarkDescrFi",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "source",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "sum",
-                      "type": "STRING"
-                  }
-              ],
-              "mode": "REPEATED",
-              "name": "remarksOnPayment",
-              "type": "RECORD"
-          },
-          {
-              "fields": [
-                  {
-                      "mode": "NULLABLE",
-                      "name": "dateOfRemark",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "endDate",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "ref",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "remarkCode",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "remarkDescrEn",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "remarkDescrFi",
-                      "type": "STRING"
-                  },
-                  {
-                      "mode": "NULLABLE",
-                      "name": "source",
-                      "type": "STRING"
-                  }
-              ],
-              "mode": "REPEATED",
-              "name": "otherCreditRemarks",
-              "type": "RECORD"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "banOnBusinessOperationsStarted",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "guardianshipStarted",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "isBannedOnBusinessOperations",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "isUnderGuardianship",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "name",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "otherRemarkLatest",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "otherRemarksCount",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "paymentRemarkLatest",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "paymentRemarksCount",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "personId",
-              "type": "STRING"
-          }
-      ],
-      "mode": "NULLABLE",
-      "name": "data",
-      "type": "RECORD"
-  },
-  {
-      "fields": [
-          {
-              "mode": "NULLABLE",
-              "name": "caseId",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "creditor",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "dateOfRemark",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "ref",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "remarkCode",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "remarkDescrEn",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "remarkDescrFi",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "source",
-              "type": "STRING"
-          },
-          {
-              "mode": "NULLABLE",
-              "name": "sum",
-              "type": "STRING"
-          }
-      ],
-      "mode": "REPEATED",
-      "name": "remarks_on_payment_json",
-      "type": "RECORD"
-  },
-  {
-      "mode": "NULLABLE",
-      "name": "bisnode_id",
-      "type": "STRING"
-  },
-  {
-      "mode": "NULLABLE",
-      "name": "is_banned_on_business_operations",
-      "type": "BOOLEAN"
-  },
-  {
-      "mode": "NULLABLE",
-      "name": "is_under_guardianship",
-      "type": "BOOLEAN"
-  },
-  {
-      "mode": "NULLABLE",
-      "name": "last_check",
-      "type": "STRING"
-  },
-  {
-      "mode": "NULLABLE",
-      "name": "name",
-      "type": "STRING"
-  },
-  {
-      "mode": "NULLABLE",
-      "name": "other_remarks_count",
-      "type": "STRING"
-  },
-  {
-      "mode": "NULLABLE",
-      "name": "payment_remark_latest",
-      "type": "STRING"
-  },
-  {
-      "mode": "NULLABLE",
-      "name": "payment_remarks_count",
-      "type": "STRING"
-  },
-  {
-      "mode": "NULLABLE",
-      "name": "ssn_id",
-      "type": "STRING"
-  }
+    {
+        "fields": [
+            {
+                "fields": [
+                    {
+                        "fields": [
+                            {
+                                "mode": "NULLABLE",
+                                "name": "address",
+                                "type": "STRING"
+                            },
+                            {
+                                "mode": "NULLABLE",
+                                "name": "endDate",
+                                "type": "STRING"
+                            },
+                            {
+                                "mode": "NULLABLE",
+                                "name": "name",
+                                "type": "STRING"
+                            },
+                            {
+                                "mode": "NULLABLE",
+                                "name": "startDate",
+                                "type": "STRING"
+                            },
+                            {
+                                "mode": "NULLABLE",
+                                "name": "trusteeId",
+                                "type": "STRING"
+                            },
+                            {
+                                "mode": "NULLABLE",
+                                "name": "trusteeType",
+                                "type": "STRING"
+                            }
+                        ],
+                        "mode": "REPEATED",
+                        "name": "trustee",
+                        "type": "RECORD"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "guardianshipCode",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "guardianshipDescrEn",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "guardianshipDescrFi",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "source",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "startDate",
+                        "type": "STRING"
+                    }
+                ],
+                "mode": "NULLABLE",
+                "name": "infoOnGuardianship",
+                "type": "RECORD"
+            },
+            {
+                "fields": [
+                    {
+                        "mode": "NULLABLE",
+                        "name": "caseId",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "creditor",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "dateOfRemark",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "ref",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "remarkCode",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "remarkDescrEn",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "remarkDescrFi",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "source",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "sum",
+                        "type": "STRING"
+                    }
+                ],
+                "mode": "REPEATED",
+                "name": "remarksOnPayment",
+                "type": "RECORD"
+            },
+            {
+                "fields": [
+                    {
+                        "mode": "NULLABLE",
+                        "name": "dateOfRemark",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "endDate",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "ref",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "remarkCode",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "remarkDescrEn",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "remarkDescrFi",
+                        "type": "STRING"
+                    },
+                    {
+                        "mode": "NULLABLE",
+                        "name": "source",
+                        "type": "STRING"
+                    }
+                ],
+                "mode": "REPEATED",
+                "name": "otherCreditRemarks",
+                "type": "RECORD"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "banOnBusinessOperationsStarted",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "guardianshipStarted",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "isBannedOnBusinessOperations",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "isUnderGuardianship",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "otherRemarkLatest",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "otherRemarksCount",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "paymentRemarkLatest",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "paymentRemarksCount",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "personId",
+                "type": "STRING"
+            }
+        ],
+        "mode": "NULLABLE",
+        "name": "data",
+        "type": "RECORD"
+    },
+    {
+        "fields": [
+            {
+                "mode": "NULLABLE",
+                "name": "caseId",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "creditor",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "dateOfRemark",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "ref",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "remarkCode",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "remarkDescrEn",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "remarkDescrFi",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "source",
+                "type": "STRING"
+            },
+            {
+                "mode": "NULLABLE",
+                "name": "sum",
+                "type": "STRING"
+            }
+        ],
+        "mode": "REPEATED",
+        "name": "remarks_on_payment_json",
+        "type": "RECORD"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "bisnode_id",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "is_banned_on_business_operations",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "is_under_guardianship",
+        "type": "BOOLEAN"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "last_check",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "name",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "other_remarks_count",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "payment_remark_latest",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "payment_remarks_count",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "ssn_id",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    }
 ]

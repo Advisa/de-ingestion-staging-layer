@@ -3,7 +3,6 @@ import subprocess
 # Set variables
 LOCATION = "europe-north1"  # Set your location
 PROJECT_ID = "sambla-data-staging-compliance"  # Set your project ID
-OUTPUT_FILE = "policy_tags_info.txt"  # Output file name
 
 def list_taxonomies(location):
     """List all taxonomies in the specified location and return their details."""
@@ -28,7 +27,6 @@ def list_taxonomies(location):
                     taxonomy_info['name'] = line.split('name: ')[1].strip()
             if taxonomy_info:  # If taxonomy_info is not empty, append it
                 taxonomies.append(taxonomy_info)
-
     return taxonomies
 def retrieve_policy_tags(location, taxonomy_id):
     """Retrieve all policy tags for the specified taxonomy ID."""

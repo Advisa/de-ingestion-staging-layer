@@ -5,7 +5,7 @@ policy_tags AS (
   SELECT
     *
   FROM
-    `sambla-data-staging-compliance.test_duygu.policy_tags`
+    `{{raw_layer_project}}.test_duygu.policy_tags`
 ),
 sensitive_fields AS (
   SELECT
@@ -22,10 +22,14 @@ join_keys AS (
     table_name,
     ARRAY_AGG(column_name) AS join_keys,
     IF (
-      "ssn" IN UNNEST(ARRAY_AGG(column_name)) OR "ssn_id" IN UNNEST(ARRAY_AGG(column_name)),
-      TRUE,
-      FALSE
-    ) AS includes_ssn
+    "ssn" IN UNNEST(ARRAY_AGG(column_name)) 
+    OR "ssn_id" IN UNNEST(ARRAY_AGG(column_name)) 
+    OR "national_id" IN UNNEST(ARRAY_AGG(column_name)) 
+    OR "nationalId" IN UNNEST(ARRAY_AGG(column_name)),
+    TRUE,
+    FALSE
+) AS includes_ssn
+
   FROM
     sensitive_fields
   GROUP BY
@@ -61,7 +65,7 @@ encryption_queries AS (
     STRING_AGG(raw.join_key, ', ') AS sensitive_column_names
   FROM
     unnested_join_keys raw
-    LEFT JOIN `sambla-group-compliance-db.compilance_database.gdpr_vault` VAULT ON raw.join_key = VAULT.ssn
+    LEFT JOIN `{{compliance_project}}.compilance_database.gdpr_vault` VAULT ON raw.join_key = VAULT.ssn
   GROUP BY
     raw.table_schema,
     raw.table_name,
@@ -77,13 +81,13 @@ SELECT
     ', raw.* EXCEPT(',
     STRING_AGG(DISTINCT join_key, ', '),
     ') ',
-    'FROM `sambla-data-staging-compliance.',
+    'FROM `{{raw_layer_project}}.',
     table_schema,
     '.',
     table_name,
     '` raw ',
-    'LEFT JOIN `sambla-group-compliance-db.compilance_database.gdpr_vault` VAULT ON raw.',
-    STRING_AGG(CASE WHEN join_key IN ('ssn', 'ssn_id') THEN join_key END, '') ,  
+    'LEFT JOIN `{{compliance_project}}.compilance_database.gdpr_vault` VAULT ON raw.',
+    STRING_AGG(CASE WHEN join_key IN ('ssn', 'ssn_id','nationalId', 'national_id') THEN join_key END, '') ,  
     ' = VAULT.ssn '
   ) AS encrypted_columns
 FROM
