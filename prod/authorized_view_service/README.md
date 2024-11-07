@@ -4,7 +4,7 @@ This repository contains the implementation of the **Authorized View Service**, 
 
 ## Folder Structure
 
-├── anonymisation_service/
+├── authorized_view_service/
 │   ├── __init__.py    
 |   ├── config.yaml            
 │   ├── helpers.py   

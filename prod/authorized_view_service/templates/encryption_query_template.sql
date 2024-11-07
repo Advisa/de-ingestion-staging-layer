@@ -74,7 +74,7 @@ encryption_queries AS (
 SELECT
   table_schema,
   table_name,
-  STRING_AGG(CASE WHEN join_key IN ('ssn', 'ssn_id') THEN join_key END, '') as j_key,
+  STRING_AGG(CASE WHEN join_key IN ('ssn', 'ssn_id','nationalId', 'national_id') THEN join_key END, '') as j_key,
   CONCAT(
     'SELECT ',
     STRING_AGG(encrypted_columns, ', '),

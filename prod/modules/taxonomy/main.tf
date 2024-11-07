@@ -41,7 +41,7 @@ resource "google_bigquery_table" "taxonomy_bq_table" {
     }
     
     # must to define a schema when we create a table
-    schema = file("/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/modules/taxonomy/assign_policies_scripts/schemas/taxonomy_schema.json")
+    schema = file("/Users/duygugenc/Documents/de-ingestion-staging-layer-1/prod/modules/taxonomy/assign_policies_scripts/schemas/taxonomy_schema.json")
     depends_on = [ google_storage_bucket_object.taxonomy_csv_file]
 }
 
@@ -60,6 +60,6 @@ resource "google_bigquery_table" "policy_tags_bq_table" {
     source_uris = ["gs://${google_storage_bucket.taxonomy_bucket.name}/${local.folder}policy_tags.csv"]
     }
     # must to define a schema when we create a table
-    schema = file("/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/modules/taxonomy/assign_policies_scripts/schemas/policy_tags_schema.json")
+    schema = file("/Users/duygugenc/Documents/de-ingestion-staging-layer-1/prod/modules/taxonomy/assign_policies_scripts/schemas/policy_tags_schema.json")
     depends_on = [ google_storage_bucket_object.policy_tags_csv_file]
 }

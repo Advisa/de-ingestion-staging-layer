@@ -5,7 +5,7 @@ locals {
 
 resource "google_project_iam_member" "project_permissions_bq_user" {
   project    = var.project_id
-  role               = "roles/bigquery.user" # Grant permission to use the service account
+  role               = "roles/bigquery.jobUser" 
   member =  "serviceAccount:${local.service_account}" 
 }
 
