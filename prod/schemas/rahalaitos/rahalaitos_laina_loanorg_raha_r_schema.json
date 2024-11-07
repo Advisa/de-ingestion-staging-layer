@@ -1,0 +1,22 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "luottoraja",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "maksuaika",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

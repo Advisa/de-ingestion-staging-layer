@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "persons_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tag_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "added_at",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

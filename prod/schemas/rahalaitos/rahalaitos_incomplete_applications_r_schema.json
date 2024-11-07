@@ -1,0 +1,47 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "email",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "added_to_list",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "paidout_date",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "paidout_ban_end",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "added",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "orderdate",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ocx_last_modified_date",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ocx_unsubscribe_date",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ongage_status",
+    "type": "STRING"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "campaign",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "host",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "unemployed_redirect",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "duplicate_redirect",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "rate_redirect",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "commission",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "commission_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "added",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "updated",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "status",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "handler",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "orderdate",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "updated",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "original_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "copy_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "first_status",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "first_pixel",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "last_status_update",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "copy_handled",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "notice_handled",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "handling_ended",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "signature_handled",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_hakija_kysytty",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_hakija_kysytty_date",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "kampanja_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "phone_order",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "brand_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "device",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "type",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

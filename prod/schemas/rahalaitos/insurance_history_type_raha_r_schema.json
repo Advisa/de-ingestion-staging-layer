@@ -1,0 +1,37 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "priority_level_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "added",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "updated",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

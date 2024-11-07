@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "totalAmount",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "monthlyAmount",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "added",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "updated",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

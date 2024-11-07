@@ -1,0 +1,52 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "description",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "hide_report",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "order",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "name_eng",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "desc_eng",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]

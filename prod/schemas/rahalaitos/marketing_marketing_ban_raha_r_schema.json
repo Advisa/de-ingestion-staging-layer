@@ -1,0 +1,27 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "hash",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yhtio",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "end",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
+]
