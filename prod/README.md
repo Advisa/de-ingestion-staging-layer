@@ -3,6 +3,7 @@
 This repository contains the Terraform configuration for managing resources in Google Cloud Platform for the **Staging Compliance Project**. The infrastructure is designed to handle multiple services, including data source migrations, authorized views, policy tags, and schema management, while ensuring compliance with organizational requirements.
 
 ## Folder Structure
+```bash
 .
 ├── anonymisation_service
 │   └── templates

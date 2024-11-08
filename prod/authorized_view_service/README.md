@@ -3,7 +3,7 @@
 This repository contains the implementation of the **Authorized View Service**, which performs tasks based on the configurations in the provided YAML file to create an encrypted authorized view definition. The service utilizes SQL and txt templates for operations such as generating encryption query and mapping information of encrypted source data.
 
 ## Folder Structure
-
+```bash
 ├── authorized_view_service/
 │   ├── __init__.py    
 |   ├── config.yaml            
