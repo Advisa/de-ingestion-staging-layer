@@ -3,15 +3,15 @@
 This repository contains the implementation of the **CSV Exporter Service**, which is responsible for exporting taxonomies and policy tags into CSV files. The service interacts with Google Cloud Data Catalog, extracts the required data (taxonomies and policy tags), and writes the data into CSV format.
 
 
-## Folder Structure
+### Folder Structure
 
-csv_exporter/
-│   ├── __init__.py    
-│   ├── helpers.py   
-│   ├── main.py                     
-│   └── outputs/  
-│       ├── taxonomy.csv                   
-│       └── policy_tags.csv
+    csv_exporter/
+    │   ├── __init__.py    
+    │   ├── helpers.py   
+    │   ├── main.py                     
+    │   └── outputs/  
+    │       ├── taxonomy.csv                   
+    │       └── policy_tags.csv
 
 
 

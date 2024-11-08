@@ -3,9 +3,7 @@ import os
 import yaml
 from jinja2 import Template
 from google.cloud import bigquery
-from google.auth.transport.requests import Request
-from google.oauth2 import service_account
-
+from pathlib import Path
 
 class AuthorizedViewService:
     def __init__(self, config_path, env='dev'):
@@ -21,9 +19,14 @@ class AuthorizedViewService:
         self.raw_layer_project = self.authorized_view_config.get('raw_layer_project')
         self.exposure_project = self.authorized_view_config.get('exposure_project')
         self.compliance_project = self.authorized_view_config.get('compliance_project')
-        self.base_path = self.authorized_view_config.get('base_path')
+        self.base_folder = self.authorized_view_config.get('base_folder')
 
-        # Initialize BigQuery clients using service account credentials
+        # Initialize the current path where this service is located
+        project_root = Path(__file__).resolve().parent.parent  
+        self.base_path = project_root / self.base_folder 
+        print("base_path:",self.base_path)
+
+        # Initialize BigQuery clients using ADC
         self.clients = self.initialize_bigquery_clients()
 
         # Load SQL templates
@@ -50,12 +53,8 @@ class AuthorizedViewService:
         """Initialize BigQuery Clients using service account credentials."""
         clients = {}
         try:
-            key_path = self.authorized_view_config.get('service_account_key')
-            credentials = service_account.Credentials.from_service_account_file(
-                key_path, scopes=['https://www.googleapis.com/auth/cloud-platform']
-            )
-            credentials.refresh(Request())
-            clients['raw_layer_project'] = bigquery.Client(credentials=credentials)
+            
+            clients['raw_layer_project'] = bigquery.Client(project=self.raw_layer_project)
             return clients
         except Exception as e:
             logging.error(f"Error initializing BigQuery clients: {str(e)}")
@@ -64,6 +63,7 @@ class AuthorizedViewService:
     def load_template(self, template_name):
         """Load SQL templates from the templates directory."""
         template_path = os.path.join(self.base_path, 'templates', template_name)
+        print(template_path)
         try:
             with open(template_path) as f:
                 return Template(f.read())

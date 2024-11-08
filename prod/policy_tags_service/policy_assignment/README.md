@@ -2,14 +2,14 @@
 
 This repository contains the implementation of the **Policy Assignment Service**, which is responsible for managing IAM policy assignments to the relevant columns in BigQuery tables. The service generates the necessary SQL queries, applies encryption policies, and assigns appropriate IAM policies to columns based on the schema files and policy mappings.
 
-## Folder Structure
-policy_assignment/
-│
-├── __init__.py                        
-├── helpers.py                        
-├── main.py                            
-└── templates/
-    └── get_matching_sensitive_fields.sql    
+### Folder Structure
+    policy_assignment/
+    │
+    ├── __init__.py                        
+    ├── helpers.py                        
+    ├── main.py                            
+    └── templates/
+        └── get_matching_sensitive_fields.sql    
 
 
 ### Key Files:

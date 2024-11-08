@@ -3,10 +3,9 @@ import json
 import logging
 from jinja2 import Template
 from google.cloud import bigquery
-from google.auth.transport.requests import Request
-from google.oauth2 import service_account
 import yaml
 import glob
+from pathlib import Path
 
 class PolicyAssignmentService:
     def __init__(self, config_path, env='dev'):
@@ -20,19 +19,25 @@ class PolicyAssignmentService:
 
         # Extract values from the configuration
         self.raw_layer_project = self.policy_assignment_config.get('raw_layer_project')
-        self.base_path = os.path.join(self.policy_assignment_config.get('base_path'),"policy_assignment")
-        self.schema_file_path = self.policy_assignment_config.get('schema_file_path')
+        self.base_folder = self.policy_assignment_config.get('base_folder')
 
         # Initialize BigQuery clients using service account credentials
         self.clients = self.initialize_bigquery_clients()
 
+        # Initialize the current path where this service is located
+        project_root = Path(__file__).resolve().parent.parent
+        self.current_path = os.path.dirname(os.path.abspath(__file__))  
+        self.base_path = project_root
+        print("base_path:",self.base_path)
+
         # Load SQL templates
-        self.sensitive_fields_query_template = self.load_template(self.base_path,"get_matching_sensitive_fields.sql")
+        self.sensitive_fields_query_template = self.load_template(self.current_path,"get_matching_sensitive_fields.sql")
 
         # Initialize output path of union all query
         self.union_all_query_file = "generated_source_query.sql"
         # Initialize output of sql template files
         self.output_template_file = "sensitive_fields_query.sql"
+
         
 
     def load_config(self, config_path):
@@ -53,12 +58,7 @@ class PolicyAssignmentService:
         """Initialize BigQuery Clients using service account credentials."""
         clients = {}
         try:
-            key_path = self.policy_assignment_config.get('service_account_key')
-            credentials = service_account.Credentials.from_service_account_file(
-                key_path, scopes=['https://www.googleapis.com/auth/cloud-platform']
-            )
-            credentials.refresh(Request())
-            clients['raw_layer_project'] = bigquery.Client(credentials=credentials)
+            clients['raw_layer_project'] = bigquery.Client(project=self.raw_layer_project)
             return clients
         except Exception as e:
             logging.error(f"Error initializing BigQuery clients: {str(e)}")
@@ -118,7 +118,8 @@ class PolicyAssignmentService:
 
     def construct_iam_policies(self, policy_mapping):
         """Construct IAM policies based on the policy mapping and update schema files."""
-        schema_files = glob.glob(os.path.join(self.schema_file_path, "**/*_schema.json"), recursive=True)
+        schema_file_path = self.base_path / "schemas"
+        schema_files = glob.glob(os.path.join(schema_file_path, "**/*_schema.json"), recursive=True)
 
         for schema_file_path in schema_files:
             table_name = os.path.basename(schema_file_path).replace("_schema.json", "")
@@ -160,7 +161,7 @@ class PolicyAssignmentService:
         """Main function to execute the workflow."""
         try:
             # Load the union all query template
-            union_all_query = self.load_template("prod/authorized_view_service",self.union_all_query_file).render()
+            union_all_query = self.load_template("authorized_view_service",self.union_all_query_file).render()
 
             # Render and execute the encryption query template
             sensitive_fields_query_template = self.sensitive_fields_query_template.render(
@@ -172,11 +173,10 @@ class PolicyAssignmentService:
             policy_mapping = self.get_matching_sensitive_fields(sensitive_fields_query_template)
 
 
-            # Construct IAM policies based on the policy mapping
-            schema_dir = 'path/to/schemas'
             self.construct_iam_policies(policy_mapping)
 
             logging.info("Workflow completed successfully.")
         except Exception as e:
             logging.error("An error occurred during the process.")
             raise e
+

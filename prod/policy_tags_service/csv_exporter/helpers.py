@@ -3,7 +3,7 @@ import os
 import yaml
 import csv
 import subprocess
-
+from pathlib import Path
 
 class CsvExporterService:
     def __init__(self, config_path, env='dev'):
@@ -17,12 +17,17 @@ class CsvExporterService:
 
         # Extract values from the YAML config
         self.raw_layer_project = self.csv_exporter_config.get('raw_layer_project')
-        self.base_path = os.path.join(self.csv_exporter_config.get('base_path'),"csv_exporter")
         self.location = self.csv_exporter_config.get('project_location')
+        self.base_folder = self.csv_exporter_config.get('base_folder')
 
         # Initialize output of csv files
         self.output_taxonomy_file = "taxonomy.csv"
         self.output_policy_tags_file = "policy_tags.csv"
+
+        # Initialize the current path where this service is located
+        project_root = Path(__file__).resolve().parent.parent  
+        self.base_path = project_root
+        print("base_path:",self.base_path)
         
     def load_config(self, config_path):
         """Load YAML configuration from the provided path."""
@@ -126,7 +131,7 @@ class CsvExporterService:
 
     def write_to_csv(self, file_path_name, headers, data):
         """Write data to CSV file with specified headers."""
-        file_path = os.path.join(self.base_path, 'outputs', file_path_name)
+        file_path = os.path.join(self.base_path, 'csv_exporter/outputs', file_path_name)
         try:
             with open(file_path, 'w', newline='') as file:
                 writer = csv.writer(file)
@@ -170,7 +175,7 @@ class CsvExporterService:
                     ))
 
             # Write policy tags data to CSV
-            self.write_to_csv(self.output_policy_tags_file, ['taxonomy_id', 'policy_tag_id', 'display_name', 'parent_policy_tag_id'], policy_tags_data)
+            self.write_to_csv(self.output_policy_tags_file, ['taxonomy_id', 'policy_tag_id', 'display_name','description', 'parent_policy_tag_id'], policy_tags_data)
 
             logging.info("Taxonomies and policy tags data export completed successfully.")
 

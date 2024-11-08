@@ -1,11 +1,13 @@
 import logging
 import os
 from helpers import PolicyAssignmentService
+from pathlib import Path
 
 def run_policy_assignment_service():
     logging.basicConfig(level=logging.INFO)
     env = os.getenv('ENV', 'dev')
-    config_path = "./prod/policy_tags_service/config.yaml"
+    project_root = Path(__file__).resolve().parent.parent  
+    config_path = project_root / "config.yaml"
     try:
         # Create an instance of PolicyAssignmentService and run the main workflow
         policy_assignment_service = PolicyAssignmentService(config_path, env)

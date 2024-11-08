@@ -5,7 +5,7 @@ locals {
 
 resource "google_project_iam_member" "project_permissions_bq_user" {
   project    = var.project_id
-  role               = "roles/bigquery.user" # Grant permission to use the service account
+  role               = "roles/bigquery.jobUser" 
   member =  "serviceAccount:${local.service_account}" 
 }
 
@@ -13,7 +13,7 @@ resource "google_project_iam_member" "project_permissions_bq_user" {
 resource "google_bigquery_table_iam_member" "auth_view_iam_paccess" {
   for_each = local.schema_table_queries
   project    = var.project_id
-  dataset_id = "authorized_view_test_${each.value.schema}" 
+  dataset_id = "authorized_view_${each.value.schema}" 
   table_id   = "view_${each.value.table}"  
   role = "roles/bigquery.dataViewer"
   member =  "serviceAccount:${local.service_account}"                  
@@ -29,7 +29,7 @@ resource "google_bigquery_dataset_access" "auth_dataset_access_to_gdpr_vault" {
   dataset {
     dataset{
       project_id = var.project_id
-      dataset_id = "authorized_view_test_${each.key}"  
+      dataset_id = "authorized_view_${each.key}"  
     }
     target_types = ["VIEWS"]
   }
@@ -46,7 +46,7 @@ resource "google_bigquery_dataset_access" "auth_view_access_legacy_dataset" {
   dataset {
     dataset{
       project_id = var.project_id
-      dataset_id = "authorized_view_test_${each.key}"  
+      dataset_id = "authorized_view_${each.key}"  
     }
     target_types = ["VIEWS"]
   }

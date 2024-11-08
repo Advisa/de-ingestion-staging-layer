@@ -5,7 +5,7 @@ policy_tags AS (
   SELECT
     *
   FROM
-    `{{raw_layer_project}}.test_duygu.policy_tags`
+    `{{raw_layer_project}}.policy_tags_metadata.policy_tags`
 ),
 sensitive_fields AS (
   SELECT
@@ -74,7 +74,7 @@ encryption_queries AS (
 SELECT
   table_schema,
   table_name,
-  STRING_AGG(CASE WHEN join_key IN ('ssn', 'ssn_id') THEN join_key END, '') as j_key,
+  STRING_AGG(CASE WHEN join_key IN ('ssn', 'ssn_id','nationalId', 'national_id') THEN join_key END, '') as j_key,
   CONCAT(
     'SELECT ',
     STRING_AGG(encrypted_columns, ', '),

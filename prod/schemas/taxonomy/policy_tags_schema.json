@@ -1,0 +1,28 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "taxonomy_id",
+    "type": "STRING"
+  },
+  {
+      "mode": "NULLABLE",
+      "name": "policy_tag_id",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "display_name",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "description",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "parent_policy_tag_id",
+      "type": "STRING"
+    }
+  ]
+  

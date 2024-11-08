@@ -1,11 +1,13 @@
 import logging
 import os
 from helpers import CsvExporterService
+from pathlib import Path
 
 def run_csv_exporter_service():
     logging.basicConfig(level=logging.INFO)
     env = os.getenv('ENV', 'dev')
-    config_path = "./prod/policy_tags_service/config.yaml"
+    project_root = Path(__file__).resolve().parent.parent  
+    config_path = project_root / "config.yaml"
     try:
         # Create an instance of CsvExporterService and run the main workflow
         csv_exporter_service = CsvExporterService(config_path, env)
@@ -17,3 +19,5 @@ def run_csv_exporter_service():
 
 if __name__ == "__main__":
     run_csv_exporter_service()
+
+    

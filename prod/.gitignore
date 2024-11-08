@@ -6,8 +6,7 @@
 .terraform/
 
 imports.tf.txt
-policy_tags_schema.json
-taxonomy_schema.json
+
 **/service_accounts_keyfiles/*
 **/test_read_masked_data.py
 
