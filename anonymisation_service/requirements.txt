@@ -1,0 +1,7 @@
+google-cloud-bigquery
+logging
+Jinja2
+google-cloud-secret-manager
+prefect
+google-auth
+
