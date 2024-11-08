@@ -1,0 +1,18 @@
+[
+    {
+      "mode": "NULLABLE",
+      "name": "taxonomy_display_name",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "description",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "id",
+      "type": "STRING"
+    }
+  ]
+  
