@@ -8,6 +8,7 @@
 imports.tf.txt
 policy_tags_schema.json
 taxonomy_schema.json
-sambla-data-staging-compliance-8044831a0873.json
-# Ignore sensitive var files (if they contain secrets)
-#values.tfvars
+**/service_accounts_keyfiles/*
+**/test_read_masked_data.py
+
+**/__pycache__/helpers.cpython-311.pyc

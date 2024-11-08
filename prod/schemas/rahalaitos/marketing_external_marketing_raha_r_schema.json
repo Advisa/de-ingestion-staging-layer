@@ -1,67 +1,72 @@
 [
-  {
-    "mode": "NULLABLE",
-    "name": "id",
-    "type": "INTEGER"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "etunimi",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "sukunimi",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "osoite",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "postinumero",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "paikkakunta",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "email",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "puhelin",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "syntymavuosi",
-    "type": "FLOAT"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "sukupuoli",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "lahde",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "lupapvm",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "inserted_at",
-    "type": "STRING"
-  }
+    {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "etunimi",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "sukunimi",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "osoite",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "postinumero",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "paikkakunta",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "email",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "puhelin",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "syntymavuosi",
+        "type": "FLOAT"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "sukupuoli",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "lahde",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "lupapvm",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "inserted_at",
+        "type": "STRING"
+    }
 ]

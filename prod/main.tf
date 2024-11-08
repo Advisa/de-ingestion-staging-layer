@@ -8,6 +8,8 @@ module "lvs_bigquery_config" {
   source = "./modules/lvs/bigquery"
   project_id = var.project_id
   region     = var.region
+  kms_crypto_key_id = var.kms_crypto_key_id
+  connection_id =google_bigquery_connection.default.name
 }
 
 module "rahalaitos_gcs_config" {
@@ -22,4 +24,17 @@ module "rahalaitos_bq_config" {
   source = "./modules/rahalaitos/bigquery"
   project_id = var.project_id
   region     = var.region
+  connection_id = google_bigquery_connection.default.name
+}
+module "taxonomy_config" {
+  source = "./modules/taxonomy"
+}
+
+module "authorized_views_config" {
+  source = "./modules/auth_views"
+  project_id = var.project_id
+  region     = var.region
+  kms_crypto_key_id = var.kms_crypto_key_id
+  connection_id = google_bigquery_connection.default.name
+
 }

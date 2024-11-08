@@ -12,6 +12,22 @@ resource "google_service_account" "sa_editor" {
   display_name = "lvs-editor"
   description = "A service account for editor (developer) access to raw LVS data for approved external users"
 }
+
+# Provides permissions to run jobs, including queries, within the project.
+resource "google_project_iam_member" "bq_permissions_reader_job_user" {
+  project    = var.project_id
+  role               = "roles/bigquery.jobUser" # Grant permission to use the service account
+  member = "serviceAccount:${google_service_account.sa_reader.email}"  # Grant access to the service account
+  
+}
+# Provides permissions to run jobs, including queries, within the project.
+resource "google_project_iam_member" "bq_permissions_editor_job_user" {
+  project    = var.project_id
+  role               = "roles/bigquery.jobUser" # Grant permission to use the service account
+  member = "serviceAccount:${google_service_account.sa_editor.email}"  # Grant access to the service account
+  
+}
+
 # Add individual users to IAM roles on read-only service accounts
 resource "google_service_account_iam_binding" "sa_permissions_reader_account_user" {
   service_account_id = google_service_account.sa_reader.name
@@ -82,8 +98,6 @@ resource "google_bigquery_dataset_iam_member" "bq_permissions_data_transfer_edit
   member = "serviceAccount:${google_service_account.sa_data_transfer.email}"  # Grant access to the service account
   
 }
-
-
 # Add IAM permissions to the service account in order to run the scheduled query against bigquery
 resource "google_project_iam_member" "bq_permissions_data_transfer_service_agent" {
   project    = var.project_id
@@ -103,8 +117,3 @@ resource "google_project_iam_member" "gcs_permissions_data_transfer_bject_viewer
   member = "serviceAccount:${google_service_account.sa_data_transfer.email}"  # Grant access to the service account
   
 }
-
-
-
-
-
