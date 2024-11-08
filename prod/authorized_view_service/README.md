@@ -2,20 +2,20 @@
 
 This repository contains the implementation of the **Authorized View Service**, which performs tasks based on the configurations in the provided YAML file to create an encrypted authorized view definition. The service utilizes SQL and txt templates for operations such as generating encryption query and mapping information of encrypted source data.
 
-## Folder Structure
+### Folder Structure
 
-├── authorized_view_service/
-│   ├── __init__.py    
-|   ├── config.yaml            
-│   ├── helpers.py   
-|   ├── main.py                     
-|   └── requirements.txt              
-│   └── templates/  
-|       ├── auth_view_mapping.txt                
-│       ├── encryption_query_template.sql   
-│       ├── generated_source_query.sql    
-|           
-|                   
+    ├── authorized_view_service/
+    │   ├── __init__.py    
+    |   ├── config.yaml            
+    │   ├── helpers.py   
+    |   ├── main.py                     
+    |   └── requirements.txt              
+    │   └── templates/  
+    |       ├── auth_view_mapping.txt                
+    │       ├── encryption_query_template.sql   
+    │       ├── generated_source_query.sql    
+    |           
+    |                   
 
 
 ### Key Files:
