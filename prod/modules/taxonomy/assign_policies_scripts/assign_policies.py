@@ -3,10 +3,19 @@ import json
 import os
 from jinja2 import Template
 import glob
+from pathlib import Path
 
 # File paths
 PATH = os.path.dirname(os.path.abspath(__file__))
-union_all_query_path =  "/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/modules/auth_views/authorized_view_scripts/generated_source_query.sql"
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = Path(__file__).resolve().parent.parent.parent.parent
+absolute_path = "authorized_view_service/templates/generated_source_query.sql"
+print(project_root)
+schema_dir = project_root / "schemas/"
+print(schema_dir)
+union_all_query_path = project_root / absolute_path
+print(union_all_query_path)
+#"/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/modules/auth_views/authorized_view_scripts/generated_source_query.sql"
 sensitive_fields_query_path = os.path.join(PATH,"template_sql_files/get_matching_sensitive_fields.sql")
 
 def read_sensitive_fields_query_template():
@@ -102,8 +111,7 @@ def main():
 
 if __name__ == "__main__":
     LOCATION = "europe-north1"
-    PROJECT_ID = "sambla-data-staging-compliance"   
-    schema_dir = "/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/schemas/"
+    PROJECT_ID = "sambla-data-staging-compliance"  
     main()
 
 
