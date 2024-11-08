@@ -58,6 +58,7 @@ class CsvExporterService:
     def authenticate_gcloud(self):
         """Authenticate gcloud with the service account."""
         key_path = self.csv_exporter_config.get('terraform_sa_key')
+
       
         command = [
                 'gcloud', 'auth', 'activate-service-account',
@@ -109,6 +110,7 @@ class CsvExporterService:
             if entry.strip():  # Ensure entry is not empty
                 tag_info = {}
                 for line in entry.splitlines():
+                    print(line)
                     line = line.strip()
                     if line.startswith('displayName:'):
                         tag_info['displayName'] = line.split('displayName: ')[1].strip()
@@ -116,6 +118,7 @@ class CsvExporterService:
                         tag_info['name'] = line.split('name: ')[1].strip()
                     elif line.startswith('parentPolicyTag:'):
                         tag_info['parentPolicyTag'] = line.split('parentPolicyTag: ')[1].strip()
+
                 if tag_info:  # If tag_info is not empty, append it
                     tags_info.append(tag_info)
 
@@ -175,7 +178,7 @@ class CsvExporterService:
                     ))
 
             # Write policy tags data to CSV
-            self.write_to_csv(self.output_policy_tags_file, ['taxonomy_id', 'policy_tag_id', 'display_name','description', 'parent_policy_tag_id'], policy_tags_data)
+            self.write_to_csv(self.output_policy_tags_file, ['taxonomy_id', 'policy_tag_id', 'display_name', 'parent_policy_tag_id'], policy_tags_data)
 
             logging.info("Taxonomies and policy tags data export completed successfully.")
 
