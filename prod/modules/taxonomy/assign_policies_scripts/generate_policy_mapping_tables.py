@@ -1,5 +1,7 @@
 import csv
 import subprocess
+import os
+
 # Set variables
 LOCATION = "europe-north1"  # Set your location
 PROJECT_ID = "sambla-data-staging-compliance"  # Set your project ID
@@ -80,7 +82,7 @@ def write_policy_tags_to_csv(taxonomies, file_path):
     """Write policy tags data to CSV file, including taxonomy ID."""
     with open(file_path, 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['taxonomy_id', 'policy_tag_id', 'display_name', 'description', 'parent_policy_tag_id'])
+        writer.writerow(['taxonomy_id', 'policy_tag_id', 'display_name', 'parent_policy_tag_id'])
 
         for taxonomy in taxonomies:
             taxonomy_id = extract_id(taxonomy['name'])  # Extract the taxonomy ID
@@ -88,12 +90,11 @@ def write_policy_tags_to_csv(taxonomies, file_path):
             for tag_info in tags_info:
                 display_name = tag_info['displayName']
                 tag_id = extract_id(tag_info['name'])  # Extract just the ID
-                description = ''  # Add logic for description if needed
                 parent_policy_tag_id = tag_info.get('parentPolicyTag', None)
                 is_parent_policy_tag_id = extract_id(parent_policy_tag_id) if parent_policy_tag_id else None
 
                 # Write the row with the taxonomy_id
-                writer.writerow([taxonomy_id, tag_id, display_name, description, is_parent_policy_tag_id])
+                writer.writerow([taxonomy_id, tag_id, display_name, is_parent_policy_tag_id])
 
     print(f"Policy tags data written to {file_path}")
 
@@ -101,6 +102,12 @@ def write_policy_tags_to_csv(taxonomies, file_path):
 # Example usage
 taxonomies = list_taxonomies(LOCATION)
 
+# File paths
+PATH = os.path.dirname(os.path.abspath(__file__))
+taxonomy_output_path = os.path.join(PATH,"taxonomy.csv")
+policy_tags_output_path = os.path.join(PATH,"policy_tags.csv")
+
+
 # Write taxonomies and policy tags data to CSV
-write_taxonomies_to_csv(taxonomies, '/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/modules/taxonomy/assign_policies_scripts/taxonomy.csv')
-write_policy_tags_to_csv(taxonomies, '/Users/duygugenc/Documents/de-ingestion-staging-layer/prod/modules/taxonomy/assign_policies_scripts/policy_tags.csv')
+write_taxonomies_to_csv(taxonomies, taxonomy_output_path)
+write_policy_tags_to_csv(taxonomies, policy_tags_output_path)

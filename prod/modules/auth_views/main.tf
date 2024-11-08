@@ -2,7 +2,7 @@
 # Creating the dataset for auth views
 resource "google_bigquery_dataset" "auth_view_dataset" {
   for_each = { for schema in local.unique_schemas : schema => schema }
-  dataset_id                  = "authorized_view_test_${each.key}"
+  dataset_id                  = "authorized_view_${each.key}"
   description                 = "Dataset for ${each.key} authorized views"
   friendly_name               = "Authorized ${each.key} dataset"
   location                    = var.region
@@ -20,7 +20,7 @@ resource "google_bigquery_table" "dynamic_auth_views" {
 
   dataset_id         = google_bigquery_dataset.auth_view_dataset[each.value.schema].dataset_id
   table_id           = "view_${each.value.table}"
-  deletion_protection = true
+  deletion_protection = false
 
   view {
     # Replace schema and table placeholders for each entry

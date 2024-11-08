@@ -6,7 +6,7 @@ WITH
     SELECT
       *
     FROM
-      `test_duygu.policy_tags`
+      `policy_tags_metadata.policy_tags`
     WHERE display_name!="name"
   )
 SELECT

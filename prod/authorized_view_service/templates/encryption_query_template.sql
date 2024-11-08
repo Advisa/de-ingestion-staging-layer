@@ -5,7 +5,7 @@ policy_tags AS (
   SELECT
     *
   FROM
-    `{{raw_layer_project}}.test_duygu.policy_tags`
+    `{{raw_layer_project}}.policy_tags_metadata.policy_tags`
 ),
 sensitive_fields AS (
   SELECT

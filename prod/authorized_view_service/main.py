@@ -1,11 +1,14 @@
 import logging
 import os
 from helpers import AuthorizedViewService
+from pathlib import Path
 
 def run_authorized_view_service():
     logging.basicConfig(level=logging.INFO)
     env = os.getenv('ENV', 'dev')
-    config_path = "./prod/authorized_view_service/config.yaml"
+    project_root = Path(__file__).resolve().parent.parent  
+    config_path = project_root / "authorized_view_service" / "config.yaml"
+    print(config_path)
     try:
         # Create an instance of AuthorizedViewService and run the main workflow
         authorized_view_service = AuthorizedViewService(config_path, env)

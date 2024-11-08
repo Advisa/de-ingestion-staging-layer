@@ -16,11 +16,6 @@
     },
     {
       "mode": "NULLABLE",
-      "name": "description",
-      "type": "STRING"
-    },
-    {
-      "mode": "NULLABLE",
       "name": "parent_policy_tag_id",
       "type": "STRING"
     }

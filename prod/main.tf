@@ -28,6 +28,8 @@ module "rahalaitos_bq_config" {
 }
 module "taxonomy_config" {
   source = "./modules/taxonomy"
+  region = var.region
+  project_id = var.project_id
 }
 
 module "authorized_views_config" {
