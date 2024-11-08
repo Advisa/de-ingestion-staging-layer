@@ -1,0 +1,4 @@
+google-cloud-bigquery
+Jinja2
+google-auth
+PyYAML
