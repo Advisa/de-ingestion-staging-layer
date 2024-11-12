@@ -10,7 +10,8 @@ class AuthorizedViewService:
         self.config = self.load_config(config_path)
         self.env = env
         self.authorized_view_config = self.config.get(self.env, self.config.get('default', {})).get('authorized_view_service', {})
-        
+        self.generate_encrypted = self.config.get(self.env, self.config.get('default', {})).get('authorized_view_service', {}).get('generate_encrypted', 'true').lower() == 'true'
+
         if not self.authorized_view_config:
             logging.error(f"Configuration for environment '{env}' or 'default' not found.")
             raise ValueError(f"Configuration for environment '{env}' not found.")
@@ -128,26 +129,61 @@ class AuthorizedViewService:
         with open(mapping_file_path, 'w') as f:
             for eq in encryption_queries:
                 f.write(eq + "\n")
+    
+    def generate_non_encrypted_queries(self):
+        """Generate non-encrypted queries for each table."""
+        non_encrypted_queries = []
+        datasets = self.clients['raw_layer_project'].list_datasets()
+
+        if datasets:
+            for dataset in datasets:
+                schema = dataset.dataset_id
+
+                if 'legacy' in schema and 'authorized' not in schema:
+                    logging.info(f"Processing dataset: {schema}")
+                    table_query = f"""
+                        SELECT table_name
+                        FROM `{self.raw_layer_project}.{schema}.INFORMATION_SCHEMA.TABLES`
+                    """
+                    table_result = self.execute_query(self.clients['raw_layer_project'], table_query)
+                    
+                    for table_row in table_result:
+                        table = table_row.table_name
+                        non_encrypted_query = f"SELECT * FROM `{self.raw_layer_project}.{schema}.{table}`"
+                        non_encrypted_queries.append(f"{schema}|{table}|{non_encrypted_query}")
+            
+        else:
+            logging.error(f"No datasets found in project {self.raw_layer_project}")
+        
+        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_non_encrypted.txt')
+        with open(mapping_file_path, 'w') as f:
+            for eq in non_encrypted_queries:
+                f.write(eq + "\n")
 
     def main(self):
         """Main function to execute the workflow."""
 
         try:
-            # Generate the UNION ALL query
-            query_table_names_result = self.generate_union_all_query()
-            union_all_queries = [row.column_query for row in query_table_names_result]
-            union_all_query = '\nUNION ALL \n'.join(union_all_queries)
+            if self.generate_encrypted:
+                # Generate the UNION ALL query
+                query_table_names_result = self.generate_union_all_query()
+                union_all_queries = [row.column_query for row in query_table_names_result]
+                union_all_query = '\nUNION ALL \n'.join(union_all_queries)
 
-            # Save the complete union all statement to a file
-            self.save_template(union_all_query,self.output_template_file)
+                # Save the complete union all statement to a file
+                self.save_template(union_all_query,self.output_template_file)
 
-            # Render and execute the encryption query template
-            encrypted_query_template = self.encryption_query_template.render(
-                query_table_columns=union_all_query,
-                compliance_project=self.compliance_project,
-                raw_layer_project=self.raw_layer_project
-            )
-            self.generate_encryption_queries(encrypted_query_template)
+                # Render and execute the encryption query template
+                encrypted_query_template = self.encryption_query_template.render(
+                    query_table_columns=union_all_query,
+                    compliance_project=self.compliance_project,
+                    raw_layer_project=self.raw_layer_project
+                )
+                self.generate_encryption_queries(encrypted_query_template)
+            else:
+                # Generate non-encrypted queries (for non-encrypted views)
+                logging.info("Generating non-encrypted queries...")
+                self.generate_non_encrypted_queries()
 
             logging.info("Workflow completed successfully.")
         except Exception as e:

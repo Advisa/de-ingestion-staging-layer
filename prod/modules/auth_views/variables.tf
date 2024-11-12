@@ -17,3 +17,9 @@ variable "connection_id" {
   type        = string
   default = "biglake-conn"
 }
+
+variable "view_type" {
+  description = "Specify the type of view to create: 'encrypted' or 'non_encrypted'"
+  type        = string
+  default     = "encrypted"
+}

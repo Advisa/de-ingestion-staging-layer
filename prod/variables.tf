@@ -23,3 +23,9 @@ variable "kms_crypto_key_id" {
   description = "The name of the fefault customer-managed key"
   type        = string
 }
+
+variable "view_type" {
+  description = "Specify the type of view to create: 'encrypted' or 'non_encrypted'"
+  type        = string
+  default     = "non_encrypted"
+}
