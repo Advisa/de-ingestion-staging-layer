@@ -23,3 +23,23 @@ variable "kms_crypto_key_id" {
   description = "The name of the fefault customer-managed key"
   type        = string
 }
+
+variable "compliance_project_id" {
+  description = "The name of the sambla-group-compliance-db project"
+  type        = string
+}
+
+variable "GCP_project_roles" {
+  type        = list(string)
+  description = "Roles for the service account in GCP Project"
+}
+
+variable "data_domain_project_roles" {
+  type        = list(string)
+  description = "Roles for the service account in data_domain_project Project"
+}
+
+variable "compliance_project_roles" {
+  type        = list(string)
+  description = "Roles for the service account in Compliance Project"
+}
