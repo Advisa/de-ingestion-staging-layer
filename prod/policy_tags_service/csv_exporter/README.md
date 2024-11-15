@@ -35,7 +35,9 @@ Ensure that you have the required dependencies installed:
 
 1. Update the `terraform_sa_key` in the configuration file with your service account key file path.
 
-2. Install the required Python dependencies by running:
+2. Update the `terraform_sa_name` in the configuration file with your service account email address.
+
+3. Install the required Python dependencies by running:
 
 ```bash
 pip install -r requirements.txt
