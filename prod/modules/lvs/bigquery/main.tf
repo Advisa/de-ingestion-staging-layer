@@ -92,4 +92,29 @@ resource "google_bigquery_table" "providers" {
   depends_on = [ google_bigquery_dataset.lvs_dataset ]
 }
 
+# Creating the external table for clients data of lvs
+resource "google_bigquery_table" "clients" {
+  dataset_id                = google_bigquery_dataset.lvs_dataset.dataset_id
+  table_id                  = "clients_lvs_r"
+  deletion_protection       = false
+   external_data_configuration {
+    autodetect    = false
+    source_format = "NEWLINE_DELIMITED_JSON"
+    connection_id = var.connection_id
+    source_uris = [
+      "gs://sambla-group-lvs-integration-legacy/clients/*"
+        ]
+    }
+  
+  schema = file("schemas/lvs/clients_lvs_r_schema.json")
+  depends_on = [ google_bigquery_dataset.lvs_dataset ]
+
+  lifecycle {
+    ignore_changes = [
+      external_data_configuration[2]
+    ]
+  }
+  
+}
+
 

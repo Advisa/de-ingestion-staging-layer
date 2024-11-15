@@ -27,8 +27,10 @@ class PolicyAssignmentService:
         # Initialize the current path where this service is located
         project_root = Path(__file__).resolve().parent.parent
         self.current_path = os.path.dirname(os.path.abspath(__file__))  
-        self.base_path = project_root
-        print("base_path:",self.base_path)
+        self.base_path = project_root 
+
+        self.schema_folder_path = project_root.parent / 'schemas'
+        print("base_path:",self.schema_folder_path)
 
         # Load SQL templates
         self.sensitive_fields_query_template = self.load_template(self.current_path,"get_matching_sensitive_fields.sql")
@@ -87,7 +89,7 @@ class PolicyAssignmentService:
     def execute_query(self, client, query):
         """Execute a query using a BigQuery client."""
         try:
-            logging.info(f"Executing query: {query}")
+            logging.info(f"Executing the query")
             query_job = client.query(query)
             result = query_job.result()
             logging.info("Query executed successfully.")
@@ -118,10 +120,12 @@ class PolicyAssignmentService:
 
     def construct_iam_policies(self, policy_mapping):
         """Construct IAM policies based on the policy mapping and update schema files."""
-        schema_file_path = self.base_path / "schemas"
+        schema_file_path = self.schema_folder_path
         schema_files = glob.glob(os.path.join(schema_file_path, "**/*_schema.json"), recursive=True)
+        logging.info(f"Constructing iam policies for schemas in path: {schema_file_path}")
 
         for schema_file_path in schema_files:
+            logging.info(f"Processing the current schema file: {schema_file_path}")
             table_name = os.path.basename(schema_file_path).replace("_schema.json", "")
             #print(f"Processing schema for table: {table_name} from {schema_file_path}")
 
@@ -129,7 +133,7 @@ class PolicyAssignmentService:
 
             try:
                 if os.path.getsize(schema_file_path) == 0:
-                    print(f"Schema file is empty: {schema_file_path}. Skipping.")
+                    logging.info(f"Schema file is empty: {schema_file_path}. Skipping.")
                     continue  
 
                 with open(schema_file_path, 'r') as file:
@@ -146,9 +150,9 @@ class PolicyAssignmentService:
                     try:
                         with open(schema_file_path, 'w') as file:  
                             json.dump(schema, file, indent=4)
-                        print(f"Schema for table {table_name} updated with policy tags")
+                        logging.info(f"Schema for table {table_name} updated with policy tags")
                     except Exception as e:
-                        print(f"Failed to write to schema file {schema_file_path}: {e}")
+                        logging.info(f"Failed to write to schema file {schema_file_path}: {e}")
 
             except FileNotFoundError:
                 print(f"Schema file not found for table {table_name} at {schema_file_path}")
@@ -169,9 +173,7 @@ class PolicyAssignmentService:
                 raw_layer_project=self.raw_layer_project
             )
 
-
             policy_mapping = self.get_matching_sensitive_fields(sensitive_fields_query_template)
-
 
             self.construct_iam_policies(policy_mapping)
 

@@ -13,7 +13,7 @@ resource "google_project_iam_member" "project_permissions_bq_user" {
 resource "google_bigquery_table_iam_member" "auth_view_iam_paccess" {
   for_each = local.schema_table_queries
   project    = var.project_id
-  dataset_id = "authorized_view_${each.value.schema}" 
+  dataset_id = google_bigquery_dataset.auth_view_dataset.dataset_id 
   table_id   = "view_${each.value.table}"  
   role = "roles/bigquery.dataViewer"
   member =  "serviceAccount:${local.service_account}"                  
@@ -22,14 +22,12 @@ resource "google_bigquery_table_iam_member" "auth_view_iam_paccess" {
 
 # Dataset Access for GDPR Vault
 resource "google_bigquery_dataset_access" "auth_dataset_access_to_gdpr_vault" {
-  for_each = { for schema in local.unique_schemas : schema => schema }
-
   dataset_id = "compilance_database"                          
   project    = "sambla-group-compliance-db"                    
   dataset {
     dataset{
       project_id = var.project_id
-      dataset_id = "authorized_view_${each.key}"  
+      dataset_id = google_bigquery_dataset.auth_view_dataset.dataset_id 
     }
     target_types = ["VIEWS"]
   }
@@ -46,10 +44,10 @@ resource "google_bigquery_dataset_access" "auth_view_access_legacy_dataset" {
   dataset {
     dataset{
       project_id = var.project_id
-      dataset_id = "authorized_view_${each.key}"  
+      dataset_id = google_bigquery_dataset.auth_view_dataset.dataset_id  
     }
     target_types = ["VIEWS"]
   }
 
-  depends_on = [google_bigquery_table.dynamic_auth_views] 
+  depends_on = [google_bigquery_table.dynamic_auth_views,google_bigquery_dataset.auth_view_dataset] 
 }

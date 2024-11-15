@@ -6,12 +6,12 @@ WITH
     SELECT
       *
     FROM
-      `{{raw_layer_project}}.test_duygu.policy_tags`
+      `{{raw_layer_project}}.policy_tags_metadata.policy_tags`
     WHERE display_name!="name"
   )
 SELECT
   t1.*,
-  t2.* EXCEPT(description),
+  t2.* ,
   CONCAT(
     "projects/sambla-data-staging-compliance",
     "/locations/europe-north1/",
