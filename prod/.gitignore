@@ -12,4 +12,3 @@ imports.tf.txt
 
 **/__pycache__/*
 
-**/policy_tags_service/main.py

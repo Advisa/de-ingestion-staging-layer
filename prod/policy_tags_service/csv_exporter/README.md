@@ -30,11 +30,21 @@ This repository contains the implementation of the **CSV Exporter Service**, whi
 ---
 
 ## Dependencies
-Update the terraform_sa_key in the config.yaml file with terraform-admin service account key file path
 
-Install the dependencies using `pip`:
+Ensure that you have the required dependencies installed:
+
+1. Update the `terraform_sa_key` in the configuration file with your service account key file path.
+
+2. Install the required Python dependencies by running:
 
 ```bash
 pip install -r requirements.txt
+```
+
+To run the Python program to export policy metadata to bigquery, execute:
+
+```bash
+cd prod 
+python policy_tags_service/csv_exporter/main.py
 
 

@@ -28,6 +28,7 @@ class PolicyAssignmentService:
         project_root = Path(__file__).resolve().parent.parent
         self.current_path = os.path.dirname(os.path.abspath(__file__))  
         self.base_path = project_root 
+        print(self.base_path)
 
         self.schema_folder_path = project_root.parent / 'schemas'
         print("base_path:",self.schema_folder_path)

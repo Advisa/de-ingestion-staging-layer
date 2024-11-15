@@ -28,9 +28,16 @@ This repository contains the implementation of the **Policy Assignment Service**
 
 Ensure that you have the required dependencies installed:
 
-1. Update the `service_account_key` in the configuration file with your service account key file path.
+1. Update the `terraform_sa_key` in the configuration file with your service account key file path.
 
 2. Install the required Python dependencies by running:
 
 ```bash
 pip install -r requirements.txt
+```
+
+To run the Python program to assign policies to tables, execute:
+
+```bash
+cd prod 
+python policy_tags_service/policy_assignment/main.py
