@@ -10,6 +10,6 @@ imports.tf.txt
 **/service_accounts_keyfiles/*
 **/test_read_masked_data.py
 
-**/__pycache__/helpers.cpython-311.pyc
+**/__pycache__/*
 
 **/policy_tags_service/main.py
