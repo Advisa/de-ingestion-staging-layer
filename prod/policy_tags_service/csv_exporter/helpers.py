@@ -58,12 +58,14 @@ class CsvExporterService:
     def authenticate_gcloud(self):
         """Authenticate gcloud with the service account."""
         key_path = self.csv_exporter_config.get('terraform_sa_key')
+        sa_name = self.csv_exporter_config.get('terraform_sa_name')
 
       
         command = [
-                'gcloud', 'auth', 'activate-service-account',
-                '--key-file', key_path
+                'gcloud', 'auth', 'activate-service-account', sa_name,
+                '--key-file', key_path, '--project',self.raw_layer_project
             ]
+        print("running the cmd:",command)
         self.run_gcloud_command(command)
 
     def list_taxonomies(self):

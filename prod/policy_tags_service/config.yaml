@@ -2,9 +2,11 @@ default:
   policy_tags_service:
     raw_layer_project: "sambla-data-staging-compliance"
     project_location: "europe-north1"
-    terraform_sa_key: "path/to/terraform-admin-sa-keyfile"
+    terraform_sa_key: "/path/to/terraform/sa_keyfile.json"
+    terraform_sa_name: "terraform_sa_email"
 prod:
   policy_tags_service:
     raw_layer_project: "sambla-data-staging-compliance"
     project_location: "europe-north1"
-    terraform_sa_key: "path/to/terraform-admin-sa-keyfile"
+    terraform_sa_key: "/path/to/terraform/sa_keyfile.json"
+    terraform_sa_name: "terraform_sa_email"
