@@ -4,6 +4,7 @@ default:
     exposure_project: "data-domain-exposure-project"
     compliance_project: "sambla-group-compliance-db"
     base_folder: "authorized_view_service"
+    generate_encrypted: "false"
 
 prod:
   authorized_view_service:
@@ -11,3 +12,4 @@ prod:
     exposure_project: "data-domain-exposure-project"
     compliance_project: "sambla-group-compliance-db"
     base_folder: "authorized_view_service"
+    generate_encrypted: "false"
