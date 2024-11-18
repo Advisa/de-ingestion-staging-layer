@@ -93,6 +93,9 @@ resource "google_service_account" "cross_project_sa" {
   account_id   = "cross-project-sa"
   display_name = "cross-project-sa"
   description  = "Service account configured for use across multiple projects with varying roles to support GDPR workflows"
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # Assign roles in GCP Project
