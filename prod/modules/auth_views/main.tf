@@ -13,19 +13,30 @@ resource "google_bigquery_dataset" "auth_view_dataset" {
   }
   
 }
-# Create encrypted auth views
+# Create encrypted auth views (only if view_type is "encrypted")
 resource "google_bigquery_table" "dynamic_auth_views" {
-  for_each = local.schema_table_queries
+  for_each = local.schema_table_queries 
+
+  dataset_id         = google_bigquery_dataset.auth_view_dataset.dataset_id
+  table_id           = "view_${each.value.table}"
+
+  view {
+    query           = each.value.query
+    use_legacy_sql  = false
+  }
+}
+
+
+# Create non-encrypted auth views (only if view_type is "non_encrypted")
+resource "google_bigquery_table" "dynamic_auth_views_non_encrypted" {
+  for_each = local.unencrypted_schema_table_queries
 
   dataset_id         = google_bigquery_dataset.auth_view_dataset.dataset_id
   table_id           = "view_${each.value.table}"
   deletion_protection = true
 
   view {
-    # Replace schema and table placeholders for each entry
-      query = each.value.query
-      # Use standart query instead
-      use_legacy_sql  = false
+    query           = each.value.query
+    use_legacy_sql  = false
   }
-  
 }

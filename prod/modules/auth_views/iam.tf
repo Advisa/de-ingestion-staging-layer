@@ -9,12 +9,10 @@ resource "google_project_iam_member" "project_permissions_bq_user" {
   member =  "serviceAccount:${local.service_account}" 
 }
 
-# IAM Policy for service account to read Authorized Views
-resource "google_bigquery_table_iam_member" "auth_view_iam_paccess" {
-  for_each = local.schema_table_queries
+# IAM Policy for service account to read Authorized Views from the authorized_views dataset
+resource "google_bigquery_dataset_iam_member" "auth_view_iam_access" {
   project    = var.project_id
   dataset_id = google_bigquery_dataset.auth_view_dataset.dataset_id 
-  table_id   = "view_${each.value.table}"  
   role = "roles/bigquery.dataViewer"
   member =  "serviceAccount:${local.service_account}"                  
   depends_on = [google_bigquery_table.dynamic_auth_views] 

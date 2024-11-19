@@ -28,4 +28,4 @@ ON
   t1.column_name = t2.display_name
 -- we filter the only the gdpr_test taxonomy where all the complaint policy tags are created
 WHERE
-  taxonomy_id = "6126692965998272750";
+  taxonomy_id = "6126692965998272750" and  t1.table_name!="rahalaitos_laina_businessinfo_raha_r"

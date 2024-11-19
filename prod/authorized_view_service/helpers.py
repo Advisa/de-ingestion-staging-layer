@@ -20,6 +20,7 @@ class AuthorizedViewService:
         self.exposure_project = self.authorized_view_config.get('exposure_project')
         self.compliance_project = self.authorized_view_config.get('compliance_project')
         self.base_folder = self.authorized_view_config.get('base_folder')
+        self.generate_encrypted  = self.authorized_view_config.get('generate_encrypted')
 
         # Initialize the current path where this service is located
         project_root = Path(__file__).resolve().parent.parent  
@@ -34,6 +35,8 @@ class AuthorizedViewService:
 
         # Initialize output of sql template files
         self.output_template_file = "generated_source_query.sql"
+
+        self.processed_tables = set() 
         
     def load_config(self, config_path):
         """Load YAML configuration from the provided path."""
@@ -122,12 +125,45 @@ class AuthorizedViewService:
             table = row.table_name
             encryption_query = row.encrypted_columns
             encryption_queries.append(f"{schema}|{table}|{encryption_query}")
+            self.processed_tables.add(f"{schema}|{table}") 
 
         # Save the encryption queries to a file
         mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping.txt')
         with open(mapping_file_path, 'w') as f:
             for eq in encryption_queries:
                 f.write(eq + "\n")
+
+    def generate_non_encrypted_queries(self):
+        """Generate non-encrypted queries for each table."""
+        non_encrypted_queries = []
+        datasets = self.clients['raw_layer_project'].list_datasets()
+
+        if datasets:
+            for dataset in datasets:
+                schema = dataset.dataset_id
+
+                if 'legacy' in schema and 'authorized' not in schema:
+                    logging.info(f"Processing dataset: {schema}")
+                    table_query = f"""
+                        SELECT table_name
+                        FROM `{self.raw_layer_project}.{schema}.INFORMATION_SCHEMA.TABLES`
+                    """
+                    table_result = self.execute_query(self.clients['raw_layer_project'], table_query)
+                    
+                    for table_row in table_result:
+                        table = table_row.table_name
+                        if f"{schema}|{table}" not in self.processed_tables:
+                            non_encrypted_query = f"SELECT * FROM `{self.raw_layer_project}.{schema}.{table}`"
+                            non_encrypted_queries.append(f"{schema}|{table}|{non_encrypted_query}")
+            
+        else:
+            logging.error(f"No datasets found in project {self.raw_layer_project}")
+        
+        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_non_encrypted.txt')
+        with open(mapping_file_path, 'w') as f:
+            for eq in non_encrypted_queries:
+                f.write(eq + "\n")
+
 
     def main(self):
         """Main function to execute the workflow."""
@@ -137,10 +173,8 @@ class AuthorizedViewService:
             query_table_names_result = self.generate_union_all_query()
             union_all_queries = [row.column_query for row in query_table_names_result]
             union_all_query = '\nUNION ALL \n'.join(union_all_queries)
-
             # Save the complete union all statement to a file
             self.save_template(union_all_query,self.output_template_file)
-
             # Render and execute the encryption query template
             encrypted_query_template = self.encryption_query_template.render(
                 query_table_columns=union_all_query,
@@ -148,6 +182,9 @@ class AuthorizedViewService:
                 raw_layer_project=self.raw_layer_project
             )
             self.generate_encryption_queries(encrypted_query_template)
+            # Generate non-encrypted queries (for non-encrypted views)
+            logging.info("Generating non-encrypted queries...")
+            self.generate_non_encrypted_queries()
 
             logging.info("Workflow completed successfully.")
         except Exception as e:

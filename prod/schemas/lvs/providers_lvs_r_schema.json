@@ -49,7 +49,12 @@
     {
         "mode": "NULLABLE",
         "name": "customer_email",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
