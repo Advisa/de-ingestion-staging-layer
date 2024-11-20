@@ -1,6 +1,6 @@
 lvs_integration_legacy|applications_lvs_r|SELECT * FROM `sambla-data-staging-compliance.lvs_integration_legacy.applications_lvs_r`
 lvs_integration_legacy|applications_lvs|SELECT * FROM `sambla-data-staging-compliance.lvs_integration_legacy.applications_lvs`
-lvs_integration_legacy|providers_lvs_r|SELECT * FROM `sambla-data-staging-compliance.lvs_integration_legacy.providers_lvs_r`
+lvs_integration_legacy|providers_lvs_r|SELECT *, _FILE_NAME as f FROM `sambla-data-staging-compliance.lvs_integration_legacy.providers_lvs_r`
 lvs_integration_legacy|offers_lvs_r|SELECT * FROM `sambla-data-staging-compliance.lvs_integration_legacy.offers_lvs_r`
 rahalaitos_integration_legacy|marketing_marketing_ban_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.marketing_marketing_ban_raha_r`
 rahalaitos_integration_legacy|insurance_agreement_type_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_agreement_type_raha_r`

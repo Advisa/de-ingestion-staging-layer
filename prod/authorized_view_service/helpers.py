@@ -153,7 +153,10 @@ class AuthorizedViewService:
                     for table_row in table_result:
                         table = table_row.table_name
                         if f"{schema}|{table}" not in self.processed_tables:
-                            non_encrypted_query = f"SELECT * FROM `{self.raw_layer_project}.{schema}.{table}`"
+                            if table == "providers_lvs_r":
+                                 non_encrypted_query = f"SELECT *, _FILE_NAME as f FROM `{self.raw_layer_project}.{schema}.{table}`"
+                            else:
+                                non_encrypted_query = f"SELECT * FROM `{self.raw_layer_project}.{schema}.{table}`"
                             non_encrypted_queries.append(f"{schema}|{table}|{non_encrypted_query}")
             
         else:

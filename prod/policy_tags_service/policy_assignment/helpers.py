@@ -125,9 +125,9 @@ class PolicyAssignmentService:
         logging.info(f"Constructing iam policies for schemas in path: {schema_file_path}")
 
         for schema_file_path in schema_files:
-            logging.info(f"Processing the current schema file: {schema_file_path}")
+           #logging.info(f"Processing the current schema file: {schema_file_path}")
             table_name = os.path.basename(schema_file_path).replace("_schema.json", "")
-            #print(f"Processing schema for table: {table_name} from {schema_file_path}")
+            print(f"Processing schema for table: {table_name} from {schema_file_path}")
 
             column_policies = policy_mapping.get(table_name, {})
 
@@ -141,12 +141,13 @@ class PolicyAssignmentService:
                 
                 updated = False
                 for field in schema:
-                    if field["name"] in column_policies:
-                        #print("table:",table_name," and policies:",column_policies[field["name"]])
+                    # This is a temporary or statement, and applies till we set the table-policy mapping
+                    if (field["name"] in column_policies and field["name"]!="data" ) or (table_name=="insurance_log_raha_r" and field["name"]=="data"):
                         field["policyTags"] = {"names": [column_policies[field["name"]]]}
                         updated = True
             
                 if updated:
+                    print(table_name)
                     try:
                         with open(schema_file_path, 'w') as file:  
                             json.dump(schema, file, indent=4)
