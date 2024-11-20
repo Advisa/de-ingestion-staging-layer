@@ -1,11 +1,13 @@
 WITH table_columns AS (
   {{query_table_columns}} -- Replace with your actual query for table columns
 ),
+-- this where condition should be removed after table-policy mapping is settled
 policy_tags AS (
   SELECT
     *
   FROM
     `{{raw_layer_project}}.policy_tags_metadata.policy_tags`
+  WHERE display_name!="data"
 ),
 sensitive_fields AS (
   SELECT

@@ -12,7 +12,12 @@
     {
         "mode": "NULLABLE",
         "name": "sotu",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -27,17 +32,32 @@
     {
         "mode": "NULLABLE",
         "name": "etunimi",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "sukunimi",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "puhelin",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -52,17 +72,32 @@
     {
         "mode": "NULLABLE",
         "name": "osoite",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "kaupunki",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "postinro",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -82,12 +117,22 @@
     {
         "mode": "NULLABLE",
         "name": "pankki",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "tili",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -177,7 +222,12 @@
     {
         "mode": "NULLABLE",
         "name": "yhtio",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",

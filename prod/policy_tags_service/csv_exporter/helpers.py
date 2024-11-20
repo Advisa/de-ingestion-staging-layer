@@ -27,7 +27,8 @@ class CsvExporterService:
         # Initialize the current path where this service is located
         project_root = Path(__file__).resolve().parent.parent  
         self.base_path = project_root
-        print("base_path:",self.base_path)
+
+
         
     def load_config(self, config_path):
         """Load YAML configuration from the provided path."""
@@ -58,12 +59,13 @@ class CsvExporterService:
     def authenticate_gcloud(self):
         """Authenticate gcloud with the service account."""
         key_path = self.csv_exporter_config.get('terraform_sa_key')
-
       
         command = [
                 'gcloud', 'auth', 'activate-service-account',
+                'de-compliance-terraform-admin@sambla-data-staging-compliance.iam.gserviceaccount.com',
                 '--key-file', key_path
             ]
+        print(command)
         self.run_gcloud_command(command)
 
     def list_taxonomies(self):
@@ -71,8 +73,9 @@ class CsvExporterService:
         command = [
             'gcloud', 'beta', 'data-catalog', 'taxonomies', 'list',
             '--location', self.location,
-            '--format', 'yaml'
+            '--format', 'yaml','--project', self.raw_layer_project
         ]
+        print(command)
         output = self.run_gcloud_command(command)
         taxonomies = []
 
@@ -99,7 +102,7 @@ class CsvExporterService:
             'gcloud', 'beta', 'data-catalog', 'taxonomies', 'policy-tags', 'list',
             '--taxonomy', taxonomy_id,
             '--location', self.location,
-            '--format', 'yaml'
+            '--format', 'yaml','--project', self.raw_layer_project
         ]
         output = self.run_gcloud_command(command)
         tags_info = []
@@ -154,7 +157,9 @@ class CsvExporterService:
             self.authenticate_gcloud()
 
             # Get taxonomies
+           
             taxonomies = self.list_taxonomies()
+
 
             # Prepare taxonomies content data for taxonomy csv file
             taxonomies_data = [
