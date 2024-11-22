@@ -39,4 +39,5 @@ resource "google_bigquery_table" "dynamic_auth_views_non_encrypted" {
     query           = each.value.query
     use_legacy_sql  = false
   }
+
 }

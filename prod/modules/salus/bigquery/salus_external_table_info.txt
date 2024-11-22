@@ -1,0 +1,14 @@
+invitations_salus_r,gs://sambla-group-salus-integration-legacy/invitations/*
+accounts_salus_r,gs://sambla-group-salus-integration-legacy/accounts/*
+whitelabels_salus_r,gs://sambla-group-salus-integration-legacy/whitelabels/*
+credit_reports_salus_r,gs://sambla-group-salus-integration-legacy/creditreports/*
+commision-rules_salus_r,gs://sambla-group-salus-integration-legacy/payouts/*
+clicks_salus_r,gs://sambla-group-salus-integration-legacy/clicks/*
+applicants_salus_r,gs://sambla-group-salus-integration-legacy/applicants/*
+tracking_salus_r,gs://sambla-group-salus-integration-legacy/tracking/*
+applicant-loans_salus_r,gs://sambla-group-salus-integration-legacy/applicant-loans/*
+applicant-jobs_salus_r,gs://sambla-group-salus-integration-legacy/applicant-jobs/*
+bids_salus_r,gs://sambla-group-salus-integration-legacy/bids/*
+applicant-accommodations_salus_r,gs://sambla-group-salus-integration-legacy/applicant-accommodations/*
+clicks-applications_salus_r,gs://sambla-group-salus-integration-legacy/clicks-applications/*
+applications_salus_r,gs://sambla-group-salus-integration-legacy/applications/*

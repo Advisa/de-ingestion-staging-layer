@@ -1,0 +1,127 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_pubid",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "http_ref",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "http_ref_domain",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "domain",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "screen_width",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "screen_height",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cookies_enabled",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "flash_enabled",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "device",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "device_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "latitude",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "longitude",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "browser",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "browser_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "os_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "retention_click",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "unique_click",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "unique_click_reason",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "valid_click",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "parenturl",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "country_code",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at_year",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at_month",
+    "type": "INTEGER"
+  }
+]

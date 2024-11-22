@@ -142,7 +142,7 @@ class PolicyAssignmentService:
                 updated = False
                 for field in schema:
                     # This is a temporary or statement, and applies till we set the table-policy mapping
-                    if (field["name"] in column_policies and field["name"]!="data" ) or (table_name=="insurance_log_raha_r" and field["name"]=="data"):
+                    if (field["name"] in column_policies and field["name"]!="data" ) or (table_name=="insurance_log_raha_r" and field["name"]=="data") and table_name!="bids_salus_r":
                         field["policyTags"] = {"names": [column_policies[field["name"]]]}
                         updated = True
             

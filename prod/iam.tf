@@ -23,7 +23,11 @@ locals {
 resource "google_project_iam_binding" "project_permissions_bq_job_user" {
   project    = var.project_id
   role               = "roles/bigquery.jobUser" 
-  members =  ["serviceAccount:${local.service_account}","group:data_de@samblagroup.com"]                 
+  members =  ["serviceAccount:${local.service_account}","group:data_de@samblagroup.com"]  
+   lifecycle {
+    ignore_changes = [role,members]
+  } 
+                
 }
 
 # Provides permissions to masked read access to columns associated with a data policy.
@@ -75,6 +79,9 @@ resource "google_project_iam_member" "GCP_project_roles" {
   role     = each.value
   member   = "serviceAccount:${google_service_account.cross_project_sa.email}"
   depends_on = [google_service_account.cross_project_sa]
+  lifecycle {
+    ignore_changes = [role,member]
+  }
 }
 
 # Assign roles in data-domain-data-warehouse Project
@@ -84,6 +91,9 @@ resource "google_project_iam_member" "data_domain_project_roles" {
   role     = each.value
   member   = "serviceAccount:${google_service_account.cross_project_sa.email}"
   depends_on = [google_service_account.cross_project_sa]
+  lifecycle {
+    ignore_changes = [role,member]
+  }
 }
 
 # Assign roles in sambla-group-compliance-db project
@@ -93,6 +103,9 @@ resource "google_project_iam_member" "compliance_project_roles" {
   role     = each.value
   member   = "serviceAccount:${google_service_account.cross_project_sa.email}"
   depends_on = [google_service_account.cross_project_sa]
+   lifecycle {
+    ignore_changes = [ role,member ]
+  }
 }
 
 # For BigQuery Dataset Roles (assign BigQuery roles to datasets or tables, not project)

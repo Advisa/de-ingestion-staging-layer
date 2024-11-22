@@ -1,0 +1,122 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "fk_applicant",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "movein_year",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "movein_month",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "building_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_adults",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_children",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_children_age",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_car_types",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_car_cost",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_cars",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_monthly_heating",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_monthly_water",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_monthly_electricity",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_monthly_insurances",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_monthly_subscriptions",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_monthly_transport",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "household_monthly_child_support",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "monthly_rent",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "monthly_household_variable_expense",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "country_code",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "app_type",
+    "type": "STRING"
+  }
+]

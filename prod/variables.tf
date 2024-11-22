@@ -43,3 +43,9 @@ variable "compliance_project_roles" {
   type        = list(string)
   description = "Roles for the service account in Compliance Project"
 }
+
+variable "salus_bucket_name" {
+  description = "The name of the bucket where source salus data in data-domain-data-warehouse project resides"
+  type        = string
+  
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "country_code",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_account",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_subaccountid",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "active_from",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "active_to",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "currency",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "amount_from",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "amount_to",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "domain",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "commission_percent",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "revenue_share_percent",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "commission",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "commission_iq_a",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "commission_iq_b",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "commission_iq_c",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "commission_iq_d",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "commission_iq_e",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "commission_iq_f",
+    "type": "FLOAT"
+  }
+]
