@@ -21,6 +21,7 @@ variable "data_domain_project_id" {
   type        = string
 }
 
+
 variable "aws_access_key" {
   description = "access key of s3 bucket"
   type        = string
@@ -31,4 +32,3 @@ variable "aws_secret_key" {
   type        = string
   default = "value_of_secret_key"
 }
-

@@ -1,6 +1,10 @@
 WITH
   table_columns AS (
     {{source_table_columns}}
+    UNION ALL
+    SELECT * FROM `data-domain-data-warehouse.salus_group_integration`.INFORMATION_SCHEMA.COLUMNS
+    UNION ALL
+    SELECT * FROM `data-domain-data-warehouse.salus_group_integration`.INFORMATION_SCHEMA.COLUMNS
   ),
   policy_tags AS (
     SELECT

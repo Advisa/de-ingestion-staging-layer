@@ -1,0 +1,64 @@
+default:
+  external_table_service:
+    source_project : "data-domain-data-warehouse"
+    target_project : "sambla-data-staging-compliance"
+    location: "europe-north1"
+    external_data_info : [
+
+        {
+            "source_dataset_id": 'salus_group_integration',
+            "schema":'salus'
+
+        }
+    ]
+    gcs_data_info : [
+        {
+            "dataset_id":'rahalaitos_data',
+            "gcs_bucket_name": 'rahalaitos-data-dump',
+            "sink_gcs_bucket_name": '',
+            "schema": 'rahalaitos'
+        },
+        {
+            "dataset_id":'salus_group_integration',
+            "gcs_bucket_name": 'salus-integration',
+            "sink_gcs_bucket_name": 'sambla-group-salus-integration-legacy',
+            "schema":'salus'
+
+        }
+    ]
+prod:
+  policy_tags_service:
+    source_project : "data-domain-data-warehouse"
+    target_project : "sambla-data-staging-compliance"
+    location: "europe-north1"
+    external_data_info : [
+
+        {
+            "source_dataset_id": 'salus_group_integration',
+            "schema":'salus'
+
+        }
+    ]
+    gcs_data_info : [
+        {
+            "dataset_id":'rahalaitos_data',
+            "gcs_bucket_name": 'rahalaitos-data-dump',
+            "sink_gcs_bucket_name": '',
+            "schema": 'rahalaitos'
+        },
+        {
+            "dataset_id":'salus_group_integration',
+            "gcs_bucket_name": 'salus-integration',
+            "sink_gcs_bucket_name": 'sambla-group-salus-integration-legacy',
+            "schema":'salus'
+
+        }
+    ]
+
+
+
+
+
+
+
+

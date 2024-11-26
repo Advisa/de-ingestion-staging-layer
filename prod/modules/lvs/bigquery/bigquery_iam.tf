@@ -38,9 +38,7 @@ resource "google_service_account_iam_binding" "sa_permissions_reader_account_use
   role               = "roles/iam.serviceAccountUser"  # Grant permission to use the service account
 
   members = [
-    "user:adam.svenson@samblagroup.com",
-    "user:aruldharani.kumar@samblagroup.com",
-    "user:duygu.genc@samblagroup.com",
+    "group:data_de@samblagroup.com"
   ]
 }
 # Add individual users to IAM roles on developer service accounts
@@ -49,9 +47,7 @@ resource "google_service_account_iam_binding" "sa_permissions_editor_account_use
   role               = "roles/iam.serviceAccountUser"  # Grant permission to use the service account
 
   members = [
-    "user:adam.svenson@samblagroup.com",
-    "user:aruldharani.kumar@samblagroup.com",
-    "user:duygu.genc@samblagroup.com",
+    "group:data_de@samblagroup.com"
   ]
 }
 
@@ -61,8 +57,7 @@ resource "google_bigquery_dataset_iam_binding" "bq_permissions_reader" {
   role       = "roles/bigquery.dataViewer"
 
   members = [
-    "serviceAccount:${google_service_account.sa_reader.email}",
-    "user:aruldharani.kumar@samblagroup.com",
+    "serviceAccount:${google_service_account.sa_reader.email}"
   ]
   depends_on = [ google_bigquery_dataset.lvs_dataset ]
 }
@@ -72,8 +67,7 @@ resource "google_bigquery_dataset_iam_binding" "bq_permissions_editor" {
   role       = "roles/bigquery.dataEditor"
   project = var.project_id
   members = [
-    "serviceAccount:${google_service_account.sa_editor.email}",  # Grant access to the service account
-    "user:aruldharani.kumar@samblagroup.com",
+    "serviceAccount:${google_service_account.sa_editor.email}"
   ]
   depends_on = [ google_bigquery_dataset.lvs_dataset ]
    lifecycle {

@@ -1,7 +1,10 @@
+lvs_integration_legacy|clients_lvs_r|SELECT * FROM `sambla-data-staging-compliance.lvs_integration_legacy.clients_lvs_r`
+lvs_integration_legacy|applicants_lvs_r|SELECT * FROM `sambla-data-staging-compliance.lvs_integration_legacy.applicants_lvs_r`
 lvs_integration_legacy|applications_lvs_r|SELECT * FROM `sambla-data-staging-compliance.lvs_integration_legacy.applications_lvs_r`
 lvs_integration_legacy|applications_lvs|SELECT * FROM `sambla-data-staging-compliance.lvs_integration_legacy.applications_lvs`
 lvs_integration_legacy|providers_lvs_r|SELECT *, _FILE_NAME as f FROM `sambla-data-staging-compliance.lvs_integration_legacy.providers_lvs_r`
 lvs_integration_legacy|offers_lvs_r|SELECT * FROM `sambla-data-staging-compliance.lvs_integration_legacy.offers_lvs_r`
+lvs_integration_legacy|credit_remarks_lvs_r|SELECT * FROM `sambla-data-staging-compliance.lvs_integration_legacy.credit_remarks_lvs_r`
 rahalaitos_integration_legacy|marketing_marketing_ban_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.marketing_marketing_ban_raha_r`
 rahalaitos_integration_legacy|insurance_agreement_type_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_agreement_type_raha_r`
 rahalaitos_integration_legacy|rahalaitos_laina_decision_data_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_laina_decision_data_raha_r`
@@ -13,6 +16,7 @@ rahalaitos_integration_legacy|insurance_insurance_response_raha_r|SELECT * FROM 
 rahalaitos_integration_legacy|rahalaitos_campaign_whitelabel_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_campaign_whitelabel_raha_r`
 rahalaitos_integration_legacy|rahalaitos_campaign_bing_sent_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_campaign_bing_sent_raha_r`
 rahalaitos_integration_legacy|marketing_applicant_business_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.marketing_applicant_business_raha_r`
+rahalaitos_integration_legacy|marketing_applicant_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.marketing_applicant_raha_r`
 rahalaitos_integration_legacy|rahalaitos_laina_yv_candidate_loans_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_laina_yv_candidate_loans_raha_r`
 rahalaitos_integration_legacy|rahalaitos_company_external_id_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_company_external_id_raha_r`
 rahalaitos_integration_legacy|insurance_person_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_person_raha_r`
@@ -51,9 +55,11 @@ rahalaitos_integration_legacy|rahalaitos_campaign_facebook_raha_r|SELECT * FROM 
 rahalaitos_integration_legacy|rahalaitos_loan_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_loan_raha_r`
 rahalaitos_integration_legacy|rahalaitos_laina_workinfo_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_laina_workinfo_raha_r`
 rahalaitos_integration_legacy|insurance_history_details_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_history_details_raha_r`
+rahalaitos_integration_legacy|rahalaitos_customer_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_customer_raha_r`
 rahalaitos_integration_legacy|rahalaitos_incomplete_applications_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_incomplete_applications_r`
 rahalaitos_integration_legacy|rahalaitos_all_customers_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_all_customers_r`
 rahalaitos_integration_legacy|insurance_insurance_language_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_insurance_language_raha_r`
+rahalaitos_integration_legacy|rahalaitos_laina_yv_candidateinfo_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_laina_yv_candidateinfo_raha_r`
 rahalaitos_integration_legacy|insurance_insurance_status_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_insurance_status_raha_r`
 rahalaitos_integration_legacy|rahalaitos_laina_orders_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_laina_orders_raha_r`
 rahalaitos_integration_legacy|insurance_insurance_application_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_insurance_application_raha_r`
@@ -63,6 +69,7 @@ rahalaitos_integration_legacy|rahalaitos_company_type_raha_r|SELECT * FROM `samb
 rahalaitos_integration_legacy|insurance_history_type_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_history_type_raha_r`
 rahalaitos_integration_legacy|rahalaitos_marketing_email_temp_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_marketing_email_temp_raha_r`
 rahalaitos_integration_legacy|rahalaitos_laina_login_persons_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_laina_login_persons_raha_r`
+rahalaitos_integration_legacy|rahalaitos_laina_contactinfo_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.rahalaitos_laina_contactinfo_raha_r`
 rahalaitos_integration_legacy|insurance_insurance_personal_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_insurance_personal_raha_r`
 rahalaitos_integration_legacy|insurance_person_agent_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_person_agent_raha_r`
 rahalaitos_integration_legacy|insurance_history_user_raha_r|SELECT * FROM `sambla-data-staging-compliance.rahalaitos_integration_legacy.insurance_history_user_raha_r`
@@ -90,6 +97,7 @@ salus_integration_legacy|whitelabels_salus_r|SELECT * FROM `sambla-data-staging-
 salus_integration_legacy|credit_reports_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.credit_reports_salus_r`
 salus_integration_legacy|commision-rules_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.commision-rules_salus_r`
 salus_integration_legacy|clicks_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.clicks_salus_r`
+salus_integration_legacy|applicants_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.applicants_salus_r`
 salus_integration_legacy|tracking_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.tracking_salus_r`
 salus_integration_legacy|applicant-loans_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.applicant-loans_salus_r`
 salus_integration_legacy|applicant-jobs_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.applicant-jobs_salus_r`

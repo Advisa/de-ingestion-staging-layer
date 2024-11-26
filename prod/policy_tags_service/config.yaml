@@ -2,10 +2,10 @@ default:
   policy_tags_service:
     raw_layer_project: "sambla-data-staging-compliance"
     project_location: "europe-north1"
-    terraform_sa_key: "/Users/duygugenc/Desktop/terraform-adm-sa.json"
+    terraform_sa_secret_name: "terraform-adm-secret-sa"
 prod:
   policy_tags_service:
     raw_layer_project: "sambla-data-staging-compliance"
     project_location: "europe-north1"
-    terraform_sa_key: "/Users/duygugenc/Desktop/terraform-adm-sa.json"
-    #terraform_sa_key: "path/to/terraform-admin-sa-keyfile"
+    terraform_sa_secret_name: "terraform-adm-secret-sa"
+

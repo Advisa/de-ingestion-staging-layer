@@ -16,9 +16,7 @@ resource "google_service_account_iam_binding" "sa_permissions_reader_account_use
   role               = "roles/iam.serviceAccountUser"  # Grant permission to use the service account
 
   members = [
-    "user:adam.svenson@samblagroup.com",
-    "user:aruldharani.kumar@samblagroup.com",
-    "user:duygu.genc@samblagroup.com",
+    "group:data_de@samblagroup.com"
   ]
 }
 # Add individual users to IAM roles on developer service accounts
@@ -27,9 +25,8 @@ resource "google_service_account_iam_binding" "sa_permissions_editor_account_use
   role               = "roles/iam.serviceAccountUser"  # Grant permission to use the service account
 
   members = [
-    "user:adam.svenson@samblagroup.com",
-    "user:aruldharani.kumar@samblagroup.com",
-    "user:duygu.genc@samblagroup.com",
+    "group:data_de@samblagroup.com"
+
   ]
 }
 

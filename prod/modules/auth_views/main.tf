@@ -18,12 +18,13 @@ resource "google_bigquery_table" "dynamic_auth_views" {
   for_each = local.schema_table_queries 
 
   dataset_id         = google_bigquery_dataset.auth_view_dataset.dataset_id
-  table_id           = "view_${each.value.table}"
+  table_id           = "view_encrypted_${each.value.table}"
 
   view {
     query           = each.value.query
     use_legacy_sql  = false
   }
+ 
 }
 
 
@@ -39,5 +40,6 @@ resource "google_bigquery_table" "dynamic_auth_views_non_encrypted" {
     query           = each.value.query
     use_legacy_sql  = false
   }
+
 
 }

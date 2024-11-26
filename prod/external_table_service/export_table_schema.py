@@ -4,6 +4,7 @@ import re
 import os
 from pathlib import Path
 import json
+import yaml
 
 def get_legacy_stack_ext_table(project_id, dataset_id, location, gcs_bucket_name,sink_gcs_bucket_name):
     # Initialize the BigQuery client
@@ -134,29 +135,42 @@ def remove_partition_columns_from_schema(file_name,schema_folder_path):
 
 
     except Exception as e:
-        print(f"An error occurred while reading the file: {e}")        
+        print(f"An error occurred while reading the file: {e}")   
 
-def main():
-    # Define the parameters for the project and dataset
-    project_id = "data-domain-data-warehouse"
-    location = "europe-north1"
+
+def load_config(config_path):
+        """Load YAML configuration from the provided path."""
+        print("config path:",config_path)
+        try:
+            with open(config_path, 'r') as file:
+                config = yaml.safe_load(file)
+            print("YAML configuration loaded successfully.")
+            return config
+        except FileNotFoundError as e:
+            print(f"Config file not found: {str(e)}")
+          
+        except yaml.YAMLError as e:
+            print(f"Error parsing YAML file: {str(e)}")     
+
+def main(env):
+    # Load the config
+    config_path = Path.cwd() / "external_table_service/config.yaml"
+    config = load_config(config_path)
+    external_table_config = config.get(env, config.get('default', {})).get('external_table_service', {})
+        
+    if not external_table_config:
+        print(f"Configuration for environment '{env}' or 'default' not found.")
+        raise ValueError(f"Configuration for environment '{env}' not found.")
     
-    gcs_data_info = [
-        # {
-        #     "dataset_id":'rahalaitos_data',
-        #     "gcs_bucket_name": 'rahalaitos-data-dump',
-        #     "schema": 'rahalaitos'
-        # },
-        {
-            "dataset_id":'salus_group_integration',
-            "gcs_bucket_name": 'salus-integration',
-            "sink_gcs_bucket_name": 'sambla-group-salus-integration-legacy',
-            "schema":'salus'
+    # Extract values from the YAML config
+    source_project = external_table_config.get('source_project')
+    # Extract the external table mapping
+    gcs_data_info = external_table_config.get('gcs_data_info')
+    location = external_table_config.get('location')
 
-        }
-    ]
-
-    destination_schema_path =  Path(__file__).resolve().parent.parent    
+    # Define the base path for schemas
+    base_path = Path(__file__).resolve().parent.parent 
+    base_schema_path =  base_path / "schemas"
 
 
     # Process each GCS bucket name
@@ -166,21 +180,21 @@ def main():
         sink_gcs_bucket_name = row.get('sink_gcs_bucket_name')
         schema = row.get("schema")
         # print(f"Processing for: {dataset_id},{gcs_bucket_name}")
-        schema_output_path = os.path.join(destination_schema_path, "schemas",schema)
+        schema_output_path = os.path.join(base_schema_path,schema)
         
         #Retrieve external table names and their corresponding GCS locations
         table_info = get_legacy_stack_ext_table(
-           project_id, dataset_id, location, gcs_bucket_name,sink_gcs_bucket_name
+           source_project, dataset_id, location, gcs_bucket_name,sink_gcs_bucket_name
         )
 
         
         # Generate and execute BigQuery commands to create JSON schema files for external tables
-        generate_and_run_bq_commands(project_id, dataset_id, table_info,schema_output_path)
+        generate_and_run_bq_commands(source_project, dataset_id, table_info,schema_output_path)
         
         # Generate a text file mapping table names to their GCS bucket locations
         output_file_name = f"{schema}_external_table_info.txt"
-        output_template_path = os.path.join(destination_schema_path,"modules",schema, "bigquery",output_file_name)
-        #generate_file_txt(output_template_path, table_info)
+        output_template_path = os.path.join(base_path,"modules",schema, "bigquery",output_file_name)
+        generate_file_txt(output_template_path, table_info)
         print(f"Generated file: {output_template_path}")
 
         """ Only uncomment and run this func when first we create the hive partitioned tables. Because it doesnt assign partition columns if it exist on schema """

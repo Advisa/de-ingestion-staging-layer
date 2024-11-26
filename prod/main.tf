@@ -54,9 +54,3 @@ module "salus_gcs_config" {
   data_domain_project_id = var.data_domain_project_id
   salus_bucket_name = var.salus_bucket_name
 }
-
-
-# output "schema_content" {
-#   value = file("schemas/salus/accounts_salus_r_schema.json")
-#   sensitive = false  # Set to 'true' if you don't want to expose sensitive data.
-# }
