@@ -1,0 +1,262 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_account",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_pubid",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_applicant",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_coapplicant",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "amount_currency",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "submitted_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "partial_submit_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "first_accepted_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "first_paid_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "converted_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "last_form_activity_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "status",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cost_publisher_euro",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cost_vat_euro",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cost_creditcheck",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cost_prefill",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cost_mediabuying",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cost_sms",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cost_retention_mediabuying",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "app_cost_transaction_eur",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "total_cost_eur",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "total_revenue_eur",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "app_rev_transaction_eur",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "revenue_affiliate_euro",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "amount",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "repaymentperiod",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "loan_reason",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "creditscore",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "score_internal",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bisnode_creditscore",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "score_external",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "score_iq",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "parentdomain",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marketing_consent",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "watchdog_consent",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marketing_wl_consent",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "sgid",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "total_revenue_est",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "unsubscribed",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "datetimecompleted",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_country",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marketing_consent_last",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marketing_consent_last_given",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "external_app_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "country_code",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "app_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_agent",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_advisor",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "parenturl",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "client_ip",
+    "type": "STRING"
+  }
+]

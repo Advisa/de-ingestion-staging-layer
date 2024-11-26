@@ -4,6 +4,7 @@
 *.tfstate.*
 # Ignore .terraform directory (local caches and modules)
 .terraform/
+.terraform.lock.hcl
 
 imports.tf.txt
 
@@ -11,4 +12,5 @@ imports.tf.txt
 **/test_read_masked_data.py
 
 **/__pycache__/helpers.cpython-311.pyc
+**/create_tables.py
 

@@ -4,6 +4,9 @@ import yaml
 import csv
 import subprocess
 from pathlib import Path
+from google.cloud import secretmanager
+import json
+import tempfile
 
 class CsvExporterService:
     def __init__(self, config_path, env='dev'):
@@ -29,7 +32,16 @@ class CsvExporterService:
         self.base_path = project_root
 
 
-        
+
+    def get_secret(self,project_id):
+        secret_name = self.csv_exporter_config.get('terraform_sa_secret_name')
+        secret_client = secretmanager.SecretManagerServiceClient()
+        secret_version  = f'projects/{project_id}/secrets/{secret_name}/versions/latest'
+        response = secret_client.access_secret_version(request={'name': secret_version})
+        return response.payload.data.decode('UTF-8') 
+     
+
+
     def load_config(self, config_path):
         """Load YAML configuration from the provided path."""
         print("config path:",config_path)
@@ -56,16 +68,18 @@ class CsvExporterService:
             logging.error(f"Unexpected error occurred while executing gcloud command: {str(e)}")
             raise e
         
-    def authenticate_gcloud(self):
+    def authenticate_gcloud(self,secret):
         """Authenticate gcloud with the service account."""
-        key_path = self.csv_exporter_config.get('terraform_sa_key')
-      
+
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".json") as temp_file:
+            # Write the SA key content to the temporary file
+            temp_file.write(secret.encode("utf-8"))
+            temp_file.flush()
         command = [
                 'gcloud', 'auth', 'activate-service-account',
                 'de-compliance-terraform-admin@sambla-data-staging-compliance.iam.gserviceaccount.com',
-                '--key-file', key_path
+                '--key-file', temp_file.name
             ]
-        print(command)
         self.run_gcloud_command(command)
 
     def list_taxonomies(self):
@@ -75,17 +89,16 @@ class CsvExporterService:
             '--location', self.location,
             '--format', 'yaml','--project', self.raw_layer_project
         ]
-        print(command)
         output = self.run_gcloud_command(command)
         taxonomies = []
 
         # Parse the YAML output to extract taxonomy information
         for entry in output.split('---'):
-            print(entry)
             if entry.strip():  # Ensure entry is not empty
                 taxonomy_info = {}
                 for line in entry.splitlines():
                     line = line.strip()
+                    print("gcloud res:",line)
                     if line.startswith('displayName:'):
                         taxonomy_info['displayName'] = line.split('displayName: ')[1].strip()
                     elif line.startswith('description:'):
@@ -106,14 +119,12 @@ class CsvExporterService:
         ]
         output = self.run_gcloud_command(command)
         tags_info = []
-        print(command)
 
         # Parse the YAML output
         for entry in output.split('---'):
             if entry.strip():  # Ensure entry is not empty
                 tag_info = {}
                 for line in entry.splitlines():
-                    print(line)
                     line = line.strip()
                     if line.startswith('displayName:'):
                         tag_info['displayName'] = line.split('displayName: ')[1].strip()
@@ -153,12 +164,15 @@ class CsvExporterService:
     def main(self):
         """Main function to execute the workflow."""
         try:
+            # Retrieve the secret
+            secret = self.get_secret(self.raw_layer_project)
             # Authenticate using service account
-            self.authenticate_gcloud()
+            self.authenticate_gcloud(secret)
 
             # Get taxonomies
            
             taxonomies = self.list_taxonomies()
+            print(taxonomies)
 
 
             # Prepare taxonomies content data for taxonomy csv file

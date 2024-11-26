@@ -27,6 +27,8 @@ join_keys AS (
     "ssn" IN UNNEST(ARRAY_AGG(column_name)) 
     OR "ssn_id" IN UNNEST(ARRAY_AGG(column_name)) 
     OR "national_id" IN UNNEST(ARRAY_AGG(column_name)) 
+    OR "sotu" IN UNNEST(ARRAY_AGG(column_name)) 
+    OR "yv_sotu" IN UNNEST(ARRAY_AGG(column_name))
     OR "nationalId" IN UNNEST(ARRAY_AGG(column_name)),
     TRUE,
     FALSE
@@ -76,7 +78,7 @@ encryption_queries AS (
 SELECT
   table_schema,
   table_name,
-  STRING_AGG(CASE WHEN join_key IN ('ssn', 'ssn_id','nationalId', 'national_id') THEN join_key END, '') as j_key,
+  STRING_AGG(CASE WHEN join_key IN ('ssn', 'ssn_id','nationalId', 'national_id','sotu','yv_sotu') THEN join_key END, '') as j_key,
   CONCAT(
     'SELECT ',
     STRING_AGG(encrypted_columns, ', '),
@@ -89,7 +91,7 @@ SELECT
     table_name,
     '` raw ',
     'LEFT JOIN `{{compliance_project}}.compilance_database.gdpr_vault` VAULT ON raw.',
-    STRING_AGG(CASE WHEN join_key IN ('ssn', 'ssn_id','nationalId', 'national_id') THEN join_key END, '') ,  
+    STRING_AGG(CASE WHEN join_key IN ('ssn', 'ssn_id','nationalId', 'national_id','sotu','yv_sotu') THEN join_key END, '') ,  
     ' = VAULT.ssn '
   ) AS encrypted_columns
 FROM

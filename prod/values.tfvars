@@ -7,3 +7,4 @@ GCP_project_roles = ["roles/bigquery.admin", "roles/bigquery.jobUser", "roles/cl
 data_domain_project_roles = ["roles/bigquery.jobUser", "roles/storage.objectViewer","roles/bigquery.metadataViewer", "roles/bigquery.dataViewer"]
 compliance_project_roles = ["roles/bigquery.jobUser", "roles/storage.objectViewer","roles/bigquery.metadataViewer"]
 kms_crypto_key_id = "projects/key-management-sambla/locations/europe-north1/keyRings/datawarehouse_encryption_keys/cryptoKeys/production_key"
+salus_bucket_name = "salus-2-sambla"

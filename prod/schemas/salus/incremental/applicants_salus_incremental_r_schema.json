@@ -1,0 +1,138 @@
+[
+    {
+        "name": "id",
+        "type": "INTEGER"
+    },
+    {
+        "name": "birthdate",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "age",
+        "type": "INTEGER"
+    },
+    {
+        "name": "firstname",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "name": "lastname",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "name": "gender",
+        "type": "STRING"
+    },
+    {
+        "name": "maritalstatus",
+        "type": "STRING"
+    },
+    {
+        "name": "nationality",
+        "type": "STRING"
+    },
+    {
+        "name": "education",
+        "type": "STRING"
+    },
+    {
+        "name": "member_unemployment_fund",
+        "type": "STRING"
+    },
+    {
+        "name": "disposable_income",
+        "type": "STRING"
+    },
+    {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "email",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "name": "phone",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "name": "ssn",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "name": "address",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "name": "city",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "name": "zip",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "name": "military_service",
+        "type": "STRING"
+    },
+    {
+        "name": "country_code",
+        "type": "STRING"
+    },
+    {
+        "name": "app_type",
+        "type": "STRING"
+    },
+    {
+        "name": "hash_key",
+        "type": "STRING"
+    },
+    {
+        "name": "inserted_at",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "is_deleted",
+        "type": "BOOLEAN"
+    }
+]

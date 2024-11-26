@@ -1,0 +1,100 @@
+[
+    {
+        "name": "id",
+        "type": "INTEGER"
+    },
+    {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "updated_at",
+        "type": "STRING"
+    },
+    {
+        "name": "fk_applicant",
+        "type": "INTEGER"
+    },
+    {
+        "name": "type",
+        "type": "STRING"
+    },
+    {
+        "name": "employer",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "name": "profession",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "name": "options",
+        "type": "STRING"
+    },
+    {
+        "name": "gross_income",
+        "type": "STRING"
+    },
+    {
+        "name": "net_income",
+        "type": "STRING"
+    },
+    {
+        "name": "gross_income_spouse",
+        "type": "STRING"
+    },
+    {
+        "name": "net_income_spouse",
+        "type": "STRING"
+    },
+    {
+        "name": "start_year",
+        "type": "STRING"
+    },
+    {
+        "name": "start_month",
+        "type": "STRING"
+    },
+    {
+        "name": "temp_employment_end_year",
+        "type": "STRING"
+    },
+    {
+        "name": "temp_employment_end_month",
+        "type": "STRING"
+    },
+    {
+        "name": "country_code",
+        "type": "STRING"
+    },
+    {
+        "name": "app_type",
+        "type": "STRING"
+    },
+    {
+        "name": "priority",
+        "type": "STRING"
+    },
+    {
+        "name": "hash_key",
+        "type": "STRING"
+    },
+    {
+        "name": "inserted_at",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "is_deleted",
+        "type": "BOOLEAN"
+    }
+]

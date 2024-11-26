@@ -13,7 +13,7 @@ resource "google_bigquery_dataset" "rahalaitos_dataset" {
 # generate a local variable that maps external table names to their corresponding GCS locations.
 locals {
   table_mappings = tomap({
-    for line in split("\n", trimspace(file("${path.module}/raha_external_table_info.txt"))) :
+    for line in split("\n", trimspace(file("${path.module}/rahalaitos_external_table_info.txt"))) :
     split(",", line)[0] => split(",", line)[1]
   })
 }
@@ -35,4 +35,6 @@ resource "google_bigquery_table" "external_tables" {
     # must to define a schema when we create a table
     schema = file("schemas/rahalaitos/${each.key}_schema.json")
     depends_on = [ google_bigquery_dataset.rahalaitos_dataset ]
+
+    
 }
