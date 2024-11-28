@@ -9,7 +9,7 @@ sensitive_fields_detector_service/
 ├── data_input/                     
 │   ├── manifest.json               
 │   ├── catalog.json                
-│   ├── mapping.csv                 
+│   ├── sensitive_field_mapping.csv                 
 ├── data_output/                    
 │   ├── column_lineage.yml          
 │   ├── sensitive_fields_output.json 
