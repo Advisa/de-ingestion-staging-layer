@@ -4,20 +4,20 @@ This repository provides an end-to-end process for managing sensitive data gover
 
 
 sensitive_fields_detector_service/
-├── main.py                         # Main entry point for the service.
-├── requirements.txt                # Python dependencies.
-├── data_input/                     # Folder containing input data.
-│   ├── manifest.json               # DBT manifest for lineage extraction.
-│   ├── catalog.json                # DBT catalog for lineage extraction.
-│   ├── mapping.csv                 # CSV file for sensitive fields mapping.
-├── data_output/                    # Folder containing output data.
-│   ├── column_lineage.yml          # YAML file with column lineage details.
-│   ├── sensitive_fields_output.json # JSON file with grouped sensitive fields.
-├── log_files/                      # Folder containing logs.
-├── utils/                          # Folder containing utility scripts.
-│   ├── column_lineage_extractor.py # Script for column lineage extraction.
-│   ├── sensitive_fields_processor.py # Script for sensitive fields processing.
-│   └── config.yml                  # Configuration for lineage and sensitive fields.
+├── main.py                         
+├── requirements.txt                
+├── data_input/                     
+│   ├── manifest.json               
+│   ├── catalog.json                
+│   ├── mapping.csv                 
+├── data_output/                    
+│   ├── column_lineage.yml          
+│   ├── sensitive_fields_output.json 
+├── log_files/                     
+├── utils/                          
+│   ├── column_lineage_extractor.py 
+│   ├── sensitive_fields_processor.py 
+│   └── config.yml                  
 
 
 ## **Column Lineage Extraction**
@@ -85,12 +85,11 @@ Terraform is used to define and deploy policy tags into BigQuery.
 prod/
 ├── modules/
 │   └── policy_tags/
-│       ├── main.tf                    # Core Terraform script for taxonomies, policy tags, and BigQuery data masking.
-│       ├── variables.tf               # Terraform variables for customizing taxonomy structure.
-│       └── outputs.tf                 # Outputs for Terraform, providing details after deployment.
+│       ├── main.tf                    
+│       ├── variables.tf              
 │── schema/
 │    └── policy_tags/
-│       └── sensitive_fields_output.json  # JSON file with grouped sensitive fields.
+│       └── sensitive_fields_output.json  
 
 
 
