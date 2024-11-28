@@ -5,8 +5,6 @@ import os
 
 def main():
     config_file = 'utils/config.yml'
-    
-    # Initialize SensitiveFieldsProcessor to read config
     processor = SensitiveFieldsProcessor(config_file, '', '') 
     config = processor.read_yaml_config() 
     
@@ -22,10 +20,8 @@ def main():
     # Build the graph based on the lineage map
     G, processed_columns = processor.build_graph(lineage_map)
 
-    # Initialize a dictionary to store grouped columns
     all_grouped_columns = {}
 
-    # Process each sensitive column separately
     for legacy_column in sensitive_columns:
         if legacy_column not in G:
             print(f"Warning: Legacy column '{legacy_column}' not found in the graph.")
