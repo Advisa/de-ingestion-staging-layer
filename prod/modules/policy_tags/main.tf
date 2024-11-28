@@ -250,12 +250,12 @@ resource "google_bigquery_datapolicy_data_policy" "high_data_policy" {
     google_data_catalog_policy_tag.high_child_tags
   )
   location        = var.region
-  data_policy_id  = "${replace(trimspace(each.key), "-", "_")}"  # Unique data policy ID using `each.key`
+  data_policy_id  = "${replace(trimspace(each.key), "-", "_")}"
   policy_tag      = each.value.name
   data_policy_type = "DATA_MASKING_POLICY"
 
   data_masking_policy {
-    predefined_expression = "SHA256"  # Example masking rule for high sensitivity
+    predefined_expression = "SHA256"
   }
 }
 
@@ -266,12 +266,12 @@ resource "google_bigquery_datapolicy_data_policy" "medium_data_policy" {
     google_data_catalog_policy_tag.medium_child_tags
   )
   location        = var.region
-  data_policy_id  = "${replace(trimspace(each.key), "-", "_")}"  # Unique data policy ID using `each.key`
+  data_policy_id  = "${replace(trimspace(each.key), "-", "_")}"
   policy_tag      = each.value.name
   data_policy_type = "DATA_MASKING_POLICY"
 
   data_masking_policy {
-    predefined_expression = "DEFAULT_MASKING_VALUE"  # Example masking rule for medium sensitivity
+    predefined_expression = "DEFAULT_MASKING_VALUE"
   }
 }
 
@@ -282,11 +282,11 @@ resource "google_bigquery_datapolicy_data_policy" "low_data_policy" {
     google_data_catalog_policy_tag.low_child_tags
   )
   location        = var.region
-  data_policy_id  = "${replace(trimspace(each.key), "-", "_")}"  # Unique data policy ID using `each.key`
+  data_policy_id  = "${replace(trimspace(each.key), "-", "_")}"
   policy_tag      = each.value.name
   data_policy_type = "DATA_MASKING_POLICY"
 
   data_masking_policy {
-    predefined_expression = "DEFAULT_MASKING_VALUE"  # Example masking rule for low sensitivity
+    predefined_expression = "DEFAULT_MASKING_VALUE"
   }
 }
