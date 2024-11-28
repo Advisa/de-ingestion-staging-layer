@@ -1,4 +1,5 @@
 {
+    "taxonomy_name": "gdpr_complaince_measures",
     "high_sensitivity_tags": {
         "PII": {
             "ssn": {
