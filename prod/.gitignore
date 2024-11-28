@@ -13,4 +13,5 @@ imports.tf.txt
 
 **/__pycache__/helpers.cpython-311.pyc
 **/create_tables.py
+test.py
 
