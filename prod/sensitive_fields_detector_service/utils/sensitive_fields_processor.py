@@ -89,6 +89,7 @@ class SensitiveFieldsProcessor:
         # Convert the grouped columns to a structured JSON format with sensitivity levels
         try:
             json_output = {
+                "taxonomy_name": "gdpr_complaince_measures",
                 "high_sensitivity_tags": {
                     "PII": {},
                     "restricted": {},
