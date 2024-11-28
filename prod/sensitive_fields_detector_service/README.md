@@ -78,7 +78,7 @@ Policy tags define hierarchical taxonomies for enforcing data masking and securi
   └── Low
 ```
 
-## **Folder**: `prod/modules/policy_tags`
+### **Folder**: `prod/modules/policy_tags`
 
 Terraform is used to define and deploy policy tags into BigQuery.
 
