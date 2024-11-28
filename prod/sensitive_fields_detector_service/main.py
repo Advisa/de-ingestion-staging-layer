@@ -7,8 +7,8 @@ def main():
     config_file = 'utils/config.yml'
     
     # Initialize SensitiveFieldsProcessor to read config
-    processor = SensitiveFieldsProcessor(config_file, '', '')  # Empty input and output paths
-    config = processor.read_yaml_config()  # Use the method to read the config
+    processor = SensitiveFieldsProcessor(config_file, '', '') 
+    config = processor.read_yaml_config() 
     
     # Column Lineage Extraction
     extractor = ColumnLineageExtractor(config['manifest_path'], config['catalog_path'])
@@ -35,12 +35,12 @@ def main():
             # Resolve connections for each legacy column individually
             connected_columns = processor.resolve_connections(G, legacy_column)
             grouped_columns = processor.keyword_based_grouping(connected_columns, processed_columns)
-            all_grouped_columns[legacy_column] = grouped_columns  # Use all_grouped_columns here
+            all_grouped_columns[legacy_column] = grouped_columns
         except ValueError as e:
             print(f"Error resolving connections for {legacy_column}: {e}")
     
     # Convert grouped columns to JSON and output the result
-    processor.convert_grouped_columns_to_json(all_grouped_columns, config['sensitive_fields_output_json'])  # Pass all_grouped_columns here
+    processor.convert_grouped_columns_to_json(all_grouped_columns, config['sensitive_fields_output_json'])
 
 
 if __name__ == "__main__":
