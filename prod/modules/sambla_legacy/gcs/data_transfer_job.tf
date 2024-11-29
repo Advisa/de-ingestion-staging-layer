@@ -1,5 +1,5 @@
 # Data transfer job to replicate the sambla legacy data to new project bucket
-resource "google_storage_transfer_job" "replicate-from-old-to-new-bucket" {
+resource "google_storage_transfer_job" "replicate-from-old-to-new-bucket-one-time" {
   description = "Data Transfer job to replicate source sambla legacy data from domain-data-warehouse project to new staging-compliance project"
   project     = var.project_id
   
