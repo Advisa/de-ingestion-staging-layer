@@ -1,0 +1,6 @@
+# utils/config.yml
+manifest_path: 'data_input/manifest.json'
+catalog_path: 'data_input/catalog.json'
+sensitive_field_mapping: 'data_input/sensitive_field_mapping.csv'
+sensitive_fields_output_json: '../schemas/policy_tags/sensitive_fields_output.json'
+lineage_output_file : 'data_output/column_lineage.yml'
