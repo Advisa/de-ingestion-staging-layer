@@ -1,0 +1,264 @@
+[
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "operationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "__v",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "active",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "applicationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "attributes",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "attributes.teamLeader",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "attributes.allApplicationReceiver",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "attributes.advisorActive",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "attributes.applicationReceiver",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "attributes.activeAdvisor",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "attributes.internetApplicationReceiver",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "bank",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "campaignCode",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "email",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+      ]
+    }
+  },
+  {
+    "name": "identifier",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "image",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isAdmin",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isJrAdvisor",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lastLogin",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "leaderboard",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "leaderboard.skin",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "loxysoftId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "market",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "office",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "partnerStats",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "partnerStats.source",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "partnerStats.term",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "partnerStats.content",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "partnerStats.campaign",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "partnerType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "password",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "phoneNumber",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "random",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "random.type",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "random.coordinates",
+        "type": "FLOAT",
+        "mode": "REPEATED"
+      }
+    ]
+  },
+  {
+    "name": "roles",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "schedule",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "schedule.shift",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "schedule.vacation",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+          {
+            "name": "vacation._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "vacation.start",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "vacation.end",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "startDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "team",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "teamLeader",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "userType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

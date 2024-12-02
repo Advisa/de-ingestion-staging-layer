@@ -1,0 +1,1653 @@
+[
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "operationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "__v",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "coApplicant",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "coApplicant.postalCode",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.address",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8460396741430475976"
+          ]
+        }
+      },
+      {
+        "name": "coApplicant.last_name",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/2716384524483642610"
+          ]
+        }
+      },
+      {
+        "name": "coApplicant.first_name",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/71389309590075218"
+          ]
+        }
+      },
+      {
+        "name": "coApplicant.hashed_email",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.gender",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.hashed_ssn",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.phoneNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.email",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+          ]
+        }
+      },
+      {
+        "name": "coApplicant.postalArea",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/4522259972247973803"
+          ]
+        }
+      },
+      {
+        "name": "coApplicant.age",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.idNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.ssn",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/4818396561666923179"
+          ]
+        }
+      },
+      {
+        "name": "coApplicant.dob",
+        "type": "DATE",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.inSanctionList",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.politicallyExposedPerson",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.politicallyExposedPersonVerifiedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "coApplicant.birthdate",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "company",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "createdAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "externalId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "invoices",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "invoices.paid",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.products",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+          {
+            "name": "products._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "products.amount",
+            "type": "FLOAT",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "products.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "products.discounted",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "invoices.totalAmount",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.BGCReference",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.directDebitAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.ocr",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.invoiceSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.dueAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.createdAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.paidAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.campaignDiscountedAmount",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.campaignId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "invoices.outstandingAmount",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "is_active",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lifeInsurance",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "lifeInsurance.insuranceType",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.deactivationMailSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.product",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.startMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.startEmailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.deactivationMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.coApplicant",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "coApplicant.postalCode",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "coApplicant.phoneNumber",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "coApplicant.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "coApplicant.postalArea",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/4522259972247973803"
+              ]
+            }
+          },
+          {
+            "name": "coApplicant.idNumber",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "coApplicant.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "coApplicant.address",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8460396741430475976"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "lifeInsurance.premium",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.AMTSignedGeneratedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.deactivatedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.user",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "user._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "user.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "user.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "lifeInsurance._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.startMailSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.signedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.broker",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "broker.broker",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "broker.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "broker.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "lifeInsurance.insuranceNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.deactivationReason",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.is_active",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.AMTDeactivationGeneratedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.deactivatedBy",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "deactivatedBy._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "deactivatedBy.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "deactivatedBy.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "deactivatedBy.origin",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "lifeInsurance.downgradeMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "lifeInsurance.downgradeMailSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "link",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "market",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paymentProtection",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "paymentProtection.insuranceType",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.deactivationMailSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.product",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.startMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.startEmailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.deactivationMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.coApplicant",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "coApplicant.postalCode",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "coApplicant.phoneNumber",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "coApplicant.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "coApplicant.postalArea",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/4522259972247973803"
+              ]
+            }
+          },
+          {
+            "name": "coApplicant.idNumber",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "coApplicant.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "coApplicant.address",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8460396741430475976"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "paymentProtection.premium",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.AMTSignedGeneratedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.deactivatedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.user",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "user._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "user.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "user.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "paymentProtection._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.startMailSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.signedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.broker",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "broker.broker",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "broker.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "broker.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "paymentProtection.insuranceNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.deactivationReason",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.is_active",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.AMTDeactivationGeneratedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.deactivatedBy",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "deactivatedBy._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "deactivatedBy.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "deactivatedBy.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "deactivatedBy.origin",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "paymentProtection.downgradeMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "paymentProtection.downgradeMailSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "person",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "person.postalCode",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.address",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8460396741430475976"
+          ]
+        }
+      },
+      {
+        "name": "person.last_name",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/2716384524483642610"
+          ]
+        }
+      },
+      {
+        "name": "person.first_name",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/71389309590075218"
+          ]
+        }
+      },
+      {
+        "name": "person.hashed_email",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.gender",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.hashed_ssn",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.phoneNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.email",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+          ]
+        }
+      },
+      {
+        "name": "person.account",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "account.clearingNumber",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.directDebitNumber",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.errorAt",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.deactivatedAt",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.error",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.bank",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.sentToBGCAt",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.errorMessage",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.acceptedByBGCAt",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.sentToBGC",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.idNumber",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.accountNumber",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "account.acceptedByBGC",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "person.postalArea",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/4522259972247973803"
+          ]
+        }
+      },
+      {
+        "name": "person.age",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.idNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.ssn",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/4818396561666923179"
+          ]
+        }
+      },
+      {
+        "name": "person.dob",
+        "type": "DATE",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.inSanctionList",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.politicallyExposedPerson",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.politicallyExposedPersonVerifiedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "person.birthdate",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "repayments",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "repayments.paid",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repayments.products",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+          {
+            "name": "products._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "products.amount",
+            "type": "INTEGER",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "products.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "products.discounted",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "repayments.BGCReference",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repayments._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repayments.directDebitAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repayments.totalAmount",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repayments.ocr",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repayments.dueAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repayments.createdAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repayments.paidAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "repayments.invoiceSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "updatedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "advisaApplicationId",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "brand",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "communication",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "communication.skipLetters",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "communication.certificates",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "certificates.notInterestedIn",
+            "type": "STRING",
+            "mode": "REPEATED"
+          }
+        ]
+      },
+      {
+        "name": "communication.prePaymentReminders",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "prePaymentReminders.scheduledAt",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "prePaymentReminders.sentAt",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "migration",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "migration.billectaCustomerId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.billectaDirectDebitNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.billectaEFakturaBank",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.billectaLatSelfInvoiceNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.billectaSelfInvoiceAccountNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.billectaSelfInvoiceClearingNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.billectaSelfInvoiceMethod",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudCancellationReason",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudCancellationReasonDesc",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudCancelledType",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudCustomerId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudInsurancePurchaseSource",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPaymentInstrument",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPolicyCreatedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPolicyId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPolicyMailSentAt",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPolicyPeriodEndDate",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPolicyPeriodStartDate",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPolicyRenewalStatus",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPolicyRenewedFromUniqueId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPolicyStatus",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPolicyStatusCalculated",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.cloudPolicyUniqueId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.migrationDate",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.originalCreationDate",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "migration.originalInsuranceProvider",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "offer",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "offer.index",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "offer.label",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "offer.pricing",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "offer.suggested",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "origin",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payment",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "payment.gateway",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "payment.method",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "payment.selectedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "campaign",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "campaign.campaignId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "campaign.source",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "campaign.startDate",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "campaign.endDate",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "policies",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "internalComments",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "internalComments._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "internalComments.archive",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "internalComments.date",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "internalComments.sticky",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "internalComments.text",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "internalComments.user",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "user._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "user.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "user.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "futurePolicies",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "futurePolicies._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.deactivatedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.deactivationMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.downgradeMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.insuranceNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.insuranceType",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.premium",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.product",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.signedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.startMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.startMailSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "futurePolicies.user",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "user._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "user.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "user.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "deactivatedPolicies",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "deactivatedPolicies._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.deactivatedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.deactivatedBy",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "deactivatedBy._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "deactivatedBy.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "deactivatedBy.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "deactivatedBy.origin",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "deactivatedPolicies.deactivationMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.deactivationMailSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.deactivationReason",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.downgradeMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.downgradeMailSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.insuranceNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.insuranceType",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.premium",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.product",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.signedAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.startMailSent",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.startMailSentAt",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "deactivatedPolicies.user",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "user._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "user.email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/8192857231542342371"
+              ]
+            }
+          },
+          {
+            "name": "user.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "recurringPayment",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "recurringPayment.id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "recurringPayment.paymentStatus",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "paymentStatus.status",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "paymentStatus.errorMessage",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "paymentStatus.updatedAt",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "recurringPayment.payerNumber",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      }
+    ]
+  }
+]

@@ -1,0 +1,228 @@
+[
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "operationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "__v",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "active",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "adminFee",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amortizationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "applicationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "brandName",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "difficultToRequestBidsFrom",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "integrationData",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "integrationData.applicationListETag",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "integrationData.transactionId",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "isCollector",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isIkano",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isKonsumentKredit",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isMarginalen",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isNordnet",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isSantander",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isSevenDay",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isSwedbank",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isVillabanken",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isWasa",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanFilter",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanProtection",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "loanProtection.percentageOfMonthlyCost",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "loanProtection.hasLoanProtection",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "loanProtection.percentageOfTotalAmount",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "loanProtection.paymentIsPercentageOfMonthlyCost",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "loanProtection.percentageOfTotalAmountForTwo",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "loanProtection.paymentIsPercentageOfTotalAmount",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "loanProtection.percentageOfMonthlyCostForTwo",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "market",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "mortgageBank",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paused",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "random",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+      {
+        "name": "random.coordinates",
+        "type": "FLOAT",
+        "mode": "REPEATED"
+      },
+      {
+        "name": "random.type",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "revenueAmount",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "revenueModel",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "revenueMultiplier",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "startupFee",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "startupFeeType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

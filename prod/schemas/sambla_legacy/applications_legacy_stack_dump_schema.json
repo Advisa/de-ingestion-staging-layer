@@ -1,0 +1,224 @@
+[
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "log",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "log._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "log.field",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "log.new",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "log.hidden",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "log.date",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "log.old",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "log.user",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "sms",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "sms._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "sms.userName",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "sms.text",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "sms.images",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+          {
+            "name": "images._id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "images.container",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "images.path",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "images.origin",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      },
+      {
+        "name": "sms.direction",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "sms.status",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "sms.id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "sms.date",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "sms.toOrFromPartner",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "sms.image",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "email",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "email._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "email.userName",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "email.subject",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "email.text",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "email.status",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "email.date",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "email.toOrFromPartner",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "email.toBank",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "callLog",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "callLog._id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "callLog.date",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "callLog.name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "callLog.phoneNumber",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "callLog.caller",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+          {
+            "name": "caller.name",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "caller.id",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  }
+]

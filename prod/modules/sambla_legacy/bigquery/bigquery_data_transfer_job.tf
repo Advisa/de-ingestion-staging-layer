@@ -29,7 +29,7 @@ resource "google_bigquery_job" "create_table_jobs" {
   }
 
   depends_on = [
-    google_bigquery_dataset.sambla_legacy_dataset,
+    google_bigquery_dataset.sambla_legacy_dataset
   ]
 }
 
