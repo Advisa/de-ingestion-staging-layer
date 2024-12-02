@@ -25,12 +25,12 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "coApplicant.postalCode",
+        "name": "postalCode",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.address",
+        "name": "address",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -40,7 +40,7 @@
         }
       },
       {
-        "name": "coApplicant.last_name",
+        "name": "last_name",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -50,7 +50,7 @@
         }
       },
       {
-        "name": "coApplicant.first_name",
+        "name": "first_name",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -60,27 +60,27 @@
         }
       },
       {
-        "name": "coApplicant.hashed_email",
+        "name": "hashed_email",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.gender",
+        "name": "gender",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.hashed_ssn",
+        "name": "hashed_ssn",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.phoneNumber",
+        "name": "phoneNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.email",
+        "name": "email",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -90,7 +90,7 @@
         }
       },
       {
-        "name": "coApplicant.postalArea",
+        "name": "postalArea",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -100,17 +100,17 @@
         }
       },
       {
-        "name": "coApplicant.age",
+        "name": "age",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.idNumber",
+        "name": "idNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.ssn",
+        "name": "ssn",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -120,32 +120,32 @@
         }
       },
       {
-        "name": "coApplicant.dob",
+        "name": "dob",
         "type": "DATE",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.name",
+        "name": "name",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.inSanctionList",
+        "name": "inSanctionList",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.politicallyExposedPerson",
+        "name": "politicallyExposedPerson",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.politicallyExposedPersonVerifiedAt",
+        "name": "politicallyExposedPersonVerifiedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "coApplicant.birthdate",
+        "name": "birthdate",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -172,94 +172,94 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "invoices.paid",
+        "name": "paid",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.products",
+        "name": "products",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "products._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "products.amount",
+            "name": "amount",
             "type": "FLOAT",
             "mode": "NULLABLE"
           },
           {
-            "name": "products.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "products.discounted",
+            "name": "discounted",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "invoices.totalAmount",
+        "name": "totalAmount",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.BGCReference",
+        "name": "BGCReference",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.directDebitAt",
+        "name": "directDebitAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.ocr",
+        "name": "ocr",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.invoiceSentAt",
+        "name": "invoiceSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.dueAt",
+        "name": "dueAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.createdAt",
+        "name": "createdAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.paidAt",
+        "name": "paidAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.campaignDiscountedAmount",
+        "name": "campaignDiscountedAmount",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.campaignId",
+        "name": "campaignId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "invoices.outstandingAmount",
+        "name": "outstandingAmount",
         "type": "INTEGER",
         "mode": "NULLABLE"
       }
@@ -276,52 +276,52 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "lifeInsurance.insuranceType",
+        "name": "insuranceType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.deactivationMailSentAt",
+        "name": "deactivationMailSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.product",
+        "name": "product",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.startMailSent",
+        "name": "startMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.startEmailSent",
+        "name": "startEmailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.deactivationMailSent",
+        "name": "deactivationMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.coApplicant",
+        "name": "coApplicant",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "coApplicant.postalCode",
+            "name": "postalCode",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "coApplicant.phoneNumber",
+            "name": "phoneNumber",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "coApplicant.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -331,7 +331,7 @@
             }
           },
           {
-            "name": "coApplicant.postalArea",
+            "name": "postalArea",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -341,17 +341,17 @@
             }
           },
           {
-            "name": "coApplicant.idNumber",
+            "name": "idNumber",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "coApplicant.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "coApplicant.address",
+            "name": "address",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -363,32 +363,32 @@
         ]
       },
       {
-        "name": "lifeInsurance.premium",
+        "name": "premium",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.AMTSignedGeneratedAt",
+        "name": "AMTSignedGeneratedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.deactivatedAt",
+        "name": "deactivatedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.user",
+        "name": "user",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "user._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "user.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -398,39 +398,39 @@
             }
           },
           {
-            "name": "user.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "lifeInsurance._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.startMailSentAt",
+        "name": "startMailSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.signedAt",
+        "name": "signedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.broker",
+        "name": "broker",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "broker.broker",
+            "name": "broker",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "broker.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -440,44 +440,44 @@
             }
           },
           {
-            "name": "broker.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "lifeInsurance.insuranceNumber",
+        "name": "insuranceNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.deactivationReason",
+        "name": "deactivationReason",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.is_active",
+        "name": "is_active",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.AMTDeactivationGeneratedAt",
+        "name": "AMTDeactivationGeneratedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.deactivatedBy",
+        "name": "deactivatedBy",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "deactivatedBy._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "deactivatedBy.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -487,24 +487,24 @@
             }
           },
           {
-            "name": "deactivatedBy.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "deactivatedBy.origin",
+            "name": "origin",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "lifeInsurance.downgradeMailSent",
+        "name": "downgradeMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.downgradeMailSentAt",
+        "name": "downgradeMailSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -526,52 +526,52 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "paymentProtection.insuranceType",
+        "name": "insuranceType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.deactivationMailSentAt",
+        "name": "deactivationMailSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.product",
+        "name": "product",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.startMailSent",
+        "name": "startMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.startEmailSent",
+        "name": "startEmailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.deactivationMailSent",
+        "name": "deactivationMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.coApplicant",
+        "name": "coApplicant",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "coApplicant.postalCode",
+            "name": "postalCode",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "coApplicant.phoneNumber",
+            "name": "phoneNumber",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "coApplicant.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -581,7 +581,7 @@
             }
           },
           {
-            "name": "coApplicant.postalArea",
+            "name": "postalArea",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -591,17 +591,17 @@
             }
           },
           {
-            "name": "coApplicant.idNumber",
+            "name": "idNumber",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "coApplicant.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "coApplicant.address",
+            "name": "address",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -613,32 +613,32 @@
         ]
       },
       {
-        "name": "paymentProtection.premium",
+        "name": "premium",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.AMTSignedGeneratedAt",
+        "name": "AMTSignedGeneratedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.deactivatedAt",
+        "name": "deactivatedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.user",
+        "name": "user",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "user._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "user.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -648,39 +648,39 @@
             }
           },
           {
-            "name": "user.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "paymentProtection._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.startMailSentAt",
+        "name": "startMailSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.signedAt",
+        "name": "signedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.broker",
+        "name": "broker",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "broker.broker",
+            "name": "broker",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "broker.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -690,44 +690,44 @@
             }
           },
           {
-            "name": "broker.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "paymentProtection.insuranceNumber",
+        "name": "insuranceNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.deactivationReason",
+        "name": "deactivationReason",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.is_active",
+        "name": "is_active",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.AMTDeactivationGeneratedAt",
+        "name": "AMTDeactivationGeneratedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.deactivatedBy",
+        "name": "deactivatedBy",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "deactivatedBy._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "deactivatedBy.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -737,24 +737,24 @@
             }
           },
           {
-            "name": "deactivatedBy.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "deactivatedBy.origin",
+            "name": "origin",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "paymentProtection.downgradeMailSent",
+        "name": "downgradeMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.downgradeMailSentAt",
+        "name": "downgradeMailSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -766,12 +766,12 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "person.postalCode",
+        "name": "postalCode",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.address",
+        "name": "address",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -781,7 +781,7 @@
         }
       },
       {
-        "name": "person.last_name",
+        "name": "last_name",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -791,7 +791,7 @@
         }
       },
       {
-        "name": "person.first_name",
+        "name": "first_name",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -801,27 +801,27 @@
         }
       },
       {
-        "name": "person.hashed_email",
+        "name": "hashed_email",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.gender",
+        "name": "gender",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.hashed_ssn",
+        "name": "hashed_ssn",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.phoneNumber",
+        "name": "phoneNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.email",
+        "name": "email",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -831,79 +831,79 @@
         }
       },
       {
-        "name": "person.account",
+        "name": "account",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "account.clearingNumber",
+            "name": "clearingNumber",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.directDebitNumber",
+            "name": "directDebitNumber",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.errorAt",
+            "name": "errorAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.deactivatedAt",
+            "name": "deactivatedAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.error",
+            "name": "error",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.bank",
+            "name": "bank",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.sentToBGCAt",
+            "name": "sentToBGCAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.errorMessage",
+            "name": "errorMessage",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.acceptedByBGCAt",
+            "name": "acceptedByBGCAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.sentToBGC",
+            "name": "sentToBGC",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.idNumber",
+            "name": "idNumber",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.accountNumber",
+            "name": "accountNumber",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "account.acceptedByBGC",
+            "name": "acceptedByBGC",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "person.postalArea",
+        "name": "postalArea",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -913,17 +913,17 @@
         }
       },
       {
-        "name": "person.age",
+        "name": "age",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.idNumber",
+        "name": "idNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.ssn",
+        "name": "ssn",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -933,32 +933,32 @@
         }
       },
       {
-        "name": "person.dob",
+        "name": "dob",
         "type": "DATE",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.name",
+        "name": "name",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.inSanctionList",
+        "name": "inSanctionList",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.politicallyExposedPerson",
+        "name": "politicallyExposedPerson",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.politicallyExposedPersonVerifiedAt",
+        "name": "politicallyExposedPersonVerifiedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.birthdate",
+        "name": "birthdate",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -970,79 +970,79 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "repayments.paid",
+        "name": "paid",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "repayments.products",
+        "name": "products",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "products._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "products.amount",
+            "name": "amount",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "products.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "products.discounted",
+            "name": "discounted",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "repayments.BGCReference",
+        "name": "BGCReference",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "repayments._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "repayments.directDebitAt",
+        "name": "directDebitAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "repayments.totalAmount",
+        "name": "totalAmount",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "repayments.ocr",
+        "name": "ocr",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "repayments.dueAt",
+        "name": "dueAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "repayments.createdAt",
+        "name": "createdAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "repayments.paidAt",
+        "name": "paidAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "repayments.invoiceSentAt",
+        "name": "invoiceSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -1069,34 +1069,34 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "communication.skipLetters",
+        "name": "skipLetters",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "communication.certificates",
+        "name": "certificates",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "certificates.notInterestedIn",
+            "name": "notInterestedIn",
             "type": "STRING",
             "mode": "REPEATED"
           }
         ]
       },
       {
-        "name": "communication.prePaymentReminders",
+        "name": "prePaymentReminders",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "prePaymentReminders.scheduledAt",
+            "name": "scheduledAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "prePaymentReminders.sentAt",
+            "name": "sentAt",
             "type": "STRING",
             "mode": "NULLABLE"
           }
@@ -1110,132 +1110,132 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "migration.billectaCustomerId",
+        "name": "billectaCustomerId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.billectaDirectDebitNumber",
+        "name": "billectaDirectDebitNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.billectaEFakturaBank",
+        "name": "billectaEFakturaBank",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.billectaLatSelfInvoiceNumber",
+        "name": "billectaLatSelfInvoiceNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.billectaSelfInvoiceAccountNumber",
+        "name": "billectaSelfInvoiceAccountNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.billectaSelfInvoiceClearingNumber",
+        "name": "billectaSelfInvoiceClearingNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.billectaSelfInvoiceMethod",
+        "name": "billectaSelfInvoiceMethod",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudCancellationReason",
+        "name": "cloudCancellationReason",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudCancellationReasonDesc",
+        "name": "cloudCancellationReasonDesc",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudCancelledType",
+        "name": "cloudCancelledType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudCustomerId",
+        "name": "cloudCustomerId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudInsurancePurchaseSource",
+        "name": "cloudInsurancePurchaseSource",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPaymentInstrument",
+        "name": "cloudPaymentInstrument",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPolicyCreatedAt",
+        "name": "cloudPolicyCreatedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPolicyId",
+        "name": "cloudPolicyId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPolicyMailSentAt",
+        "name": "cloudPolicyMailSentAt",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPolicyPeriodEndDate",
+        "name": "cloudPolicyPeriodEndDate",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPolicyPeriodStartDate",
+        "name": "cloudPolicyPeriodStartDate",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPolicyRenewalStatus",
+        "name": "cloudPolicyRenewalStatus",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPolicyRenewedFromUniqueId",
+        "name": "cloudPolicyRenewedFromUniqueId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPolicyStatus",
+        "name": "cloudPolicyStatus",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPolicyStatusCalculated",
+        "name": "cloudPolicyStatusCalculated",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.cloudPolicyUniqueId",
+        "name": "cloudPolicyUniqueId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.migrationDate",
+        "name": "migrationDate",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.originalCreationDate",
+        "name": "originalCreationDate",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "migration.originalInsuranceProvider",
+        "name": "originalInsuranceProvider",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -1247,22 +1247,22 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "offer.index",
+        "name": "index",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "offer.label",
+        "name": "label",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "offer.pricing",
+        "name": "pricing",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "offer.suggested",
+        "name": "suggested",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       }
@@ -1279,17 +1279,17 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "payment.gateway",
+        "name": "gateway",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "payment.method",
+        "name": "method",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "payment.selectedAt",
+        "name": "selectedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -1301,22 +1301,22 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "campaign.campaignId",
+        "name": "campaignId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "campaign.source",
+        "name": "source",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "campaign.startDate",
+        "name": "startDate",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "campaign.endDate",
+        "name": "endDate",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -1333,42 +1333,42 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "internalComments._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.archive",
+        "name": "archive",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.sticky",
+        "name": "sticky",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.text",
+        "name": "text",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.user",
+        "name": "user",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "user._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "user.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -1378,7 +1378,7 @@
             }
           },
           {
-            "name": "user.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           }
@@ -1392,72 +1392,72 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "futurePolicies._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.deactivatedAt",
+        "name": "deactivatedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.deactivationMailSent",
+        "name": "deactivationMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.downgradeMailSent",
+        "name": "downgradeMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.insuranceNumber",
+        "name": "insuranceNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.insuranceType",
+        "name": "insuranceType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.premium",
+        "name": "premium",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.product",
+        "name": "product",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.signedAt",
+        "name": "signedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.startMailSent",
+        "name": "startMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.startMailSentAt",
+        "name": "startMailSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "futurePolicies.user",
+        "name": "user",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "user._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "user.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -1467,7 +1467,7 @@
             }
           },
           {
-            "name": "user.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           }
@@ -1481,27 +1481,27 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "deactivatedPolicies._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.deactivatedAt",
+        "name": "deactivatedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.deactivatedBy",
+        "name": "deactivatedBy",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "deactivatedBy._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "deactivatedBy.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -1511,89 +1511,89 @@
             }
           },
           {
-            "name": "deactivatedBy.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "deactivatedBy.origin",
+            "name": "origin",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "deactivatedPolicies.deactivationMailSent",
+        "name": "deactivationMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.deactivationMailSentAt",
+        "name": "deactivationMailSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.deactivationReason",
+        "name": "deactivationReason",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.downgradeMailSent",
+        "name": "downgradeMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.downgradeMailSentAt",
+        "name": "downgradeMailSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.insuranceNumber",
+        "name": "insuranceNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.insuranceType",
+        "name": "insuranceType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.premium",
+        "name": "premium",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.product",
+        "name": "product",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.signedAt",
+        "name": "signedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.startMailSent",
+        "name": "startMailSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.startMailSentAt",
+        "name": "startMailSentAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "deactivatedPolicies.user",
+        "name": "user",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "user._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "user.email",
+            "name": "email",
             "type": "STRING",
             "mode": "NULLABLE",
             "policyTags": {
@@ -1603,7 +1603,7 @@
             }
           },
           {
-            "name": "user.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           }
@@ -1617,34 +1617,34 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "recurringPayment.id",
+        "name": "id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "recurringPayment.paymentStatus",
+        "name": "paymentStatus",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "paymentStatus.status",
+            "name": "status",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "paymentStatus.errorMessage",
+            "name": "errorMessage",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "paymentStatus.updatedAt",
+            "name": "updatedAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "recurringPayment.payerNumber",
+        "name": "payerNumber",
         "type": "INTEGER",
         "mode": "NULLABLE"
       }

@@ -4,7 +4,8 @@ data "google_bigquery_tables" "source_tables" {
 }
 
 locals {
-  table_names = [for table in data.google_bigquery_tables.source_tables.tables : table.table_id]
+  # List of table names excluding the ones you want to ignore
+  table_names = [for table in data.google_bigquery_tables.source_tables.tables : table.table_id if !(table.table_id == "applications_latest_view_plus" || table.table_id == "customers")]
 }
 
 # Iterate over the table names and create a BigQuery job for each
@@ -32,4 +33,3 @@ resource "google_bigquery_job" "create_table_jobs" {
     google_bigquery_dataset.sambla_legacy_dataset
   ]
 }
-

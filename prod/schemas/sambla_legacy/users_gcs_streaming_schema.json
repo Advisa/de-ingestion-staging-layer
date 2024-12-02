@@ -35,32 +35,32 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "attributes.teamLeader",
+        "name": "teamLeader",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "attributes.allApplicationReceiver",
+        "name": "allApplicationReceiver",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "attributes.advisorActive",
+        "name": "advisorActive",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "attributes.applicationReceiver",
+        "name": "applicationReceiver",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "attributes.activeAdvisor",
+        "name": "activeAdvisor",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "attributes.internetApplicationReceiver",
+        "name": "internetApplicationReceiver",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       }
@@ -117,7 +117,7 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "leaderboard.skin",
+        "name": "skin",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -149,22 +149,22 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "partnerStats.source",
+        "name": "source",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerStats.term",
+        "name": "term",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerStats.content",
+        "name": "content",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerStats.campaign",
+        "name": "campaign",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -191,12 +191,12 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "random.type",
+        "name": "type",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "random.coordinates",
+        "name": "coordinates",
         "type": "FLOAT",
         "mode": "REPEATED"
       }
@@ -213,27 +213,27 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "schedule.shift",
+        "name": "shift",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "schedule.vacation",
+        "name": "vacation",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "vacation._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "vacation.start",
+            "name": "start",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "vacation.end",
+            "name": "end",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           }

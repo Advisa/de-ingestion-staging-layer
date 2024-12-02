@@ -66,8 +66,6 @@ def fetch_policy_tags():
     
     return policy_tags
 
-
-
 # Step 3: Recursively match fields in the schema against policy tags and add policyTags if a match is found
 def match_policy_tags_to_fields(fields, policy_tags, parent_name=None):
     updated_fields = []
@@ -77,8 +75,8 @@ def match_policy_tags_to_fields(fields, policy_tags, parent_name=None):
         
         # If the field is a RECORD type, we need to process nested fields
         if field.get('fields'):
-            # If it's a nested record, we process recursively
-            nested_fields = match_policy_tags_to_fields(field["fields"], policy_tags, parent_name=field_name)
+            # If it's a nested record, we process recursively, but don't add parent name for `REPEATED` fields
+            nested_fields = match_policy_tags_to_fields(field["fields"], policy_tags, parent_name=None if field["name"] == "invoices" else parent_name)
             field["fields"] = nested_fields
         else:
             # Check if the field name matches any display name in the policy tags
@@ -92,8 +90,8 @@ def match_policy_tags_to_fields(fields, policy_tags, parent_name=None):
                     ]
                 }
         
-        # If there's a parent field, add it to the name
-        if parent_name:
+        # If there's a parent field, add it to the name (but only once for non-repeated fields)
+        if parent_name and not field.get('name').startswith(f"{parent_name}."):
             field["name"] = f"{parent_name}.{field['name']}"
         
         updated_fields.append(field)

@@ -130,12 +130,12 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "random.coordinates",
+        "name": "coordinates",
         "type": "FLOAT",
         "mode": "REPEATED"
       },
       {
-        "name": "random.type",
+        "name": "type",
         "type": "STRING",
         "mode": "NULLABLE"
       }

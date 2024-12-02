@@ -10,22 +10,22 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "errors.reason",
+        "name": "reason",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "errors.location",
+        "name": "location",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "errors.debuginfo",
+        "name": "debuginfo",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "errors.message",
+        "name": "message",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {

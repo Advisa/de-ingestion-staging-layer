@@ -10,37 +10,37 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "log._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "log.field",
+        "name": "field",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "log.new",
+        "name": "new",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "log.hidden",
+        "name": "hidden",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "log.date",
+        "name": "date",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "log.old",
+        "name": "old",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "log.user",
+        "name": "user",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -52,74 +52,74 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "sms._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "sms.userName",
+        "name": "userName",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "sms.text",
+        "name": "text",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "sms.images",
+        "name": "images",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "images._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "images.container",
+            "name": "container",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "images.path",
+            "name": "path",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "images.origin",
+            "name": "origin",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "sms.direction",
+        "name": "direction",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "sms.status",
+        "name": "status",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "sms.id",
+        "name": "id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "sms.date",
+        "name": "date",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "sms.toOrFromPartner",
+        "name": "toOrFromPartner",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "sms.image",
+        "name": "image",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -131,42 +131,42 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "email._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "email.userName",
+        "name": "userName",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "email.subject",
+        "name": "subject",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "email.text",
+        "name": "text",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "email.status",
+        "name": "status",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "email.date",
+        "name": "date",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "email.toOrFromPartner",
+        "name": "toOrFromPartner",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "email.toBank",
+        "name": "toBank",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       }
@@ -178,37 +178,37 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "callLog._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "callLog.date",
+        "name": "date",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "callLog.name",
+        "name": "name",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "callLog.phoneNumber",
+        "name": "phoneNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "callLog.caller",
+        "name": "caller",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "caller.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "caller.id",
+            "name": "id",
             "type": "STRING",
             "mode": "NULLABLE"
           }

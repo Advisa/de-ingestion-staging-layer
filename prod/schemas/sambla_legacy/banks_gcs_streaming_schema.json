@@ -55,12 +55,12 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "integrationData.applicationListETag",
+        "name": "applicationListETag",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "integrationData.transactionId",
+        "name": "transactionId",
         "type": "INTEGER",
         "mode": "NULLABLE"
       }
@@ -127,37 +127,37 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "loanProtection.percentageOfMonthlyCost",
+        "name": "percentageOfMonthlyCost",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtection.hasLoanProtection",
+        "name": "hasLoanProtection",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtection.percentageOfTotalAmount",
+        "name": "percentageOfTotalAmount",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtection.paymentIsPercentageOfMonthlyCost",
+        "name": "paymentIsPercentageOfMonthlyCost",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtection.percentageOfTotalAmountForTwo",
+        "name": "percentageOfTotalAmountForTwo",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtection.paymentIsPercentageOfTotalAmount",
+        "name": "paymentIsPercentageOfTotalAmount",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtection.percentageOfMonthlyCostForTwo",
+        "name": "percentageOfMonthlyCostForTwo",
         "type": "FLOAT",
         "mode": "NULLABLE"
       }
@@ -189,12 +189,12 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "random.coordinates",
+        "name": "coordinates",
         "type": "FLOAT",
         "mode": "REPEATED"
       },
       {
-        "name": "random.type",
+        "name": "type",
         "type": "STRING",
         "mode": "NULLABLE"
       }

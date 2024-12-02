@@ -50,27 +50,27 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "comments.user",
+        "name": "user",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "comments.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "comments.userId",
+        "name": "userId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "comments._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "comments.text",
+        "name": "text",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -107,47 +107,47 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "integration.externalApplicationId",
+        "name": "externalApplicationId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "integration.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "integration.accepted",
+        "name": "accepted",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "integration.active",
+        "name": "active",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "integration.error",
+        "name": "error",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "integration.sent",
+        "name": "sent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "integration.theirApplicationId",
+        "name": "theirApplicationId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "integration.cancelled",
+        "name": "cancelled",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "integration.externalId",
+        "name": "externalId",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -159,12 +159,12 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "integratoin.accepted",
+        "name": "accepted",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "integratoin.error",
+        "name": "error",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       }
@@ -181,17 +181,17 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "opened.status",
+        "name": "status",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "opened.openedBy",
+        "name": "openedBy",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "opened.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }

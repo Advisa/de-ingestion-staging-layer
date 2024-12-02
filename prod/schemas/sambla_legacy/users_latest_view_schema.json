@@ -70,7 +70,7 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "leaderboard.skin",
+        "name": "skin",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -97,22 +97,22 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "partnerStats.source",
+        "name": "source",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerStats.term",
+        "name": "term",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerStats.content",
+        "name": "content",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerStats.campaign",
+        "name": "campaign",
         "type": "STRING",
         "mode": "NULLABLE"
       }

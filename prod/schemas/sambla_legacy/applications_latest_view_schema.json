@@ -25,216 +25,216 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "acceptedBid.bankEffectiveInterest",
+        "name": "bankEffectiveInterest",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.requires_extra_doc",
+        "name": "requires_extra_doc",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.effectiveInterest",
+        "name": "effectiveInterest",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.placedBy",
+        "name": "placedBy",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "placedBy.user",
+            "name": "user",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "placedBy.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "acceptedBid.integrationAcceptSent",
+        "name": "integrationAcceptSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.signLink",
+        "name": "signLink",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.bankMonthlyCost",
+        "name": "bankMonthlyCost",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.mustRefinanceAmount",
+        "name": "mustRefinanceAmount",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.startupFee",
+        "name": "startupFee",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.accepted",
+        "name": "accepted",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.comments",
+        "name": "comments",
         "type": "STRING",
         "mode": "REPEATED"
       },
       {
-        "name": "acceptedBid.amount",
+        "name": "amount",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.bankNotInterested",
+        "name": "bankNotInterested",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.invitation",
+        "name": "invitation",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.fromInbox",
+        "name": "fromInbox",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.amortizationType",
+        "name": "amortizationType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.acceptedAt",
+        "name": "acceptedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.integrationAccentSent",
+        "name": "integrationAccentSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.requiredDocs",
+        "name": "requiredDocs",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "requiredDocs.companyBalanceSheet",
+            "name": "companyBalanceSheet",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.ownCompanyBalance",
+            "name": "ownCompanyBalance",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.rentalIncome",
+            "name": "rentalIncome",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.employerDoc",
+            "name": "employerDoc",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.retiredPaymentNotice",
+            "name": "retiredPaymentNotice",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.companyMoreRecentProfitAndLossStatement",
+            "name": "companyMoreRecentProfitAndLossStatement",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.taxReturn",
+            "name": "taxReturn",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.companyProfitAndLossStatement",
+            "name": "companyProfitAndLossStatement",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.payslip",
+            "name": "payslip",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.companyBankStatements",
+            "name": "companyBankStatements",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.companyAdditionalGuarantor",
+            "name": "companyAdditionalGuarantor",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "acceptedBid.bank",
+        "name": "bank",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.maximumAmount",
+        "name": "maximumAmount",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.repaymentTime",
+        "name": "repaymentTime",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.externalApplicationId",
+        "name": "externalApplicationId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.interest",
+        "name": "interest",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.adminFee",
+        "name": "adminFee",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.expiresAt",
+        "name": "expiresAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "acceptedBid.acceptedHigherRateBidReason",
+        "name": "acceptedHigherRateBidReason",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -246,7 +246,7 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "adservice.fp",
+        "name": "fp",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -258,12 +258,12 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "adtraction.cn",
+        "name": "cn",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "adtraction.cv",
+        "name": "cv",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -285,57 +285,57 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "agentFeedback.firstCallAnswered",
+        "name": "firstCallAnswered",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "agentFeedback.partnerWhenPossible",
+        "name": "partnerWhenPossible",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "agentFeedback.notPrepared",
+        "name": "notPrepared",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "agentFeedback.noAnswer",
+        "name": "noAnswer",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "agentFeedback.correctExpectations",
+        "name": "correctExpectations",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "agentFeedback.noPartnerWhenPossible",
+        "name": "noPartnerWhenPossible",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "agentFeedback.customerSatisfied",
+        "name": "customerSatisfied",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "agentFeedback.firstCallNotAnswered",
+        "name": "firstCallNotAnswered",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "agentFeedback.noInfoAboutLoan",
+        "name": "noInfoAboutLoan",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "agentFeedback.infoAboutLoan",
+        "name": "infoAboutLoan",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "agentFeedback.wrongExpectations",
+        "name": "wrongExpectations",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       }
@@ -347,12 +347,12 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "allPaidOutBySambla.application",
+        "name": "application",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "allPaidOutBySambla._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -384,32 +384,32 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "bankAccount.idNumber",
+        "name": "idNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "bankAccount.accountNumber",
+        "name": "accountNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "bankAccount.yearsWithBank",
+        "name": "yearsWithBank",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "bankAccount.sinceYear",
+        "name": "sinceYear",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "bankAccount.clearingNumber",
+        "name": "clearingNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "bankAccount.bankName",
+        "name": "bankName",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -421,216 +421,216 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "bids.bankEffectiveInterest",
+        "name": "bankEffectiveInterest",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.requires_extra_doc",
+        "name": "requires_extra_doc",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.effectiveInterest",
+        "name": "effectiveInterest",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.placedBy",
+        "name": "placedBy",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "placedBy.user",
+            "name": "user",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "placedBy.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "bids.integrationAcceptSent",
+        "name": "integrationAcceptSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.signLink",
+        "name": "signLink",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.bankMonthlyCost",
+        "name": "bankMonthlyCost",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.mustRefinanceAmount",
+        "name": "mustRefinanceAmount",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.startupFee",
+        "name": "startupFee",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.accepted",
+        "name": "accepted",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.comments",
+        "name": "comments",
         "type": "STRING",
         "mode": "REPEATED"
       },
       {
-        "name": "bids.is_valid_bid",
+        "name": "is_valid_bid",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.amount",
+        "name": "amount",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.bankNotInterested",
+        "name": "bankNotInterested",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.invitation",
+        "name": "invitation",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.fromInbox",
+        "name": "fromInbox",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.amortizationType",
+        "name": "amortizationType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.acceptedAt",
+        "name": "acceptedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.requiredDocs",
+        "name": "requiredDocs",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "requiredDocs.companyBalanceSheet",
+            "name": "companyBalanceSheet",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.ownCompanyBalance",
+            "name": "ownCompanyBalance",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.rentalIncome",
+            "name": "rentalIncome",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.employerDoc",
+            "name": "employerDoc",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.retiredPaymentNotice",
+            "name": "retiredPaymentNotice",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.companyMoreRecentProfitAndLossStatement",
+            "name": "companyMoreRecentProfitAndLossStatement",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.taxReturn",
+            "name": "taxReturn",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.companyProfitAndLossStatement",
+            "name": "companyProfitAndLossStatement",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.payslip",
+            "name": "payslip",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.companyBankStatements",
+            "name": "companyBankStatements",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "requiredDocs.companyAdditionalGuarantor",
+            "name": "companyAdditionalGuarantor",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "bids.bank",
+        "name": "bank",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.maximumAmount",
+        "name": "maximumAmount",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.repaymentTime",
+        "name": "repaymentTime",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.externalApplicationId",
+        "name": "externalApplicationId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.interest",
+        "name": "interest",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.adminFee",
+        "name": "adminFee",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.expiresAt",
+        "name": "expiresAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "bids.acceptedHigherRateBidReason",
+        "name": "acceptedHigherRateBidReason",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -652,17 +652,17 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "company.ngrams",
+        "name": "ngrams",
         "type": "STRING",
         "mode": "REPEATED"
       },
       {
-        "name": "company.yearlyRevenue",
+        "name": "yearlyRevenue",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "company.address",
+        "name": "address",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -672,47 +672,47 @@
         }
       },
       {
-        "name": "company.monthlyRevenue",
+        "name": "monthlyRevenue",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "company.entityType",
+        "name": "entityType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "company.postalCode",
+        "name": "postalCode",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "company.industryTypeOther",
+        "name": "industryTypeOther",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "company.market",
+        "name": "market",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "company.organizationNumber",
+        "name": "organizationNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "company._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "company.name",
+        "name": "name",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "company.postalArea",
+        "name": "postalArea",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -722,12 +722,12 @@
         }
       },
       {
-        "name": "company.foundationDate",
+        "name": "foundationDate",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "company.industryType",
+        "name": "industryType",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -754,91 +754,91 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "debtLetter.signed",
+        "name": "signed",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.placedBy",
+        "name": "placedBy",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "placedBy.name",
+            "name": "name",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "debtLetter.status",
+        "name": "status",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "status.text",
+            "name": "text",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "debtLetter.amount",
+        "name": "amount",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.accepted",
+        "name": "accepted",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.integrationAcceptSent",
+        "name": "integrationAcceptSent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.repaymentTime",
+        "name": "repaymentTime",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.sent",
+        "name": "sent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.externalApplicationId",
+        "name": "externalApplicationId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.acceptedAt",
+        "name": "acceptedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.interest",
+        "name": "interest",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.bank",
+        "name": "bank",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "debtLetter.bankNotInterested",
+        "name": "bankNotInterested",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       }
@@ -855,47 +855,47 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "estates.propertyAddedValue",
+        "name": "propertyAddedValue",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "estates.propertyType",
+        "name": "propertyType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "estates.livingArea",
+        "name": "livingArea",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "estates.propertyValue",
+        "name": "propertyValue",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "estates.mainProperty",
+        "name": "mainProperty",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "estates.areaScore",
+        "name": "areaScore",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "estates.condoRent",
+        "name": "condoRent",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "estates._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "estates.postalArea",
+        "name": "postalArea",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -912,12 +912,12 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "excludeBanks.bank",
+        "name": "bank",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "excludeBanks._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -974,42 +974,42 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "internalComments.archive",
+        "name": "archive",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.sticky",
+        "name": "sticky",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.text",
+        "name": "text",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.remind",
+        "name": "remind",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.user",
+        "name": "user",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "internalComments.userName",
+        "name": "userName",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -1041,17 +1041,17 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "lastPaidOutBySambla.bank",
+        "name": "bank",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "lastPaidOutBySambla.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "lastPaidOutBySambla.amount",
+        "name": "amount",
         "type": "FLOAT",
         "mode": "NULLABLE"
       }
@@ -1068,42 +1068,42 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "lifeInsurance.signed",
+        "name": "signed",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.notInterested",
+        "name": "notInterested",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.signedAt",
+        "name": "signedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.insuranceType",
+        "name": "insuranceType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.premium",
+        "name": "premium",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.notInterestedReason",
+        "name": "notInterestedReason",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.errorMessage",
+        "name": "errorMessage",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "lifeInsurance.compensation",
+        "name": "compensation",
         "type": "INTEGER",
         "mode": "NULLABLE"
       }
@@ -1115,27 +1115,27 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "loanProtectionForPartner.notInterested",
+        "name": "notInterested",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtectionForPartner.accepted",
+        "name": "accepted",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtectionForPartner.acceptedAt",
+        "name": "acceptedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtectionForPartner.sentToBank",
+        "name": "sentToBank",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtectionForPartner.person",
+        "name": "person",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -1147,32 +1147,32 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "loanProtectionForPerson.notInterested",
+        "name": "notInterested",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtectionForPerson.accepted",
+        "name": "accepted",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtectionForPerson.acceptedAt",
+        "name": "acceptedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtectionForPerson.notApplicable",
+        "name": "notApplicable",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtectionForPerson.sentToBank",
+        "name": "sentToBank",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loanProtectionForPerson.person",
+        "name": "person",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -1194,67 +1194,67 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "loans.insuranceCost",
+        "name": "insuranceCost",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.personShare",
+        "name": "personShare",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.repaymentTime",
+        "name": "repaymentTime",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.amount",
+        "name": "amount",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.creditLimit",
+        "name": "creditLimit",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.partnerShare",
+        "name": "partnerShare",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.interest",
+        "name": "interest",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.bank",
+        "name": "bank",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.loanType",
+        "name": "loanType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.refinance",
+        "name": "refinance",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.adminFee",
+        "name": "adminFee",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "loans.monthlyCost",
+        "name": "monthlyCost",
         "type": "FLOAT",
         "mode": "NULLABLE"
       }
@@ -1266,17 +1266,17 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "loxyStatus.agentId",
+        "name": "agentId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "loxyStatus.status",
+        "name": "status",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "loxyStatus.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -1293,47 +1293,47 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "mortgageInfo.refinanceMortgage",
+        "name": "refinanceMortgage",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "mortgageInfo.propertyType",
+        "name": "propertyType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "mortgageInfo.daycare",
+        "name": "daycare",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "mortgageInfo.propertyValue",
+        "name": "propertyValue",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "mortgageInfo.monthlyCondoRent",
+        "name": "monthlyCondoRent",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "mortgageInfo.cars",
+        "name": "cars",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "mortgageInfo.otherIncomes",
+        "name": "otherIncomes",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "mortgageInfo.localTaxes",
+        "name": "localTaxes",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "mortgageInfo.condoRent",
+        "name": "condoRent",
         "type": "INTEGER",
         "mode": "NULLABLE"
       }
@@ -1385,7 +1385,7 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "partner.last_name",
+        "name": "last_name",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -1395,12 +1395,12 @@
         }
       },
       {
-        "name": "partner.yearlyIncome",
+        "name": "yearlyIncome",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.postalArea",
+        "name": "postalArea",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -1410,49 +1410,49 @@
         }
       },
       {
-        "name": "partner.expenses",
+        "name": "expenses",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "expenses.insurance",
+            "name": "insurance",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "expenses.transportation",
+            "name": "transportation",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "expenses.media",
+            "name": "media",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "expenses.utilities",
+            "name": "utilities",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "expenses.consumption",
+            "name": "consumption",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "expenses.heating",
+            "name": "heating",
             "type": "INTEGER",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partner.income",
+        "name": "income",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.email",
+        "name": "email",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -1462,166 +1462,166 @@
         }
       },
       {
-        "name": "partner.rent",
+        "name": "rent",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.employedSince",
+        "name": "employedSince",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.idNumber",
+        "name": "idNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.employmentHistory",
+        "name": "employmentHistory",
         "type": "STRING",
         "mode": "REPEATED"
       },
       {
-        "name": "partner.isCitizen",
+        "name": "isCitizen",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.name",
+        "name": "name",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.civilStatus",
+        "name": "civilStatus",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.mortgage",
+        "name": "mortgage",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.dob",
+        "name": "dob",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.gjeldsregisteretReports",
+        "name": "gjeldsregisteretReports",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "gjeldsregisteretReports.loans",
+            "name": "loans",
             "type": "RECORD",
             "mode": "REPEATED",
             "fields": [
               {
-                "name": "loans.installmentCharges",
+                "name": "installmentCharges",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.type",
+                "name": "type",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.terms",
+                "name": "terms",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.nonInterestBearingBalance",
+                "name": "nonInterestBearingBalance",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.financialInstitutionName",
+                "name": "financialInstitutionName",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.balance",
+                "name": "balance",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.originalBalance",
+                "name": "originalBalance",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.interestBearingBalance",
+                "name": "interestBearingBalance",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.receivedTime",
+                "name": "receivedTime",
                 "type": "TIMESTAMP",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.installmentChargePeriod",
+                "name": "installmentChargePeriod",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.processedTime",
+                "name": "processedTime",
                 "type": "TIMESTAMP",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.coBorrower",
+                "name": "coBorrower",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.creditLimit",
+                "name": "creditLimit",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.nominalInterestRate",
+                "name": "nominalInterestRate",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "gjeldsregisteretReports.createdAt",
+            "name": "createdAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partner.childrenBenefits",
+        "name": "childrenBenefits",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.recentDebt",
+        "name": "recentDebt",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.childrenInDaycare",
+        "name": "childrenInDaycare",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.qualified_for_insurance",
+        "name": "qualified_for_insurance",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.address",
+        "name": "address",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -1631,361 +1631,361 @@
         }
       },
       {
-        "name": "partner.hasVisaCard",
+        "name": "hasVisaCard",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.encrypted",
+        "name": "encrypted",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.hashed_email",
+        "name": "hashed_email",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.homeSince",
+        "name": "homeSince",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.valid_phoneNumber",
+        "name": "valid_phoneNumber",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.remainingAssets",
+        "name": "remainingAssets",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.creditReports",
+        "name": "creditReports",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "creditReports.taxableIncome",
+            "name": "taxableIncome",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.taxableIncomeYear",
+            "name": "taxableIncomeYear",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.type",
+            "name": "type",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.lastYearTaxInfo",
+            "name": "lastYearTaxInfo",
             "type": "RECORD",
             "mode": "NULLABLE",
             "fields": [
               {
-                "name": "lastYearTaxInfo.taxableIncomeYear",
+                "name": "taxableIncomeYear",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               },
               {
-                "name": "lastYearTaxInfo.taxableIncome",
+                "name": "taxableIncome",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               },
               {
-                "name": "lastYearTaxInfo.capitalDeficit",
+                "name": "capitalDeficit",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "creditReports.createdAt",
+            "name": "createdAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.creditScore",
+            "name": "creditScore",
             "type": "FLOAT",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.registeredAt",
+            "name": "registeredAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.capitalDeficit",
+            "name": "capitalDeficit",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.latestRecordDetails",
+            "name": "latestRecordDetails",
             "type": "RECORD",
             "mode": "NULLABLE",
             "fields": [
               {
-                "name": "latestRecordDetails.type",
+                "name": "type",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "latestRecordDetails.claimant",
+                "name": "claimant",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "latestRecordDetails.date",
+                "name": "date",
                 "type": "TIMESTAMP",
                 "mode": "NULLABLE"
               },
               {
-                "name": "latestRecordDetails.amount",
+                "name": "amount",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "creditReports.ucRegisteredAt",
+            "name": "ucRegisteredAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.currentDebt",
+            "name": "currentDebt",
             "type": "RECORD",
             "mode": "NULLABLE",
             "fields": [
               {
-                "name": "currentDebt.endDate",
+                "name": "endDate",
                 "type": "TIMESTAMP",
                 "mode": "NULLABLE"
               },
               {
-                "name": "currentDebt.hasDebtBalance",
+                "name": "hasDebtBalance",
                 "type": "BOOLEAN",
                 "mode": "NULLABLE"
               },
               {
-                "name": "currentDebt.hasDebtReconstruction",
+                "name": "hasDebtReconstruction",
                 "type": "BOOLEAN",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "creditReports.pastReportRequests",
+            "name": "pastReportRequests",
             "type": "RECORD",
             "mode": "REPEATED",
             "fields": [
               {
-                "name": "pastReportRequests.name",
+                "name": "name",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "pastReportRequests.date",
+                "name": "date",
                 "type": "TIMESTAMP",
                 "mode": "NULLABLE"
               },
               {
-                "name": "pastReportRequests._id",
+                "name": "_id",
                 "type": "STRING",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "creditReports._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.numberOfRecords",
+            "name": "numberOfRecords",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.ucBlockCode",
+            "name": "ucBlockCode",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partner.livingCost",
+        "name": "livingCost",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.hasMasterCard",
+        "name": "hasMasterCard",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.homeType",
+        "name": "homeType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.education",
+        "name": "education",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.inSanctionList",
+        "name": "inSanctionList",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.morgageShare",
+        "name": "morgageShare",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.monthlyIncome",
+        "name": "monthlyIncome",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.morgage",
+        "name": "morgage",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.occupation",
+        "name": "occupation",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.childrenAlimony",
+        "name": "childrenAlimony",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.postal_area",
+        "name": "postal_area",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.inCountrySince",
+        "name": "inCountrySince",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.postalCode",
+        "name": "postalCode",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.militaryService",
+        "name": "militaryService",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.eident",
+        "name": "eident",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "eident.done",
+            "name": "done",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "eident.nonce",
+            "name": "nonce",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "eident._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "eident.date",
+            "name": "date",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "eident.state",
+            "name": "state",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partner.housingBenefit",
+        "name": "housingBenefit",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.livingInSweden",
+        "name": "livingInSweden",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.employedUntil",
+        "name": "employedUntil",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.jojkaBlocklist",
+        "name": "jojkaBlocklist",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.children",
+        "name": "children",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.extraIncome",
+        "name": "extraIncome",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.mailChimp",
+        "name": "mailChimp",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "mailChimp.emailId",
+            "name": "emailId",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "mailChimp.subscribedAt",
+            "name": "subscribedAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "mailChimp.status",
+            "name": "status",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "mailChimp.id",
+            "name": "id",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partner.hashed_ssn",
+        "name": "hashed_ssn",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.citizenship",
+        "name": "citizenship",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.employer",
+        "name": "employer",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -1995,133 +1995,133 @@
         }
       },
       {
-        "name": "partner.hasHolidayHome",
+        "name": "hasHolidayHome",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.hasAcceptedConsidaPlus",
+        "name": "hasAcceptedConsidaPlus",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.homeStatus",
+        "name": "homeStatus",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.age",
+        "name": "age",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.inDebtorRegistry",
+        "name": "inDebtorRegistry",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.politicallyExposedPerson",
+        "name": "politicallyExposedPerson",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.listOfCars",
+        "name": "listOfCars",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "listOfCars.ownershipType",
+            "name": "ownershipType",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "listOfCars.leaseAmount",
+            "name": "leaseAmount",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "listOfCars._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partner.employerCountry",
+        "name": "employerCountry",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.residence",
+        "name": "residence",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "residence.permitExpiryDate",
+            "name": "permitExpiryDate",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "residence.type",
+            "name": "type",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "residence.permitNumber",
+            "name": "permitNumber",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "residence.permitType",
+            "name": "permitType",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partner.listOfChildren",
+        "name": "listOfChildren",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "listOfChildren.age",
+            "name": "age",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "listOfChildren._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partner.workPosition",
+        "name": "workPosition",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.retiredSince",
+        "name": "retiredSince",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.psd2Reports",
+        "name": "psd2Reports",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "psd2Reports.secondaryIncomes",
+            "name": "secondaryIncomes",
             "type": "RECORD",
             "mode": "REPEATED",
             "fields": [
               {
-                "name": "secondaryIncomes.month",
+                "name": "month",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "secondaryIncomes.value",
+                "name": "value",
                 "type": "INTEGER",
                 "mode": "NULLABLE",
                 "policyTags": {
@@ -2133,34 +2133,34 @@
             ]
           },
           {
-            "name": "psd2Reports.loanExpensesLastMonth",
+            "name": "loanExpensesLastMonth",
             "type": "RECORD",
             "mode": "NULLABLE",
             "fields": [
               {
-                "name": "loanExpensesLastMonth.date",
+                "name": "date",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loanExpensesLastMonth.amount",
+                "name": "amount",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "psd2Reports.primaryIncomes",
+            "name": "primaryIncomes",
             "type": "RECORD",
             "mode": "REPEATED",
             "fields": [
               {
-                "name": "primaryIncomes.month",
+                "name": "month",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "primaryIncomes.value",
+                "name": "value",
                 "type": "INTEGER",
                 "mode": "NULLABLE",
                 "policyTags": {
@@ -2172,54 +2172,54 @@
             ]
           },
           {
-            "name": "psd2Reports.createdAt",
+            "name": "createdAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partner.monthlyNetIncome",
+        "name": "monthlyNetIncome",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.workStatus",
+        "name": "workStatus",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.cars",
+        "name": "cars",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.partnerSharesLivingCost",
+        "name": "partnerSharesLivingCost",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.secondaryPhoneNumber",
+        "name": "secondaryPhoneNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.politicallyExposedPersonDescription",
+        "name": "politicallyExposedPersonDescription",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.employerPhone",
+        "name": "employerPhone",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.isMemberUnemploymentFund",
+        "name": "isMemberUnemploymentFund",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.ssn",
+        "name": "ssn",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -2229,37 +2229,37 @@
         }
       },
       {
-        "name": "partner.gender",
+        "name": "gender",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.workStatusSince",
+        "name": "workStatusSince",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.valid_email",
+        "name": "valid_email",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.spouseIncome",
+        "name": "spouseIncome",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.foreignerSSN",
+        "name": "foreignerSSN",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.hasAcceptedCreditReport",
+        "name": "hasAcceptedCreditReport",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.first_name",
+        "name": "first_name",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -2269,12 +2269,12 @@
         }
       },
       {
-        "name": "partner.privateLoanCost",
+        "name": "privateLoanCost",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "partner.phoneNumber",
+        "name": "phoneNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -2286,116 +2286,116 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "partnerTracking.adservice",
+        "name": "adservice",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "adservice.fp",
+            "name": "fp",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partnerTracking.hypetraffic",
+        "name": "hypetraffic",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "hypetraffic.cid",
+            "name": "cid",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partnerTracking.responsefinance",
+        "name": "responsefinance",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "responsefinance.transaction_id",
+            "name": "transaction_id",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partnerTracking.swegaming",
+        "name": "swegaming",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "swegaming.sgclid",
+            "name": "sgclid",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partnerTracking.smartresponse",
+        "name": "smartresponse",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "smartresponse.affid",
+            "name": "affid",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "smartresponse.reqid",
+            "name": "reqid",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "smartresponse.cid",
+            "name": "cid",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partnerTracking.trygglan",
+        "name": "trygglan",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "trygglan.cid",
+            "name": "cid",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partnerTracking.unifinance",
+        "name": "unifinance",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "unifinance.uuid",
+            "name": "uuid",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "partnerTracking.adtraction",
+        "name": "adtraction",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "adtraction.at_gd",
+            "name": "at_gd",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "adtraction.cn",
+            "name": "cn",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "adtraction.cv",
+            "name": "cv",
             "type": "STRING",
             "mode": "NULLABLE"
           }
@@ -2409,59 +2409,59 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "paymentProtection.signed",
+        "name": "signed",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.notInterested",
+        "name": "notInterested",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.qualified",
+        "name": "qualified",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "qualified.CTF",
+            "name": "CTF",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "qualified.CFTF",
+            "name": "CFTF",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "paymentProtection.signedAt",
+        "name": "signedAt",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.insuranceType",
+        "name": "insuranceType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.premium",
+        "name": "premium",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.notInterestedReason",
+        "name": "notInterestedReason",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.errorMessage",
+        "name": "errorMessage",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentProtection.compensation",
+        "name": "compensation",
         "type": "INTEGER",
         "mode": "NULLABLE"
       }
@@ -2473,22 +2473,22 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "paymentStatus.paidAccordingToBank",
+        "name": "paidAccordingToBank",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentStatus.bank",
+        "name": "bank",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentStatus.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "paymentStatus.paidAccordingToCustomer",
+        "name": "paidAccordingToCustomer",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       }
@@ -2500,7 +2500,7 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "person.last_name",
+        "name": "last_name",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -2510,12 +2510,12 @@
         }
       },
       {
-        "name": "person.yearlyIncome",
+        "name": "yearlyIncome",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.postalArea",
+        "name": "postalArea",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -2525,49 +2525,49 @@
         }
       },
       {
-        "name": "person.expenses",
+        "name": "expenses",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "expenses.insurance",
+            "name": "insurance",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "expenses.transportation",
+            "name": "transportation",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "expenses.media",
+            "name": "media",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "expenses.utilities",
+            "name": "utilities",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "expenses.consumption",
+            "name": "consumption",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "expenses.heating",
+            "name": "heating",
             "type": "INTEGER",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "person.income",
+        "name": "income",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.email",
+        "name": "email",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -2577,32 +2577,32 @@
         }
       },
       {
-        "name": "person.rent",
+        "name": "rent",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.employedSince",
+        "name": "employedSince",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.idNumber",
+        "name": "idNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.psd2Reports",
+        "name": "psd2Reports",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "psd2Reports.secondaryIncomes",
+            "name": "secondaryIncomes",
             "type": "RECORD",
             "mode": "REPEATED",
             "fields": [
               {
-                "name": "secondaryIncomes.value",
+                "name": "value",
                 "type": "FLOAT",
                 "mode": "NULLABLE",
                 "policyTags": {
@@ -2612,41 +2612,41 @@
                 }
               },
               {
-                "name": "secondaryIncomes.month",
+                "name": "month",
                 "type": "STRING",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "psd2Reports.loanExpensesLastMonth",
+            "name": "loanExpensesLastMonth",
             "type": "RECORD",
             "mode": "NULLABLE",
             "fields": [
               {
-                "name": "loanExpensesLastMonth.date",
+                "name": "date",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loanExpensesLastMonth.amount",
+                "name": "amount",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "psd2Reports.createdAt",
+            "name": "createdAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "psd2Reports.primaryIncomes",
+            "name": "primaryIncomes",
             "type": "RECORD",
             "mode": "REPEATED",
             "fields": [
               {
-                "name": "primaryIncomes.value",
+                "name": "value",
                 "type": "FLOAT",
                 "mode": "NULLABLE",
                 "policyTags": {
@@ -2656,7 +2656,7 @@
                 }
               },
               {
-                "name": "primaryIncomes.month",
+                "name": "month",
                 "type": "STRING",
                 "mode": "NULLABLE"
               }
@@ -2665,57 +2665,57 @@
         ]
       },
       {
-        "name": "person.employmentHistory",
+        "name": "employmentHistory",
         "type": "STRING",
         "mode": "REPEATED"
       },
       {
-        "name": "person.isCitizen",
+        "name": "isCitizen",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.name",
+        "name": "name",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.civilStatus",
+        "name": "civilStatus",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.mortgage",
+        "name": "mortgage",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.dob",
+        "name": "dob",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.recentDebt",
+        "name": "recentDebt",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.childrenInDaycare",
+        "name": "childrenInDaycare",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.qualified_for_insurance",
+        "name": "qualified_for_insurance",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.address",
+        "name": "address",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -2725,183 +2725,183 @@
         }
       },
       {
-        "name": "person.hasVisaCard",
+        "name": "hasVisaCard",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.encrypted",
+        "name": "encrypted",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.hashed_email",
+        "name": "hashed_email",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.homeSince",
+        "name": "homeSince",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.valid_phoneNumber",
+        "name": "valid_phoneNumber",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.livingCost",
+        "name": "livingCost",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.creditReports",
+        "name": "creditReports",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "creditReports.type",
+            "name": "type",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.createdAt",
+            "name": "createdAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.taxableIncomeYear",
+            "name": "taxableIncomeYear",
             "type": "FLOAT",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.lastYearTaxInfo",
+            "name": "lastYearTaxInfo",
             "type": "RECORD",
             "mode": "NULLABLE",
             "fields": [
               {
-                "name": "lastYearTaxInfo.taxableIncome",
+                "name": "taxableIncome",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "lastYearTaxInfo.capitalDeficit",
+                "name": "capitalDeficit",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "lastYearTaxInfo.taxableIncomeYear",
+                "name": "taxableIncomeYear",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "creditReports.creditScore",
+            "name": "creditScore",
             "type": "FLOAT",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.registeredAt",
+            "name": "registeredAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.latestRecordDetails",
+            "name": "latestRecordDetails",
             "type": "RECORD",
             "mode": "NULLABLE",
             "fields": [
               {
-                "name": "latestRecordDetails.type",
+                "name": "type",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "latestRecordDetails.claimant",
+                "name": "claimant",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "latestRecordDetails.date",
+                "name": "date",
                 "type": "TIMESTAMP",
                 "mode": "NULLABLE"
               },
               {
-                "name": "latestRecordDetails.amount",
+                "name": "amount",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "creditReports.ucRegisteredAt",
+            "name": "ucRegisteredAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.pastReportRequests",
+            "name": "pastReportRequests",
             "type": "RECORD",
             "mode": "REPEATED",
             "fields": [
               {
-                "name": "pastReportRequests.name",
+                "name": "name",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "pastReportRequests.date",
+                "name": "date",
                 "type": "TIMESTAMP",
                 "mode": "NULLABLE"
               },
               {
-                "name": "pastReportRequests._id",
+                "name": "_id",
                 "type": "STRING",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "creditReports._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.taxableIncome",
+            "name": "taxableIncome",
             "type": "FLOAT",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.numberOfRecords",
+            "name": "numberOfRecords",
             "type": "FLOAT",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.capitalDeficit",
+            "name": "capitalDeficit",
             "type": "FLOAT",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.ucBlockCode",
+            "name": "ucBlockCode",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "creditReports.currentDebt",
+            "name": "currentDebt",
             "type": "RECORD",
             "mode": "NULLABLE",
             "fields": [
               {
-                "name": "currentDebt.endDate",
+                "name": "endDate",
                 "type": "TIMESTAMP",
                 "mode": "NULLABLE"
               },
               {
-                "name": "currentDebt.hasDebtBalance",
+                "name": "hasDebtBalance",
                 "type": "BOOLEAN",
                 "mode": "NULLABLE"
               },
               {
-                "name": "currentDebt.hasDebtReconstruction",
+                "name": "hasDebtReconstruction",
                 "type": "BOOLEAN",
                 "mode": "NULLABLE"
               }
@@ -2910,265 +2910,265 @@
         ]
       },
       {
-        "name": "person.extraIncome",
+        "name": "extraIncome",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.hasMasterCard",
+        "name": "hasMasterCard",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.homeType",
+        "name": "homeType",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.education",
+        "name": "education",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.inSanctionList",
+        "name": "inSanctionList",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.morgageShare",
+        "name": "morgageShare",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.gjeldsregisteretReports",
+        "name": "gjeldsregisteretReports",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "gjeldsregisteretReports.loans",
+            "name": "loans",
             "type": "RECORD",
             "mode": "REPEATED",
             "fields": [
               {
-                "name": "loans.installmentCharges",
+                "name": "installmentCharges",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.type",
+                "name": "type",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.terms",
+                "name": "terms",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.nonInterestBearingBalance",
+                "name": "nonInterestBearingBalance",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.financialInstitutionName",
+                "name": "financialInstitutionName",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.balance",
+                "name": "balance",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.originalBalance",
+                "name": "originalBalance",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.interestBearingBalance",
+                "name": "interestBearingBalance",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.receivedTime",
+                "name": "receivedTime",
                 "type": "TIMESTAMP",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.installmentChargePeriod",
+                "name": "installmentChargePeriod",
                 "type": "STRING",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.processedTime",
+                "name": "processedTime",
                 "type": "TIMESTAMP",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.coBorrower",
+                "name": "coBorrower",
                 "type": "INTEGER",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.creditLimit",
+                "name": "creditLimit",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               },
               {
-                "name": "loans.nominalInterestRate",
+                "name": "nominalInterestRate",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
               }
             ]
           },
           {
-            "name": "gjeldsregisteretReports.createdAt",
+            "name": "createdAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "person.privateLoanCost",
+        "name": "privateLoanCost",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.monthlyIncome",
+        "name": "monthlyIncome",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.morgage",
+        "name": "morgage",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.occupation",
+        "name": "occupation",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.childrenAlimony",
+        "name": "childrenAlimony",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.postal_area",
+        "name": "postal_area",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.inCountrySince",
+        "name": "inCountrySince",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.postalCode",
+        "name": "postalCode",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.militaryService",
+        "name": "militaryService",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.eident",
+        "name": "eident",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "eident.done",
+            "name": "done",
             "type": "BOOLEAN",
             "mode": "NULLABLE"
           },
           {
-            "name": "eident.nonce",
+            "name": "nonce",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "eident._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "eident.date",
+            "name": "date",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "eident.state",
+            "name": "state",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "person.housingBenefit",
+        "name": "housingBenefit",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.livingInSweden",
+        "name": "livingInSweden",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.employedUntil",
+        "name": "employedUntil",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.jojkaBlocklist",
+        "name": "jojkaBlocklist",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.spouseIncome",
+        "name": "spouseIncome",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.mailChimp",
+        "name": "mailChimp",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "mailChimp.emailId",
+            "name": "emailId",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "mailChimp.subscribedAt",
+            "name": "subscribedAt",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "mailChimp.status",
+            "name": "status",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "mailChimp.id",
+            "name": "id",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "person.hashed_ssn",
+        "name": "hashed_ssn",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.citizenship",
+        "name": "citizenship",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.employer",
+        "name": "employer",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -3178,158 +3178,158 @@
         }
       },
       {
-        "name": "person.hasHolidayHome",
+        "name": "hasHolidayHome",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.hasAcceptedConsidaPlus",
+        "name": "hasAcceptedConsidaPlus",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.homeStatus",
+        "name": "homeStatus",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.age",
+        "name": "age",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.inDebtorRegistry",
+        "name": "inDebtorRegistry",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.politicallyExposedPerson",
+        "name": "politicallyExposedPerson",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.listOfCars",
+        "name": "listOfCars",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "listOfCars.ownershipType",
+            "name": "ownershipType",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "listOfCars.leaseAmount",
+            "name": "leaseAmount",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "listOfCars._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "person.employerCountry",
+        "name": "employerCountry",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.residence",
+        "name": "residence",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
           {
-            "name": "residence.permitExpiryDate",
+            "name": "permitExpiryDate",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "residence.type",
+            "name": "type",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "residence.permitNumber",
+            "name": "permitNumber",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "residence.permitType",
+            "name": "permitType",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "person.listOfChildren",
+        "name": "listOfChildren",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "listOfChildren.age",
+            "name": "age",
             "type": "INTEGER",
             "mode": "NULLABLE"
           },
           {
-            "name": "listOfChildren._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "person.workPosition",
+        "name": "workPosition",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.retiredSince",
+        "name": "retiredSince",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.monthlyNetIncome",
+        "name": "monthlyNetIncome",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.workStatus",
+        "name": "workStatus",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.cars",
+        "name": "cars",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.partnerSharesLivingCost",
+        "name": "partnerSharesLivingCost",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.secondaryPhoneNumber",
+        "name": "secondaryPhoneNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.politicallyExposedPersonDescription",
+        "name": "politicallyExposedPersonDescription",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.employerPhone",
+        "name": "employerPhone",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.isMemberUnemploymentFund",
+        "name": "isMemberUnemploymentFund",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.ssn",
+        "name": "ssn",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -3339,37 +3339,37 @@
         }
       },
       {
-        "name": "person.gender",
+        "name": "gender",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.workStatusSince",
+        "name": "workStatusSince",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.valid_email",
+        "name": "valid_email",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.children",
+        "name": "children",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.hasAcceptedCreditReport",
+        "name": "hasAcceptedCreditReport",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.childrenBenefits",
+        "name": "childrenBenefits",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.first_name",
+        "name": "first_name",
         "type": "STRING",
         "mode": "NULLABLE",
         "policyTags": {
@@ -3379,12 +3379,12 @@
         }
       },
       {
-        "name": "person.remainingAssets",
+        "name": "remainingAssets",
         "type": "FLOAT",
         "mode": "NULLABLE"
       },
       {
-        "name": "person.phoneNumber",
+        "name": "phoneNumber",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -3411,12 +3411,12 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "random.type",
+        "name": "type",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "random.coordinates",
+        "name": "coordinates",
         "type": "FLOAT",
         "mode": "REPEATED"
       }
@@ -3443,22 +3443,22 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "scheduledCall.remind",
+        "name": "remind",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "scheduledCall.first",
+        "name": "first",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "scheduledCall.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "scheduledCall.prio",
+        "name": "prio",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -3470,27 +3470,27 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "scheduledCalls.prio",
+        "name": "prio",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "scheduledCalls.called",
+        "name": "called",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "scheduledCalls.first",
+        "name": "first",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "scheduledCalls._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "scheduledCalls.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -3512,37 +3512,37 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "status.rejectionReasonForInsurance",
+        "name": "rejectionReasonForInsurance",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "status.active",
+        "name": "active",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "status.text",
+        "name": "text",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "status.supplement",
+        "name": "supplement",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "status.sent",
+        "name": "sent",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "status.deactivationReason",
+        "name": "deactivationReason",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "status.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -3554,12 +3554,12 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "teamAttributes.teamLeader",
+        "name": "teamLeader",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "teamAttributes.team",
+        "name": "team",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -3586,94 +3586,94 @@
     "mode": "NULLABLE",
     "fields": [
       {
-        "name": "utm.term",
+        "name": "term",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.history",
+        "name": "history",
         "type": "RECORD",
         "mode": "REPEATED",
         "fields": [
           {
-            "name": "history.originReference",
+            "name": "originReference",
             "type": "STRING",
             "mode": "NULLABLE"
           },
           {
-            "name": "history.date",
+            "name": "date",
             "type": "TIMESTAMP",
             "mode": "NULLABLE"
           },
           {
-            "name": "history._id",
+            "name": "_id",
             "type": "STRING",
             "mode": "NULLABLE"
           }
         ]
       },
       {
-        "name": "utm.cookieId",
+        "name": "cookieId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.adposition",
+        "name": "adposition",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.medium",
+        "name": "medium",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.partner",
+        "name": "partner",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.content",
+        "name": "content",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.campaign",
+        "name": "campaign",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.device",
+        "name": "device",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.gaCookie",
+        "name": "gaCookie",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.campaignId",
+        "name": "campaignId",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.source",
+        "name": "source",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.domain",
+        "name": "domain",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.fbcCookie",
+        "name": "fbcCookie",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "utm.fbpCookie",
+        "name": "fbpCookie",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -3685,32 +3685,32 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "version.url",
+        "name": "url",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "version.variation",
+        "name": "variation",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "version.name",
+        "name": "name",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "version._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "version.source",
+        "name": "source",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "version.generation",
+        "name": "generation",
         "type": "STRING",
         "mode": "NULLABLE"
       }
@@ -3722,27 +3722,27 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "allPaidOutByAdvisa._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "allPaidOutByAdvisa.allowRefinance",
+        "name": "allowRefinance",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
       },
       {
-        "name": "allPaidOutByAdvisa.amount",
+        "name": "amount",
         "type": "INTEGER",
         "mode": "NULLABLE"
       },
       {
-        "name": "allPaidOutByAdvisa.bank",
+        "name": "bank",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "allPaidOutByAdvisa.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       }
@@ -3759,32 +3759,32 @@
     "mode": "REPEATED",
     "fields": [
       {
-        "name": "partnerComments._id",
+        "name": "_id",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerComments.date",
+        "name": "date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerComments.removalReason",
+        "name": "removalReason",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerComments.text",
+        "name": "text",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerComments.user",
+        "name": "user",
         "type": "STRING",
         "mode": "NULLABLE"
       },
       {
-        "name": "partnerComments.userName",
+        "name": "userName",
         "type": "STRING",
         "mode": "NULLABLE"
       }
