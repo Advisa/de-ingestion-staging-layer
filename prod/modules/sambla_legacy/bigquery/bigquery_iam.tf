@@ -61,7 +61,7 @@ resource "google_project_iam_member" "bq_permissions_data_transfer_service_agent
   member  = "serviceAccount:${google_service_account.sa_data_transfer.email}"
 }
 
-# Add IAM permissions to run BigQuery jobs (required for scheduled queries)
+# Add IAM permissions to run BigQuery jobs
 resource "google_project_iam_member" "bq_permissions_data_transfer_job_user_destination" {
   project = var.project_id
   role    = "roles/bigquery.jobUser"
