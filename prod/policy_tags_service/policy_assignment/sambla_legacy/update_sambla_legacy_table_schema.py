@@ -53,10 +53,8 @@ def update_schemas_for_all_tables():
         print("No tables found in the dataset.")
         return
 
-    # Loop through all tables and update their schema
     for table_name in table_names:
         schema_file_path = os.path.join(schema_directory, f"{table_name}_schema.json")
         update_table_schema(project_id, dataset_name, table_name, schema_file_path)
 
-# Call the function to update schemas
 update_schemas_for_all_tables()

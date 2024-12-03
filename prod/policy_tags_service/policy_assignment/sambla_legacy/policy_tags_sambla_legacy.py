@@ -132,10 +132,8 @@ def main():
     # Fetch policy tags
     policy_tags = fetch_policy_tags()
 
-    # Update schemas with matching policy tags
     updated_schemas = update_schema_with_policy_tags(schemas, policy_tags)
 
-    # Save the updated schemas for each table to a new JSON file
     save_updated_schema_for_each_table(updated_schemas)
 
 if __name__ == "__main__":
