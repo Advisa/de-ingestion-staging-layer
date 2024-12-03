@@ -5,31 +5,21 @@ data "google_bigquery_tables" "source_tables" {
 
 locals {
   # List of table names excluding the ones you want to ignore
-  table_names = [for table in data.google_bigquery_tables.source_tables.tables : table.table_id if !(table.table_id == "applications_latest_view_plus" || table.table_id == "customers")]
+  table_names = [for table in data.google_bigquery_tables.source_tables.tables : table.table_id if length(regexall("gcs_streaming$", table.table_id)) > 0]
 }
 
-# Iterate over the table names and create a BigQuery job for each
-resource "google_bigquery_job" "create_table_jobs" {
+resource "null_resource" "create_table_jobs" {
   for_each = toset(local.table_names)
 
-  job_id   = "create_table_job-${each.key}-legacy" 
-  location = "europe-north1"
-
-  query {
-    query = <<SQL
-      SELECT * FROM `data-domain-data-warehouse.sambla_internal_streaming.${each.key}`
-    SQL
-
-    destination_table {
-      project_id = "sambla-data-staging-compliance"
-      dataset_id = "sambla_legacy_integration_legacy"
-      table_id   = each.key
-    }
-
-    write_disposition = "WRITE_TRUNCATE"
+  provisioner "local-exec" {
+    command = <<EOT
+      bq cp --force --project_id=${var.project_id} \
+        ${var.data_domain_project_id}:sambla_internal_streaming.${each.key} \
+        ${var.project_id}:sambla_legacy_integration_legacy.${each.key}
+    EOT
   }
 
   depends_on = [
-    google_bigquery_dataset.sambla_legacy_dataset
+    google_bigquery_dataset.sambla_legacy_dataset  # Ensure the dataset exists before the job runs
   ]
 }

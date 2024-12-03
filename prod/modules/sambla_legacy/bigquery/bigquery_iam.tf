@@ -39,7 +39,7 @@ resource "google_service_account" "sa_data_transfer" {
 
 # Grant BigQuery editor permissions to the service account for the destination dataset
 resource "google_bigquery_dataset_iam_member" "destination_permissions" {
-  depends_on = [google_service_account.sa_data_transfer]
+  depends_on = [google_service_account.sa_data_transfer,google_bigquery_dataset.sambla_legacy_dataset]
   dataset_id = "sambla_legacy_integration_legacy"  
   project = var.project_id
   role       = "roles/bigquery.dataEditor" 

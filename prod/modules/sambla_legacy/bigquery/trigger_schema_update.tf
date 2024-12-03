@@ -1,12 +1,21 @@
-# Trigger Python script to update schemas
-resource "null_resource" "update_schemas" {
+locals {
+  # Define the path to your schema directory
+  schema_directory = "schemas/sambla_legacy/"  # Update this path to where your schema files are stored
+}
+
+
+resource "null_resource" "update_sambla_legacy_table_schema" {
+  for_each = toset(local.table_names)
+
   provisioner "local-exec" {
-    command     = "python3 /Users/aruldharani/Sambla/de-ingestion-staging-layer-1/prod/policy_tags_service/policy_assignment/sambla_legacy/update_sambla_legacy_table_schema.py"
-    working_dir = "/Users/aruldharani/Sambla/de-ingestion-staging-layer-1/prod/policy_tags_service/policy_assignment/sambla_legacy"
+    command = <<EOT
+      bq update --project_id=${var.project_id} \
+        ${var.project_id}:sambla_legacy_integration_legacy.${each.key} \
+        ${local.schema_directory}${each.key}_schema.json
+    EOT
   }
 
   depends_on = [
     null_resource.generate_schemas
   ]
 }
-

@@ -6,7 +6,7 @@ resource "null_resource" "generate_schemas" {
   }
 
   depends_on = [
-    google_bigquery_job.create_table_jobs
+    null_resource.create_table_jobs
   ]
 }
 
