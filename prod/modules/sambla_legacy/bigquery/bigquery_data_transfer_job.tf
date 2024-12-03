@@ -8,7 +8,7 @@ locals {
   table_names = [for table in data.google_bigquery_tables.source_tables.tables : table.table_id if length(regexall("gcs_streaming$", table.table_id)) > 0]
 }
 
-resource "null_resource" "create_table_jobs_prod" {
+resource "null_resource" "create_table_jobs_sambla_legacy" {
   for_each = toset(local.table_names)
 
   provisioner "local-exec" {

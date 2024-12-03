@@ -3,7 +3,7 @@ locals {
 }
 
 
-resource "null_resource" "update_sambla_legacy_table_schema_prod" {
+resource "null_resource" "update_table_schema_sambla_legacy" {
   for_each = toset(local.table_names)
 
   provisioner "local-exec" {
@@ -15,6 +15,6 @@ resource "null_resource" "update_sambla_legacy_table_schema_prod" {
   }
 
   depends_on = [
-    null_resource.generate_schemas_prod
+    null_resource.generate_schemas_sambla_legacy
   ]
 }
