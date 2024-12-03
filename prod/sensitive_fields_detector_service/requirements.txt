@@ -8,4 +8,5 @@ matplotlib
 scipy
 graphviz
 pandas
+google-cloud-datacatalog
 

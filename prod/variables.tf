@@ -49,3 +49,8 @@ variable "salus_bucket_name" {
   type        = string
   
 }
+
+variable "sambla_legacy_bucket_name" {
+  description = "The name of the bucket where source sambla legacy data in data-domain-data-warehouse project resides"
+  type        = string
+}

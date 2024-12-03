@@ -8,3 +8,4 @@ data_domain_project_roles = ["roles/bigquery.jobUser", "roles/storage.objectView
 compliance_project_roles = ["roles/bigquery.jobUser", "roles/storage.objectViewer","roles/bigquery.metadataViewer"]
 kms_crypto_key_id = "projects/key-management-sambla/locations/europe-north1/keyRings/datawarehouse_encryption_keys/cryptoKeys/production_key"
 salus_bucket_name = "salus-2-sambla"
+sambla_legacy_bucket_name = "sambla-mongodb-history"
