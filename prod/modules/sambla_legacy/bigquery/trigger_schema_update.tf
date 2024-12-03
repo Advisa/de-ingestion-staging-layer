@@ -1,6 +1,5 @@
 locals {
-  # Define the path to your schema directory
-  schema_directory = "schemas/sambla_legacy/"  # Update this path to where your schema files are stored
+  schema_directory = "schemas/sambla_legacy/"
 }
 
 
