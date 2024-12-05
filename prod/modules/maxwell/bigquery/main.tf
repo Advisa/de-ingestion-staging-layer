@@ -8,3 +8,20 @@ resource "google_bigquery_dataset" "maxwell_dataset" {
     prevent_destroy = true
   }
 }
+
+
+resource "google_bigquery_table" "event_data_sgmw_r_maxwell" {
+  dataset_id = google_bigquery_dataset.maxwell_dataset.dataset_id
+  table_id   = "event_data_sgmw_r"
+  deletion_protection       = true
+  schema = file("schemas/maxwell/event_data_sgmw_r_schema.json")
+  time_partitioning {
+    type          = "DAY"
+    field         = "event_date"
+  }
+
+  clustering = ["table"]
+
+  depends_on = [ google_bigquery_dataset.maxwell_dataset ]
+
+}

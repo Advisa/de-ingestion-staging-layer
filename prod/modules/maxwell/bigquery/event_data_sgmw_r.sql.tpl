@@ -1,13 +1,15 @@
-CREATE OR REPLACE TABLE `${project_id}.${dataset_id}.${table_name}`
-    PARTITION BY DATE(event_date) 
-    CLUSTER BY `table`
-    AS
-with source_s3 as (
+WITH column_metadata AS (
+    -- Query to get the column count
+    SELECT COUNT(column_name) AS column_count
+    FROM ${project_id}.${dataset_id}.INFORMATION_SCHEMA.COLUMNS
+    WHERE table_name = 'raw_data_s3_new')
+
+,source_s3 as (
 
     select JSON_EXTRACT_ARRAY(CONCAT('[', REPLACE(raw_data,'}{','},{'), ']')) json_table,  
-   DATE(PARSE_TIMESTAMP('%Y/%m/%d', REGEXP_EXTRACT(_FILE_NAME, '[0-9]{2,}/[0-9]+/[0-9]+'))) event_date,
-   --(PARSE_TIMESTAMP('%Y-%m-%d-%I-%M-%S', REGEXP_EXTRACT(_FILE_NAME, '[0-9]{2,}-[0-9]+-[0-9]+-[0-9]+-[0-9]+-[0-9]+'))) event_date,
-    'sambla_group' as source, _FILE_NAME file_name, '{{get_metadata}}' as column_check
+   DATE(PARSE_TIMESTAMP('%Y/%m/%d', REGEXP_EXTRACT(file_name, '[0-9]{2,}/[0-9]+/[0-9]+'))) event_date,
+   --(PARSE_TIMESTAMP('%Y-%m-%d-%I-%M-%S', REGEXP_EXTRACT(file_name, '[0-9]{2,}-[0-9]+-[0-9]+-[0-9]+-[0-9]+-[0-9]+'))) event_date,
+    'sambla_group' as source, file_name, cast((select column_count  from  column_metadata) as string) as column_check
     from ${project_id}.${dataset_id}.${table_id_s3}
 )
 ,
