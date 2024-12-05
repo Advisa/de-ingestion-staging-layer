@@ -9,7 +9,12 @@ resource "google_bigquery_dataset_iam_binding" "auth_view_iam_access" {
   project    = var.project_id
   dataset_id = google_bigquery_dataset.auth_view_dataset.dataset_id 
   role = "roles/bigquery.dataViewer"
-  members =  ["serviceAccount:${local.service_account}","group:data_de@samblagroup.com","group:data@samblagroup.com"]                 
+  members =  [
+    "serviceAccount:${local.service_account}",
+    "group:data_de@samblagroup.com",
+    "group:data@samblagroup.com",
+    "serviceAccount:data-flow-pipeline@data-domain-data-warehouse.iam.gserviceaccount.com"
+  ]                 
   depends_on = [google_bigquery_table.dynamic_auth_views] 
 }
 

@@ -7,12 +7,7 @@
     {
         "mode": "NULLABLE",
         "name": "postal_code_id",
-        "type": "INTEGER",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
+        "type": "INTEGER"
     },
     {
         "mode": "NULLABLE",
