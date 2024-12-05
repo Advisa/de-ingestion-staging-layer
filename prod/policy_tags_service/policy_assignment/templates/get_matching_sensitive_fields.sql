@@ -1,17 +1,12 @@
 WITH
   table_columns AS (
-    {{source_table_columns}}
-    UNION ALL
-    SELECT * FROM `data-domain-data-warehouse.salus_group_integration`.INFORMATION_SCHEMA.COLUMNS
-    UNION ALL
-    SELECT * FROM `data-domain-data-warehouse.salus_group_integration`.INFORMATION_SCHEMA.COLUMNS
-  ),
+    {{source_table_columns}}    ),
   policy_tags AS (
     SELECT
       *
     FROM
       `{{raw_layer_project}}.policy_tags_metadata.policy_tags`
-    WHERE display_name!="name"
+    WHERE display_name not in ("name","postal_code_id")
   )
 SELECT
   t1.*,

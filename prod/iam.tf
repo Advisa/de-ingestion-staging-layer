@@ -10,10 +10,13 @@ resource "google_project_iam_member" "project_permissions_owner" {
   role   = "roles/owner" # Grant permission to use the service account
   member = "serviceAccount:${google_service_account.sa_terraform_admin.email}"  # Grant access to the service account
 }
-resource "google_project_iam_member" "project_permissions_masked_reader" {
+resource "google_project_iam_binding" "project_permissions_masked_reader" {
   project    = var.project_id
   role               = "roles/bigquerydatapolicy.maskedReader" 
-  member =  "group:data_de@samblagroup.com"                
+  members = [ 
+    "group:data_de@samblagroup.com",
+    "group:data@samblagroup.com"
+  ]              
 }
 
 locals {
@@ -23,18 +26,29 @@ locals {
 resource "google_project_iam_binding" "project_permissions_bq_job_user" {
   project    = var.project_id
   role               = "roles/bigquery.jobUser" 
-  members =  ["serviceAccount:${local.service_account}","group:data_de@samblagroup.com"]  
-   lifecycle {
+  members =  [
+    "serviceAccount:${local.service_account}",
+    "group:data_de@samblagroup.com",
+    "serviceAccount:data-flow-pipeline@data-domain-data-warehouse.iam.gserviceaccount.com",
+    "group:data@samblagroup.com"
+  ]  
+ 
+    lifecycle {
     ignore_changes = [role,members]
-  } 
-                
+  }             
 }
 
 # Provides permissions to masked read access to columns associated with a data policy.
-resource "google_project_iam_member" "project_permissions_fine_grained_reader" {
+resource "google_project_iam_binding" "project_permissions_fine_grained_reader" {
   project    = var.project_id
   role               = "roles/datacatalog.categoryFineGrainedReader" # Grant permission to use the service account
-  member = "serviceAccount:${local.service_account}"  # Grant access to the service account 
+  members = [
+    "serviceAccount:${local.service_account}",
+    "serviceAccount:data-flow-pipeline@data-domain-data-warehouse.iam.gserviceaccount.com"
+  ]  
+  lifecycle {
+    ignore_changes = [role,members]
+  }
 }
 
 

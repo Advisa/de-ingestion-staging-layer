@@ -105,3 +105,10 @@ salus_integration_legacy|bids_salus_r|SELECT * FROM `sambla-data-staging-complia
 salus_integration_legacy|applicant-accommodations_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.applicant-accommodations_salus_r`
 salus_integration_legacy|clicks-applications_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.clicks-applications_salus_r`
 salus_integration_legacy|applications_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.applications_salus_r`
+sambla_legacy_integration_legacy|applications_gcs_streaming|SELECT * FROM `sambla-data-staging-compliance.sambla_legacy_integration_legacy.applications_gcs_streaming`
+sambla_legacy_integration_legacy|insurances_gcs_streaming|SELECT * FROM `sambla-data-staging-compliance.sambla_legacy_integration_legacy.insurances_gcs_streaming`
+sambla_legacy_integration_legacy|bankloaninvitations_gcs_streaming|SELECT * FROM `sambla-data-staging-compliance.sambla_legacy_integration_legacy.bankloaninvitations_gcs_streaming`
+sambla_legacy_integration_legacy|banks_gcs_streaming|SELECT * FROM `sambla-data-staging-compliance.sambla_legacy_integration_legacy.banks_gcs_streaming`
+sambla_legacy_integration_legacy|users_gcs_streaming|SELECT * FROM `sambla-data-staging-compliance.sambla_legacy_integration_legacy.users_gcs_streaming`
+sambla_legacy_integration_legacy|unsubscriptions_gcs_streaming|SELECT * FROM `sambla-data-staging-compliance.sambla_legacy_integration_legacy.unsubscriptions_gcs_streaming`
+sambla_legacy_integration_legacy|insurancequotes_gcs_streaming|SELECT * FROM `sambla-data-staging-compliance.sambla_legacy_integration_legacy.insurancequotes_gcs_streaming`
