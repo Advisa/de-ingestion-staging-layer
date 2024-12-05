@@ -40,7 +40,6 @@ def extract_external_table_info(bigquery_service,project_id, dataset_id, gcs_buc
         FROM `{project_id}.{dataset_id}`.INFORMATION_SCHEMA.TABLES 
         WHERE ddl LIKE '%gs://{gcs_bucket_name}/%' and table_name like "%_r";
     """
-    print(query)
     try:
         # Run the query and store the results
         results = bigquery_service.execute_query(query)
@@ -49,12 +48,14 @@ def extract_external_table_info(bigquery_service,project_id, dataset_id, gcs_buc
         table_info = []
 
         # Regular expression to extract GCS paths from the DDL column values
-        gcs_pattern = r'gs://[^"]+\*'
+        #gcs_pattern = r'gs://[^"]+\*'
+        gcs_pattern = r'gs://[^"\[\],]+'
         # Regular expression to extract max_bad_records value
         max_bad_records_pattern = r'max_bad_records\s*=\s*(\d+)'
 
         for row in results:
             ddl = row.get('ddl')
+            print(row.get('table_name'))
 
             # Extract max_bad_records value if it exists
             match = re.search(max_bad_records_pattern, ddl)
@@ -75,6 +76,8 @@ def extract_external_table_info(bigquery_service,project_id, dataset_id, gcs_buc
                     "gcs_location":gcs_location,
                     "max_bad_records": max_bad_records
                 })
+            else:
+                print("table is not written:",ddl)
 
         return table_info
     except Exception as e:
@@ -94,8 +97,7 @@ def generate_file_txt(file_name, table_info):
                 gcs_locations = entry.get('gcs_location')
                 max_bad_records = entry.get('max_bad_records')
                 # Write table name and GCS locations (comma-separated)
-                gcs_locations_str = ",".join(gcs_locations) if gcs_locations else ""
-                file.write(f"{table_name},{gcs_locations_str},{max_bad_records}\n")
+                file.write(f"{table_name},{gcs_locations},{max_bad_records}\n")
         logging.info(f"Generated file: {file_name}")
     except Exception as e:
         logging.error(f"An error occurred while writing the file: {e}")

@@ -19,4 +19,6 @@ test.py
 
 **/schemas/rahalaitos/upstream
 **/schemas/salus/incremental
+**/output.txt
+output.txt
 
