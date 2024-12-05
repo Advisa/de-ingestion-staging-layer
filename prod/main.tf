@@ -71,6 +71,23 @@ module "sambla_legacy_bigquery_config" {
   connection_id = google_bigquery_connection.default.name
 }
 
+module "maxwell_gcs_config" {
+  source = "./modules/maxwell/gcs"
+  project_id = var.project_id
+  region     = var.region
+  data_domain_project_id = var.data_domain_project_id
+  maxwell_bucket_name = var.maxwell_bucket_name
+}
+
+module "maxwell_bigquery_config" {
+  source = "./modules/maxwell/bigquery"
+  project_id = var.project_id
+  region     = var.region
+  data_domain_project_id = var.data_domain_project_id
+  connection_id = google_bigquery_connection.default.name
+  maxwell_bucket_name = var.maxwell_bucket_name
+}
+
 module "policy_tags_config" {
   source     = "./modules/policy_tags"
   project_id = var.project_id
