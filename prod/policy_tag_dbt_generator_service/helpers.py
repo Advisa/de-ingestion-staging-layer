@@ -81,18 +81,18 @@ class SchemaAndSourceGenerator:
     def generate_source_yml(self, matching_tables):
         """Generate source.yml structure for a single source."""
         source = {
-            "name": self.config['source_name'],  # Name of the source (e.g., helios_staging)
-            "database": self.config['database'],  # Define the database (e.g., data-domain-data-warehouse)
-            "schema": self.config['schema'],  # Define the schema (e.g., helios_staging)
-            "tables": []  # Start with an empty list for tables
+            "name": self.config['source_name'],
+            "database": self.config['database'], 
+            "schema": self.config['schema'], 
+            "tables": []  
         }
 
         for table in matching_tables:
             table_entry = {
                 "name": table,
                 "description": f"Source data for {table}",
-                "freshness": None,  # Freshness field can be adjusted based on your needs
-                "+enabled": True  # Enable the table
+                "freshness": None,  
+                "+enabled": True  
             }
 
             source["tables"].append(table_entry)
