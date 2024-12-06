@@ -30,6 +30,26 @@ class BigQueryUtils:
             if table.table_id.endswith('_r'):
                 table_list.append({"legacy_stack": legacy_stack, "table_name": table.table_id})
         return table_list
+    
+    def clone_tables(self, project, dataset, target_project, target_dataset):
+        query = f"""
+             SELECT table_name
+            FROM `{project}.{dataset}`.INFORMATION_SCHEMA.TABLES 
+            WHERE  table_type!='EXTERNAL' and table_name like '%_r'
+        """
+
+        results = self.execute_query(query)
+
+        for row in results:
+            table_name = row.get('table_name')
+            clone_query = f"""
+            CREATE TABLE
+                {target_project}.{target_dataset}.{table_name}
+                CLONE {project}.{dataset}.{table_name};
+        """
+        
+            results = self.execute_query(clone_query)
+
 
   
     def execute_query(self, sql):

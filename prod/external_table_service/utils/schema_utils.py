@@ -52,8 +52,9 @@ class SchemaUtils:
                 raise
 
     
-    def remove_partition_columns(schema_folder_path, file_name):
+    def remove_partition_columns(self,schema_folder_path, file_name):
         """Remove hive partition columns from schema JSON files."""
+        print(schema_folder_path,file_name)
         try:
             with open(file_name, 'r') as file:
                 table_columns = {}

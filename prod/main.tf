@@ -1,4 +1,5 @@
 provider "google" {
+  credentials = file("/Users/duygugenc/Desktop/terraform-adm-sa.json")
   project     = var.project_id
   region      = var.region
 }
@@ -46,6 +47,7 @@ module "salus_bq_config" {
   project_id = var.project_id
   region     = var.region
   connection_id = google_bigquery_connection.default.name
+  depends_on = [ google_bigquery_connection.default ]
 }
 module "salus_gcs_config" {
   source = "./modules/salus/gcs"
@@ -92,4 +94,21 @@ module "policy_tags_config" {
   source     = "./modules/policy_tags"
   project_id = var.project_id
   region     = var.region
+}
+
+module "advisa_history_gcs_config" {
+  source = "./modules/advisa_history/gcs"
+  project_id = var.project_id
+  region     = var.region
+  data_domain_project_id = var.data_domain_project_id
+  advisa_history_bucket_name = var.advisa_history_bucket_name
+}
+
+module "advisa_history_bigquery_config" {
+  source = "./modules/advisa_history/bigquery"
+  project_id = var.project_id
+  region     = var.region
+  connection_id = google_bigquery_connection.default.name
+  advisa_history_bucket_name = var.advisa_history_bucket_name
+  data_domain_project_id = var.data_domain_project_id
 }

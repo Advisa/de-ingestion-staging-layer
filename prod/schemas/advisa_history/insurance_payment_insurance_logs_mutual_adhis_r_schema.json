@@ -1,0 +1,49 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "PREVIOUS_PAYMENT_INSURANCE_LEVEL_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "USER_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PAYMENT_INSURANCE_LEVEL_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PAYMENT_INSURANCE_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ID",
+    "type": "INTEGER"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "CREATED_AT_UTC",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "CREATED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "SYSTEM",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ACTION",
+    "type": "STRING"
+  }
+]

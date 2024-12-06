@@ -19,5 +19,5 @@ locals {
 
     }
   })
-  unique_schemas = distinct([for values in local.schema_table_queries : values.schema])
+  unique_schemas = distinct([for values in local.unencrypted_schema_table_queries : values.schema])
 }

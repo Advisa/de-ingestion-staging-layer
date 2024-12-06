@@ -1,0 +1,88 @@
+[
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "SUBMITTED_AT_UTC",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "SUBMITTED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PERSON_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PRODUCT_CONDITIONS_VERSION_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "HOURS_PER_MONTH",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "MONTHLY_SAVINGS",
+    "type": "INTEGER"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "DEACTIVATED_AT_UTC",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "HAS_COLLECTIVE_AGREEMENT",
+    "type": "BOOLEAN"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "CREATED_AT_UTC",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "DEACTIVATED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "HAS_UNEMPLOYMENT_FUND",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "INCOME_AFTER_TAX",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "HAS_INCOME_INSURANCE",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "LOAN_PROTECTION",
+    "type": "INTEGER"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "CREATED_AT",
+    "type": "TIMESTAMP"
+  }
+]

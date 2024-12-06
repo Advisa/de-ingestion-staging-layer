@@ -59,3 +59,8 @@ variable "maxwell_bucket_name" {
   description = "The names of the buckets where source maxwell data in data-domain-data-warehouse project resides"
   type        = string
 }
+
+variable "advisa_history_bucket_name" {
+  description = "The names of the buckets where source advisa history data in data-domain-data-warehouse project resides"
+  type        = string
+}

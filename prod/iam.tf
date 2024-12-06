@@ -32,10 +32,9 @@ resource "google_project_iam_binding" "project_permissions_bq_job_user" {
     "serviceAccount:data-flow-pipeline@data-domain-data-warehouse.iam.gserviceaccount.com",
     "group:data@samblagroup.com"
   ]  
- 
-    lifecycle {
-    ignore_changes = [role,members]
-  }             
+  lifecycle{
+    ignore_changes = [ members ]
+  }          
 }
 
 # Provides permissions to masked read access to columns associated with a data policy.
@@ -46,9 +45,9 @@ resource "google_project_iam_binding" "project_permissions_fine_grained_reader" 
     "serviceAccount:${local.service_account}",
     "serviceAccount:data-flow-pipeline@data-domain-data-warehouse.iam.gserviceaccount.com"
   ]  
-  lifecycle {
-    ignore_changes = [role,members]
-  }
+  lifecycle{
+    ignore_changes = [ members ]
+  } 
 }
 
 

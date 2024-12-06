@@ -17,7 +17,6 @@ default:
             "dataset_id": 'helios_staging',
             "schema":'upstream',
             "table_suffix": "_p"
-
         }
     ]
     gcs_data_info : [
@@ -32,6 +31,19 @@ default:
             "gcs_bucket_name": 'salus-integration',
             "sink_gcs_bucket_name": 'sambla-group-salus-integration-legacy',
             "schema":'salus'
-
+        },
+        {
+            "dataset_id":'advisa_snowflake_history',
+            "gcs_bucket_name": 'advisa-snowflake-history',
+            "sink_gcs_bucket_name": 'sambla-group-advisa-history-integration-legacy',
+            "schema":'advisa_history'
+        }   
+    ]
+    clone_config : [
+        {
+            "project_id": 'data-domain-data-warehouse',
+            "dataset_id": 'advisa_snowflake_history',
+            "target_project": 'sambla-data-staging-compliance',
+            "target_dataset": 'advisa_history_integration_legacy'
         }
     ]

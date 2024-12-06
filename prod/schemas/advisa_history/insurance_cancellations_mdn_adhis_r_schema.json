@@ -1,0 +1,68 @@
+[
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "__IMPORTED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_PAYMENT_METHOD",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_PAYMENT_INSTRUMENT",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PAYMENT_STATUS_HUMAN",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PAYMENT_STATUS",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CUSTOMER_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "POLICY_UNIQUE_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "POLICY_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "FILENAME",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "AMOUNT_DUE",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CURRENCY_NAME",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "DAYS_IN_AUTO_CANCELLATION",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CURRENCY_ABBREVIATION",
+    "type": "STRING"
+  }
+]

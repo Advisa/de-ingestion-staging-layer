@@ -90,6 +90,7 @@ class PolicyAssignmentService:
             logging.info(f"Executing the query")
             query_job = client.query(query)
             result = query_job.result()
+            print(query)
             logging.info("Query executed successfully.")
             return result
         except Exception as e:
@@ -104,7 +105,7 @@ class PolicyAssignmentService:
                 FROM
                 `sambla-data-staging-compliance`.`region-europe-north1`.INFORMATION_SCHEMA.TABLES
                 WHERE
-                table_schema IN ("lvs_integration_legacy","rahalaitos_integration_legacy","salus_integration_legacy")
+                table_schema IN ("lvs_integration_legacy","rahalaitos_integration_legacy","salus_integration_legacy","advisa_history_integration_legacy")
             )
                 SELECT
                 DISTINCT table_schema,
@@ -112,6 +113,7 @@ class PolicyAssignmentService:
                 FROM
                 tables
         """
+        print(query)
         return self.execute_query(self.clients['raw_layer_project'], query)
     
 
@@ -124,15 +126,32 @@ class PolicyAssignmentService:
             
             # Define dictionary to hold table and column mappings of the tables to which policy tags are applied to.
             policy_mapping = {}
+            processed_columns = set()
+
             for row in results:
-                if row.table_name not in policy_mapping:
-                    policy_mapping[row.table_name] = {}
-                policy_mapping[row.table_name][row.column_name] = row.iam_policy_name
+                table_name = row.table_name
+                column_name = row.column_name  # Normalize the column name
+                policy_name = row.iam_policy_name
             
-            # These are exceptional cases where the policy tags are only required to apply these tables below:
-            policy_mapping["crm_user_raha_r"]["name"] = "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            policy_mapping["accounts_salus_r"]["name"] = "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+                if (table_name, column_name) not in processed_columns:
+                    print(f"For table: {table_name}, this {column_name}")
+                    if table_name not in policy_mapping:
+                        policy_mapping[table_name] = {}
+                    policy_mapping[table_name][column_name] = policy_name
+                    processed_columns.add((table_name, column_name))
+        
+             # Exceptional cases where policy tags are only required for specific tables:
+            exceptional_cases = {
+                 "crm_user_raha_r": {"name": "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"},
+                 "accounts_salus_r": {"name": "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"},
+                 "insurance_log_raha_r": {"name": "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"}
+             }
             
+            for table, columns in exceptional_cases.items():
+                if table not in policy_mapping:
+                    policy_mapping[table] = {}
+                for column, policy in columns.items():
+                    policy_mapping[table][column] = policy
             return policy_mapping
         except Exception as e:
             # If no table names are found in the desired GCS location, print a message indicating that
@@ -159,18 +178,21 @@ class PolicyAssignmentService:
                 
                 updated = False
                 for field in schema:
+                    schema_field = field["name"]
                     # Check if the field already has policyTags
                     if field.get("policyTags"):  
-                        logging.info(f"Skipping field '{field['name']}' in {table_name} because policyTags already exist.")
+                        #logging.info(f"Skipping field '{field['name']}' in {table_name} because policyTags already exist.")
                         continue  
 
-                    # This is a temporary or statement, and applies till we set the table-policy mapping
-                    if (field["name"] in column_policies and field["name"]!="data" ) or (table_name in "insurance_log_raha_r" and field["name"]=="data") and table_name!="bids_salus_r" and field["type"]!="INTEGER":
+                     # Check if the field name contains any sensitive substring from column_policies keys
+                    #is_sensitive = any(sensitive_field in schema_field for sensitive_field in column_policies)
+                    #print(f"is column:{schema_field} sensitive? {is_sensitive}")
+                    if (field["name"] in column_policies) and table_name!="bids_salus_r":
                         field["policyTags"] = {"names": [column_policies[field["name"]]]}
                         updated = True
+                        logging.info(f"Schema file is updated for table:{table_name} with tag:{schema_field}")
             
                 if updated:
-                    logging.info(f"Schema file is updated for table:{table_name}")
                     try:
                         with open(schema_file_path, 'w') as file:  
                             json.dump(schema, file, indent=4)
@@ -192,6 +214,7 @@ class PolicyAssignmentService:
             query_table_names_result = self.generate_union_all_query()
             union_all_queries = [row.column_query for row in query_table_names_result]
             union_all_query = '\nUNION ALL \n'.join(union_all_queries)
+            print(union_all_query)
             # Save the complete union all statement to a file
             self.save_template(union_all_query,self.union_all_query_file)
 
@@ -203,6 +226,7 @@ class PolicyAssignmentService:
 
 
             policy_mapping = self.get_matching_sensitive_fields(sensitive_fields_query_template)
+
 
             self.construct_iam_policies(policy_mapping)
 

@@ -1,0 +1,75 @@
+[
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "STARTS_AT_UTC",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "STARTS_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CAMPAIGN",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PAYMENT_INSURANCE_ID",
+    "type": "INTEGER"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "ENDS_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ID",
+    "type": "INTEGER"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "ENDS_AT_UTC",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "DEACTIVATED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "CREATED_AT_UTC",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "CREATED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PREMIUM",
+    "type": "INTEGER"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "DEACTIVATED_AT_UTC",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "INSURED_AMOUNT",
+    "type": "INTEGER"
+  }
+]

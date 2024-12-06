@@ -1,0 +1,27 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "KEY",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "INDEX_KEY",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "INDEX",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CREDIT_REPORT_ID",
+    "type": "INTEGER"
+  }
+]

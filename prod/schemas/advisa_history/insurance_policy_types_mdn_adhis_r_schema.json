@@ -1,0 +1,23 @@
+[
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "__IMPORTED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "POLICY_TYPE_NAME",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "POLICY_TYPE_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "FILENAME",
+    "type": "STRING"
+  }
+]

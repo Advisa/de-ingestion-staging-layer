@@ -69,9 +69,10 @@ resource "google_bigquery_table" "external_tables" {
   }
     # must to define a schema when we create a table
     schema = file("schemas/salus/${each.key}_schema.json")
-    depends_on = [ google_bigquery_dataset.salus_dataset ]
+    depends_on = [ google_bigquery_dataset.salus_dataset,var.connection_id ]
     deletion_protection = true 
-
+  
+ 
 
 }
 

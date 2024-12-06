@@ -7,7 +7,12 @@
     {
         "mode": "NULLABLE",
         "name": "birthdate",
-        "type": "TIMESTAMP"
+        "type": "TIMESTAMP",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -37,22 +42,42 @@
     {
         "mode": "NULLABLE",
         "name": "gender",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "maritalstatus",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/8078589600687026873"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "nationality",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "education",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/8956417960342305075"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",

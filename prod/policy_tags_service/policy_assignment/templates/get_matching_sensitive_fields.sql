@@ -1,12 +1,13 @@
 WITH
   table_columns AS (
-    {{source_table_columns}}    ),
+    {{source_table_columns}}
+),
   policy_tags AS (
     SELECT
       *
     FROM
       `{{raw_layer_project}}.policy_tags_metadata.policy_tags`
-    WHERE display_name not in ("name","postal_code_id")
+    WHERE display_name not in ("name","postal_code_id","data")
   )
 SELECT
   t1.*,
@@ -27,6 +28,6 @@ ON
   t1.column_name = t2.display_name
 -- we filter the only the gdpr_test taxonomy where all the complaint policy tags are created
 WHERE
-  taxonomy_id = "6126692965998272750" 
-  and  
   t1.table_name not in ("rahalaitos_laina_businessinfo_raha_r","insurance_insurance_gender_raha_r","rahalaitos_laina_decision_data_raha_r")
+  and
+  t1.data_type NOT IN ("INT64","BOOL")

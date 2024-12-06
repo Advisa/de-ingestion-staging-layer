@@ -40,6 +40,8 @@ def extract_external_table_info(bigquery_service,project_id, dataset_id, gcs_buc
         FROM `{project_id}.{dataset_id}`.INFORMATION_SCHEMA.TABLES 
         WHERE ddl LIKE '%gs://{gcs_bucket_name}/%' and table_name like "%_r";
     """
+    print(query)
+    
     try:
         # Run the query and store the results
         results = bigquery_service.execute_query(query)
@@ -48,15 +50,13 @@ def extract_external_table_info(bigquery_service,project_id, dataset_id, gcs_buc
         table_info = []
 
         # Regular expression to extract GCS paths from the DDL column values
-        #gcs_pattern = r'gs://[^"]+\*'
-        gcs_pattern = r'gs://[^"\[\],]+'
+        gcs_pattern =  r'gs://[^"\[\],]+'
+        #gcs_pattern = r'gs://[^"\[\],]+'
         # Regular expression to extract max_bad_records value
         max_bad_records_pattern = r'max_bad_records\s*=\s*(\d+)'
 
         for row in results:
             ddl = row.get('ddl')
-            print(row.get('table_name'))
-
             # Extract max_bad_records value if it exists
             match = re.search(max_bad_records_pattern, ddl)
             max_bad_records = int(match.group(1)) if match else 0  # Default to 0 if not found
@@ -64,12 +64,14 @@ def extract_external_table_info(bigquery_service,project_id, dataset_id, gcs_buc
             # Extract all GCS locations from the DDL
             matches = re.findall(gcs_pattern, ddl)
             matches_adjusted = [
-                    re.sub(f"gs://{gcs_bucket_name}", f"gs://{sink_gcs_bucket_name}", match)
-                    for match in matches
-                ]
+                re.sub(f"gs://{gcs_bucket_name}", f"gs://{sink_gcs_bucket_name}", match) + "*" if "*" not in match else re.sub(f"gs://{gcs_bucket_name}", f"gs://{sink_gcs_bucket_name}", match)
+                for match in matches
+            ]
+
             if matches_adjusted:
-                gcs_location = matches_adjusted if len(matches_adjusted)==1 else matches_adjusted[0]
+                gcs_location = matches_adjusted[0]
                 table_name = row.get('table_name')
+                print(table_name)
 
                 table_info.append({
                     "table_name":table_name,
@@ -130,12 +132,12 @@ def process_gcs_data_info(project_id,gcs_data_info,base_schema_path,bigquery_ser
         #schema_service.export_schema( dataset_id, schema_path, table_info)
 
         # Generate a text file mapping table names to their GCS bucket locations
-        generate_file_txt(output_path, table_info)
+        #generate_file_txt(output_path, table_info)
 
 
         """ Only uncomment and run this func when first we create the hive partitioned tables. Because it doesnt assign partition columns if it exist on schema """
         """ Once hive partition tables are created, we have to re-add the partition columns to the schema file. So comment this func below and run this whole py file once again."""
-        #bigquery_service.remove_partition_columns_from_schema("external_table_service/salus_partition_columns.txt",schema_path)
+        #schema_service.remove_partition_columns(schema_path,"external_table_service/input/salus_partition_columns.txt")
        
 
 

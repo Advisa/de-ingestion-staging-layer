@@ -1,0 +1,187 @@
+[
+    {
+        "mode": "NULLABLE",
+        "name": "filename",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_id",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_type",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_organisation_name",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_organisation_number",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "partner_id",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_first_name",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_last_name",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_gender",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_default_payment_provider",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_default_payment_method",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_default_payment_instrument",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_address",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_address2",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_postal_code",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_city",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_state",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_country_code",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_country_name",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_birth_date",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_ssn",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7067046475220860351/policyTags/8498648355093010520"
+            ]
+        }
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_phone",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7067046475220860351/policyTags/6890359859437494579"
+            ]
+        }
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_phone_mobile",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_email",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7067046475220860351/policyTags/5027538125987485593"
+            ]
+        }
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_passport_number",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_passport_expiration_date",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_passport_issuance_country_code",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_passport_issuance_country_name",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "custom_id_field",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "custom_partner_field",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "custom_partner_field2",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_added_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "customer_edited_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "__imported_at",
+        "type": "TIMESTAMP"
+    }
+]

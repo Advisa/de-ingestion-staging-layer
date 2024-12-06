@@ -1,0 +1,37 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "xoffset",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "xid",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "table",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "data",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "database",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TS",
+    "type": "INTEGER"
+  }
+]
