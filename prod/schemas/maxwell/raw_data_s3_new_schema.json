@@ -1,0 +1,12 @@
+[
+  {
+    "name": "raw_data",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "file_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

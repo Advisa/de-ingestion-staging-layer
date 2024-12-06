@@ -1,0 +1,106 @@
+version: 2
+sources:
+- name: helios_staging
+  database: data-domain-data-warehouse
+  schema: helios_staging
+  tables:
+  - name: query_params_sgmw_p
+    description: Source data for query_params_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: loan_application_drafts_sgmw_p
+    description: Source data for loan_application_drafts_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: customers_sgmw_p
+    description: Source data for customers_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: cookie_mappings_sgmw_p
+    description: Source data for cookie_mappings_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: bid_additional_requirements_sgmw_p
+    description: Source data for bid_additional_requirements_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: invite_logs_sgmw_p
+    description: Source data for invite_logs_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: current_loan_drafts_sgmw_p
+    description: Source data for current_loan_drafts_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: cookies_sgmw_p
+    description: Source data for cookies_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: policies_sgmw_p
+    description: Source data for policies_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: bid_accepts_sgmw_p
+    description: Source data for bid_accepts_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: sent_events_sgmw_p
+    description: Source data for sent_events_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: bids_sgmw_p
+    description: Source data for bids_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: bid_logs_sgmw_p
+    description: Source data for bid_logs_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: pageviews_sgmw_p
+    description: Source data for pageviews_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: loan_applications_sgmw_p
+    description: Source data for loan_applications_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: current_loans_sgmw_p
+    description: Source data for current_loans_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: loan_application_versions_sgmw_p
+    description: Source data for loan_application_versions_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: credit_report_latest_inquiries_sgmw_p
+    description: Source data for credit_report_latest_inquiries_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: credit_reports_sgmw_p
+    description: Source data for credit_reports_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: credit_report_xml_extract_sgmw_p
+    description: Source data for credit_report_xml_extract_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: creditors_sgmw_p
+    description: Source data for creditors_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: applicant_drafts_sgmw_p
+    description: Source data for applicant_drafts_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: applicants_sgmw_p
+    description: Source data for applicants_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: invites_sgmw_p
+    description: Source data for invites_sgmw_p
+    freshness: null
+    +enabled: true
+  - name: creditor_products_sgmw_p
+    description: Source data for creditor_products_sgmw_p
+    freshness: null
+    +enabled: true
