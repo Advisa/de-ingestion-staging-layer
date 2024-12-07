@@ -49,3 +49,18 @@ variable "salus_bucket_name" {
   type        = string
   
 }
+
+variable "sambla_legacy_bucket_name" {
+  description = "The name of the bucket where source sambla legacy data in data-domain-data-warehouse project resides"
+  type        = string
+}
+
+variable "maxwell_bucket_name" {
+  description = "The names of the buckets where source maxwell data in data-domain-data-warehouse project resides"
+  type        = string
+}
+
+variable "advisa_history_bucket_name" {
+  description = "The names of the buckets where source advisa history data in data-domain-data-warehouse project resides"
+  type        = string
+}

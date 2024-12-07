@@ -1,0 +1,277 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "filename",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_unique_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_increment_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_version_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "user_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "user_handle",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "user_first_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "user_last_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "partner_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_type_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_product_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_template_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_period_start_date",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_period_end_date",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_installments",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_duration",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_duration_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_duration_days",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_status",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_status_calculated",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_status_calculated_desc",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_renewal_status",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_renewal_status_desc",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_renewed_from_policy_unique_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_mail_sent_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_num_insured_persons",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_purchase_source_desc",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_created_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_cancelled_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_cancelled_type_text",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_cancelled_reason_code",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_cancelled_reason_text",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_cancelled_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_cancelled_datetime_performed",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_currency_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_currency_abbreviation",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_fee_amount",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_tax_amount",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_payable_amount",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_insurer_gross_premium_amount",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_insurer_discount_rate",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_insurer_net_premium_amount",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "payment_provider_auto_charge_enabled",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "payment_provider_auto_charge_disabled_reason",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "payment_provider_charge_failures_count",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_days_in_auto_cancellation",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "unprocessed_payment_notifications",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_auto_cancellation_notifications",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_datafield_type_insured_amount_monthly",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_datafield_type_insured_amount_lump_sum",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_datafield_type_fixed_costs_monthly",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "__imported_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "policy_cancelled_reason_desc",
+    "type": "STRING"
+  }
+]

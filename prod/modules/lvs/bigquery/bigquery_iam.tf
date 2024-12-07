@@ -19,7 +19,7 @@ resource "google_project_iam_member" "bq_permissions_reader_job_user" {
   role               = "roles/bigquery.jobUser" # Grant permission to use the service account
   member = "serviceAccount:${google_service_account.sa_reader.email}"  # Grant access to the service account
    lifecycle {
-    ignore_changes = [ role ]
+    ignore_changes = [ member,role ]
   }
 }
 # Provides permissions to run jobs, including queries, within the project.
@@ -28,7 +28,7 @@ resource "google_project_iam_member" "bq_permissions_editor_job_user" {
   role               = "roles/bigquery.jobUser" # Grant permission to use the service account
   member = "serviceAccount:${google_service_account.sa_editor.email}"  # Grant access to the service account
    lifecycle {
-    ignore_changes = [ role ]
+    ignore_changes = [ member,role ]
   }
 }
 
@@ -108,7 +108,7 @@ resource "google_project_iam_member" "bq_permissions_data_transfer_job_user" {
   role               = "roles/bigquery.jobUser" # Grant permission to use the service account
   member = "serviceAccount:${google_service_account.sa_data_transfer.email}" 
   lifecycle {
-    ignore_changes = [ role ]
+    ignore_changes = [ member,role ]
   }
   
 }

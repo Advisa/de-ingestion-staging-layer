@@ -27,7 +27,12 @@
     },
     {
         "name": "gender",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
+            ]
+        }
     },
     {
         "name": "latest_application_at",
@@ -62,7 +67,12 @@
     },
     {
         "name": "dob",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/3165510268950134104"
+            ]
+        }
     },
     {
         "name": "post_code",

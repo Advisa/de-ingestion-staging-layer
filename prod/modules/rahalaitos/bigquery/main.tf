@@ -35,6 +35,7 @@ resource "google_bigquery_table" "external_tables" {
     # must to define a schema when we create a table
     schema = file("schemas/rahalaitos/${each.key}_schema.json")
     depends_on = [ google_bigquery_dataset.rahalaitos_dataset ]
+   
 
     
 }

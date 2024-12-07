@@ -1,0 +1,62 @@
+[
+  {
+    "name": "database",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "table",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ts",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xid",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xoffset",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "data",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1871631373073602497"
+      ]
+    }
+  },
+  {
+    "name": "event_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "file_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "column_check",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

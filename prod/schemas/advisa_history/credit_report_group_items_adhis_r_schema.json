@@ -1,0 +1,27 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "VALUE",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "KEY",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "NEW_SYSTEM_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ID",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CREDIT_REPORT_GROUP_ID",
+    "type": "INTEGER"
+  }
+]

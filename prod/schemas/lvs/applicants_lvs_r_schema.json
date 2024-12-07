@@ -91,7 +91,12 @@
     {
         "mode": "NULLABLE",
         "name": "education",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/8956417960342305075"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -111,12 +116,22 @@
     {
         "mode": "NULLABLE",
         "name": "marital_status",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/8956417960342305075"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "bank_bic",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -280,7 +295,12 @@
     {
         "mode": "NULLABLE",
         "name": "citizenship",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -295,12 +315,22 @@
     {
         "mode": "NULLABLE",
         "name": "dob",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/3165510268950134104"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
         "name": "gender",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -424,7 +454,12 @@
     {
         "mode": "NULLABLE",
         "name": "bank_iban",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",

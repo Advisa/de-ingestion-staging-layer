@@ -1,0 +1,95 @@
+[
+    {
+        "taxonomy": "gdpr_compliance",
+        "parent": "gdpr_5year_compliant",
+        "gdpr_column": "gdpr_email_tag",
+        "columns": [
+            "Email",
+            "customer_contactinfo",
+            "customer_email",
+            "emailId",
+            "registered_email",
+            "user_email",
+            "yv_email"
+        ]
+    },
+    {
+        "taxonomy": "gdpr_compliance",
+        "parent": "gdpr_5year_compliant",
+        "gdpr_column": "gdpr_phone_tag",
+        "columns": [
+            "customer_phone",
+            "customer_phone_number",
+            "employerPhone",
+            "employer_phone",
+            "external_phone",
+            "fourth_phone",
+            "mobile_phone",
+            "original_phone",
+            "phoneNumber",
+            "phone_number",
+            "phone_number_verified",
+            "sec_phone",
+            "secondaryPhoneNumber",
+            "thr_phone",
+            "work_phone",
+            "workphone"
+        ]
+    },
+    {
+        "taxonomy": "gdpr_compliance",
+        "parent": "gdpr_5year_compliant",
+        "gdpr_column": "gdpr_ssn_tag",
+        "columns": [
+            "National_ID",
+            "National_ID_Cleaned",
+            "customer_national_id",
+            "customer_ssn",
+            "foreignerSSN",
+            "market_brand_ssn_id",
+            "national_id",
+            "sotu",
+            "ssc",
+            "yv_sotu"
+        ]
+    },
+    {
+        "taxonomy": "gdpr_compliance",
+        "parent": "gdpr_5year_compliant",
+        "gdpr_column": "gdpr_first_name_tag",
+        "columns": [
+            "etunimi",
+            "fname",
+            "firstname",
+            "yv_etunimi",
+            "userName",
+            "person",
+            "name"
+        ]
+    },
+    {
+        "taxonomy": "gdpr_compliance",
+        "parent": "gdpr_5year_compliant",
+        "gdpr_column": "gdpr_last_name_tag",
+        "columns": [
+            "conventionalName",
+            "lastname",
+            "lname",
+            "sukunimi",
+            "useConventionalNameAsPlanName",
+            "yv_sukunimi"
+        ]
+    },
+    {
+        "taxonomy": "gdpr_compliance",
+        "parent": "gdpr_5year_compliant",
+        "gdpr_column": "gdpr_tili_tag",
+        "columns": [
+            "bank_account_number",
+            "accountNumber",
+            "tilintarkastaja",
+            "clearingNumber",
+            "bank"
+        ]
+    }
+]

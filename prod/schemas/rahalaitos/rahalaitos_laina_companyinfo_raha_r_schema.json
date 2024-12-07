@@ -52,7 +52,12 @@
     {
         "mode": "NULLABLE",
         "name": "tilintarkastaja",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7067046475220860351/policyTags/6787671240828925847"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",

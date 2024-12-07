@@ -1,0 +1,17 @@
+[
+  {
+    "name": "ts",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "json_col",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]
