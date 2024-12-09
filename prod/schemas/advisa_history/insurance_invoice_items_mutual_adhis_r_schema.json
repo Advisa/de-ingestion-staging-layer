@@ -1,0 +1,56 @@
+[
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "DEACTIVATED_AT_UTC",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "SPECIFICATION",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ITEM_TYPE",
+    "type": "STRING"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "DEACTIVATED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ITEM_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "INVOICE_ID",
+    "type": "INTEGER"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "CREATED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "CREATED_AT_UTC",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "AMOUNT",
+    "type": "INTEGER"
+  }
+]

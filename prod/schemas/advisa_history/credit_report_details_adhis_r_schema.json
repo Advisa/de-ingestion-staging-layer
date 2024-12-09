@@ -1,0 +1,61 @@
+[
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "__REPLICATED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_SDC_SEQUENCE",
+    "type": "INTEGER"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "_SDC_RECEIVED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "_SDC_EXTRACTED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "VALUE",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "KEY",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ID",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "_SDC_TABLE_VERSION",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "INDEX",
+    "type": "INTEGER"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "_SDC_BATCHED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CREDIT_REPORT_ID",
+    "type": "INTEGER"
+  }
+]

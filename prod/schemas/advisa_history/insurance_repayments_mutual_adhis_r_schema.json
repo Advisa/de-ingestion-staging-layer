@@ -1,0 +1,62 @@
+[
+    {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "created_at_utc",
+        "type": "TIMESTAMP"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "created_at",
+        "type": "TIMESTAMP"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "amount",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "bank_name",
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+            ]
+        }
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "comments",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "deactivated_at_utc",
+        "type": "TIMESTAMP"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "deactivated_at",
+        "type": "TIMESTAMP"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "invoice_id",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "paid_at_utc",
+        "type": "TIMESTAMP"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "paid_at",
+        "type": "TIMESTAMP"
+    }
+]

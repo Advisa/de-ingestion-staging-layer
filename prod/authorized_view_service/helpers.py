@@ -105,7 +105,6 @@ class AuthorizedViewService:
                 `sambla-data-staging-compliance`.`region-europe-north1`.INFORMATION_SCHEMA.TABLES
                 WHERE
                 table_schema like '%_integration_legacy'
-                --IN ("lvs_integration_legacy","rahalaitos_integration_legacy","salus_integration_legacy","maxwell_integration_legacy",)
             )
                 SELECT
                 DISTINCT table_schema,

@@ -1,8 +1,10 @@
+# Fetch the list of tables from the first dataset
 data "google_bigquery_tables" "source_tables_events" {
   dataset_id = "maxwell_s3_data"
   project    = var.data_domain_project_id
 }
 
+# Fetch the list of tables from the second dataset
 data "google_bigquery_tables" "source_tables_credits" {
   dataset_id = "helios_staging"
   project    = var.data_domain_project_id

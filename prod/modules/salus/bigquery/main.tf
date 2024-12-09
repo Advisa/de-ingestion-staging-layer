@@ -15,6 +15,7 @@ locals {
     for line in split("\n", trimspace(file("${path.module}/salus_external_table_info.txt"))) :
     split(",", line)[0] => {
        gcs_path = trimspace(split(",", line)[1])
+       max_bad_records = trimspace(split(",", line)[2])
     }
   })
 
@@ -62,15 +63,16 @@ resource "google_bigquery_table" "external_tables" {
       }
     }
     
-    max_bad_records = 100
+    max_bad_records = each.value.max_bad_records
     connection_id = var.connection_id
     source_uris   = [each.value.gcs_path]
   }
     # must to define a schema when we create a table
     schema = file("schemas/salus/${each.key}_schema.json")
-    depends_on = [ google_bigquery_dataset.salus_dataset ]
+    depends_on = [ google_bigquery_dataset.salus_dataset,var.connection_id ]
     deletion_protection = true 
-
+  
+ 
 
 }
 

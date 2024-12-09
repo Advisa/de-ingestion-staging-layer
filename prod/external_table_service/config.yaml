@@ -1,21 +1,29 @@
 default:
   external_table_service:
-    source_project : "data-domain-data-warehouse"
-    target_project : "sambla-data-staging-compliance"
+    project : "data-domain-data-warehouse"
     location: "europe-north1"
+    sql_template_path: "policy_tags_service/policy_assignment/templates/get_matching_sensitive_fields.sql"
+    policy_tags_script_path: "policy_tags_service/policy_assignment/main.py"
+    output_file_name: "external_table_info.txt"
     external_data_info : [
-
         {
-            "source_dataset_id": 'salus_group_integration',
-            "schema":'salus'
-
+            "legacy_stack": 'salus',
+            "dataset_id": 'salus_group_integration',
+            "schema":'upstream',
+            "table_suffix": "_incremental_r"
+        },
+        {
+            "legacy_stack": "rahalaitos",
+            "dataset_id": 'helios_staging',
+            "schema":'upstream',
+            "table_suffix": "_p"
         }
     ]
     gcs_data_info : [
         {
             "dataset_id":'rahalaitos_data',
             "gcs_bucket_name": 'rahalaitos-data-dump',
-            "sink_gcs_bucket_name": '',
+            "sink_gcs_bucket_name": 'sambla-group-rahalaitos-integration-legacy',
             "schema": 'rahalaitos'
         },
         {
@@ -23,42 +31,19 @@ default:
             "gcs_bucket_name": 'salus-integration',
             "sink_gcs_bucket_name": 'sambla-group-salus-integration-legacy',
             "schema":'salus'
-
-        }
-    ]
-prod:
-  policy_tags_service:
-    source_project : "data-domain-data-warehouse"
-    target_project : "sambla-data-staging-compliance"
-    location: "europe-north1"
-    external_data_info : [
-
-        {
-            "source_dataset_id": 'salus_group_integration',
-            "schema":'salus'
-
-        }
-    ]
-    gcs_data_info : [
-        {
-            "dataset_id":'rahalaitos_data',
-            "gcs_bucket_name": 'rahalaitos-data-dump',
-            "sink_gcs_bucket_name": '',
-            "schema": 'rahalaitos'
         },
         {
-            "dataset_id":'salus_group_integration',
-            "gcs_bucket_name": 'salus-integration',
-            "sink_gcs_bucket_name": 'sambla-group-salus-integration-legacy',
-            "schema":'salus'
-
+            "dataset_id":'advisa_snowflake_history',
+            "gcs_bucket_name": 'advisa-snowflake-history',
+            "sink_gcs_bucket_name": 'sambla-group-advisa-history-integration-legacy',
+            "schema":'advisa_history'
+        }   
+    ]
+    clone_config : [
+        {
+            "project_id": 'data-domain-data-warehouse',
+            "dataset_id": 'advisa_snowflake_history',
+            "target_project": 'sambla-data-staging-compliance',
+            "target_dataset": 'advisa_history_integration_legacy'
         }
     ]
-
-
-
-
-
-
-
-

@@ -16,3 +16,8 @@ imports.tf.txt
 test.py
 *.DS_Store
 **/.DS_Store
+
+**/schemas/rahalaitos/upstream
+**/schemas/salus/incremental
+**/output.txt
+output.txt

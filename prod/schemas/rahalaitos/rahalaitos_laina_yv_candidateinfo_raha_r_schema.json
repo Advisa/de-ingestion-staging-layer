@@ -87,7 +87,12 @@
     {
         "mode": "NULLABLE",
         "name": "yv_siviilisaaty",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/8078589600687026873"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",
@@ -157,7 +162,12 @@
     {
         "mode": "NULLABLE",
         "name": "yv_koulutus",
-        "type": "STRING"
+        "type": "STRING",
+        "policyTags": {
+            "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/2677304483643846569"
+            ]
+        }
     },
     {
         "mode": "NULLABLE",

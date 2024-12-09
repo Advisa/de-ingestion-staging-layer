@@ -7,6 +7,7 @@ resource "google_storage_transfer_job" "replicate-from-old-to-new-bucket" {
   transfer_spec {
     transfer_options {
       overwrite_when = "DIFFERENT"
+      delete_objects_unique_in_sink = true
     }
      object_conditions {
       exclude_prefixes = [
@@ -39,5 +40,8 @@ resource "google_storage_transfer_job" "replicate-from-old-to-new-bucket" {
       nanos   = 0
     }
     repeat_interval = "3600s"
+  }
+  lifecycle {
+    ignore_changes = [transfer_spec]
   }
 }

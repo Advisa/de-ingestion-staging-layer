@@ -1,0 +1,279 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "USER_LAST_NAME",
+    "type": "STRING"
+  },
+  {
+    "description": "%E4Y-%m-%d",
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_INVOICE_PAID_DATE",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "USER_FIRST_NAME",
+    "type": "STRING"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_SUCCESS_NOTIFICATION_DATE",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_PAYMENT_PROVIDER_REFUND_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_POLICY_DURATION_DAYS",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "RELATED_BALANCE_TRANSACTION_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_PAYMENT_PROVIDER_CUSTOMER_ID",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "USER_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_TYPE",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "FILENAME",
+    "type": "STRING"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "__IMPORTED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_POLICY_DATAFIELD_TYPE_INSURED_AMOUNT_MONTHLY",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_AMOUNT_PREMIUM_BEFORE_DISCOUNT",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_PAYMENT_PROVIDER_FEE",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_PAYMENT_INSTRUMENT",
+    "type": "STRING"
+  },
+  {
+    "description": "%E4Y-%m-%d",
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_POLICY_PERIOD_END_DATE",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_LEDGER_TYPE",
+    "type": "STRING"
+  },
+  {
+    "description": "%E4Y-%m-%d",
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_INVOICE_PERIOD_END_DATE",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_AMOUNT_PREMIUM",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_INSTALLMENT_NO_DESC",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_POLICY_DATAFIELD_TYPE_INSURED_AMOUNT_LUMP_SUM",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "POLICY_UNIQUE_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_INSTALLMENT_NO",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_AMOUNT_TOTAL",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PARTNER_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_AMOUNT_FEE",
+    "type": "INTEGER"
+  },
+  {
+    "description": "%E4Y-%m-%d",
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_DUE_DATE",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_DISCOUNT_RATE",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_DISCOUNT_AMOUNT",
+    "type": "INTEGER"
+  },
+  {
+    "description": "%E4Y-%m-%d",
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_POST_DATE",
+    "type": "DATE"
+  },
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_CREATED_DATETIME",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_AMOUNT_TAX",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_POLICY_DATAFIELD_TYPE_FIXED_COSTS_MONTHLY",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_AMOUNT_NON_POLICY_PRODUCTS",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_AMOUNT_TOTAL_AFTER_PAYMENT_PROVIDER_FEE",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "RELATED_REFUND_TRANSACTION_ID",
+    "type": "INTEGER"
+  },
+  {
+    "description": "%E4Y-%m-%d",
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_POLICY_PERIOD_START_DATE",
+    "type": "DATE"
+  },
+  {
+    "description": "%E4Y-%m-%d",
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_INVOICE_PERIOD_START_DATE",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "USER_HANDLE",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "POLICY_NUM_INSURED_PERSONS",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "RELATED_PAYMENT_TRANSACTION_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_ID",
+    "type": "INTEGER"
+  },
+  {
+    "description": "%E4Y-%m-%d",
+    "mode": "NULLABLE",
+    "name": "RISK_INCEPTION_DATE",
+    "type": "DATE"
+  },
+  {
+    "description": "%E4Y-%m-%d",
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_DOCUMENT_DATE",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_PAYMENT_PROVIDER_PAYMENT_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "POLICY_TYPE_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "RELATED_CREDIT_TRANSACTION_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "POLICY_VERSION_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_PAYMENT_METHOD",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "POLICY_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "TRANSACTION_INCIDENT",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CUSTOMER_ID",
+    "type": "INTEGER"
+  }
+]

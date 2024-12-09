@@ -30,10 +30,6 @@ class PolicyAssignmentService:
         self.base_path = project_root 
 
         self.schema_folder_path = project_root.parent / 'schemas'
-        print("base_path:",self.schema_folder_path)
-
-        # Load SQL templates
-        self.sensitive_fields_query_template = self.load_template(self.current_path,"get_matching_sensitive_fields.sql")
 
         # Initialize output path of union all query
         self.union_all_query_file = "generated_source_query.sql"
@@ -78,10 +74,12 @@ class PolicyAssignmentService:
 
     def save_template(self, query, template_name):
         """Save a SQL query as a template in the templates directory."""
-        output_template_path = os.path.join(self.base_path, 'templates', template_name)
+        output_template_path = os.path.join(self.base_path, 'policy_assignment/templates', template_name)
+        os.makedirs(os.path.dirname(output_template_path), exist_ok=True)
         try:
             with open(output_template_path, 'w') as f:
                 f.write(query)
+                logging.info(f"File is written to this location; {output_template_path}")
         except FileNotFoundError as e:
             logging.error(f"Template file not found: {str(e)}")
             raise e
@@ -92,11 +90,32 @@ class PolicyAssignmentService:
             logging.info(f"Executing the query")
             query_job = client.query(query)
             result = query_job.result()
+            print(query)
             logging.info("Query executed successfully.")
             return result
         except Exception as e:
             logging.error(f"Error executing query: {str(e)}")
             raise e
+    
+    def generate_union_all_query(self):
+        """Generate the UNION ALL query for all source tables/views."""
+        query = """
+            WITH tables AS (SELECT
+                table_schema
+                FROM
+                `sambla-data-staging-compliance`.`region-europe-north1`.INFORMATION_SCHEMA.TABLES
+                WHERE
+                table_schema IN ("lvs_integration_legacy","rahalaitos_integration_legacy","salus_integration_legacy","advisa_history_integration_legacy")
+            )
+                SELECT
+                DISTINCT table_schema,
+                CONCAT( "SELECT * FROM `sambla-data-staging-compliance.", table_schema, "`.INFORMATION_SCHEMA.COLUMNS" ) AS column_query
+                FROM
+                tables
+        """
+        print(query)
+        return self.execute_query(self.clients['raw_layer_project'], query)
+    
 
     def get_matching_sensitive_fields(self,sensitive_fields_query_template):
         """Get matching sensitive fields based on a BigQuery query."""   
@@ -107,30 +126,48 @@ class PolicyAssignmentService:
             
             # Define dictionary to hold table and column mappings of the tables to which policy tags are applied to.
             policy_mapping = {}
+            processed_columns = set()
+
             for row in results:
-                if row.table_name not in policy_mapping:
-                    policy_mapping[row.table_name] = {}
-                policy_mapping[row.table_name][row.column_name] = row.iam_policy_name
+                table_name = row.table_name
+                column_name = row.column_name  # Normalize the column name
+                policy_name = row.iam_policy_name
             
+                if (table_name, column_name) not in processed_columns:
+                    print(f"For table: {table_name}, this {column_name}")
+                    if table_name not in policy_mapping:
+                        policy_mapping[table_name] = {}
+                    policy_mapping[table_name][column_name] = policy_name
+                    processed_columns.add((table_name, column_name))
+        
+             # Exceptional cases where policy tags are only required for specific tables:
+            exceptional_cases = {
+                 "crm_user_raha_r": {"name": "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"},
+                 "accounts_salus_r": {"name": "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"},
+                 "insurance_log_raha_r": {"name": "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"}
+             }
+            
+            for table, columns in exceptional_cases.items():
+                if table not in policy_mapping:
+                    policy_mapping[table] = {}
+                for column, policy in columns.items():
+                    policy_mapping[table][column] = policy
             return policy_mapping
         except Exception as e:
             # If no table names are found in the desired GCS location, print a message indicating that
-            print(f"An error occurred: {e}")
+            logging.error(f"An error occurred: {e}")
             return {}, []
 
     def construct_iam_policies(self, policy_mapping):
         """Construct IAM policies based on the policy mapping and update schema files."""
         schema_file_path = self.schema_folder_path
         schema_files = glob.glob(os.path.join(schema_file_path, "**/*_schema.json"), recursive=True)
-        logging.info(f"Constructing iam policies for schemas in path: {schema_file_path}")
 
         for schema_file_path in schema_files:
-           #logging.info(f"Processing the current schema file: {schema_file_path}")
+            #logging.info(f"Processing the current schema file: {schema_file_path}")
             table_name = os.path.basename(schema_file_path).replace("_schema.json", "")
-            #print(f"Processing schema for table: {table_name} from {schema_file_path}")
-
             column_policies = policy_mapping.get(table_name, {})
-
+           
             try:
                 if os.path.getsize(schema_file_path) == 0:
                     logging.info(f"Schema file is empty: {schema_file_path}. Skipping.")
@@ -141,13 +178,21 @@ class PolicyAssignmentService:
                 
                 updated = False
                 for field in schema:
-                    # This is a temporary or statement, and applies till we set the table-policy mapping
-                    if (field["name"] in column_policies and field["name"]!="data" ) or (table_name=="insurance_log_raha_r" and field["name"]=="data") and table_name!="bids_salus_r":
+                    schema_field = field["name"]
+                    # Check if the field already has policyTags
+                    if field.get("policyTags"):  
+                        #logging.info(f"Skipping field '{field['name']}' in {table_name} because policyTags already exist.")
+                        continue  
+
+                     # Check if the field name contains any sensitive substring from column_policies keys
+                    #is_sensitive = any(sensitive_field in schema_field for sensitive_field in column_policies)
+                    #print(f"is column:{schema_field} sensitive? {is_sensitive}")
+                    if (field["name"] in column_policies) and table_name!="bids_salus_r":
                         field["policyTags"] = {"names": [column_policies[field["name"]]]}
                         updated = True
+                        logging.info(f"Schema file is updated for table:{table_name} with tag:{schema_field}")
             
                 if updated:
-                    print("updated:",table_name)
                     try:
                         with open(schema_file_path, 'w') as file:  
                             json.dump(schema, file, indent=4)
@@ -156,25 +201,32 @@ class PolicyAssignmentService:
                         logging.info(f"Failed to write to schema file {schema_file_path}: {e}")
 
             except FileNotFoundError:
-                print(f"Schema file not found for table {table_name} at {schema_file_path}")
+                logging.error(f"Schema file not found for table {table_name} at {schema_file_path}")
             except json.JSONDecodeError:
-                print(f"Error decoding JSON from schema file: {schema_file_path}")
+                logging.error(f"Error decoding JSON from schema file: {schema_file_path}")
             except Exception as e:
-                print(f"An unexpected error occurred while processing {schema_file_path}: {e}")
+                logging.error(f"An unexpected error occurred while processing {schema_file_path}: {e}")
 
     def main(self):
         """Main function to execute the workflow."""
         try:
-            # Load the union all query template
-            union_all_query = self.load_template("authorized_view_service",self.union_all_query_file).render()
+            # Generate union all queries
+            query_table_names_result = self.generate_union_all_query()
+            union_all_queries = [row.column_query for row in query_table_names_result]
+            union_all_query = '\nUNION ALL \n'.join(union_all_queries)
+            print(union_all_query)
+            # Save the complete union all statement to a file
+            self.save_template(union_all_query,self.union_all_query_file)
 
             # Render and execute the encryption query template
-            sensitive_fields_query_template = self.sensitive_fields_query_template.render(
+            sensitive_fields_query_template =  self.load_template(self.current_path,"get_matching_sensitive_fields.sql").render(
                 source_table_columns=union_all_query,
                 raw_layer_project=self.raw_layer_project
             )
 
+
             policy_mapping = self.get_matching_sensitive_fields(sensitive_fields_query_template)
+
 
             self.construct_iam_policies(policy_mapping)
 

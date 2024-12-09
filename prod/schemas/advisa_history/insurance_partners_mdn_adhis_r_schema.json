@@ -1,0 +1,38 @@
+[
+  {
+    "description": "bq-datetime",
+    "mode": "NULLABLE",
+    "name": "__IMPORTED_AT",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CUSTOMER_CUSTOM_FIELD_NAME",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PARTNER_COUNTRY_CODE",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PARTNER_NAME",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CUSTOMER_DEFAULT_DUE_DATE_DAY",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PARTNER_ID",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "FILENAME",
+    "type": "STRING"
+  }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at_utc",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "administration_fee",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "always_does_credit_check",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "arrangement_fee",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "current_creditor_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "deactivated_at_utc",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "deactivated_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "default_administration_avi_fee",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "default_administration_direct_debit_fee",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "default_administration_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "default_arrangement_fee",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "default_arrangement_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "default_repayment_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "does_credit_check_on_accept_lower_amount",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "max_amount",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "may_request_secondary_applicant",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "min_amount",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "multi_bidder",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "never_does_two_credit_checks",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "rechecks_credit_reports_on_changed_repayment_time",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "rechecks_credit_reports_on_decreased_amount",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "rechecks_credit_report_on_added_secondary_applicant",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "require_creditor_application_id",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "slug",
+    "type": "STRING"
+  }
+]

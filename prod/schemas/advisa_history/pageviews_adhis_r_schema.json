@@ -1,0 +1,92 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "__ts",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "market",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "new_system_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at_utc",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "updated_at_utc",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "updated_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "href",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "path",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "route",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "host",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "referer",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "referer_host",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "referer_domain_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "is_internal_referer",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "cookie_hash",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ip_hash",
+    "type": "STRING"
+  }
+]
