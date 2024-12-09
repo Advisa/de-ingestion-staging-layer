@@ -1,0 +1,269 @@
+version: 2
+models:
+- name: loan_application_drafts_sgmw_p
+  description: ''
+  columns:
+  - name: bank_account
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/5087277829810498721'
+- name: customers_sgmw_p
+  description: ''
+  columns:
+  - name: street_address
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/269468093035582245'
+  - name: mobile_phone
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/5230172317647726685'
+  - name: email
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8192857231542342371'
+  - name: postal_code
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/2065205436820293935'
+  - name: birth_date
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_complaince_measures_medium")}}/1438955634006760731'
+  - name: last_name
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/2716384524483642610'
+  - name: city
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/3997900563213251329'
+  - name: national_id
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8766527890701409234'
+  - name: first_name
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/71389309590075218'
+- name: policies_sgmw_p
+  description: ''
+  columns:
+  - name: national_id
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8766527890701409234'
+- name: bid_accepts_sgmw_p
+  description: ''
+  columns:
+  - name: bank_account
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/5087277829810498721'
+- name: sent_events_sgmw_p
+  description: ''
+  columns:
+  - name: data
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/1871631373073602497'
+- name: loan_application_versions_sgmw_p
+  description: ''
+  columns:
+  - name: bank_account
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/5087277829810498721'
+- name: credit_reports_sgmw_p
+  description: ''
+  columns:
+  - name: template_code
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/3035155737219158586'
+  - name: national_id
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8766527890701409234'
+  - name: postal_code
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/2065205436820293935'
+  - name: secret_address
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8460396741430475976'
+  - name: temporary_address
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8460396741430475976'
+  - name: street_address
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/269468093035582245'
+  - name: city
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/3997900563213251329'
+  - name: first_name
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/71389309590075218'
+  - name: major_city_inhabitant
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/3997900563213251329'
+  - name: last_name
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/2716384524483642610'
+  - name: no_visit_address
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8460396741430475976'
+  - name: blocked_code
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/3035155737219158586'
+- name: applicant_drafts_sgmw_p
+  description: ''
+  columns:
+  - name: occupation_title
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/696293205601484700'
+  - name: national_id
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8766527890701409234'
+  - name: education_level
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_complaince_measures_low")}}/6955237557031312507'
+  - name: employer_name
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/7554052221379315184'
+  - name: employer_phone
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/5230172317647726685'
+  - name: first_name
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/71389309590075218'
+  - name: postal_code
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/2065205436820293935'
+  - name: email
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8192857231542342371'
+  - name: city
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/3997900563213251329'
+  - name: last_name
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/2716384524483642610'
+  - name: street_address
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/269468093035582245'
+  - name: birth_date
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_complaince_measures_medium")}}/1438955634006760731'
+  - name: mobile_phone
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/5230172317647726685'
+  - name: citizenship
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_complaince_measures_medium")}}/4237260191502231235'
+- name: applicants_sgmw_p
+  description: ''
+  columns:
+  - name: occupation_title
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/696293205601484700'
+  - name: national_id
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8766527890701409234'
+  - name: education_level
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_complaince_measures_low")}}/6955237557031312507'
+  - name: employer_name
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/7554052221379315184'
+  - name: employer_phone
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/5230172317647726685'
+  - name: first_name
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/71389309590075218'
+  - name: postal_code
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/2065205436820293935'
+  - name: email
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8192857231542342371'
+  - name: city
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/3997900563213251329'
+  - name: last_name
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/2716384524483642610'
+  - name: street_address
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/269468093035582245'
+  - name: birth_date
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_complaince_measures_medium")}}/1438955634006760731'
+  - name: mobile_phone
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/5230172317647726685'
+  - name: citizenship
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_complaince_measures_medium")}}/4237260191502231235'
+- name: invites_sgmw_p
+  description: ''
+  columns:
+  - name: creditor_data
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/1871631373073602497'
+- name: creditor_products_sgmw_p
+  description: ''
+  columns:
+  - name: postal_address
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/1943024566483573007'
+  - name: requirements_email
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/8192857231542342371'
+  - name: requires_bank_account_on_accept
+    description: ''
+    policy_tags:
+    - '{{var("gdpr_compliance")}}/5087277829810498721'
+    policy_tags:
+    - '{{var(\"policy_tag_gdpr_compliance\")}}/5087277829810498721'

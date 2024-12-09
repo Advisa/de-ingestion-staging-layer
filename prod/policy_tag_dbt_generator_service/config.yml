@@ -1,0 +1,15 @@
+source_project: "sambla-data-staging-compliance"
+source_dataset: "policy_tags_metadata"
+metadata_table: "policy_tags"
+taxonomy_table: "taxonomy"
+target_project: "data-domain-data-warehouse"
+target_dataset: "helios_staging"
+target_table: "applicant_drafts_sgmw_p"
+table_suffix: "_sgmw_p"
+policy_tag_reference: '"{{var(\"policy_tag_gdpr_compliance\")}}/"'
+policy_tags_file: "schema.yml"
+source_location: "europe-north1"
+source_name: "helios_staging"
+database: "data-domain-data-warehouse"
+schema: "helios_staging"
+
