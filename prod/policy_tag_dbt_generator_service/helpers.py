@@ -24,7 +24,6 @@ class SchemaAndSourceGenerator:
         FROM `{self.config['source_project']}.{self.config['source_dataset']}.{self.config['metadata_table']}` t1
         INNER JOIN `{self.config['source_project']}.{self.config['source_dataset']}.{self.config['taxonomy_table']}` t2
         ON t1.taxonomy_id = t2.id
-        """
         return self.client.query(metadata_query).to_dataframe()
 
     def get_matching_tables(self):
@@ -42,7 +41,7 @@ class SchemaAndSourceGenerator:
         SELECT column_name
         FROM `{self.config['target_project']}.{self.config['target_dataset']}.INFORMATION_SCHEMA.COLUMNS`
         WHERE table_name = '{table_name}' and data_type not in ('NUMERIC','BOOL','INT64','FLOAT64')
-        """
+        
         return self.client.query(schema_query).to_dataframe()
 
     def map_columns_to_policy_tags(self, table_schema, policy_metadata):
@@ -55,6 +54,7 @@ class SchemaAndSourceGenerator:
 
             # Use the pre-defined policy_tag_reference as a prefix
             tag_prefix = f'{{{{var("{policy_tag_name}")}}}}/'
+            
             tag_link = f"{tag_prefix}{tag_suffix}"
 
             for _, col in table_schema.iterrows():

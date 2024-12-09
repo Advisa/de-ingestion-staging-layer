@@ -265,3 +265,5 @@ models:
     description: ''
     policy_tags:
     - '{{var("gdpr_compliance")}}/5087277829810498721'
+    policy_tags:
+    - '{{var(\"policy_tag_gdpr_compliance\")}}/5087277829810498721'
