@@ -54,3 +54,9 @@ module "salus_gcs_config" {
   data_domain_project_id = var.data_domain_project_id
   salus_bucket_name = var.salus_bucket_name
 }
+
+module "policy_tags_config" {
+  source     = "./modules/policy_tags"
+  project_id = var.project_id
+  region     = var.region
+}

@@ -1,0 +1,11 @@
+google-cloud-bigquery
+google-auth
+requests
+fuzzywuzzy
+python-Levenshtein
+networkx
+matplotlib
+scipy
+graphviz
+pandas
+
