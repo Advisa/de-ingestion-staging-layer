@@ -55,6 +55,7 @@ module "salus_gcs_config" {
   salus_bucket_name = var.salus_bucket_name
 }
 
+
 module "sambla_legacy_gcs_config" {
   source = "./modules/sambla_legacy/gcs"
   project_id = var.project_id
