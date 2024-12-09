@@ -1,6 +1,7 @@
 source_project: "sambla-data-staging-compliance"
 source_dataset: "policy_tags_metadata"
 metadata_table: "policy_tags"
+taxonomy_table: "taxonomy"
 target_project: "data-domain-data-warehouse"
 target_dataset: "helios_staging"
 target_table: "applicant_drafts_sgmw_p"
