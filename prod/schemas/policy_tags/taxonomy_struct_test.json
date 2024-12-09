@@ -5,25 +5,11 @@
             "email": {
                 "children": [
                     "Email",
-                    "Email_subject",
-                    "Num_new_unsubscribers_email",
-                    "broker_email",
                     "customer_contactinfo",
                     "customer_email",
-                    "deactivated_by_email",
                     "emailId",
-                    "email_consent",
-                    "email_marketing",
-                    "email_messaging",
-                    "email_subject",
-                    "emails_contribution",
-                    "emails_roas",
-                    "hashed_email",
-                    "is_invalid_email",
                     "registered_email",
-                    "requirements_email",
                     "user_email",
-                    "valid_email",
                     "yv_email"
                 ],
                 "sensitivity": "high",
@@ -38,19 +24,14 @@
                     "employer_phone",
                     "external_phone",
                     "fourth_phone",
-                    "is_invalid_phone",
                     "mobile_phone",
-                    "no_valid_phone",
-                    "num_valid_phone",
                     "original_phone",
                     "phoneNumber",
                     "phone_number",
                     "phone_number_verified",
-                    "phone_order",
                     "sec_phone",
                     "secondaryPhoneNumber",
                     "thr_phone",
-                    "valid_phoneNumber",
                     "work_phone",
                     "workphone"
                 ],
@@ -69,7 +50,6 @@
                     "national_id",
                     "sotu",
                     "ssc",
-                    "valid_national_id",
                     "yv_sotu"
                 ],
                 "sensitivity": "high",
@@ -83,7 +63,10 @@
                     "etunimi",
                     "fname",
                     "firstname",
-                    "yv_etunimi"
+                    "yv_etunimi",
+                    "userName",
+                    "person",
+                    "name"
                 ],
                 "sensitivity": "high",
                 "masking_rule": "HASH",
@@ -107,7 +90,10 @@
             "tili": {
                 "children": [
                     "bank_account_number",
-                    "tilintarkastaja"
+                    "accountNumber",
+                    "tilintarkastaja",
+                    "clearingNumber",
+                    "bank"
                 ],
                 "sensitivity": "high",
                 "masking_rule": "HASH",
@@ -120,6 +106,8 @@
         "restricted": {
             "amount_monthly": {
                 "children": [
+                    "amount",
+                    "monthlyNetIncome"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
@@ -214,7 +202,8 @@
                     "postalCode",
                     "postinro",
                     "yv_postinro",
-                    "zip"
+                    "zip",
+                    "postal_area"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
@@ -238,6 +227,7 @@
         "PII": {
             "address": {
                 "children": [
+                    "permitNumber",
                     "ip_address",
                     "ip_address2",
                     "lives_at_the_same_address",
@@ -282,7 +272,8 @@
             "ytunnus": {
                 "children": [
                     "business_organization_number",
-                    "yv_ytunnus"
+                    "yv_ytunnus",
+                    "organizationNumber"
                 ],
                 "sensitivity": "low",
                 "masking_rule": "MASK",

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "operationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "__v",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "brand",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "campaignId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "createdAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "insurance",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "market",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "reference",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updatedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  }
+]
