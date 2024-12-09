@@ -20,8 +20,10 @@ class SchemaAndSourceGenerator:
     def get_policy_tag_metadata(self):
         """fetch policy tag metadata from the source table"""
         metadata_query = f"""
-        SELECT taxonomy_id, display_name, policy_tag_id
-        FROM `{self.config['source_project']}.{self.config['source_dataset']}.{self.config['metadata_table']}`
+        SELECT t1.taxonomy_id, t2.taxonomy_display_name as taxonomy_name, t1.display_name, t1.policy_tag_id
+        FROM `{self.config['source_project']}.{self.config['source_dataset']}.{self.config['metadata_table']}` t1
+        INNER JOIN `{self.config['source_project']}.{self.config['source_dataset']}.{self.config['taxonomy_table']}` t2
+        ON t1.taxonomy_id = t2.id
         """
         return self.client.query(metadata_query).to_dataframe()
 
@@ -39,7 +41,7 @@ class SchemaAndSourceGenerator:
         schema_query = f"""
         SELECT column_name
         FROM `{self.config['target_project']}.{self.config['target_dataset']}.INFORMATION_SCHEMA.COLUMNS`
-        WHERE table_name = '{table_name}'
+        WHERE table_name = '{table_name}' and data_type not in ('NUMERIC','BOOL','INT64','FLOAT64')
         """
         return self.client.query(schema_query).to_dataframe()
 
@@ -49,9 +51,10 @@ class SchemaAndSourceGenerator:
         for _, row in policy_metadata.iterrows():
             tag_name = row["display_name"].lower()
             tag_suffix = row["policy_tag_id"]
+            policy_tag_name = row["taxonomy_name"]
 
             # Use the pre-defined policy_tag_reference as a prefix
-            tag_prefix = self.config["policy_tag_reference"].strip('"')
+            tag_prefix = f'{{{{var("{policy_tag_name}")}}}}/'
             tag_link = f"{tag_prefix}{tag_suffix}"
 
             for _, col in table_schema.iterrows():
