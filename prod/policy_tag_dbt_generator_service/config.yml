@@ -5,7 +5,7 @@ taxonomy_table: "taxonomy"
 target_project: "data-domain-data-warehouse"
 target_dataset: "helios_staging"
 target_table: "applicant_drafts_sgmw_p"
-table_suffix: "_sgmw_p"
+table_suffix: "_adhis_p"
 policy_tag_reference: '"{{var(\"policy_tag_gdpr_compliance\")}}/"'
 policy_tags_file: "schema.yml"
 source_location: "europe-north1"

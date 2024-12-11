@@ -54,6 +54,8 @@ def extract_external_table_info(bigquery_service,project_id, dataset_id, gcs_buc
         #gcs_pattern = r'gs://[^"\[\],]+'
         # Regular expression to extract max_bad_records value
         max_bad_records_pattern = r'max_bad_records\s*=\s*(\d+)'
+        format_pattern = r'format\s*=\s*"([^"]+)"'
+        field_delimiter_pattern = r'field_delimiter\s*=\s*"([^"]+)"'
 
         for row in results:
             ddl = row.get('ddl')
@@ -67,6 +69,10 @@ def extract_external_table_info(bigquery_service,project_id, dataset_id, gcs_buc
                 re.sub(f"gs://{gcs_bucket_name}", f"gs://{sink_gcs_bucket_name}", match) + "*" if "*" not in match else re.sub(f"gs://{gcs_bucket_name}", f"gs://{sink_gcs_bucket_name}", match)
                 for match in matches
             ]
+            format_match = re.search(format_pattern, ddl)
+            field_delimiter_match = re.search(field_delimiter_pattern, ddl)
+            file_format = format_match.group(1) if format_match else None
+            field_delimiter = field_delimiter_match.group(1) if field_delimiter_match else None
 
             if matches_adjusted:
                 gcs_location = matches_adjusted[0]
@@ -76,7 +82,9 @@ def extract_external_table_info(bigquery_service,project_id, dataset_id, gcs_buc
                 table_info.append({
                     "table_name":table_name,
                     "gcs_location":gcs_location,
-                    "max_bad_records": max_bad_records
+                    "max_bad_records": max_bad_records,
+                    "file_format": file_format,
+                    "field_delimiter": field_delimiter
                 })
             else:
                 print("table is not written:",ddl)
@@ -98,8 +106,10 @@ def generate_file_txt(file_name, table_info):
                 table_name = entry.get('table_name')
                 gcs_locations = entry.get('gcs_location')
                 max_bad_records = entry.get('max_bad_records')
+                file_format = entry.get('file_format')
+                field_delimiter = entry.get('field_delimiter')
                 # Write table name and GCS locations (comma-separated)
-                file.write(f"{table_name},{gcs_locations},{max_bad_records}\n")
+                file.write(f"{table_name},{gcs_locations},{max_bad_records}, {file_format}, {field_delimiter} \n")
         logging.info(f"Generated file: {file_name}")
     except Exception as e:
         logging.error(f"An error occurred while writing the file: {e}")
@@ -132,7 +142,7 @@ def process_gcs_data_info(project_id,gcs_data_info,base_schema_path,bigquery_ser
         #schema_service.export_schema( dataset_id, schema_path, table_info)
 
         # Generate a text file mapping table names to their GCS bucket locations
-        #generate_file_txt(output_path, table_info)
+        generate_file_txt(output_path, table_info)
 
 
         """ Only uncomment and run this func when first we create the hive partitioned tables. Because it doesnt assign partition columns if it exist on schema """
