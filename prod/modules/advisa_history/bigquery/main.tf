@@ -13,7 +13,13 @@ resource "google_bigquery_dataset" "advisa_history_dataset" {
 locals {
   table_mappings = tomap({
     for line in split("\n", trimspace(file("${path.module}/advisa_history_external_table_info.txt"))) :
-    split(",", line)[0] => split(",", line)[1]
+    split(",", line)[0] => {
+       gcs_path = trimspace(split(",", line)[1])
+       file_format = trimspace(split(",", line)[3])
+       file_delimeter = trimspace(split(",", line)[4])
+
+      }
+
   })
 }
 
@@ -26,12 +32,19 @@ resource "google_bigquery_table" "external_tables" {
   table_id                  = "${each.key}"
   deletion_protection       = true
     external_data_configuration {
-    autodetect    = false
+    dynamic "csv_options" {
+      for_each = each.value.file_format == "CSV" ? [1] : []
+      content{
+        quote = "\""
+        field_delimiter = each.value.file_delimeter
+      }
+    }
+    autodetect  = each.value.file_format == "CSV" ? true: false
     ignore_unknown_values = false
-    compression = "GZIP"
-    source_format = "NEWLINE_DELIMITED_JSON"
+    compression = "GZIP" 
+    source_format = each.value.file_format
     connection_id = var.connection_id
-    source_uris   = [each.value]
+    source_uris   = [each.value.gcs_path]
   }
     # must to define a schema when we create a table
     schema = file("schemas/advisa_history/${each.key}_schema.json")
