@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("/Users/duygugenc/Desktop/terraform-adm-sa.json")
+  #credentials = file("/Users/duygugenc/Desktop/terraform-adm-sa.json")
   project     = var.project_id
   region      = var.region
 }
@@ -110,5 +110,13 @@ module "advisa_history_bigquery_config" {
   region     = var.region
   connection_id = google_bigquery_connection.default.name
   advisa_history_bucket_name = var.advisa_history_bucket_name
+  data_domain_project_id = var.data_domain_project_id
+}
+
+module "deny_policy_config" {
+  source = "./modules/deny_policy"
+  project_id = var.project_id
+  region     = var.region
+  connection_id = google_bigquery_connection.default.name
   data_domain_project_id = var.data_domain_project_id
 }
