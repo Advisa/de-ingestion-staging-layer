@@ -11,5 +11,5 @@ source_location: "europe-north1"
 source_name: "helios_staging"
 database: "data-domain-data-warehouse"
 schema: "helios_staging"
-output_directory: "/Users/aruldharani/Sambla/de-ingestion-staging-layer-1/prod/policy_tag_dbt_generator_service"
+output_directory: "data_outputs"
 
