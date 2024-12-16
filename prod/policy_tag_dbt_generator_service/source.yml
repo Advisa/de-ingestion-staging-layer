@@ -4,171 +4,139 @@ sources:
   database: data-domain-data-warehouse
   schema: helios_staging
   tables:
-  - name: archived_ssn_adhis_p
-    description: Source data for archived_ssn_adhis_p
+  - name: applications_latest_view_customers_sambq_p
+    description: Source data for applications_latest_view_customers_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_payment_insurance_logs_mutual_adhis_p
-    description: Source data for insurance_payment_insurance_logs_mutual_adhis_p
+  - name: applications_past_report_requests_sambq_p
+    description: Source data for applications_past_report_requests_sambq_p
     freshness: null
     +enabled: true
-  - name: applicants_adhis_p
-    description: Source data for applicants_adhis_p
+  - name: applications_utmhistory_sambq_p
+    description: Source data for applications_utmhistory_sambq_p
     freshness: null
     +enabled: true
-  - name: credit_report_group_items_adhis_p
-    description: Source data for credit_report_group_items_adhis_p
+  - name: applications_latest_view_scheduledcalls_sambq_p
+    description: Source data for applications_latest_view_scheduledcalls_sambq_p
     freshness: null
     +enabled: true
-  - name: interactions_adhis_p
-    description: Source data for interactions_adhis_p
+  - name: customers_sambq_p
+    description: Source data for customers_sambq_p
     freshness: null
     +enabled: true
-  - name: subscription_month_invoice_items_adhis_p
-    description: Source data for subscription_month_invoice_items_adhis_p
+  - name: applications_latest_view_allpaidoutbysambla_sambq_p
+    description: Source data for applications_latest_view_allpaidoutbysambla_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_customers_mdn_adhis_p
-    description: Source data for insurance_customers_mdn_adhis_p
+  - name: applications_estates_sambq_p
+    description: Source data for applications_estates_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_policies_mdn_adhis_p
-    description: Source data for insurance_policies_mdn_adhis_p
+  - name: applications_all_versions_sambq_p
+    description: Source data for applications_all_versions_sambq_p
     freshness: null
     +enabled: true
-  - name: subscriptions_adhis_p
-    description: Source data for subscriptions_adhis_p
+  - name: applications_latest_view_bids_sambq_p
+    description: Source data for applications_latest_view_bids_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_policy_products_mdn_adhis_p
-    description: Source data for insurance_policy_products_mdn_adhis_p
+  - name: applications_latest_view_loans_sambq_p
+    description: Source data for applications_latest_view_loans_sambq_p
     freshness: null
     +enabled: true
-  - name: payments_gjensidige_adhis_p
-    description: Source data for payments_gjensidige_adhis_p
+  - name: applications_excludebanks_sambq_p
+    description: Source data for applications_excludebanks_sambq_p
     freshness: null
     +enabled: true
-  - name: invoice_items_gjnsidige_adhis_p
-    description: Source data for invoice_items_gjnsidige_adhis_p
+  - name: applications_customers_sambq_p
+    description: Source data for applications_customers_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_payment_insurances_mutual_adhis_p
-    description: Source data for insurance_payment_insurances_mutual_adhis_p
+  - name: applications_latest_view_applications_sambq_p
+    description: Source data for applications_latest_view_applications_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_policy_types_mdn_adhis_p
-    description: Source data for insurance_policy_types_mdn_adhis_p
+  - name: applications_latest_view_estates_sambq_p
+    description: Source data for applications_latest_view_estates_sambq_p
     freshness: null
     +enabled: true
-  - name: cookies_adhis_p
-    description: Source data for cookies_adhis_p
+  - name: applications_latest_view_utmHistory_sambq_p
+    description: Source data for applications_latest_view_utmHistory_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_users_mdn_adhis_p
-    description: Source data for insurance_users_mdn_adhis_p
+  - name: applications_latest_view_credit_reports_sambq_p
+    description: Source data for applications_latest_view_credit_reports_sambq_p
     freshness: null
     +enabled: true
-  - name: payment_insurances_adhis_p
-    description: Source data for payment_insurances_adhis_p
+  - name: applications_bids_sambq_p
+    description: Source data for applications_bids_sambq_p
     freshness: null
     +enabled: true
-  - name: bids_adhis_p
-    description: Source data for bids_adhis_p
+  - name: applications_loans_sambq_p
+    description: Source data for applications_loans_sambq_p
     freshness: null
     +enabled: true
-  - name: credit_reports_adhis_p
-    description: Source data for credit_reports_adhis_p
+  - name: applications_invites_sambq_p
+    description: Source data for applications_invites_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_invoices_mutual_adhis_p
-    description: Source data for insurance_invoices_mutual_adhis_p
+  - name: applications_credit_reports_sambq_p
+    description: Source data for applications_credit_reports_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_payment_insurance_levels_mutual_adhis_p
-    description: Source data for insurance_payment_insurance_levels_mutual_adhis_p
+  - name: applications_latest_view_utmhistory_sambq_p
+    description: Source data for applications_latest_view_utmhistory_sambq_p
     freshness: null
     +enabled: true
-  - name: tags_adhis_p
-    description: Source data for tags_adhis_p
+  - name: applications_latest_view_excludebanks_sambq_p
+    description: Source data for applications_latest_view_excludebanks_sambq_p
     freshness: null
     +enabled: true
-  - name: payment_insurance_levels_gjensidige_adhis_p
-    description: Source data for payment_insurance_levels_gjensidige_adhis_p
+  - name: applications_latest_view_past_report_requests_sambq_p
+    description: Source data for applications_latest_view_past_report_requests_sambq_p
     freshness: null
     +enabled: true
-  - name: advisor_users_adhis_p
-    description: Source data for advisor_users_adhis_p
+  - name: banks_latest_view_banks_sambq_p
+    description: Source data for banks_latest_view_banks_sambq_p
     freshness: null
     +enabled: true
-  - name: credit_report_details_adhis_p
-    description: Source data for credit_report_details_adhis_p
+  - name: applications_allpaidoutbysambla_sambq_p
+    description: Source data for applications_allpaidoutbysambla_sambq_p
     freshness: null
     +enabled: true
-  - name: creditors_adhis_p
-    description: Source data for creditors_adhis_p
+  - name: applications_latest_view_invites_sambq_p
+    description: Source data for applications_latest_view_invites_sambq_p
     freshness: null
     +enabled: true
-  - name: credit_report_groups_adhis_p
-    description: Source data for credit_report_groups_adhis_p
+  - name: applications_latest_view_version_sambq_p
+    description: Source data for applications_latest_view_version_sambq_p
     freshness: null
     +enabled: true
-  - name: payment_insurance_levels_adhis_p
-    description: Source data for payment_insurance_levels_adhis_p
+  - name: applications_scheduledcalls_sambq_p
+    description: Source data for applications_scheduledcalls_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_repayments_mutual_adhis_p
-    description: Source data for insurance_repayments_mutual_adhis_p
+  - name: applications_sambq_p
+    description: Source data for applications_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_invoice_lines_mutual_adhis_p
-    description: Source data for insurance_invoice_lines_mutual_adhis_p
+  - name: applications_internalcomments_sambq_p
+    description: Source data for applications_internalcomments_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_transactions_mdn_adhis_p
-    description: Source data for insurance_transactions_mdn_adhis_p
+  - name: applications_latest_view_internalcomments_sambq_p
+    description: Source data for applications_latest_view_internalcomments_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_invoice_items_mutual_adhis_p
-    description: Source data for insurance_invoice_items_mutual_adhis_p
+  - name: banks_sambq_p
+    description: Source data for banks_sambq_p
     freshness: null
     +enabled: true
-  - name: insurance_cancellations_mdn_adhis_p
-    description: Source data for insurance_cancellations_mdn_adhis_p
+  - name: applications_version_sambq_p
+    description: Source data for applications_version_sambq_p
     freshness: null
     +enabled: true
-  - name: pageviews_adhis_p
-    description: Source data for pageviews_adhis_p
-    freshness: null
-    +enabled: true
-  - name: applications_adhis_p
-    description: Source data for applications_adhis_p
-    freshness: null
-    +enabled: true
-  - name: insurance_partners_mdn_adhis_p
-    description: Source data for insurance_partners_mdn_adhis_p
-    freshness: null
-    +enabled: true
-  - name: invoices_gjensidige_adhis_p
-    description: Source data for invoices_gjensidige_adhis_p
-    freshness: null
-    +enabled: true
-  - name: insurance_payments_mutual_adhis_p
-    description: Source data for insurance_payments_mutual_adhis_p
-    freshness: null
-    +enabled: true
-  - name: payment_insurances_gjensidige_adhis_p
-    description: Source data for payment_insurances_gjensidige_adhis_p
-    freshness: null
-    +enabled: true
-  - name: invites_adhis_p
-    description: Source data for invites_adhis_p
-    freshness: null
-    +enabled: true
-  - name: pageview_adhis_p
-    description: Source data for pageview_adhis_p
-    freshness: null
-    +enabled: true
-  - name: people_adhis_p
-    description: Source data for people_adhis_p
+  - name: unsubscriptions_sambq_p
+    description: Source data for unsubscriptions_sambq_p
     freshness: null
     +enabled: true
