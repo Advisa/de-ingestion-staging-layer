@@ -5,18 +5,23 @@ import os
 
 def main():
     config_file = 'utils/config.yml'
-    processor = SensitiveFieldsProcessor(config_file, '', '') 
-    config = processor.read_yaml_config() 
-    
+    processor = SensitiveFieldsProcessor(config_file, '', '', 'data-domain-data-warehouse')
+    config = processor.read_yaml_config()
+
     # Column Lineage Extraction
     extractor = ColumnLineageExtractor(config['manifest_path'], config['catalog_path'])
     lineage_map = extractor.build_lineage_map()
     extractor.write_lineage_to_yaml(config['lineage_output_file'])
-    
+
     # Sensitive Fields Processing
-    processor = SensitiveFieldsProcessor(config_file, config['sensitive_field_mapping'], config['sensitive_fields_output_json'])
+    processor = SensitiveFieldsProcessor(
+        config_file, 
+        config['sensitive_field_mapping'], 
+        config['sensitive_fields_output_json'], 
+        'data-domain-data-warehouse'
+    )
     sensitive_columns = processor.clean_csv(config['sensitive_field_mapping'])
-    
+
     # Build the graph based on the lineage map
     G, processed_columns = processor.build_graph(lineage_map)
 
@@ -28,17 +33,19 @@ def main():
             continue
 
         try:
-            # Resolve connections for each legacy column individually
             connected_columns = processor.resolve_connections(G, legacy_column)
             grouped_columns = processor.keyword_based_grouping(connected_columns, processed_columns)
             all_grouped_columns[legacy_column] = grouped_columns
         except ValueError as e:
             print(f"Error resolving connections for {legacy_column}: {e}")
-    
-    # Convert grouped columns to JSON and output the result
-    processor.convert_grouped_columns_to_json(all_grouped_columns, config['sensitive_fields_output_json'])
 
+    # Retrieve schemas for all tables in BigQuery
+    schemas = processor.get_all_bigquery_schemas()
+
+    # Convert grouped columns to JSON and output the result
+    processor.convert_grouped_columns_to_json(all_grouped_columns, schemas, config['sensitive_fields_output_json'])
+
+    print("Sensitive fields processing complete. Output written to JSON.")
 
 if __name__ == "__main__":
     main()
-#not recognising postalCode,accountNumber but they are in the lineage file. need to be tested 
