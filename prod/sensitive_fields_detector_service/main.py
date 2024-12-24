@@ -10,7 +10,7 @@ def main():
 
     # Column Lineage Extraction
     extractor = ColumnLineageExtractor(config['manifest_path'], config['catalog_path'])
-    lineage_map = extractor.build_lineage_map()
+    lineage_map = extractor.build_lineage_map()  # Lineage map includes column data types
     extractor.write_lineage_to_yaml(config['lineage_output_file'])
 
     # Sensitive Fields Processing
@@ -39,11 +39,8 @@ def main():
         except ValueError as e:
             print(f"Error resolving connections for {legacy_column}: {e}")
 
-    # Retrieve schemas for all tables in BigQuery
-    schemas = processor.get_all_bigquery_schemas()
-
-    # Convert grouped columns to JSON and output the result
-    processor.convert_grouped_columns_to_json(all_grouped_columns, schemas, config['sensitive_fields_output_json'])
+    # Convert grouped columns to JSON using lineage map for column data types
+    processor.convert_grouped_columns_to_json(all_grouped_columns, lineage_map, config['sensitive_fields_output_json'])
 
     print("Sensitive fields processing complete. Output written to JSON.")
 

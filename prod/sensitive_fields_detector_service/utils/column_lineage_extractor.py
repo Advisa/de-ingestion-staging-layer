@@ -23,11 +23,23 @@ class ColumnLineageExtractor:
         for unique_id, source_data in self.catalog.items():
             if unique_id == model:
                 if 'columns' in source_data:
-                    return list(source_data['columns'].keys())
+                    return {
+                        column_name: {
+                            "datatype": column_data.get('type', 'unknown'),
+                            "name": column_name,
+                        }
+                        for column_name, column_data in source_data['columns'].items()
+                    }
         if 'nodes' in self.catalog and model in self.catalog['nodes']:
-            return list(self.catalog['nodes'][model]['columns'].keys())
+            return {
+                column_name: {
+                    "datatype": column_data.get('type', 'unknown'),
+                    "name": column_name,
+                }
+                for column_name, column_data in self.catalog['nodes'][model]['columns'].items()
+            }
         print(f"WARNING: Model {model} not found in catalog.")
-        return []
+        return {}
 
     def _parse_select_columns(self, sql_code, model):
         select_pattern = r"SELECT\s+\*\s+FROM"
@@ -61,11 +73,13 @@ class ColumnLineageExtractor:
         model_data = self.manifest['nodes'][model]
         
         if model_data['resource_type'] == 'source':
-            column_mappings = {col: col for col in self._extract_columns(model)}
-            for column, original in column_mappings.items():
+            column_mappings = self._extract_columns(model)
+            for column, details in column_mappings.items():
                 self.lineage_map[model][column] = {
                     "source_model": model,
-                    "source_column": original,
+                    "source_column": details["name"],
+                    "source_datatype": details["datatype"],
+                    "target_datatype": details["datatype"],
                 }
             return {}
 
@@ -83,17 +97,21 @@ class ColumnLineageExtractor:
                 if original in upstream_columns:
                     self.lineage_map[model][alias] = {
                         "source_model": upstream_model,
-                        "source_column": original,
+                        "source_column": upstream_columns[original]["name"],
+                        "source_datatype": upstream_columns[original]["datatype"],
+                        "target_datatype": upstream_columns[original]["datatype"],  # or override if needed
                     }
 
     def build_lineage_map(self):
         for model in self.catalog.get('nodes', {}):
             if model.endswith('_r') or model.startswith("source."):
-                column_mappings = {col: col for col in self._extract_columns(model)}
-                for column, original in column_mappings.items():
+                column_mappings = self._extract_columns(model)
+                for column, details in column_mappings.items():
                     self.lineage_map[model][column] = {
                         "source_model": model,
-                        "source_column": original,
+                        "source_column": details["name"],
+                        "source_datatype": details["datatype"],
+                        "target_datatype": details["datatype"],
                     }
 
         for model in self.manifest['nodes']:
@@ -102,11 +120,13 @@ class ColumnLineageExtractor:
 
         for model, source_data in self.catalog.items():
             if model.startswith("source.") and model not in self.manifest['nodes']:
-                column_mappings = {col: col for col in self._extract_columns(model)}
-                for column, original in column_mappings.items():
+                column_mappings = self._extract_columns(model)
+                for column, details in column_mappings.items():
                     self.lineage_map[model][column] = {
                         "source_model": model,
-                        "source_column": original,
+                        "source_column": details["name"],
+                        "source_datatype": details["datatype"],
+                        "target_datatype": details["datatype"],
                     }
 
         return self.lineage_map
