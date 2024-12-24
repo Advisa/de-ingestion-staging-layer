@@ -13,13 +13,12 @@ class BigQueryTagManager:
         self.tag_key_id = tag_key_id
         self.tag_value_id = tag_value_id
 
-        # Tags in the required format
+        # tags in the required format Tag key is expected to be in the namespaced format, for example "123456789012/environment" where 123456789012 is the ID of the parent organization or project resource for this tag key. Tag value is expected to be the short name, for example "Production".
         self.resource_tags = {f'{self.project_id}/{self.tag_key_id}': self.tag_value_id}
         self.credentials, _ = default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
         auth_request = Request()
         self.credentials.refresh(auth_request)
 
-        # API Headers
         self.headers = {
             "Authorization": f"Bearer {self.credentials.token}",
             "Content-Type": "application/json"
@@ -79,52 +78,44 @@ class BigQueryTagManager:
         ws.title = "Metadata Comparison"
         ws.append(["Table Name", "Field", "Before", "After", "Comparison"])
 
-        # Conditional formatting (for highlighting changes)
         change_fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
         no_change_fill = PatternFill(start_color="00FF00", end_color="00FF00", fill_type="solid")
 
-        # Row index to track the current row in the sheet
-        current_row = 2  # Start from row 2 as row 1 is the header
+        current_row = 2
 
         for table_id in tables:
             before_metadata = self.fetch_table_metadata(table_id)
             if not before_metadata:
                 continue
 
-            # Apply tags
             self.apply_tags_to_tables([table_id])
             after_metadata = self.fetch_table_metadata(table_id)
 
             if not after_metadata:
                 continue
 
-            # Compare metadata field by field
             all_fields = set(before_metadata.keys()).union(after_metadata.keys())
             for field in all_fields:
                 before_value = before_metadata.get(field, "N/A")
                 after_value = after_metadata.get(field, "N/A")
                 comparison = "No Change" if before_value == after_value else "Changed"
                 
-                # Check if the value is a dictionary, and convert it to a string
                 if isinstance(before_value, dict):
-                    before_value = str(before_value)  # Convert to string
+                    before_value = str(before_value)  
                 if isinstance(after_value, dict):
-                    after_value = str(after_value)  # Convert to string
+                    after_value = str(after_value)
 
-                # Append comparison results to the sheet
                 row = [table_id, field, before_value, after_value, comparison]
                 ws.append(row)
 
-                # Apply conditional formatting based on comparison
-                for cell in ws[current_row][2:]:  # Color "Before" and "After" cells
+                for cell in ws[current_row][2:]:
                     if comparison == "Changed":
                         cell.fill = change_fill
                     else:
                         cell.fill = no_change_fill
 
-                current_row += 1  # Move to the next row for the next comparison
+                current_row += 1
 
-        # Save the workbook to the file
         wb.save(report_filename)
         print(f"Report generated: {report_filename}")
 
@@ -157,7 +148,6 @@ if __name__ == "__main__":
 
     tag_manager = BigQueryTagManager(project_id, dataset_id, tag_key_id, tag_value_id)
 
-    # List tables and generate a report
     tables = tag_manager.list_tables()
 
     if tables:
