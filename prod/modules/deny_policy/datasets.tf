@@ -7,7 +7,7 @@ locals {
 }
 
 # Create a null_resource for each dataset
-resource "null_resource" "apply_tags_prod_testing" {
+resource "null_resource" "apply_tags_prod_test" {
   for_each = toset(var.datasets) # Iterate over the list of datasets
 
   provisioner "local-exec" {

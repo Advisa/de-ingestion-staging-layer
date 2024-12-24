@@ -147,7 +147,7 @@ if __name__ == "__main__":
     tag_value_id = os.getenv("TAG_VALUE_ID", "your_tag_value_id")
 
     tag_manager = BigQueryTagManager(project_id, dataset_id, tag_key_id, tag_value_id)
-
+    tag_manager.apply_tags_to_dataset()
     tables = tag_manager.list_tables()
 
     if tables:
