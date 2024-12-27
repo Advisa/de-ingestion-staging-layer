@@ -1,4 +1,4 @@
-project_id: "sambla-data-staging-compliance"
+project_id: "data-domain-data-warehouse"
 deny_principals:
   - "principal://goog/subject/duygu.genc@samblagroup.com"
 tag_key_id: "281476893661836"

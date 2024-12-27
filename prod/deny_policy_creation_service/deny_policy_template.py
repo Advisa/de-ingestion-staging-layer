@@ -1,5 +1,7 @@
 import os
 import yaml
+from google.auth import default
+from googleapiclient.discovery import build
 
 # Load configuration from config.yml
 def load_config(config_file="config.yml"):
@@ -7,18 +9,67 @@ def load_config(config_file="config.yml"):
         config = yaml.safe_load(file)
     return config
 
+# Function to fetch service accounts from the project
+def fetch_service_accounts(project_id):
+    credentials, _ = default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
+    service = build('iam', 'v1', credentials=credentials)
+
+    # Get the list of service accounts in the project
+    service_accounts = []
+    request = service.projects().serviceAccounts().list(name=f'projects/{project_id}')
+    while request is not None:
+        response = request.execute()
+        for account in response.get('accounts', []):
+            service_accounts.append(f"serviceAccount:{account['email']}")
+        request = service.projects().serviceAccounts().list_next(previous_request=request, previous_response=response)
+
+    return service_accounts
+
+# Function to fetch all users in the project (including groups, service accounts, etc.)
+def fetch_all_iam_users(project_id):
+    credentials, _ = default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
+    service = build('cloudresourcemanager', 'v1', credentials=credentials)
+
+    # List all IAM members (users, service accounts, etc.)
+    users = []
+    request = service.projects().getIamPolicy(resource=project_id)
+    response = request.execute()
+
+    for binding in response.get('bindings', []):
+        for member in binding.get('members', []):
+            users.append(member)
+
+    return users
+
 # Function to create deny policy and generate Terraform configuration
 def create_deny_policy():
     config = load_config("config.yml")
     project_id = config.get("project_id")
-    deny_principals = config.get("deny_principals", [])
     tag_key_id = config.get("tag_key_id")
     tag_value_id = config.get("tag_value_id")
     denied_permissions = config.get("denied_permissions", [])
 
-    if not project_id or not deny_principals or not tag_key_id or not tag_value_id or not denied_permissions:
+    if not project_id or not tag_key_id or not tag_value_id or not denied_permissions:
         print("Error: Missing required configuration values.")
         return
+
+    # Fetch service accounts from the project
+    service_accounts = fetch_service_accounts(project_id)
+
+    # Fetch all IAM users
+    all_users = fetch_all_iam_users(project_id)
+
+    # Define allowed principals (service accounts and the group)
+    allow_principals = [
+        *service_accounts,  # Allow all service accounts
+        'group:data@samblagroup.com'  # Replace with your actual group email
+    ]
+    
+    # Deny all users except service accounts and the group
+    deny_principals = [user for user in all_users if user not in allow_principals and not user.startswith("serviceAccount:")]
+
+    # Remove duplicates by converting to a set and back to a list
+    deny_principals = list(set(deny_principals))
 
     # Convert deny_principals and denied_permissions into correctly formatted lists for Terraform
     deny_principals_str = ", ".join([f'"{principal}"' for principal in deny_principals])
@@ -27,18 +78,18 @@ def create_deny_policy():
     # Generate Terraform HCL for the deny policy
     terraform_config = f"""
 resource "google_iam_deny_policy" "deny_policy_creation" {{
-  parent      = urlencode("cloudresourcemanager.googleapis.com/projects/${{var.project_id}}")  # Corrected parent format with urlencode
+  parent      = "cloudresourcemanager.googleapis.com/projects/${{var.project_id}}"  # Corrected parent format
   name        = "gdpr-deny-policy"
   display_name = "GDPR deny policy"
   rules {{
     description = "First rule"
     deny_rule {{
-      denied_principals = [{deny_principals_str}]  # Dynamic principal list
+      denied_principals = [{deny_principals_str}]  # Principals to be denied (all except service accounts and group)
       denial_condition {{
         title       = "denial condition expression"
-        expression = "resource.matchTagId(\\"tagKeys/{tag_key_id}\\", \\"tagValues/{tag_value_id}\\")"
+        expression = ""
       }}
-      denied_permissions = [{denied_permissions_str}]  # Dynamic permissions list
+      denied_permissions = [{denied_permissions_str}]  # Permissions to be denied
     }}
   }}
 }}
