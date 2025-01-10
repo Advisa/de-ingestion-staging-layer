@@ -7,11 +7,13 @@ import networkx as nx
 
 
 class SensitiveFieldsProcessor:
-    def __init__(self, config_file, input_csv, output_json, lineage_file):
+    def __init__(self, config_file, input_csv, output_json, lineage_file, exclusion_file, column_mapping_file):
         self.config_file = config_file
         self.input_csv = input_csv
         self.output_json = output_json
         self.lineage_file = lineage_file
+        self.exclusion_file = exclusion_file
+        self.column_mapping_file = column_mapping_file
 
     def read_yaml_config(self):
         with open(self.config_file, "r") as file:
@@ -90,8 +92,28 @@ class SensitiveFieldsProcessor:
             print(f"Error loading lineage data: {e}")
             return {}
 
+    def load_exclusion_list(self, exclusion_file):
+        """
+        Load exclusion list from the exclusion.txt file.
+        """
+        excluded_columns = set()
+        if exclusion_file:
+            with open(exclusion_file, "r") as f:
+                excluded_columns = {line.strip().lower() for line in f}
+        return excluded_columns
+
+    def load_column_mapping(self, column_mapping_file):
+        """
+        Load column mapping from the column_mapping.json file.
+        """
+        column_mapping = {}
+        if column_mapping_file:
+            with open(column_mapping_file, "r") as f:
+                column_mapping = json.load(f)
+        return column_mapping
+    
     @staticmethod
-    def convert_grouped_columns_to_json(grouped_columns, lineage_data, output_json):
+    def convert_grouped_columns_to_json(grouped_columns, lineage_data, output_json, excluded_columns, column_mapping):
         try:
             json_output = {
                 "taxonomy_name": "gdpr_compliance_measures",
@@ -103,16 +125,33 @@ class SensitiveFieldsProcessor:
             processed_columns = set()
 
             def filter_columns(columns):
-                return [
-                    column
-                    for column in columns
-                    if not SensitiveFieldsProcessor.is_excluded_column(
-                        column, SensitiveFieldsProcessor.get_column_type(column, lineage_data)
-                    )
-                ]
+                """
+                Filter out the columns based on exclusion rules.
+                """
+                filtered_columns = []
+                for column in columns:
+                    if column in excluded_columns:
+                        print(f"Excluding column: {column} due to exclusion list.")
+                    else:
+                        column_type = SensitiveFieldsProcessor.get_column_type(column, lineage_data)
+                        if SensitiveFieldsProcessor.is_excluded_column(column, column_type):
+                            print(f"Excluding column: {column} due to exclusion rules.")
+                        else:
+                            print(f"Including column: {column}")
+                            filtered_columns.append(column)
+                return filtered_columns
 
             for legacy_column, columns in grouped_columns.items():
+                # Filter the current columns based on the exclusion list
                 filtered_columns = filter_columns(columns)
+
+                # Check for additional columns from column_mapping that should be added as children
+                if legacy_column in column_mapping:
+                    # Add children from the column mapping (e.g., userName, person, name)
+                    additional_columns = column_mapping.get(legacy_column, [])
+                    for column in additional_columns:
+                        if column not in filtered_columns and column not in processed_columns:
+                            filtered_columns.append(column)
 
                 for column in filtered_columns:
                     if column in processed_columns:
@@ -121,6 +160,7 @@ class SensitiveFieldsProcessor:
                     sensitivity, category = SensitiveFieldsProcessor.categorize_column(column)
                     masking_rule = "HASH" if sensitivity == "high" else "MASK"
 
+                    # Find children (all the filtered columns that are not the current column)
                     children = [
                         child
                         for child in filtered_columns
@@ -134,6 +174,7 @@ class SensitiveFieldsProcessor:
                         "category": category,
                     }
 
+                    # Add the tag data to the correct sensitivity category
                     if sensitivity == "high":
                         json_output["high_sensitivity_tags"][category][column] = tag_data
                     elif sensitivity == "medium":
@@ -144,6 +185,9 @@ class SensitiveFieldsProcessor:
                     processed_columns.add(column)
                     processed_columns.update(tag_data["children"])
 
+                # If any additional columns from the column_mapping were added, they will be handled here
+                # So, columns like userName, person, name should already be included as children under the parent (e.g., etunimi).
+
             with open(output_json, "w") as jf:
                 json.dump(json_output, jf, indent=4)
 
@@ -152,24 +196,61 @@ class SensitiveFieldsProcessor:
         except Exception as e:
             print(f"Error: {e}")
 
+
     @staticmethod
     def get_column_type(column, lineage_data):
         """
         Retrieve the type of the column from the lineage data.
+        The column name is normalized by splitting by '.' and using the last part to look it up in model_data.
         """
-        return lineage_data.get(column, {}).get("type", None)
+        normalized_column = column.split('.')[-1].lower()
+        for model, model_data in lineage_data.items():
+            for col in model_data:
+                normalized_col = col.split('.')[-1].lower()
+                if normalized_column == normalized_col:
+                    column_info = model_data[col]
+                    column_type = column_info.get("source_datatype") or column_info.get("target_datatype")
+                    return column_type
+
+        print(f"Column '{normalized_column}' not found in lineage data.")
+        return None
+
 
     @staticmethod
     def is_excluded_column(column, column_type=None):
+        """
+        Check if a column should be excluded based on its type or name pattern.
+        """
         normalized_column = column.lower()
+        print(f"Checking exclusion for column: {normalized_column}, Type: {column_type}")
 
-        print(f"Checking exclusion for column: {normalized_column}")
-
-        if normalized_column == "is_pep":
-            return False
         if normalized_column.startswith(("num_", "hashed_")) or "hashed_" in normalized_column:
             return True
-        if column_type and column_type in ["bool", "boolean"]:
+
+        if column_type is None:
+            return False  
+        
+        if normalized_column == "is_pep" or normalized_column == "birth_date":
+            return False
+        
+        if isinstance(column_type, str) and column_type.startswith("STRUCT"):
+            struct_fields = SensitiveFieldsProcessor.extract_struct_fields(column_type)  
+            for field in struct_fields:
+                field_type = SensitiveFieldsProcessor.get_field_type(field)  
+                if field_type in ["bool", "boolean", "timestamp"]:
+                    print(f"Excluding {field} due to type: {field_type}")
+                    return True
+
+        if isinstance(column_type, str) and column_type.startswith("ARRAY<STRUCT"):
+            array_struct_fields = SensitiveFieldsProcessor.extract_array_struct_fields(column_type)  
+            for field in array_struct_fields:
+                field_type = SensitiveFieldsProcessor.get_field_type(field)  
+                if field_type in ["bool", "boolean", "timestamp"]:
+                    print(f"Excluding {field} due to type: {field_type}")
+                    return True
+
+        if column_type and column_type.lower() in ["bool", "boolean", "timestamp"]:
+            print(f"Excluding column: {normalized_column} due to type: {column_type}")
             return True
 
         return False
@@ -183,6 +264,23 @@ class SensitiveFieldsProcessor:
         elif column in ["tili"]:
             return "high", "confidential"
         elif column in ["education", "address", "marital_status", "net_income", "ytunnus"]:
-            return "low", "PII"
+            return "medium", "restricted"
         else:
             return "medium", "restricted"
+
+    @staticmethod
+    def extract_struct_fields(struct_type):
+        """
+        Extract field names from a STRUCT type string.
+        """
+        struct_type = struct_type[7:-1]  # Remove 'STRUCT<' and '>'
+        fields = struct_type.split(",")
+        return [field.strip().split(" ")[0] for field in fields]
+
+    @staticmethod
+    def extract_array_struct_fields(array_struct_type):
+        """
+        Extract field names from an ARRAY<STRUCT<...>> type string.
+        """
+        struct_type = array_struct_type[11:-1]  
+        return SensitiveFieldsProcessor.extract_struct_fields(f"STRUCT<{struct_type}>")
