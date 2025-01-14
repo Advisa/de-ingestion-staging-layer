@@ -1,8 +1,6 @@
 import csv
 import yaml
 import json
-import pickle
-import os
 import networkx as nx
 
 
@@ -113,6 +111,55 @@ class SensitiveFieldsProcessor:
         return column_mapping
     
     @staticmethod
+    def swap_keys_with_children(json_output, column_mapping):
+        key_list = [
+            "ssn", "first_name", "last_name", "email", "phone", "bank_account_number",
+            "dob", "amount", "business_id", "citizenship", "employer", "gross_income",
+            "post_code", "profession", "address", "education", "marital_status", "business_organization_number", "etunimi"
+        ]
+
+        for sensitivity_category, category_data in json_output.items():
+            if sensitivity_category == "taxonomy_name":
+                continue
+
+            if isinstance(category_data, dict):
+                for category, category_content in category_data.items():
+                    if isinstance(category_content, dict):
+                        for column, tag_data in list(category_content.items()):
+                            if "children" in tag_data:
+                                for child in tag_data["children"]:
+                                    if child in key_list:
+                                        mapped_key = child
+
+                                        # If the column exists in category_content, proceed with swapping
+                                        if column in category_content:
+                                            old_data = category_content[column]
+                                            del category_content[column]
+                                            category_content[mapped_key] = old_data
+
+                                            # Add the current column as a child of the mapped key if it’s not already there
+                                            if column not in category_content[mapped_key]["children"]:
+                                                category_content[mapped_key]["children"].append(column)
+                                            #print(category_content[mapped_key])
+                                            # Now, update the references of the old column in the children lists
+                                            # Update within the current category content
+                                            print(category_content)
+                                            for tag, tag_info in category_content.items():
+                                                #print(tag_info)
+                                                if "children" in tag_info:
+                                                    if mapped_key in tag_info["children"]:
+                                                        tag_info["children"].remove(mapped_key)
+
+                                            
+                                            # Print the success message
+                                            print(f"Swapped {column} with child {mapped_key} and added {column} as child of {mapped_key}.")
+                                        else:
+                                            print(f"Error: Column {column} not found in the category content.")
+            return json_output
+
+
+    
+    @staticmethod
     def convert_grouped_columns_to_json(grouped_columns, lineage_data, output_json, excluded_columns, column_mapping):
         try:
             json_output = {
@@ -134,7 +181,7 @@ class SensitiveFieldsProcessor:
                         print(f"Excluding column: {column} due to exclusion list.")
                     else:
                         column_type = SensitiveFieldsProcessor.get_column_type(column, lineage_data)
-                        if SensitiveFieldsProcessor.is_excluded_column(column, column_type):
+                        if SensitiveFieldsProcessor.is_excluded_column(column, column_type,lineage_data):
                             print(f"Excluding column: {column} due to exclusion rules.")
                         else:
                             print(f"Including column: {column}")
@@ -143,15 +190,16 @@ class SensitiveFieldsProcessor:
 
             for legacy_column, columns in grouped_columns.items():
                 # Filter the current columns based on the exclusion list
-                filtered_columns = filter_columns(columns)
+                #filtered_columns = filter_columns(columns)
 
                 # Check for additional columns from column_mapping that should be added as children
                 if legacy_column in column_mapping:
                     # Add children from the column mapping (e.g., userName, person, name)
                     additional_columns = column_mapping.get(legacy_column, [])
                     for column in additional_columns:
-                        if column not in filtered_columns and column not in processed_columns:
-                            filtered_columns.append(column)
+                        if column not in columns and column not in processed_columns:
+                            columns.append(column)
+                filtered_columns = filter_columns(columns)
 
                 for column in filtered_columns:
                     if column in processed_columns:
@@ -181,12 +229,11 @@ class SensitiveFieldsProcessor:
                         json_output["medium_sensitivity_tags"][category][column] = tag_data
                     else:
                         json_output["low_sensitivity_tags"][category][column] = tag_data
-
+                    
                     processed_columns.add(column)
                     processed_columns.update(tag_data["children"])
 
-                # If any additional columns from the column_mapping were added, they will be handled here
-                # So, columns like userName, person, name should already be included as children under the parent (e.g., etunimi).
+            json_output = SensitiveFieldsProcessor.swap_keys_with_children(json_output, column_mapping)
 
             with open(output_json, "w") as jf:
                 json.dump(json_output, jf, indent=4)
@@ -217,7 +264,7 @@ class SensitiveFieldsProcessor:
 
 
     @staticmethod
-    def is_excluded_column(column, column_type=None):
+    def is_excluded_column(column, column_type,lineage_data):
         """
         Check if a column should be excluded based on its type or name pattern.
         """
@@ -236,7 +283,7 @@ class SensitiveFieldsProcessor:
         if isinstance(column_type, str) and column_type.startswith("STRUCT"):
             struct_fields = SensitiveFieldsProcessor.extract_struct_fields(column_type)  
             for field in struct_fields:
-                field_type = SensitiveFieldsProcessor.get_field_type(field)  
+                field_type = SensitiveFieldsProcessor.get_column_type(field,lineage_data)  
                 if field_type in ["bool", "boolean", "timestamp"]:
                     print(f"Excluding {field} due to type: {field_type}")
                     return True
@@ -244,7 +291,7 @@ class SensitiveFieldsProcessor:
         if isinstance(column_type, str) and column_type.startswith("ARRAY<STRUCT"):
             array_struct_fields = SensitiveFieldsProcessor.extract_array_struct_fields(column_type)  
             for field in array_struct_fields:
-                field_type = SensitiveFieldsProcessor.get_field_type(field)  
+                field_type = SensitiveFieldsProcessor.get_column_type(field,lineage_data)  
                 if field_type in ["bool", "boolean", "timestamp"]:
                     print(f"Excluding {field} due to type: {field_type}")
                     return True
@@ -257,16 +304,19 @@ class SensitiveFieldsProcessor:
 
     @staticmethod
     def categorize_column(column):
-        if column in ["ssn", "email", "phone"]:
+        column_lower = column.lower()
+
+        if any(keyword in column_lower for keyword in ["ssn", "email", "phone", "national_"]):
             return "high", "PII"
-        elif column in ["first_name", "last_name"]:
+        elif any(keyword in column_lower for keyword in ["name"]):
             return "high", "restricted"
-        elif column in ["tili"]:
+        elif "tili" in column_lower:
             return "high", "confidential"
-        elif column in ["education", "address", "marital_status", "net_income", "ytunnus"]:
+        elif any(keyword in column_lower for keyword in ["education", "address", "marital_status", "net_income", "ytunnus"]):
             return "medium", "restricted"
         else:
             return "medium", "restricted"
+
 
     @staticmethod
     def extract_struct_fields(struct_type):
