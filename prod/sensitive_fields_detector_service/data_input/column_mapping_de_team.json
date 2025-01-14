@@ -1,0 +1,119 @@
+{
+    "ssn": [
+        "national_id", 
+        "National_ID_Cleaned", 
+        "customer_national_id", 
+        "customer_ssn", 
+        "foreignerSSN", 
+        "sotu", 
+        "ssc", 
+        "yv_sotu"
+    ],
+    "phone": [
+        "customer_phone", 
+        "customer_phone_number", 
+        "external_phone", 
+        "fourth_phone", 
+        "mobile_phone", 
+        "original_phone", 
+        "phoneNumber", 
+        "sec_phone", 
+        "secondaryPhoneNumber", 
+        "thr_phone", 
+        "work_phone"
+    ],
+    "email": [
+        "customer_contactinfo", 
+        "customer_email", 
+        "emailId", 
+        "registered_email", 
+        "user_email", 
+        "yv_email"
+    ],
+    "first_name": [
+        "etunimi", 
+        "fname", 
+        "yv_etunimi", 
+        "userName", 
+        "person", 
+        "name"
+    ],
+    "last_name": [
+        "conventionalName", 
+        "lname", 
+        "sukunimi", 
+        "useConventionalNameAsPlanName", 
+        "yv_sukunimi"
+    ],
+    "bank_account_number": [
+        "tili", 
+        "accountNumber", 
+        "tilintarkastaja", 
+        "clearingNumber",
+        "bank",
+        "bank_iban",
+        "bank_bic"
+    ],
+    "dob": [
+        "birth_date"
+    ],
+    "amount": [
+        "amount_monthly", 
+        "monthlyNetIncome"
+    ],
+    "business_id": [
+        "business_identity_code", 
+        "employment_business_id"
+    ],
+    "citizenship": [
+        "citizenship_text"
+    ],
+    "employer": [
+        "employerCountry", 
+        "employerDoc", 
+        "employerPhone", 
+        "employer_name", 
+        "employer_phone"
+    ],
+    "gross_income": [
+        "gross_income_spouse"
+    ],
+    "post_code": [
+        "postal_code", 
+        "postinro", 
+        "yv_postinro", 
+        "zip", 
+        "postal_area"
+    ],
+    "profession": [
+        "employment_profession", 
+        "employment_profession_class", 
+        "profession_area", 
+        "profession_class"
+    ],
+    "address": [
+        "permitNumber", 
+        "ip_address", 
+        "ip_address2", 
+        "lives_at_the_same_address", 
+        "originIPAddress", 
+        "osoite", 
+        "postal_address", 
+        "street_address", 
+        "web_address", 
+        "yv_osoite"
+    ],
+    "education": [
+        "education_level", 
+        "education_level_text", 
+        "yv_koulutus"
+    ],
+    "marital_status": [
+        "yv_siviilisaaty"
+    ],
+    "business_organization_number": [ 
+        "yv_ytunnus", 
+        "organizationNumber",
+        "ytunnus"
+    ]
+}
