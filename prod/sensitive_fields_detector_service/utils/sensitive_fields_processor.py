@@ -143,18 +143,12 @@ class SensitiveFieldsProcessor:
                                             # Add the current column as a child of the mapped key if it’s not already there
                                             if column not in category_content[mapped_key]["children"]:
                                                 category_content[mapped_key]["children"].append(column)
-                                            #print(category_content[mapped_key])
-                                            # Now, update the references of the old column in the children lists
-                                            # Update within the current category content
-                                            print(category_content)
                                             for tag, tag_info in category_content.items():
                                                 #print(tag_info)
                                                 if "children" in tag_info:
                                                     if mapped_key in tag_info["children"]:
                                                         tag_info["children"].remove(mapped_key)
 
-                                            
-                                            # Print the success message
                                             print(f"Swapped {column} with child {mapped_key} and added {column} as child of {mapped_key}.")
                                         else:
                                             print(f"Error: Column {column} not found in the category content.")
