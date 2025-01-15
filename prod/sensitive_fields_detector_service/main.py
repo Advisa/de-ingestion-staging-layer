@@ -60,3 +60,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#Still needs manual intervention eg: columns bank_bic and bank_iban are not grouped together under bank_account_number.
