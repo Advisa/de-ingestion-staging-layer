@@ -50,10 +50,10 @@ class SensitiveFieldsProcessor:
     def keyword_based_grouping(connected_columns, config_columns):
         grouped_columns = set(connected_columns)
         keywords = SensitiveFieldsProcessor.extract_keywords(connected_columns)
-        print(f"Extracted keywords: {keywords}")  # Print out keywords
+        print(f"Extracted keywords: {keywords}")
         for column in config_columns:
             normalized_column = SensitiveFieldsProcessor.preprocess_column(column)
-            print(f"Normalized column: {normalized_column}")  # Print out normalized column names
+            print(f"Normalized column: {normalized_column}")
             if any(keyword in normalized_column.lower() for keyword in keywords):
                 grouped_columns.add(column)
         return sorted(grouped_columns)
