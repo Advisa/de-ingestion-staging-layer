@@ -78,12 +78,24 @@
                 "masking_rule": "HASH",
                 "category": "restricted"
             },
+            "first_name": {
+                "children": [
+                    "fname",
+                    "yv_etunimi",
+                    "userName",
+                    "person",
+                    "name",
+                    "etunimi"
+                ],
+                "sensitivity": "high",
+                "masking_rule": "HASH",
+                "category": "restricted"
+            },
             "last_name": {
                 "children": [
                     "lname",
                     "sukunimi",
                     "yv_sukunimi",
-                    "conventionalName",
                     "conventionalname"
                 ],
                 "sensitivity": "high",
@@ -96,19 +108,6 @@
     "medium_sensitivity_tags": {
         "PII": {},
         "restricted": {
-            "etunimi": {
-                "children": [
-                    "first_name",
-                    "fname",
-                    "yv_etunimi",
-                    "userName",
-                    "person",
-                    "name"
-                ],
-                "sensitivity": "medium",
-                "masking_rule": "MASK",
-                "category": "restricted"
-            },
             "address": {
                 "children": [
                     "osoite",
@@ -166,7 +165,9 @@
                 "category": "restricted"
             },
             "is_pep": {
-                "children": [],
+                "children": [
+                    "politicallyExposedPerson"
+                ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
                 "category": "restricted"
@@ -264,7 +265,10 @@
             "bank_account_number": {
                 "children": [
                     "tili",
-                    "tilintarkastaja"
+                    "tilintarkastaja",
+                    "accountNumber",
+                    "clearingNumber",
+                    "bank"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",

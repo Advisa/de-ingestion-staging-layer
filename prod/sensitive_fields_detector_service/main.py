@@ -44,6 +44,7 @@ def main():
         try:
             connected_columns = processor.resolve_connections(G, legacy_column)
             grouped_columns = processor.keyword_based_grouping(connected_columns, processed_columns)
+            print(grouped_columns)
             all_grouped_columns[legacy_column] = grouped_columns
         except ValueError as e:
             print(f"Error resolving connections for {legacy_column}: {e}")

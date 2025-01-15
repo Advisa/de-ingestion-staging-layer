@@ -50,11 +50,14 @@ class SensitiveFieldsProcessor:
     def keyword_based_grouping(connected_columns, config_columns):
         grouped_columns = set(connected_columns)
         keywords = SensitiveFieldsProcessor.extract_keywords(connected_columns)
+        print(f"Extracted keywords: {keywords}")  # Print out keywords
         for column in config_columns:
             normalized_column = SensitiveFieldsProcessor.preprocess_column(column)
+            print(f"Normalized column: {normalized_column}")  # Print out normalized column names
             if any(keyword in normalized_column.lower() for keyword in keywords):
                 grouped_columns.add(column)
         return sorted(grouped_columns)
+
 
     @staticmethod
     def resolve_connections(G, legacy_column):
@@ -115,7 +118,7 @@ class SensitiveFieldsProcessor:
         key_list = [
             "ssn", "first_name", "last_name", "email", "phone", "bank_account_number",
             "dob", "amount", "business_id", "citizenship", "employer", "gross_income",
-            "post_code", "profession", "address", "education", "marital_status", "business_organization_number", "etunimi"
+            "post_code", "profession", "address", "education", "marital_status", "business_organization_number"
         ]
 
         for sensitivity_category, category_data in json_output.items():
@@ -277,7 +280,7 @@ class SensitiveFieldsProcessor:
         if column_type is None:
             return False  
         
-        if normalized_column == "is_pep" or normalized_column == "birth_date":
+        if normalized_column == "is_pep" or normalized_column == "birth_date" or normalized_column == "politicallyexposedperson":
             return False
         
         if isinstance(column_type, str) and column_type.startswith("STRUCT"):
@@ -308,7 +311,7 @@ class SensitiveFieldsProcessor:
 
         if any(keyword in column_lower for keyword in ["ssn", "email", "phone", "national_"]):
             return "high", "PII"
-        elif any(keyword in column_lower for keyword in ["name"]):
+        elif any(keyword in column_lower for keyword in ["name","etunimi"]):
             return "high", "restricted"
         elif "tili" in column_lower:
             return "high", "confidential"
