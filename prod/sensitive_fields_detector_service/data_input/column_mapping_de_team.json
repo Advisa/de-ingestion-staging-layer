@@ -53,6 +53,9 @@
         "bank_iban",
         "bank_bic"
     ],
+    "is_pep": [
+        "politicallyExposedPerson"
+    ],
     "dob": [
         "birth_date"
     ],
@@ -114,8 +117,5 @@
         "yv_ytunnus", 
         "organizationNumber",
         "ytunnus"
-    ],
-    "is_pep": [
-        "politicallyExposedPerson"
     ]
 }

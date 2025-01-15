@@ -280,6 +280,7 @@ class SensitiveFieldsProcessor:
         if column_type is None:
             return False  
         
+        #these are boolean but we still need them
         if normalized_column == "is_pep" or normalized_column == "birth_date" or normalized_column == "politicallyexposedperson":
             return False
         
@@ -313,7 +314,7 @@ class SensitiveFieldsProcessor:
             return "high", "PII"
         elif any(keyword in column_lower for keyword in ["name","etunimi"]):
             return "high", "restricted"
-        elif "tili" in column_lower:
+        elif "bank_account_number" in column_lower:
             return "high", "confidential"
         elif any(keyword in column_lower for keyword in ["education", "address", "marital_status", "net_income", "ytunnus"]):
             return "medium", "restricted"
