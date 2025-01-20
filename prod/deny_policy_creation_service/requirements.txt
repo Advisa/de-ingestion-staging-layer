@@ -4,3 +4,5 @@ PyYAML
 google-cloud-bigquery
 google-auth
 google-cloud
+openpyxl
+google-api-python-client
