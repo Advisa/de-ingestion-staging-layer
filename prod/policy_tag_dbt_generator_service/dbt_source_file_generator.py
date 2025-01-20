@@ -40,7 +40,7 @@ class SchemaAndSourceGenerator:
         schema_query = f"""
         SELECT column_name
         FROM `{self.config['target_project']}.{self.config['target_dataset']}.INFORMATION_SCHEMA.COLUMNS`
-        WHERE table_name = '{table_name}' and data_type not in ('NUMERIC','BOOL','INT64','FLOAT64')"""
+        WHERE table_name = '{table_name}' and data_type not in ('BOOL')"""
         
         return self.client.query(schema_query).to_dataframe()
 
