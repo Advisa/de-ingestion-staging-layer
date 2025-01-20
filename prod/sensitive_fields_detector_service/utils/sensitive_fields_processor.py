@@ -184,6 +184,18 @@ class SensitiveFieldsProcessor:
                             print(f"Including column: {column}")
                             filtered_columns.append(column)
                 return filtered_columns
+            
+            def get_masking_rule(child, lineage_data):
+                # Determine masking rule for the child column
+                sensitivity, _ = SensitiveFieldsProcessor.categorize_column(child)
+                column_type = SensitiveFieldsProcessor.get_column_type(child, lineage_data)
+
+                if column_type in ("INT64", "FLOAT64"):
+                        return "ALWAYS_NULL"
+                else:
+                    if sensitivity == "high":
+                        return "SHA256"
+                return "DEFAULT_MASKING_VALUE"
 
             for legacy_column, columns in grouped_columns.items():
                 # Filter the current columns based on the exclusion list
@@ -202,15 +214,31 @@ class SensitiveFieldsProcessor:
                     if column in processed_columns:
                         continue
 
+                    # Extract data type of the column
+                    column_type = SensitiveFieldsProcessor.get_column_type(column, lineage_data)
                     sensitivity, category = SensitiveFieldsProcessor.categorize_column(column)
-                    masking_rule = "HASH" if sensitivity == "high" else "MASK"
+
+                    # handling numeric columns explicitiy 
+                    masking_rule = "SHA256" if sensitivity == "high" and column_type not in ("INT64","FLOAT64") else "ALWAYS_NULL" if column_type in ("INT64", "FLOAT64")  else "DEFAULT_MASKING_VALUE"
 
                     # Find children (all the filtered columns that are not the current column)
-                    children = [
-                        child
+                    # children = {
+                    #     child
+                    #     for child in filtered_columns
+                    #     if child != column and child not in processed_columns
+                    # }
+
+                    children = {
+                        child: {
+                                "sensitivity": SensitiveFieldsProcessor.categorize_column(child)[0],
+                                "masking_rule": get_masking_rule(child, lineage_data),
+                                "type": SensitiveFieldsProcessor.get_column_type(child, lineage_data)
+                             }
                         for child in filtered_columns
                         if child != column and child not in processed_columns
-                    ]
+
+                    }
+
 
                     tag_data = {
                         "children": children,
