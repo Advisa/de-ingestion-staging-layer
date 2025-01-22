@@ -263,6 +263,7 @@ class SensitiveFieldsProcessor:
                         "children": children,
                         "sensitivity": sensitivity,
                         "masking_rule": masking_rule,
+                        "type": SensitiveFieldsProcessor.get_column_type(column, lineage_data),
                         "category": category,
                     }
 
