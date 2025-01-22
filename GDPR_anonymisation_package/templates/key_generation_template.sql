@@ -8,6 +8,7 @@ CREATE OR REPLACE TABLE `{{compliance_project}}.compilance_database.{{temp_encr_
             SELECT b.*
             FROM `{{exposure_project}}.{{gdpr_events_dataset}}.gdpr_events` b
             WHERE compliance_event != 'flag_gdpr_5_year_complaint'
+            AND is_valid_national_id != 'invalid' -- #TODO address when decide how to encrypt invalid national id's
         ) AS contacts
     )
 
