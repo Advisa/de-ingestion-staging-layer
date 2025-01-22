@@ -15,3 +15,4 @@ prod:
     temp_encr_table: "temp_encrypted_data"
     raw_layer_project: "sambla-data-staging-compliance"
     compliance_project: "sambla-group-compliance-db"
+    auth_views_dataset: "authorized_views"
