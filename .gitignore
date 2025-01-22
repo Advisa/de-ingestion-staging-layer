@@ -1,0 +1,11 @@
+venv
+.venv
+logs/
+prod_run_artifacts/
+.python-version
+.vscode
+.user.yml
+__pycache__
+.idea
+*.DS_Store
+.DS_Store
