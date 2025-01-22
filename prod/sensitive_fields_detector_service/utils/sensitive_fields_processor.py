@@ -128,31 +128,41 @@ class SensitiveFieldsProcessor:
             if isinstance(category_data, dict):
                 for category, category_content in category_data.items():
                     if isinstance(category_content, dict):
+                        changes = []
                         for column, tag_data in list(category_content.items()):
                             if "children" in tag_data:
                                 for child in tag_data["children"]:
                                     if child in key_list:
                                         mapped_key = child
 
-                                        # If the column exists in category_content, proceed with swapping
+                                        # Only proceed if column exists
                                         if column in category_content:
-                                            old_data = category_content[column]
-                                            del category_content[column]
-                                            category_content[mapped_key] = old_data
+                                            changes.append((column, mapped_key, category_content[column]))
 
-                                            # Add the current column as a child of the mapped key if it’s not already there
-                                            if column not in category_content[mapped_key]["children"]:
-                                                category_content[mapped_key]["children"].append(column)
-                                            for tag, tag_info in category_content.items():
-                                                #print(tag_info)
-                                                if "children" in tag_info:
-                                                    if mapped_key in tag_info["children"]:
-                                                        tag_info["children"].remove(mapped_key)
+                                        # Ensure the mapped key has children initialized
+                                        if mapped_key in category_content:
+                                            if "children" not in category_content[mapped_key]:
+                                                category_content[mapped_key]["children"] = {}
+                                            category_content[mapped_key]["children"][column] = tag_data
 
-                                            print(f"Swapped {column} with child {mapped_key} and added {column} as child of {mapped_key}.")
-                                        else:
-                                            print(f"Error: Column {column} not found in the category content.")
-            return json_output
+                        # Apply the changes after iteration
+                        for column, mapped_key, column_data in changes:
+                            # Remove the original column and add it under the new key
+                            del category_content[column]
+                            category_content[mapped_key] = column_data
+
+                            # Ensure the column is added as a child of the mapped key
+                            if "children" not in category_content[mapped_key]:
+                                category_content[mapped_key]["children"] = {}
+                            category_content[mapped_key]["children"][column] = {
+                                "sensitivity": column_data.get("sensitivity"),
+                                "masking_rule": column_data.get("masking_rule"),
+                                "type": column_data.get("type", None),
+                            }
+
+                            print(f"Swapped {column} with child {mapped_key} and added {column} as child of {mapped_key}.")
+        return json_output
+
 
 
     

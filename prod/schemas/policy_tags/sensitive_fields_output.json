@@ -2,7 +2,7 @@
     "taxonomy_name": "gdpr_compliance_measures",
     "high_sensitivity_tags": {
         "PII": {
-            "customer_national_id": {
+            "ssn": {
                 "children": {
                     "customer_ssn": {
                         "sensitivity": "high",
@@ -53,13 +53,18 @@
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
                         "type": "STRING"
+                    },
+                    "customer_national_id": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
                     }
                 },
                 "sensitivity": "high",
                 "masking_rule": "SHA256",
                 "category": "PII"
             },
-            "broker_email": {
+            "email": {
                 "children": {
                     "contact": {
                         "sensitivity": "medium",
@@ -130,13 +135,18 @@
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
                         "type": "STRING"
+                    },
+                    "broker_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
                     }
                 },
                 "sensitivity": "high",
                 "masking_rule": "SHA256",
                 "category": "PII"
             },
-            "customer_phone": {
+            "phone": {
                 "children": {
                     "customer_phone_number": {
                         "sensitivity": "high",
@@ -222,6 +232,11 @@
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
                         "type": "STRING"
+                    },
+                    "customer_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
                     }
                 },
                 "sensitivity": "high",
@@ -230,7 +245,19 @@
             }
         },
         "restricted": {
-            "etunimi": {
+            "firstname": {
+                "children": {},
+                "sensitivity": "high",
+                "masking_rule": "SHA256",
+                "category": "restricted"
+            },
+            "lastname": {
+                "children": {},
+                "sensitivity": "high",
+                "masking_rule": "SHA256",
+                "category": "restricted"
+            },
+            "first_name": {
                 "children": {
                     "first_name": {
                         "sensitivity": "high",
@@ -261,13 +288,18 @@
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
                         "type": "STRING"
+                    },
+                    "etunimi": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
                     }
                 },
                 "sensitivity": "high",
                 "masking_rule": "SHA256",
                 "category": "restricted"
             },
-            "conventionalname": {
+            "last_name": {
                 "children": {
                     "last_name": {
                         "sensitivity": "high",
@@ -288,20 +320,13 @@
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": null
+                    },
+                    "conventionalname": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
                     }
                 },
-                "sensitivity": "high",
-                "masking_rule": "SHA256",
-                "category": "restricted"
-            },
-            "firstname": {
-                "children": {},
-                "sensitivity": "high",
-                "masking_rule": "SHA256",
-                "category": "restricted"
-            },
-            "lastname": {
-                "children": {},
                 "sensitivity": "high",
                 "masking_rule": "SHA256",
                 "category": "restricted"
@@ -522,33 +547,6 @@
                 "masking_rule": "DEFAULT_MASKING_VALUE",
                 "category": "restricted"
             },
-            "employment_profession": {
-                "children": {
-                    "employment_profession_class": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": "STRING"
-                    },
-                    "profession": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": "STRING"
-                    },
-                    "profession_area": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": "STRING"
-                    },
-                    "profession_class": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": "STRING"
-                    }
-                },
-                "sensitivity": "medium",
-                "masking_rule": "DEFAULT_MASKING_VALUE",
-                "category": "restricted"
-            },
             "business_id": {
                 "children": {
                     "business_identity_code": {
@@ -622,6 +620,38 @@
                         "type": null
                     },
                     "yv_ytunnus": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "category": "restricted"
+            },
+            "profession": {
+                "children": {
+                    "employment_profession_class": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "profession": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "profession_area": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "profession_class": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "employment_profession": {
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": null
