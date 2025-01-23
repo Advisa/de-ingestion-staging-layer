@@ -131,7 +131,7 @@ class SensitiveFieldsProcessor:
                         changes = []
                         for column, tag_data in list(category_content.items()):
                             if "children" in tag_data:
-                                for child in tag_data["children"]:
+                                for child in list(tag_data["children"].keys()):  # Explicitly convert to list to avoid iteration errors
                                     if child in key_list:
                                         mapped_key = child
 
@@ -144,6 +144,9 @@ class SensitiveFieldsProcessor:
                                             if "children" not in category_content[mapped_key]:
                                                 category_content[mapped_key]["children"] = {}
                                             category_content[mapped_key]["children"][column] = tag_data
+
+                                        # Remove the mapped key from the children of its previous parent
+                                        del tag_data["children"][mapped_key]
 
                         # Apply the changes after iteration
                         for column, mapped_key, column_data in changes:
@@ -162,6 +165,7 @@ class SensitiveFieldsProcessor:
 
                             print(f"Swapped {column} with child {mapped_key} and added {column} as child of {mapped_key}.")
         return json_output
+
 
 
 
@@ -368,7 +372,7 @@ class SensitiveFieldsProcessor:
 
 
     @staticmethod
-    def is_excluded_column(column, column_type=None):
+    def is_excluded_column(column, column_type,lineage_data):
         """
         Check if a column should be excluded based on its type or name pattern.
         """
@@ -380,10 +384,11 @@ class SensitiveFieldsProcessor:
 
         if column_type is None:
             return False  
-        
-        if normalized_column == "is_pep" or normalized_column == "birth_date":
+
+        #these are boolean but we still need them
+        if normalized_column == "is_pep" or normalized_column == "birth_date" or normalized_column == "politicallyexposedperson":
             return False
-        
+
         if isinstance(column_type, str) and column_type.startswith("STRUCT"):
             struct_fields = SensitiveFieldsProcessor.extract_struct_fields(column_type)  
             for field in struct_fields:
@@ -408,6 +413,7 @@ class SensitiveFieldsProcessor:
 
     @staticmethod
     def categorize_column(column):
+        # [TODO] Implement Dynamic approach Categorize the column based on known sensitivity rules
         column_lower = column.lower()
 
         if any(keyword in column_lower for keyword in ["ssn", "email", "phone", "national_"]):

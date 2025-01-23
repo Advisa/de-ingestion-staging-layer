@@ -34,11 +34,6 @@
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
                     },
-                    "ssn": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
                     "yv_sotu": {
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
@@ -95,11 +90,6 @@
                     "e_contacts": {
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": "STRING"
-                    },
-                    "email": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
                         "type": "STRING"
                     },
                     "email_subject": {
@@ -185,11 +175,6 @@
                         "masking_rule": "SHA256",
                         "type": "STRING"
                     },
-                    "phone": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
                     "phone_number": {
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
@@ -264,11 +249,6 @@
             },
             "first_name": {
                 "children": {
-                    "first_name": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
                     "fname": {
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
@@ -307,11 +287,6 @@
             },
             "last_name": {
                 "children": {
-                    "last_name": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
                     "lname": {
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
@@ -657,11 +632,6 @@
             "profession": {
                 "children": {
                     "employment_profession_class": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": "STRING"
-                    },
-                    "profession": {
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
