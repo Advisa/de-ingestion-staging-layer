@@ -1,0 +1,314 @@
+{
+    "taxonomy_name": "gdpr_compliance_measures",
+    "high_sensitivity_tags": {
+        "PII": {},
+        "restricted": {},
+        "confidential": {}
+    },
+    "medium_sensitivity_tags": {
+        "PII": {},
+        "restricted": {
+            "customer_national_id": {
+                "children": [
+                    "customer_ssn",
+                    "foreignerssn",
+                    "market_brand_ssn_id",
+                    "national_id",
+                    "national_id_cleaned",
+                    "sotu",
+                    "ssc",
+                    "ssn",
+                    "yv_sotu"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "broker_email": {
+                "children": [
+                    "contact",
+                    "contact_id",
+                    "contact_person",
+                    "contact_waiting_time_answering_machine",
+                    "contact_waiting_time_busy_answer",
+                    "contactmanager_id",
+                    "contacts_added",
+                    "contacts_remaining",
+                    "contacts_total",
+                    "customer_contactinfo",
+                    "customer_email",
+                    "deactivated_by_email",
+                    "downgrademailsent",
+                    "downgrademailsentat",
+                    "e_contacts",
+                    "email",
+                    "email_consent",
+                    "email_subject",
+                    "emailid",
+                    "emails_contribution",
+                    "emails_roas",
+                    "predictive_dropped_contact_list_id",
+                    "prefill_token_email",
+                    "registered_email",
+                    "requirements_email",
+                    "startemailsent",
+                    "user_email",
+                    "yv_email"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "customer_phone": {
+                "children": [
+                    "customer_phone_number",
+                    "employer_phone",
+                    "employerphone",
+                    "external_phone",
+                    "fourth_phone",
+                    "mobile_phone",
+                    "no_valid_phone",
+                    "original_phone",
+                    "phone",
+                    "phone_number",
+                    "phone_number_verified",
+                    "phone_order",
+                    "phone_type",
+                    "phonenumber",
+                    "prefill_token_phone",
+                    "sec_phone",
+                    "secondaryphonenumber",
+                    "thr_phone",
+                    "valid_phonenumber",
+                    "work_phone",
+                    "workphone"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "etunimi": {
+                "children": [
+                    "first_name",
+                    "fname",
+                    "yv_etunimi"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "conventionalname": {
+                "children": [
+                    "last_name",
+                    "lname",
+                    "sukunimi",
+                    "useconventionalnameasplanname",
+                    "yv_sukunimi"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "post_code": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "dob": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "gender": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "citizenship": {
+                "children": [
+                    "citizenship_text"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "is_pep": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "amount_monthly": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "employer": {
+                "children": [
+                    "employer_name",
+                    "employercountry",
+                    "employerdoc"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "employment_profession": {
+                "children": [
+                    "employment_profession_class",
+                    "profession",
+                    "profession_area",
+                    "profession_class"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "business_id": {
+                "children": [
+                    "business_identity_code",
+                    "employment_business_id"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "bank_iban": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "bank_bic": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "firstname": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "lastname": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "postal_code": {
+                "children": [
+                    "postinro",
+                    "yv_postinro",
+                    "zip"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "birth_date": {
+                "children": [
+                    "birthdate"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "nationality": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "maritalstatus": {
+                "children": [],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "gross_income": {
+                "children": [
+                    "gross_income_spouse"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "business_organization_number": {
+                "children": [
+                    "ytunnus",
+                    "yv_ytunnus"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "bank_account_number": {
+                "children": [
+                    "is_omatili",
+                    "omatili_url",
+                    "tili",
+                    "tilintarkastaja",
+                    "utilities"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            }
+        },
+        "confidential": {}
+    },
+    "low_sensitivity_tags": {
+        "PII": {
+            "address": {
+                "children": [
+                    "ip_address",
+                    "ip_address2",
+                    "lives_at_the_same_address",
+                    "originipaddress",
+                    "osoite",
+                    "postal_address",
+                    "street_address",
+                    "web_address",
+                    "yv_osoite"
+                ],
+                "sensitivity": "low",
+                "masking_rule": "MASK",
+                "category": "PII"
+            },
+            "marital_status": {
+                "children": [
+                    "yv_siviilisaaty"
+                ],
+                "sensitivity": "low",
+                "masking_rule": "MASK",
+                "category": "PII"
+            },
+            "education": {
+                "children": [
+                    "education_level",
+                    "education_level_text",
+                    "yv_koulutus"
+                ],
+                "sensitivity": "low",
+                "masking_rule": "MASK",
+                "category": "PII"
+            },
+            "net_income": {
+                "children": [
+                    "net_income_spouse"
+                ],
+                "sensitivity": "low",
+                "masking_rule": "MASK",
+                "category": "PII"
+            }
+        },
+        "restricted": {},
+        "confidential": {}
+    }
+}
