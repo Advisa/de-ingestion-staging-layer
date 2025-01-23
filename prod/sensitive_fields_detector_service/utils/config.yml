@@ -7,4 +7,3 @@ lineage_output_file : 'data_output/column_lineage.yml'
 project_id : 'data-domain-data-warehouse'
 exclusion_file: 'data_input/exclusion_fields_de_team.txt'
 column_mapping_file: 'data_input/column_mapping_de_team.json'
-

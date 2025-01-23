@@ -3,107 +3,349 @@
     "high_sensitivity_tags": {
         "PII": {
             "ssn": {
-                "children": [
-                    "customer_ssn",
-                    "foreignerssn",
-                    "national_id",
-                    "national_id_cleaned",
-                    "sotu",
-                    "ssc",
-                    "yv_sotu",
-                    "National_ID_Cleaned",
-                    "foreignerSSN",
-                    "customer_national_id"
-                ],
+                "children": {
+                    "customer_ssn": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "foreignerssn": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "national_id": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "national_id_cleaned": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "sotu": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "ssc": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "yv_sotu": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "National_ID_Cleaned": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "foreignerSSN": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "customer_national_id": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "high",
-                "masking_rule": "HASH",
+                "masking_rule": "SHA256",
+                "type": "STRING",
                 "category": "PII"
             },
             "email": {
-                "children": [
-                    "contact",
-                    "contact_id",
-                    "contact_person",
-                    "customer_contactinfo",
-                    "customer_email",
-                    "e_contacts",
-                    "email_subject",
-                    "emailid",
-                    "registered_email",
-                    "requirements_email",
-                    "user_email",
-                    "yv_email",
-                    "emailId",
-                    "broker_email"
-                ],
+                "children": {
+                    "contact": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "contact_id": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "contact_person": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "customer_contactinfo": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "customer_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "e_contacts": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "email_subject": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "emailid": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "registered_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "requirements_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "user_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "yv_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "emailId": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "broker_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "high",
-                "masking_rule": "HASH",
+                "masking_rule": "SHA256",
+                "type": "STRING",
                 "category": "PII"
             },
             "phone": {
-                "children": [
-                    "customer_phone_number",
-                    "employer_phone",
-                    "employerphone",
-                    "external_phone",
-                    "fourth_phone",
-                    "mobile_phone",
-                    "original_phone",
-                    "phone_number",
-                    "phonenumber",
-                    "sec_phone",
-                    "secondaryphonenumber",
-                    "thr_phone",
-                    "work_phone",
-                    "workphone",
-                    "phoneNumber",
-                    "secondaryPhoneNumber",
-                    "customer_phone"
-                ],
+                "children": {
+                    "customer_phone_number": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "employer_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "employerphone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "external_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "fourth_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "mobile_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "original_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "phone_number": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "phonenumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "sec_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "secondaryphonenumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "thr_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "work_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "workphone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "phoneNumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "secondaryPhoneNumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "customer_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "high",
-                "masking_rule": "HASH",
+                "masking_rule": "SHA256",
+                "type": "STRING",
                 "category": "PII"
             }
         },
         "restricted": {
-            "first_name": {
-                "children": [
-                    "fname",
-                    "yv_etunimi",
-                    "userName",
-                    "person",
-                    "name",
-                    "etunimi"
-                ],
+            "firstname": {
+                "children": {},
                 "sensitivity": "high",
-                "masking_rule": "HASH",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "restricted"
+            },
+            "lastname": {
+                "children": {},
+                "sensitivity": "high",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "restricted"
+            },
+            "first_name": {
+                "children": {
+                    "fname": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "yv_etunimi": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "userName": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "person": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRUCT<postalCode STRING, address STRING, last_name STRING, first_name STRING, hashed_email STRING, gender STRING, hashed_ssn STRING, phoneNumber STRING, email STRING, account STRUCT<clearingNumber STRING, directDebitNumber STRING, errorAt TIMESTAMP, deactivatedAt TIMESTAMP, error BOOL, bank STRING, sentToBGCAt TIMESTAMP, errorMessage STRING, acceptedByBGCAt TIMESTAMP, sentToBGC BOOL, idNumber STRING, accountNumber STRING, acceptedByBGC BOOL>, postalArea STRING, age INT64, idNumber STRING, ssn STRING, dob DATE, name STRING, inSanctionList BOOL, politicallyExposedPerson BOOL, politicallyExposedPersonVerifiedAt TIMESTAMP, birthdate TIMESTAMP>"
+                    },
+                    "name": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "etunimi": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    }
+                },
+                "sensitivity": "high",
+                "masking_rule": "SHA256",
+                "type": null,
                 "category": "restricted"
             },
             "last_name": {
-                "children": [
-                    "lname",
-                    "sukunimi",
-                    "yv_sukunimi",
-                    "conventionalname"
-                ],
+                "children": {
+                    "lname": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "sukunimi": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_sukunimi": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "conventionalname": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "high",
-                "masking_rule": "HASH",
+                "masking_rule": "SHA256",
+                "type": "STRING",
                 "category": "restricted"
             }
         },
         "confidential": {
             "bank_account_number": {
-                "children": [
-                    "tili",
-                    "tilintarkastaja",
-                    "accountNumber",
-                    "clearingNumber",
-                    "bank",
-                    "bank_iban",
-                    "bank_bic"
-                ],
+                "children": {
+                    "tili": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "tilintarkastaja": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "accountNumber": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "clearingNumber": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "bank": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "high",
-                "masking_rule": "HASH",
+                "masking_rule": "SHA256",
+                "type": "STRING",
                 "category": "confidential"
             }
         }
@@ -112,139 +354,307 @@
         "PII": {},
         "restricted": {
             "address": {
-                "children": [
-                    "osoite",
-                    "postal_address",
-                    "street_address",
-                    "web_address",
-                    "yv_osoite",
-                    "permitNumber",
-                    "originIPAddress"
-                ],
+                "children": {
+                    "osoite": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "postal_address": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "street_address": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "web_address": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "yv_osoite": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "permitNumber": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "originIPAddress": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "post_code": {
-                "children": [
-                    "postal_code",
-                    "postinro",
-                    "yv_postinro",
-                    "zip",
-                    "postal_area"
-                ],
+                "children": {
+                    "postal_code": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "postinro": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_postinro": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "zip": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "postal_area": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "dob": {
-                "children": [
-                    "birth_date"
-                ],
+                "children": {
+                    "birth_date": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "TIMESTAMP"
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "DATE",
                 "category": "restricted"
             },
             "gender": {
-                "children": [],
+                "children": {},
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "citizenship": {
-                "children": [
-                    "citizenship_text"
-                ],
+                "children": {
+                    "citizenship_text": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "marital_status": {
-                "children": [
-                    "yv_siviilisaaty"
-                ],
+                "children": {
+                    "yv_siviilisaaty": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "is_pep": {
-                "children": [
-                    "politicallyExposedPerson"
-                ],
+                "children": {
+                    "politicallyExposedPerson": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "BOOL"
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "BOOL",
                 "category": "restricted"
             },
             "education": {
-                "children": [
-                    "education_level",
-                    "education_level_text",
-                    "yv_koulutus"
-                ],
+                "children": {
+                    "education_level": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "education_level_text": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "yv_koulutus": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "employer": {
-                "children": [
-                    "employer_name",
-                    "employercountry",
-                    "employerCountry",
-                    "employerPhone"
-                ],
+                "children": {
+                    "employer_name": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "employercountry": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "employerCountry": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "employerPhone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
-                "category": "restricted"
-            },
-            "employment_profession": {
-                "children": [
-                    "employment_profession_class",
-                    "profession",
-                    "profession_area",
-                    "profession_class"
-                ],
-                "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "business_id": {
-                "children": [
-                    "business_identity_code",
-                    "employment_business_id"
-                ],
+                "children": {
+                    "business_identity_code": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "employment_business_id": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
+                "category": "restricted"
+            },
+            "bank_iban": {
+                "children": {},
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
+                "category": "restricted"
+            },
+            "bank_bic": {
+                "children": {},
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "nationality": {
-                "children": [],
+                "children": {},
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
+                "category": "restricted"
+            },
+            "maritalstatus": {
+                "children": {},
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "gross_income": {
-                "children": [
-                    "gross_income_spouse"
-                ],
+                "children": {
+                    "gross_income_spouse": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "net_income": {
-                "children": [
-                    "net_income_spouse"
-                ],
+                "children": {
+                    "net_income_spouse": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             },
             "business_organization_number": {
-                "children": [
-                    "ytunnus",
-                    "yv_ytunnus"
-                ],
+                "children": {
+                    "ytunnus": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_ytunnus": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    }
+                },
                 "sensitivity": "medium",
-                "masking_rule": "MASK",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
+                "category": "restricted"
+            },
+            "profession": {
+                "children": {
+                    "employment_profession_class": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "profession_area": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "profession_class": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "employment_profession": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
                 "category": "restricted"
             }
         },

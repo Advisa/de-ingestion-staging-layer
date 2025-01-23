@@ -128,31 +128,45 @@ class SensitiveFieldsProcessor:
             if isinstance(category_data, dict):
                 for category, category_content in category_data.items():
                     if isinstance(category_content, dict):
+                        changes = []
                         for column, tag_data in list(category_content.items()):
                             if "children" in tag_data:
-                                for child in tag_data["children"]:
+                                for child in list(tag_data["children"].keys()):  # Explicitly convert to list to avoid iteration errors
                                     if child in key_list:
                                         mapped_key = child
 
-                                        # If the column exists in category_content, proceed with swapping
+                                        # Only proceed if column exists
                                         if column in category_content:
-                                            old_data = category_content[column]
-                                            del category_content[column]
-                                            category_content[mapped_key] = old_data
+                                            changes.append((column, mapped_key, category_content[column]))
 
-                                            # Add the current column as a child of the mapped key if it’s not already there
-                                            if column not in category_content[mapped_key]["children"]:
-                                                category_content[mapped_key]["children"].append(column)
-                                            for tag, tag_info in category_content.items():
-                                                #print(tag_info)
-                                                if "children" in tag_info:
-                                                    if mapped_key in tag_info["children"]:
-                                                        tag_info["children"].remove(mapped_key)
+                                        # Ensure the mapped key has children initialized
+                                        if mapped_key in category_content:
+                                            if "children" not in category_content[mapped_key]:
+                                                category_content[mapped_key]["children"] = {}
+                                            category_content[mapped_key]["children"][column] = tag_data
 
-                                            print(f"Swapped {column} with child {mapped_key} and added {column} as child of {mapped_key}.")
-                                        else:
-                                            print(f"Error: Column {column} not found in the category content.")
-            return json_output
+                                        # Remove the mapped key from the children of its previous parent
+                                        del tag_data["children"][mapped_key]
+
+                        # Apply the changes after iteration
+                        for column, mapped_key, column_data in changes:
+                            # Remove the original column and add it under the new key
+                            del category_content[column]
+                            category_content[mapped_key] = column_data
+
+                            # Ensure the column is added as a child of the mapped key
+                            if "children" not in category_content[mapped_key]:
+                                category_content[mapped_key]["children"] = {}
+                            category_content[mapped_key]["children"][column] = {
+                                "sensitivity": column_data.get("sensitivity"),
+                                "masking_rule": column_data.get("masking_rule"),
+                                "type": column_data.get("type", None),
+                            }
+
+                            print(f"Swapped {column} with child {mapped_key} and added {column} as child of {mapped_key}.")
+        return json_output
+
+
 
 
     
@@ -184,6 +198,18 @@ class SensitiveFieldsProcessor:
                             print(f"Including column: {column}")
                             filtered_columns.append(column)
                 return filtered_columns
+            
+            def get_masking_rule(child, lineage_data):
+                # Determine masking rule for the child column
+                sensitivity, _ = SensitiveFieldsProcessor.categorize_column(child)
+                column_type = SensitiveFieldsProcessor.get_column_type(child, lineage_data)
+
+                if column_type in ("INT64", "FLOAT64"):
+                        return "ALWAYS_NULL"
+                else:
+                    if sensitivity == "high":
+                        return "SHA256"
+                return "DEFAULT_MASKING_VALUE"
 
             for legacy_column, columns in grouped_columns.items():
                 # Filter the current columns based on the exclusion list
@@ -198,24 +224,50 @@ class SensitiveFieldsProcessor:
                             columns.append(column)
                 filtered_columns = filter_columns(columns)
 
+                # Check for additional columns from column_mapping that should be added as children
+                if legacy_column in column_mapping:
+                    # Add children from the column mapping (e.g., userName, person, name)
+                    additional_columns = column_mapping.get(legacy_column, [])
+                    for column in additional_columns:
+                        if column not in columns and column not in processed_columns:
+                            columns.append(column)
+                filtered_columns = filter_columns(columns)
+
                 for column in filtered_columns:
                     if column in processed_columns:
                         continue
 
+                    # Extract data type of the column
+                    column_type = SensitiveFieldsProcessor.get_column_type(column, lineage_data)
                     sensitivity, category = SensitiveFieldsProcessor.categorize_column(column)
-                    masking_rule = "HASH" if sensitivity == "high" else "MASK"
+
+                    # handling numeric columns explicitiy 
+                    masking_rule = "SHA256" if sensitivity == "high" and column_type not in ("INT64","FLOAT64") else "ALWAYS_NULL" if column_type in ("INT64", "FLOAT64")  else "DEFAULT_MASKING_VALUE"
 
                     # Find children (all the filtered columns that are not the current column)
-                    children = [
-                        child
+                    # children = {
+                    #     child
+                    #     for child in filtered_columns
+                    #     if child != column and child not in processed_columns
+                    # }
+
+                    children = {
+                        child: {
+                                "sensitivity": SensitiveFieldsProcessor.categorize_column(child)[0],
+                                "masking_rule": get_masking_rule(child, lineage_data),
+                                "type": SensitiveFieldsProcessor.get_column_type(child, lineage_data)
+                             }
                         for child in filtered_columns
                         if child != column and child not in processed_columns
-                    ]
+
+                    }
+
 
                     tag_data = {
                         "children": children,
                         "sensitivity": sensitivity,
                         "masking_rule": masking_rule,
+                        "type": SensitiveFieldsProcessor.get_column_type(column, lineage_data),
                         "category": category,
                     }
 
@@ -301,7 +353,67 @@ class SensitiveFieldsProcessor:
         return False
 
     @staticmethod
+    def get_column_type(column, lineage_data):
+        """
+        Retrieve the type of the column from the lineage data.
+        The column name is normalized by splitting by '.' and using the last part to look it up in model_data.
+        """
+        normalized_column = column.split('.')[-1].lower()
+        for model, model_data in lineage_data.items():
+            for col in model_data:
+                normalized_col = col.split('.')[-1].lower()
+                if normalized_column == normalized_col:
+                    column_info = model_data[col]
+                    column_type = column_info.get("source_datatype") or column_info.get("target_datatype")
+                    return column_type
+
+        print(f"Column '{normalized_column}' not found in lineage data.")
+        return None
+
+
+    @staticmethod
+    def is_excluded_column(column, column_type,lineage_data):
+        """
+        Check if a column should be excluded based on its type or name pattern.
+        """
+        normalized_column = column.lower()
+        print(f"Checking exclusion for column: {normalized_column}, Type: {column_type}")
+
+        if normalized_column.startswith(("num_", "hashed_")) or "hashed_" in normalized_column:
+            return True
+
+        if column_type is None:
+            return False  
+
+        #these are boolean but we still need them
+        if normalized_column == "is_pep" or normalized_column == "birth_date" or normalized_column == "politicallyexposedperson":
+            return False
+
+        if isinstance(column_type, str) and column_type.startswith("STRUCT"):
+            struct_fields = SensitiveFieldsProcessor.extract_struct_fields(column_type)  
+            for field in struct_fields:
+                field_type = SensitiveFieldsProcessor.get_column_type(field,lineage_data)  
+                if field_type in ["bool", "boolean", "timestamp"]:
+                    print(f"Excluding {field} due to type: {field_type}")
+                    return True
+
+        if isinstance(column_type, str) and column_type.startswith("ARRAY<STRUCT"):
+            array_struct_fields = SensitiveFieldsProcessor.extract_array_struct_fields(column_type)  
+            for field in array_struct_fields:
+                field_type = SensitiveFieldsProcessor.get_column_type(field,lineage_data)  
+                if field_type in ["bool", "boolean", "timestamp"]:
+                    print(f"Excluding {field} due to type: {field_type}")
+                    return True
+
+        if column_type and column_type.lower() in ["bool", "boolean", "timestamp"]:
+            print(f"Excluding column: {normalized_column} due to type: {column_type}")
+            return True
+
+        return False
+
+    @staticmethod
     def categorize_column(column):
+        # [TODO] Implement Dynamic approach Categorize the column based on known sensitivity rules
         column_lower = column.lower()
 
         if any(keyword in column_lower for keyword in ["ssn", "email", "phone", "national_"]):
