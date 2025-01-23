@@ -44,8 +44,8 @@
         "useConventionalNameAsPlanName", 
         "yv_sukunimi"
     ],
-    "tili": [
-        "bank_account_number", 
+    "bank_account_number": [
+        "tili", 
         "accountNumber", 
         "tilintarkastaja", 
         "clearingNumber",
