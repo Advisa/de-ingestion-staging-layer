@@ -61,9 +61,6 @@ class SensitiveFieldsProcessor:
 
     @staticmethod
     def resolve_connections(G, legacy_column):
-        """
-        Resolve all connected columns for a given legacy column using the graph.
-        """
         legacy_column = SensitiveFieldsProcessor.preprocess_column(legacy_column)
         connected_columns = set()
         if legacy_column not in G:
@@ -304,40 +301,26 @@ class SensitiveFieldsProcessor:
         return False
 
     @staticmethod
-    def get_column_type(column, schemas):
+    def get_column_type(column, lineage_data):
         """
-        Retrieve the type of the column from schemas.
+        Retrieve the type of the column from the lineage data.
         """
-        for table_ref, schema in schemas.items():
-            if column in schema:
-                return schema[column].lower()  # Normalize to lowercase
-        return None
-
+        return lineage_data.get(column, {}).get("type", None)
 
     @staticmethod
     def is_excluded_column(column, column_type=None):
-        """
-        Checks if the column should be excluded based on its name or type.
-        """
-        # Normalize column name to lowercase
         normalized_column = column.lower()
-        
+
         print(f"Checking exclusion for column: {normalized_column}")
 
         if normalized_column == "is_pep":
-            return False 
-        if normalized_column.startswith(("num_", "hashed_")):
-            print(f"Excluding column {normalized_column} due to exclusion rules (starts with 'num_' or 'hashed_').")
-            return True
-        if "hashed_" in normalized_column:
-            print(f"Excluding column {normalized_column} due to exclusion rules (contains  'hashed_').")
+            return False
+        if normalized_column.startswith(("num_", "hashed_")) or "hashed_" in normalized_column:
             return True
         if column_type and column_type in ["bool", "boolean"]:
-            print(f"Excluding column {normalized_column} due to exclusion rules (BOOLEAN type).")
             return True
-        
-        return False
 
+        return False
 
     @staticmethod
     def categorize_column(column):
