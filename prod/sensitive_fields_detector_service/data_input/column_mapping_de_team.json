@@ -117,8 +117,5 @@
         "yv_ytunnus", 
         "organizationNumber",
         "ytunnus"
-    ],
-    "is_pep": [
-        "politicallyExposedPerson"
     ]
 }
