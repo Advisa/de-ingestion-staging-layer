@@ -118,7 +118,7 @@ class SensitiveFieldsProcessor:
         key_list = [
             "ssn", "first_name", "last_name", "email", "phone", "bank_account_number",
             "dob", "amount", "business_id", "citizenship", "employer", "gross_income",
-            "post_code", "profession", "address", "education", "marital_status", "business_organization_number"
+            "post_code", "profession", "address", "education", "marital_status", "business_organization_number", "etunimi"
         ]
 
         for sensitivity_category, category_data in json_output.items():
@@ -143,6 +143,10 @@ class SensitiveFieldsProcessor:
                                             # Add the current column as a child of the mapped key if it’s not already there
                                             if column not in category_content[mapped_key]["children"]:
                                                 category_content[mapped_key]["children"].append(column)
+                                            #print(category_content[mapped_key])
+                                            # Now, update the references of the old column in the children lists
+                                            # Update within the current category content
+                                            print(category_content)
                                             for tag, tag_info in category_content.items():
                                                 #print(tag_info)
                                                 if "children" in tag_info:
@@ -203,8 +207,9 @@ class SensitiveFieldsProcessor:
                     # Add children from the column mapping (e.g., userName, person, name)
                     additional_columns = column_mapping.get(legacy_column, [])
                     for column in additional_columns:
-                        if column not in filtered_columns and column not in processed_columns:
-                            filtered_columns.append(column)
+                        if column not in columns and column not in processed_columns:
+                            columns.append(column)
+                filtered_columns = filter_columns(columns)
 
                 for column in filtered_columns:
                     if column in processed_columns:
@@ -347,7 +352,7 @@ class SensitiveFieldsProcessor:
         if isinstance(column_type, str) and column_type.startswith("STRUCT"):
             struct_fields = SensitiveFieldsProcessor.extract_struct_fields(column_type)  
             for field in struct_fields:
-                field_type = SensitiveFieldsProcessor.get_field_type(field)  
+                field_type = SensitiveFieldsProcessor.get_column_type(field,lineage_data)  
                 if field_type in ["bool", "boolean", "timestamp"]:
                     print(f"Excluding {field} due to type: {field_type}")
                     return True
@@ -355,7 +360,7 @@ class SensitiveFieldsProcessor:
         if isinstance(column_type, str) and column_type.startswith("ARRAY<STRUCT"):
             array_struct_fields = SensitiveFieldsProcessor.extract_array_struct_fields(column_type)  
             for field in array_struct_fields:
-                field_type = SensitiveFieldsProcessor.get_field_type(field)  
+                field_type = SensitiveFieldsProcessor.get_column_type(field,lineage_data)  
                 if field_type in ["bool", "boolean", "timestamp"]:
                     print(f"Excluding {field} due to type: {field_type}")
                     return True
@@ -380,6 +385,7 @@ class SensitiveFieldsProcessor:
             return "medium", "restricted"
         else:
             return "medium", "restricted"
+
 
     @staticmethod
     def extract_struct_fields(struct_type):
