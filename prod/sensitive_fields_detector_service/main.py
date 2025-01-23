@@ -8,12 +8,18 @@ def main():
     # Path to config file
     config_file = 'utils/config.yml'
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     # Initialize SensitiveFieldsProcessor with required file paths
     processor = SensitiveFieldsProcessor(config_file, '', '','','','')
 =======
     processor = SensitiveFieldsProcessor(config_file, '', '', 'data-domain-data-warehouse')
 >>>>>>> e994580 (refactoring)
+=======
+    
+    # Initialize SensitiveFieldsProcessor with required file paths
+    processor = SensitiveFieldsProcessor(config_file, '', '','','','')
+>>>>>>> c7e07ef (refactoring and excluding boolean fields)
     config = processor.read_yaml_config()
 
     # Column Lineage Extraction
@@ -27,6 +33,7 @@ def main():
         config['sensitive_field_mapping'], 
         config['sensitive_fields_output_json'], 
 <<<<<<< HEAD
+<<<<<<< HEAD
         config['lineage_output_file'],
         config['exclusion_file'], 
         config['column_mapping_file']
@@ -37,6 +44,14 @@ def main():
         'data-domain-data-warehouse'
     )
 >>>>>>> e994580 (refactoring)
+=======
+        config['lineage_output_file'],
+        config['exclusion_file'], 
+        config['column_mapping_file']
+    )
+    
+    # Clean CSV to get sensitive columns
+>>>>>>> c7e07ef (refactoring and excluding boolean fields)
     sensitive_columns = processor.clean_csv(config['sensitive_field_mapping'])
 
     # Build the graph based on the lineage map
@@ -60,10 +75,14 @@ def main():
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c7e07ef (refactoring and excluding boolean fields)
     # Load exclusion columns and column mapping
     excluded_columns = processor.load_exclusion_list(processor.exclusion_file)
     column_mapping = processor.load_column_mapping(processor.column_mapping_file)
 
+<<<<<<< HEAD
     # Convert grouped columns to JSON using lineage map for column data types
     processor.convert_grouped_columns_to_json(all_grouped_columns, lineage_map, config['sensitive_fields_output_json'], excluded_columns, column_mapping)
 =======
@@ -77,13 +96,21 @@ def main():
     # Convert grouped columns to JSON using lineage map for column data types
     processor.convert_grouped_columns_to_json(all_grouped_columns, lineage_map, config['sensitive_fields_output_json'])
 >>>>>>> 2e835f2 (refactoring lineage generator)
+=======
+    # Convert grouped columns to JSON using lineage map for column data types
+    processor.convert_grouped_columns_to_json(all_grouped_columns, lineage_map, config['sensitive_fields_output_json'], excluded_columns, column_mapping)
+>>>>>>> c7e07ef (refactoring and excluding boolean fields)
 
     print("Sensitive fields processing complete. Output written to JSON.")
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     main()
 <<<<<<< HEAD
 
 #Still needs manual intervention eg: columns bank_bic and bank_iban are not grouped together under bank_account_number.
 =======
 >>>>>>> e994580 (refactoring)
+=======
+    main()
+>>>>>>> c7e07ef (refactoring and excluding boolean fields)

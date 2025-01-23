@@ -12,16 +12,14 @@
                 "children": [
                     "customer_ssn",
                     "foreignerssn",
-                    "market_brand_ssn_id",
                     "national_id",
                     "national_id_cleaned",
                     "sotu",
                     "ssc",
-                    "ssc_validation",
                     "ssn",
-                    "ssn_usage",
-                    "valid_national_id",
-                    "yv_sotu"
+                    "yv_sotu",
+                    "National_ID_Cleaned",
+                    "foreignerSSN"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
@@ -32,36 +30,17 @@
                     "contact",
                     "contact_id",
                     "contact_person",
-                    "contact_waiting_time_answering_machine",
-                    "contact_waiting_time_busy_answer",
-                    "contactmanager_id",
-                    "contacts_added",
-                    "contacts_remaining",
-                    "contacts_total",
                     "customer_contactinfo",
                     "customer_email",
-                    "deactivated_by_email",
-                    "downgrademailsent",
-                    "downgrademailsentat",
                     "e_contacts",
                     "email",
-                    "email_consent",
-                    "email_marketing",
-                    "email_messaging",
                     "email_subject",
                     "emailid",
-                    "emails_contribution",
-                    "emails_roas",
-                    "is_invalid_email",
-                    "predictive_dropped_contact_list_id",
-                    "prefill_token_email",
                     "registered_email",
                     "requirements_email",
-                    "start_email_sent",
-                    "startemailsent",
                     "user_email",
-                    "valid_email",
-                    "yv_email"
+                    "yv_email",
+                    "emailId"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
@@ -74,23 +53,18 @@
                     "employerphone",
                     "external_phone",
                     "fourth_phone",
-                    "is_invalid_phone",
                     "mobile_phone",
-                    "no_valid_phone",
                     "original_phone",
                     "phone",
                     "phone_number",
-                    "phone_number_verified",
-                    "phone_order",
-                    "phone_type",
                     "phonenumber",
-                    "prefill_token_phone",
                     "sec_phone",
                     "secondaryphonenumber",
                     "thr_phone",
-                    "valid_phonenumber",
                     "work_phone",
-                    "workphone"
+                    "workphone",
+                    "phoneNumber",
+                    "secondaryPhoneNumber"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
@@ -100,7 +74,10 @@
                 "children": [
                     "first_name",
                     "fname",
-                    "yv_etunimi"
+                    "yv_etunimi",
+                    "userName",
+                    "person",
+                    "name"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
@@ -111,21 +88,47 @@
                     "last_name",
                     "lname",
                     "sukunimi",
-                    "useconventionalnameasplanname",
-                    "yv_sukunimi"
+                    "yv_sukunimi",
+                    "conventionalName",
+                    "useConventionalNameAsPlanName"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "address": {
+                "children": [
+                    "osoite",
+                    "postal_address",
+                    "street_address",
+                    "web_address",
+                    "yv_osoite",
+                    "permitNumber",
+                    "ip_address",
+                    "ip_address2",
+                    "lives_at_the_same_address",
+                    "originIPAddress"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
                 "category": "restricted"
             },
             "post_code": {
-                "children": [],
+                "children": [
+                    "postal_code",
+                    "postinro",
+                    "yv_postinro",
+                    "zip",
+                    "postal_area"
+                ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
                 "category": "restricted"
             },
             "dob": {
-                "children": [],
+                "children": [
+                    "birth_date"
+                ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
                 "category": "restricted"
@@ -144,14 +147,35 @@
                 "masking_rule": "MASK",
                 "category": "restricted"
             },
+            "marital_status": {
+                "children": [
+                    "yv_siviilisaaty",
+                    "maritalstatus"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
             "is_pep": {
                 "children": [],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
                 "category": "restricted"
             },
-            "amount_monthly": {
-                "children": [],
+            "education": {
+                "children": [
+                    "education_level",
+                    "education_level_text",
+                    "yv_koulutus"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
+            "amount": {
+                "children": [
+                    "monthlyNetIncome"
+                ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
                 "category": "restricted"
@@ -160,7 +184,9 @@
                 "children": [
                     "employer_name",
                     "employercountry",
-                    "employerdoc"
+                    "employerCountry",
+                    "employerDoc",
+                    "employerPhone"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
@@ -210,31 +236,7 @@
                 "masking_rule": "MASK",
                 "category": "restricted"
             },
-            "postal_code": {
-                "children": [
-                    "postinro",
-                    "yv_postinro",
-                    "zip"
-                ],
-                "sensitivity": "medium",
-                "masking_rule": "MASK",
-                "category": "restricted"
-            },
-            "birth_date": {
-                "children": [
-                    "birthdate"
-                ],
-                "sensitivity": "medium",
-                "masking_rule": "MASK",
-                "category": "restricted"
-            },
             "nationality": {
-                "children": [],
-                "sensitivity": "medium",
-                "masking_rule": "MASK",
-                "category": "restricted"
-            },
-            "maritalstatus": {
                 "children": [],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
@@ -248,10 +250,19 @@
                 "masking_rule": "MASK",
                 "category": "restricted"
             },
+            "net_income": {
+                "children": [
+                    "net_income_spouse"
+                ],
+                "sensitivity": "medium",
+                "masking_rule": "MASK",
+                "category": "restricted"
+            },
             "business_organization_number": {
                 "children": [
                     "ytunnus",
-                    "yv_ytunnus"
+                    "yv_ytunnus",
+                    "organizationNumber"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
@@ -259,11 +270,8 @@
             },
             "bank_account_number": {
                 "children": [
-                    "is_omatili",
-                    "omatili_url",
                     "tili",
-                    "tilintarkastaja",
-                    "utilities"
+                    "tilintarkastaja"
                 ],
                 "sensitivity": "medium",
                 "masking_rule": "MASK",
@@ -273,50 +281,7 @@
         "confidential": {}
     },
     "low_sensitivity_tags": {
-        "PII": {
-            "address": {
-                "children": [
-                    "ip_address",
-                    "ip_address2",
-                    "lives_at_the_same_address",
-                    "originipaddress",
-                    "osoite",
-                    "postal_address",
-                    "street_address",
-                    "web_address",
-                    "yv_osoite"
-                ],
-                "sensitivity": "low",
-                "masking_rule": "MASK",
-                "category": "PII"
-            },
-            "marital_status": {
-                "children": [
-                    "yv_siviilisaaty"
-                ],
-                "sensitivity": "low",
-                "masking_rule": "MASK",
-                "category": "PII"
-            },
-            "education": {
-                "children": [
-                    "education_level",
-                    "education_level_text",
-                    "yv_koulutus"
-                ],
-                "sensitivity": "low",
-                "masking_rule": "MASK",
-                "category": "PII"
-            },
-            "net_income": {
-                "children": [
-                    "net_income_spouse"
-                ],
-                "sensitivity": "low",
-                "masking_rule": "MASK",
-                "category": "PII"
-            }
-        },
+        "PII": {},
         "restricted": {},
         "confidential": {}
     }

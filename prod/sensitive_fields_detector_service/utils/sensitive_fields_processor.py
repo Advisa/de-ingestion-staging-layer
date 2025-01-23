@@ -198,6 +198,14 @@ class SensitiveFieldsProcessor:
                             columns.append(column)
                 filtered_columns = filter_columns(columns)
 
+                # Check for additional columns from column_mapping that should be added as children
+                if legacy_column in column_mapping:
+                    # Add children from the column mapping (e.g., userName, person, name)
+                    additional_columns = column_mapping.get(legacy_column, [])
+                    for column in additional_columns:
+                        if column not in filtered_columns and column not in processed_columns:
+                            filtered_columns.append(column)
+
                 for column in filtered_columns:
                     if column in processed_columns:
                         continue
@@ -304,20 +312,56 @@ class SensitiveFieldsProcessor:
     def get_column_type(column, lineage_data):
         """
         Retrieve the type of the column from the lineage data.
+        The column name is normalized by splitting by '.' and using the last part to look it up in model_data.
         """
-        return lineage_data.get(column, {}).get("type", None)
+        normalized_column = column.split('.')[-1].lower()
+        for model, model_data in lineage_data.items():
+            for col in model_data:
+                normalized_col = col.split('.')[-1].lower()
+                if normalized_column == normalized_col:
+                    column_info = model_data[col]
+                    column_type = column_info.get("source_datatype") or column_info.get("target_datatype")
+                    return column_type
+
+        print(f"Column '{normalized_column}' not found in lineage data.")
+        return None
+
 
     @staticmethod
     def is_excluded_column(column, column_type=None):
+        """
+        Check if a column should be excluded based on its type or name pattern.
+        """
         normalized_column = column.lower()
+        print(f"Checking exclusion for column: {normalized_column}, Type: {column_type}")
 
-        print(f"Checking exclusion for column: {normalized_column}")
-
-        if normalized_column == "is_pep":
-            return False
         if normalized_column.startswith(("num_", "hashed_")) or "hashed_" in normalized_column:
             return True
-        if column_type and column_type in ["bool", "boolean"]:
+
+        if column_type is None:
+            return False  
+        
+        if normalized_column == "is_pep" or normalized_column == "birth_date":
+            return False
+        
+        if isinstance(column_type, str) and column_type.startswith("STRUCT"):
+            struct_fields = SensitiveFieldsProcessor.extract_struct_fields(column_type)  
+            for field in struct_fields:
+                field_type = SensitiveFieldsProcessor.get_field_type(field)  
+                if field_type in ["bool", "boolean", "timestamp"]:
+                    print(f"Excluding {field} due to type: {field_type}")
+                    return True
+
+        if isinstance(column_type, str) and column_type.startswith("ARRAY<STRUCT"):
+            array_struct_fields = SensitiveFieldsProcessor.extract_array_struct_fields(column_type)  
+            for field in array_struct_fields:
+                field_type = SensitiveFieldsProcessor.get_field_type(field)  
+                if field_type in ["bool", "boolean", "timestamp"]:
+                    print(f"Excluding {field} due to type: {field_type}")
+                    return True
+
+        if column_type and column_type.lower() in ["bool", "boolean", "timestamp"]:
+            print(f"Excluding column: {normalized_column} due to type: {column_type}")
             return True
 
         return False
@@ -336,7 +380,6 @@ class SensitiveFieldsProcessor:
             return "medium", "restricted"
         else:
             return "medium", "restricted"
-
 
     @staticmethod
     def extract_struct_fields(struct_type):
