@@ -25,7 +25,7 @@ FROM
 INNER JOIN
   policy_tags AS t2
 ON
-  t1.column_name = t2.display_name
+  LOWER(REPLACE(t1.column_name, '_', '')) = LOWER(REPLACE(t2.display_name, '_', ''))
 -- we filter the only the gdpr_test taxonomy where all the complaint policy tags are created
 WHERE
   t1.table_name not in ("rahalaitos_laina_businessinfo_raha_r","insurance_insurance_gender_raha_r","rahalaitos_laina_decision_data_raha_r")
