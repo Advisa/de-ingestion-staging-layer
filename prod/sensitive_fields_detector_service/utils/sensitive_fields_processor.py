@@ -118,7 +118,7 @@ class SensitiveFieldsProcessor:
         key_list = [
             "ssn", "first_name", "last_name", "email", "phone", "bank_account_number",
             "dob", "amount", "business_id", "citizenship", "employer", "gross_income",
-            "post_code", "profession", "address", "education", "marital_status", "business_organization_number", "etunimi"
+            "post_code", "profession", "address", "education", "marital_status", "business_organization_number"
         ]
 
         for sensitivity_category, category_data in json_output.items():

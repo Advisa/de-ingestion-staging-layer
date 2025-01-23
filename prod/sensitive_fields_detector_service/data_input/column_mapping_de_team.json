@@ -44,8 +44,8 @@
         "useConventionalNameAsPlanName", 
         "yv_sukunimi"
     ],
-    "bank_account_number": [
-        "tili", 
+    "tili": [
+        "bank_account_number", 
         "accountNumber", 
         "tilintarkastaja", 
         "clearingNumber",
@@ -117,5 +117,8 @@
         "yv_ytunnus", 
         "organizationNumber",
         "ytunnus"
+    ],
+    "is_pep": [
+        "politicallyExposedPerson"
     ]
 }
