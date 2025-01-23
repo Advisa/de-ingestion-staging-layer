@@ -9,4 +9,6 @@ scipy
 graphviz
 pandas
 google-cloud-datacatalog
+scikit-learn
+numpy
 
