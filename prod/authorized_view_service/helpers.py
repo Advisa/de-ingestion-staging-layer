@@ -25,13 +25,12 @@ class AuthorizedViewService:
         # Initialize the current path where this service is located
         project_root = Path(__file__).resolve().parent.parent  
         self.base_path = project_root / self.base_folder 
-        print("base_path:",self.base_path)
 
         # Initialize BigQuery clients using ADC
         self.clients = self.initialize_bigquery_clients()
 
         # Load SQL templates
-        self.encryption_query_template = self.load_template("encryption_query_template.sql")
+        self.encryption_query_template = self.load_template("encryption_query_improved.sql")
 
         # Initialize output of sql template files
         self.output_template_file = "generated_source_query.sql"
@@ -40,7 +39,6 @@ class AuthorizedViewService:
         
     def load_config(self, config_path):
         """Load YAML configuration from the provided path."""
-        print("config path:",config_path)
         try:
             with open(config_path, 'r') as file:
                 config = yaml.safe_load(file)
@@ -66,7 +64,6 @@ class AuthorizedViewService:
     def load_template(self, template_name):
         """Load SQL templates from the templates directory."""
         template_path = os.path.join(self.base_path, 'templates', template_name)
-        print(template_path)
         try:
             with open(template_path) as f:
                 return Template(f.read())
@@ -123,12 +120,13 @@ class AuthorizedViewService:
         for row in result:
             schema = row.table_schema
             table = row.table_name
+            is_table_contains_ssn = row.is_table_contains_ssn
             encryption_query = row.encrypted_columns
-            encryption_queries.append(f"{schema}|{table}|{encryption_query}")
+            encryption_queries.append(f"{schema}|{table}|{encryption_query}|{is_table_contains_ssn}")
             self.processed_tables.add(f"{schema}|{table}") 
 
         # Save the encryption queries to a file
-        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping.txt')
+        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_new.txt')
         with open(mapping_file_path, 'w') as f:
             for eq in encryption_queries:
                 f.write(eq + "\n")
@@ -186,8 +184,8 @@ class AuthorizedViewService:
             )
             self.generate_encryption_queries(encrypted_query_template)
             # Generate non-encrypted queries (for non-encrypted views)
-            logging.info("Generating non-encrypted queries...")
-            self.generate_non_encrypted_queries()
+            #logging.info("Generating non-encrypted queries...")
+            #self.generate_non_encrypted_queries()
 
             logging.info("Workflow completed successfully.")
         except Exception as e:
