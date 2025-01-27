@@ -1,6 +1,6 @@
 resource "google_iam_deny_policy" "deny_policy_creation" {
-  parent      = urlencode("cloudresourcemanager.googleapis.com/projects/${var.data_domain_project_id}")  # Corrected parent format
-  name        = "gdpr-deny-policy"
+  parent      = urlencode("cloudresourcemanager.googleapis.com/projects/${var.project_id}")  # Corrected parent format
+  name        = "gdpr-deny-policy-test"
   display_name = "GDPR deny policy"
   rules {
     description = "First rule"

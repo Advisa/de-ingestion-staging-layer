@@ -36,36 +36,67 @@
         "yv_etunimi", 
         "userName", 
         "person", 
-        "name"
+        "name",
+        "PARTNER_NAME",
+        "customer_first_name",
+        "USER_FIRST_NAME"
     ],
     "last_name": [
         "lname", 
         "sukunimi", 
         "useConventionalNameAsPlanName", 
-        "yv_sukunimi"
+        "yv_sukunimi",
+        "customer_last_name",
+        "USER_LAST_NAME"
     ],
     "tili": [
         "bank_account_number", 
         "accountNumber", 
         "tilintarkastaja", 
         "clearingNumber",
+        "idNumber",
+        "directDebitNumber",
         "bank",
         "bank_iban",
         "bank_bic"
     ],
     "is_pep": [
-        "politicallyExposedPerson"
+        "politicallyExposedPerson",
+        "politicallyExposedPersonDescription"
     ],
     "dob": [
-        "birth_date"
+        "birth_date",
+        "birthday"
     ],
-    "amount": [
+    "gender": [
+        "sex"
+    ],
+    "net_income": [
+        "amount",
         "amount_monthly", 
-        "monthlyNetIncome"
+        "monthlyNetIncome",
+        "monthly_income_before_tax",
+        "INCOME_AFTER_TAX",
+        "monthlyIncome",
+        "spouseIncome",
+        "otherIncomes",
+        "yearlyIncome",
+        "taxableIncome",
+        "taxableIncomeYear",
+        "extraIncome",
+        "secondaryIncomes",
+        "primaryIncomes"
     ],
     "business_id": [
         "business_identity_code", 
-        "employment_business_id"
+        "employment_business_id",
+        "yv_ytunnus", 
+        "organizationNumber",
+        "ytunnus",
+        "customer_organisation_name",
+        "customer_passport_number",
+        "customer_organisation_number",
+        "business_organization_number"
     ],
     "citizenship": [
         "citizenship_text"
@@ -85,7 +116,8 @@
         "postinro", 
         "yv_postinro", 
         "zip", 
-        "postal_area"
+        "postal_area",
+        "customer_postal_code"
     ],
     "profession": [
         "employment_profession", 
@@ -95,6 +127,7 @@
     ],
     "address": [
         "permitNumber", 
+        "permitType",
         "ip_address", 
         "ip_address2", 
         "lives_at_the_same_address", 
@@ -103,7 +136,16 @@
         "postal_address", 
         "street_address", 
         "web_address", 
-        "yv_osoite"
+        "yv_osoite",
+        "city",
+        "customer_address",
+        "customer_address2",
+        "customer_city",
+        "customer_state",
+        "customer_country_code",
+        "customer_country_name" ,
+        "customer_passport_issuance_country_code",
+        "customer_passport_issuance_country_name"  
     ],
     "education": [
         "education_level", 
@@ -111,11 +153,21 @@
         "yv_koulutus"
     ],
     "marital_status": [
-        "yv_siviilisaaty"
+        "yv_siviilisaaty",
+        "civil_status_text"
     ],
-    "business_organization_number": [ 
-        "yv_ytunnus", 
-        "organizationNumber",
-        "ytunnus"
+    "json_col" : [
+        "data",
+        "raw_data"
+    ],
+    "current_loans_amount" : [
+        "creditReports",
+        "loans",
+        "capitalDeficit",
+        "creditScore",
+        "currentDebt",
+        "pastReportRequests",
+        "psd2Reports"
+
     ]
 }
