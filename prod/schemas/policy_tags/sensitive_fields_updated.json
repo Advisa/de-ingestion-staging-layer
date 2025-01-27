@@ -548,7 +548,7 @@
                 "sensitivity": "medium",
                 "masking_rule": "ALWAYS_NULL",
                 "type": "INT64",
-                "category": "confidential"
+                "category": "restricted"
 
             },
             "capital_deficit": {
@@ -562,7 +562,7 @@
                 "sensitivity": "medium",
                 "masking_rule": "ALWAYS_NULL",
                 "type": "INT64",
-                "category": "confidential"
+                "category": "restricted"
 
             },
             "address": {
@@ -744,12 +744,12 @@
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
                     },
-                "nationality": {
-                    "sensitivity": "medium",
-                    "masking_rule": "DEFAULT_MASKING_VALUE",
-                    "type": "STRING",
-                    "category": "restricted"
-                },
+                    "nationality": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING",
+                        "category": "restricted"
+                    },
                 "sensitivity": "medium",
                 "masking_rule": "DEFAULT_MASKING_VALUE",
                 "type": "STRING",
@@ -1054,7 +1054,7 @@
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
-                }
+                    }
                 },
                 "sensitivity": "medium",
                 "masking_rule": "DEFAULT_MASKING_VALUE",
