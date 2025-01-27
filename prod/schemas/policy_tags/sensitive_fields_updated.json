@@ -233,20 +233,6 @@
             }
         },
         "restricted": {
-            "firstname": {
-                "children": {},
-                "sensitivity": "high",
-                "masking_rule": "SHA256",
-                "type": "STRING",
-                "category": "restricted"
-            },
-            "lastname": {
-                "children": {},
-                "sensitivity": "high",
-                "masking_rule": "SHA256",
-                "type": "STRING",
-                "category": "restricted"
-            },
             "first_name": {
                 "children": {
                     "fname": {
@@ -394,6 +380,21 @@
                         "sensitivity": "medium",
                         "masking_rule": "ALWAYS_NULL",
                         "type": "INT64"
+                    },
+                    "creditReports": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "ARRAY"
+                    },
+                    "pastReportRequests": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "ARRAY"
+                    },
+                    "psd2Reports": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "ARRAY"
                     }
                 },
                 "sensitivity": "medium",
@@ -435,11 +436,47 @@
                         "type": "FLOAT64"
                     }
                 },
+                "data": {
+                    "children": {
+                        "json_col": {
+                            "sensitivity": "medium",
+                            "masking_rule": "SHA256",
+                            "type": "STRING"
+                        },
+                        "raw_data": {
+                            "sensitivity": "medium",
+                            "masking_rule": "SHA256",
+                            "type": "STRING"
+                        }
+                    },
+                    "sensitivity": "medium",
+                    "masking_rule": "SHA256",
+                    "type": "STRING",
+                    "category": "confidential"
+                },
                 "sensitivity": "medium",
                 "masking_rule": "ALWAYS_NULL",
                 "type": "FLOAT64",
                 "category": "confidential"
 
+            },
+            "current_loans_amount": {
+                "children": {
+                    "loans": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "ARRAY"
+                    },
+                    "currentDebt": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "STRUCT"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "STRING",
+                "category": "restricted"
             },
             
             "bank_account_number": {
@@ -475,6 +512,16 @@
                         "type": "STRING"
                     },
                     "bank": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "bank_iban": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "bank_bic": {
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
@@ -696,7 +743,12 @@
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
-                    }
+                    },
+                "nationality": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "STRING",
+                    "category": "restricted"
                 },
                 "sensitivity": "medium",
                 "masking_rule": "DEFAULT_MASKING_VALUE",
@@ -782,47 +834,6 @@
                     "employerPhone": {
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
-                        "type": "STRING"
-                    }
-                },
-                "sensitivity": "medium",
-                "masking_rule": "DEFAULT_MASKING_VALUE",
-                "type": "STRING",
-                "category": "restricted"
-            },
-            "bank_iban": {
-                "children": {},
-                "sensitivity": "medium",
-                "masking_rule": "DEFAULT_MASKING_VALUE",
-                "type": "STRING",
-                "category": "restricted"
-            },
-            "bank_bic": {
-                "children": {},
-                "sensitivity": "medium",
-                "masking_rule": "DEFAULT_MASKING_VALUE",
-                "type": "STRING",
-                "category": "restricted"
-            },
-            "nationality": {
-                "children": {},
-                "sensitivity": "medium",
-                "masking_rule": "DEFAULT_MASKING_VALUE",
-                "type": "STRING",
-                "category": "restricted"
-            },
-            "maritalstatus": {
-                "children": {},
-                "sensitivity": "medium",
-                "masking_rule": "DEFAULT_MASKING_VALUE",
-                "type": "STRING",
-                "category": "restricted"
-            },
-            "gross_income": {
-                "children": {
-                    "gross_income_spouse": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
                     }
                 },
@@ -1033,7 +1044,17 @@
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
-                    }
+                    },
+                    "gross_income_spouse": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "gross_income": {                           
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                }
                 },
                 "sensitivity": "medium",
                 "masking_rule": "DEFAULT_MASKING_VALUE",
@@ -1048,4 +1069,5 @@
         "restricted": {},
         "confidential": {}
     }
+}
 }
