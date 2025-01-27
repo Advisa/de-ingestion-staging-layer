@@ -75,17 +75,29 @@
         "amount",
         "amount_monthly", 
         "monthlyNetIncome",
+        "monthly_rental_income",
+        "rental_monthly_income_before_tax",
         "monthly_income_before_tax",
+        "monthly_income_after_tax",
         "INCOME_AFTER_TAX",
         "monthlyIncome",
         "spouseIncome",
+        "spouse_monthly_income_after_tax",
+        "spouse_monthly_income_before_tax",
         "otherIncomes",
         "yearlyIncome",
         "taxableIncome",
         "taxableIncomeYear",
         "extraIncome",
         "secondaryIncomes",
-        "primaryIncomes"
+        "primaryIncomes",
+        "last_application_monthly_income_before_tax",
+        "other_monthly_income_before_tax",
+        "other_monthly_income_after_tax",
+        "taxed_annual_income",
+        "previous_taxed_annual_income"
+
+
     ],
     "business_id": [
         "business_identity_code", 
@@ -145,7 +157,9 @@
         "customer_country_code",
         "customer_country_name" ,
         "customer_passport_issuance_country_code",
-        "customer_passport_issuance_country_name"  
+        "customer_passport_issuance_country_name", 
+        "secret_address",
+        "temporary_address"
     ],
     "education": [
         "education_level", 
@@ -169,5 +183,36 @@
         "pastReportRequests",
         "psd2Reports"
 
+    ],
+    "revenue": [
+        "revenue_share_percent"
+    ],
+    "comission": [
+        "commission_iq_a",
+        "commission_iq_b",
+        "commission_iq_c",
+        "commission_iq_d",
+        "commission_iq_e",
+        "commission_iq_f"
+    ],
+    "balance": [
+        "debt_balance",
+        "original_balance",
+        "last_application_debt_balance"
+    ],
+    "capital_deficit":[
+        "previous_capital_deficit"
+    ],
+
+    "credit" : [
+        "credit_limit",
+        "bisnode_creditscore",
+        "creditscore"
+
+    ],
+
+    "installment": [
+        "installment_charges"
     ]
+
 }
