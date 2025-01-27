@@ -19,7 +19,7 @@ resource "local_file" "default" {
   # more modularity, if you prefer, instead of storing the template inline as
   # we do here.
   content = <<-EOT
-terraform {
+  terraform {
     backend "gcs" {
       bucket = "${google_storage_bucket.default.name}"
     }
