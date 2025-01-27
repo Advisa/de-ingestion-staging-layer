@@ -21,3 +21,5 @@ test.py
 **/schemas/salus/incremental
 **/output.txt
 output.txt
+
+**/sensitive_fields_detector_service/utils/__pycache__

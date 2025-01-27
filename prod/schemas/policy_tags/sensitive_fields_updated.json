@@ -340,6 +340,108 @@
             }
         },
         "confidential": {
+            "balance": {
+                "children": {
+                    "debt_balance": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "original_balance": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    },
+                    "last_application_debt_balance": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    }
+                },
+                "sensitivity": "high",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "FLOAT64",
+                "category": "confidential"
+
+            },
+            "revenue": {
+                "children": {
+                    "revenue_share_percent": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "FLOAT64",
+                "category": "confidential"
+
+            },
+            "credit": {
+                "children": {
+                    "credit_limit": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "bisnode_creditscore": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "creditscore": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "INT64",
+                "category": "confidential"
+
+            },
+            "comission": {
+                "children": {
+                    "commission_iq_a": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    },
+                    "commission_iq_b": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    },
+                    "commission_iq_c": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    },
+                    "commission_iq_d": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    },
+                    "commission_iq_e": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    },
+                    "commission_iq_f": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "FLOAT64",
+                "category": "confidential"
+
+            },
+            
             "bank_account_number": {
                 "children": {
                     "tili": {
@@ -388,6 +490,34 @@
     "medium_sensitivity_tags": {
         "PII": {},
         "restricted": {
+            "installment": {
+                "children": {
+                    "installment_charges": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "INT64",
+                "category": "confidential"
+
+            },
+            "capital_deficit": {
+                "children": {
+                    "previous_capital_deficit": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "INT64",
+                "category": "confidential"
+
+            },
             "address": {
                 "children": {
                     "osoite": {
