@@ -30,7 +30,7 @@ class AuthorizedViewService:
         self.clients = self.initialize_bigquery_clients()
 
         # Load SQL templates
-        self.encryption_query_template = self.load_template("encryption_query_improved.sql")
+        self.encryption_query_template = self.load_template("encryption_query_template.sql")
 
         # Initialize output of sql template files
         self.output_template_file = "generated_source_query.sql"
@@ -120,9 +120,8 @@ class AuthorizedViewService:
         for row in result:
             schema = row.table_schema
             table = row.table_name
-            is_table_contains_ssn = row.is_table_contains_ssn
-            encryption_query = row.encrypted_columns
-            encryption_queries.append(f"{schema}|{table}|{encryption_query}|{is_table_contains_ssn}")
+            encryption_query = row.final_encrypted_columns
+            encryption_queries.append(f"{schema}|{table}|{encryption_query}")
             self.processed_tables.add(f"{schema}|{table}") 
 
         # Save the encryption queries to a file
