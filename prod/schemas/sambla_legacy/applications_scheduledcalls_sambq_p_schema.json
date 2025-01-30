@@ -1,0 +1,52 @@
+[
+  {
+    "name": "prio",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "called",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "first",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "date",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "application_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "versions",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_status_sent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  }
+]

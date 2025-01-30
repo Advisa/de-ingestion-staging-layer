@@ -1,0 +1,107 @@
+[
+  {
+    "name": "insuranceCost",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "personShare",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "repaymentTime",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amount",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+      ]
+    }
+  },
+  {
+    "name": "creditLimit",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7441172237633292876"
+      ]
+    }
+  },
+  {
+    "name": "partnerShare",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "interest",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bank",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+      ]
+    }
+  },
+  {
+    "name": "loanType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "refinance",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "adminFee",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "monthlyCost",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "application_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "versions",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_status_sent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  }
+]

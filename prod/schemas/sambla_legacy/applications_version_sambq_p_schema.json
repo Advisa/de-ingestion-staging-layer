@@ -1,0 +1,62 @@
+[
+  {
+    "name": "url",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "variation",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+      ]
+    }
+  },
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "generation",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "application_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "versions",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_status_sent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  }
+]

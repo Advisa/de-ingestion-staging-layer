@@ -1,0 +1,1296 @@
+[
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "operationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "__v",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "advisor",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "agent",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amount",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+      ]
+    }
+  },
+  {
+    "name": "applicationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "autoModified",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bank",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+      ]
+    }
+  },
+  {
+    "name": "clone",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "comments",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "createdAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "customerOrigin",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "deactivatedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "doubleCase",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "excludedFromStats",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "firstMeetingAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "hasAcceptedCreditCard",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "hasAcceptedNewsletters",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "hasSentInterestCheckMail",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "has_co_applicant",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "inboxLink",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "integrationAcceptSent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "interestedInInsurance",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "internetApplication",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isLead",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "isUsingInbox",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lastPage",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "leadReason",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanPurpose",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanPurposeOther",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "market",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "needCreditReport",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "newLoan",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "num_of_approved_bids",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "num_of_valid_bids",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "openedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "originIPAddress",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/6672636543341015519"
+      ]
+    }
+  },
+  {
+    "name": "originReference",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "originalApplication",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "primaryAdvisor",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "privateLoanCost",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "qualifiedForMortgageLoan",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "refinanceMortgage",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "repaymentTime",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "requestedNewBidsAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sentAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "starred",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "testValue",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updated",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updatedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "allPaidOutByAdvisa",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "allowRefinance",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "amount",
+        "type": "INTEGER",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+          ]
+        }
+      },
+      {
+        "name": "bank",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+          ]
+        }
+      },
+      {
+        "name": "date",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  {
+    "name": "allowAllInboxMessages",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "partnerComments",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "date",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "removalReason",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "text",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "user",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "userName",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/7966227966901604615"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "test",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "brand",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source_database",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "application_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "versions",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bankEffectiveInterest",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "requires_extra_doc",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "effectiveInterest",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedBiduser",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedBidname",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedBidintegrationAcceptSent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "signLink",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bankMonthlyCost",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "mustRefinanceAmount",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "startupFee",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "accepted",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedBidcomments",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "acceptedBidamount",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedBidbankNotInterested",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "invitation",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fromInbox",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amortizationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedBidId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "integrationAccentSent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyBalanceSheet",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ownCompanyBalance",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rentalIncome",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "employerDoc",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/4548969357852407791"
+      ]
+    }
+  },
+  {
+    "name": "retiredPaymentNotice",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyMoreRecentProfitAndLossStatement",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "taxReturn",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyProfitAndLossStatement",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payslip",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyBankStatements",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyAdditionalGuarantor",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedBidBank",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "maximumAmount",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedBidrepaymentTime",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedBidexternalApplicationId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedBidinterest",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "adminFee",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "firstCallAnswered",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "partnerWhenPossible",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "notPrepared",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "noAnswer",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "correctExpectations",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "noPartnerWhenPossible",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "customerSatisfied",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "firstCallNotAnswered",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "noInfoAboutLoan",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "infoAboutLoan",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wrongExpectations",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "idNumber",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5537369360311277340"
+      ]
+    }
+  },
+  {
+    "name": "accountNumber",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5644563662621812076"
+      ]
+    }
+  },
+  {
+    "name": "yearsWithBank",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sinceYear",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "clearingNumber",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/5561331012883213756"
+      ]
+    }
+  },
+  {
+    "name": "bankName",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/5095344055803075463"
+      ]
+    }
+  },
+  {
+    "name": "ngrams",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "yearlyRevenue",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "address",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/8680019976067900932"
+      ]
+    }
+  },
+  {
+    "name": "monthlyRevenue",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "entityType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "postalCode",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/457690552401007752"
+      ]
+    }
+  },
+  {
+    "name": "industryTypeOther",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companymarket",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "organizationNumber",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8756448201355455671"
+      ]
+    }
+  },
+  {
+    "name": "companyId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyName",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "postalArea",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/4522259972247973803"
+      ]
+    }
+  },
+  {
+    "name": "foundationDate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "industryType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLettersigned",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+      ]
+    }
+  },
+  {
+    "name": "debtLetteramount",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLetteraccepted",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLetterintegrationAcceptSent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLetterrepaymentTime",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLettersent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLetterexternalApplicationId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLetteracceptedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLetterId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLetterinterest",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLetterBank",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debtLetterbankNotInterested",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lastPaidOutBySamblabank",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lastPaidOutBySambladate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lastPaidOutBySamblaamount",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lifeInsurancesigned",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lifeInsurancenotInterested",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lifeInsurancesignedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "insuranceType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "premium",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "notInterestedReason",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "errorMessage",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "compensation",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanProtectionForPartnernotInterested",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanProtectionForPartneraccepted",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanProtectionForPartneracceptedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanProtectionForPartnersentToBank",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanProtectionForPartnerperson",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanProtectionForPersonnotInterested",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanProtectionForPersonaccepted",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanProtectionForPersonacceptedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "notApplicable",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loanProtectionForPersonsentToBank",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "person",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/1368364408394592286"
+      ]
+    }
+  },
+  {
+    "name": "agentId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "status",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loxyStatusdate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "mortgageInforefinanceMortgage",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "propertyType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "daycare",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "propertyValue",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "monthlyCondoRent",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cars",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "otherIncomes",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8365015034140070378"
+      ]
+    }
+  },
+  {
+    "name": "localTaxes",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "condoRent",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "partnerTrackingfp",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "hypetrafficcid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "transaction_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sgclid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "affid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "reqid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "smartresponsecid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "trygglancid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "uuid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "at_gd",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cn",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cv",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "signed",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "notInterested",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "CTF",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "CFTF",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paymentProtectionsignedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paymentProtectioninsuranceType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paymentProtectionpremium",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paymentProtectionnotInterestedReason",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paymentProtectionerrorMessage",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paymentProtectioncompensation",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paymentStatuspaidAccordingToBank",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paymentStatusBank",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "paidAccordingToCustomer",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "randomtype",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "coordinates",
+    "type": "FLOAT",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "scheduled_call_date",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rejectionReasonForInsurance",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "active",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "text",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "supplement",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "statussent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "deactivationReason",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "statusdate",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "teamLeader",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "team",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "term",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cookieId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "adposition",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "medium",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "partner",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "content",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "campaign",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "device",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gaCookie",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "campaignId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "domain",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "applicant_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "partner_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "national_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7067046475220860351/policyTags/6032377900500660701"
+      ]
+    }
+  },
+  {
+    "name": "gclid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fbclid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

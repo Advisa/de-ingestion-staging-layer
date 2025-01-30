@@ -1,0 +1,177 @@
+[
+  {
+    "name": "is_status_sent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "customer_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "idNumber",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5537369360311277340"
+      ]
+    }
+  },
+  {
+    "name": "credit_report_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "createdAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "taxableIncomeYear",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1157314579281338318"
+      ]
+    }
+  },
+  {
+    "name": "taxableIncome",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8505201773480712780"
+      ]
+    }
+  },
+  {
+    "name": "creditScore",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8200763276510798683"
+      ]
+    }
+  },
+  {
+    "name": "registeredAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ucRegisteredAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "numberOfRecords",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "capitalDeficit",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3855094423986011776"
+      ]
+    }
+  },
+  {
+    "name": "ucBlockCode",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lastYeartaxableIncome",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lastYearcapitalDeficit",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lastYeartaxableIncomeYear",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "latest_record_type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "claimant",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "latestRecordDetails_date",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amount",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+      ]
+    }
+  },
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "versions",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "application_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "application_created_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "hasdebtreconstruction",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "hasDebtBalance",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  }
+]

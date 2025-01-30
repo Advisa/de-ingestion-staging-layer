@@ -10,16 +10,6 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "__v",
-    "type": "FLOAT",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "_id",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
     "name": "accepted",
     "type": "BOOLEAN",
     "mode": "NULLABLE"
@@ -225,6 +215,21 @@
   {
     "name": "updated",
     "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "brand",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "invite_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "versions",
+    "type": "FLOAT",
     "mode": "NULLABLE"
   }
 ]

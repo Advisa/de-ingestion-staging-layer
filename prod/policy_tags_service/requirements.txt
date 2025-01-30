@@ -6,3 +6,5 @@ jinja2
 pyyaml
 requests
 db-dtypes
+jq
+google-cloud-secret-manager

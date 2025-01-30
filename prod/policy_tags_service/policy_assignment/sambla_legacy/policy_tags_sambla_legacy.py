@@ -14,6 +14,7 @@ client = bigquery.Client()
 config = load_config()
 
 project_id = config['prod']['policy_tags_service']['raw_layer_project']
+print(project_id)
 dataset_id = config['prod']['policy_tags_service']['dataset_id']
 policy_tags_table = config['prod']['policy_tags_service']['policy_tags_table']
 
@@ -69,33 +70,40 @@ def normalize_name(name):
 
 def match_policy_tags_to_fields(fields, policy_tags, parent_name=None):
     updated_fields = []
-    print(fields)
+    
+    # Normalize policy tags for easier matching
+    policy_tags['normalized_display_name'] = policy_tags['display_name'].apply(normalize_name)
     
     for field in fields:
         field_name = field["name"]
         normalized_field_name = normalize_name(field_name)
-        
+
+        # Handle nested fields recursively
         if field.get('fields'):
-            nested_fields = match_policy_tags_to_fields(field["fields"], policy_tags, parent_name=None if field["name"] == "invoices" else parent_name)
+            nested_fields = match_policy_tags_to_fields(
+                field["fields"], policy_tags, parent_name=None if field["name"] == "invoices" else parent_name
+            )
             field["fields"] = nested_fields
         else:
-            # Normalize the policy tags display names for comparison
-            policy_tags['normalized_display_name'] = policy_tags['display_name'].apply(normalize_name)
+            # Find matching tag in policy_tags
             matching_tag = policy_tags[policy_tags['normalized_display_name'] == normalized_field_name]
-            
+
             if not matching_tag.empty:
                 policy_tag = matching_tag['policy_tag_id'].values[0]
+                taxonomy_id = matching_tag['taxonomy_id'].values[0]  # Dynamically select taxonomy
+
                 field["policyTags"] = {
                     "names": [
-                        f"projects/{project_id}/locations/europe-north1/taxonomies/6126692965998272750/policyTags/{policy_tag}"
+                        f"projects/{project_id}/locations/europe-north1/taxonomies/{taxonomy_id}/policyTags/{policy_tag}"
                     ]
                 }
-        
+
+        # Ensure proper parent-child field naming
         if parent_name and not field.get('name').startswith(f"{parent_name}."):
             field["name"] = f"{parent_name}.{field['name']}"
-        
+
         updated_fields.append(field)
-    
+
     return updated_fields
 
 def update_schema_with_policy_tags(schemas, policy_tags):
