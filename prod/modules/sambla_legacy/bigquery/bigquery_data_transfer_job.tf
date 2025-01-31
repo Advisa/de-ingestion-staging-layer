@@ -47,7 +47,7 @@ resource "google_bigquery_table" "partitioned_tables" {
 # Run SQL queries from templates to create the tables
 resource "google_bigquery_job" "execute_sql" {
   for_each    = toset(var.sql_templates)
-  job_id      = "create_${replace(each.key, ".sql", "")}_prod_tables_live"
+  job_id      = "create_${replace(each.key, ".sql", "")}_prod_tables_live_go"
   project     = var.project_id
   location    = "europe-north1"
 
@@ -73,7 +73,7 @@ resource "google_bigquery_job" "execute_sql" {
   }
 
 #only for applications_loans_sambq as the current query logic doesnt work
-resource "null_resource" "create_table_jobs_sambq_appl_loans_live" {
+resource "null_resource" "create_table_jobs_sambq_appl_loans_live_go" {
 
   provisioner "local-exec" {
     command = <<EOT
