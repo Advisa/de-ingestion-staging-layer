@@ -33,6 +33,7 @@ CREATE OR REPLACE TABLE `{{compliance_project}}.compilance_database.{{temp_encr_
     ) AS contacts ON contacts.national_id = uk.ssn
 );
 
+
 INSERT INTO `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` (uuid, ssn, market, aead_key, encrypted_ssn, is_anonymized, 
     is_valid_national_id, ingestion_timestamp)
 SELECT 

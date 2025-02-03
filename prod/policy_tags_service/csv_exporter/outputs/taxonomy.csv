@@ -3,3 +3,6 @@ gdpr_complaince_measures_high,Taxonomy for high sensitivity data,706704647522086
 gdpr_complaince_measures_low,Taxonomy for low sensitivity data,3738755145388221461
 gdpr_complaince_measures_medium,Taxonomy for medium sensitivity data,4057054980872591736
 gdpr_compliance,production taxonomy for applying gdpr rules based on 5 year constraints,6126692965998272750
+gdpr_compliance_measures_prod_high,Taxonomy for high sensitivity data,462501529798891334
+gdpr_compliance_measures_prod_low,Taxonomy for low sensitivity data,8452725999489655507
+gdpr_compliance_measures_prod_medium,Taxonomy for medium sensitivity data,1348545653474742340
