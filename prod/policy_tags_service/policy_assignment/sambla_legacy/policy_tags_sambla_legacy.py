@@ -63,17 +63,26 @@ def fetch_policy_tags():
     
     return policy_tags
 
+def normalize_name(name):
+    """Normalize the name by converting to lowercase and removing underscores."""
+    return name.lower().replace("_", "")
+
 def match_policy_tags_to_fields(fields, policy_tags, parent_name=None):
     updated_fields = []
+    print(fields)
     
     for field in fields:
         field_name = field["name"]
+        normalized_field_name = normalize_name(field_name)
         
         if field.get('fields'):
             nested_fields = match_policy_tags_to_fields(field["fields"], policy_tags, parent_name=None if field["name"] == "invoices" else parent_name)
             field["fields"] = nested_fields
         else:
-            matching_tag = policy_tags[policy_tags['display_name'] == field_name]
+            # Normalize the policy tags display names for comparison
+            policy_tags['normalized_display_name'] = policy_tags['display_name'].apply(normalize_name)
+            matching_tag = policy_tags[policy_tags['normalized_display_name'] == normalized_field_name]
+            
             if not matching_tag.empty:
                 policy_tag = matching_tag['policy_tag_id'].values[0]
                 field["policyTags"] = {

@@ -1,8 +1,8 @@
 default:
   anonymization_service:
     exposure_project: "data-domain-data-warehouse"
-    gdpr_events_dataset: "gdpr_events" # change default values for testing
-    gdpr_vault_table: "gdpr_vault"
+    gdpr_events_dataset: "dbt_16a02f5fff" # change default values for testing
+    gdpr_vault_table: "gdpr_vault_rudolf"
     temp_encr_table: "temp_encrypted_data"
     raw_layer_project: "sambla-data-staging-compliance"
     compliance_project: "sambla-group-compliance-db"

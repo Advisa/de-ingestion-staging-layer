@@ -1,0 +1,218 @@
+{
+    "ssn": [
+        "national_id", 
+        "National_ID_Cleaned", 
+        "customer_national_id", 
+        "customer_ssn", 
+        "foreignerSSN", 
+        "sotu", 
+        "ssc", 
+        "yv_sotu"
+    ],
+    "phone": [
+        "customer_phone", 
+        "customer_phone_number", 
+        "external_phone", 
+        "fourth_phone", 
+        "mobile_phone", 
+        "original_phone", 
+        "phoneNumber", 
+        "sec_phone", 
+        "secondaryPhoneNumber", 
+        "thr_phone", 
+        "work_phone"
+    ],
+    "email": [
+        "customer_contactinfo", 
+        "customer_email", 
+        "emailId", 
+        "registered_email", 
+        "user_email", 
+        "yv_email"
+    ],
+    "first_name": [
+        "etunimi", 
+        "fname", 
+        "yv_etunimi", 
+        "userName", 
+        "person", 
+        "name",
+        "PARTNER_NAME",
+        "customer_first_name",
+        "USER_FIRST_NAME"
+    ],
+    "last_name": [
+        "lname", 
+        "sukunimi", 
+        "useConventionalNameAsPlanName", 
+        "yv_sukunimi",
+        "customer_last_name",
+        "USER_LAST_NAME"
+    ],
+    "tili": [
+        "bank_account_number", 
+        "accountNumber", 
+        "tilintarkastaja", 
+        "clearingNumber",
+        "idNumber",
+        "directDebitNumber",
+        "bank",
+        "bank_iban",
+        "bank_bic"
+    ],
+    "is_pep": [
+        "politicallyExposedPerson",
+        "politicallyExposedPersonDescription"
+    ],
+    "dob": [
+        "birth_date",
+        "birthday"
+    ],
+    "gender": [
+        "sex"
+    ],
+    "net_income": [
+        "amount",
+        "amount_monthly", 
+        "monthlyNetIncome",
+        "monthly_rental_income",
+        "rental_monthly_income_before_tax",
+        "monthly_income_before_tax",
+        "monthly_income_after_tax",
+        "INCOME_AFTER_TAX",
+        "monthlyIncome",
+        "spouseIncome",
+        "spouse_monthly_income_after_tax",
+        "spouse_monthly_income_before_tax",
+        "otherIncomes",
+        "yearlyIncome",
+        "taxableIncome",
+        "taxableIncomeYear",
+        "extraIncome",
+        "secondaryIncomes",
+        "primaryIncomes",
+        "last_application_monthly_income_before_tax",
+        "other_monthly_income_before_tax",
+        "other_monthly_income_after_tax",
+        "taxed_annual_income",
+        "previous_taxed_annual_income"
+
+
+    ],
+    "business_id": [
+        "business_identity_code", 
+        "employment_business_id",
+        "yv_ytunnus", 
+        "organizationNumber",
+        "ytunnus",
+        "customer_organisation_name",
+        "customer_passport_number",
+        "customer_organisation_number",
+        "business_organization_number"
+    ],
+    "citizenship": [
+        "citizenship_text"
+    ],
+    "employer": [
+        "employerCountry", 
+        "employerDoc", 
+        "employerPhone", 
+        "employer_name", 
+        "employer_phone"
+    ],
+    "gross_income": [
+        "gross_income_spouse"
+    ],
+    "post_code": [
+        "postal_code", 
+        "postinro", 
+        "yv_postinro", 
+        "zip", 
+        "postal_area",
+        "customer_postal_code"
+    ],
+    "profession": [
+        "employment_profession", 
+        "employment_profession_class", 
+        "profession_area", 
+        "profession_class"
+    ],
+    "address": [
+        "permitNumber", 
+        "permitType",
+        "ip_address", 
+        "ip_address2", 
+        "lives_at_the_same_address", 
+        "originIPAddress", 
+        "osoite", 
+        "postal_address", 
+        "street_address", 
+        "web_address", 
+        "yv_osoite",
+        "city",
+        "customer_address",
+        "customer_address2",
+        "customer_city",
+        "customer_state",
+        "customer_country_code",
+        "customer_country_name" ,
+        "customer_passport_issuance_country_code",
+        "customer_passport_issuance_country_name", 
+        "secret_address",
+        "temporary_address"
+    ],
+    "education": [
+        "education_level", 
+        "education_level_text", 
+        "yv_koulutus"
+    ],
+    "marital_status": [
+        "yv_siviilisaaty",
+        "civil_status_text"
+    ],
+    "json_col" : [
+        "data",
+        "raw_data"
+    ],
+    "current_loans_amount" : [
+        "creditReports",
+        "loans",
+        "capitalDeficit",
+        "creditScore",
+        "currentDebt",
+        "pastReportRequests",
+        "psd2Reports"
+
+    ],
+    "revenue": [
+        "revenue_share_percent"
+    ],
+    "comission": [
+        "commission_iq_a",
+        "commission_iq_b",
+        "commission_iq_c",
+        "commission_iq_d",
+        "commission_iq_e",
+        "commission_iq_f"
+    ],
+    "balance": [
+        "debt_balance",
+        "original_balance",
+        "last_application_debt_balance"
+    ],
+    "capital_deficit":[
+        "previous_capital_deficit"
+    ],
+
+    "credit" : [
+        "credit_limit",
+        "bisnode_creditscore",
+        "creditscore"
+
+    ],
+
+    "installment": [
+        "installment_charges"
+    ]
+
+}

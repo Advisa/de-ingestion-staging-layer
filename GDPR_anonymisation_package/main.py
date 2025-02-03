@@ -15,3 +15,6 @@ def run_anonymization(request):
     anonymization_service.main() 
 
     return "Anonymization job completed", 200
+
+# if __name__ == '__main__': # Uncomment for testing
+#     run_anonymization('')

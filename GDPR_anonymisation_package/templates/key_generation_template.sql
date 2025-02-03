@@ -15,6 +15,7 @@ CREATE OR REPLACE TABLE `{{compliance_project}}.compilance_database.{{temp_encr_
     SELECT 
         uk.uuid,
         contacts.national_id AS ssn,
+        contacts.market AS market,
         CAST(uk.aead_key AS BYTES) AS aead_key,
         TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(
             uk.aead_key, 
@@ -32,11 +33,13 @@ CREATE OR REPLACE TABLE `{{compliance_project}}.compilance_database.{{temp_encr_
     ) AS contacts ON contacts.national_id = uk.ssn
 );
 
-INSERT INTO `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` (uuid, ssn, aead_key, encrypted_ssn, is_anonymized, 
+
+INSERT INTO `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` (uuid, ssn, market, aead_key, encrypted_ssn, is_anonymized, 
     is_valid_national_id, ingestion_timestamp)
 SELECT 
     uuid,
     ssn,
+    market,
     aead_key,
     encrypted_ssn,
     is_anonymized,
