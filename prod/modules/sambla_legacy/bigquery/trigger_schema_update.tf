@@ -3,7 +3,7 @@ locals {
 }
 
 
-resource "null_resource" "update_table_schema_sambla_legacy" {
+resource "null_resource" "update_table_schema_sambla_legacy_prod_live" {
   for_each = toset(local.table_names)
 
   provisioner "local-exec" {

@@ -1,0 +1,82 @@
+[
+  {
+    "name": "propertyAddedValue",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "propertyType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "livingArea",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "propertyValue",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "mainProperty",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "areaScore",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "condoRent",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "postalArea",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/4522259972247973803"
+      ]
+    }
+  },
+  {
+    "name": "application_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "versions",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_status_sent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "market",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

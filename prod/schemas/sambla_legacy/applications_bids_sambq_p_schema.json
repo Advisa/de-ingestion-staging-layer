@@ -1,0 +1,247 @@
+[
+  {
+    "name": "bankEffectiveInterest",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "requires_extra_doc",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "effectiveInterest",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "integrationAcceptSent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "signLink",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bankMonthlyCost",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "mustRefinanceAmount",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "startupFee",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "accepted",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "comments",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "is_valid_bid",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amount",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+      ]
+    }
+  },
+  {
+    "name": "bankNotInterested",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "invitation",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fromInbox",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amortizationType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bank",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+      ]
+    }
+  },
+  {
+    "name": "maximumAmount",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "repaymentTime",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "externalApplicationId",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "interest",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "date",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "adminFee",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "expiresAt",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "acceptedHigherRateBidReason",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyBalanceSheet",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ownCompanyBalance",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rentalIncome",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "employerDoc",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/4548969357852407791"
+      ]
+    }
+  },
+  {
+    "name": "retiredPaymentNotice",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyMoreRecentProfitAndLossStatement",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "taxReturn",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyProfitAndLossStatement",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payslip",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyBankStatements",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "companyAdditionalGuarantor",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "user",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+      ]
+    }
+  },
+  {
+    "name": "application_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "time_archived",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "versions",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_status_sent",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  }
+]
