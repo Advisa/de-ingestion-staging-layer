@@ -20,6 +20,10 @@ class AnonymizationService:
         self.exposure_project = self.anonymization_config.get('exposure_project')
         self.raw_layer_project = self.anonymization_config.get('raw_layer_project')
         self.compliance_project = self.anonymization_config.get('compliance_project')
+        self.gdpr_events_dataset = self.anonymization_config.get('gdpr_events_dataset')
+        self.gdpr_vault_table = self.anonymization_config.get('gdpr_vault_table')
+        self.temp_encr_table = self.anonymization_config.get('temp_encr_table')
+        self.auth_views_dataset = self.anonymization_config.get('auth_views_dataset', "authorized_views")
 
         # Initialize BigQuery clients using Application Default Credentials (ADC)
         self.clients = self.initialize_bigquery_clients()
@@ -83,53 +87,36 @@ class AnonymizationService:
             logging.error(f"Error fetching schema for {table_name}: {str(e)}")
             raise e
 
-    def get_datasets_with_authorized_view(self):
-        """Fetch datasets that contain 'authorized_view' in their names."""
-        try:
-            datasets = self.clients['raw_layer_project'].list_datasets()
-            authorized_view_datasets = [dataset.dataset_id for dataset in datasets if 'authorized_view' in dataset.dataset_id]
-
-            logging.info(f"Authorized view datasets found: {authorized_view_datasets}")
-            return authorized_view_datasets
-        except Exception as e:
-            logging.error(f"Error fetching datasets: {str(e)}")
-            raise e
-
     def update_anonymized_flags(self, join_keys):
         """Update anonymization flags in the raw layer project."""
         exists_clauses = []
 
-        authorized_view_datasets = self.get_datasets_with_authorized_view()
+        try:
+            tables = self.clients['raw_layer_project'].list_tables(self.auth_views_dataset)
+            relevant_tables = [table.table_id for table in tables]
+        except Exception as e:
+            logging.error(f"Error fetching tables from dataset {self.auth_views_dataset}: {str(e)}")
+            raise e
 
-        if not authorized_view_datasets:
-            logging.error("No authorized view datasets found.")
-            return
-
-        for dataset in authorized_view_datasets:
-            try:
-                tables = self.clients['raw_layer_project'].list_tables(dataset)
-                relevant_tables = [table.table_id for table in tables]
-            except Exception as e:
-                logging.error(f"Error fetching tables from dataset {dataset}: {str(e)}")
-                continue
-
+        if relevant_tables:
             for table in relevant_tables:
-                key = join_keys.get(table) or self.get_column_key_for_table(dataset, table)
+                key = join_keys.get(table) or self.get_column_key_for_table(self.auth_views_dataset, table)
 
                 if key:
-                    exists_clause = f"SELECT raw.{key} FROM `{self.raw_layer_project}.{dataset}.{table}` raw"
+                    exists_clause = f"SELECT raw.{key} FROM `{self.raw_layer_project}.{self.auth_views_dataset}.{table}` raw"
                     exists_clauses.append(exists_clause)
 
-        exists_clauses_str = ' UNION ALL '.join(exists_clauses) if exists_clauses else "SELECT NULL"
+            exists_clauses_str = ' UNION ALL '.join(exists_clauses) if exists_clauses else "SELECT CAST(NULL AS STRING)"
 
-        update_flag_query = self.update_flag_template.render(
-            compliance_project=self.compliance_project,
-            raw_layer_project=self.raw_layer_project,
-            exists_clauses=exists_clauses_str
-        )
+            update_flag_query = self.update_flag_template.render(
+                compliance_project=self.compliance_project,
+                gdpr_vault_table = self.gdpr_vault_table,
+                raw_layer_project=self.raw_layer_project,
+                exists_clauses=exists_clauses_str
+            )
 
-        logging.info("Executing anonymization flag update query.")
-        self.execute_query(self.clients['raw_layer_project'], update_flag_query)
+            logging.info("Executing anonymization flag update query.")
+            self.execute_query(self.clients['raw_layer_project'], update_flag_query)
 
     def execute_query(self, client, query):
         """Execute a query using a BigQuery client."""
@@ -149,7 +136,10 @@ class AnonymizationService:
             logging.info("Executing key generation.")
             key_generation_query = self.key_generation_query_template.render(
                 exposure_project=self.exposure_project,
-                compliance_project=self.compliance_project
+                compliance_project=self.compliance_project,
+                gdpr_events_dataset=self.gdpr_events_dataset,
+                gdpr_vault_table=self.gdpr_vault_table,
+                temp_encr_table=self.temp_encr_table
             )
             self.execute_query(self.clients['raw_layer_project'], key_generation_query)
 
