@@ -75,7 +75,7 @@ def create_deny_policy():
     deny_principals_str = ", ".join([f'"{principal}"' for principal in deny_principals])
     denied_permissions_str = ", ".join([f'"{permission}"' for permission in denied_permissions])
 
-    # Generate Terraform HCL for the deny policy
+    # Generate Terraform HCL for the deny policy with wildcard and exception principals
     terraform_config = f"""
 resource "google_iam_deny_policy" "deny_policy_creation" {{
   parent      = "cloudresourcemanager.googleapis.com/projects/${{var.project_id}}"  # Corrected parent format
@@ -84,7 +84,8 @@ resource "google_iam_deny_policy" "deny_policy_creation" {{
   rules {{
     description = "First rule"
     deny_rule {{
-      denied_principals = [{deny_principals_str}]  # Principals to be denied (all except service accounts and group)
+      denied_principals = ["principalSet://goog/public:all"]  # Denying everyone
+      exception_principals = [{', '.join([f'"{sa}"' for sa in service_accounts])}]  # Allowing service accounts
       denial_condition {{
         title       = "denial condition expression"
         expression = ""
@@ -95,7 +96,7 @@ resource "google_iam_deny_policy" "deny_policy_creation" {{
 }}
 """
 
-    tf_file_path = "../../prod/modules/deny_policy/main.tf"
+    tf_file_path = "../../prod/deny_policy_creation_service/main.tf"
     os.makedirs(os.path.dirname(tf_file_path), exist_ok=True)
     with open(tf_file_path, "w") as f:
         f.write(terraform_config)
