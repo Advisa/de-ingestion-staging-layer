@@ -29,8 +29,6 @@ def fetch_service_accounts(project_id):
 def fetch_all_iam_users(project_id):
     credentials, _ = default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
     service = build('cloudresourcemanager', 'v1', credentials=credentials)
-
-    # List all IAM members (users, service accounts, etc.)
     users = []
     request = service.projects().getIamPolicy(resource=project_id)
     response = request.execute()
@@ -41,7 +39,6 @@ def fetch_all_iam_users(project_id):
 
     return users
 
-# Function to create deny policy and generate Terraform configuration
 def create_deny_policy():
     config = load_config("config.yml")
     project_id = config.get("project_id")
@@ -53,47 +50,41 @@ def create_deny_policy():
         print("Error: Missing required configuration values.")
         return
 
-    # Fetch service accounts from the project
+
     service_accounts = fetch_service_accounts(project_id)
 
-    # Fetch all IAM users
     all_users = fetch_all_iam_users(project_id)
 
-    # Define allowed principals (service accounts and the group)
     allow_principals = [
-        *service_accounts,  # Allow all service accounts
-        'group:data@samblagroup.com'  # Replace with your actual group email
+        *service_accounts,
+        'group:data@samblagroup.com'
     ]
     
-    # Deny all users except service accounts and the group
     deny_principals = [user for user in all_users if user not in allow_principals and not user.startswith("serviceAccount:")]
 
-    # Remove duplicates by converting to a set and back to a list
     deny_principals = list(set(deny_principals))
 
-    # Convert deny_principals and denied_permissions into correctly formatted lists for Terraform
     deny_principals_str = ", ".join([f'"{principal}"' for principal in deny_principals])
     denied_permissions_str = ", ".join([f'"{permission}"' for permission in denied_permissions])
 
-    # Generate Terraform HCL for the deny policy with wildcard and exception principals
     terraform_config = f"""
-resource "google_iam_deny_policy" "deny_policy_creation" {{
-  parent      = "cloudresourcemanager.googleapis.com/projects/${{var.project_id}}"  # Corrected parent format
-  name        = "gdpr-deny-policy"
-  display_name = "GDPR deny policy"
-  rules {{
-    description = "First rule"
-    deny_rule {{
-      denied_principals = ["principalSet://goog/public:all"]  # Denying everyone
-      exception_principals = [{', '.join([f'"{sa}"' for sa in service_accounts])}]  # Allowing service accounts
-      denial_condition {{
-        title       = "denial condition expression"
-        expression = ""
-      }}
-      denied_permissions = [{denied_permissions_str}]  # Permissions to be denied
+    resource "google_iam_deny_policy" "deny_policy_creation" {{
+    parent      = "cloudresourcemanager.googleapis.com/projects/${{var.project_id}}"  # Corrected parent format
+    name        = "gdpr-deny-policy"
+    display_name = "GDPR deny policy"
+    rules {{
+        description = "First rule"
+        deny_rule {{
+        denied_principals = ["principalSet://goog/public:all"]  # Denying everyone
+        exception_principals = [{', '.join([f'"{sa}"' for sa in service_accounts])}]  # Allowing service accounts
+        denial_condition {{
+            title       = "denial condition expression"
+            expression = ""
+        }}
+        denied_permissions = [{denied_permissions_str}]  # Permissions to be denied
+        }}
     }}
-  }}
-}}
+    }}
 """
 
     tf_file_path = "../../prod/deny_policy_creation_service/main.tf"
