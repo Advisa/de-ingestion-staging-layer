@@ -1,5 +1,5 @@
 variable "datasets" {
-  default = ["sambla_group_data_stream_deny"]
+  default = ["deny_policy_go_live_test"]
 }
 
 locals {
