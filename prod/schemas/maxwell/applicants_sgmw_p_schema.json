@@ -1,0 +1,170 @@
+[
+      {
+        "name": "occupation_title",
+        "type": "STRING"
+      },
+      {
+        "name": "civil_status",
+        "type": "INTEGER"
+      },
+      {
+        "name": "home_type",
+        "type": "INTEGER"
+      },
+      {
+        "name": "national_id",
+        "type": "STRING"
+      },
+      {
+        "name": "education_level",
+        "type": "STRING"
+      },
+      {
+        "name": "employer_name",
+        "type": "STRING"
+      },
+      {
+        "name": "employer_phone",
+        "type": "STRING"
+      },
+      {
+        "name": "first_name",
+        "type": "STRING"
+      },
+      {
+        "name": "postal_code",
+        "type": "STRING"
+      },
+      {
+        "name": "email",
+        "type": "STRING"
+      },
+      {
+        "name": "monthly_income_before_tax",
+        "type": "INTEGER"
+      },
+      {
+        "name": "monthly_income_after_tax",
+        "type": "STRING"
+      },
+      {
+        "name": "employment_type",
+        "type": "INTEGER"
+      },
+      {
+        "name": "employment_to",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "move_in_date",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "city",
+        "type": "STRING"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "last_name",
+        "type": "STRING"
+      },
+      {
+        "name": "applicant_draft_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "spouse_monthly_income_after_tax",
+        "type": "STRING"
+      },
+      {
+        "name": "eu_sanction_validated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "country",
+        "type": "STRING"
+      },
+      {
+        "name": "latest_credit_default",
+        "type": "STRING"
+      },
+      {
+        "name": "home_cost",
+        "type": "INTEGER"
+      },
+      {
+        "name": "customer_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "num_dependants",
+        "type": "INTEGER"
+      },
+      {
+        "name": "is_politically_exposed",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "employment_since",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "occupation_category",
+        "type": "STRING"
+      },
+      {
+        "name": "street_address",
+        "type": "STRING"
+      },
+      {
+        "name": "birth_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "mobile_phone",
+        "type": "STRING"
+      },
+      {
+        "name": "citizenship",
+        "type": "STRING"
+      },
+      {
+        "name": "military_service_status",
+        "type": "STRING"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]

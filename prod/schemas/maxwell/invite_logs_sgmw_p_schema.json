@@ -1,0 +1,58 @@
+[
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "comment",
+        "type": "STRING"
+      },
+      {
+        "name": "user_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "action",
+        "type": "STRING"
+      },
+      {
+        "name": "system",
+        "type": "STRING"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "invite_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+]

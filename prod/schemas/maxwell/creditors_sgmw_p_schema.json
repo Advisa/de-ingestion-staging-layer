@@ -1,0 +1,46 @@
+[
+      {
+        "name": "deactivated_at",
+        "type": "STRING"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "name",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]

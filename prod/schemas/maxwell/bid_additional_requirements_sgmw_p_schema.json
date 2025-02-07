@@ -1,0 +1,66 @@
+[
+      {
+        "name": "applies_to",
+        "type": "INTEGER"
+      },
+      {
+        "name": "bid_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "max_age",
+        "type": "INTEGER"
+      },
+      {
+        "name": "required_when",
+        "type": "INTEGER"
+      },
+      {
+        "name": "requirement_type",
+        "type": "STRING"
+      },
+      {
+        "name": "requirement_value",
+        "type": "STRING"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]

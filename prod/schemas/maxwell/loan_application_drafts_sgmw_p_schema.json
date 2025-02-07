@@ -1,0 +1,98 @@
+[
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "applicant_draft_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "client_ip",
+        "type": "STRING"
+      },
+      {
+        "name": "total_loan",
+        "type": "INTEGER"
+      },
+      {
+        "name": "site_origin",
+        "type": "STRING"
+      },
+      {
+        "name": "credit_check_consent",
+        "type": "STRING"
+      },
+      {
+        "name": "secondary_applicant_draft_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "secondary_applicant_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "purpose",
+        "type": "INTEGER"
+      },
+      {
+        "name": "desired_repayment_time",
+        "type": "INTEGER"
+      },
+      {
+        "name": "input_source",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "accept_newsletter",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "bank_account",
+        "type": "STRING"
+      },
+      {
+        "name": "loan_application_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "deactivated_at",
+        "type": "STRING"
+      },
+      {
+        "name": "applicant_id",
+        "type": "STRING"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]

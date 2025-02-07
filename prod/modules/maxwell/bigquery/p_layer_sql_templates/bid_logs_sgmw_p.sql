@@ -16,7 +16,7 @@ DATE(TIMESTAMP_SECONDS(ts)) timestamp_ts,
 source,
 xid,
 xoffset,
-from {{ref('event_data_sgmw_r')}}
+from `${project_id}.${dataset_id}.event_data_sgmw_r`
 where table='bid_logs'
 QUALIFY ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc) = 1
 )

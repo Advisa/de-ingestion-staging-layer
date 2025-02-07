@@ -23,7 +23,7 @@ ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc) rn,
 source,
 xid,
 xoffset,
-from {{ref('event_data_sgmw_r')}}
+from `${project_id}.${dataset_id}.event_data_sgmw_r`
 where table='loan_application_versions'
 QUALIFY rn = 1
 )

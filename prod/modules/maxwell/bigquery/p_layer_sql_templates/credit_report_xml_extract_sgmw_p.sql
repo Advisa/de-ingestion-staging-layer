@@ -2,7 +2,7 @@ with a as (
 select ts,DATE(TIMESTAMP_SECONDS(ts)) timestamp_ts ,id,
 json_query(json_col,'$.soap:Envelope.soap:Body.ns2:ucReply.ns2:ucReport.ns2:xmlReply.ns2:reports.ns2:report') as reports,
 json_col 
-from {{ref('credit_reports_xml_extract_sgmw_r')}}
+from `${project_id}.${dataset_id}.credit_reports_xml_extract`
 ),
 
 b as (

@@ -44,6 +44,6 @@ source,
 xid,
 xoffset,
 -- CAST(JSON_VALUE(data,'$.applicant_draft_id') as INT64) || '|' || CAST(JSON_VALUE(data,'$.id') as INT64) as credit_report_id,
-from {{ref('event_data_sgmw_r')}}
+from `${project_id}.${dataset_id}.event_data_sgmw_r`
 where table = 'credit_reports'
 QUALIFY rn = 1

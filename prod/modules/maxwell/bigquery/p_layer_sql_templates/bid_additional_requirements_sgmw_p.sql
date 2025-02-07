@@ -16,7 +16,7 @@ ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc) rn,
 source,
 xid,
 xoffset,
-from {{ref('event_data_sgmw_r')}}
+from `${project_id}.${dataset_id}.event_data_sgmw_r`
 where table='bid_additional_requirements'
 QUALIFY rn = 1
 )

@@ -1,0 +1,78 @@
+[
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "creditor_product_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "application_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "creditor_application_id",
+        "type": "STRING"
+      },
+      {
+        "name": "deadline",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "creditor_data",
+        "type": "STRING"
+      },
+      {
+        "name": "rejected",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "declined",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "application_version_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "creditor_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "co_applicant_removed",
+        "type": "INTEGER"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]

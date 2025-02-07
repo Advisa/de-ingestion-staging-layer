@@ -120,4 +120,52 @@ resource "google_bigquery_job" "load_job_to_event_data_sgmw_r_maxwell" {
 
   }
 
+# Create partitioned BigQuery tables
+resource "google_bigquery_table" "partitioned_tables_maxwell" {
+  for_each    = toset(var.sql_templates_maxwell)
+  dataset_id  = google_bigquery_dataset.maxwell_dataset.dataset_id
+  project     = var.project_id
+  table_id    = replace(each.key, ".sql", "") # Table name from SQL file name
+
+  schema      = file("../prod/schemas/maxwell/${replace(each.key, ".sql", "_schema.json")}")
+
+  time_partitioning {
+    type  = "DAY"
+    field = "timestamp_ts"
+  }
+
+  clustering = ["id"]
+
+  depends_on = [
+    google_bigquery_dataset.maxwell_dataset
+  ]
+}
+
+# Run SQL queries from templates to create the tables
+resource "google_bigquery_job" "execute_sql_maxwell_live" {
+  for_each    = toset(var.sql_templates_maxwell)
+  job_id      = "create_${replace(each.key, ".sql", "")}_prod_tables_live"
+  project     = var.project_id
+  location    = "europe-north1"
+
+
+    query {
+      query  = templatefile("${path.module}/p_layer_sql_templates/${each.key}", {
+        project_id = var.project_id
+        dataset_id = google_bigquery_dataset.maxwell_dataset.dataset_id
+      })
+
+      destination_table {
+      project_id = var.project_id
+      dataset_id = google_bigquery_dataset.maxwell_dataset.dataset_id
+      table_id   = "${replace(each.key, ".sql", "")}"
+  }
+
+      use_legacy_sql = false
+      write_disposition = "WRITE_TRUNCATE"
+    }
+    depends_on = [
+    google_bigquery_table.partitioned_tables_maxwell
+  ]
+  }
 

@@ -1,0 +1,178 @@
+[
+      {
+        "name": "template_code",
+        "type": "STRING"
+      },
+      {
+        "name": "previous_taxed_annual_income",
+        "type": "INTEGER"
+      },
+      {
+        "name": "debt_balance",
+        "type": "STRING"
+      },
+      {
+        "name": "country",
+        "type": "STRING"
+      },
+      {
+        "name": "national_id",
+        "type": "STRING"
+      },
+      {
+        "name": "applicant_draft_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "has_debt_reconstruction",
+        "type": "STRING"
+      },
+      {
+        "name": "postal_code",
+        "type": "STRING"
+      },
+      {
+        "name": "minor",
+        "type": "STRING"
+      },
+      {
+        "name": "previous_capital_deficit",
+        "type": "INTEGER"
+      },
+      {
+        "name": "taxed_annual_income",
+        "type": "INTEGER"
+      },
+      {
+        "name": "payment_complaint",
+        "type": "STRING"
+      },
+      {
+        "name": "uc_registration_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "debt_reconciliation_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "secret_address",
+        "type": "STRING"
+      },
+      {
+        "name": "template_passed",
+        "type": "STRING"
+      },
+      {
+        "name": "temporary_address",
+        "type": "STRING"
+      },
+      {
+        "name": "capital_deficit",
+        "type": "INTEGER"
+      },
+      {
+        "name": "customer_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "street_address",
+        "type": "STRING"
+      },
+      {
+        "name": "number_of_payment_complaints",
+        "type": "INTEGER"
+      },
+      {
+        "name": "city",
+        "type": "STRING"
+      },
+      {
+        "name": "product_type",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xml",
+        "type": "STRING"
+      },
+      {
+        "name": "first_name",
+        "type": "STRING"
+      },
+      {
+        "name": "fetched_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "latest_payment_complaint",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "major_city_inhabitant",
+        "type": "STRING"
+      },
+      {
+        "name": "last_name",
+        "type": "STRING"
+      },
+      {
+        "name": "no_visit_address",
+        "type": "STRING"
+      },
+      {
+        "name": "blocked_code",
+        "type": "STRING"
+      },
+      {
+        "name": "unregistered",
+        "type": "STRING"
+      },
+      {
+        "name": "blocked_description",
+        "type": "STRING"
+      },
+      {
+        "name": "number_of_reports_12_months",
+        "type": "INTEGER"
+      },
+      {
+        "name": "taxed_year",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "previous_taxed_year",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "score",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]

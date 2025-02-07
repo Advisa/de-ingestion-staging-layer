@@ -1,0 +1,54 @@
+[
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "report_index",
+        "type": "STRING"
+      },
+      {
+        "name": "report_styp",
+        "type": "STRING"
+      },
+      {
+        "name": "report_name",
+        "type": "STRING"
+      },
+      {
+        "name": "report_pid",
+        "type": "STRING"
+      },
+      {
+        "name": "grp_name",
+        "type": "STRING"
+      },
+      {
+        "name": "grp_key",
+        "type": "STRING"
+      },
+      {
+        "name": "grp_index",
+        "type": "STRING"
+      },
+      {
+        "name": "grp_id",
+        "type": "STRING"
+      },
+      {
+        "name": "term_id",
+        "type": "STRING"
+      },
+      {
+        "name": "term_text",
+        "type": "STRING"
+      }
+    ]

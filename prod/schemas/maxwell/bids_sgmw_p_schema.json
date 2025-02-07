@@ -1,0 +1,122 @@
+[
+      {
+        "name": "natural_key",
+        "type": "STRING"
+      },
+      {
+        "name": "interest",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "arrangement_fee",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "creditor_signing_url",
+        "type": "STRING"
+      },
+      {
+        "name": "expires_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "amount",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "debt_letter_delivery_method",
+        "type": "INTEGER"
+      },
+      {
+        "name": "accepted_amount",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "repayment_type",
+        "type": "STRING"
+      },
+      {
+        "name": "debt_letter_received",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "invite_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "require_consolidation_specification",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "debt_letter_sent",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "repayment_time",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "administration_fee",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "apr",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "monthly_payment",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "paid_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "minimum_amount_to_resolve",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "accepted",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "paid_amount",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]

@@ -1,0 +1,62 @@
+[
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "type",
+        "type": "INTEGER"
+      },
+      {
+        "name": "current_loan_draft_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "applicant_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "amount",
+        "type": "INTEGER"
+      },
+      {
+        "name": "monthly_payment",
+        "type": "STRING"
+      },
+      {
+        "name": "transfer",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]

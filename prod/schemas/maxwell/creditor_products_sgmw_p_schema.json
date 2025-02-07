@@ -1,0 +1,214 @@
+[
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "name",
+        "type": "STRING"
+      },
+      {
+        "name": "postal_address",
+        "type": "STRING"
+      },
+      {
+        "name": "minimum_loan_amount",
+        "type": "INTEGER"
+      },
+      {
+        "name": "invites_batch_key",
+        "type": "STRING"
+      },
+      {
+        "name": "only_last_bid_valid",
+        "type": "STRING"
+      },
+      {
+        "name": "supports_account_scraping",
+        "type": "STRING"
+      },
+      {
+        "name": "requirements_email",
+        "type": "STRING"
+      },
+      {
+        "name": "creditor_signing_url",
+        "type": "STRING"
+      },
+      {
+        "name": "debt_acquittal_exceptions",
+        "type": "STRING"
+      },
+      {
+        "name": "average_time_to_bid_in_seconds",
+        "type": "INTEGER"
+      },
+      {
+        "name": "only_cap_new_loans",
+        "type": "STRING"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "arrangement_fee",
+        "type": "INTEGER"
+      },
+      {
+        "name": "payout_to_new_account",
+        "type": "STRING"
+      },
+      {
+        "name": "administration_fee",
+        "type": "INTEGER"
+      },
+      {
+        "name": "deactivated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "requires_bank_account_on_accept",
+        "type": "STRING"
+      },
+      {
+        "name": "support_updates",
+        "type": "STRING"
+      },
+      {
+        "name": "creditor_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "loan_amount_multiple_of",
+        "type": "INTEGER"
+      },
+      {
+        "name": "when_to_send_rejects",
+        "type": "STRING"
+      },
+      {
+        "name": "debt_letter_delivery_method",
+        "type": "INTEGER"
+      },
+      {
+        "name": "delayed_filter_other_bid_apr_limit",
+        "type": "STRING"
+      },
+      {
+        "name": "maximum_loan_amount",
+        "type": "INTEGER"
+      },
+      {
+        "name": "repayment_time_multiple_of_in_months",
+        "type": "INTEGER"
+      },
+      {
+        "name": "delay_invites_seconds_self_service",
+        "type": "STRING"
+      },
+      {
+        "name": "decline_old_invite_on_update",
+        "type": "STRING"
+      },
+      {
+        "name": "slug",
+        "type": "STRING"
+      },
+      {
+        "name": "stores_credit_report_num_days",
+        "type": "INTEGER"
+      },
+      {
+        "name": "average_time_to_payout_in_seconds",
+        "type": "INTEGER"
+      },
+      {
+        "name": "signing_method",
+        "type": "STRING"
+      },
+      {
+        "name": "delayed_filter_apr_limit_only_full_amount",
+        "type": "STRING"
+      },
+      {
+        "name": "delay_invites_seconds_advisory",
+        "type": "STRING"
+      },
+      {
+        "name": "bids_expiry_time_in_seconds",
+        "type": "INTEGER"
+      },
+      {
+        "name": "minimum_repayment_time",
+        "type": "INTEGER"
+      },
+      {
+        "name": "supports_direct_debit",
+        "type": "STRING"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "maximum_repayment_time",
+        "type": "INTEGER"
+      },
+      {
+        "name": "current_filter_version_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "repayment_type",
+        "type": "STRING"
+      },
+      {
+        "name": "customer_blocked_months",
+        "type": "INTEGER"
+      },
+      {
+        "name": "delayed_filter_no_other_bids",
+        "type": "STRING"
+      },
+      {
+        "name": "invite_expiry_time_in_seconds",
+        "type": "INTEGER"
+      },
+      {
+        "name": "supports_auto_undo_accept",
+        "type": "STRING"
+      },
+      {
+        "name": "supports_e_invoice",
+        "type": "STRING"
+      },
+      {
+        "name": "application_type",
+        "type": "STRING"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]

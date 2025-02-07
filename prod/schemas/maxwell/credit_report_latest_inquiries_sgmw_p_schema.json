@@ -1,0 +1,38 @@
+[
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "name",
+        "type": "STRING"
+      },
+      {
+        "name": "date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "credit_report_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]

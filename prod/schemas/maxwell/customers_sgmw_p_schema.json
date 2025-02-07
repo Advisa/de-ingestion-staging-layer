@@ -1,0 +1,94 @@
+[
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "street_address",
+        "type": "STRING"
+      },
+      {
+        "name": "mobile_phone",
+        "type": "STRING"
+      },
+      {
+        "name": "move_in_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "marked_for_delete",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "country",
+        "type": "STRING"
+      },
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "latest_credit_check_done_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "email",
+        "type": "STRING"
+      },
+      {
+        "name": "postal_code",
+        "type": "STRING"
+      },
+      {
+        "name": "birth_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "last_name",
+        "type": "STRING"
+      },
+      {
+        "name": "valid_national_id",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "city",
+        "type": "STRING"
+      },
+      {
+        "name": "national_id",
+        "type": "STRING"
+      },
+      {
+        "name": "first_name",
+        "type": "STRING"
+      },
+      {
+        "name": "ts",
+        "type": "INTEGER"
+      },
+      {
+        "name": "timestamp_ts",
+        "type": "DATE"
+      },
+      {
+        "name": "rn",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source",
+        "type": "STRING"
+      },
+      {
+        "name": "xid",
+        "type": "INTEGER"
+      },
+      {
+        "name": "xoffset",
+        "type": "INTEGER"
+      }
+    ]
