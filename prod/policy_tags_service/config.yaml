@@ -3,15 +3,15 @@ default:
     raw_layer_project: "sambla-data-staging-compliance"
     project_location: "europe-north1"
     terraform_sa_secret_name: "terraform-adm-secret-sa"
-    dataset_id: "maxwell_integration_legacy"
-    output_directory: "../../../schemas/maxwell/"
+    dataset_id: "sambla_legacy_integration_legacy"
+    output_directory: "../../../schemas/sambla_legacy/"
     policy_tags_table: "policy_tags_metadata.policy_tags"
 prod:
   policy_tags_service:
     raw_layer_project: "sambla-data-staging-compliance"
     project_location: "europe-north1"
     terraform_sa_secret_name: "terraform-adm-secret-sa"
-    dataset_id: "maxwell_integration_legacy"
-    output_directory: "../../../schemas/maxwell/"
+    dataset_id: "sambla_legacy_integration_legacy"
+    output_directory: "../../../schemas/sambla_legacy/"
     policy_tags_table: "policy_tags_metadata.policy_tags"
 
