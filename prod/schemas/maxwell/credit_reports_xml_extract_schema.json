@@ -12,6 +12,11 @@
   {
     "name": "json_col",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8868155541357655605"
+      ]
+    }
   }
 ]

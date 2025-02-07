@@ -1,166 +1,287 @@
 [
-      {
-        "name": "occupation_title",
-        "type": "STRING"
-      },
-      {
-        "name": "civil_status",
-        "type": "INTEGER"
-      },
-      {
-        "name": "home_type",
-        "type": "INTEGER"
-      },
-      {
-        "name": "national_id",
-        "type": "STRING"
-      },
-      {
-        "name": "education_level",
-        "type": "STRING"
-      },
-      {
-        "name": "employer_name",
-        "type": "STRING"
-      },
-      {
-        "name": "employer_phone",
-        "type": "STRING"
-      },
-      {
-        "name": "first_name",
-        "type": "STRING"
-      },
-      {
-        "name": "postal_code",
-        "type": "STRING"
-      },
-      {
-        "name": "email",
-        "type": "STRING"
-      },
-      {
-        "name": "monthly_income_before_tax",
-        "type": "INTEGER"
-      },
-      {
-        "name": "monthly_income_after_tax",
-        "type": "STRING"
-      },
-      {
-        "name": "employment_type",
-        "type": "INTEGER"
-      },
-      {
-        "name": "employment_to",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "move_in_date",
-        "type": "STRING"
-      },
-      {
-        "name": "created_at",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "city",
-        "type": "STRING"
-      },
-      {
-        "name": "updated_at",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "id",
-        "type": "INTEGER"
-      },
-      {
-        "name": "last_name",
-        "type": "STRING"
-      },
-      {
-        "name": "spouse_monthly_income_after_tax",
-        "type": "STRING"
-      },
-      {
-        "name": "eu_sanction_validated_at",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "country",
-        "type": "STRING"
-      },
-      {
-        "name": "latest_credit_default",
-        "type": "STRING"
-      },
-      {
-        "name": "home_cost",
-        "type": "INTEGER"
-      },
-      {
-        "name": "customer_id",
-        "type": "INTEGER"
-      },
-      {
-        "name": "num_dependants",
-        "type": "INTEGER"
-      },
-      {
-        "name": "is_politically_exposed",
-        "type": "BOOLEAN"
-      },
-      {
-        "name": "employment_since",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "occupation_category",
-        "type": "STRING"
-      },
-      {
-        "name": "street_address",
-        "type": "STRING"
-      },
-      {
-        "name": "birth_date",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "mobile_phone",
-        "type": "STRING"
-      },
-      {
-        "name": "citizenship",
-        "type": "STRING"
-      },
-      {
-        "name": "military_service_status",
-        "type": "STRING"
-      },
-      {
-        "name": "ts",
-        "type": "INTEGER"
-      },
-      {
-        "name": "timestamp_ts",
-        "type": "DATE"
-      },
-      {
-        "name": "rn",
-        "type": "INTEGER"
-      },
-      {
-        "name": "source",
-        "type": "STRING"
-      },
-      {
-        "name": "xid",
-        "type": "INTEGER"
-      },
-      {
-        "name": "xoffset",
-        "type": "INTEGER"
-      }
-    ]
+  {
+    "name": "occupation_title",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "civil_status",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "home_type",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "national_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/6863647573685228642"
+      ]
+    }
+  },
+  {
+    "name": "education_level",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8132761655497282780"
+      ]
+    }
+  },
+  {
+    "name": "employer_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7425480497601265433"
+      ]
+    }
+  },
+  {
+    "name": "employer_phone",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/614715639179995501"
+      ]
+    }
+  },
+  {
+    "name": "first_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3438195291922151573"
+      ]
+    }
+  },
+  {
+    "name": "postal_code",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8538887370739430117"
+      ]
+    }
+  },
+  {
+    "name": "email",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4190779673109096674"
+      ]
+    }
+  },
+  {
+    "name": "monthly_income_before_tax",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/2492374698945241881"
+      ]
+    }
+  },
+  {
+    "name": "monthly_income_after_tax",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/2076374988680364502"
+      ]
+    }
+  },
+  {
+    "name": "employment_type",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "employment_to",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "move_in_date",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "city",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/2373830726567021255"
+      ]
+    }
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "last_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5998817033341608997"
+      ]
+    }
+  },
+  {
+    "name": "spouse_monthly_income_after_tax",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/6008401323217761973"
+      ]
+    }
+  },
+  {
+    "name": "eu_sanction_validated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "country",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "latest_credit_default",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "home_cost",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "customer_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "num_dependants",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_politically_exposed",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "employment_since",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "occupation_category",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "street_address",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1854858634379404032"
+      ]
+    }
+  },
+  {
+    "name": "birth_date",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/6625321257964193021"
+      ]
+    }
+  },
+  {
+    "name": "mobile_phone",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/6537766512117416136"
+      ]
+    }
+  },
+  {
+    "name": "citizenship",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8001475159894173018"
+      ]
+    }
+  },
+  {
+    "name": "military_service_status",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ts",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "timestamp_ts",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rn",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xid",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xoffset",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

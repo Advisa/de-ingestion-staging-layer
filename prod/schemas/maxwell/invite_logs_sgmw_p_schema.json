@@ -1,58 +1,72 @@
 [
-      {
-        "name": "updated_at",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "comment",
-        "type": "STRING"
-      },
-      {
-        "name": "user_id",
-        "type": "INTEGER"
-      },
-      {
-        "name": "action",
-        "type": "STRING"
-      },
-      {
-        "name": "system",
-        "type": "STRING"
-      },
-      {
-        "name": "id",
-        "type": "INTEGER"
-      },
-      {
-        "name": "invite_id",
-        "type": "INTEGER"
-      },
-      {
-        "name": "created_at",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "ts",
-        "type": "INTEGER"
-      },
-      {
-        "name": "timestamp_ts",
-        "type": "DATE"
-      },
-      {
-        "name": "rn",
-        "type": "INTEGER"
-      },
-      {
-        "name": "source",
-        "type": "STRING"
-      },
-      {
-        "name": "xid",
-        "type": "INTEGER"
-      },
-      {
-        "name": "xoffset",
-        "type": "INTEGER"
-      }
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "comment",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "user_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "action",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "system",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "invite_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ts",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "timestamp_ts",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rn",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xid",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xoffset",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
 ]

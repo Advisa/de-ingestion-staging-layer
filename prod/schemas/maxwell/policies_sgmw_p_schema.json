@@ -1,46 +1,62 @@
 [
-      {
-        "name": "deactivated_at",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "created_at",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "id",
-        "type": "INTEGER"
-      },
-      {
-        "name": "national_id",
-        "type": "STRING"
-      },
-      {
-        "name": "updated_at",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "ts",
-        "type": "INTEGER"
-      },
-      {
-        "name": "timestamp_ts",
-        "type": "DATE"
-      },
-      {
-        "name": "rn",
-        "type": "INTEGER"
-      },
-      {
-        "name": "source",
-        "type": "STRING"
-      },
-      {
-        "name": "xid",
-        "type": "INTEGER"
-      },
-      {
-        "name": "xoffset",
-        "type": "INTEGER"
-      }
-    ]
+  {
+    "name": "deactivated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "national_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/6863647573685228642"
+      ]
+    }
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ts",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "timestamp_ts",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rn",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xid",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xoffset",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

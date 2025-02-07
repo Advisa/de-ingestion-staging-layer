@@ -1,10 +1,21 @@
+data "google_bigquery_tables" "dataset_maxwell" {
+  dataset_id = "maxwell_integration_legacy"
+  project    = var.project_id
+}
+
+
 locals {
   schema_directory = "schemas/maxwell/"
 }
 
+locals {
+  table_names_maxwell = [
+    for table in data.google_bigquery_tables.dataset_maxwell.tables : table.table_id ]
+}
 
-resource "null_resource" "update_table_schema_maxwell_prod" {
-  for_each = toset(local.table_names)
+
+resource "null_resource" "update_table_schema_maxwell_prod_live_go" {
+  for_each = toset(local.table_names_maxwell)
 
   provisioner "local-exec" {
     command = <<EOT
@@ -15,6 +26,6 @@ resource "null_resource" "update_table_schema_maxwell_prod" {
   }
 
   depends_on = [
-    null_resource.generate_schemas_maxwell_prod
+    null_resource.generate_schemas_maxwell_prod_live_go
   ]
 }

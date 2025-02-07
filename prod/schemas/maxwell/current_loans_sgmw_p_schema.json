@@ -1,62 +1,82 @@
 [
-      {
-        "name": "updated_at",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "created_at",
-        "type": "TIMESTAMP"
-      },
-      {
-        "name": "type",
-        "type": "INTEGER"
-      },
-      {
-        "name": "current_loan_draft_id",
-        "type": "INTEGER"
-      },
-      {
-        "name": "id",
-        "type": "INTEGER"
-      },
-      {
-        "name": "applicant_id",
-        "type": "INTEGER"
-      },
-      {
-        "name": "amount",
-        "type": "INTEGER"
-      },
-      {
-        "name": "monthly_payment",
-        "type": "STRING"
-      },
-      {
-        "name": "transfer",
-        "type": "BOOLEAN"
-      },
-      {
-        "name": "ts",
-        "type": "INTEGER"
-      },
-      {
-        "name": "timestamp_ts",
-        "type": "DATE"
-      },
-      {
-        "name": "rn",
-        "type": "INTEGER"
-      },
-      {
-        "name": "source",
-        "type": "STRING"
-      },
-      {
-        "name": "xid",
-        "type": "INTEGER"
-      },
-      {
-        "name": "xoffset",
-        "type": "INTEGER"
-      }
-    ]
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "type",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "current_loan_draft_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "applicant_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amount",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+      ]
+    }
+  },
+  {
+    "name": "monthly_payment",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "transfer",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ts",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "timestamp_ts",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rn",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xid",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xoffset",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]
