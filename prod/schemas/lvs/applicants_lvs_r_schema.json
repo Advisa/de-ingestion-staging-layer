@@ -1,494 +1,529 @@
 [
-    {
-        "fields": [
-            {
-                "mode": "NULLABLE",
-                "name": "created_at",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "monthly_expenses",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "salary_monthly_net",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "salary_monthly_gross",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "applicant_id",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "id",
-                "type": "STRING"
-            }
-        ],
-        "mode": "NULLABLE",
-        "name": "spouse",
-        "type": "RECORD"
-    },
-    {
-        "fields": [
-            {
-                "mode": "NULLABLE",
-                "name": "created_at",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "issuer",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "card_type",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "debt",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "limit",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "applicant_id",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "id",
-                "type": "STRING"
-            }
-        ],
-        "mode": "REPEATED",
-        "name": "cards",
-        "type": "RECORD"
-    },
-    {
+  {
+    "fields": [
+      {
         "mode": "NULLABLE",
         "name": "created_at",
         "type": "STRING"
-    },
-    {
+      },
+      {
         "mode": "NULLABLE",
-        "name": "has_credit_remarks",
-        "type": "BOOLEAN"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "education",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/8956417960342305075"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "is_main_applicant",
-        "type": "BOOLEAN"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "dependents",
+        "name": "monthly_expenses",
         "type": "STRING"
-    },
-    {
+      },
+      {
         "mode": "NULLABLE",
-        "name": "data_id",
+        "name": "salary_monthly_net",
         "type": "STRING"
-    },
-    {
+      },
+      {
         "mode": "NULLABLE",
-        "name": "marital_status",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/8956417960342305075"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "bank_bic",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "adults",
+        "name": "salary_monthly_gross",
         "type": "STRING"
-    },
-    {
+      },
+      {
         "mode": "NULLABLE",
-        "name": "last_name",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "military",
+        "name": "applicant_id",
         "type": "STRING"
-    },
-    {
-        "fields": [
-            {
-                "mode": "NULLABLE",
-                "name": "created_at",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "profession_area",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "profession",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "profession_class",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "is_current",
-                "type": "BOOLEAN"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "start_date",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "id",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "business_id",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "occupation",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "employer",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "end_date",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "applicant_id",
-                "type": "STRING"
-            }
-        ],
-        "mode": "REPEATED",
-        "name": "employments",
-        "type": "RECORD"
-    },
-    {
-        "fields": [
-            {
-                "mode": "NULLABLE",
-                "name": "created_at",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "description",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "issuer",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "amount_monthly",
-                "type": "FLOAT"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "money_type",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "consolidation",
-                "type": "BOOLEAN"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "amount",
-                "type": "FLOAT"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "finance_source",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "finance_type",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "applicant_id",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "id",
-                "type": "STRING"
-            }
-        ],
-        "mode": "REPEATED",
-        "name": "financials",
-        "type": "RECORD"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "has_summer_house",
-        "type": "BOOLEAN"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "is_pep",
-        "type": "BOOLEAN"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "citizenship",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "post_code",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "dob",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/3165510268950134104"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "gender",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "first_name",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "fields": [
-            {
-                "mode": "NULLABLE",
-                "name": "created_at",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "accepted_datetime",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "consent_type",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "applicant_id",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "id",
-                "type": "STRING"
-            }
-        ],
-        "mode": "REPEATED",
-        "name": "consents",
-        "type": "RECORD"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "age",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "phone",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "fields": [
-            {
-                "mode": "NULLABLE",
-                "name": "moving_date",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "property_type",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "created_at",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "property_area",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "residency_type",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "applicant_id",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "id",
-                "type": "STRING"
-            }
-        ],
-        "mode": "REPEATED",
-        "name": "housings",
-        "type": "RECORD"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "email",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "ssn",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "bank_iban",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/2953867959812253753"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "address",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "city",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "is_anonymized",
-        "type": "BOOLEAN"
-    },
-    {
+      },
+      {
         "mode": "NULLABLE",
         "name": "id",
         "type": "STRING"
+      }
+    ],
+    "mode": "NULLABLE",
+    "name": "spouse",
+    "type": "RECORD"
+  },
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "created_at",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "issuer",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "card_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "debt",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "limit",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "applicant_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "cards",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "has_credit_remarks",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "education",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/6608376575111469545"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "is_main_applicant",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "dependents",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "data_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "marital_status",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/4431446724316501430"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bank_bic",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5143724156946537013"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "adults",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "last_name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5998817033341608997"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "military",
+    "type": "STRING"
+  },
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "created_at",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "profession_area",
+        "type": "STRING",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7171368587317656388"
+          ]
+        }
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "profession",
+        "type": "STRING",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1199745607424124840"
+          ]
+        }
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "profession_class",
+        "type": "STRING",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/526497518428814285"
+          ]
+        }
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "is_current",
+        "type": "BOOLEAN"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "start_date",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "business_id",
+        "type": "STRING",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8503996682985551914"
+          ]
+        }
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "occupation",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "employer",
+        "type": "STRING",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/4507853496904095067"
+          ]
+        }
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "end_date",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "applicant_id",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "employments",
+    "type": "RECORD"
+  },
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "created_at",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "description",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "issuer",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "amount_monthly",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "money_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "consolidation",
+        "type": "BOOLEAN"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "amount",
+        "type": "FLOAT",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+          ]
+        }
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "finance_source",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "finance_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "applicant_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "financials",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "has_summer_house",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "is_pep",
+    "type": "BOOLEAN",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/938517285111359883"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "citizenship",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8001475159894173018"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "post_code",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/9107101934449682178"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "dob",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1841188998749619886"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "gender",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5967090950065027761"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "first_name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3438195291922151573"
+      ]
+    }
+  },
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "created_at",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "accepted_datetime",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "consent_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "applicant_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "consents",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "age",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "phone",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/9181862660018028858"
+      ]
+    }
+  },
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "moving_date",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "property_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "created_at",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "property_area",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "residency_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "applicant_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "housings",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "email",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4190779673109096674"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ssn",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7051526824838973807"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bank_iban",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7397601329273246316"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "address",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8404501393127763289"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "city",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/2373830726567021255"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "is_anonymized",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "STRING"
+  }
 ]

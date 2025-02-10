@@ -1,177 +1,177 @@
 [
-    {
-        "mode": "NULLABLE",
-        "name": "order_id",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "pankki",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "pankkikortti",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "muukortti",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "erapaiva",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "lyhennysvapaa",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "viitenro",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "luottoraja",
-        "type": "FLOAT"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "maksuaika",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "kkera",
-        "type": "FLOAT"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "banktimestamp",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "bankidnbr",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "tili",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "asuntolaina",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "opintolaina",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "muulaina",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "lainakulut",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "aslainakulut",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "autolaina",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "korttilaina",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "oplainakulut",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "atlainakulut",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "lklainakulut",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "poismaksu",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "muutlainat",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "mulainakulut",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "master",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "visa",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "vakuutus",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "lainatlkm",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "tarkistus",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "inserted_at",
-        "type": "STRING"
+  {
+    "mode": "NULLABLE",
+    "name": "order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "pankki",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "pankkikortti",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "muukortti",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "erapaiva",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "lyhennysvapaa",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "viitenro",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "luottoraja",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "maksuaika",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "kkera",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "banktimestamp",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bankidnbr",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tili",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7293872225241612745"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "asuntolaina",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "opintolaina",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "muulaina",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "lainakulut",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "aslainakulut",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "autolaina",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "korttilaina",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "oplainakulut",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "atlainakulut",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "lklainakulut",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "poismaksu",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "muutlainat",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "mulainakulut",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "master",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "visa",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "vakuutus",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "lainatlkm",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tarkistus",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
 ]

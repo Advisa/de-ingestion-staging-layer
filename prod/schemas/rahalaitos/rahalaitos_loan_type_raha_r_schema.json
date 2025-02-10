@@ -12,7 +12,12 @@
   {
     "mode": "NULLABLE",
     "name": "name",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",

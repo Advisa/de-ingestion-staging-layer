@@ -1,62 +1,62 @@
 [
-    {
-        "mode": "NULLABLE",
-        "name": "id",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "order_id",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "original_id",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yhtio_id",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "syy",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "korko",
-        "type": "FLOAT"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "paiva",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "hyvaksytty",
-        "type": "FLOAT"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yhtio",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "maksuaika",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "inserted_at",
-        "type": "STRING"
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "original_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yhtio_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "syy",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "korko",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "paiva",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "hyvaksytty",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yhtio",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "maksuaika",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
 ]

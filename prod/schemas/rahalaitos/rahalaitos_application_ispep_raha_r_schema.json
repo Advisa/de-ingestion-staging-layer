@@ -7,7 +7,12 @@
   {
     "mode": "NULLABLE",
     "name": "isPep",
-    "type": "INTEGER"
+    "type": "INTEGER",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/938517285111359883"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",

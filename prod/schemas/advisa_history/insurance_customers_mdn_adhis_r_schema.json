@@ -1,187 +1,257 @@
 [
-    {
-        "mode": "NULLABLE",
-        "name": "filename",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_id",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_type",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_organisation_name",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_organisation_number",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "partner_id",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_first_name",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_last_name",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_gender",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_default_payment_provider",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_default_payment_method",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_default_payment_instrument",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_address",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_address2",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_postal_code",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_city",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_state",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_country_code",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_country_name",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_birth_date",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_ssn",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7067046475220860351/policyTags/8498648355093010520"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_phone",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7067046475220860351/policyTags/6890359859437494579"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_phone_mobile",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_email",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7067046475220860351/policyTags/5027538125987485593"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_passport_number",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_passport_expiration_date",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_passport_issuance_country_code",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_passport_issuance_country_name",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "custom_id_field",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "custom_partner_field",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "custom_partner_field2",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_added_datetime",
-        "type": "TIMESTAMP"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_edited_datetime",
-        "type": "TIMESTAMP"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "__imported_at",
-        "type": "TIMESTAMP"
+  {
+    "mode": "NULLABLE",
+    "name": "filename",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_organisation_name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/329906415772295222"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_organisation_number",
+    "type": "INTEGER",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1728219938699009931"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "partner_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_first_name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5824688680213173938"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_last_name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4763436523527527963"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_gender",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_default_payment_provider",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_default_payment_method",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_default_payment_instrument",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_address",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1633009317526254565"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_address2",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/2266606811054504985"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_postal_code",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1710768618771408784"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_city",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3166173652928611319"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_state",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7094720081026392513"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_country_code",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8755139895642727524"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_country_name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3970809602749897195"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_birth_date",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_ssn",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/2531213695188202976"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_phone",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4852116443936997356"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_phone_mobile",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_email",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8900944629595907796"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_passport_number",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3702254044053173233"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_passport_expiration_date",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_passport_issuance_country_code",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5695480737287056737"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_passport_issuance_country_name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7762607542842849463"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "custom_id_field",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "custom_partner_field",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "custom_partner_field2",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_added_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_edited_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "__imported_at",
+    "type": "TIMESTAMP"
+  }
 ]

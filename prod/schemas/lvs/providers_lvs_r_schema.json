@@ -1,233 +1,243 @@
 [
-    {
+  {
+    "mode": "NULLABLE",
+    "name": "class_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "product_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_esign",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "hide_customer_shortinfo",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_shortinfo",
+    "type": "STRING"
+  },
+  {
+    "fields": [
+      {
         "mode": "NULLABLE",
-        "name": "class_name",
+        "name": "preapproved_loanamount_txt",
         "type": "STRING"
-    },
-    {
+      }
+    ],
+    "mode": "NULLABLE",
+    "name": "json_data",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_contactinfo",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/1442195305043274617"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "logofile",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_email",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8900944629595907796"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ip",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "password",
+    "type": "STRING"
+  },
+  {
+    "mode": "REPEATED",
+    "name": "cpl_rules",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "slug",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "customer_phone",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4852116443936997356"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "user",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "api_version",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "old_prefix",
+    "type": "STRING"
+  },
+  {
+    "fields": [
+      {
         "mode": "NULLABLE",
-        "name": "product_type",
+        "name": "provider",
         "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_esign",
-        "type": "BOOLEAN"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "hide_customer_shortinfo",
-        "type": "BOOLEAN"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_shortinfo",
-        "type": "STRING"
-    },
-    {
-        "fields": [
-            {
-                "mode": "NULLABLE",
-                "name": "preapproved_loanamount_txt",
-                "type": "STRING"
-            }
-        ],
+      },
+      {
         "mode": "NULLABLE",
         "name": "json_data",
-        "type": "RECORD"
-    },
-    {
+        "type": "STRING"
+      },
+      {
+        "description": "%E4Y-%m-%d",
         "mode": "NULLABLE",
-        "name": "customer_contactinfo",
+        "name": "validity_ends",
+        "type": "STRING"
+      },
+      {
+        "description": "%E4Y-%m-%d",
+        "mode": "NULLABLE",
+        "name": "validity_starts",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "priority",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "monthly",
+        "type": "BOOLEAN"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "loan_max",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "capped_value",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "app_max",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "bank",
         "type": "STRING",
         "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+          ]
         }
-    },
-    {
+      },
+      {
         "mode": "NULLABLE",
-        "name": "logofile",
+        "name": "type",
         "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_email",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "ip",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "password",
-        "type": "STRING"
-    },
-    {
-        "mode": "REPEATED",
-        "name": "cpl_rules",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "slug",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "customer_phone",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "user",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "api_version",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "name",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "old_prefix",
-        "type": "STRING"
-    },
-    {
-        "fields": [
-            {
-                "mode": "NULLABLE",
-                "name": "provider",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "json_data",
-                "type": "STRING"
-            },
-            {
-                "description": "%E4Y-%m-%d",
-                "mode": "NULLABLE",
-                "name": "validity_ends",
-                "type": "STRING"
-            },
-            {
-                "description": "%E4Y-%m-%d",
-                "mode": "NULLABLE",
-                "name": "validity_starts",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "priority",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "monthly",
-                "type": "BOOLEAN"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "loan_max",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "capped_value",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "app_max",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "bank",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "type",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "id",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "value",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "loan_min",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "brand",
-                "type": "STRING"
-            },
-            {
-                "mode": "NULLABLE",
-                "name": "app_min",
-                "type": "STRING"
-            }
-        ],
-        "mode": "REPEATED",
-        "name": "commissions",
-        "type": "RECORD"
-    },
-    {
+      },
+      {
         "mode": "NULLABLE",
         "name": "id",
         "type": "STRING"
-    },
-    {
+      },
+      {
         "mode": "NULLABLE",
-        "name": "hide_customer_info",
-        "type": "BOOLEAN"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "email",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "url",
+        "name": "value",
         "type": "STRING"
-    },
-    {
+      },
+      {
         "mode": "NULLABLE",
-        "name": "is_active",
-        "type": "BOOLEAN"
+        "name": "loan_min",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "brand",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "app_min",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "commissions",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "hide_customer_info",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "email",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4190779673109096674"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "url",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "is_active",
+    "type": "BOOLEAN"
+  }
 ]

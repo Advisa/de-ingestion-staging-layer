@@ -2,7 +2,12 @@
   {
     "mode": "NULLABLE",
     "name": "USER_LAST_NAME",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/2213337399800769894"
+      ]
+    }
   },
   {
     "description": "%E4Y-%m-%d",
@@ -13,7 +18,12 @@
   {
     "mode": "NULLABLE",
     "name": "USER_FIRST_NAME",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/2536906608234461143"
+      ]
+    }
   },
   {
     "description": "bq-datetime",

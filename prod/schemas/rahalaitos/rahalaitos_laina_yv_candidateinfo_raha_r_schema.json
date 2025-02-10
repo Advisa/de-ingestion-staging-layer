@@ -1,182 +1,182 @@
 [
-    {
-        "mode": "NULLABLE",
-        "name": "yv_order_id",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_etunimi",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_sukunimi",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_osoite",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_postinro",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_kaupunki",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_puhelin",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_tyopuhelin",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_asuu",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_sotu",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_siviilisaaty",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/8078589600687026873"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_tyonantaja",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_tyonantajapuh",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_tyosuhde",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_ytunnus",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_bruttotulot",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_nettotulot",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_tyonalkupvm",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_maaraaikapvm",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_email",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_koulutus",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/3738755145388221461/policyTags/2677304483643846569"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yv_elinkustannukset",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "inserted_at",
-        "type": "STRING"
+  {
+    "mode": "NULLABLE",
+    "name": "yv_order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_etunimi",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8223455317484676046"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_sukunimi",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8864486779901089232"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_osoite",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/4951727479303231826"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_postinro",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/65935253438914772"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_kaupunki",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_puhelin",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_tyopuhelin",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_asuu",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_sotu",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8845249109474988189"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_siviilisaaty",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/9016228568754921630"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_tyonantaja",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_tyonantajapuh",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_tyosuhde",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_ytunnus",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7096807766487053132"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_bruttotulot",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_nettotulot",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_tyonalkupvm",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_maaraaikapvm",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_email",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3410223528870524659"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_koulutus",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5095211408361394220"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yv_elinkustannukset",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
 ]

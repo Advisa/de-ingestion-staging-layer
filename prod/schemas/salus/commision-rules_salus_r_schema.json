@@ -62,7 +62,12 @@
   {
     "mode": "NULLABLE",
     "name": "revenue_share_percent",
-    "type": "FLOAT"
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8807586895720374217"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
@@ -72,31 +77,61 @@
   {
     "mode": "NULLABLE",
     "name": "commission_iq_a",
-    "type": "FLOAT"
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/9049668318568313695"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
     "name": "commission_iq_b",
-    "type": "FLOAT"
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/1317546347564314630"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
     "name": "commission_iq_c",
-    "type": "FLOAT"
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/944449308723351742"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
     "name": "commission_iq_d",
-    "type": "FLOAT"
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/6318793431926689090"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
     "name": "commission_iq_e",
-    "type": "FLOAT"
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/152022143728259999"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
     "name": "commission_iq_f",
-    "type": "FLOAT"
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5283687123813568820"
+      ]
+    }
   }
 ]
