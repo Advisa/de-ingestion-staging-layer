@@ -127,7 +127,8 @@
         "postal_code", 
         "postinro", 
         "yv_postinro", 
-        "zip", 
+        "zip",
+        "zip_code", 
         "postal_area",
         "customer_postal_code"
     ],
