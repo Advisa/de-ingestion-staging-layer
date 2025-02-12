@@ -1,0 +1,28 @@
+select
+CAST(JSON_VALUE(data,'$.updated_at') as TIMESTAMP) AS updated_at,
+CAST(JSON_VALUE(data,'$.applicant_draft_id') as INT64) AS applicant_draft_id,
+CAST(JSON_VALUE(data,'$.client_ip') as STRING) AS client_ip,
+CAST(JSON_VALUE(data,'$.total_loan') as INT64) AS total_loan,
+CAST(JSON_VALUE(data,'$.site_origin') as STRING) AS site_origin,
+CAST(JSON_VALUE(data,'$.credit_check_consent') as STRING) AS credit_check_consent,
+CAST(JSON_VALUE(data,'$.secondary_applicant_draft_id') as INT64) AS secondary_applicant_draft_id,
+CAST(JSON_VALUE(data,'$.secondary_applicant_id') as INT64) AS secondary_applicant_id,
+CAST(JSON_VALUE(data,'$.purpose') as INT64) AS purpose,
+CAST(JSON_VALUE(data,'$.desired_repayment_time') as INT64) AS desired_repayment_time,
+CAST(JSON_VALUE(data,'$.input_source') as STRING) AS input_source,
+CAST(JSON_VALUE(data,'$.created_at') as TIMESTAMP) AS created_at,
+CAST(JSON_VALUE(data,'$.id') as INT64) AS id,
+CAST(case when JSON_VALUE(data,'$.accept_newsletter')='0' then 0 else 1 end as BOOLEAN) AS accept_newsletter,
+CAST(JSON_VALUE(data,'$.bank_account') as STRING) AS bank_account,
+CAST(JSON_VALUE(data,'$.loan_application_id') as INT64) AS loan_application_id,
+CAST(JSON_VALUE(data,'$.deactivated_at') as STRING) AS deactivated_at,
+CAST(JSON_VALUE(data,'$.applicant_id') as STRING) AS applicant_id,
+ts,
+DATE(TIMESTAMP_SECONDS(ts)) timestamp_ts,
+ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc) rn,
+source,
+xid,
+xoffset,
+from `${project_id}.${dataset_id}.event_data_sgmw_r`
+where table='loan_application_drafts'
+QUALIFY rn = 1

@@ -1,0 +1,282 @@
+[
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+      ]
+    }
+  },
+  {
+    "name": "postal_address",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7844209228244700126"
+      ]
+    }
+  },
+  {
+    "name": "minimum_loan_amount",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "invites_batch_key",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "only_last_bid_valid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "supports_account_scraping",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "requirements_email",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/1653663714797657857"
+      ]
+    }
+  },
+  {
+    "name": "creditor_signing_url",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debt_acquittal_exceptions",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "average_time_to_bid_in_seconds",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "only_cap_new_loans",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "arrangement_fee",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payout_to_new_account",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "administration_fee",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "deactivated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "requires_bank_account_on_accept",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "support_updates",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "creditor_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "loan_amount_multiple_of",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "when_to_send_rejects",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debt_letter_delivery_method",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delayed_filter_other_bid_apr_limit",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "maximum_loan_amount",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "repayment_time_multiple_of_in_months",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delay_invites_seconds_self_service",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "decline_old_invite_on_update",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "slug",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "stores_credit_report_num_days",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "average_time_to_payout_in_seconds",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "signing_method",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delayed_filter_apr_limit_only_full_amount",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delay_invites_seconds_advisory",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bids_expiry_time_in_seconds",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "minimum_repayment_time",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "supports_direct_debit",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "maximum_repayment_time",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "current_filter_version_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "repayment_type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "customer_blocked_months",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delayed_filter_no_other_bids",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "invite_expiry_time_in_seconds",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "supports_auto_undo_accept",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "supports_e_invoice",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "application_type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ts",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "timestamp_ts",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rn",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xid",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xoffset",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "bank_account",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bid_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ts",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "timestamp_ts",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xid",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xoffset",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

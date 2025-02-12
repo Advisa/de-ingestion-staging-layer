@@ -54,6 +54,7 @@ def fetch_policy_tags():
     query = f"""
     SELECT taxonomy_id, display_name, policy_tag_id
     FROM `{project_id}.{policy_tags_table}`
+    WHERE taxonomy_id IN ('462501529798891334', '1348545653474742340', '8452725999489655507')
     """
     query_job = client.query(query)
     result = query_job.result()

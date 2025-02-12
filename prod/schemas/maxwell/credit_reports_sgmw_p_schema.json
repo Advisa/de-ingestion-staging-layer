@@ -1,0 +1,287 @@
+[
+  {
+    "name": "template_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "previous_taxed_annual_income",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8684253664922779155"
+      ]
+    }
+  },
+  {
+    "name": "debt_balance",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/1280180439771065051"
+      ]
+    }
+  },
+  {
+    "name": "country",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "national_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/6863647573685228642"
+      ]
+    }
+  },
+  {
+    "name": "applicant_draft_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "has_debt_reconstruction",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "postal_code",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8538887370739430117"
+      ]
+    }
+  },
+  {
+    "name": "minor",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "previous_capital_deficit",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/459119009805722455"
+      ]
+    }
+  },
+  {
+    "name": "taxed_annual_income",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/4640084782433827789"
+      ]
+    }
+  },
+  {
+    "name": "payment_complaint",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "uc_registration_date",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "debt_reconciliation_date",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "secret_address",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/502322662036006619"
+      ]
+    }
+  },
+  {
+    "name": "template_passed",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "temporary_address",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8435288583699953740"
+      ]
+    }
+  },
+  {
+    "name": "capital_deficit",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3855094423986011776"
+      ]
+    }
+  },
+  {
+    "name": "customer_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "street_address",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1854858634379404032"
+      ]
+    }
+  },
+  {
+    "name": "number_of_payment_complaints",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "city",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/2373830726567021255"
+      ]
+    }
+  },
+  {
+    "name": "product_type",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xml",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "first_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3438195291922151573"
+      ]
+    }
+  },
+  {
+    "name": "fetched_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "latest_payment_complaint",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "major_city_inhabitant",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "last_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5998817033341608997"
+      ]
+    }
+  },
+  {
+    "name": "no_visit_address",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "blocked_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unregistered",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "blocked_description",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "number_of_reports_12_months",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "taxed_year",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "previous_taxed_year",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "score",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ts",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "timestamp_ts",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rn",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xid",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "xoffset",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

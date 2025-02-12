@@ -1,0 +1,67 @@
+[
+  {
+    "name": "ts",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "timestamp_ts",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "report_index",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "report_styp",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "report_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "report_pid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "grp_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "grp_key",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "grp_index",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "grp_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "term_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "term_text",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

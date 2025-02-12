@@ -162,12 +162,7 @@
   {
     "name": "employerDoc",
     "type": "BOOLEAN",
-    "mode": "NULLABLE",
-    "policyTags": {
-      "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/4057054980872591736/policyTags/4548969357852407791"
-      ]
-    }
+    "mode": "NULLABLE"
   },
   {
     "name": "retiredPaymentNotice",

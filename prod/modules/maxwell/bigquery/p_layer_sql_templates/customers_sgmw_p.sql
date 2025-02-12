@@ -1,0 +1,27 @@
+select
+CAST(JSON_VALUE(data,'$.created_at') as TIMESTAMP) AS created_at,
+CAST(JSON_VALUE(data,'$.street_address') as STRING) AS street_address,
+CAST(JSON_VALUE(data,'$.mobile_phone') as STRING) AS mobile_phone,
+CAST(JSON_VALUE(data,'$.move_in_date') as TIMESTAMP) AS move_in_date,
+CAST(JSON_VALUE(data,'$.updated_at') as TIMESTAMP) AS updated_at,
+CAST(case when JSON_VALUE(data,'$.marked_for_delete')='0' then 0 else 1 end as BOOLEAN) AS marked_for_delete,
+CAST(JSON_VALUE(data,'$.country') as STRING) AS country,
+CAST(JSON_VALUE(data,'$.id') as INT64) AS id,
+CAST(JSON_VALUE(data,'$.latest_credit_check_done_at') as TIMESTAMP) AS latest_credit_check_done_at,
+CAST(JSON_VALUE(data,'$.email') as STRING) AS email,
+CAST(JSON_VALUE(data,'$.postal_code') as STRING) AS postal_code,
+CAST(case when JSON_VALUE(data,'$.birth_date')='0000-00-00 00:00:00' then '1900-01-01 00:00:00' else JSON_VALUE(data,'$.birth_date') end as TIMESTAMP) AS birth_date,
+CAST(JSON_VALUE(data,'$.last_name') as STRING) AS last_name,
+CAST(case when JSON_VALUE(data,'$.valid_national_id')='0' then 0 else 1 end as BOOLEAN) AS valid_national_id,
+CAST(JSON_VALUE(data,'$.city') as STRING) AS city,
+CAST(JSON_VALUE(data,'$.national_id') as STRING) AS national_id,
+CAST(JSON_VALUE(data,'$.first_name') as STRING) AS first_name,
+ts,
+DATE(TIMESTAMP_SECONDS(ts)) timestamp_ts,
+ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc) rn,
+source,
+xid,
+xoffset,
+from `${project_id}.${dataset_id}.event_data_sgmw_r`
+where table='customers'
+QUALIFY rn = 1

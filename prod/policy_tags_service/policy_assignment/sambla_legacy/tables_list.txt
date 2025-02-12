@@ -1,1 +1,1 @@
-users_sambq_p
+sent_events_sgmw_p
