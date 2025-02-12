@@ -27,6 +27,11 @@
   {
     "mode": "NULLABLE",
     "name": "contact_id",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/2223969292766117270"
+      ]
+    }
   }
 ]

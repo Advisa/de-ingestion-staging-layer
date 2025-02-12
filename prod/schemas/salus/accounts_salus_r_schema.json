@@ -1,77 +1,77 @@
 [
-    {
-        "mode": "NULLABLE",
-        "name": "id",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "username",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "created_at",
-        "type": "TIMESTAMP"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "updated_at",
-        "type": "TIMESTAMP"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "name",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "firstname",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "lastname",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "fk_manager",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "status",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "type",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "pub_group",
-        "type": "STRING"
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "username",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7281891383648503186"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "updated_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "firstname",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3438195291922151573"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "lastname",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5998817033341608997"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "fk_manager",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "status",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "pub_group",
+    "type": "STRING"
+  }
 ]

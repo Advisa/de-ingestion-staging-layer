@@ -23,7 +23,7 @@
     "name": "employer",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/4507853496904095067"
       ]
     },
     "type": "STRING"
@@ -32,7 +32,7 @@
     "name": "profession",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1199745607424124840"
       ]
     },
     "type": "STRING"
@@ -43,19 +43,39 @@
   },
   {
     "name": "gross_income",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/2669598821160064075"
+      ]
+    }
   },
   {
     "name": "net_income",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/416145839786831247"
+      ]
+    }
   },
   {
     "name": "gross_income_spouse",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8959222113553357339"
+      ]
+    }
   },
   {
     "name": "net_income_spouse",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3184611772527250122"
+      ]
+    }
   },
   {
     "name": "start_year",

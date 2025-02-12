@@ -132,7 +132,12 @@
   {
     "mode": "NULLABLE",
     "name": "amount",
-    "type": "FLOAT"
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
@@ -147,7 +152,12 @@
   {
     "mode": "NULLABLE",
     "name": "creditscore",
-    "type": "FLOAT"
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8200763276510798683"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
@@ -157,7 +167,12 @@
   {
     "mode": "NULLABLE",
     "name": "bisnode_creditscore",
-    "type": "INTEGER"
+    "type": "INTEGER",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7383053594225766630"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",

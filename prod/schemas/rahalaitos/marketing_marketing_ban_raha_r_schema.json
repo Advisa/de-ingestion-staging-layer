@@ -1,32 +1,32 @@
 [
-    {
-        "mode": "NULLABLE",
-        "name": "id",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "hash",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yhtio",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "end",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "inserted_at",
-        "type": "STRING"
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "hash",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yhtio",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "end",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
 ]

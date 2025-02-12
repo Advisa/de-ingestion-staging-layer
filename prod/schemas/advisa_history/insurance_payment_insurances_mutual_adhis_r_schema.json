@@ -67,7 +67,12 @@
   {
     "mode": "NULLABLE",
     "name": "INCOME_AFTER_TAX",
-    "type": "INTEGER"
+    "type": "INTEGER",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/10462839579038809"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",

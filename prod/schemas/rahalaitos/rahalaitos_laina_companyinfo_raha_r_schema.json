@@ -1,72 +1,72 @@
 [
-    {
-        "mode": "NULLABLE",
-        "name": "order_id",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yritysnimi",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "ytunnus",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "rekpaiva",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "vastuu",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "koko",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "nettotulos",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "liikevaihto",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "tilintarkastaja",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7067046475220860351/policyTags/6787671240828925847"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "tarkastajapuh",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "inserted_at",
-        "type": "STRING"
+  {
+    "mode": "NULLABLE",
+    "name": "order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yritysnimi",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ytunnus",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/2624452233356343246"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "rekpaiva",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "vastuu",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "koko",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "nettotulos",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "liikevaihto",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tilintarkastaja",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/6088913950501142826"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tarkastajapuh",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
 ]

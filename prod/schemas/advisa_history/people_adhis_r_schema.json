@@ -1,52 +1,62 @@
 [
-    {
-        "mode": "NULLABLE",
-        "name": "id",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "created_at_utc",
-        "type": "TIMESTAMP"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "created_at",
-        "type": "TIMESTAMP"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "accepts_newsletters",
-        "type": "BOOLEAN"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "contact_id",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "national_id",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7067046475220860351/policyTags/8498648355093010520"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "national_id_sensitive",
-        "type": "INTEGER"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "password_hash",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "single_use_token",
-        "type": "STRING"
+  {
+    "mode": "NULLABLE",
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at_utc",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "accepts_newsletters",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "contact_id",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/2223969292766117270"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "national_id",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/6863647573685228642"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "national_id_sensitive",
+    "type": "INTEGER",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/2530336514736091887"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "password_hash",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "single_use_token",
+    "type": "STRING"
+  }
 ]

@@ -1,122 +1,122 @@
 [
-    {
-        "mode": "NULLABLE",
-        "name": "order_id",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "ammatti",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "aryhma",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "toimiala",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "tyonantaja",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "tyonantajapuh",
-        "type": "STRING",
-        "policyTags": {
-            "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
-            ]
-        }
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "tyosuhde",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "tyonalkupvm",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "maaraaikapvm",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "edtyonantaja",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "edtyonalkupvm",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "edtyonloppupvm",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "bruttotulot",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "keskeytyminen",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "hallituksenjasen",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "nettotulot",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "yhthenkilo",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "tyotyyppi",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "elinkustannukset",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "bruttoHouse",
-        "type": "STRING"
-    },
-    {
-        "mode": "NULLABLE",
-        "name": "inserted_at",
-        "type": "STRING"
+  {
+    "mode": "NULLABLE",
+    "name": "order_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ammatti",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
     }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "aryhma",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "toimiala",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tyonantaja",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tyonantajapuh",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+      ]
+    }
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tyosuhde",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tyonalkupvm",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "maaraaikapvm",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "edtyonantaja",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "edtyonalkupvm",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "edtyonloppupvm",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bruttotulot",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "keskeytyminen",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "hallituksenjasen",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "nettotulot",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "yhthenkilo",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "tyotyyppi",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "elinkustannukset",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bruttoHouse",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inserted_at",
+    "type": "STRING"
+  }
 ]

@@ -72,7 +72,12 @@
   {
     "mode": "NULLABLE",
     "name": "amount",
-    "type": "INTEGER"
+    "type": "INTEGER",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",

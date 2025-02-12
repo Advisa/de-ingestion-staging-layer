@@ -42,12 +42,22 @@
   {
     "mode": "NULLABLE",
     "name": "user_first_name",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/2536906608234461143"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
     "name": "user_last_name",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/2213337399800769894"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
