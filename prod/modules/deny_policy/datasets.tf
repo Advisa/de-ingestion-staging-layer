@@ -1,5 +1,5 @@
 variable "datasets" {
-  default = ["deny_policy_go_live_test"]
+  default = ["sambla_group_data_stream","sambla_group_data_stream_fi","sambla_group_data_stream_no","sambla_new_mongodb"]
 }
 
 locals {
@@ -7,7 +7,7 @@ locals {
 }
 
 # Create a null_resource for each dataset
-resource "null_resource" "apply_tags_prod_test" {
+resource "null_resource" "apply_tags_prod_go_live_final" {
   for_each = toset(var.datasets) # Iterate over the list of datasets
 
   provisioner "local-exec" {
