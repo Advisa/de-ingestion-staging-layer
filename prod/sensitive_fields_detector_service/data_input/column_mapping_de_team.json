@@ -69,7 +69,8 @@
         "birthday"
     ],
     "gender": [
-        "sex"
+        "sex",
+        "customer_gender"
     ],
     "net_income": [
         "amount",
@@ -127,7 +128,8 @@
         "postal_code", 
         "postinro", 
         "yv_postinro", 
-        "zip", 
+        "zip",
+        "zip_code", 
         "postal_area",
         "customer_postal_code"
     ],
