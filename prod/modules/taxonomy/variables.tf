@@ -12,7 +12,7 @@ variable "region" {
 variable "policy_dataset_id" {
   description = "The dataset name for policy tags metadata tables"
   type        = string
-  default = "sambla-data-staging-compliance.policy_tags_metadata"
+  default = "policy_tags_metadata"
 
   
 }
