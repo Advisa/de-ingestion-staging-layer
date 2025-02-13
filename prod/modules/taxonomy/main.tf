@@ -64,6 +64,10 @@ resource "google_bigquery_table" "taxonomy_bq_table" {
     # must to define a schema when we create a table
     schema = file("${local.root_schema_path}/taxonomy_schema.json")
     depends_on = [ google_storage_bucket_object.taxonomy_csv_file, google_bigquery_dataset.policy_tags_dataset]
+    # Uncomment this if csv file content is changed
+    lifecycle {
+      ignore_changes = [ schema ]
+    }
 }
 
 resource "google_bigquery_table" "policy_tags_bq_table" {
@@ -83,4 +87,8 @@ resource "google_bigquery_table" "policy_tags_bq_table" {
     # must to define a schema when we create a table
     schema = file("${local.root_schema_path}/policy_tags_schema.json")
     depends_on = [ google_storage_bucket_object.policy_tags_csv_file,google_bigquery_dataset.policy_tags_dataset]
+    # Uncomment this if csv file content is changed
+    lifecycle {
+      ignore_changes = [ schema ]
+    }
 }

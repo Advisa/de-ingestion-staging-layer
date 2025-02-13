@@ -9,3 +9,10 @@ variable "region" {
   type        = string
 }
 
+variable "policy_dataset_id" {
+  description = "The dataset name for policy tags metadata tables"
+  type        = string
+  default = "policy_tags_metadata"
+
+  
+}
