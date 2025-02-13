@@ -49,7 +49,7 @@ ce.occupation as employment_occupation,
 ce.employer as employer,
 ce.end_date as employment_end_date,
 from 
-`sambla-data-staging-compliance.lvs_integration_legacy.applicants_lvs_r` c
+`${project_id}.${dataset_id}.applicants_lvs_r` c
 left join unnest(c.housings) ch on c.id = ch.applicant_id
 left join unnest(c.employments) ce on c.id = ce.applicant_id
 where true

@@ -13,6 +13,6 @@ cf.amount as  financial_amount,
 cf.finance_source as  financial_finance_source,
 cf.finance_type as  financial_finance_type
 from 
-`sambla-data-staging-compliance.lvs_integration_legacy.applicants_lvs_r` c
+`${project_id}.${dataset_id}.applicants_lvs_r` c
 left join unnest(c.financials) cf on c.id = cf.applicant_id
 where true

@@ -9,5 +9,5 @@ cc.card_type as card_type,
 cc.debt as card_debt,
 cc.limit as card_limit,
 from 
-`sambla-data-staging-compliance.lvs_integration_legacy.applicants_lvs_r` c
+`${project_id}.${dataset_id}.applicants_lvs_r` c
 left join unnest(c.cards) cc on c.id = cc.applicant_id

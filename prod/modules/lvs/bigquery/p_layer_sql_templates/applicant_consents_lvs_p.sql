@@ -7,6 +7,6 @@ timestamp(cco.created_at) as consent_created_at,
 cco.accepted_datetime as consent_accepted_at,
 cco.consent_type as consent_type
 from 
-`sambla-data-staging-compliance.lvs_integration_legacy.applicants_lvs_r` c
+`${project_id}.${dataset_id}.applicants_lvs_r` c
 left join unnest(c.consents) cco on c.id = cco.applicant_id 
 where true

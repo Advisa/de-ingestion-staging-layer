@@ -80,7 +80,7 @@ resource "google_bigquery_job" "load_job_to_applications" {
 # Run SQL queries from templates to create the tables
 resource "google_bigquery_job" "p_layer_tables_execute_sql" {
   for_each    = toset(var.sql_templates)
-  job_id      = "create_${replace(each.key, ".sql", "")}_p_layer_tables"
+  job_id      = "create_${replace(each.key, ".sql", "")}_layer_tables_prod_live"
   project     = var.project_id
   location    = "europe-north1"
 
