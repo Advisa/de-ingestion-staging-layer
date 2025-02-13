@@ -37,6 +37,27 @@ resource "google_project_iam_binding" "project_permissions_bq_job_user" {
   }          
 }
 
+# Provides permissions to consume policy tags
+resource "google_project_iam_binding" "project_permissions_datacatalog_admin" {
+  project    = var.project_id
+  role               = "roles/datacatalog.admin" 
+  members = [
+    "serviceAccount:${local.service_account}",
+    "serviceAccount:data-flow-pipeline@data-domain-data-warehouse.iam.gserviceaccount.com"
+  ]  
+}
+
+# Provides permissions to consume policy tags
+resource "google_project_iam_binding" "project_permissions_taxonomy_admin" {
+  project    = var.project_id
+  role               = "roles/dataplex.taxonomyAdmin" 
+  members = [
+    "serviceAccount:${local.service_account}",
+    "serviceAccount:data-flow-pipeline@data-domain-data-warehouse.iam.gserviceaccount.com"
+  ]  
+}
+
+
 # Provides permissions to masked read access to columns associated with a data policy.
 resource "google_project_iam_binding" "project_permissions_fine_grained_reader" {
   project    = var.project_id
