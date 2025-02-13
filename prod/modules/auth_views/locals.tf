@@ -1,8 +1,8 @@
 # Define a local variable
 locals {
  
-  schema_table_queries = tomap({
-    for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping.txt"))) :
+  lvs_schema_table_queries = tomap({
+    for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping_lvs.txt"))) :
     "${split("|", line)[0]}.${split("|", line)[1]}" => {
       schema = split("|", line)[0]
       table  = split("|", line)[1]
