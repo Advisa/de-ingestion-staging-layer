@@ -1,0 +1,42 @@
+[
+  {
+    "name": "data_id",
+    "type": "STRING"
+  },
+  {
+    "name": "incremental_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "log_id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "state",
+    "type": "INTEGER"
+  },
+  {
+    "name": "application",
+    "type": "STRING"
+  },
+  {
+    "name": "bank_id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "timestamp",
+    "type": "STRING"
+  },
+  {
+    "name": "offer_id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "offer",
+    "type": "STRING"
+  }
+]

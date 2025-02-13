@@ -75,3 +75,35 @@ resource "google_bigquery_job" "load_job_to_applications" {
     }
 
   }
+
+
+# Run SQL queries from templates to create the tables
+resource "google_bigquery_job" "p_layer_tables_execute_sql" {
+  for_each    = toset(var.sql_templates)
+  job_id      = "create_${replace(each.key, ".sql", "")}_p_layer_tables"
+  project     = var.project_id
+  location    = "europe-north1"
+
+
+    query {
+      query  = templatefile("${path.module}/p_layer_sql_templates/${each.key}", {
+        project_id = var.project_id
+        dataset_id = google_bigquery_dataset.lvs_dataset.dataset_id
+      })
+
+      destination_table {
+      project_id = var.project_id
+      dataset_id = google_bigquery_dataset.lvs_dataset.dataset_id
+      table_id   = "${replace(each.key, ".sql", "")}"
+  }
+
+      use_legacy_sql = false
+      write_disposition = "WRITE_TRUNCATE"
+    }
+    depends_on = [
+    google_bigquery_table.applicants_r,
+    google_bigquery_table.applications_r,
+    google_bigquery_table.offers,
+    google_bigquery_table.providers
+  ]
+  }

@@ -1,0 +1,298 @@
+[
+  {
+    "name": "data_id",
+    "type": "STRING"
+  },
+  {
+    "name": "applicant_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "applicant_id",
+    "type": "STRING"
+  },
+  {
+    "name": "is_main_applicant",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "first_name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3438195291922151573"
+      ]
+    }
+  },
+  {
+    "name": "last_name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5998817033341608997"
+      ]
+    }
+  },
+  {
+    "name": "gender",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5967090950065027761"
+      ]
+    }
+  },
+  {
+    "name": "dob",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1841188998749619886"
+      ]
+    }
+  },
+  {
+    "name": "age",
+    "type": "STRING"
+  },
+  {
+    "name": "phone",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/9181862660018028858"
+      ]
+    }
+  },
+  {
+    "name": "email",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4190779673109096674"
+      ]
+    }
+  },
+  {
+    "name": "ssn",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7051526824838973807"
+      ]
+    }
+  },
+  {
+    "name": "marital_status",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/4431446724316501430"
+      ]
+    }
+  },
+  {
+    "name": "dependents",
+    "type": "STRING"
+  },
+  {
+    "name": "city",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/2373830726567021255"
+      ]
+    }
+  },
+  {
+    "name": "post_code",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/9107101934449682178"
+      ]
+    }
+  },
+  {
+    "name": "address",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8404501393127763289"
+      ]
+    }
+  },
+  {
+    "name": "education",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/6608376575111469545"
+      ]
+    }
+  },
+  {
+    "name": "citizenship",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8001475159894173018"
+      ]
+    }
+  },
+  {
+    "name": "has_summer_house",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "is_pep",
+    "type": "BOOLEAN",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/938517285111359883"
+      ]
+    }
+  },
+  {
+    "name": "military",
+    "type": "STRING"
+  },
+  {
+    "name": "adults",
+    "type": "STRING"
+  },
+  {
+    "name": "bank_bic",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5143724156946537013"
+      ]
+    }
+  },
+  {
+    "name": "bank_iban",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7397601329273246316"
+      ]
+    }
+  },
+  {
+    "name": "has_credit_remarks",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "is_anonymized",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "spouse_id",
+    "type": "STRING"
+  },
+  {
+    "name": "spouse_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "spouse_monthly_expenses",
+    "type": "STRING"
+  },
+  {
+    "name": "spouse_salary_monthly_net",
+    "type": "STRING"
+  },
+  {
+    "name": "spouse_salary_monthly_gross",
+    "type": "STRING"
+  },
+  {
+    "name": "housing_id",
+    "type": "STRING"
+  },
+  {
+    "name": "housing_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "housing_moving_date",
+    "type": "STRING"
+  },
+  {
+    "name": "housing_property_type",
+    "type": "STRING"
+  },
+  {
+    "name": "housing_property_area",
+    "type": "STRING"
+  },
+  {
+    "name": "housing_residency_type",
+    "type": "STRING"
+  },
+  {
+    "name": "employment_id",
+    "type": "STRING"
+  },
+  {
+    "name": "employment_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "employment_area",
+    "type": "STRING"
+  },
+  {
+    "name": "employment_profession",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5932609567272540860"
+      ]
+    }
+  },
+  {
+    "name": "employment_profession_class",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/4281468088345391380"
+      ]
+    }
+  },
+  {
+    "name": "is_current_employment",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "employment_start_date",
+    "type": "STRING"
+  },
+  {
+    "name": "employment_business_id",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7982079890432511702"
+      ]
+    }
+  },
+  {
+    "name": "employment_occupation",
+    "type": "STRING"
+  },
+  {
+    "name": "employer",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/4507853496904095067"
+      ]
+    }
+  },
+  {
+    "name": "employment_end_date",
+    "type": "STRING"
+  }
+]

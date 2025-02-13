@@ -1,0 +1,71 @@
+[
+  {
+    "name": "provider",
+    "type": "STRING"
+  },
+  {
+    "name": "json_data",
+    "type": "STRING"
+  },
+  {
+    "name": "validity_ends",
+    "type": "STRING"
+  },
+  {
+    "name": "validity_starts",
+    "type": "STRING"
+  },
+  {
+    "name": "priority",
+    "type": "STRING"
+  },
+  {
+    "name": "monthly",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "loan_max",
+    "type": "STRING"
+  },
+  {
+    "name": "capped_value",
+    "type": "STRING"
+  },
+  {
+    "name": "app_max",
+    "type": "STRING"
+  },
+  {
+    "name": "bank",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+      ]
+    }
+  },
+  {
+    "name": "type",
+    "type": "STRING"
+  },
+  {
+    "name": "id",
+    "type": "STRING"
+  },
+  {
+    "name": "value",
+    "type": "STRING"
+  },
+  {
+    "name": "loan_min",
+    "type": "STRING"
+  },
+  {
+    "name": "brand",
+    "type": "STRING"
+  },
+  {
+    "name": "app_min",
+    "type": "STRING"
+  }
+]

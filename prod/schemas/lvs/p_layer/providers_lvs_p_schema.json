@@ -1,0 +1,137 @@
+[
+  {
+    "name": "cpl_approved",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "cpl_api_approved",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "cpl_paid",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "class_name",
+    "type": "STRING"
+  },
+  {
+    "name": "product_type",
+    "type": "STRING"
+  },
+  {
+    "name": "customer_esign",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "hide_customer_shortinfo",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "customer_shortinfo",
+    "type": "STRING"
+  },
+  {
+    "fields": [
+      {
+        "name": "preapproved_loanamount_txt",
+        "type": "STRING"
+      }
+    ],
+    "name": "json_data",
+    "type": "RECORD"
+  },
+  {
+    "name": "customer_contactinfo",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/1442195305043274617"
+      ]
+    }
+  },
+  {
+    "name": "logofile",
+    "type": "STRING"
+  },
+  {
+    "name": "customer_email",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8900944629595907796"
+      ]
+    }
+  },
+  {
+    "name": "ip",
+    "type": "STRING"
+  },
+  {
+    "name": "password",
+    "type": "STRING"
+  },
+  {
+    "name": "slug",
+    "type": "STRING"
+  },
+  {
+    "name": "customer_phone",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4852116443936997356"
+      ]
+    }
+  },
+  {
+    "name": "user",
+    "type": "STRING"
+  },
+  {
+    "name": "api_version",
+    "type": "STRING"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+      ]
+    }
+  },
+  {
+    "name": "old_prefix",
+    "type": "STRING"
+  },
+  {
+    "name": "id",
+    "type": "STRING"
+  },
+  {
+    "name": "hide_customer_info",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "email",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4190779673109096674"
+      ]
+    }
+  },
+  {
+    "name": "url",
+    "type": "STRING"
+  },
+  {
+    "name": "is_active",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "dedupe_date",
+    "type": "DATE"
+  }
+]
