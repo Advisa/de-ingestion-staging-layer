@@ -6,13 +6,13 @@ from google.auth import default
 SERVICE_ACCOUNT_KEY_PATH = ""
 
 PROJECT_ID = "data-domain-data-warehouse"
-DATASET_ID = "sambla_group_data_stream_deny"
-TABLE_ID = "advisory_service_customer_comments_sgds_r"
+DATASET_ID = "sambla_new_mongodb"
+TABLE_ID = "applications_mongodb_fi_r"
 
 def initialize_bigquery_client():
     #credentials, project = default()
     credentials = service_account.Credentials.from_service_account_file(
-      SERVICE_ACCOUNT_KEY_PATH
+    SERVICE_ACCOUNT_KEY_PATH
     )
     client = bigquery.Client(credentials=credentials, project=PROJECT_ID)
     return client

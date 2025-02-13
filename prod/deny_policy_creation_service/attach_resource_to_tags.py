@@ -2,9 +2,38 @@ import json
 import requests
 from google.auth.transport.requests import Request
 from google.auth import default
+import time
 import os
 import openpyxl
 from openpyxl.styles import PatternFill
+
+def request_with_retry(method, url, headers, params=None, data=None, retries=5):
+    """Makes an HTTP request with retries and exponential backoff."""
+    for attempt in range(retries):
+        try:
+            if method == "GET":
+                response = requests.get(url, headers=headers,params=params, timeout=10)
+            elif method == "PUT":
+                response = requests.put(url, headers=headers, data=data, timeout=10)
+            elif method == "PATCH":
+                response = requests.patch(url, headers=headers, data=data, timeout=10)
+            else:
+                raise ValueError("Unsupported HTTP method")
+
+            if response.status_code in [200, 201, 204]:
+                return response  # ✅ Success
+            else:
+                print(f"Request failed ({response.status_code}), retrying in {2 ** attempt} seconds...")
+                time.sleep(2 ** attempt)  # ✅ Exponential backoff
+        except requests.exceptions.ConnectionError as e:
+            print(f"Connection error: {e}, retrying in {2 ** attempt} seconds ({attempt+1}/{retries})...")
+            time.sleep(2 ** attempt)
+        except requests.exceptions.Timeout:
+            print(f"Request timed out, retrying in {2 ** attempt} seconds ({attempt+1}/{retries})...")
+            time.sleep(2 ** attempt)
+
+    print("Failed after multiple retries.")
+    return None
 
 class BigQueryTagManager:
     def __init__(self, project_id, dataset_id, tag_key_id, tag_value_id):
@@ -29,7 +58,8 @@ class BigQueryTagManager:
         dataset_url = f"https://bigquery.googleapis.com/bigquery/v2/projects/{self.project_id}/datasets/{self.dataset_id}"
         dataset_body = {"resourceTags": self.resource_tags}
 
-        response = requests.put(dataset_url, headers=self.headers, data=json.dumps(dataset_body))
+        #response = requests.put(dataset_url, headers=self.headers, data=json.dumps(dataset_body))
+        response = request_with_retry("PUT", dataset_url, headers=self.headers, data=json.dumps(dataset_body))
         if response.status_code == 200:
             print(f"Tags updated successfully on dataset {self.dataset_id}: {response.json()}")
         else:
@@ -44,7 +74,8 @@ class BigQueryTagManager:
         while True:
             # Add pageToken to the request if it exists (for pagination)
             params = {'pageToken': page_token} if page_token else {}
-            response = requests.get(tables_url, headers=self.headers, params=params)
+            #response = requests.get(tables_url, headers=self.headers, params=params)
+            response = request_with_retry("GET", tables_url, headers=self.headers,params=params)
 
             if response.status_code == 200:
                 response_data = response.json()
@@ -63,7 +94,8 @@ class BigQueryTagManager:
     def fetch_table_metadata(self, table_id):
         """Fetch the metadata of a specific table."""
         table_url = f"https://bigquery.googleapis.com/bigquery/v2/projects/{self.project_id}/datasets/{self.dataset_id}/tables/{table_id}"
-        response = requests.get(table_url, headers=self.headers)
+        #response = requests.get(table_url, headers=self.headers)
+        response = request_with_retry("GET", table_url, headers=self.headers)
 
         if response.status_code == 200:
             return response.json()
@@ -124,13 +156,21 @@ class BigQueryTagManager:
         """Apply tags to each table in the dataset."""
         for table_id in tables:
             table_url = f"https://bigquery.googleapis.com/bigquery/v2/projects/{self.project_id}/datasets/{self.dataset_id}/tables/{table_id}"
-            response = requests.get(table_url, headers=self.headers)
+            #response = requests.get(table_url, headers=self.headers)
+            response = request_with_retry("GET", table_url, headers=self.headers)
 
             if response.status_code == 200:
                 table_metadata = response.json()
-                table_metadata["resourceTags"] = self.resource_tags
+                existing_tags = table_metadata.get("resourceTags", {})
 
+                # Check if the current tags already match the desired tags
+                if existing_tags == self.resource_tags:
+                    print(f"Skipping {table_id}, tags already applied.")
+                    continue  # Skip if tags match
+                
+                table_metadata["resourceTags"] = self.resource_tags
                 patch_response = requests.patch(table_url, headers=self.headers, data=json.dumps(table_metadata))
+                patch_response = request_with_retry("PATCH", table_url, headers=self.headers, data=json.dumps(table_metadata))
                 if patch_response.status_code == 200:
                     print(f"Tags updated successfully on table {table_id}: {patch_response.json()}")
                 else:
