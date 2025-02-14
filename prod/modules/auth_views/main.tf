@@ -31,7 +31,7 @@ resource "google_bigquery_table" "lvs_auth_views_test" {
 
   dataset_id         = "auth_view_testing"
   table_id           = "view_${each.value.table}"
-  deletion_protection = true
+  deletion_protection = false
 
   view {
     query           = each.value.query

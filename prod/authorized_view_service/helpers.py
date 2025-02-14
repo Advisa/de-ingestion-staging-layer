@@ -21,6 +21,7 @@ class AuthorizedViewService:
         self.compliance_project = self.authorized_view_config.get('compliance_project')
         self.base_folder = self.authorized_view_config.get('base_folder')
         self.generate_encrypted  = self.authorized_view_config.get('generate_encrypted')
+        self.gdpr_vault_table  = self.authorized_view_config.get('gdpr_vault_table')
 
         # Initialize the current path where this service is located
         project_root = Path(__file__).resolve().parent.parent  
@@ -124,8 +125,8 @@ class AuthorizedViewService:
             encryption_queries.append(f"{schema}|{table}|{encryption_query}")
             self.processed_tables.add(f"{schema}|{table}") 
 
-        # Save the encryption queries to a file
-        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_new.txt')
+        # Save the encryption queries to a file (for now it saves to lvs, please change this later)
+        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_lvs.txt')
         with open(mapping_file_path, 'w') as f:
             for eq in encryption_queries:
                 f.write(eq + "\n")
@@ -172,7 +173,8 @@ class AuthorizedViewService:
             # Render and execute the encryption query template
             encrypted_query_template = self.encryption_query_template.render(
                 compliance_project=self.compliance_project,
-                raw_layer_project=self.raw_layer_project
+                raw_layer_project=self.raw_layer_project,
+                gdpr_vault_table=self.gdpr_vault_table
             )
             self.generate_encryption_queries(encrypted_query_template)
 

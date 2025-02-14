@@ -18,8 +18,8 @@ table_columns_filtered AS (
       * 
     FROM table_columns 
     WHERE 
-      -- discard the raw layer tables that is not use (since p layer tables are established)
-      table_name NOT IN ('applications_lvs', 'applicants_lvs_r', 'providers_lvs_r')
+      -- discard the raw layer tables that is not in use 
+      table_name NOT LIKE '%_lvs_r'
 ),
 
 
@@ -196,7 +196,7 @@ final AS (
         ', raw.* EXCEPT(',
         STRING_AGG(DISTINCT sensitive_field, ', '),
         ') FROM `data_with_ssn_rules` raw ',
-        'LEFT JOIN `{{compliance_project}}.compilance_database.gdpr_vault_rudolf` VAULT ',
+        'LEFT JOIN `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` VAULT ',
         'ON CAST(raw.ssn_clean AS STRING) = VAULT.ssn'
       )
 
