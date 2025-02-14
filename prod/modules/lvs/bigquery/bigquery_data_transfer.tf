@@ -80,7 +80,7 @@ resource "google_bigquery_job" "load_job_to_applications" {
 # Run SQL queries from templates to create the tables
 resource "google_bigquery_job" "p_layer_tables_execute_sql" {
   for_each    = toset(var.sql_templates)
-  job_id      = "create_${replace(each.key, ".sql", "")}_layer_tables_prod_live"
+  job_id      = "create_${replace(each.key, ".sql", "")}_layer_table_dev"
   project     = var.project_id
   location    = "europe-north1"
 
@@ -104,6 +104,8 @@ resource "google_bigquery_job" "p_layer_tables_execute_sql" {
     google_bigquery_table.applicants_r,
     google_bigquery_table.applications_r,
     google_bigquery_table.offers,
-    google_bigquery_table.providers
+    google_bigquery_table.providers,
+    google_bigquery_table.clients,
+    google_bigquery_table.credit_remarks
   ]
   }

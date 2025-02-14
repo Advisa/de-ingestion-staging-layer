@@ -1,0 +1,110 @@
+[
+  {
+    "name": "data_id",
+    "type": "STRING"
+  },
+  {
+    "name": "incremental_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "api_approved_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "application",
+    "type": "STRING"
+  },
+  {
+    "name": "user_selected_datetime",
+    "type": "STRING"
+  },
+  {
+    "name": "approved",
+    "type": "FLOAT"
+  },
+  {
+    "name": "api_approved",
+    "type": "FLOAT"
+  },
+  {
+    "name": "badges",
+    "type": "STRING"
+  },
+  {
+    "name": "esign_link",
+    "type": "STRING"
+  },
+  {
+    "name": "bank_id",
+    "type": "STRING"
+  },
+  {
+    "name": "is_new_for_provider",
+    "type": "STRING"
+  },
+  {
+    "name": "paid",
+    "type": "FLOAT"
+  },
+  {
+    "name": "apr",
+    "type": "FLOAT"
+  },
+  {
+    "name": "approved_amount",
+    "type": "FLOAT"
+  },
+  {
+    "name": "approved_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "interest_rate",
+    "type": "FLOAT"
+  },
+  {
+    "name": "administration_fee",
+    "type": "FLOAT"
+  },
+  {
+    "name": "opening_fee",
+    "type": "FLOAT"
+  },
+  {
+    "name": "status",
+    "type": "INTEGER"
+  },
+  {
+    "name": "monthly_payment",
+    "type": "FLOAT"
+  },
+  {
+    "name": "repayment_amount",
+    "type": "FLOAT"
+  },
+  {
+    "name": "repayment_time",
+    "type": "INTEGER"
+  },
+  {
+    "name": "esign_info",
+    "type": "STRING"
+  },
+  {
+    "name": "consolidation_amount",
+    "type": "FLOAT"
+  },
+  {
+    "name": "topup_amount",
+    "type": "FLOAT"
+  },
+  {
+    "name": "esign_txt",
+    "type": "STRING"
+  },
+  {
+    "name": "paid_datetime",
+    "type": "TIMESTAMP"
+  }
+]

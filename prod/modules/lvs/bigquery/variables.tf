@@ -29,6 +29,11 @@ variable "sql_templates" {
     "offer_states_lvs_p.sql",
     "application_commissions_lvs_p.sql",
     "provider_commissions_lvs_p.sql",
-    "applicants_lvs_p.sql"
+    "applicants_lvs_p.sql",
+    "offers_lvs_p.sql",
+    "credit_remarks_lvs_p.sql",
+    "clients_lvs_p.sql",
+    "applications_lvs_p.sql"
+
   ]
 }
