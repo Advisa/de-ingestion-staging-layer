@@ -15,6 +15,7 @@ from raw_data
 
 select distinct
 cast(o.data_id as string) data_id,
+o.incremental_datetime,
 os.* except(data_id)
 from 
 main o
