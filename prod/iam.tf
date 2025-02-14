@@ -153,3 +153,11 @@ resource "google_bigquery_dataset_iam_member" "bigquery_editor" {
   member     = "serviceAccount:${google_service_account.cross_project_sa.email}"
 }
 
+
+# Assign roles in sambla-group-compliance-db project
+resource "google_project_iam_member" "compliance_project_cloud_func_developer" {
+  project  = var.project_id
+  role     = "roles/cloudfunctions.developer"
+  member   = "serviceAccount:gcs-data-handler@sambla-data-staging-compliance.iam.gserviceaccount.com"
+
+}
