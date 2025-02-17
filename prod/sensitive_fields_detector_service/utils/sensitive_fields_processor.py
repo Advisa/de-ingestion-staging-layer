@@ -359,10 +359,6 @@ class SensitiveFieldsProcessor:
 
         if any(keyword in column_lower for keyword in ["ssn", "email", "phone", "national_","name","etunimi","bank_account_number","address","json_col"]):
             return "high", "PII"
-        elif any(keyword in column_lower for keyword in ["name","etunimi"]):
-            return "high", "restricted"
-        elif "bank_account_number" in column_lower:
-            return "high", "confidential"
         elif any(keyword in column_lower for keyword in ["education", "marital_status", "net_income", "ytunnus"]):
             return "medium", "restricted"
         else:
