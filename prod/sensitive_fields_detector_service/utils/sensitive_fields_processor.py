@@ -327,68 +327,9 @@ class SensitiveFieldsProcessor:
             return False  
         
         #these are boolean but we still need them
-        if normalized_column == "is_pep" or normalized_column == "birth_date" or normalized_column == "politicallyexposedperson":
+        if normalized_column in {"is_pep", "birth_date", "politicallyexposedperson", "is_politically_exposed","politically_exposed"}:
             return False
         
-        if isinstance(column_type, str) and column_type.startswith("STRUCT"):
-            struct_fields = SensitiveFieldsProcessor.extract_struct_fields(column_type)  
-            for field in struct_fields:
-                field_type = SensitiveFieldsProcessor.get_column_type(field,lineage_data)  
-                if field_type in ["bool", "boolean", "timestamp"]:
-                    print(f"Excluding {field} due to type: {field_type}")
-                    return True
-
-        if isinstance(column_type, str) and column_type.startswith("ARRAY<STRUCT"):
-            array_struct_fields = SensitiveFieldsProcessor.extract_array_struct_fields(column_type)  
-            for field in array_struct_fields:
-                field_type = SensitiveFieldsProcessor.get_column_type(field,lineage_data)  
-                if field_type in ["bool", "boolean", "timestamp"]:
-                    print(f"Excluding {field} due to type: {field_type}")
-                    return True
-
-        if column_type and column_type.lower() in ["bool", "boolean", "timestamp"]:
-            print(f"Excluding column: {normalized_column} due to type: {column_type}")
-            return True
-
-        return False
-
-    @staticmethod
-    def get_column_type(column, lineage_data):
-        """
-        Retrieve the type of the column from the lineage data.
-        The column name is normalized by splitting by '.' and using the last part to look it up in model_data.
-        """
-        normalized_column = column.split('.')[-1].lower()
-        for model, model_data in lineage_data.items():
-            for col in model_data:
-                normalized_col = col.split('.')[-1].lower()
-                if normalized_column == normalized_col:
-                    column_info = model_data[col]
-                    column_type = column_info.get("source_datatype") or column_info.get("target_datatype")
-                    return column_type
-
-        print(f"Column '{normalized_column}' not found in lineage data.")
-        return None
-
-
-    @staticmethod
-    def is_excluded_column(column, column_type,lineage_data):
-        """
-        Check if a column should be excluded based on its type or name pattern.
-        """
-        normalized_column = column.lower()
-        print(f"Checking exclusion for column: {normalized_column}, Type: {column_type}")
-
-        if normalized_column.startswith(("num_", "hashed_")) or "hashed_" in normalized_column:
-            return True
-
-        if column_type is None:
-            return False  
-
-        #these are boolean but we still need them
-        if normalized_column == "is_pep" or normalized_column == "birth_date" or normalized_column == "politicallyexposedperson":
-            return False
-
         if isinstance(column_type, str) and column_type.startswith("STRUCT"):
             struct_fields = SensitiveFieldsProcessor.extract_struct_fields(column_type)  
             for field in struct_fields:
@@ -416,13 +357,13 @@ class SensitiveFieldsProcessor:
         # [TODO] Implement Dynamic approach Categorize the column based on known sensitivity rules
         column_lower = column.lower()
 
-        if any(keyword in column_lower for keyword in ["ssn", "email", "phone", "national_"]):
+        if any(keyword in column_lower for keyword in ["ssn", "email", "phone", "national_","name","etunimi","bank_account_number","address","json_col"]):
             return "high", "PII"
         elif any(keyword in column_lower for keyword in ["name","etunimi"]):
             return "high", "restricted"
         elif "bank_account_number" in column_lower:
             return "high", "confidential"
-        elif any(keyword in column_lower for keyword in ["education", "address", "marital_status", "net_income", "ytunnus"]):
+        elif any(keyword in column_lower for keyword in ["education", "marital_status", "net_income", "ytunnus"]):
             return "medium", "restricted"
         else:
             return "medium", "restricted"
