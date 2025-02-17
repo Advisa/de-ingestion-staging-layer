@@ -1,27 +1,20 @@
 WITH table_columns AS (
-    -- replace this with your actual query for table columns
- SELECT * FROM `{{raw_layer_project}}.maxwell_integration_legacy`.INFORMATION_SCHEMA.COLUMNS
-UNION ALL 
-SELECT * FROM `{{raw_layer_project}}.lvs_integration_legacy`.INFORMATION_SCHEMA.COLUMNS
-UNION ALL 
-SELECT * FROM `{{raw_layer_project}}.salus_integration_legacy`.INFORMATION_SCHEMA.COLUMNS
-UNION ALL 
-SELECT * FROM `{{raw_layer_project}}.advisa_history_integration_legacy`.INFORMATION_SCHEMA.COLUMNS
---UNION ALL 
---SELECT * FROM `{{raw_layer_project}}.sambla_legacy_integration_legacy`.INFORMATION_SCHEMA.COLUMNS
-UNION ALL 
-SELECT * FROM `{{raw_layer_project}}.rahalaitos_integration_legacy`.INFORMATION_SCHEMA.COLUMNS
+    -- Replace this with your actual query for table columns
+    SELECT * FROM `{{raw_layer_project}}.maxwell_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
+    WHERE TABLE_NAME LIKE '%sgmw_p'
+    UNION ALL 
+    SELECT * FROM `{{raw_layer_project}}.lvs_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS 
+    WHERE table_name NOT LIKE '%_lvs_r'
+    UNION ALL 
+    SELECT * FROM `{{raw_layer_project}}.salus_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
+    UNION ALL 
+    SELECT * FROM `{{raw_layer_project}}.advisa_history_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
+    UNION ALL 
+    SELECT * FROM `{{raw_layer_project}}.sambla_legacy_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS 
+    WHERE TABLE_NAME LIKE '%sambq_p'
+    UNION ALL 
+    SELECT * FROM `{{raw_layer_project}}.rahalaitos_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
 ),
-
-table_columns_filtered AS (
-    SELECT 
-      * 
-    FROM table_columns 
-    WHERE 
-      -- discard the raw layer tables that is not in use 
-      table_name NOT LIKE '%_lvs_r'
-),
-
 
 policy_tags_all AS (
   SELECT *
@@ -59,21 +52,39 @@ policy_tags_pii AS (
   SELECT * FROM policy_tags_pii_parent_tags
 ),
 
-
 sensitive_fields AS (
-  -- Identify non-struct sensitive fields based on policy tags match
-  SELECT
-    r.table_schema,
-    r.table_name,
-    r.column_name,
-    LOWER(REPLACE(r.column_name, "_", "")) AS normalized_column
-  FROM table_columns_filtered r
-  INNER JOIN policy_tags_pii p 
-    ON LOWER(REPLACE(r.column_name, "_", "")) = LOWER(REPLACE(p.display_name, "_", ""))
-  WHERE r.data_type NOT LIKE "STRUCT%" 
-    AND r.data_type NOT LIKE "ARRAY%" 
+    -- Identify non-struct and struct sensitive fields based on policy tag match
+    SELECT
+        r.table_schema,
+        r.table_name,
+        r.column_name,
+        r.field_path,
+        LOWER(REPLACE(
+            CASE 
+                WHEN r.field_path LIKE '%.%' THEN SUBSTR(r.field_path, STRPOS(r.field_path, '.') + 1)
+                ELSE r.field_path
+            END, "_", ""
+        )) AS normalized_column,
+        CASE 
+            WHEN r.field_path LIKE '%.%' THEN TRUE
+            ELSE FALSE
+        END AS is_nested,   
+        COUNT(p.display_name) over (partition by r.column_name) as valid_nested_field, 
+        -- Extract the nested field after the dot (for struct or array fields)
+        CASE 
+            WHEN r.field_path LIKE '%.%' THEN SUBSTR(r.field_path, STRPOS(r.field_path, '.') + 1)
+            ELSE NULL
+        END AS nested_field,
+        p.*
+    FROM table_columns r
+    LEFT JOIN policy_tags_pii p 
+        ON LOWER(REPLACE(
+            CASE 
+                WHEN r.field_path LIKE '%.%' THEN SUBSTR(r.field_path, STRPOS(r.field_path, '.') + 1)
+                ELSE r.field_path
+            END, "_", ""
+        )) = LOWER(REPLACE(p.display_name, "_", ""))
 ),
-
 
 join_keys AS (
   -- Identify join keys for linking tables to VAULT
@@ -92,7 +103,7 @@ join_keys AS (
       OR "yvsotu" IN UNNEST(ARRAY_AGG(normalized_column)),
       TRUE, FALSE
     ) AS is_table_contains_ssn
-  FROM sensitive_fields
+  FROM sensitive_fields 
   GROUP BY table_schema, table_name
 ),
 
@@ -115,86 +126,144 @@ unnested_join_keys AS (
   FROM join_keys, UNNEST(join_keys.join_keys) AS join_key
 ),
 
-
 non_nested_field_encryption AS (
-  -- Encrypt standard fields
-  SELECT
-    table_schema,
-    table_name,
-    STRING_AGG(DISTINCT CONCAT(
-      "CASE WHEN VAULT.uuid IS NOT NULL THEN ",
-      "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(raw.", sensitive_field, " AS STRING), VAULT.uuid)) ",
-      "ELSE CAST(raw.", sensitive_field, " AS STRING) END AS ", sensitive_field
-    )) AS encrypted_fields
-  FROM unnested_join_keys
-  GROUP BY table_schema, table_name
+    -- Encryption logic for non-nested fields
+    SELECT
+        t1.table_schema,
+        t1.table_name,
+        t2.column_name,
+        CONCAT(
+            STRING_AGG(
+                DISTINCT 
+                CASE 
+                    -- If sensitive field exists (i.e. t2.display_name is not null), apply encryption
+                    WHEN t2.display_name IS NOT NULL THEN
+                        CONCAT(
+                            "CASE WHEN VAULT.uuid IS NOT NULL THEN ",
+                            "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(raw.", column_name, " AS STRING), VAULT.uuid)) ",
+                            "ELSE CAST(raw.", column_name, " AS STRING) END AS ", column_name
+                        )
+                END
+            )
+        ) AS encrypted_fields
+    FROM unnested_join_keys AS t1
+    INNER JOIN sensitive_fields AS t2
+        ON t1.sensitive_field = t2.field_path
+    WHERE is_nested = FALSE 
+    GROUP BY t1.table_schema, t1.table_name,t2.column_name
 ),
 
+nested_field_encryption AS (
+    -- Encryption logic for nested fields and only for sambla legacy
+    SELECT
+        t1.table_schema,
+        t1.table_name,
+        t2.column_name,
+        CONCAT(
+            "ARRAY(SELECT STRUCT(",
+            STRING_AGG(
+                DISTINCT 
+                CASE 
+                    WHEN t2.display_name IS NOT NULL THEN
+                        -- Apply encryption logic for sensitive fields (based on display_name)
+                        CONCAT(
+                            "CASE WHEN VAULT.uuid IS NOT NULL THEN ",
+                            "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING), VAULT.uuid)) ",
+                            "ELSE CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING) END AS ", t2.nested_field
+                        )
+                    ELSE
+                        -- If no encryption needed, return the field as is
+                        CONCAT("f_", t2.column_name, ".", t2.nested_field)
+                END,
+                ", "
+            ),
+            ") FROM UNNEST(", t2.column_name, ") AS f_", t2.column_name ,") AS ", t2.column_name
+        ) AS encrypted_fields
+    FROM unnested_join_keys AS t1
+    INNER JOIN sensitive_fields AS t2
+       ON t1.sensitive_field = t2.column_name 
+    WHERE t2.is_nested = TRUE and valid_nested_field > 1 AND t1.table_schema = "sambla_legacy_integration_legacy"
+    GROUP BY t1.table_schema, t1.table_name,t1.sensitive_field, t2.column_name
+),
+
+all_fields_encryption as (
+    SELECT
+    *
+    FROM non_nested_field_encryption 
+    union all
+    SELECT
+    *
+    FROM nested_field_encryption
+),
 
 market_legacystack_mapping AS (
-  SELECT 
-    t1.table_schema,
-    t1.table_name,
-    t2.is_table_contains_ssn,
-    t2.sensitive_field,
-    t2.j_key,
-    t1.encrypted_fields,
-    CASE 
-      -- add cdc source dataset later on
-      WHEN t1.table_schema IN ( 'advisa_history_integration_legacy', 'maxwell_integration_legacy') THEN 'SE'
-      WHEN t1.table_schema IN ('rahalaitos_integration_legacy', 'lvs_integration_legacy') THEN 'FI'
-      ELSE 'OTHER MARKETS'
-    END AS market_identifier
-  FROM 
-    non_nested_field_encryption t1
-  INNER JOIN unnested_join_keys t2 
-  ON t1.table_name = t2.table_name AND t1.table_schema = t2.table_schema
+    SELECT 
+        t1.table_schema,
+        t1.table_name,
+        t2.is_table_contains_ssn,
+        t2.sensitive_field,
+        t2.j_key,
+        t1.encrypted_fields,
+        t1.column_name,
+        CASE 
+            WHEN t1.table_schema IN ('advisa_history_integration_legacy', 'maxwell_integration_legacy') THEN 'SE'
+            WHEN t1.table_schema IN ('rahalaitos_integration_legacy', 'lvs_integration_legacy') THEN 'FI'
+            ELSE 'OTHER MARKETS'
+        END AS market_identifier
+    FROM 
+        all_fields_encryption t1
+    INNER JOIN unnested_join_keys t2 
+    ON t1.table_name = t2.table_name AND t1.table_schema = t2.table_schema and t2.sensitive_field = t1.column_name
 ),
-
 
 final AS (
   -- Construct the final query for each table
   SELECT
-    table_schema,
-    table_name,
-    is_table_contains_ssn,
-    market_identifier,
+    mlm.table_schema,
+    mlm.table_name,
+    mlm.is_table_contains_ssn,
+    mlm.market_identifier,
     CASE 
-      WHEN is_table_contains_ssn THEN CONCAT(
+      WHEN mlm.is_table_contains_ssn THEN CONCAT(
         'WITH data_with_ssn_rules AS (',
         'SELECT ',
         '*, ',
         -- Market-specific logic for SSN extraction
         CASE 
-          WHEN market_identifier = 'OTHER MARKETS' THEN 
+          WHEN mlm.market_identifier = 'OTHER MARKETS' THEN 
           CONCAT(
             'CASE ',
-            'WHEN ', CASE WHEN table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "SE" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT j_key, ', '), ' AS STRING), "[^0-9]", ""), 12) ',
-            'WHEN ', CASE WHEN table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "NO" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT j_key, ', '), ' AS STRING), "[^0-9]", ""), 11) ',
-            'WHEN ', CASE WHEN table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "DK" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT j_key, ', '), ' AS STRING), "[^0-9]", ""), 10) ',
-            'WHEN ', CASE WHEN table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "FI" THEN LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) ' ,
+            'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
+,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "SE" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 12) ',
+            'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
+,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "NO" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 11) ',
+            'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
+,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "DK" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 10) ',
+            'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
+,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "FI" THEN LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) ' ,
             'END AS ssn_clean'
           ) 
-          WHEN market_identifier = 'SE' THEN 
+          WHEN mlm.market_identifier = 'SE' THEN 
             CONCAT(
-              'LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT j_key, ', '), ' AS STRING), "[^0-9]", ""), 12) AS ssn_clean'
+              'LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 12) AS ssn_clean'
             )
-          WHEN market_identifier = 'FI' THEN 
+          WHEN mlm.market_identifier = 'FI' THEN 
             CONCAT(
-              'LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) AS ssn_clean'
+              'LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) AS ssn_clean'
             )
         END
         ,
-        ' FROM `{{raw_layer_project}}.', table_schema, '.', table_name, '` raw) ',
+        ' FROM `{{raw_layer_project}}.', mlm.table_schema, '.', mlm.table_name, '` raw) ',
         
         'SELECT ',
-        STRING_AGG(DISTINCT encrypted_fields, ", "),
+        STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
         ', raw.* EXCEPT(',
-        STRING_AGG(DISTINCT sensitive_field, ', '),
+        STRING_AGG(
+            DISTINCT CASE 
+              WHEN sf.display_name IS NOT NULL THEN sf.column_name
+              ELSE NULL 
+            END, ', ' 
+          ),
         ') FROM `data_with_ssn_rules` raw ',
         'LEFT JOIN `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` VAULT ',
         'ON CAST(raw.ssn_clean AS STRING) = VAULT.ssn'
@@ -202,15 +271,18 @@ final AS (
 
       ELSE CONCAT(
         'SELECT * FROM `{{raw_layer_project}}.',
-        table_schema,
+        mlm.table_schema,
         '.',
-        table_name,
+        mlm.table_name,
         '`'
       ) 
       
     END AS final_encrypted_columns
-FROM market_legacystack_mapping
+FROM market_legacystack_mapping mlm
+left join sensitive_fields sf
+on mlm.table_schema=sf.table_schema and mlm.table_name=sf.table_name
 GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
 )
-
-SELECT * FROM final WHERE final_encrypted_columns IS NOT NULL AND table_schema = "lvs_integration_legacy"
+SELECT distinct * FROM final 
+WHERE final_encrypted_columns IS NOT NULL 
+AND table_schema = "sambla_legacy_integration_legacy"
