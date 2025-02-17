@@ -1,0 +1,26 @@
+[
+  {
+    "name": "data_id",
+    "type": "STRING"
+  },
+  {
+    "name": "application_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "effective_date",
+    "type": "DATE"
+  },
+  {
+    "name": "commission_value",
+    "type": "FLOAT"
+  },
+  {
+    "name": "commission_bank_id",
+    "type": "STRING"
+  },
+  {
+    "name": "commission_type",
+    "type": "STRING"
+  }
+]

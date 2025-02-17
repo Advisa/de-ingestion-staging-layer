@@ -116,5 +116,3 @@ resource "google_bigquery_table" "clients" {
   }
   
 }
-
-

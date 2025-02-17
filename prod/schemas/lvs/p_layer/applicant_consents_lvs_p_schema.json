@@ -1,0 +1,30 @@
+[
+  {
+    "name": "data_id",
+    "type": "STRING"
+  },
+  {
+    "name": "applicant_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "applicant_id",
+    "type": "STRING"
+  },
+  {
+    "name": "consent_id",
+    "type": "STRING"
+  },
+  {
+    "name": "consent_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "consent_accepted_at",
+    "type": "STRING"
+  },
+  {
+    "name": "consent_type",
+    "type": "STRING"
+  }
+]

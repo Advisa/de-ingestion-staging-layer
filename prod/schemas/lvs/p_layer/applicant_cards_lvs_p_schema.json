@@ -1,0 +1,38 @@
+[
+  {
+    "name": "data_id",
+    "type": "STRING"
+  },
+  {
+    "name": "applicant_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "applicant_id",
+    "type": "STRING"
+  },
+  {
+    "name": "card_id",
+    "type": "STRING"
+  },
+  {
+    "name": "card_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "card_issuer",
+    "type": "STRING"
+  },
+  {
+    "name": "card_type",
+    "type": "STRING"
+  },
+  {
+    "name": "card_debt",
+    "type": "STRING"
+  },
+  {
+    "name": "card_limit",
+    "type": "STRING"
+  }
+]

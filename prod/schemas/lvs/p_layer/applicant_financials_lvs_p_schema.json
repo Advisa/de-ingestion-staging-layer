@@ -1,0 +1,54 @@
+[
+  {
+    "name": "data_id",
+    "type": "STRING"
+  },
+  {
+    "name": "applicant_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "applicant_id",
+    "type": "STRING"
+  },
+  {
+    "name": "financial_id",
+    "type": "STRING"
+  },
+  {
+    "name": "financial_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "financial_description",
+    "type": "STRING"
+  },
+  {
+    "name": "financial_issuer",
+    "type": "STRING"
+  },
+  {
+    "name": "financial_amount_monthly",
+    "type": "FLOAT"
+  },
+  {
+    "name": "financial_money_type",
+    "type": "STRING"
+  },
+  {
+    "name": "financial_consolidation",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "financial_amount",
+    "type": "FLOAT"
+  },
+  {
+    "name": "financial_finance_source",
+    "type": "STRING"
+  },
+  {
+    "name": "financial_finance_type",
+    "type": "STRING"
+  }
+]

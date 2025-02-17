@@ -1,0 +1,250 @@
+[
+  {
+    "name": "data_id",
+    "type": "STRING"
+  },
+  {
+    "name": "application_created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "application_processed_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "application_subid",
+    "type": "STRING"
+  },
+  {
+    "name": "application_subid2",
+    "type": "STRING"
+  },
+  {
+    "name": "application_subid3",
+    "type": "STRING"
+  },
+  {
+    "name": "application_subid4",
+    "type": "STRING"
+  },
+  {
+    "name": "application_subid5",
+    "type": "STRING"
+  },
+  {
+    "name": "ip_address",
+    "type": "STRING"
+  },
+  {
+    "name": "loan_purpose",
+    "type": "STRING"
+  },
+  {
+    "name": "repayment_time",
+    "type": "STRING"
+  },
+  {
+    "name": "loan_amount",
+    "type": "STRING"
+  },
+  {
+    "name": "cancelled",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "decision",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "submit_loan",
+    "type": "STRING"
+  },
+  {
+    "name": "sent",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "last_activity_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "visit_id",
+    "type": "STRING"
+  },
+  {
+    "name": "status",
+    "type": "STRING"
+  },
+  {
+    "name": "hide_application",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "data_md5",
+    "type": "STRING"
+  },
+  {
+    "name": "processed",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "source_brand_id",
+    "type": "STRING"
+  },
+  {
+    "name": "offers",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_subid",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_subid2",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_subid3",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_subid4",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_subid5",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_updated_at",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_created_at",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_google_client_id",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_hostname",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_hostname2",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_ip_address2",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_maxloan",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_campaign_group",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_campaign_term",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_ip_address",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_md5",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_referral",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_campaign",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_agent",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_device_type",
+    "type": "STRING"
+  },
+  {
+    "name": "visit_brand",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_id",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_http_auth",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_double_redirect_url",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_status_url",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_reject_redirect_url",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_google_ua",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_is_active",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "brand_has_affiliate_sales",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "brand_settings",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_is_cpl",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "brand_is_visible",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "brand",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_is_omatili",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "brand_house",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "brand_domain",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_url",
+    "type": "STRING"
+  },
+  {
+    "name": "brand_omatili_url",
+    "type": "STRING"
+  }
+]

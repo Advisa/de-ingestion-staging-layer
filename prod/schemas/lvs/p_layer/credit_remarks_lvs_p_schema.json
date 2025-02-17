@@ -1,0 +1,43 @@
+[
+  {
+    "name": "ssn_id",
+    "type": "STRING"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+      ]
+    }
+  },
+  {
+    "name": "bisnode_id",
+    "type": "STRING"
+  },
+  {
+    "name": "payment_remark_latest",
+    "type": "STRING"
+  },
+  {
+    "name": "payment_remarks_count",
+    "type": "STRING"
+  },
+  {
+    "name": "other_remarks_count",
+    "type": "STRING"
+  },
+  {
+    "name": "is_under_guardianship",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "is_banned_on_business_operations",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "last_check",
+    "type": "TIMESTAMP"
+  }
+]
