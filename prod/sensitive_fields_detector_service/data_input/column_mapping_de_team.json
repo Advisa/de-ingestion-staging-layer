@@ -7,7 +7,8 @@
         "foreignerSSN", 
         "sotu", 
         "ssc", 
-        "yv_sotu"
+        "yv_sotu",
+        "identify"
     ],
     "phone": [
         "customer_phone", 
@@ -20,7 +21,8 @@
         "sec_phone", 
         "secondaryPhoneNumber", 
         "thr_phone", 
-        "work_phone"
+        "work_phone",
+        "puhelin"
     ],
     "email": [
         "customer_contactinfo", 
@@ -58,11 +60,14 @@
         "directDebitNumber",
         "bank",
         "bank_iban",
-        "bank_bic"
+        "bank_bic",
+        "bank_account"
     ],
     "is_pep": [
         "politicallyExposedPerson",
-        "politicallyExposedPersonDescription"
+        "politicallyExposedPersonDescription",
+        "is_politically_exposed",
+        "politically_exposed"
     ],
     "dob": [
         "birth_date",
@@ -96,8 +101,10 @@
         "other_monthly_income_before_tax",
         "other_monthly_income_after_tax",
         "taxed_annual_income",
-        "previous_taxed_annual_income"
-
+        "previous_taxed_annual_income",
+        "value",
+        "nettotulot",
+        "bruttotulot"
 
     ],
     "business_id": [
@@ -117,9 +124,10 @@
     "employer": [
         "employerCountry", 
         "employerDoc", 
-        "employerPhone", 
         "employer_name", 
-        "employer_phone"
+        "employer_phone",
+        "tyonantaja",
+        "tyonantajapuh"
     ],
     "gross_income": [
         "gross_income_spouse"
@@ -137,7 +145,8 @@
         "employment_profession", 
         "employment_profession_class", 
         "profession_area", 
-        "profession_class"
+        "profession_class",
+        "ammatti"
     ],
     "address": [
         "permitNumber", 
@@ -161,20 +170,26 @@
         "customer_passport_issuance_country_code",
         "customer_passport_issuance_country_name", 
         "secret_address",
-        "temporary_address"
+        "temporary_address",
+        "business_address"
     ],
     "education": [
         "education_level", 
         "education_level_text", 
-        "yv_koulutus"
+        "yv_koulutus",
+        "koulutus"
     ],
     "marital_status": [
         "yv_siviilisaaty",
-        "civil_status_text"
+        "civil_status_text",
+        "civil_status",
+        "siviilisaaty"
     ],
     "json_col" : [
         "data",
-        "raw_data"
+        "raw_data",
+        "text",
+        "identifier"
     ],
     "current_loans_amount" : [
         "creditReports",
@@ -187,7 +202,9 @@
 
     ],
     "revenue": [
-        "revenue_share_percent"
+        "revenue_share_percent",
+        "yearlyRevenue",
+        "monthlyRevenue"
     ],
     "comission": [
         "commission_iq_a",
@@ -200,7 +217,8 @@
     "balance": [
         "debt_balance",
         "original_balance",
-        "last_application_debt_balance"
+        "last_application_debt_balance",
+        "interestBearingBalance"
     ],
     "capital_deficit":[
         "previous_capital_deficit"
