@@ -5,6 +5,7 @@ default:
     compliance_project: "sambla-group-compliance-db"
     base_folder: "authorized_view_service"
     generate_encrypted: "false"
+    gdpr_vault_table: "gdpr_vault_rudolf"
 
 prod:
   authorized_view_service:
@@ -13,3 +14,4 @@ prod:
     compliance_project: "sambla-group-compliance-db"
     base_folder: "authorized_view_service"
     generate_encrypted: "false"
+    gdpr_vault_table: "gdpr_vault_rudolf"

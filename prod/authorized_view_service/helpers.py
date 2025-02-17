@@ -21,6 +21,7 @@ class AuthorizedViewService:
         self.compliance_project = self.authorized_view_config.get('compliance_project')
         self.base_folder = self.authorized_view_config.get('base_folder')
         self.generate_encrypted  = self.authorized_view_config.get('generate_encrypted')
+        self.gdpr_vault_table  = self.authorized_view_config.get('gdpr_vault_table')
 
         # Initialize the current path where this service is located
         project_root = Path(__file__).resolve().parent.parent  
@@ -124,8 +125,8 @@ class AuthorizedViewService:
             encryption_queries.append(f"{schema}|{table}|{encryption_query}")
             self.processed_tables.add(f"{schema}|{table}") 
 
-        # Save the encryption queries to a file
-        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_new.txt')
+        # Save the encryption queries to a file (for now it saves to lvs, please change this later)
+        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_lvs.txt')
         with open(mapping_file_path, 'w') as f:
             for eq in encryption_queries:
                 f.write(eq + "\n")
@@ -169,22 +170,14 @@ class AuthorizedViewService:
         """Main function to execute the workflow."""
 
         try:
-            # Generate the UNION ALL query
-            query_table_names_result = self.generate_union_all_query()
-            union_all_queries = [row.column_query for row in query_table_names_result]
-            union_all_query = '\nUNION ALL \n'.join(union_all_queries)
-            # Save the complete union all statement to a file
-            self.save_template(union_all_query,self.output_template_file)
             # Render and execute the encryption query template
             encrypted_query_template = self.encryption_query_template.render(
-                query_table_columns=union_all_query,
                 compliance_project=self.compliance_project,
-                raw_layer_project=self.raw_layer_project
+                raw_layer_project=self.raw_layer_project,
+                gdpr_vault_table=self.gdpr_vault_table
             )
             self.generate_encryption_queries(encrypted_query_template)
-            # Generate non-encrypted queries (for non-encrypted views)
-            #logging.info("Generating non-encrypted queries...")
-            #self.generate_non_encrypted_queries()
+
 
             logging.info("Workflow completed successfully.")
         except Exception as e:
