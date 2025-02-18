@@ -1,0 +1,55 @@
+[
+  {
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "fk_applicant",
+    "type": "INTEGER"
+  },
+  {
+    "name": "type",
+    "type": "STRING"
+  },
+  {
+    "name": "reused_report_id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "report",
+    "type": "STRING"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "country_code",
+    "type": "STRING"
+  },
+  {
+    "name": "app_type",
+    "type": "STRING"
+  },
+  {
+    "name": "created_at_year",
+    "type": "INTEGER"
+  },
+  {
+    "name": "created_at_month",
+    "type": "INTEGER"
+  },
+  {
+    "name": "hash_key",
+    "type": "STRING"
+  },
+  {
+    "name": "inserted_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "defaultValueExpression": "false",
+    "name": "is_deleted",
+    "type": "BOOLEAN"
+  }
+]

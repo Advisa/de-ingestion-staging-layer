@@ -1,0 +1,115 @@
+[
+  {
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "fk_pubid",
+    "type": "INTEGER"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "http_ref",
+    "type": "STRING"
+  },
+  {
+    "name": "http_ref_domain",
+    "type": "STRING"
+  },
+  {
+    "name": "domain",
+    "type": "STRING"
+  },
+  {
+    "name": "screen_width",
+    "type": "INTEGER"
+  },
+  {
+    "name": "screen_height",
+    "type": "INTEGER"
+  },
+  {
+    "name": "cookies_enabled",
+    "type": "INTEGER"
+  },
+  {
+    "name": "flash_enabled",
+    "type": "INTEGER"
+  },
+  {
+    "name": "device",
+    "type": "STRING"
+  },
+  {
+    "name": "device_name",
+    "type": "STRING"
+  },
+  {
+    "name": "latitude",
+    "type": "FLOAT"
+  },
+  {
+    "name": "longitude",
+    "type": "FLOAT"
+  },
+  {
+    "name": "browser",
+    "type": "STRING"
+  },
+  {
+    "name": "browser_name",
+    "type": "STRING"
+  },
+  {
+    "name": "os_name",
+    "type": "STRING"
+  },
+  {
+    "name": "retention_click",
+    "type": "INTEGER"
+  },
+  {
+    "name": "unique_click",
+    "type": "INTEGER"
+  },
+  {
+    "name": "unique_click_reason",
+    "type": "STRING"
+  },
+  {
+    "name": "valid_click",
+    "type": "INTEGER"
+  },
+  {
+    "name": "parenturl",
+    "type": "STRING"
+  },
+  {
+    "name": "country_code",
+    "type": "STRING"
+  },
+  {
+    "name": "created_at_year",
+    "type": "INTEGER"
+  },
+  {
+    "name": "created_at_month",
+    "type": "INTEGER"
+  },
+  {
+    "name": "hash_key",
+    "type": "STRING"
+  },
+  {
+    "name": "inserted_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "defaultValueExpression": "false",
+    "name": "is_deleted",
+    "type": "BOOLEAN"
+  }
+]

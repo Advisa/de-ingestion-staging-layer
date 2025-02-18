@@ -81,10 +81,10 @@ def main():
     """Main entry point."""
     # Specify configuration for LVS
     project_id = "data-domain-data-warehouse"
-    dataset_id = "helios_staging"
-    schema = "lvs/p_layer"
+    dataset_id = "salus_group_integration"
+    schema = "salus/upstream"
     exception_table =  "funnel_data_lvs_p"
-    suffix = "_lvs_p"
+    suffix = "_salus_incremental_r"
     
     # Paths
     base_path = Path(__file__).resolve().parent.parent

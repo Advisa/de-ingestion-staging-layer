@@ -1,0 +1,110 @@
+[
+  {
+    "name": "fk_applicant",
+    "type": "INTEGER"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "type",
+    "type": "STRING"
+  },
+  {
+    "name": "movein_year",
+    "type": "STRING"
+  },
+  {
+    "name": "movein_month",
+    "type": "STRING"
+  },
+  {
+    "name": "building_type",
+    "type": "STRING"
+  },
+  {
+    "name": "household_adults",
+    "type": "INTEGER"
+  },
+  {
+    "name": "household_children",
+    "type": "INTEGER"
+  },
+  {
+    "name": "household_children_age",
+    "type": "STRING"
+  },
+  {
+    "name": "household_car_types",
+    "type": "STRING"
+  },
+  {
+    "name": "household_car_cost",
+    "type": "STRING"
+  },
+  {
+    "name": "household_cars",
+    "type": "STRING"
+  },
+  {
+    "name": "household_monthly_heating",
+    "type": "STRING"
+  },
+  {
+    "name": "household_monthly_water",
+    "type": "STRING"
+  },
+  {
+    "name": "household_monthly_electricity",
+    "type": "STRING"
+  },
+  {
+    "name": "household_monthly_insurances",
+    "type": "STRING"
+  },
+  {
+    "name": "household_monthly_subscriptions",
+    "type": "STRING"
+  },
+  {
+    "name": "household_monthly_transport",
+    "type": "STRING"
+  },
+  {
+    "name": "household_monthly_child_support",
+    "type": "STRING"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "monthly_rent",
+    "type": "INTEGER"
+  },
+  {
+    "name": "monthly_household_variable_expense",
+    "type": "INTEGER"
+  },
+  {
+    "name": "country_code",
+    "type": "STRING"
+  },
+  {
+    "name": "app_type",
+    "type": "STRING"
+  },
+  {
+    "name": "hash_key",
+    "type": "STRING"
+  },
+  {
+    "name": "inserted_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "is_deleted",
+    "type": "BOOLEAN"
+  }
+]
