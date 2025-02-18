@@ -1,0 +1,237 @@
+[
+  {
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "fk_account",
+    "type": "INTEGER"
+  },
+  {
+    "name": "fk_pubid",
+    "type": "INTEGER"
+  },
+  {
+    "name": "fk_applicant",
+    "type": "INTEGER"
+  },
+  {
+    "name": "fk_coapplicant",
+    "type": "INTEGER"
+  },
+  {
+    "name": "amount_currency",
+    "type": "STRING"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "submitted_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "partial_submit_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "first_accepted_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "first_paid_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "converted_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "last_form_activity_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "status",
+    "type": "STRING"
+  },
+  {
+    "name": "cost_publisher_euro",
+    "type": "FLOAT"
+  },
+  {
+    "name": "cost_vat_euro",
+    "type": "FLOAT"
+  },
+  {
+    "name": "cost_creditcheck",
+    "type": "FLOAT"
+  },
+  {
+    "name": "cost_prefill",
+    "type": "FLOAT"
+  },
+  {
+    "name": "cost_mediabuying",
+    "type": "FLOAT"
+  },
+  {
+    "name": "cost_sms",
+    "type": "FLOAT"
+  },
+  {
+    "name": "cost_retention_mediabuying",
+    "type": "FLOAT"
+  },
+  {
+    "name": "app_cost_transaction_eur",
+    "type": "FLOAT"
+  },
+  {
+    "name": "total_cost_eur",
+    "type": "FLOAT"
+  },
+  {
+    "name": "total_revenue_eur",
+    "type": "FLOAT"
+  },
+  {
+    "name": "app_rev_transaction_eur",
+    "type": "FLOAT"
+  },
+  {
+    "name": "revenue_affiliate_euro",
+    "type": "FLOAT"
+  },
+  {
+    "name": "amount",
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+      ]
+    }
+  },
+  {
+    "name": "repaymentperiod",
+    "type": "FLOAT"
+  },
+  {
+    "name": "loan_reason",
+    "type": "STRING"
+  },
+  {
+    "name": "creditscore",
+    "type": "FLOAT",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8200763276510798683"
+      ]
+    }
+  },
+  {
+    "name": "score_internal",
+    "type": "STRING"
+  },
+  {
+    "name": "bisnode_creditscore",
+    "type": "INTEGER",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7383053594225766630"
+      ]
+    }
+  },
+  {
+    "name": "score_external",
+    "type": "STRING"
+  },
+  {
+    "name": "score_iq",
+    "type": "STRING"
+  },
+  {
+    "name": "parentdomain",
+    "type": "STRING"
+  },
+  {
+    "name": "marketing_consent",
+    "type": "INTEGER"
+  },
+  {
+    "name": "watchdog_consent",
+    "type": "INTEGER"
+  },
+  {
+    "name": "marketing_wl_consent",
+    "type": "INTEGER"
+  },
+  {
+    "name": "sgid",
+    "type": "STRING"
+  },
+  {
+    "name": "total_revenue_est",
+    "type": "FLOAT"
+  },
+  {
+    "name": "unsubscribed",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "datetimecompleted",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "fk_country",
+    "type": "INTEGER"
+  },
+  {
+    "name": "marketing_consent_last",
+    "type": "STRING"
+  },
+  {
+    "name": "marketing_consent_last_given",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "external_app_id",
+    "type": "STRING"
+  },
+  {
+    "name": "country_code",
+    "type": "STRING"
+  },
+  {
+    "name": "app_type",
+    "type": "STRING"
+  },
+  {
+    "name": "fk_agent",
+    "type": "INTEGER"
+  },
+  {
+    "name": "fk_advisor",
+    "type": "INTEGER"
+  },
+  {
+    "name": "parenturl",
+    "type": "STRING"
+  },
+  {
+    "name": "client_ip",
+    "type": "STRING"
+  },
+  {
+    "name": "hash_key",
+    "type": "STRING"
+  },
+  {
+    "name": "inserted_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "is_deleted",
+    "type": "BOOLEAN"
+  }
+]
