@@ -8,6 +8,9 @@ WITH table_columns AS (
     UNION ALL 
     SELECT * FROM `{{raw_layer_project}}.salus_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
     UNION ALL 
+    SELECT * FROM `{{exposure_project}}.salus_group_integration`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
+    WHERE table_name LIKE '%_salus_incremental_r'
+    UNION ALL
     SELECT * FROM `{{raw_layer_project}}.advisa_history_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
     UNION ALL 
     SELECT * FROM `{{raw_layer_project}}.sambla_legacy_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS 
@@ -224,7 +227,7 @@ final AS (
     mlm.is_table_contains_ssn,
     mlm.market_identifier,
     CASE 
-      WHEN mlm.is_table_contains_ssn THEN CONCAT(
+      WHEN mlm.is_table_contains_ssn and mlm.table_schema != 'salus_integration_legacy' THEN CONCAT(
         'WITH data_with_ssn_rules AS (',
         'SELECT ',
         '*, ',
