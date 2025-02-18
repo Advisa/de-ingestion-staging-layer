@@ -174,7 +174,8 @@ class AuthorizedViewService:
             encrypted_query_template = self.encryption_query_template.render(
                 compliance_project=self.compliance_project,
                 raw_layer_project=self.raw_layer_project,
-                gdpr_vault_table=self.gdpr_vault_table
+                gdpr_vault_table=self.gdpr_vault_table,
+                exposure_project = self.exposure_project
             )
             self.generate_encryption_queries(encrypted_query_template)
 

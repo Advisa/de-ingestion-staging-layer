@@ -31,7 +31,23 @@ resource "google_bigquery_table" "lvs_auth_views_test" {
 
   dataset_id         = "auth_view_testing"
   table_id           = "view_${each.value.table}"
-  deletion_protection = false
+  deletion_protection = true
+
+  view {
+    query           = each.value.query
+    use_legacy_sql  = false
+  }
+
+
+}
+
+# Create salus auth views in testing dataset
+resource "google_bigquery_table" "salus_auth_views_test" {
+  for_each = local.salus_schema_table_queries
+
+  dataset_id         = "auth_view_testing"
+  table_id           = "view_${each.value.table}"
+  deletion_protection = true
 
   view {
     query           = each.value.query
