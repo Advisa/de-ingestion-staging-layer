@@ -4,12 +4,12 @@ WITH table_columns AS (
     WHERE TABLE_NAME LIKE '%sgmw_p'
     UNION ALL 
     SELECT * FROM `{{raw_layer_project}}.lvs_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS 
-    WHERE table_name NOT LIKE '%_lvs_r'
+    WHERE TABLE_NAME NOT LIKE '%_lvs_r'
     UNION ALL 
     SELECT * FROM `{{raw_layer_project}}.salus_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
     UNION ALL 
     SELECT * FROM `{{exposure_project}}.salus_group_integration`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
-    WHERE table_name LIKE '%_salus_incremental_r'
+    WHERE TABLE_NAME LIKE '%_salus_incremental_r'
     UNION ALL
     SELECT * FROM `{{raw_layer_project}}.advisa_history_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
     UNION ALL 
@@ -142,7 +142,7 @@ non_nested_field_encryption AS (
                     -- If sensitive field exists (i.e. t2.display_name is not null), apply encryption
                     WHEN t2.display_name IS NOT NULL THEN
                         CONCAT(
-                            "CASE WHEN VAULT.uuid IS NOT NULL THEN ",
+                            "CASE WHEN ",column_name," IS NOT NULL AND ",column_name," <> '' AND VAULT.uuid IS NOT NULL THEN ",
                             "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(raw.", column_name, " AS STRING), VAULT.uuid)) ",
                             "ELSE CAST(raw.", column_name, " AS STRING) END AS ", column_name
                         )
@@ -170,7 +170,7 @@ nested_field_encryption AS (
                     WHEN t2.display_name IS NOT NULL THEN
                         -- Apply encryption logic for sensitive fields (based on display_name)
                         CONCAT(
-                            "CASE WHEN VAULT.uuid IS NOT NULL THEN ",
+                            "CASE WHEN f_", t2.column_name, ".", t2.nested_field, " IS NOT NULL AND f_", t2.column_name, ".", t2.nested_field, " <> '' AND VAULT.uuid IS NOT NULL THEN ",
                             "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING), VAULT.uuid)) ",
                             "ELSE CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING) END AS ", t2.nested_field
                         )
@@ -257,7 +257,7 @@ final AS (
             )
         END
         ,
-        ' FROM `{{ exposure_project }}.', mlm.table_schema, '.', mlm.table_name, '` raw) ',
+        ' FROM `{{raw_layer_project}}.', mlm.table_schema, '.', mlm.table_name, '` raw) ',
         
         'SELECT ',
         STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
@@ -290,4 +290,4 @@ GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
 SELECT distinct * FROM final 
 WHERE final_encrypted_columns IS NOT NULL 
 --AND table_schema = "lvs_integration_legacy"
-AND table_schema IN ("salus_group_integration", "salus_integration_legacy")
+AND table_schema IN ("sambla_legacy_integration_legacy")
