@@ -6,7 +6,8 @@ default:
     temp_encr_table: "temp_encrypted_data"
     raw_layer_project: "sambla-data-staging-compliance"
     compliance_project: "sambla-group-compliance-db"
-    auth_views_dataset: "authorized_views_test"
+    auth_views_dataset: "auth_view_rudolf"
+    # auth_views_dataset: "auth_view_testing"
 prod:
   anonymization_service:
     exposure_project: "data-domain-data-warehouse"

@@ -1,4 +1,4 @@
-gcloud functions deploy GDPR_anonymization \
+gcloud functions deploy GDPR_anonymization_dev \
     --runtime python310 \
     --trigger-http \
     --region europe-west1 \
