@@ -126,7 +126,7 @@ class AuthorizedViewService:
             self.processed_tables.add(f"{schema}|{table}") 
 
         # Save the encryption queries to a file (for now it saves to lvs, please change this later)
-        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_lvs.txt')
+        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_salus.txt')
         with open(mapping_file_path, 'w') as f:
             for eq in encryption_queries:
                 f.write(eq + "\n")
@@ -174,7 +174,8 @@ class AuthorizedViewService:
             encrypted_query_template = self.encryption_query_template.render(
                 compliance_project=self.compliance_project,
                 raw_layer_project=self.raw_layer_project,
-                gdpr_vault_table=self.gdpr_vault_table
+                gdpr_vault_table=self.gdpr_vault_table,
+                exposure_project = self.exposure_project
             )
             self.generate_encryption_queries(encrypted_query_template)
 
