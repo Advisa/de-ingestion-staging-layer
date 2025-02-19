@@ -22,7 +22,11 @@
         "secondaryPhoneNumber", 
         "thr_phone", 
         "work_phone",
-        "puhelin"
+        "puhelin",
+        "työpuhelin",
+        "yv_tyopuhelin",
+        "tyopuhelin",
+        "yv_puhelin"
     ],
     "email": [
         "customer_contactinfo", 
@@ -75,7 +79,8 @@
     ],
     "gender": [
         "sex",
-        "customer_gender"
+        "customer_gender",
+        "sukupuoli"
     ],
     "net_income": [
         "amount",
@@ -104,7 +109,12 @@
         "previous_taxed_annual_income",
         "value",
         "nettotulot",
-        "bruttotulot"
+        "bruttotulot",
+        "nettotulos",
+        "yv_bruttotulot",
+        "yv_nettotulot",
+        "salary_monthly_net",
+        "salary_monthly_gross"
 
     ],
     "business_id": [
@@ -119,7 +129,9 @@
         "business_organization_number"
     ],
     "citizenship": [
-        "citizenship_text"
+        "citizenship_text",
+        "kansalaisuus",
+        "nationality"
     ],
     "employer": [
         "employerCountry", 
@@ -127,7 +139,10 @@
         "employer_name", 
         "employer_phone",
         "tyonantaja",
-        "tyonantajapuh"
+        "tyonantajapuh",
+        "edtyonantaja",
+        "yv_tyonantaja",
+        "yv_tyonantajapuh"
     ],
     "gross_income": [
         "gross_income_spouse"
@@ -139,14 +154,17 @@
         "zip",
         "zip_code", 
         "postal_area",
-        "customer_postal_code"
+        "customer_postal_code",
+        "postinumero"
     ],
     "profession": [
         "employment_profession", 
         "employment_profession_class", 
         "profession_area", 
         "profession_class",
-        "ammatti"
+        "ammatti",
+        "occupation",
+        "occupation_title"
     ],
     "address": [
         "permitNumber", 
@@ -165,13 +183,14 @@
         "customer_address2",
         "customer_city",
         "customer_state",
-        "customer_country_code",
         "customer_country_name" ,
-        "customer_passport_issuance_country_code",
         "customer_passport_issuance_country_name", 
         "secret_address",
         "temporary_address",
-        "business_address"
+        "business_address",
+        "paikkakunta",
+        "yv_kaupunki",
+        "yv_asuu"
     ],
     "education": [
         "education_level", 
@@ -183,7 +202,8 @@
         "yv_siviilisaaty",
         "civil_status_text",
         "civil_status",
-        "siviilisaaty"
+        "siviilisaaty",
+        "siviilisääty"
     ],
     "json_col" : [
         "data",
@@ -204,7 +224,8 @@
     "revenue": [
         "revenue_share_percent",
         "yearlyRevenue",
-        "monthlyRevenue"
+        "monthlyRevenue",
+        "liikevaihto"
     ],
     "comission": [
         "commission_iq_a",
@@ -233,6 +254,8 @@
 
     "installment": [
         "installment_charges"
+    ],
+    "occupation": [       
     ]
 
 }

@@ -357,8 +357,10 @@ class SensitiveFieldsProcessor:
         # [TODO] Implement Dynamic approach Categorize the column based on known sensitivity rules
         column_lower = column.lower()
 
-        if any(keyword in column_lower for keyword in ["ssn", "email", "phone", "national_","name","etunimi","bank_account_number","address","json_col"]):
+        if any(keyword in column_lower for keyword in ["ssn", "email", "phone", "national_","name","etunimi","address","bank_account_number"]):
             return "high", "PII"
+        if any(keyword in column_lower for keyword in ["json_col","business_id",'employer','post_code']):
+            return "medium", "PII"
         elif any(keyword in column_lower for keyword in ["education", "marital_status", "net_income", "ytunnus"]):
             return "medium", "restricted"
         else:
