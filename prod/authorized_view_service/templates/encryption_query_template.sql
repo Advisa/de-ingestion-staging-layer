@@ -257,7 +257,7 @@ final AS (
             )
         END
         ,
-        ' FROM ', CASE WHEN mlm.table_schema = 'salus_group_integration' THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw) ',
+        ' FROM `{{ exposure_project }}.', mlm.table_schema, '.', mlm.table_name, '` raw) ',
         
         'SELECT ',
         STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
@@ -274,7 +274,7 @@ final AS (
       )
 
       ELSE CONCAT(
-        'SELECT * FROM `{{raw_layer_project}}.',
+        'SELECT * FROM ', CASE WHEN mlm.table_schema = 'salus_group_integration' THEN '`{{ exposure_project }}.' ELSE '`{{ raw_layer_project }}.' END,
         mlm.table_schema,
         '.',
         mlm.table_name,
@@ -289,4 +289,5 @@ GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
 )
 SELECT distinct * FROM final 
 WHERE final_encrypted_columns IS NOT NULL 
+--AND table_schema = "lvs_integration_legacy"
 AND table_schema IN ("salus_group_integration", "salus_integration_legacy")
