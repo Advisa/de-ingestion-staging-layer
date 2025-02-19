@@ -8,7 +8,8 @@
         "sotu", 
         "ssc", 
         "yv_sotu",
-        "identify"
+        "identify",
+        "national_id_sensitive"
     ],
     "phone": [
         "customer_phone", 
