@@ -200,16 +200,6 @@
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": null
                     },
-                    "National_ID_Cleaned": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
-                    "foreignerSSN": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
                     "identify": {
                         "sensitivity": "high",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
@@ -288,11 +278,6 @@
                         "masking_rule": "SHA256",
                         "type": null
                     },
-                    "emailId": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
                     "broker_email": {
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
@@ -336,11 +321,6 @@
                         "masking_rule": "SHA256",
                         "type": "STRING"
                     },
-                    "phone_number": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
                     "phonenumber": {
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
@@ -362,21 +342,6 @@
                         "type": "STRING"
                     },
                     "work_phone": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
-                    "workphone": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
-                    "phoneNumber": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
-                    "secondaryPhoneNumber": {
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
                         "type": "STRING"
