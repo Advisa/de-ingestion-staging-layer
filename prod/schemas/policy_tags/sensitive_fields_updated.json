@@ -693,34 +693,6 @@
             }
         },
         "restricted": {
-            "installment": {
-                "children": {
-                    "installment_charges": {
-                        "sensitivity": "medium",
-                        "masking_rule": "ALWAYS_NULL",
-                        "type": "INT64"
-                    }
-                },
-                "sensitivity": "medium",
-                "masking_rule": "ALWAYS_NULL",
-                "type": "INT64",
-                "category": "confidential"
-
-            },
-            "capital_deficit": {
-                "children": {
-                    "previous_capital_deficit": {
-                        "sensitivity": "medium",
-                        "masking_rule": "ALWAYS_NULL",
-                        "type": "INT64"
-                    }
-                },
-                "sensitivity": "medium",
-                "masking_rule": "ALWAYS_NULL",
-                "type": "INT64",
-                "category": "confidential"
-
-            },
             "dob": {
                 "children": {
                     "birth_date": {
@@ -808,62 +780,6 @@
                         "type": null
                     },
                     "siviilisääty": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": null
-                    }
-                },
-                "sensitivity": "medium",
-                "masking_rule": "DEFAULT_MASKING_VALUE",
-                "type": "STRING",
-                "category": "restricted"
-            },
-            "is_pep": {
-                "children": {
-                    "politicallyExposedPerson": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": "BOOL"
-                    },
-                    "politicallyExposedPersonDescription": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": "STRING"
-                    },
-                    "is_politically_exposed": {
-                        "sensitivity": "medium",
-                        "masking_rule": "ALWAYS_NULL",
-                        "type": "INT64"
-                    },
-                    "politically_exposed": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": null
-                    }
-                },
-                "sensitivity": "medium",
-                "masking_rule": "DEFAULT_MASKING_VALUE",
-                "type": "BOOL",
-                "category": "restricted"
-            },
-            "education": {
-                "children": {
-                    "education_level": {
-                        "sensitivity": "medium",
-                        "masking_rule": "ALWAYS_NULL",
-                        "type": "INT64"
-                    },
-                    "education_level_text": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": "STRING"
-                    },
-                    "yv_koulutus": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": null
-                    },
-                    "koulutus": {
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": null
@@ -1100,7 +1016,92 @@
     },
     "low_sensitivity_tags_prod": {
         "PII": {},
-        "restricted": {},
+        "restricted": {
+            "installment": {
+                "children": {
+                    "installment_charges": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "INT64",
+                "category": "confidential"
+
+            },
+            "capital_deficit": {
+                "children": {
+                    "previous_capital_deficit": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "INT64",
+                "category": "confidential"
+
+            },
+        "is_pep": {
+            "children": {
+                "politicallyExposedPerson": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "BOOL"
+                },
+                "politicallyExposedPersonDescription": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "STRING"
+                },
+                "is_politically_exposed": {
+                    "sensitivity": "medium",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
+                },
+                "politically_exposed": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": null
+                }
+            },
+            "sensitivity": "medium",
+            "masking_rule": "DEFAULT_MASKING_VALUE",
+            "type": "BOOL",
+            "category": "restricted"
+        },
+        "education": {
+            "children": {
+                "education_level": {
+                    "sensitivity": "medium",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
+                },
+                "education_level_text": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "STRING"
+                },
+                "yv_koulutus": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": null
+                },
+                "koulutus": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": null
+                }
+            },
+            "sensitivity": "medium",
+            "masking_rule": "DEFAULT_MASKING_VALUE",
+            "type": "STRING",
+            "category": "restricted"
+        }
+    },
         "confidential": {
             "balance": {
                 "children": {
