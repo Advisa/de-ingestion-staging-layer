@@ -313,8 +313,8 @@
                     },
                     "employer_phone": {
                         "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
                     },
                     "external_phone": {
                         "sensitivity": "high",
