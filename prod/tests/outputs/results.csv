@@ -1,0 +1,10 @@
+Dataset,Table,Field,Data Type
+sambla-data-staging-compliance.advisa_history_integration_legacy,archived_ssn,national_id,INT64
+data-domain-data-warehouse.sambla_group_data_stream,tink_service_tink_data_sgds_r_backup,payload.ssn,INT64
+data-domain-data-warehouse.helios_staging,rsmq_events_p_temp_20240807_161434,data,JSON
+data-domain-data-warehouse.helios_staging,rsmq_events_p,data,JSON
+data-domain-data-warehouse.helios_staging,archived_ssn_adhis_p,national_id,INT64
+data-domain-data-warehouse.helios_staging,customers_lvs_m,employer_phone,INT64
+data-domain-data-warehouse.helios_history,archived_ssn_adhis_p,national_id,INT64
+data-domain-data-warehouse.data_science,customer_lifetime_input,ssn,INT64
+data-domain-data-warehouse.sambla_group_reversed_etl,insurance-conversions-invoice-directdebit-se-api-20231103,Phone_number,INT64
