@@ -55,3 +55,18 @@ resource "google_bigquery_table" "salus_auth_views_test" {
   }
 
 }
+
+# Create sambla_legacy auth views in testing dataset
+resource "google_bigquery_table" "sambla_legacy_auth_views_test" {
+  for_each = local.sambla_legacy_schema_table_queries
+
+  dataset_id         = "auth_view_testing"
+  table_id           = "view_${each.value.table}"
+  deletion_protection = true
+
+  view {
+    query           = each.value.query
+    use_legacy_sql  = false
+  }
+
+}
