@@ -9,6 +9,6 @@ resource "null_resource" "generate_schemas_maxwell_prod_live_go" {
   }
 
   depends_on = [
-    null_resource.create_table_jobs_maxwell,null_resource.copy_table_jobs_events_r,null_resource.copy_table_jobs_maxwell,google_bigquery_table.partitioned_tables_maxwell
+    null_resource.create_table_jobs_maxwell,null_resource.copy_table_jobs_events_r,null_resource.copy_table_jobs_maxwell,google_bigquery_table.partitioned_tables_maxwell_golive
   ]
 }
