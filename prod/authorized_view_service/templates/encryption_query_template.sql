@@ -289,4 +289,4 @@ GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
 )
 SELECT distinct * FROM final 
 WHERE final_encrypted_columns IS NOT NULL
-AND table_schema IN ("sambla_legacy_integration_legacy")
+AND table_schema IN ("advisa_history_integration_legacy")
