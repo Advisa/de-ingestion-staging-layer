@@ -142,7 +142,7 @@ non_nested_field_encryption AS (
                     -- If sensitive field exists (i.e. t2.display_name is not null), apply encryption
                     WHEN t2.display_name IS NOT NULL THEN
                         CONCAT(
-                            "CASE WHEN ",column_name," IS NOT NULL AND ",column_name," <> '' AND VAULT.uuid IS NOT NULL THEN ",
+                            "CASE WHEN raw.",column_name," IS NOT NULL AND raw.",column_name," <> '' AND VAULT.uuid IS NOT NULL THEN ",
                             "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(raw.", column_name, " AS STRING), VAULT.uuid)) ",
                             "ELSE CAST(raw.", column_name, " AS STRING) END AS ", column_name
                         )
@@ -257,7 +257,7 @@ final AS (
             )
         END
         ,
-        ' FROM `{{raw_layer_project}}.', mlm.table_schema, '.', mlm.table_name, '` raw) ',
+        ' FROM', CASE WHEN mlm.table_schema = 'salus_group_integration' THEN '`{{ exposure_project }}.' ELSE '`{{ raw_layer_project }}.' END, mlm.table_schema, '.', mlm.table_name, '` raw) ',
         
         'SELECT ',
         STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
@@ -288,6 +288,5 @@ on mlm.table_schema=sf.table_schema and mlm.table_name=sf.table_name
 GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
 )
 SELECT distinct * FROM final 
-WHERE final_encrypted_columns IS NOT NULL 
---AND table_schema = "lvs_integration_legacy"
+WHERE final_encrypted_columns IS NOT NULL
 AND table_schema IN ("sambla_legacy_integration_legacy")
