@@ -76,7 +76,8 @@
     ],
     "dob": [
         "birth_date",
-        "birthday"
+        "birthday",
+        "customer_birth_date"
     ],
     "gender": [
         "sex",

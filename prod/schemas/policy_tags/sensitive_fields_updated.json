@@ -669,7 +669,7 @@
                 "sensitivity": "medium",
                 "masking_rule": "SHA256",
                 "type": "STRING",
-                "category": "confidential"
+                "category": "PII"
             }
         },
         "restricted": {
@@ -681,6 +681,11 @@
                         "type": "TIMESTAMP"
                     },
                     "birthday": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "customer_birth_date": {
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": null
