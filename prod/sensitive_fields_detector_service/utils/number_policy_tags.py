@@ -4,7 +4,7 @@ import pandas as pd
 def process_sensitivity(data, sensitivity_level):
     """
     Processes the input JSON data for a given sensitivity level
-    and generates a detailed report with categories, parents, and children.
+    and generates a detailed report with categories, parents, children, and their masking rules.
     """
     sensitivity_data = data.get(f"{sensitivity_level}_sensitivity_tags_prod", {})
 
@@ -31,17 +31,27 @@ def process_sensitivity(data, sensitivity_level):
         for parent, parent_data in parents.items():
             parent_count += 1  # Count the parents
             
+            # Extract parent masking rule (if available)
+            parent_masking_rule = parent_data.get("masking_rule", "UNKNOWN")
+            parent_data_type = parent_data.get("type", "UNKNOWN")
+
             children = parent_data.get("children", {})
             if isinstance(children, dict) and children:
-                child_names = list(children.keys())  # Extract child names
-                child_count += len(child_names)  # Count the children
+                child_count += len(children)  # Count the children
                 
-                for child in child_names:
+                for child, child_data in children.items():
+                    child_masking_rule = child_data.get("masking_rule", "UNKNOWN")  # Get child masking rule
+                    child_data_type = child_data.get("type", "UNKNOWN")
+                    
                     report_rows.append({
                         "sensitivity_level": sensitivity_level,
                         "category_name": category,
                         "parent_name": parent,
-                        "child_name": child
+                        "parent_masking_rule": parent_masking_rule,
+                        "parent_data_type": parent_data_type,   # Include parent masking rule
+                        "child_name": child,
+                        "child_masking_rule": child_masking_rule,
+                        "child_data_type": child_data_type,  # Include child masking rule
                     })
 
     # Store the summary data
@@ -56,7 +66,7 @@ def process_sensitivity(data, sensitivity_level):
 def generate_excel_report(json_file_path, output_excel):
     """
     Generates an Excel report with two sheets:
-    1. Detailed breakdown of categories, parents, and children.
+    1. Detailed breakdown of categories, parents, children, and masking rules.
     2. Summary of total counts.
     """
     with open(json_file_path, 'r') as file:
@@ -84,7 +94,7 @@ def generate_excel_report(json_file_path, output_excel):
 
 
 # Run the function
-json_file_path = '/Users/aruldharani/Sambla/de-ingestion-staging-layer-2/prod/schemas/policy_tags/sensitive_fields_updated.json'
+json_file_path = '/prod/schemas/policy_tags/sensitive_fields_updated.json'
 output_excel = 'gdpr_compliance_report.xlsx'
 
 generate_excel_report(json_file_path, output_excel)
