@@ -22,7 +22,7 @@ salus_group_integration|whitelabels_salus_incremental_r|SELECT * FROM `data-doma
 salus_group_integration|applicant-jobs_salus_incremental_r|SELECT * FROM `data-domain-data-warehouse.salus_group_integration.applicant-jobs_salus_incremental_r`
 salus_group_integration|applicant-loans_salus_incremental_r|SELECT * FROM `data-domain-data-warehouse.salus_group_integration.applicant-loans_salus_incremental_r`
 salus_group_integration|invitations_salus_incremental_r|SELECT * FROM `data-domain-data-warehouse.salus_group_integration.invitations_salus_incremental_r`
-salus_group_integration|tracking_salus_incremental_r|SELECT * FROM `data-domain-data-warehouse.salus_group_integration.tracking_salus_incremental_r`
+salus_integration_legacy|clicks-applications_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.clicks-applications_salus_r`
 salus_group_integration|clicks-applications_salus_incremental_r|SELECT * FROM `data-domain-data-warehouse.salus_group_integration.clicks-applications_salus_incremental_r`
 salus_integration_legacy|tracking_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.tracking_salus_r`
-salus_integration_legacy|clicks-applications_salus_r|SELECT * FROM `sambla-data-staging-compliance.salus_integration_legacy.clicks-applications_salus_r`
+salus_group_integration|tracking_salus_incremental_r|SELECT * FROM `data-domain-data-warehouse.salus_group_integration.tracking_salus_incremental_r`

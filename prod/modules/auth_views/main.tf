@@ -26,7 +26,7 @@ resource "google_bigquery_table" "dynamic_auth_views_non_encrypted" {
 }
 
 # Create lvs auth views in testing dataset
-resource "google_bigquery_table" "lvs_auth_views_testing" {
+resource "google_bigquery_table" "lvs_auth_views_test" {
   for_each = local.lvs_schema_table_queries
 
   dataset_id         = "auth_view_testing"
@@ -42,7 +42,7 @@ resource "google_bigquery_table" "lvs_auth_views_testing" {
 }
 
 # Create salus auth views in testing dataset
-resource "google_bigquery_table" "salus_auth_views_testing" {
+resource "google_bigquery_table" "salus_auth_views_test" {
   for_each = local.salus_schema_table_queries
 
   dataset_id         = "auth_view_testing"
@@ -57,7 +57,7 @@ resource "google_bigquery_table" "salus_auth_views_testing" {
 }
 
 # Create sambla_legacy auth views in testing dataset
-resource "google_bigquery_table" "sambla_legacy_auth_views_testing" {
+resource "google_bigquery_table" "sambla_legacy_auth_views_test" {
   for_each = local.sambla_legacy_schema_table_queries
 
   dataset_id         = "auth_view_testing"
