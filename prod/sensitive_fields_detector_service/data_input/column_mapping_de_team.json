@@ -7,7 +7,9 @@
         "foreignerSSN", 
         "sotu", 
         "ssc", 
-        "yv_sotu"
+        "yv_sotu",
+        "identify",
+        "national_id_sensitive"
     ],
     "phone": [
         "customer_phone", 
@@ -20,7 +22,12 @@
         "sec_phone", 
         "secondaryPhoneNumber", 
         "thr_phone", 
-        "work_phone"
+        "work_phone",
+        "puhelin",
+        "työpuhelin",
+        "yv_tyopuhelin",
+        "tyopuhelin",
+        "yv_puhelin"
     ],
     "email": [
         "customer_contactinfo", 
@@ -58,19 +65,24 @@
         "directDebitNumber",
         "bank",
         "bank_iban",
-        "bank_bic"
+        "bank_bic",
+        "bank_account"
     ],
     "is_pep": [
         "politicallyExposedPerson",
-        "politicallyExposedPersonDescription"
+        "politicallyExposedPersonDescription",
+        "is_politically_exposed",
+        "politically_exposed"
     ],
     "dob": [
         "birth_date",
-        "birthday"
+        "birthday",
+        "customer_birth_date"
     ],
     "gender": [
         "sex",
-        "customer_gender"
+        "customer_gender",
+        "sukupuoli"
     ],
     "net_income": [
         "amount",
@@ -96,8 +108,15 @@
         "other_monthly_income_before_tax",
         "other_monthly_income_after_tax",
         "taxed_annual_income",
-        "previous_taxed_annual_income"
-
+        "previous_taxed_annual_income",
+        "value",
+        "nettotulot",
+        "bruttotulot",
+        "nettotulos",
+        "yv_bruttotulot",
+        "yv_nettotulot",
+        "salary_monthly_net",
+        "salary_monthly_gross"
 
     ],
     "business_id": [
@@ -112,14 +131,20 @@
         "business_organization_number"
     ],
     "citizenship": [
-        "citizenship_text"
+        "citizenship_text",
+        "kansalaisuus",
+        "nationality"
     ],
     "employer": [
         "employerCountry", 
         "employerDoc", 
-        "employerPhone", 
         "employer_name", 
-        "employer_phone"
+        "employer_phone",
+        "tyonantaja",
+        "tyonantajapuh",
+        "edtyonantaja",
+        "yv_tyonantaja",
+        "yv_tyonantajapuh"
     ],
     "gross_income": [
         "gross_income_spouse"
@@ -131,13 +156,17 @@
         "zip",
         "zip_code", 
         "postal_area",
-        "customer_postal_code"
+        "customer_postal_code",
+        "postinumero"
     ],
     "profession": [
         "employment_profession", 
         "employment_profession_class", 
         "profession_area", 
-        "profession_class"
+        "profession_class",
+        "ammatti",
+        "occupation",
+        "occupation_title"
     ],
     "address": [
         "permitNumber", 
@@ -156,25 +185,33 @@
         "customer_address2",
         "customer_city",
         "customer_state",
-        "customer_country_code",
         "customer_country_name" ,
-        "customer_passport_issuance_country_code",
         "customer_passport_issuance_country_name", 
         "secret_address",
-        "temporary_address"
+        "temporary_address",
+        "business_address",
+        "paikkakunta",
+        "yv_kaupunki",
+        "yv_asuu"
     ],
     "education": [
         "education_level", 
         "education_level_text", 
-        "yv_koulutus"
+        "yv_koulutus",
+        "koulutus"
     ],
     "marital_status": [
         "yv_siviilisaaty",
-        "civil_status_text"
+        "civil_status_text",
+        "civil_status",
+        "siviilisaaty",
+        "siviilisääty"
     ],
     "json_col" : [
         "data",
-        "raw_data"
+        "raw_data",
+        "text",
+        "identifier"
     ],
     "current_loans_amount" : [
         "creditReports",
@@ -187,7 +224,10 @@
 
     ],
     "revenue": [
-        "revenue_share_percent"
+        "revenue_share_percent",
+        "yearlyRevenue",
+        "monthlyRevenue",
+        "liikevaihto"
     ],
     "comission": [
         "commission_iq_a",
@@ -200,7 +240,8 @@
     "balance": [
         "debt_balance",
         "original_balance",
-        "last_application_debt_balance"
+        "last_application_debt_balance",
+        "interestBearingBalance"
     ],
     "capital_deficit":[
         "previous_capital_deficit"
@@ -215,6 +256,8 @@
 
     "installment": [
         "installment_charges"
+    ],
+    "occupation": [       
     ]
 
 }
