@@ -81,13 +81,13 @@
                     },
                     "secret_address": {
                         "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": null
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
                     },
                     "temporary_address": {
                         "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": null
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
                     },
                     "business_address": {
                         "sensitivity": "high",
@@ -111,8 +111,8 @@
                     }
                 },
                 "sensitivity": "high",
-                "masking_rule": "SHA256",
-                "type": "STRING",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "SHA256",
                 "category": "PII"
             },
             "bank_account_number": {
@@ -952,13 +952,13 @@
                     },
                     "nettotulot": {
                         "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": null
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
                     },
                     "bruttotulot": {
                         "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": null
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
                     },
                     "nettotulos": {
                         "sensitivity": "medium",
