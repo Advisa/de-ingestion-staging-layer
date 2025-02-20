@@ -34,7 +34,7 @@ policy_tags_pii_child_tags AS (
   INNER JOIN 
     policy_tags_all t2 
   ON t1.parent_policy_tag_id = t2.policy_tag_id
-  WHERE t2.display_name IN ('employer', 'email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number', 'address', 'post_code')
+  WHERE t2.display_name IN ('employer', 'email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number', 'address', 'post_code','data')
   
 ),
 policy_tags_pii_parent_tags AS (
@@ -45,7 +45,7 @@ policy_tags_pii_parent_tags AS (
   INNER JOIN 
     policy_tags_all t2 
   ON t1.parent_policy_tag_id = t2.policy_tag_id
-  WHERE t2.display_name IN ('email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number','address', 'post_code')
+  WHERE t2.display_name IN ('email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number','address', 'post_code','data')
   
 ),
 
@@ -62,6 +62,7 @@ sensitive_fields AS (
         r.table_name,
         r.column_name,
         r.field_path,
+        r.data_type,
         LOWER(REPLACE(
             CASE 
                 WHEN r.field_path LIKE '%.%' THEN SUBSTR(r.field_path, STRPOS(r.field_path, '.') + 1)
@@ -87,6 +88,9 @@ sensitive_fields AS (
                 ELSE r.field_path
             END, "_", ""
         )) = LOWER(REPLACE(p.display_name, "_", ""))
+        --edge cases where these columns have encrypted values already
+    WHERE NOT (r.table_name = 'people_adhis_r' AND r.column_name IN ('national_id','contact_id'))
+    AND NOT (r.table_name = 'archived_ssn' AND r.column_name = 'contact_id')
 ),
 
 join_keys AS (
@@ -103,7 +107,8 @@ join_keys AS (
       OR "ssnid" IN UNNEST(ARRAY_AGG(normalized_column)) 
       OR "nationalid" IN UNNEST(ARRAY_AGG(normalized_column)) 
       OR "sotu" IN UNNEST(ARRAY_AGG(normalized_column)) 
-      OR "yvsotu" IN UNNEST(ARRAY_AGG(normalized_column)),
+      OR "yvsotu" IN UNNEST(ARRAY_AGG(normalized_column))
+      OR "nationalidsensitive" IN UNNEST(ARRAY_AGG(normalized_column)),
       TRUE, FALSE
     ) AS is_table_contains_ssn
   FROM sensitive_fields 
@@ -120,7 +125,7 @@ unnested_join_keys AS (
     CASE 
       WHEN table_name != "people_adhis_r" 
         AND LOWER(REPLACE(join_key, "_", "")) 
-        IN ('ssn', 'ssnid', 'nationalid', 'customerssn', 'sotu', 'yvsotu') 
+        IN ('ssn', 'ssnid', 'nationalid', 'customerssn', 'sotu', 'yvsotu','nationalidsensitive') 
         THEN  join_key
      -- Exceptional case
       WHEN table_name = "people_adhis_r" 
@@ -142,16 +147,24 @@ non_nested_field_encryption AS (
                     -- If sensitive field exists (i.e. t2.display_name is not null), apply encryption
                     WHEN t2.display_name IS NOT NULL THEN
                         CONCAT(
-                            "CASE WHEN raw.",column_name," IS NOT NULL AND raw.",column_name," <> '' AND VAULT.uuid IS NOT NULL THEN ",
-                            "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(raw.", column_name, " AS STRING), VAULT.uuid)) ",
-                            "ELSE CAST(raw.", column_name, " AS STRING) END AS ", column_name
-                        )
+                          "CASE WHEN raw.", column_name, " IS NOT NULL ",  
+                          CASE  
+                              WHEN data_type NOT IN ('INT', 'INTEGER', 'INT64', 'FLOAT64', 'FLOAT') 
+                              THEN " AND raw." || column_name || " <> ''"  
+                              WHEN data_type IN ('INT', 'INTEGER', 'INT64', 'FLOAT64', 'FLOAT') 
+                              THEN " AND raw." || column_name || " <> 0"  
+                              ELSE ""  
+                          END,  
+                          " AND VAULT.uuid IS NOT NULL THEN ",  
+                          "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(raw.", column_name, " AS STRING), VAULT.uuid)) ",  
+                          "ELSE CAST(raw.", column_name, " AS STRING) END AS ", column_name
+                      )
                 END
             )
         ) AS encrypted_fields
     FROM unnested_join_keys AS t1
     INNER JOIN sensitive_fields AS t2
-        ON t1.sensitive_field = t2.field_path
+        ON t1.sensitive_field = t2.field_path and t1.table_name = t2.table_name
     WHERE is_nested = FALSE 
     GROUP BY t1.table_schema, t1.table_name,t2.column_name
 ),
@@ -170,13 +183,20 @@ nested_field_encryption AS (
                     WHEN t2.display_name IS NOT NULL THEN
                         -- Apply encryption logic for sensitive fields (based on display_name)
                         CONCAT(
-                            "CASE WHEN f_", t2.column_name, ".", t2.nested_field, " IS NOT NULL AND f_", t2.column_name, ".", t2.nested_field, " <> '' AND VAULT.uuid IS NOT NULL THEN ",
-                            "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING), VAULT.uuid)) ",
-                            "ELSE CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING) END AS ", t2.nested_field
-                        )
-                    ELSE
-                        -- If no encryption needed, return the field as is
-                        CONCAT("f_", t2.column_name, ".", t2.nested_field)
+                            "CASE WHEN f_", t2.column_name, ".", t2.nested_field, " IS NOT NULL ",
+                            CASE  
+                                WHEN data_type IN ('INT', 'INTEGER', 'INT64', 'FLOAT64', 'FLOAT') 
+                                THEN " AND f_" || t2.column_name || "." || t2.nested_field || " <> 0"  
+                                WHEN data_type NOT IN ('INT', 'INTEGER', 'INT64', 'FLOAT64', 'FLOAT') 
+                                THEN " AND f_" || t2.column_name || "." || t2.nested_field || " <> ''"  
+                                ELSE ""  
+                            END,  
+                            " AND VAULT.uuid IS NOT NULL THEN ",  
+                            "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING), VAULT.uuid)) ",  
+                            "ELSE CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING) END AS ", t2.nested_field)
+                            ELSE
+                                -- If no encryption needed, return the field as is
+                                CONCAT("f_", t2.column_name, ".", t2.nested_field)
                 END,
                 ", "
             ),
