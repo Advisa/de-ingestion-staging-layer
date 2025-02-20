@@ -229,6 +229,11 @@
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": null
                     },
+                    "national_id_sensitive": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
                     "customer_national_id": {
                         "sensitivity": "high",
                         "masking_rule": "SHA256",

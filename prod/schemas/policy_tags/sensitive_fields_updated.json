@@ -1128,7 +1128,13 @@
                     "sensitivity": "low",
                     "masking_rule": "ALWAYS_NULL",
                     "type": "INT64"
+                },
+                "liikevaihto": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
                 }
+
             },
             "sensitivity": "low",
             "masking_rule": "ALWAYS_NULL",
