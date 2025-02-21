@@ -1,12 +1,7 @@
 import os
-import json
 import logging
 from google.cloud import bigquery
-import yaml
-import glob
 from pathlib import Path
-import pandas as pd
-import re
 import csv
 
 
@@ -20,22 +15,6 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 base_path = project_root
 schema_folder_path = project_root.parent / 'schemas'
 
-
-        
-
-def load_config(config_path):
-    """Load YAML configuration from the provided path."""
-    try:
-        with open(config_path, 'r') as file:
-            config = yaml.safe_load(file)
-        logging.info("YAML configuration loaded successfully.")
-        return config
-    except FileNotFoundError as e:
-        logging.error(f"Config file not found: {str(e)}")
-        raise e
-    except yaml.YAMLError as e:
-        logging.error(f"Error parsing YAML file: {str(e)}")
-        raise e
     
 def initialize_bigquery_clients():
     """Initialize BigQuery Client."""
