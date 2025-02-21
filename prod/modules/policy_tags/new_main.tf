@@ -1,18 +1,19 @@
+
 locals {
   # Load JSON configuration for policy tags
-  policy_tags_config = jsondecode(file("schemas/policy_tags/taxonomy_struct.json"))
+  policy_tags_config = jsondecode(file("schemas/policy_tags/sensitive_fields_updated_new.json"))
 
   # Flatten tags for high sensitivity
   high_sensitivity_tags = flatten([
     for category, category_config in local.policy_tags_config["high_sensitivity_tags"] : [
       for parent, config in category_config : [
-        for child in config["children"] : {
-          key          = "${category}-${parent}-${child}"
+        for child, child_config in config["children"] : {
+          key          = "${tostring(category)}-${tostring(parent)}-${tostring(child)}"
           category     = category
           parent       = parent
           child        = child
           sensitivity  = "high"
-          masking_rule = config["masking_rule"]
+          masking_rule = child_config["masking_rule"]
         }
       ]
     ]
@@ -22,13 +23,13 @@ locals {
   medium_sensitivity_tags = flatten([
     for category, category_config in local.policy_tags_config["medium_sensitivity_tags"] : [
       for parent, config in category_config : [
-        for child in config["children"] : {
-          key          = "${category}-${parent}-${child}"
+        for child, child_config in config["children"] : {
+          key          = "${tostring(category)}-${tostring(parent)}-${tostring(child)}"
           category     = category
           parent       = parent
           child        = child
           sensitivity  = "medium"
-          masking_rule = config["masking_rule"]
+          masking_rule = child_config["masking_rule"]
         }
       ]
     ]
@@ -38,13 +39,13 @@ locals {
   low_sensitivity_tags = flatten([
     for category, category_config in local.policy_tags_config["low_sensitivity_tags"] : [
       for parent, config in category_config : [
-        for child in config["children"] : {
-          key          = "${category}-${parent}-${child}"
+        for child, child_config in config["children"] : {
+          key          = "${tostring(category)}-${tostring(parent)}-${tostring(child)}"
           category     = category
           parent       = parent
           child        = child
           sensitivity  = "low"
-          masking_rule = config["masking_rule"]
+          masking_rule = child_config["masking_rule"]
         }
       ]
     ]
@@ -208,7 +209,8 @@ resource "google_data_catalog_policy_tag" "high_child_tags" {
   taxonomy          = google_data_catalog_taxonomy.high_sensitivity_taxonomy.id
   display_name      = each.value.child
   parent_policy_tag = google_data_catalog_policy_tag.high_parent_tags["${each.value.category}-${each.value.parent}"].id
-
+  description = "Masking Rule: ${each.value.masking_rule}"
+  
   lifecycle {
     ignore_changes = [display_name]
   }
@@ -243,30 +245,26 @@ resource "google_data_catalog_policy_tag" "low_child_tags" {
 # ---------------------
 # Data Policies
 # ---------------------
-# Create data policy for high sensitivity tags (parents + children)
-resource "google_bigquery_datapolicy_data_policy" "high_data_policy" {
-  for_each        = merge(
-    google_data_catalog_policy_tag.high_parent_tags,
-    google_data_catalog_policy_tag.high_child_tags
-  )
+# Create data policy for high sensitivity tags (parents)
+resource "google_bigquery_datapolicy_data_policy" "high_data_policy_parent" {
+  for_each        = google_data_catalog_policy_tag.high_parent_tags
+  
   location        = var.region
-  data_policy_id  = "${replace(trimspace(each.key), "-", "_")}"
+  data_policy_id  = "${replace(trimspace(each.key), "-", "")}"
   policy_tag      = each.value.name
   data_policy_type = "DATA_MASKING_POLICY"
 
   data_masking_policy {
-    predefined_expression = "SHA256"
+     predefined_expression = "SHA256"
   }
 }
 
 # Medium Sensitivity Data Policy
-resource "google_bigquery_datapolicy_data_policy" "medium_data_policy" {
-  for_each        = merge(
-    google_data_catalog_policy_tag.medium_parent_tags,
-    google_data_catalog_policy_tag.medium_child_tags
-  )
+resource "google_bigquery_datapolicy_data_policy" "medium_data_policy_parent" {
+  for_each        = google_data_catalog_policy_tag.medium_parent_tags
+
   location        = var.region
-  data_policy_id  = "${replace(trimspace(each.key), "-", "_")}"
+  data_policy_id  = "${replace(trimspace(each.key), "-", "")}"
   policy_tag      = each.value.name
   data_policy_type = "DATA_MASKING_POLICY"
 
@@ -276,17 +274,90 @@ resource "google_bigquery_datapolicy_data_policy" "medium_data_policy" {
 }
 
 # Low Sensitivity Data Policy
-resource "google_bigquery_datapolicy_data_policy" "low_data_policy" {
-  for_each        = merge(
-    google_data_catalog_policy_tag.low_parent_tags,
-    google_data_catalog_policy_tag.low_child_tags
-  )
+resource "google_bigquery_datapolicy_data_policy" "low_data_policy_parent" {
+  for_each        = google_data_catalog_policy_tag.low_parent_tags
   location        = var.region
-  data_policy_id  = "${replace(trimspace(each.key), "-", "_")}"
+  data_policy_id  = "${replace(trimspace(each.key), "-", "")}"
   policy_tag      = each.value.name
   data_policy_type = "DATA_MASKING_POLICY"
 
   data_masking_policy {
-    predefined_expression = "DEFAULT_MASKING_VALUE"
+     predefined_expression = "DEFAULT_MASKING_VALUE"
   }
 }
+
+# output "child_masking_rule_map" {
+#   value = {
+#     for tag in local.medium_sensitivity_tags : tag.child => tag.masking_rule
+#   }
+# }
+
+# output "child_masking_rule_lookup" {
+#   value = {
+#     for tag_key, tag_value in google_data_catalog_policy_tag.medium_child_tags : tag_key => lookup(
+#       {
+#         for tag in local.high_sensitivity_tags : tag.child => tag.masking_rule
+#       },
+#       tag_value.display_name,
+#       "DEFAULT_MASKING_VALUE"
+#     )
+#   }
+# }
+
+
+# Create data policy for high sensitivity tags (children)
+ resource "google_bigquery_datapolicy_data_policy" "high_data_policy_child" {
+   for_each        = google_data_catalog_policy_tag.high_child_tags
+ 
+   location        = var.region
+   data_policy_id  = "${replace(trimspace(each.key), "-", "")}"
+   policy_tag      = each.value.name
+   data_policy_type = "DATA_MASKING_POLICY"
+   data_masking_policy {
+    predefined_expression = lookup(
+      {
+        for tag in local.high_sensitivity_tags : tag.child => tag.masking_rule
+      },
+      each.value.display_name,
+      "SHA256"
+    )
+  }
+ }
+
+ # Create data policy for high sensitivity tags (children)
+ resource "google_bigquery_datapolicy_data_policy" "medium_data_policy_child" {
+   for_each        = google_data_catalog_policy_tag.medium_child_tags
+ 
+   location        = var.region
+   data_policy_id  = "${replace(trimspace(each.key), "-", "")}"
+   policy_tag      = each.value.name
+   data_policy_type = "DATA_MASKING_POLICY"
+   data_masking_policy {
+    predefined_expression = lookup(
+      {
+        for tag in local.medium_sensitivity_tags : tag.child => tag.masking_rule
+      },
+      each.value.display_name,
+      "DEFAULT_MASKING_VALUE"
+    )
+  }
+ }
+
+  # Create data policy for high sensitivity tags (children)
+ resource "google_bigquery_datapolicy_data_policy" "low_data_policy_child" {
+   for_each        = google_data_catalog_policy_tag.low_child_tags
+ 
+   location        = var.region
+   data_policy_id  = "${replace(trimspace(each.key), "-", "")}"
+   policy_tag      = each.value.name
+   data_policy_type = "DATA_MASKING_POLICY"
+   data_masking_policy {
+    predefined_expression = lookup(
+      {
+        for tag in local.low_sensitivity_tags : tag.child => tag.masking_rule
+      },
+      each.value.display_name,
+      "DEFAULT_MASKING_VALUE"
+    )
+  }
+ }
