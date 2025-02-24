@@ -8,6 +8,7 @@ default:
     compliance_project: "sambla-group-compliance-db"
     auth_views_dataset: "auth_view_rudolf"
     # auth_views_dataset: "auth_view_testing"
+    pubsub_push_topic: "test_anonymisation_events"
 prod:
   anonymization_service:
     exposure_project: "data-domain-data-warehouse"
@@ -17,3 +18,4 @@ prod:
     raw_layer_project: "sambla-data-staging-compliance"
     compliance_project: "sambla-group-compliance-db"
     auth_views_dataset: "authorized_views"
+    pubsub_push_topic: "#TODO"

@@ -1,4 +1,6 @@
 google-cloud-bigquery
+google-cloud-pubsub
 Jinja2
 google-auth
 PyYAML
+pydantic
