@@ -121,11 +121,12 @@ resource "google_bigquery_job" "load_job_to_event_data_sgmw_r_maxwell" {
   }
 
 # Create partitioned BigQuery tables for p-layer
-resource "google_bigquery_table" "partitioned_tables_maxwell_golive" {
+resource "google_bigquery_table" "partitioned_tables_maxwell" {
   for_each    = toset(var.sql_templates_maxwell)
   dataset_id  = google_bigquery_dataset.maxwell_dataset.dataset_id
   project     = var.project_id
   table_id    = replace(each.key, ".sql", "") # Table name from SQL file name
+  deletion_protection=true
 
   schema      = file("../prod/schemas/maxwell/${replace(each.key, ".sql", "_schema.json")}")
 
@@ -142,7 +143,7 @@ resource "google_bigquery_table" "partitioned_tables_maxwell_golive" {
 }
 
 # Run SQL queries from templates to create the tables
-resource "google_bigquery_job" "execute_sql_maxwell_golive" {
+resource "google_bigquery_job" "execute_sql_maxwell_prod" {
   for_each    = toset(var.sql_templates_maxwell)
   job_id      = "create_${replace(each.key, ".sql", "")}_prod_tables_golive"
   project     = var.project_id
@@ -165,7 +166,7 @@ resource "google_bigquery_job" "execute_sql_maxwell_golive" {
       write_disposition = "WRITE_TRUNCATE"
     }
     depends_on = [
-    google_bigquery_table.partitioned_tables_maxwell_golive
+    google_bigquery_table.partitioned_tables_maxwell
   ]
   }
 
