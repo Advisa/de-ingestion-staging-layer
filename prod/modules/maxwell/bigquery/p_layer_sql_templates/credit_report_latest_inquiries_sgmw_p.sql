@@ -10,5 +10,5 @@ xid,
 xoffset,
 from `${project_id}.${dataset_id}.event_data_sgmw_r`
 where table = 'credit_report_latest_inquiries'
-QUALIFY ROW_NUMBER() over(partition by xid,xoffset,ts order by source desc) = 1
+QUALIFY ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc, source desc) = 1
 

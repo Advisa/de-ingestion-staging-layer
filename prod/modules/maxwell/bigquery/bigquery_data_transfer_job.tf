@@ -143,9 +143,9 @@ resource "google_bigquery_table" "partitioned_tables_maxwell" {
 }
 
 # Run SQL queries from templates to create the tables
-resource "google_bigquery_job" "execute_sql_maxwell_prod" {
+resource "google_bigquery_job" "execute_sql_maxwell_production" {
   for_each    = toset(var.sql_templates_maxwell)
-  job_id      = "create_${replace(each.key, ".sql", "")}_prod_tables_golive"
+  job_id      = "create_${replace(each.key, ".sql", "")}_prod_tables_production"
   project     = var.project_id
   location    = "europe-north1"
 

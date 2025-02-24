@@ -39,7 +39,7 @@ CAST(JSON_VALUE(data,'$.previous_taxed_year') as TIMESTAMP) AS previous_taxed_ye
 CAST(JSON_VALUE(data,'$.score') as decimal) AS score,
 ts,
 DATE(TIMESTAMP_SECONDS(ts)) timestamp_ts,
-ROW_NUMBER() over(partition by xid,xoffset,ts order by source desc) rn,
+ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc, source desc) rn,
 source,
 xid,
 xoffset,
