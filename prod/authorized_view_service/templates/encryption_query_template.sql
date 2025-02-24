@@ -23,7 +23,7 @@ policy_tags_all AS (
   SELECT *
   FROM `{{raw_layer_project}}.policy_tags_metadata.policy_tags`
   -- gdpr_compliance_measures_prod_high, gdpr_compliance_measures_prod_medium, gdpr_compliance_measures_prod_low
-  WHERE taxonomy_id IN ('462501529798891334', '1348545653474742340', '8452725999489655507')
+  WHERE taxonomy_id IN ('7698000960465061299', '8248486934170083143', '655384675748637071')
 ),
 
 policy_tags_pii_child_tags AS (
