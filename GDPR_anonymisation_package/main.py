@@ -3,7 +3,7 @@
 import logging
 import os
 from anonymisation_service.anon_service import AnonymizationService 
-from anonymisation_service.pubsub_push import PubsubPost
+from anonymisation_service.pubsub_event_push import PubsubPost
 
 def run_anonymization(request):
     """Cloud Function entry point"""
@@ -21,5 +21,5 @@ def run_anonymization(request):
 
     return "Anonymization job completed", 200
 
-if __name__ == '__main__': # Uncomment for testing
-    run_anonymization('')
+# if __name__ == '__main__': # Uncomment for testing
+#     run_anonymization('')

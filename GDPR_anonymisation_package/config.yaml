@@ -18,4 +18,4 @@ prod:
     raw_layer_project: "sambla-data-staging-compliance"
     compliance_project: "sambla-group-compliance-db"
     auth_views_dataset: "authorized_views"
-    pubsub_push_topic: "#TODO"
+    pubsub_push_topic: "anonymisation_events"
