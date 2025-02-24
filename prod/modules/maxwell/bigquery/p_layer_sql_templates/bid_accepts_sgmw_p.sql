@@ -12,7 +12,7 @@ xid,
 xoffset,
 from `${project_id}.${dataset_id}.event_data_sgmw_r`
 where table='bid_accepts'
-QUALIFY ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc) = 1
+QUALIFY ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc, source desc) = 1
 )
 
 select * from bids 
