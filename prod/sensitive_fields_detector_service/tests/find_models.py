@@ -105,9 +105,9 @@ def main(manifest_path, csv_path, output_path):
     print(f"Report generated: {output_path}")
 
 # File paths (modify these as needed)
-manifest_path = '/Users/aruldharani/Sambla/analytics-datawarehouse-dbt/dbt_manifest_test.json'
-csv_path = '/Users/aruldharani/Sambla/analytics-datawarehouse-dbt/input_dbt.csv'
-output_path = '/Users/aruldharani/Sambla/analytics-datawarehouse-dbt/output_dbt.csv'
+manifest_path = 'prod/sensitive_fields_detector_service/tests/tests_inputs/dbt_manifest_test.json'
+csv_path = 'prod/sensitive_fields_detector_service/tests/tests_inputs/input_dbt.csv'
+output_path = 'prod/sensitive_fields_detector_service/tests/tests_outputs/output_dbt.csv'
 
 # Run the main function
 main(manifest_path, csv_path, output_path)
