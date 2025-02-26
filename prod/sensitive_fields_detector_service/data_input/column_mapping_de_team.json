@@ -211,7 +211,8 @@
         "data",
         "raw_data",
         "text",
-        "identifier"
+        "identifier",
+        "comments"
     ],
     "current_loans_amount" : [
         "creditReports",

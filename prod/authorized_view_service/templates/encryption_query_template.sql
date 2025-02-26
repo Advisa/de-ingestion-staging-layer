@@ -70,6 +70,8 @@ sensitive_fields AS (
             END, "_", ""
         )) AS normalized_column,
         CASE 
+        -- adding this to handle this edge as this column is array string but we can remove the table_name and column_name in the future
+            WHEN r.data_type = 'ARRAY<STRING>' and column_name = 'comments' and table_name in ('applications_all_versions_sambq_p','applications_sambq_p') THEN TRUE
             WHEN r.field_path LIKE '%.%' THEN TRUE
             ELSE FALSE
         END AS is_nested,   
@@ -182,30 +184,38 @@ nested_field_encryption AS (
                 DISTINCT 
                 CASE 
                     WHEN t2.display_name IS NOT NULL THEN
-                        -- Apply encryption logic for sensitive fields (based on display_name)
-                        CONCAT(
-                            "CASE WHEN f_", t2.column_name, ".", t2.nested_field, " IS NOT NULL ",
-                            CASE  
-                                WHEN data_type IN ('INT', 'INTEGER', 'INT64', 'FLOAT64', 'FLOAT') 
-                                THEN " AND f_" || t2.column_name || "." || t2.nested_field || " <> 0"  
-                                WHEN data_type NOT IN ('INT', 'INTEGER', 'INT64', 'FLOAT64', 'FLOAT') 
-                                THEN " AND f_" || t2.column_name || "." || t2.nested_field || " <> ''"  
-                                ELSE ""  
-                            END,  
-                            " AND VAULT.uuid IS NOT NULL THEN ",  
-                            "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING), VAULT.uuid)) ",  
-                            "ELSE CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING) END AS ", t2.nested_field)
-                            ELSE
-                                -- If no encryption needed, return the field as is
-                                CONCAT("f_", t2.column_name, ".", t2.nested_field)
-                END,
-                ", "
-            ),
+                    CASE WHEN data_type = 'ARRAY<STRING>' THEN 
+                          CONCAT(
+                              "CASE WHEN f_", t2.column_name, " IS NOT NULL AND f_", t2.column_name, " <> '' ",
+                              "AND VAULT.uuid IS NOT NULL THEN TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(f_", t2.column_name, " AS STRING), VAULT.uuid)) ",
+                              "ELSE CAST(f_", t2.column_name, " AS STRING) END "
+                          )
+                          ELSE
+                          -- Apply encryption logic for sensitive fields (based on display_name)
+                          CONCAT(
+                              "CASE WHEN f_", t2.column_name, ".", t2.nested_field, " IS NOT NULL ",
+                              CASE  
+                                  WHEN data_type IN ('INT', 'INTEGER', 'INT64', 'FLOAT64', 'FLOAT') 
+                                  THEN " AND f_" || t2.column_name || "." || t2.nested_field || " <> 0"  
+                                  WHEN data_type NOT IN ('INT', 'INTEGER', 'INT64', 'FLOAT64', 'FLOAT') 
+                                  THEN " AND f_" || t2.column_name || "." || t2.nested_field || " <> ''"  
+                                  ELSE ""  
+                              END,  
+                              " AND VAULT.uuid IS NOT NULL THEN ",  
+                              "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING), VAULT.uuid)) ",  
+                              "ELSE CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING) END AS ", t2.nested_field)
+                              END                           
+                      ELSE
+                          -- If no encryption needed, return the field as is
+                          CONCAT("f_", t2.column_name, ".", t2.nested_field)
+                  END,
+                  ", "
+              ),
             ") FROM UNNEST(", t2.column_name, ") AS f_", t2.column_name ,") AS ", t2.column_name
         ) AS encrypted_fields
     FROM unnested_join_keys AS t1
     INNER JOIN sensitive_fields AS t2
-       ON t1.sensitive_field = t2.column_name 
+       ON t1.sensitive_field = t2.column_name and t1.table_name = t2.table_name
     WHERE t2.is_nested = TRUE and valid_nested_field > 1 AND t1.table_schema = "sambla_legacy_integration_legacy"
     GROUP BY t1.table_schema, t1.table_name,t1.sensitive_field, t2.column_name
 ),
