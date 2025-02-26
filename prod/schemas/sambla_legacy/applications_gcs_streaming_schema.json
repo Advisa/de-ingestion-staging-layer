@@ -55,7 +55,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5910743820384249379"
               ]
             }
           }
@@ -102,7 +102,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
           ]
         }
       },
@@ -209,7 +209,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5014902748259229731"
           ]
         }
       },
@@ -379,7 +379,7 @@
     "mode": "NULLABLE",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
       ]
     }
   },
@@ -399,7 +399,7 @@
     "mode": "NULLABLE",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5014902748259229731"
       ]
     }
   },
@@ -414,7 +414,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5537369360311277340"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/9217354970880843434"
           ]
         }
       },
@@ -424,7 +424,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5644563662621812076"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/7612181528474902690"
           ]
         }
       },
@@ -444,7 +444,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5648335604763295357"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/7466513068077856858"
           ]
         }
       },
@@ -491,7 +491,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5910743820384249379"
               ]
             }
           }
@@ -543,7 +543,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
           ]
         }
       },
@@ -645,7 +645,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5014902748259229731"
           ]
         }
       },
@@ -714,7 +714,12 @@
       {
         "name": "yearlyRevenue",
         "type": "INTEGER",
-        "mode": "NULLABLE"
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/8554365892363030039"
+          ]
+        }
       },
       {
         "name": "address",
@@ -722,14 +727,19 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8404501393127763289"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/6613650332470153365"
           ]
         }
       },
       {
         "name": "monthlyRevenue",
         "type": "INTEGER",
-        "mode": "NULLABLE"
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/1431467904523358600"
+          ]
+        }
       },
       {
         "name": "entityType",
@@ -742,7 +752,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8538887370739430117"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/8931050679702196807"
           ]
         }
       },
@@ -762,7 +772,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8756448201355455671"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/4080306321922003711"
           ]
         }
       },
@@ -777,7 +787,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5910743820384249379"
           ]
         }
       },
@@ -787,7 +797,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3647273511682403710"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2923532692494885646"
           ]
         }
       },
@@ -839,7 +849,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5910743820384249379"
               ]
             }
           }
@@ -853,7 +863,12 @@
           {
             "name": "text",
             "type": "STRING",
-            "mode": "NULLABLE"
+            "mode": "NULLABLE",
+            "policyTags": {
+              "names": [
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/3246941932707629895"
+              ]
+            }
           }
         ]
       },
@@ -863,7 +878,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
           ]
         }
       },
@@ -918,7 +933,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5014902748259229731"
           ]
         }
       },
@@ -985,7 +1000,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3647273511682403710"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2923532692494885646"
           ]
         }
       }
@@ -1002,7 +1017,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5014902748259229731"
           ]
         }
       },
@@ -1076,7 +1091,12 @@
       {
         "name": "text",
         "type": "STRING",
-        "mode": "NULLABLE"
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/3246941932707629895"
+          ]
+        }
       },
       {
         "name": "remind",
@@ -1104,7 +1124,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7281891383648503186"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8410960888773883067"
           ]
         }
       }
@@ -1141,7 +1161,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5014902748259229731"
           ]
         }
       },
@@ -1156,7 +1176,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
           ]
         }
       }
@@ -1245,7 +1265,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/1368364408394592286"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8965547099484619277"
           ]
         }
       }
@@ -1287,7 +1307,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/1368364408394592286"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8965547099484619277"
           ]
         }
       }
@@ -1329,7 +1349,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
           ]
         }
       },
@@ -1339,7 +1359,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7441172237633292876"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/8468719981944804400"
           ]
         }
       },
@@ -1364,7 +1384,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5014902748259229731"
           ]
         }
       },
@@ -1458,7 +1478,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8365015034140070378"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2139902426952739877"
           ]
         }
       },
@@ -1505,7 +1525,7 @@
     "mode": "NULLABLE",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1436054727188327482"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/285323922204326910"
       ]
     }
   },
@@ -1530,7 +1550,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5998817033341608997"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/4459336840846216239"
           ]
         }
       },
@@ -1540,7 +1560,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7035165451503712614"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2356473455812427560"
           ]
         }
       },
@@ -1550,7 +1570,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3647273511682403710"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2923532692494885646"
           ]
         }
       },
@@ -1602,7 +1622,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4190779673109096674"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/4089129269302642070"
           ]
         }
       },
@@ -1622,7 +1642,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5537369360311277340"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/9217354970880843434"
           ]
         }
       },
@@ -1642,14 +1662,19 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5910743820384249379"
           ]
         }
       },
       {
         "name": "civilStatus",
         "type": "STRING",
-        "mode": "NULLABLE"
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/700089495488447192"
+          ]
+        }
       },
       {
         "name": "mortgage",
@@ -1662,7 +1687,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1841188998749619886"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6833665301934383846"
           ]
         }
       },
@@ -1687,7 +1712,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1479193968751584031"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/3307398106221668304"
                   ]
                 }
               },
@@ -1717,7 +1742,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3484328746017016776"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/577342234998707006"
                   ]
                 }
               },
@@ -1727,14 +1752,19 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3542123778861720951"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/363070621573696500"
                   ]
                 }
               },
               {
                 "name": "interestBearingBalance",
                 "type": "FLOAT",
-                "mode": "NULLABLE"
+                "mode": "NULLABLE",
+                "policyTags": {
+                  "names": [
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/8988147007562314812"
+                  ]
+                }
               },
               {
                 "name": "receivedTime",
@@ -1762,7 +1792,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7441172237633292876"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/8468719981944804400"
                   ]
                 }
               },
@@ -1806,7 +1836,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8404501393127763289"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/6613650332470153365"
           ]
         }
       },
@@ -1851,7 +1881,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8505201773480712780"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/9169499821877390682"
               ]
             }
           },
@@ -1861,7 +1891,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1157314579281338318"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/7865053839180578068"
               ]
             }
           },
@@ -1881,7 +1911,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1157314579281338318"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/7865053839180578068"
                   ]
                 }
               },
@@ -1891,7 +1921,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8505201773480712780"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/9169499821877390682"
                   ]
                 }
               },
@@ -1901,7 +1931,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3855094423986011776"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/7715370514140873707"
                   ]
                 }
               }
@@ -1918,7 +1948,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8200763276510798683"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/2811384579850779811"
               ]
             }
           },
@@ -1933,7 +1963,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3855094423986011776"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/7715370514140873707"
               ]
             }
           },
@@ -1963,7 +1993,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
                   ]
                 }
               }
@@ -2007,7 +2037,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5910743820384249379"
                   ]
                 }
               },
@@ -2061,7 +2091,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/6608376575111469545"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/368681235308034403"
           ]
         }
       },
@@ -2081,7 +2111,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5402494257545691358"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/8314171996373817123"
           ]
         }
       },
@@ -2093,7 +2123,12 @@
       {
         "name": "occupation",
         "type": "STRING",
-        "mode": "NULLABLE"
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/45742810527122249"
+          ]
+        }
       },
       {
         "name": "childrenAlimony",
@@ -2106,7 +2141,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3647273511682403710"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2923532692494885646"
           ]
         }
       },
@@ -2121,7 +2156,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8538887370739430117"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/8931050679702196807"
           ]
         }
       },
@@ -2193,7 +2228,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7882382231819987747"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/4808653929885277592"
           ]
         }
       },
@@ -2208,7 +2243,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/316825897879108393"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/3155126062664773182"
               ]
             }
           },
@@ -2240,7 +2275,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8001475159894173018"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6461865643284600660"
           ]
         }
       },
@@ -2250,7 +2285,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/4507853496904095067"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/3317539461820597114"
           ]
         }
       },
@@ -2285,7 +2320,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/9173116380345773932"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/5925297115495252281"
           ]
         }
       },
@@ -2317,7 +2352,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8334893193964998745"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2607624055502470227"
           ]
         }
       },
@@ -2342,7 +2377,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1883443429551959272"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/3031756626705102331"
               ]
             }
           },
@@ -2352,7 +2387,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8427714892584985694"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/9020203614155455091"
               ]
             }
           }
@@ -2403,7 +2438,12 @@
               {
                 "name": "value",
                 "type": "INTEGER",
-                "mode": "NULLABLE"
+                "mode": "NULLABLE",
+                "policyTags": {
+                  "names": [
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6031413161488808302"
+                  ]
+                }
               }
             ]
           },
@@ -2423,7 +2463,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
                   ]
                 }
               }
@@ -2442,7 +2482,12 @@
               {
                 "name": "value",
                 "type": "INTEGER",
-                "mode": "NULLABLE"
+                "mode": "NULLABLE",
+                "policyTags": {
+                  "names": [
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6031413161488808302"
+                  ]
+                }
               }
             ]
           },
@@ -2459,7 +2504,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3787025301102789221"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/8053056016438559069"
           ]
         }
       },
@@ -2484,7 +2529,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/22037987173822199"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5754799643982292409"
           ]
         }
       },
@@ -2494,7 +2539,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/6238359803474318692"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/8548561669794386753"
           ]
         }
       },
@@ -2504,7 +2549,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/614715639179995501"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/1553289368757892144"
           ]
         }
       },
@@ -2519,7 +2564,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7051526824838973807"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/511583085911940693"
           ]
         }
       },
@@ -2529,7 +2574,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5967090950065027761"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/4906941243699927382"
           ]
         }
       },
@@ -2549,7 +2594,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/6876815424823167732"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5257575529762582064"
           ]
         }
       },
@@ -2559,7 +2604,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/1568489129286556525"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5682054803605712754"
           ]
         }
       },
@@ -2574,7 +2619,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3438195291922151573"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8490938856311491456"
           ]
         }
       },
@@ -2589,7 +2634,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5166604514616614536"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/2888287269054757620"
           ]
         }
       }
@@ -2798,7 +2843,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5014902748259229731"
           ]
         }
       },
@@ -2825,7 +2870,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5998817033341608997"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/4459336840846216239"
           ]
         }
       },
@@ -2835,7 +2880,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7035165451503712614"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2356473455812427560"
           ]
         }
       },
@@ -2845,7 +2890,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3647273511682403710"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2923532692494885646"
           ]
         }
       },
@@ -2897,7 +2942,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4190779673109096674"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/4089129269302642070"
           ]
         }
       },
@@ -2917,7 +2962,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5537369360311277340"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/9217354970880843434"
           ]
         }
       },
@@ -2934,7 +2979,12 @@
               {
                 "name": "value",
                 "type": "FLOAT",
-                "mode": "NULLABLE"
+                "mode": "NULLABLE",
+                "policyTags": {
+                  "names": [
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6031413161488808302"
+                  ]
+                }
               },
               {
                 "name": "month",
@@ -2959,7 +3009,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
                   ]
                 }
               }
@@ -2978,7 +3028,12 @@
               {
                 "name": "value",
                 "type": "FLOAT",
-                "mode": "NULLABLE"
+                "mode": "NULLABLE",
+                "policyTags": {
+                  "names": [
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6031413161488808302"
+                  ]
+                }
               },
               {
                 "name": "month",
@@ -3005,14 +3060,19 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5910743820384249379"
           ]
         }
       },
       {
         "name": "civilStatus",
         "type": "STRING",
-        "mode": "NULLABLE"
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/700089495488447192"
+          ]
+        }
       },
       {
         "name": "mortgage",
@@ -3025,7 +3085,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1841188998749619886"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6833665301934383846"
           ]
         }
       },
@@ -3055,7 +3115,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8404501393127763289"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/6613650332470153365"
           ]
         }
       },
@@ -3110,7 +3170,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1157314579281338318"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/7865053839180578068"
               ]
             }
           },
@@ -3125,7 +3185,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8505201773480712780"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/9169499821877390682"
                   ]
                 }
               },
@@ -3135,7 +3195,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3855094423986011776"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/7715370514140873707"
                   ]
                 }
               },
@@ -3145,7 +3205,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1157314579281338318"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/7865053839180578068"
                   ]
                 }
               }
@@ -3157,7 +3217,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/8200763276510798683"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/2811384579850779811"
               ]
             }
           },
@@ -3192,7 +3252,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
                   ]
                 }
               }
@@ -3214,7 +3274,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5910743820384249379"
                   ]
                 }
               },
@@ -3241,7 +3301,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8505201773480712780"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/9169499821877390682"
               ]
             }
           },
@@ -3256,7 +3316,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3855094423986011776"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/7715370514140873707"
               ]
             }
           },
@@ -3295,7 +3355,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/7882382231819987747"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/4808653929885277592"
           ]
         }
       },
@@ -3315,7 +3375,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/6608376575111469545"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/368681235308034403"
           ]
         }
       },
@@ -3345,7 +3405,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1479193968751584031"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/3307398106221668304"
                   ]
                 }
               },
@@ -3375,7 +3435,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3484328746017016776"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/577342234998707006"
                   ]
                 }
               },
@@ -3385,14 +3445,19 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3542123778861720951"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/363070621573696500"
                   ]
                 }
               },
               {
                 "name": "interestBearingBalance",
                 "type": "FLOAT",
-                "mode": "NULLABLE"
+                "mode": "NULLABLE",
+                "policyTags": {
+                  "names": [
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/8988147007562314812"
+                  ]
+                }
               },
               {
                 "name": "receivedTime",
@@ -3420,7 +3485,7 @@
                 "mode": "NULLABLE",
                 "policyTags": {
                   "names": [
-                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7441172237633292876"
+                    "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/8468719981944804400"
                   ]
                 }
               },
@@ -3449,7 +3514,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5402494257545691358"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/8314171996373817123"
           ]
         }
       },
@@ -3461,7 +3526,12 @@
       {
         "name": "occupation",
         "type": "STRING",
-        "mode": "NULLABLE"
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/45742810527122249"
+          ]
+        }
       },
       {
         "name": "childrenAlimony",
@@ -3474,7 +3544,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3647273511682403710"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2923532692494885646"
           ]
         }
       },
@@ -3489,7 +3559,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8538887370739430117"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/8931050679702196807"
           ]
         }
       },
@@ -3556,7 +3626,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/6876815424823167732"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5257575529762582064"
           ]
         }
       },
@@ -3571,7 +3641,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/316825897879108393"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/3155126062664773182"
               ]
             }
           },
@@ -3603,7 +3673,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8001475159894173018"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6461865643284600660"
           ]
         }
       },
@@ -3613,7 +3683,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/4507853496904095067"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/3317539461820597114"
           ]
         }
       },
@@ -3648,7 +3718,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/9173116380345773932"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/5925297115495252281"
           ]
         }
       },
@@ -3680,7 +3750,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8334893193964998745"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2607624055502470227"
           ]
         }
       },
@@ -3705,7 +3775,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/1883443429551959272"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/3031756626705102331"
               ]
             }
           },
@@ -3715,7 +3785,7 @@
             "mode": "NULLABLE",
             "policyTags": {
               "names": [
-                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/8427714892584985694"
+                "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/9020203614155455091"
               ]
             }
           }
@@ -3754,7 +3824,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/3787025301102789221"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/8053056016438559069"
           ]
         }
       },
@@ -3779,7 +3849,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/22037987173822199"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5754799643982292409"
           ]
         }
       },
@@ -3789,7 +3859,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/6238359803474318692"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/8548561669794386753"
           ]
         }
       },
@@ -3799,7 +3869,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/614715639179995501"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/1553289368757892144"
           ]
         }
       },
@@ -3814,7 +3884,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7051526824838973807"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/511583085911940693"
           ]
         }
       },
@@ -3824,7 +3894,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5967090950065027761"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/4906941243699927382"
           ]
         }
       },
@@ -3859,7 +3929,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3438195291922151573"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8490938856311491456"
           ]
         }
       },
@@ -3874,7 +3944,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/5166604514616614536"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/2888287269054757620"
           ]
         }
       }
@@ -4014,7 +4084,12 @@
       {
         "name": "text",
         "type": "STRING",
-        "mode": "NULLABLE"
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/3246941932707629895"
+          ]
+        }
       },
       {
         "name": "supplement",
@@ -4190,7 +4265,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/3997340774018070165"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5910743820384249379"
           ]
         }
       },
@@ -4232,7 +4307,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/5489266776001725763"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5308703684021058950"
           ]
         }
       },
@@ -4242,7 +4317,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/4258342891448046031"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5014902748259229731"
           ]
         }
       },
@@ -4281,7 +4356,12 @@
       {
         "name": "text",
         "type": "STRING",
-        "mode": "NULLABLE"
+        "mode": "NULLABLE",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/3246941932707629895"
+          ]
+        }
       },
       {
         "name": "user",
@@ -4294,7 +4374,7 @@
         "mode": "NULLABLE",
         "policyTags": {
           "names": [
-            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7281891383648503186"
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8410960888773883067"
           ]
         }
       }

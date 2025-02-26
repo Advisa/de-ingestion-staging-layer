@@ -72,7 +72,12 @@
   {
     "name": "bank_account",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/3791319644807221470"
+      ]
+    }
   },
   {
     "name": "loan_application_id",

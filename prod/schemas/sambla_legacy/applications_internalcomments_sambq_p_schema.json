@@ -12,7 +12,12 @@
   {
     "name": "text",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "mode": "NULLABLE",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/3246941932707629895"
+      ]
+    }
   },
   {
     "name": "remind",
@@ -40,7 +45,7 @@
     "mode": "NULLABLE",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/7281891383648503186"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8410960888773883067"
       ]
     }
   },
