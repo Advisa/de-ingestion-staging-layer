@@ -91,6 +91,7 @@ sensitive_fields AS (
         --edge cases where these columns have encrypted values already
     WHERE NOT (r.table_name = 'people_adhis_r' AND r.column_name IN ('national_id','contact_id'))
     AND NOT (r.table_name = 'archived_ssn' AND r.column_name = 'contact_id')
+    AND NOT (r.table_name IN ('applications_sambq_p','applications_all_versions_sambq_p') AND r.column_name = 'text')
 ),
 
 join_keys AS (
@@ -309,4 +310,4 @@ GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
 )
 SELECT distinct * FROM final 
 WHERE final_encrypted_columns IS NOT NULL
-AND table_schema IN ("advisa_history_integration_legacy")
+AND table_schema IN ("sambla_legacy_integration_legacy")
