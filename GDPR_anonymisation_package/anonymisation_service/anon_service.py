@@ -1,6 +1,5 @@
 import logging
 import yaml
-import os
 import sys
 from jinja2 import Template
 from google.cloud import bigquery
@@ -67,7 +66,6 @@ class AnonymizationService:
 
     def get_column_key_for_table(self, dataset, table_name):
         """Retrieve the first available key column from the schema of the given table."""
-        # possible_keys = ['national_id_sensitive', 'ssn', 'ssn_id', 'national_id', 'nationalId', 'sotu']
         possible_keys = ['ssn_clean', 'secondary_column', 'secondary_column_v2']
 
         try:

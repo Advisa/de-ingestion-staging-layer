@@ -1,0 +1,13 @@
+{
+    "type": "record",
+    "name": "AnonymizationEvent",
+    "fields": [
+        {"name": "national_id", "type": "string"},
+        {"name": "customer_id", "type": "long", "doc": "datatype LONG as 32 bit int too small for values passed from BigQuery INT"},
+        {"name": "emails", "type": {"type": "array", "items": "string"}},
+        {"name": "mobile_phones", "type": {"type": "array", "items": "string"}},
+        {"name": "market", "type": "string"},
+        {"name": "last_brand_interaction", "type": "string"},
+        {"name": "compliance_event", "type": "string"}
+    ]
+}

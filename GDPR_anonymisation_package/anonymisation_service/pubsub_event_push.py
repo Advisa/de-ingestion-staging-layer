@@ -3,10 +3,11 @@ import yaml
 import json
 import sys
 from jinja2 import Template
-from google.cloud import bigquery
-from anonymisation_service.models import AnonymizationEvent 
+from google.cloud import bigquery, pubsub_v1
 from datetime import datetime
-from google.cloud import pubsub_v1
+import fastavro
+from io import BytesIO
+import time
 
 class PubsubPost:
     def __init__(self, config_path, env='dev'):
@@ -25,13 +26,19 @@ class PubsubPost:
         self.gdpr_events_dataset = self.anonymization_config.get('gdpr_events_dataset')
         self.gdpr_vault_table = self.anonymization_config.get('gdpr_vault_table')
         self.pubsub_topic = self.anonymization_config.get('pubsub_push_topic')
+        self.dl_topic = self.anonymization_config.get('pubsub_dead_letter_topic')
 
         # Initialize BigQuery client and PubSub publisher
         self.clients = self.initialize_bigquery_clients()
         self.publisher = pubsub_v1.PublisherClient()
 
-        # Load SQL Template
+        
+        with open('anonymisation_service/schemas/anonymization_event.avsc', 'r') as f:
+            self.avro_schema = json.load(f)
+
+        # Load SQL Template and set LIMIT for sql template for DEV testing
         self.get_anonymisation_events = self.load_template("anonymisation_customer_data.sql")
+        self.limit_clause = "LIMIT 100" if env == "dev" else ""
 
     def load_config(self, config_path):
         """Load YAML configuration from the provided path."""
@@ -79,37 +86,81 @@ class PubsubPost:
             raise e
 
     def process_row(self, row):
-        """Validate and transform a row into a JSON payload."""
+        """
+        Process and validate a message.
+        If processing fails, send the message to a Dead Letter Topic (DLT).
+        """
         try:
-            event = AnonymizationEvent(**dict(row))
-            return event.to_json()
+            row_dict = {
+                field['name']: row[index]  # Map each schema field to its corresponding value
+                for index, field in enumerate(self.avro_schema['fields'])
+            }
+
+            # Serialize using Avro
+            bytes_io = BytesIO()
+            fastavro.writer(bytes_io, self.avro_schema, [row_dict])
+            bytes_io.seek(0)
+
+            # Deserialize to validate
+            decoded_row = next(fastavro.reader(bytes_io, self.avro_schema))
+            return decoded_row
+
         except Exception as e:
-            logging.error(f"Validation failed: {e}")
+            logging.error(f"Deserialization failed: {e}")
+            logging.error(f"Row data: {row}")
+            self.send_to_dead_letter_topic(row_dict)
             return None
         
-    def publish_event(self, event_payload):
-        """Publish an event to a Pub/Sub topic with a push timestamp."""
+    def publish_event(self, event_payload, max_retries=2):
+        """
+        Publish an event to a Pub/Sub topic with a push timestamp.
+        If publishing fails after retries, send the message to a Dead Letter Topic (DLT).
+        """
         try:
             # Add push_time to the payload
-            event_payload["push_time"] = datetime.utcnow().isoformat()  # Add push_time in UTC
-
+            event_payload["push_time"] = datetime.utcnow().isoformat()  # UTC timestamp
+            
             # Convert to JSON string
             message_json = json.dumps(event_payload)
-            # print(message_json)
             message_bytes = message_json.encode("utf-8")
 
-            # get the full Pub/Sub topic path
             topic_path = self.publisher.topic_path(self.exposure_project, self.pubsub_topic)
 
-            # Publish the message
-            future = self.publisher.publish(topic_path, message_bytes)
-            message_id = future.result()
+            for attempt in range(max_retries):
+                try:
+                    future = self.publisher.publish(topic_path, message_bytes)
+                    message_id = future.result()
+                    logging.info(f"Published message ID: {message_id}")
+                    return 1  # Success
+                except Exception as e:
+                    logging.warning(f"Attempt {attempt + 1} failed: {e}")
+                    time.sleep(2 ** attempt)  # Exponential backoff
 
-            logging.info(f"Published message ID: {message_id}")
-            return 1
+            # If all retries fail, send to Dead Letter Topic
+            logging.error("All publish attempts failed. Sending message to Dead Letter Topic.")
+            self.send_to_dead_letter_topic(event_payload)
+            return 0  # Failure
+
         except Exception as e:
-            logging.error(f"Failed to publish event: {e}")
-            return 0
+            logging.error(f"Unexpected failure in publish_event: {e}")
+            return 0  # Failure
+
+    def send_to_dead_letter_topic(self, event_payload):
+        """Send failed messages to a Dead Letter Topic (DLT)."""
+        try:
+            dead_letter_topic_path = self.publisher.topic_path(self.exposure_project, self.dl_topic)
+
+            # Convert to JSON and encode
+            message_json = json.dumps(event_payload)
+            message_bytes = message_json.encode("utf-8")
+
+            # Publish the failed message to the Dead Letter Topic
+            future = self.publisher.publish(dead_letter_topic_path, message_bytes)
+            message_id = future.result()
+            logging.info(f"Failed message sent to Dead Letter Topic. Message ID: {message_id}")
+
+        except Exception as e:
+            logging.error(f"Failed to send message to Dead Letter Topic: {e}")
 
     def main(self):
         """Main function to execute the workflow."""
@@ -120,6 +171,7 @@ class PubsubPost:
                 compliance_project=self.compliance_project,
                 gdpr_events_dataset=self.gdpr_events_dataset,
                 gdpr_vault_table=self.gdpr_vault_table,
+                limit_clause = self.limit_clause
             )
             customers = self.execute_query(self.clients['raw_layer_project'], pull_anonymisation_events_query)
             
