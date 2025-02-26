@@ -94,7 +94,12 @@
       {
         "name": "comments",
         "type": "STRING",
-        "mode": "REPEATED"
+        "mode": "REPEATED",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6648053288186094991"
+          ]
+        }
       },
       {
         "name": "amount",
@@ -530,7 +535,12 @@
       {
         "name": "comments",
         "type": "STRING",
-        "mode": "REPEATED"
+        "mode": "REPEATED",
+        "policyTags": {
+          "names": [
+            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6648053288186094991"
+          ]
+        }
       },
       {
         "name": "is_valid_bid",
@@ -699,7 +709,12 @@
   {
     "name": "comments",
     "type": "STRING",
-    "mode": "REPEATED"
+    "mode": "REPEATED",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/6648053288186094991"
+      ]
+    }
   },
   {
     "name": "company",
