@@ -47,6 +47,7 @@ module "salus_bq_config" {
   project_id = var.project_id
   region     = var.region
   connection_id = google_bigquery_connection.default.name
+  data_domain_project_id = var.data_domain_project_id
   depends_on = [ google_bigquery_connection.default ]
 }
 module "salus_gcs_config" {
