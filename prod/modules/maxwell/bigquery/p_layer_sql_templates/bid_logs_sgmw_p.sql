@@ -18,7 +18,7 @@ xid,
 xoffset,
 from `${project_id}.${dataset_id}.event_data_sgmw_r`
 where table='bid_logs'
-QUALIFY ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc) = 1
+QUALIFY ROW_NUMBER() over(partition by xid,xoffset,ts order by xid desc, source desc) = 1
 )
 
 select * from bid_logs where date(created_at) >='2021-01-01'

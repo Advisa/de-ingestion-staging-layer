@@ -1,0 +1,1237 @@
+{
+    "taxonomy_name": "gdpr_compliance_measures",
+    "high_sensitivity_tags": {
+        "PII": {
+            "address": {
+                "children": {
+                    "osoite": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "postal_address": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "street_address": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "web_address": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "yv_osoite": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "permitNumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "permitType": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "originIPAddress": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "city": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "customer_address": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "customer_address2": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "customer_city": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "customer_state": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "customer_country_name": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "customer_passport_issuance_country_name": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "secret_address": {
+                        "sensitivity": "high",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "temporary_address": {
+                        "sensitivity": "high",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "business_address": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "paikkakunta": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_kaupunki": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_asuu": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    }
+                },
+                "sensitivity": "high",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "SHA256",
+                "category": "PII"
+            },
+            "bank_account_number": {
+                "children": {
+                    "tili": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "tilintarkastaja": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "accountNumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "clearingNumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "idNumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "directDebitNumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "bank": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "bank_account": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "bank_iban": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "bank_bic": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "high",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+            },
+            "ssn": {
+                "children": {
+                    "customer_ssn": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "foreignerssn": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "national_id": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "national_id_cleaned": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "sotu": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "ssc": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "yv_sotu": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "identify": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "customer_national_id": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "national_id_sensitive": {
+                        "sensitivity": "high",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    }
+                },
+                "sensitivity": "high",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+            },
+            "email": {
+                "children": {
+                    "contact": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "contact_id": {
+                        "sensitivity": "high",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "contact_person": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "customer_contactinfo": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "customer_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "e_contacts": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "email_subject": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "emailid": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "registered_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "requirements_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "user_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "yv_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "broker_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "high",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+            },
+            "phone": {
+                "children": {
+                    "customer_phone_number": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "employer_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "external_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "fourth_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "mobile_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "original_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "phonenumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "sec_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "secondaryphonenumber": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "thr_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "work_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "puhelin": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_tyopuhelin": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "tyopuhelin": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_puhelin": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "customer_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "high",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+            },
+            "first_name": {
+                "children": {
+                    "fname": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "yv_etunimi": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "userName": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "person": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRUCT<postalCode STRING, address STRING, last_name STRING, first_name STRING, hashed_email STRING, gender STRING, hashed_ssn STRING, phoneNumber STRING, email STRING, account STRUCT<clearingNumber STRING, directDebitNumber STRING, errorAt TIMESTAMP, deactivatedAt TIMESTAMP, error BOOL, bank STRING, sentToBGCAt TIMESTAMP, errorMessage STRING, acceptedByBGCAt TIMESTAMP, sentToBGC BOOL, idNumber STRING, accountNumber STRING, acceptedByBGC BOOL>, postalArea STRING, age INT64, idNumber STRING, ssn STRING, dob DATE, name STRING, inSanctionList BOOL, politicallyExposedPerson BOOL, politicallyExposedPersonVerifiedAt TIMESTAMP, birthdate TIMESTAMP>"
+                    },
+                    "name": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "PARTNER_NAME": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "customer_first_name": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "USER_FIRST_NAME": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "etunimi": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    }
+                },
+                "sensitivity": "high",
+                "masking_rule": "SHA256",
+                "type": null,
+                "category": "PII"
+            },
+            "last_name": {
+                "children": {
+                    "lname": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "sukunimi": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_sukunimi": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "customer_last_name": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "USER_LAST_NAME": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "conventionalname": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "high",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+            }
+        },
+        "restricted": {},
+        "confidential": {}
+    },
+    "medium_sensitivity_tags": {
+        "PII": {
+            "employer": {
+                "children": {
+                    "employer_name": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "employercountry": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "tyonantaja": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "tyonantajapuh": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "edtyonantaja": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_tyonantaja": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_tyonantajapuh": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+            },
+            "post_code": {
+                "children": {
+                    "postal_code": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "postinro": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_postinro": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "zip": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "zip_code": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "postal_area": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "customer_postal_code": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "postinumero": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+            },
+            "business_organization_number": {
+                "children": {
+                    "business_identity_code": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "employment_business_id": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "yv_ytunnus": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "organizationNumber": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "ytunnus": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "customer_organisation_name": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": null
+                    },
+                    "customer_passport_number": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "customer_organisation_number": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "business_id": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+            },
+            "data": {
+                "children": {
+                    "json_col": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "raw_data": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "text": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "identifier": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "xml": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+            }
+        },
+        "restricted": {
+            "dob": {
+                "children": {
+                    "birth_date": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "TIMESTAMP"
+                    },
+                    "birthday": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "customer_birth_date": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "DATE",
+                "category": "restricted"
+            },
+            "gender": {
+                "children": {
+                    "sex": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "customer_gender": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "sukupuoli": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
+                "category": "restricted"
+            },
+            "citizenship": {
+                "children": {
+                    "citizenship_text": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "kansalaisuus": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "nationality": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
+                "category": "restricted"
+            },
+            "marital_status": {
+                "children": {
+                    "yv_siviilisaaty": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "civil_status_text": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "civil_status": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "siviilisaaty": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
+                "category": "restricted"
+            },
+            "profession": {
+                "children": {
+                    "employment_profession_class": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "profession_area": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "profession_class": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "employment_profession": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "ammatti": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "occupation": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "occupation_title": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
+                "category": "restricted"
+            },
+            "amount": {
+                "children": {
+                    "net_income_spouse": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "monthlyNetIncome": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    },
+                    "monthly_rental_income": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "rental_monthly_income_before_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "monthly_income_before_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "monthly_income_after_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "INCOME_AFTER_TAX": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "monthlyIncome": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    },
+                    "spouseIncome": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "spouse_monthly_income_after_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "spouse_monthly_income_before_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "otherIncomes": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "yearlyIncome": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    },
+                    "taxableIncome": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "taxableIncomeYear": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "extraIncome": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "secondaryIncomes": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "ARRAY<STRUCT<month STRING, value INT64>>"
+                    },
+                    "primaryIncomes": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "ARRAY<STRUCT<month STRING, value INT64>>"
+                    },
+                    "last_application_monthly_income_before_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "other_monthly_income_before_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "other_monthly_income_after_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "taxed_annual_income": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "previous_taxed_annual_income": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "net_income": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "gross_income_spouse": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "gross_income": {                           
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "value": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "nettotulot": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "bruttotulot": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "nettotulos": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "yv_bruttotulot": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "yv_nettotulot": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "salary_monthly_net": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "salary_monthly_gross": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
+                "category": "restricted"
+            }
+        },
+        "confidential": {}
+    },
+    "low_sensitivity_tags": {
+        "PII": {},
+        "restricted": {
+            "installment": {
+                "children": {
+                    "installment_charges": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "INT64",
+                "category": "confidential"
+
+            },
+            "capital_deficit": {
+                "children": {
+                    "previous_capital_deficit": {
+                        "sensitivity": "medium",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "INT64",
+                "category": "confidential"
+
+            },
+        "is_pep": {
+            "children": {
+                "politicallyExposedPerson": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "BOOL"
+                },
+                "politicallyExposedPersonDescription": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "STRING"
+                },
+                "is_politically_exposed": {
+                    "sensitivity": "medium",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
+                },
+                "politically_exposed": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": null
+                }
+            },
+            "sensitivity": "medium",
+            "masking_rule": "DEFAULT_MASKING_VALUE",
+            "type": "BOOL",
+            "category": "restricted"
+        },
+        "education": {
+            "children": {
+                "education_level": {
+                    "sensitivity": "medium",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
+                },
+                "education_level_text": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "STRING"
+                },
+                "yv_koulutus": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": null
+                },
+                "koulutus": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": null
+                }
+            },
+            "sensitivity": "medium",
+            "masking_rule": "DEFAULT_MASKING_VALUE",
+            "type": "STRING",
+            "category": "restricted"
+        }
+    },
+        "confidential": {
+            "balance": {
+                "children": {
+                    "debt_balance": {
+                        "sensitivity": "low",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "original_balance": {
+                        "sensitivity": "low",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    },
+                    "last_application_debt_balance": {
+                        "sensitivity": "low",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "INT64"
+                    },
+                    "interestBearingBalance": {
+                        "sensitivity": "low",
+                        "masking_rule": "ALWAYS_NULL",
+                        "type": "FLOAT64"
+                    }
+                },
+                "sensitivity": "low",
+                "masking_rule": "ALWAYS_NULL",
+                "type": "FLOAT64",
+                "category": "confidential"
+
+        },
+        "revenue": {
+            "children": {
+                "revenue_share_percent": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "FLOAT64"
+                },
+                "yearlyRevenue": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
+                },
+                "monthlyRevenue": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
+                },
+                "liikevaihto": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
+                }
+
+            },
+            "sensitivity": "low",
+            "masking_rule": "ALWAYS_NULL",
+            "type": "FLOAT64",
+            "category": "confidential"
+
+        },
+        "credit": {
+            "children": {
+                "credit_limit": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
+                },
+                "bisnode_creditscore": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
+                },
+                "creditscore": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "INT64"
+                },
+                "creditReports": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "ARRAY"
+                },
+                "pastReportRequests": {
+                    "sensitivity": "low",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "ARRAY"
+                },
+                "psd2Reports": {
+                    "sensitivity": "low",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "ARRAY"
+                }
+            },
+            "sensitivity": "low",
+            "masking_rule": "ALWAYS_NULL",
+            "type": "INT64",
+            "category": "confidential"
+
+        },
+        "comission": {
+            "children": {
+                "commission_iq_a": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "FLOAT64"
+                },
+                "commission_iq_b": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "FLOAT64"
+                },
+                "commission_iq_c": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "FLOAT64"
+                },
+                "commission_iq_d": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "FLOAT64"
+                },
+                "commission_iq_e": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "FLOAT64"
+                },
+                "commission_iq_f": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "FLOAT64"
+                }
+            },
+            "sensitivity": "low",
+            "masking_rule": "ALWAYS_NULL",
+            "type": "INT64",
+            "category": "confidential"
+        },
+        "current_loans_amount": {
+            "children": {
+                "loans": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "ARRAY"
+                },
+                "currentDebt": {
+                    "sensitivity": "low",
+                    "masking_rule": "ALWAYS_NULL",
+                    "type": "STRUCT"
+                }
+            },
+            "sensitivity": "low",
+            "masking_rule": "ALWAYS_NULL",
+            "type": "STRING",
+            "category": "restricted"
+        }
+    }
+    }
+}

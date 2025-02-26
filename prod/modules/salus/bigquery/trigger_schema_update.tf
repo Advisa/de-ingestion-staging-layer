@@ -1,3 +1,4 @@
+
 data "google_bigquery_tables" "dataset_salus_production" {
   dataset_id = "salus_group_integration"
   project    = var.data_domain_project_id
