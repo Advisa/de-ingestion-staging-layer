@@ -14,7 +14,7 @@ locals {
 }
 
 
-resource "null_resource" "update_table_schema_maxwell_prod_live_go" {
+resource "null_resource" "update_table_schema_maxwell_prod" {
   for_each = toset(local.table_names_maxwell)
 
   provisioner "local-exec" {
@@ -26,6 +26,6 @@ resource "null_resource" "update_table_schema_maxwell_prod_live_go" {
   }
 
   depends_on = [
-    null_resource.generate_schemas_maxwell_prod_live_go
+    null_resource.generate_schemas_maxwell_prod_go_live
   ]
 }
