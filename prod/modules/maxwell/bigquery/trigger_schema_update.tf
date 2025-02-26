@@ -14,7 +14,7 @@ locals {
 }
 
 
-resource "null_resource" "update_table_schema_maxwell_prod" {
+resource "null_resource" "update_table_schema_maxwell_prod_go_live" {
   for_each = toset(local.table_names_maxwell)
 
   provisioner "local-exec" {
