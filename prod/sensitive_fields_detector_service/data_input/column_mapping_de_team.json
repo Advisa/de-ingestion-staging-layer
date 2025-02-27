@@ -192,7 +192,8 @@
         "business_address",
         "paikkakunta",
         "yv_kaupunki",
-        "yv_asuu"
+        "yv_asuu",
+        "kaupunki"
     ],
     "education": [
         "education_level", 
