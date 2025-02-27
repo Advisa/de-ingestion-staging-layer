@@ -18,8 +18,7 @@ class PubSubSchemaManager:
             sys.exit(1)
 
         # Extract values from the YAML config for the selected environment
-        self.exposure_project = self.anonymization_config.get('exposure_project')
-        self.project_id = self.anonymization_config.get('exposure_project')
+        self.project_id = self.anonymization_config.get('raw_layer_project')
         self.schema_id = self.anonymization_config.get('pubsub_schema_id')
         self.topic_id = self.anonymization_config.get('pubsub_push_topic')
         self.dl_topic_id = self.anonymization_config.get('pubsub_dead_letter_topic')
