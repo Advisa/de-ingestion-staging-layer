@@ -41,9 +41,9 @@ resource "google_storage_bucket_object" "policy_tags_csv_file" {
   bucket = google_storage_bucket.taxonomy_bucket.name
   source = abspath("${local.root_csv_path}/policy_tags.csv")  # Replace with your local CSV file path
   depends_on = [ google_storage_bucket.taxonomy_bucket ]
-  #  lifecycle {
-  #   ignore_changes = [ source, detect_md5hash ] # if we make changes in this csv content, we have to comment out this lifecyle block before terraform apply 
-  # }
+   lifecycle {
+    ignore_changes = [ source, detect_md5hash ] # if we make changes in this csv content, we have to comment out this lifecyle block before terraform apply 
+  }
 }
 
 resource "google_bigquery_table" "taxonomy_bq_table" {
