@@ -84,7 +84,7 @@ class BigQuerySchemaExporter:
         # Create policy_tag_mapping for taxonomy_name and corresponding tag reference
         policy_tag_mapping = {}
         for _, row in policy_metadata.iterrows():
-            tag_name = row["display_name"].lower()
+            tag_name = self.normalize_name(row["display_name"])
             tag_suffix = row["policy_tag_id"]
             policy_tag_name = row["taxonomy_name"]
 
