@@ -659,6 +659,11 @@
                         "sensitivity": "medium",
                         "masking_rule": "SHA256",
                         "type": "STRING"
+                    },
+                    "comments": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
                     }
                 },
                 "sensitivity": "medium",
