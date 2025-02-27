@@ -87,28 +87,35 @@ class PubsubPost:
 
     def process_row(self, row):
         """
-        Process and validate a message.
-        If processing fails, send the message to a Dead Letter Topic (DLT).
+        Process a message, if processing fails, send the message to a Dead Letter Topic (DLT).
         """
         try:
-            row_dict = {
-                field['name']: row[index]  # Map each schema field to its corresponding value
-                for index, field in enumerate(self.avro_schema['fields'])
-            }
+            row_dict = {}
+            
+            # Iterate over the schema and process each field
+            for index, field in enumerate(self.avro_schema['fields']):
+                field_name = field['name']
+                field_value = row[index]
+                field_type = field['type']
 
-            # Serialize using Avro
-            bytes_io = BytesIO()
-            fastavro.writer(bytes_io, self.avro_schema, [row_dict])
-            bytes_io.seek(0)
+                # Handle nullable fields
+                if isinstance(field_type, list) and 'null' in field_type:
+                    if field_value is None:
+                        # If the field is null, assign None (null in JSON)
+                        row_dict[field_name] = None
+                    else:
+                        # If the field has a non-null value, assign the type with value
+                        non_null_type = next(t for t in field_type if t != 'null')
+                        row_dict[field_name] = {non_null_type: field_value}
+                else:
+                    # For fields with single type, just assign the value
+                    row_dict[field_name] = field_value
 
-            # Deserialize to validate
-            decoded_row = next(fastavro.reader(bytes_io, self.avro_schema))
-            return decoded_row
+            return row_dict
 
         except Exception as e:
-            logging.error(f"Deserialization failed: {e}")
+            logging.error(f"Processing failed: {e}")
             logging.error(f"Row data: {row}")
-            self.send_to_dead_letter_topic(row_dict)
             return None
         
     def publish_event(self, event_payload, max_retries=2):
@@ -117,14 +124,8 @@ class PubsubPost:
         If publishing fails after retries, send the message to a Dead Letter Topic (DLT).
         """
         try:
-            # Add push_time to the payload
-            event_payload["push_time"] = datetime.utcnow().isoformat()  # UTC timestamp
-            
-            # Convert to JSON string
-            message_json = json.dumps(event_payload)
-            message_bytes = message_json.encode("utf-8")
-
-            topic_path = self.publisher.topic_path(self.exposure_project, self.pubsub_topic)
+            message_bytes = json.dumps(event_payload).encode("utf-8")
+            topic_path = self.publisher.topic_path(self.raw_layer_project, self.pubsub_topic)
 
             for attempt in range(max_retries):
                 try:
@@ -148,7 +149,7 @@ class PubsubPost:
     def send_to_dead_letter_topic(self, event_payload):
         """Send failed messages to a Dead Letter Topic (DLT)."""
         try:
-            dead_letter_topic_path = self.publisher.topic_path(self.exposure_project, self.dl_topic)
+            dead_letter_topic_path = self.publisher.topic_path(self.raw_layer_project, self.dl_topic)
 
             # Convert to JSON and encode
             message_json = json.dumps(event_payload)
