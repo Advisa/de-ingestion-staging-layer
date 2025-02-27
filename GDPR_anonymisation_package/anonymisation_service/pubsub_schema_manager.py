@@ -22,7 +22,7 @@ class PubSubSchemaManager:
         self.schema_id = self.anonymization_config.get('pubsub_schema_id')
         self.topic_id = self.anonymization_config.get('pubsub_push_topic')
         self.dl_topic_id = self.anonymization_config.get('pubsub_dead_letter_topic')
-        self.avsc_file = avsc_file
+        self.kms_key = self.anonymization_config.get('kms_key')
 
         self.schema_client = SchemaServiceClient()
         self.publisher = PublisherClient()
@@ -34,7 +34,7 @@ class PubSubSchemaManager:
         self.retention_duration = Duration(seconds=self.anonymization_config.get('topic_retention_days', 1) * 24 * 60 * 60)
 
         # Read AVRO schema file
-        with open(self.avsc_file, "rb") as f:
+        with open(avsc_file, "rb") as f:
             self.avsc_source = f.read().decode("utf-8")
 
 
@@ -120,7 +120,8 @@ class PubSubSchemaManager:
             # base request with required fields
             request = {
                 "name": topic_path,
-                "message_retention_duration": self.retention_duration
+                "message_retention_duration": self.retention_duration,
+                "kms_key_name": self.kms_key  # Add KMS key
             }
             
             # Add schema settings only if schema_path is provided

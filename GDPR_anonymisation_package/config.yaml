@@ -1,7 +1,7 @@
 default: # change default values for testing
   anonymization_service:
     exposure_project: "data-domain-data-warehouse"
-    gdpr_events_dataset: "dbt_16a02f5fff" 
+    gdpr_events_dataset: "helios_dm_master" 
     gdpr_vault_table: "gdpr_vault_rudolf"
     temp_encr_table: "temp_encrypted_data"
     raw_layer_project: "sambla-data-staging-compliance"
@@ -11,10 +11,11 @@ default: # change default values for testing
     pubsub_schema_id: "anonymization-event-schema-dev"
     topic_retention_days: 1
     pubsub_dead_letter_topic: "anonymization_events_deadletter_dev"
+    kms_key: "projects/key-management-sambla/locations/europe-north1/keyRings/datawarehouse_encryption_keys/cryptoKeys/production_key"
 prod:
   anonymization_service:
     exposure_project: "data-domain-data-warehouse"
-    gdpr_events_dataset: "gdpr_events"
+    gdpr_events_dataset: "helios_dm_master"
     gdpr_vault_table: "gdpr_vault"
     temp_encr_table: "temp_encrypted_data"
     raw_layer_project: "sambla-data-staging-compliance"
@@ -24,3 +25,4 @@ prod:
     pubsub_schema_id: "anonymization-event-schema"
     topic_retention_days: 7
     pubsub_dead_letter_topic: "anonymzsation_events_deadletter"
+    kms_key: "projects/key-management-sambla/locations/europe-north1/keyRings/datawarehouse_encryption_keys/cryptoKeys/production_key"
