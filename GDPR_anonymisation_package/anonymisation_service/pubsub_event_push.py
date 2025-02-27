@@ -93,22 +93,27 @@ class PubsubPost:
             row_dict = {}
             
             # Iterate over the schema and process each field
-            for index, field in enumerate(self.avro_schema['fields']):
+            for field in self.avro_schema['fields']:
                 field_name = field['name']
-                field_value = row[index]
+                field_value = row.get(field_name, None)  # Get the value from the row dictionary
                 field_type = field['type']
 
                 # Handle nullable fields
                 if isinstance(field_type, list) and 'null' in field_type:
+                    # If the value is None, handle it as a null field
                     if field_value is None:
-                        # If the field is null, assign None (null in JSON)
                         row_dict[field_name] = None
                     else:
-                        # If the field has a non-null value, assign the type with value
+                        # If the field is not null, we need to check the other type in the union
                         non_null_type = next(t for t in field_type if t != 'null')
-                        row_dict[field_name] = {non_null_type: field_value}
+                        
+                        if isinstance(non_null_type, dict) and 'type' in non_null_type:
+                            # Handle complex types like 'array'
+                            row_dict[field_name] = {non_null_type['type']: field_value}
+                        else:
+                            row_dict[field_name] = {non_null_type: field_value}
                 else:
-                    # For fields with single type, just assign the value
+                    # For fields with single type (non-nullable), just assign the value
                     row_dict[field_name] = field_value
 
             return row_dict
@@ -178,12 +183,12 @@ class PubsubPost:
             
             message_count = 0
             for row in customers:
-                payload = self.process_row(row)
+                payload = self.process_row(dict(row))
                 if payload:
                     count = self.publish_event(payload)
                     message_count += count
             logging.info(f"Workflow completed successfully. Messages pushed: {message_count}")
 
         except Exception as e:
-            logging.error("An error occurred during the process")
+            logging.error(f"An error occurred during the process: {e}")
             raise

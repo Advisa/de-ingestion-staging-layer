@@ -4,8 +4,8 @@
     "fields": [
         {"name": "national_id", "type": "string"},
         {"name": "customer_id", "type": ["null", "long"], "default": null, "doc": "datatype LONG as 32 bit int too small for values passed from BigQuery INT"},
-        {"name": "emails", "type": {"type": "array", "items": "string"}},
-        {"name": "mobile_phones", "type": {"type": "array", "items": "string"}},
+        {"name": "emails", "type": ["null", {"type": "array", "items": "string"}], "default": null},
+        {"name": "mobile_phones", "type": ["null", {"type": "array", "items": "string"}], "default": null},
         {"name": "market", "type": ["null", "string"], "default": null},
         {"name": "last_brand_interaction", "type": ["null", "string"], "default": null},
         {"name": "compliance_event", "type": ["null", "string"], "default": null}
