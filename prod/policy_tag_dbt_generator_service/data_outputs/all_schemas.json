@@ -1,285 +1,13 @@
 {
-  "applicant_drafts_sgmw_p": [
-    {
-      "name": "occupation_title",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "civil_status",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "home_type",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "national_id",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "education_level",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "employer_name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "employer_phone",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "first_name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "postal_code",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "email",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "monthly_income_before_tax",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "monthly_income_after_tax",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "employment_type",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "employment_to",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "move_in_date",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "city",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "updated_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
+  "advisor_users_adhis_p": [
     {
       "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "last_name",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "spouse_monthly_income_after_tax",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "eu_sanction_validated_at",
+      "name": "created_at_utc",
       "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "country",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "latest_credit_default",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "home_cost",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "customer_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "num_dependants",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "is_politically_exposed",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "employment_since",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "occupation_category",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "street_address",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "birth_date",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "mobile_phone",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "citizenship",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "military_service_status",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "applicants_sgmw_p": [
-    {
-      "name": "occupation_title",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "civil_status",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "home_type",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "national_id",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "education_level",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "employer_name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "employer_phone",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "first_name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "postal_code",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "email",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "monthly_income_before_tax",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "monthly_income_after_tax",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "employment_type",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "employment_to",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "move_in_date",
-      "type": "STRING",
       "mode": "NULLABLE"
     },
     {
@@ -288,380 +16,30 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "city",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "updated_at",
+      "name": "deactivated_at_utc",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "last_name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "applicant_draft_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "spouse_monthly_income_after_tax",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "eu_sanction_validated_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "country",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "latest_credit_default",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "home_cost",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "customer_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "num_dependants",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "is_politically_exposed",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "employment_since",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "occupation_category",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "street_address",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "birth_date",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "mobile_phone",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "citizenship",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "military_service_status",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "bid_accepts_sgmw_p": [
-    {
-      "name": "bank_account",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "bid_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "updated_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "bid_additional_requirements_sgmw_p": [
-    {
-      "name": "applies_to",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "bid_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "count",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "max_age",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "required_when",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "requirement_type",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "requirement_value",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "updated_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "bid_logs_sgmw_p": [
-    {
-      "name": "reason",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "bid_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "comment",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "system",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "updated_at",
+      "name": "deactivated_at",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
       "name": "user_id",
-      "type": "INTEGER",
+      "type": "STRING",
       "mode": "NULLABLE"
-    },
+    }
+  ],
+  "applicants_adhis_p": [
     {
       "name": "id",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "action",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "bids_sgmw_p": [
-    {
-      "name": "natural_key",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    null,
-    null,
-    {
-      "name": "creditor_signing_url",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "expires_at",
+      "name": "created_at_utc",
       "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    null,
-    {
-      "name": "debt_letter_delivery_method",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    null,
-    {
-      "name": "repayment_type",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "debt_letter_received",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "invite_id",
-      "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
@@ -670,389 +48,18 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "require_consolidation_specification",
+      "name": "additional_credit_check_ok",
       "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "debt_letter_sent",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "updated_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    null,
-    null,
-    null,
-    null,
-    {
-      "name": "paid_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    null,
-    {
-      "name": "accepted",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    null,
-    {
-      "name": "id",
+      "name": "age",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
+      "name": "citizenship",
       "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "cookie_mappings_sgmw_p": [
-    {
-      "name": "application_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "cookie_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "cookies_sgmw_p": [
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "internal_id",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "credit_report_latest_inquiries_sgmw_p": [
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "date",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "credit_report_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "credit_report_xml_extract_sgmw_p": [
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "report_index",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "report_styp",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "report_name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "report_pid",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "grp_name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "grp_key",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "grp_index",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "grp_id",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "term_id",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "term_text",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    }
-  ],
-  "credit_reports_sgmw_p": [
-    {
-      "name": "template_code",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "previous_taxed_annual_income",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "debt_balance",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "country",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "national_id",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "applicant_draft_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "has_debt_reconstruction",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "postal_code",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "minor",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "previous_capital_deficit",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "taxed_annual_income",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "payment_complaint",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "uc_registration_date",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "debt_reconciliation_date",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "secret_address",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "template_passed",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "temporary_address",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "capital_deficit",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "customer_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "street_address",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "number_of_payment_complaints",
-      "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
@@ -1061,510 +68,129 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "product_type",
+      "name": "civil_status",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "xml",
+      "name": "civil_status_text",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "first_name",
+      "name": "contact_id",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "fetched_at",
+      "name": "employer_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "employer_phone",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "employment_since_utc",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "latest_payment_complaint",
+      "name": "employment_since",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "major_city_inhabitant",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "last_name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "no_visit_address",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "blocked_code",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "unregistered",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "blocked_description",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "number_of_reports_12_months",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "taxed_year",
+      "name": "employment_to_utc",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "previous_taxed_year",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    null,
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "creditor_products_sgmw_p": [
-    {
-      "name": "updated_at",
+      "name": "employment_to",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "name",
+      "name": "employment_type",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "employment_type_text",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "postal_address",
+      "name": "home_cost",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "home_type",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "home_type_text",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "minimum_loan_amount",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "invites_batch_key",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "only_last_bid_valid",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "supports_account_scraping",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "requirements_email",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "creditor_signing_url",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "debt_acquittal_exceptions",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "average_time_to_bid_in_seconds",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "only_cap_new_loans",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "arrangement_fee",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "payout_to_new_account",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "administration_fee",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "deactivated_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "requires_bank_account_on_accept",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "support_updates",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "creditor_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "loan_amount_multiple_of",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "when_to_send_rejects",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "debt_letter_delivery_method",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "delayed_filter_other_bid_apr_limit",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "maximum_loan_amount",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "repayment_time_multiple_of_in_months",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "delay_invites_seconds_self_service",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "decline_old_invite_on_update",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "slug",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "stores_credit_report_num_days",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "average_time_to_payout_in_seconds",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "signing_method",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "delayed_filter_apr_limit_only_full_amount",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "delay_invites_seconds_advisory",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "bids_expiry_time_in_seconds",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "minimum_repayment_time",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "supports_direct_debit",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "maximum_repayment_time",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "current_filter_version_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "repayment_type",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "customer_blocked_months",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "delayed_filter_no_other_bids",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "invite_expiry_time_in_seconds",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "supports_auto_undo_accept",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "supports_e_invoice",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "application_type",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "creditors_sgmw_p": [
-    {
-      "name": "deactivated_at",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "updated_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "current_loan_drafts_sgmw_p": [
-    {
-      "name": "updated_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "type",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "applicant_draft_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "amount",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    null,
-    null,
-    null,
-    null,
-    {
-      "name": "transfer",
+      "name": "identified",
       "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "ts",
+      "name": "monthly_income_before_tax",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
+      "name": "num_dependants",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "source",
+      "name": "politically_exposed",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "postal_code",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "xid",
-      "type": "INTEGER",
+      "name": "resident_in_foreign_country",
+      "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "xoffset",
+      "name": "sex",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "new_system_id",
       "type": "INTEGER",
       "mode": "NULLABLE"
     }
   ],
-  "current_loans_sgmw_p": [
+  "applications_adhis_p": [
     {
-      "name": "updated_at",
+      "name": "market",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at_utc",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
@@ -1574,18 +200,28 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "type",
+      "name": "accepted_bid_id",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "current_loan_draft_id",
+      "name": "added_secondary_applicant",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "advisor_user_id",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "id",
-      "type": "INTEGER",
+      "name": "agreed_to_accept_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "agreed_to_accept_at",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
@@ -1594,197 +230,447 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "amount",
+      "name": "assist_advisor_user_id",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "monthly_payment",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "transfer",
+      "name": "auto_submit",
       "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "ts",
+      "name": "bidding_completed",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "bidding_round",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "timestamp_ts",
-      "type": "DATE",
+      "name": "bids_online",
+      "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "rn",
-      "type": "INTEGER",
+      "name": "changed_at_utc",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "source",
+      "name": "changed_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "channel",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "xid",
+      "name": "contact_applicant_id",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "xoffset",
+      "name": "contact_id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "contact_primary_applicant",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "credit_check_complete",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "deactivated_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "deactivated_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "deactivation_type",
       "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "deprioritized",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "desired_repayment_time",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "first_credit_check_done_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "first_credit_check_done_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "has_bids",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "has_current_loans",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "input_source",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "main_advisor_user_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "min_historic_total_loan",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "new_loan",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "preferred_bid_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "purpose",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "requested_new_creditor_response_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "requested_new_creditor_response_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "responded_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "responded_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "return_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "return_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "return_type",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "secondary_applicant_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "status",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "submitted_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "submitted_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "terms_of_service",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "tm_user_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "total_loan",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "total_loan_at_submit",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "total_loan_changed_from",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_relationship_status",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "return_advisor_user_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "interest_watch_agreement",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "purpose_text",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "new_or_gather",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "input_source_classification_identifier",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "input_source_team",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "input_source_originator",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "input_source_application_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "input_source_web_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "new_system_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "site_origin",
+      "type": "STRING",
       "mode": "NULLABLE"
     }
   ],
-  "customers_sgmw_p": [
+  "archived_ssn_adhis_p": [
+    {
+      "name": "contact_id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "contact_oid",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "national_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ingested_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "bids_adhis_p": [
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
     {
       "name": "created_at",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "street_address",
-      "type": "STRING",
+      "name": "accepted_amount",
+      "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "mobile_phone",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "move_in_date",
+      "name": "accepted_at_utc",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "updated_at",
+      "name": "accepted_at",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "marked_for_delete",
+      "name": "additional_info_required",
       "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "country",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "latest_credit_check_done_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "email",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "postal_code",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "birth_date",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "last_name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "valid_national_id",
+      "name": "additional_info_required_current_loans_repayment",
       "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "city",
-      "type": "STRING",
+      "name": "additional_info_required_employment_certificate",
+      "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "national_id",
-      "type": "STRING",
+      "name": "additional_info_required_payslip",
+      "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "first_name",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
+      "name": "administration_avi_fee",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
+      "name": "administration_direct_debit_fee",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "source",
+      "name": "administration_fee",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "administration_type",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "xid",
+      "name": "amount",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "xoffset",
+      "name": "apr",
+      "type": "FLOAT",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "arrangement_fee",
       "type": "INTEGER",
       "mode": "NULLABLE"
-    }
-  ],
-  "invite_logs_sgmw_p": [
+    },
     {
-      "name": "updated_at",
+      "name": "arrangement_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "deactivated_at_utc",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "comment",
-      "type": "STRING",
+      "name": "deactivated_at",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "user_id",
-      "type": "INTEGER",
+      "name": "debt_letter_received_at_utc",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "action",
-      "type": "STRING",
+      "name": "debt_letter_received_at",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "system",
-      "type": "STRING",
+      "name": "debt_letter_returned_at_utc",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "id",
-      "type": "INTEGER",
+      "name": "debt_letter_returned_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "debt_letter_sent_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "debt_letter_sent_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "expires_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "expires_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "interest",
+      "type": "FLOAT",
       "mode": "NULLABLE"
     },
     {
@@ -1793,45 +679,75 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "created_at",
+      "name": "minimum_amount_to_resolve",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "monthly_payment",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "paid_amount",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "paid_at_utc",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "ts",
+      "name": "paid_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "repayment_time",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
+      "name": "repayment_type",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "xid",
-      "type": "INTEGER",
+      "name": "secondary_applicant",
+      "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "xoffset",
+      "name": "supposedly_paid_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "supposedly_paid_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "new_system_id",
       "type": "INTEGER",
       "mode": "NULLABLE"
     }
   ],
-  "invites_sgmw_p": [
+  "cookies_adhis_p": [
+    {
+      "name": "__replicated_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
     {
       "name": "id",
       "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "cookie_hash",
+      "type": "STRING",
       "mode": "NULLABLE"
     },
     {
@@ -1840,12 +756,1823 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "creditor_product_id",
+      "name": "created_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "contact_id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "credit_report_details_adhis_p": [
+    {
+      "name": "__REPLICATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "_SDC_SEQUENCE",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
+      "name": "_SDC_RECEIVED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "_SDC_EXTRACTED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "VALUE",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "KEY",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "_SDC_TABLE_VERSION",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INDEX",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "_SDC_BATCHED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREDIT_REPORT_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    }
+  ],
+  "credit_report_group_items_adhis_p": [
+    {
+      "name": "VALUE",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "KEY",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "NEW_SYSTEM_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREDIT_REPORT_GROUP_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "partition_field",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "credit_report_groups_adhis_p": [
+    {
+      "name": "KEY",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INDEX_KEY",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INDEX",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREDIT_REPORT_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "partition_field",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "credit_reports_adhis_p": [
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "fetched_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "fetched_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "blocked_description",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "contact_id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "debt_balance",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "major_city_inhabitant",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "minor",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "no_visit_address",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "payment_complaint",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "product_type",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "score",
+      "type": "FLOAT",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "secret_address",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "template_code",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "template_passed",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "temporary_address",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "unregistered",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "new_sweden_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    }
+  ],
+  "creditors_adhis_p": [
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "administration_fee",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "always_does_credit_check",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "arrangement_fee",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "current_creditor_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "deactivated_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "deactivated_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "default_administration_avi_fee",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "default_administration_direct_debit_fee",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "default_administration_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "default_arrangement_fee",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "default_arrangement_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "default_repayment_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "does_credit_check_on_accept_lower_amount",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "max_amount",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "may_request_secondary_applicant",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "min_amount",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "multi_bidder",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "never_does_two_credit_checks",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "rechecks_credit_reports_on_changed_repayment_time",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "rechecks_credit_reports_on_decreased_amount",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "rechecks_credit_report_on_added_secondary_applicant",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "require_creditor_application_id",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "slug",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_cancellations_mdn_adhis_p": [
+    {
+      "name": "__IMPORTED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_PAYMENT_METHOD",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_PAYMENT_INSTRUMENT",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAYMENT_STATUS_HUMAN",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAYMENT_STATUS",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CUSTOMER_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "POLICY_UNIQUE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "POLICY_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "FILENAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "AMOUNT_DUE",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CURRENCY_NAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DAYS_IN_AUTO_CANCELLATION",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CURRENCY_ABBREVIATION",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_customers_mdn_adhis_p": [
+    {
+      "name": "filename",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_organisation_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_organisation_number",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "partner_id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_first_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_last_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_gender",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_default_payment_provider",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_default_payment_method",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_default_payment_instrument",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_address",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_address2",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_postal_code",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_city",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_state",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_country_code",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_country_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_birth_date",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_ssn",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_phone",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_phone_mobile",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_email",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_passport_number",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_passport_expiration_date",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_passport_issuance_country_code",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_passport_issuance_country_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "custom_id_field",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "custom_partner_field",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "custom_partner_field2",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_added_datetime",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_edited_datetime",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "__imported_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_invoice_items_mutual_adhis_p": [
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "SPECIFICATION",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ITEM_TYPE",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ITEM_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INVOICE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "AMOUNT",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_invoice_lines_mutual_adhis_p": [
+    {
+      "name": "MONTH",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INVOICE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "AMOUNT",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_invoices_mutual_adhis_p": [
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "UPDATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "UPDATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAYMENT_INSURANCE_LEVEL_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INVOICED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAYMENT_INSURANCE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INVOICED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAID_IN_FULL_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEADLINE_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEADLINE_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAID_IN_FULL_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ocr",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_partners_mdn_adhis_p": [
+    {
+      "name": "__IMPORTED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CUSTOMER_CUSTOM_FIELD_NAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PARTNER_COUNTRY_CODE",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PARTNER_NAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CUSTOMER_DEFAULT_DUE_DATE_DAY",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PARTNER_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "FILENAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_payment_insurance_levels_mutual_adhis_p": [
+    {
+      "name": "STARTS_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "STARTS_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CAMPAIGN",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAYMENT_INSURANCE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ENDS_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ENDS_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PREMIUM",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INSURED_AMOUNT",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_payment_insurance_logs_mutual_adhis_p": [
+    {
+      "name": "PREVIOUS_PAYMENT_INSURANCE_LEVEL_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "USER_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAYMENT_INSURANCE_LEVEL_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAYMENT_INSURANCE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "SYSTEM",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ACTION",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_payment_insurances_mutual_adhis_p": [
+    {
+      "name": "SUBMITTED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "SUBMITTED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PERSON_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PRODUCT_CONDITIONS_VERSION_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HOURS_PER_MONTH",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "MONTHLY_SAVINGS",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HAS_COLLECTIVE_AGREEMENT",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HAS_UNEMPLOYMENT_FUND",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INCOME_AFTER_TAX",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HAS_INCOME_INSURANCE",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "LOAN_PROTECTION",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_payments_mutual_adhis_p": [
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INVOICE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAID_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAID_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "AMOUNT",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_policies_mdn_adhis_p": [
+    {
+      "name": "filename",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_unique_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_increment_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_version_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "user_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "user_handle",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "user_first_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "user_last_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "partner_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_type_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_product_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_template_id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_period_start_date",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_period_end_date",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_installments",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_duration",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_duration_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_duration_days",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_status",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_status_calculated",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_status_calculated_desc",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_renewal_status",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_renewal_status_desc",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_renewed_from_policy_unique_id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_mail_sent_datetime",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_num_insured_persons",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_purchase_source_desc",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_created_datetime",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_cancelled_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_cancelled_type_text",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_cancelled_reason_code",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_cancelled_reason_text",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_cancelled_datetime",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_cancelled_datetime_performed",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_currency_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_currency_abbreviation",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_fee_amount",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_tax_amount",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_payable_amount",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_insurer_gross_premium_amount",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_insurer_discount_rate",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_insurer_net_premium_amount",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "payment_provider_auto_charge_enabled",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "payment_provider_auto_charge_disabled_reason",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "payment_provider_charge_failures_count",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_days_in_auto_cancellation",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "unprocessed_payment_notifications",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_auto_cancellation_notifications",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_datafield_type_insured_amount_monthly",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_datafield_type_insured_amount_lump_sum",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_datafield_type_fixed_costs_monthly",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "__imported_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "policy_cancelled_reason_desc",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_policy_products_mdn_adhis_p": [
+    {
+      "name": "POLICY_PRODUCT_NAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "__IMPORTED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "POLICY_PRODUCT_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "FILENAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_policy_types_mdn_adhis_p": [
+    {
+      "name": "__IMPORTED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "POLICY_TYPE_NAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "POLICY_TYPE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "FILENAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_repayments_mutual_adhis_p": [
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "amount",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "bank_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "comments",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "deactivated_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "deactivated_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "invoice_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "paid_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "paid_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_transactions_mdn_adhis_p": [
+    {
+      "name": "USER_LAST_NAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_INVOICE_PAID_DATE",
+      "type": "DATE",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "USER_FIRST_NAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_SUCCESS_NOTIFICATION_DATE",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_PAYMENT_PROVIDER_REFUND_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_POLICY_DURATION_DAYS",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "RELATED_BALANCE_TRANSACTION_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_PAYMENT_PROVIDER_CUSTOMER_ID",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "USER_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_TYPE",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "FILENAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "__IMPORTED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_POLICY_DATAFIELD_TYPE_INSURED_AMOUNT_MONTHLY",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_AMOUNT_PREMIUM_BEFORE_DISCOUNT",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_PAYMENT_PROVIDER_FEE",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_PAYMENT_INSTRUMENT",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_POLICY_PERIOD_END_DATE",
+      "type": "DATE",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_LEDGER_TYPE",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_INVOICE_PERIOD_END_DATE",
+      "type": "DATE",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_AMOUNT_PREMIUM",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_INSTALLMENT_NO_DESC",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_POLICY_DATAFIELD_TYPE_INSURED_AMOUNT_LUMP_SUM",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "POLICY_UNIQUE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_INSTALLMENT_NO",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_AMOUNT_TOTAL",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PARTNER_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_AMOUNT_FEE",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_DUE_DATE",
+      "type": "DATE",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_DISCOUNT_RATE",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_DISCOUNT_AMOUNT",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_POST_DATE",
+      "type": "DATE",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_CREATED_DATETIME",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_AMOUNT_TAX",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_POLICY_DATAFIELD_TYPE_FIXED_COSTS_MONTHLY",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_AMOUNT_NON_POLICY_PRODUCTS",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_AMOUNT_TOTAL_AFTER_PAYMENT_PROVIDER_FEE",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "RELATED_REFUND_TRANSACTION_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_POLICY_PERIOD_START_DATE",
+      "type": "DATE",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_INVOICE_PERIOD_START_DATE",
+      "type": "DATE",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "USER_HANDLE",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "POLICY_NUM_INSURED_PERSONS",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "RELATED_PAYMENT_TRANSACTION_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "RISK_INCEPTION_DATE",
+      "type": "DATE",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_DOCUMENT_DATE",
+      "type": "DATE",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_PAYMENT_PROVIDER_PAYMENT_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "POLICY_TYPE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "RELATED_CREDIT_TRANSACTION_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "POLICY_VERSION_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_PAYMENT_METHOD",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "POLICY_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "TRANSACTION_INCIDENT",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CUSTOMER_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    }
+  ],
+  "insurance_users_mdn_adhis_p": [
+    {
+      "name": "__IMPORTED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "USER_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PARTNER_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "LAST_NAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "IS_ACTIVE",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HANDLE",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "FIRST_NAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "FILENAME",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "interactions_adhis_p": [
+    {
+      "name": "__replicated_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "market",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "updated_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "updated_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "cookie_hash",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ip_hash",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "invites_adhis_p": [
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
       "name": "application_id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "archived",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "bidding_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "creditor_id",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
@@ -1855,207 +2582,319 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "deadline",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "creditor_data",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rejected",
+      "name": "current_debtor",
       "type": "BOOLEAN",
       "mode": "NULLABLE"
     },
     {
-      "name": "declined",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "application_version_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "creditor_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "co_applicant_removed",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "loan_application_drafts_sgmw_p": [
-    {
-      "name": "updated_at",
+      "name": "deactivated_at_utc",
       "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "applicant_draft_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "client_ip",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "total_loan",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "site_origin",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "credit_check_consent",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "secondary_applicant_draft_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "secondary_applicant_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "purpose",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "desired_repayment_time",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "input_source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "accept_newsletter",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "bank_account",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "loan_application_id",
-      "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
       "name": "deactivated_at",
-      "type": "STRING",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "applicant_id",
-      "type": "STRING",
+      "name": "deadline_utc",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "ts",
-      "type": "INTEGER",
+      "name": "deadline",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "timestamp_ts",
-      "type": "DATE",
+      "name": "declined_at_utc",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "rn",
-      "type": "INTEGER",
+      "name": "declined_at",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "source",
-      "type": "STRING",
+      "name": "expired_at_utc",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "xid",
-      "type": "INTEGER",
+      "name": "expired_at",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "xoffset",
+      "name": "granted",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "published",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "requested_new_bid_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "requested_new_bid_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "requested_secondary_applicant_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "requested_secondary_applicant_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "respond",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "responded_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "responded_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "viewed_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "viewed_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "new_system_id",
       "type": "INTEGER",
       "mode": "NULLABLE"
     }
   ],
-  "loan_application_versions_sgmw_p": [
+  "invoice_items_gjnsidige_adhis_p": [
     {
-      "name": "bank_account",
+      "name": "AMOUNT",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INVOICE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ITEM_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ITEM_TYPE",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "loan_application_id",
+      "name": "SPECIFICATION",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "invoices_gjensidige_adhis_p": [
+    {
+      "name": "__TS",
       "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PERSON_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "OCR",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEADLINE_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAID_IN_FULL_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "UPDATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAID_IN_FULL_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "UPDATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEADLINE_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "pageview_adhis_p": [
+    {
+      "name": "cookie_id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "is_internal_referer",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "new_system_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "__ts",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "referer",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ip_hash",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "href",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "host",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "path",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "cookie_hash",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "referer_host",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "market",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "route",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "referer_domain_name",
+      "type": "STRING",
       "mode": "NULLABLE"
     },
     {
@@ -2064,8 +2903,8 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "site_origin",
-      "type": "STRING",
+      "name": "created_at_utc",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
@@ -2074,38 +2913,20 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "desired_repayment_time",
+      "name": "updated_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "pageviews_adhis_p": [
+    {
+      "name": "__ts",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "total_loan",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "secondary_applicant_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "credit_check_consent",
+      "name": "market",
       "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "loan_application_draft_id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "accept_newsletter",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "purpose",
-      "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
@@ -2114,60 +2935,13 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "attributed_affiliate",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "client_ip",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "input_source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "applicant_id",
+      "name": "new_system_id",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "loan_applications_sgmw_p": [
-    {
-      "name": "canceled",
-      "type": "BOOLEAN",
+      "name": "created_at_utc",
+      "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
@@ -2176,89 +2950,27 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "self_service",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "application_type",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "brands",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "pageviews_sgmw_p": [
-    {
-      "name": "ip",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "edge_request_id",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "request_date",
+      "name": "updated_at_utc",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "user_agent",
+      "name": "updated_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "href",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "url",
+      "name": "path",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "cookie_id",
+      "name": "route",
       "type": "STRING",
       "mode": "NULLABLE"
     },
@@ -2273,49 +2985,337 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "dummy",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
+      "name": "referer_host",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "xid",
+      "name": "referer_domain_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "is_internal_referer",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "cookie_hash",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ip_hash",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ],
+  "payment_insurance_levels_adhis_p": [
+    {
+      "name": "STARTS_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "STARTS_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CAMPAIGN",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAYMENT_INSURANCE_ID",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "xoffset",
+      "name": "ENDS_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ENDS_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PREMIUM",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INSURED_AMOUNT",
       "type": "INTEGER",
       "mode": "NULLABLE"
     }
   ],
-  "policies_sgmw_p": [
+  "payment_insurance_levels_gjensidige_adhis_p": [
     {
-      "name": "deactivated_at",
+      "name": "CAMPAIGN",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PAYMENT_INSURANCE_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PREMIUM",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INSURED_AMOUNT",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "STARTS_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "STARTS_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ENDS_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ENDS_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "payment_insurances_adhis_p": [
+    {
+      "name": "SUBMITTED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "SUBMITTED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PERSON_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PRODUCT_CONDITIONS_VERSION_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HOURS_PER_MONTH",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "MONTHLY_SAVINGS",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HAS_COLLECTIVE_AGREEMENT",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HAS_UNEMPLOYMENT_FUND",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INCOME_AFTER_TAX",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HAS_INCOME_INSURANCE",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "LOAN_PROTECTION",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "payment_insurances_gjensidige_adhis_p": [
+    {
+      "name": "HAS_UNEMPLOYMENT_FUND",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HAS_INCOME_INSURANCE",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HAS_COLLECTIVE_AGREEMENT",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "INCOME_AFTER_TAX",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PERSON_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "LOAN_PROTECTION",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "PRODUCT_CONDITIONS_VERSION_ID",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "HOURS_PER_MONTH",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "MONTHLY_SAVINGS",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "SUBMITTED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "CREATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT_UTC",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "SUBMITTED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "DEACTIVATED_AT",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "people_adhis_p": [
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at_utc",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
@@ -2325,8 +3325,13 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "id",
-      "type": "INTEGER",
+      "name": "accepts_newsletters",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "contact_id",
+      "type": "STRING",
       "mode": "NULLABLE"
     },
     {
@@ -2335,49 +3340,103 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "updated_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
+      "name": "national_id_sensitive",
       "type": "INTEGER",
       "mode": "NULLABLE"
     },
     {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
+      "name": "password_hash",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
+      "name": "single_use_token",
+      "type": "STRING",
       "mode": "NULLABLE"
     }
   ],
-  "query_params_sgmw_p": [
+  "subscription_month_invoice_items_adhis_p": [
     {
       "name": "created_at",
       "type": "TIMESTAMP",
       "mode": "NULLABLE"
     },
     {
-      "name": "value",
+      "name": "id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "month",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "subscription_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    }
+  ],
+  "subscriptions_adhis_p": [
+    {
+      "name": "amount",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "deactivated_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "ends_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "person_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "product_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "product_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "starts_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "updated_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    }
+  ],
+  "tags_adhis_p": [
+    {
+      "name": "__ts",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "market",
       "type": "STRING",
       "mode": "NULLABLE"
     },
@@ -2387,8 +3446,33 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "pageview_id",
+      "name": "created_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "created_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "updated_at_utc",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "updated_at",
+      "type": "TIMESTAMP",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "event_id",
       "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "event_type",
+      "type": "STRING",
       "mode": "NULLABLE"
     },
     {
@@ -2397,95 +3481,13 @@
       "mode": "NULLABLE"
     },
     {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
+      "name": "type",
       "type": "STRING",
       "mode": "NULLABLE"
     },
     {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    }
-  ],
-  "sent_events_sgmw_p": [
-    {
-      "name": "data",
+      "name": "value",
       "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "external_tracking_id",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "event",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "id",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "created_at",
-      "type": "TIMESTAMP",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "affiliate",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "ts",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "timestamp_ts",
-      "type": "DATE",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "rn",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "source",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xid",
-      "type": "INTEGER",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "xoffset",
-      "type": "INTEGER",
       "mode": "NULLABLE"
     }
   ]

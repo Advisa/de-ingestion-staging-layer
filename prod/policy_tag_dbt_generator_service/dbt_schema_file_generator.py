@@ -94,6 +94,10 @@ class BigQuerySchemaExporter:
             policy_tag_mapping[tag_name] = tag_link
 
         return policy_tag_mapping
+    
+    def normalize_name(self, name):
+        """Normalize the name by converting to lowercase and removing underscores."""
+        return name.lower().replace("_", "")
 
     def match_policy_tags_to_fields(self, fields, policy_tag_mapping, parent_name=None):
         """Match policy tags to schema fields."""
@@ -104,6 +108,9 @@ class BigQuerySchemaExporter:
                 continue
 
             field_name = field["name"]
+            field_type = field["type"]
+            normalized_field_name = self.normalize_name(field_name)
+            
 
             if field.get('fields'):
                 nested_fields = self.match_policy_tags_to_fields(
@@ -111,10 +118,37 @@ class BigQuerySchemaExporter:
                 )
                 field["fields"] = nested_fields
             else:
-                field_name_lower = field_name.lower()
-                if field_name_lower in policy_tag_mapping:
-                    tag_link = policy_tag_mapping[field_name_lower]
-                    field["policyTags"] = {"names": [tag_link]}
+                # Explicitly check for ssn and balance when they are not of type STRING
+                if (normalized_field_name == "ssn" or normalized_field_name == "nationalid" or normalized_field_name == "validnationalid") and field_type != "STRING" and field_type != "BOOL":
+                    field["policyTags"] = {
+                        "names": [
+                            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8190767684129261300"
+                        ]
+                    }
+                elif normalized_field_name == "phonenumber" and field_type != "STRING":
+                    field["policyTags"] = {
+                        "names": [
+                            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/1553289368757892144"
+                        ]
+                    }
+                elif normalized_field_name == "työpuhelin": 
+                      field["policyTags"] = {
+                        "names": [
+                            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/7494069836928770718"
+                        ]
+                    }
+                      
+                elif normalized_field_name == "siviilisääty": 
+                      field["policyTags"] = {
+                        "names": [
+                            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/1955415658048578536"
+                        ]
+                    }
+
+                else:
+                    if normalized_field_name in policy_tag_mapping:
+                        tag_link = policy_tag_mapping[normalized_field_name]
+                        field["policyTags"] = {"names": [tag_link]}
 
             if parent_name and not field.get('name').startswith(f"{parent_name}."):
                 field["name"] = f"{parent_name}.{field['name']}"
