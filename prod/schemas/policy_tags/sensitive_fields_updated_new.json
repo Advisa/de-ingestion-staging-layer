@@ -108,6 +108,11 @@
                         "sensitivity": "high",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": null
+                    },
+                    "kaupunki": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
                     }
                 },
                 "sensitivity": "high",
