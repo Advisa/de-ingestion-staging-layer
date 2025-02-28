@@ -4,9 +4,12 @@ import logging
 import os
 from anonymisation_service.anon_service import AnonymizationService 
 from anonymisation_service.pubsub_event_push import PubsubPost
+import google.cloud.logging
 
 def run_anonymization(request):
     """Cloud Function entry point"""
+    client = google.cloud.logging.Client()
+    client.setup_logging()
     logging.basicConfig(level=logging.INFO)
     config_path = "config.yaml" 
     env = os.getenv('ENV', 'dev') 
