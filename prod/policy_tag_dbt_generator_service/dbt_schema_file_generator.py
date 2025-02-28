@@ -131,19 +131,6 @@ class BigQuerySchemaExporter:
                             "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/1553289368757892144"
                         ]
                     }
-                elif normalized_field_name == "työpuhelin": 
-                      field["policyTags"] = {
-                        "names": [
-                            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/7494069836928770718"
-                        ]
-                    }
-                      
-                elif normalized_field_name == "siviilisääty": 
-                      field["policyTags"] = {
-                        "names": [
-                            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/1955415658048578536"
-                        ]
-                    }
 
                 else:
                     if normalized_field_name in policy_tag_mapping:
