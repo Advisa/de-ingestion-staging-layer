@@ -1,236 +1,333 @@
 version: 2
 models:
-- name: applicant_drafts_sgmw_p
+- name: applicants_adhis_p
   description: ''
   columns:
-  - name: occupation_title
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/696293205601484700'
-  - name: national_id
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/8766527890701409234'
-  - name: education_level
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_complaince_measures_low")}}/6955237557031312507'
-  - name: employer_name
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/7554052221379315184'
-  - name: employer_phone
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/1429159303596593910'
-  - name: first_name
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/71389309590075218'
-  - name: postal_code
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/2065205436820293935'
-  - name: email
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/8192857231542342371'
-  - name: city
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/3997900563213251329'
-  - name: last_name
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/2716384524483642610'
-  - name: street_address
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/269468093035582245'
-  - name: birth_date
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_complaince_measures_medium")}}/1438955634006760731'
-  - name: mobile_phone
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/3207163644118956797'
   - name: citizenship
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_complaince_measures_medium")}}/4237260191502231235'
-- name: applicants_sgmw_p
-  description: ''
-  columns:
-  - name: occupation_title
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/8001475159894173018'
+  - name: city
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/696293205601484700'
-  - name: national_id
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/2373830726567021255'
+  - name: civil_status
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/8766527890701409234'
-  - name: education_level
+    - '{{var("policy_tag_gdpr_compliance_measures_medium")}}/700089495488447192'
+  - name: civil_status_text
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_complaince_measures_low")}}/6955237557031312507'
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/5274503424278788880'
+  - name: contact_id
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2223969292766117270'
   - name: employer_name
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/7554052221379315184'
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/7425480497601265433'
   - name: employer_phone
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/1429159303596593910'
-  - name: first_name
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/614715639179995501'
+  - name: monthly_income_before_tax
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/71389309590075218'
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/2492374698945241881'
+  - name: politically_exposed
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_low")}}/1180848125164428807'
   - name: postal_code
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/2065205436820293935'
-  - name: email
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/8538887370739430117'
+  - name: sex
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/8192857231542342371'
-  - name: city
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/3997900563213251329'
-  - name: last_name
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/2716384524483642610'
-  - name: street_address
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/269468093035582245'
-  - name: birth_date
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_complaince_measures_medium")}}/1438955634006760731'
-  - name: mobile_phone
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/3207163644118956797'
-  - name: citizenship
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_complaince_measures_medium")}}/4237260191502231235'
-- name: bid_accepts_sgmw_p
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/1469944283301999728'
+- name: applications_adhis_p
   description: ''
   columns:
-  - name: bank_account
+  - name: contact_id
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/5087277829810498721'
-- name: credit_reports_sgmw_p
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2223969292766117270'
+- name: archived_ssn_adhis_p
   description: ''
   columns:
+  - name: contact_id
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2223969292766117270'
   - name: national_id
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/8766527890701409234'
-  - name: postal_code
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/2065205436820293935'
-  - name: street_address
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/269468093035582245'
-  - name: city
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/3997900563213251329'
-  - name: first_name
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/71389309590075218'
-  - name: last_name
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/2716384524483642610'
-- name: creditor_products_sgmw_p
+    - projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8190767684129261300
+- name: bids_adhis_p
   description: ''
   columns:
-  - name: postal_address
+  - name: amount
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/1943024566483573007'
-  - name: requirements_email
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_complaince_measures_high")}}/4107771874899442428'
-- name: customers_sgmw_p
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/5489266776001725763'
+- name: cookies_adhis_p
   description: ''
   columns:
-  - name: street_address
+  - name: contact_id
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/269468093035582245'
-  - name: mobile_phone
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2223969292766117270'
+- name: credit_report_details_adhis_p
+  description: ''
+  columns:
+  - name: VALUE
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/3207163644118956797'
-  - name: email
+    - '{{var("policy_tag_gdpr_compliance_measures_medium")}}/6031413161488808302'
+- name: credit_report_group_items_adhis_p
+  description: ''
+  columns:
+  - name: VALUE
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/8192857231542342371'
-  - name: postal_code
+    - '{{var("policy_tag_gdpr_compliance_measures_medium")}}/6031413161488808302'
+- name: credit_reports_adhis_p
+  description: ''
+  columns:
+  - name: contact_id
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/2065205436820293935'
-  - name: birth_date
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2223969292766117270'
+  - name: debt_balance
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_complaince_measures_medium")}}/1438955634006760731'
-  - name: last_name
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/1280180439771065051'
+  - name: secret_address
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/2716384524483642610'
-  - name: valid_national_id
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/502322662036006619'
+  - name: temporary_address
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_complaince_measures_high")}}/2464670266864328895'
-  - name: city
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/8435288583699953740'
+- name: creditors_adhis_p
+  description: ''
+  columns:
+  - name: name
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/3997900563213251329'
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/3997340774018070165'
+- name: insurance_customers_mdn_adhis_p
+  description: ''
+  columns:
+  - name: customer_organisation_name
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/329906415772295222'
+  - name: customer_organisation_number
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/1728219938699009931'
+  - name: customer_first_name
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/5824688680213173938'
+  - name: customer_last_name
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/4763436523527527963'
+  - name: customer_gender
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/2526892557818933083'
+  - name: customer_address
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/1633009317526254565'
+  - name: customer_address2
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/2266606811054504985'
+  - name: customer_postal_code
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/1710768618771408784'
+  - name: customer_city
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/3166173652928611319'
+  - name: customer_state
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/7094720081026392513'
+  - name: customer_country_code
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/8755139895642727524'
+  - name: customer_country_name
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/3970809602749897195'
+  - name: customer_birth_date
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_medium")}}/8499947648104922334'
+  - name: customer_ssn
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2531213695188202976'
+  - name: customer_phone
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/4852116443936997356'
+  - name: customer_email
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/8900944629595907796'
+  - name: customer_passport_number
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/3702254044053173233'
+  - name: customer_passport_issuance_country_code
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/5695480737287056737'
+  - name: customer_passport_issuance_country_name
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/7762607542842849463'
+- name: insurance_invoice_items_mutual_adhis_p
+  description: ''
+  columns:
+  - name: AMOUNT
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/5489266776001725763'
+- name: insurance_invoice_lines_mutual_adhis_p
+  description: ''
+  columns:
+  - name: AMOUNT
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/5489266776001725763'
+- name: insurance_partners_mdn_adhis_p
+  description: ''
+  columns:
+  - name: PARTNER_NAME
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2755796045912230294'
+- name: insurance_payment_insurances_mutual_adhis_p
+  description: ''
+  columns:
+  - name: INCOME_AFTER_TAX
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/10462839579038809'
+- name: insurance_payments_mutual_adhis_p
+  description: ''
+  columns:
+  - name: AMOUNT
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/5489266776001725763'
+- name: insurance_policies_mdn_adhis_p
+  description: ''
+  columns:
+  - name: user_first_name
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2536906608234461143'
+  - name: user_last_name
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2213337399800769894'
+- name: insurance_repayments_mutual_adhis_p
+  description: ''
+  columns:
+  - name: amount
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/5489266776001725763'
+  - name: bank_name
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance")}}/5095344055803075463'
+  - name: comments
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_medium")}}/6648053288186094991'
+- name: insurance_transactions_mdn_adhis_p
+  description: ''
+  columns:
+  - name: USER_LAST_NAME
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2213337399800769894'
+  - name: USER_FIRST_NAME
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2536906608234461143'
+- name: insurance_users_mdn_adhis_p
+  description: ''
+  columns:
+  - name: LAST_NAME
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/5998817033341608997'
+  - name: FIRST_NAME
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/3438195291922151573'
+- name: invoice_items_gjnsidige_adhis_p
+  description: ''
+  columns:
+  - name: AMOUNT
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/5489266776001725763'
+- name: payment_insurances_adhis_p
+  description: ''
+  columns:
+  - name: INCOME_AFTER_TAX
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/10462839579038809'
+- name: payment_insurances_gjensidige_adhis_p
+  description: ''
+  columns:
+  - name: INCOME_AFTER_TAX
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/10462839579038809'
+- name: people_adhis_p
+  description: ''
+  columns:
+  - name: contact_id
+    description: ''
+    policy_tags:
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2223969292766117270'
   - name: national_id
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/8766527890701409234'
-  - name: first_name
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/6863647573685228642'
+  - name: national_id_sensitive
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/71389309590075218'
-- name: loan_application_drafts_sgmw_p
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_high")}}/2530336514736091887'
+- name: subscriptions_adhis_p
   description: ''
   columns:
-  - name: bank_account
+  - name: amount
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/5087277829810498721'
-- name: loan_application_versions_sgmw_p
+    - '{{var("policy_tag_gdpr_compliance_measures_prod_medium")}}/5489266776001725763'
+- name: tags_adhis_p
   description: ''
   columns:
-  - name: bank_account
+  - name: value
     description: ''
     policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/5087277829810498721'
-- name: policies_sgmw_p
-  description: ''
-  columns:
-  - name: national_id
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/8766527890701409234'
-- name: sent_events_sgmw_p
-  description: ''
-  columns:
-  - name: data
-    description: ''
-    policy_tags:
-    - '{{var("policy_tag_gdpr_compliance")}}/1871631373073602497'
+    - '{{var("policy_tag_gdpr_compliance_measures_medium")}}/6031413161488808302'

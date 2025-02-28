@@ -64,7 +64,7 @@ class PolicyAssignmentService:
         query = f"""
         SELECT taxonomy_id, display_name, policy_tag_id
         FROM `{self.project_id}.{self.policy_tags_table}`
-        WHERE taxonomy_id IN ('462501529798891334', '1348545653474742340', '8452725999489655507')
+        WHERE taxonomy_id IN ('7698000960465061299', '8248486934170083143', '655384675748637071')
         """
         query_job = self.client.query(query)
         result = query_job.result()
@@ -87,6 +87,7 @@ class PolicyAssignmentService:
 
         for field in fields:
             field_name = field["name"]
+            field_type = field["type"]
             normalized_field_name = self.normalize_name(field_name)
 
             # Handle nested fields recursively
@@ -96,19 +97,34 @@ class PolicyAssignmentService:
                 )
                 field["fields"] = nested_fields
             else:
-                # Find matching tag in policy_tags
-                matching_tag = policy_tags[policy_tags['normalized_display_name'] == normalized_field_name]
-                
-
-                if not matching_tag.empty:
-                    policy_tag = matching_tag['policy_tag_id'].values[0]
-                    taxonomy_id = matching_tag['taxonomy_id'].values[0]  # Dynamically select taxonomy
-
+                # Explicitly check for ssn and balance when they are not of type STRING
+                if (normalized_field_name == "ssn" or normalized_field_name == "nationalid" or normalized_field_name == "validnationalid") and field_type != "STRING" and field_type != "BOOL":
                     field["policyTags"] = {
                         "names": [
-                            f"projects/{self.project_id}/locations/europe-north1/taxonomies/{taxonomy_id}/policyTags/{policy_tag}"
+                            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8190767684129261300"
                         ]
                     }
+                elif normalized_field_name == "phonenumber" and field_type != "STRING":
+                    field["policyTags"] = {
+                        "names": [
+                            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/1553289368757892144"
+                        ]
+                    }
+
+                else:
+                    # Find matching tag in policy_tags
+                    matching_tag = policy_tags[policy_tags['normalized_display_name'] == normalized_field_name]
+
+
+                    if not matching_tag.empty:
+                        policy_tag = matching_tag['policy_tag_id'].values[0]
+                        taxonomy_id = matching_tag['taxonomy_id'].values[0]  # Dynamically select taxonomy
+
+                        field["policyTags"] = {
+                            "names": [
+                                f"projects/{self.project_id}/locations/europe-north1/taxonomies/{taxonomy_id}/policyTags/{policy_tag}"
+                            ]
+                        }
 
             # Ensure proper parent-child field naming
             if parent_name and not field.get('name').startswith(f"{parent_name}."):
@@ -179,7 +195,6 @@ class PolicyAssignmentService:
         try:
     
             policy_tags = self.fetch_policy_tags()
-            print(policy_tags)
 
             self.construct_iam_policies(policy_tags)
 
