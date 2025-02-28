@@ -70,7 +70,7 @@ class BigQuerySchemaExporter:
         FROM `{self.config["source_project"]}.{self.config["source_dataset"]}.{self.config["metadata_table"]}` t1
         JOIN `{self.config["source_project"]}.{self.config["source_dataset"]}.{self.config["taxonomy_table"]}` t2
         ON t1.taxonomy_id = t2.id
-        WHERE taxonomy_id IN ('462501529798891334', '1348545653474742340', '8452725999489655507')
+        WHERE taxonomy_id IN ('7698000960465061299', '8248486934170083143', '655384675748637071')
         """
         query_job = self.client.query(query)
         result = query_job.result()
