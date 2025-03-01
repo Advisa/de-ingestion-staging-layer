@@ -123,13 +123,13 @@ class BigQuerySchemaExporter:
                 if (normalized_field_name == "ssn" or normalized_field_name == "nationalid" or normalized_field_name == "validnationalid") and field_type != "STRING" and field_type != "BOOL":
                     field["policyTags"] = {
                         "names": [
-                            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/8190767684129261300"
+                            "{{var(\"policy_tag_gdpr_compliance_measures_high\")}}/8190767684129261300"
                         ]
                     }
                 elif normalized_field_name == "phonenumber" and field_type != "STRING":
                     field["policyTags"] = {
                         "names": [
-                            "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/1553289368757892144"
+                            "{{var(\"policy_tag_gdpr_compliance_measures_high\")}}/1553289368757892144"
                         ]
                     }
 
