@@ -178,6 +178,7 @@ nested_field_encryption AS (
         t1.table_schema,
         t1.table_name,
         t2.column_name,
+        -- [TODO] remove struct for array<string>
         CONCAT(
             "ARRAY(SELECT STRUCT(",
             STRING_AGG(
