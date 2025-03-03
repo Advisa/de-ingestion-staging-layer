@@ -1,5 +1,6 @@
 import yaml
 from google.cloud import bigquery
+from pathlib import Path
 
 class SchemaAndSourceGenerator:
     def __init__(self, config_file):
@@ -14,7 +15,8 @@ class SchemaAndSourceGenerator:
     def load_policy_tag_mappings(self):
         """load policy tag mappings from a YAML file if using direct links"""
         if self.config["policy_tag_reference"]:
-            with open(self.config["policy_tags_file"], "r") as file:
+            file_directory = Path(self.config["output_directory"]) / Path(self.config["policy_tags_file"])
+            with open(file_directory, "r") as file:
                 self.policy_tag_mappings = yaml.safe_load(file)
 
     def get_policy_tag_metadata(self):

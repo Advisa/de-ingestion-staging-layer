@@ -17,3 +17,9 @@ variable "connection_id" {
   type        = string
   default = "biglake-conn"
 }
+
+variable "auth_view_test_dataset_id" {
+  description = "The Dataset ID for auth_view_testing"
+  type        = string
+  default = "auth_view_testing"
+}
