@@ -7,7 +7,12 @@
   {
     "mode": "NULLABLE",
     "name": "business_address",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/4379069429822051426"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",

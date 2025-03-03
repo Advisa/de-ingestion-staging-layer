@@ -20,7 +20,7 @@
     "type": "STRING",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/1348545653474742340/policyTags/2624452233356343246"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/2990713445341371115"
       ]
     }
   },
@@ -42,12 +42,22 @@
   {
     "mode": "NULLABLE",
     "name": "nettotulos",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/704838162045412265"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
     "name": "liikevaihto",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/1782653178522950431"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
@@ -55,7 +65,7 @@
     "type": "STRING",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/462501529798891334/policyTags/6088913950501142826"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/7698000960465061299/policyTags/5816539005103612349"
       ]
     }
   },
