@@ -12,3 +12,7 @@ variable "connection_id" {
   type        = string
   default = "biglake-conn"
 }
+variable "data_domain_project_id" {
+  description = "The name of the data-domain-data-warehouse project"
+  type        = string
+}
