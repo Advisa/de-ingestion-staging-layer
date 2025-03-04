@@ -16,13 +16,6 @@ locals {
 }
 
 
-
-output "table_names_salus_incremental_r" {
-  value = local.table_names_salus_incremental_r
-}
-
-
-
 resource "null_resource" "update_table_schema_salus_incremental_r_prod" {
   for_each = toset(local.table_names_salus_incremental_r)
 
@@ -35,6 +28,6 @@ resource "null_resource" "update_table_schema_salus_incremental_r_prod" {
   }
 
   depends_on = [
-    null_resource.update_table_schema_salus_incremental_r
+    null_resource.assign_policy_tags_salus_incremental_r_schemas
   ]
 }
