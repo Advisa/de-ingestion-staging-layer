@@ -5,12 +5,14 @@ SELECT
     ARRAY(SELECT DISTINCT phone FROM UNNEST(mobile_phones) AS phone WHERE phone != 'null') AS mobile_phones,
     vault.market,
     last_brand_interaction,
+    email as latest_email,
+    mobile_phone as latest_phone,
     compliance_event,
 FROM `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` vault
 LEFT JOIN `{{exposure_project}}.{{gdpr_events_dataset}}.gdpr_events` gdpr
 on vault.ssn = gdpr.national_id
 and vault.market = gdpr.market
-WHERE DATE(vault.ingestion_timestamp) = current_date('Europe/Stockholm')
+WHERE DATE(vault.ingestion_timestamp, 'Europe/Stockholm') = current_date('Europe/Stockholm')
 and is_anonymized = True
 {{limit_clause}}
 
@@ -22,11 +24,13 @@ and is_anonymized = True
 --     ARRAY(SELECT DISTINCT phone FROM UNNEST(mobile_phones) AS phone WHERE phone != 'null') AS mobile_phones,
 --     vault.market,
 --     last_brand_interaction,
+    -- email as latest_email,
+    -- phone as latest_phone,
 --     compliance_event,
 -- FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` vault
 -- LEFT JOIN `data-domain-data-warehouse.dbt_16a02f5fff.gdpr_events` gdpr
 -- on vault.ssn = gdpr.national_id
 -- and vault.market = gdpr.market
--- WHERE DATE(vault.ingestion_timestamp) = current_date('Europe/Stockholm')
+-- WHERE DATE(vault.ingestion_timestamp, 'Europe/Stockholm') = current_date('Europe/Stockholm')
 -- and is_anonymized = True
 -- limit 100

@@ -8,6 +8,8 @@
         {"name": "mobile_phones", "type": ["null", {"type": "array", "items": "string"}], "default": null},
         {"name": "market", "type": ["null", "string"], "default": null},
         {"name": "last_brand_interaction", "type": ["null", "string"], "default": null},
+        {"name": "latest_email", "type": ["null", "string"], "default": null},
+        {"name": "latest_mobile", "type": ["null", "string"], "default": null},
         {"name": "compliance_event", "type": ["null", "string"], "default": null}
     ]
 }

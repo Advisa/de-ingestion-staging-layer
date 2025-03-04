@@ -24,5 +24,5 @@ prod:
     pubsub_push_topic: "anonymization_events"
     pubsub_schema_id: "anonymization-event-schema"
     topic_retention_days: 7
-    pubsub_dead_letter_topic: "anonymzsation_events_deadletter"
+    pubsub_dead_letter_topic: "anonymization_events_deadletter"
     kms_key: "projects/key-management-sambla/locations/europe-north1/keyRings/datawarehouse_encryption_keys/cryptoKeys/production_key"
