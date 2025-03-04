@@ -7,7 +7,12 @@
   {
     "mode": "NULLABLE",
     "name": "kansalaisuus",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/7531419600413626810"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
@@ -17,7 +22,12 @@
   {
     "mode": "NULLABLE",
     "name": "siviilisaaty",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/1955415658048578536"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
@@ -62,7 +72,12 @@
   {
     "mode": "NULLABLE",
     "name": "koulutus",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/8248486934170083143/policyTags/445187592719076744"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",

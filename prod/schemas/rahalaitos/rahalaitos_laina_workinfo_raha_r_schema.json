@@ -10,7 +10,7 @@
     "type": "STRING",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/7497603640112848285"
       ]
     }
   },
@@ -30,7 +30,7 @@
     "type": "STRING",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/8079091799678586940"
       ]
     }
   },
@@ -40,7 +40,7 @@
     "type": "STRING",
     "policyTags": {
       "names": [
-        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/6126692965998272750/policyTags/1064433561942680153"
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/5930425938369960379"
       ]
     }
   },
@@ -62,7 +62,12 @@
   {
     "mode": "NULLABLE",
     "name": "edtyonantaja",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/9020389780437670432"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
@@ -77,7 +82,12 @@
   {
     "mode": "NULLABLE",
     "name": "bruttotulot",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/7271466154088881359"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
@@ -92,7 +102,12 @@
   {
     "mode": "NULLABLE",
     "name": "nettotulot",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/8354583460841805127"
+      ]
+    }
   },
   {
     "mode": "NULLABLE",
