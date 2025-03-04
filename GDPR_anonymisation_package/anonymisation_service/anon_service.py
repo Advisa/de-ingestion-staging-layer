@@ -1,6 +1,5 @@
 import logging
 import yaml
-import os
 import sys
 from jinja2 import Template
 from google.cloud import bigquery
@@ -67,7 +66,7 @@ class AnonymizationService:
 
     def get_column_key_for_table(self, dataset, table_name):
         """Retrieve the first available key column from the schema of the given table."""
-        possible_keys = ['ssn', 'ssn_id', 'national_id', 'nationalId']
+        possible_keys = ['ssn_clean', 'secondary_column', 'secondary_column_v2']
 
         try:
             table_ref = f"{self.raw_layer_project}.{dataset}.{table_name}"
@@ -79,7 +78,7 @@ class AnonymizationService:
             for key in possible_keys:
                 if key in columns:
                     logging.debug(f"Found key: {key} for table: {table_name}")
-                    return key
+                    return key           
 
             logging.debug(f"No matching key found for table: {table_name}")
             return None
@@ -90,6 +89,7 @@ class AnonymizationService:
     def update_anonymized_flags(self, join_keys):
         """Update anonymization flags in the raw layer project."""
         exists_clauses = []
+        other_exists_clauses = []
 
         try:
             tables = self.clients['raw_layer_project'].list_tables(self.auth_views_dataset)
@@ -101,18 +101,25 @@ class AnonymizationService:
         if relevant_tables:
             for table in relevant_tables:
                 key = join_keys.get(table) or self.get_column_key_for_table(self.auth_views_dataset, table)
-
-                if key:
+                if key == 'ssn_clean':
                     exists_clause = f"SELECT raw.{key} FROM `{self.raw_layer_project}.{self.auth_views_dataset}.{table}` raw"
                     exists_clauses.append(exists_clause)
+                    continue
+
+                elif key:
+                    other_exists_clause = f"SELECT raw.{key} FROM `{self.raw_layer_project}.{self.auth_views_dataset}.{table}` raw"
+                    other_exists_clauses.append(other_exists_clause)
+                    continue
 
             exists_clauses_str = ' UNION ALL '.join(exists_clauses) if exists_clauses else "SELECT CAST(NULL AS STRING)"
+            other_exists_clauses_str = ' UNION ALL '.join(other_exists_clauses) if other_exists_clauses else "SELECT CAST(NULL AS STRING)"
 
             update_flag_query = self.update_flag_template.render(
                 compliance_project=self.compliance_project,
                 gdpr_vault_table = self.gdpr_vault_table,
                 raw_layer_project=self.raw_layer_project,
-                exists_clauses=exists_clauses_str
+                exists_clauses=exists_clauses_str,
+                other_exists_clauses=other_exists_clauses_str
             )
 
             logging.info("Executing anonymization flag update query.")

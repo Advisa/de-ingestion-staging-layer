@@ -1,4 +1,7 @@
-google-cloud-bigquery
-Jinja2
+fastavro
 google-auth
+google-cloud-bigquery
+google-cloud-pubsub
+google-cloud-logging
+Jinja2
 PyYAML
