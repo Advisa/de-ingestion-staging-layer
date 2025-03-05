@@ -6,7 +6,7 @@ SELECT
     vault.market,
     last_brand_interaction,
     email as latest_email,
-    mobile_phone as latest_phone,
+    mobile_phone as latest_mobile,
     compliance_event,
 FROM `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` vault
 LEFT JOIN `{{exposure_project}}.{{gdpr_events_dataset}}.gdpr_events` gdpr
@@ -25,7 +25,7 @@ and is_anonymized = True
 --     vault.market,
 --     last_brand_interaction,
     -- email as latest_email,
-    -- phone as latest_phone,
+    -- phone as latest_mobile,
 --     compliance_event,
 -- FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` vault
 -- LEFT JOIN `data-domain-data-warehouse.dbt_16a02f5fff.gdpr_events` gdpr
