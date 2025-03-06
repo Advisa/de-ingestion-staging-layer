@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# # Step 1: Run the topic schema update first
-# echo "Running the pubsub schema manager script..."
-# export ENV='prod'
-# python3 anonymisation_service/pubsub_schema_manager.py
+# Step 1: Run the topic schema update first
+echo "Running the pubsub schema manager script..."
+export ENV='prod'
+python3 bloomreach_anonymization/pubsub_subscriber_manager.py
 
 # Step 2: Deploy the Google Cloud Function
 echo "Deploying the Google Cloud Function..."
