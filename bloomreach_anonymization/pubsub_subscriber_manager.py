@@ -19,7 +19,9 @@ class PubSubSubscriberManager:
         self.project_id = self.anonymization_config.get('raw_layer_project')
         self.subscription_name = self.anonymization_config.get('pubsub_subscriber')
         self.topic_name = self.anonymization_config.get('pubsub_topic')
+        self.deadletter_topic_name = self.anonymization_config.get('deadletter_topic')
         self.topic_path = f"projects/{self.project_id}/topics/{self.topic_name}"
+        self.topic_path = f"projects/{self.project_id}/topics/{self.deadletter_topic_name}"
         self.subscriber = pubsub_v1.SubscriberClient()
         self.subscription_path = self.subscriber.subscription_path(self.project_id, self.subscription_name)
         self.retention_duration = self.anonymization_config.get('topic_retention_days', 1) * 24 * 60 * 60
@@ -59,6 +61,10 @@ class PubSubSubscriberManager:
                     minimum_backoff={"seconds": 10},
                     maximum_backoff={"seconds": 600},
                 ),
+                dead_letter_policy=pubsub_v1.types.DeadLetterPolicy(
+                    dead_letter_topic=self.topic_path,
+                    max_delivery_attempts=5,
+                ),
             )
             
             # Create subscription
@@ -70,6 +76,6 @@ if __name__ == "__main__":
     config_path = "config.yaml"
     manager = PubSubSubscriberManager(
         config_path = config_path,
-        env = os.getenv('ENV', 'dev')
+        env = os.getenv('ENV', 'dev') 
     )
     manager.manage_subscription()
