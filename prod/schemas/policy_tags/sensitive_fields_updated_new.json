@@ -398,7 +398,7 @@
                     },
                     "last_application_employer_phone": {
                         "sensitivity": "high",
-                        "masking_rule": "SHA256",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
                     },
                     "telemarketing": {
@@ -1074,7 +1074,7 @@
                     }
                 },
                     "sensitivity": "low",
-                    "masking_rule": "SHA256",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
                     "type": "STRING",
                     "category": "PII"
             }
