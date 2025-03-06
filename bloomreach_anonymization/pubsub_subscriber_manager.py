@@ -21,7 +21,7 @@ class PubSubSubscriberManager:
         self.topic_name = self.anonymization_config.get('pubsub_topic')
         self.deadletter_topic_name = self.anonymization_config.get('deadletter_topic')
         self.topic_path = f"projects/{self.project_id}/topics/{self.topic_name}"
-        self.topic_path = f"projects/{self.project_id}/topics/{self.deadletter_topic_name}"
+        self.dl_topic_path = f"projects/{self.project_id}/topics/{self.deadletter_topic_name}"
         self.subscriber = pubsub_v1.SubscriberClient()
         self.subscription_path = self.subscriber.subscription_path(self.project_id, self.subscription_name)
         self.retention_duration = self.anonymization_config.get('topic_retention_days', 1) * 24 * 60 * 60
@@ -62,7 +62,7 @@ class PubSubSubscriberManager:
                     maximum_backoff={"seconds": 600},
                 ),
                 dead_letter_policy=pubsub_v1.types.DeadLetterPolicy(
-                    dead_letter_topic=self.topic_path,
+                    dead_letter_topic=self.dl_topic_path,
                     max_delivery_attempts=5,
                 ),
             )
@@ -70,6 +70,30 @@ class PubSubSubscriberManager:
             # Create subscription
             self.subscriber.create_subscription(subscription)
             logging.info(f"Subscription {self.subscription_name} created successfully.")
+
+    def manage_dead_letter_subscription(self):
+        """Ensures the dead letter topic has at least one subscription."""
+        dead_letter_subscription_name = f"{self.deadletter_topic_name}-dl-sub"
+        dead_letter_subscription_path = self.subscriber.subscription_path(self.project_id, dead_letter_subscription_name)
+
+        try:
+            request = pubsub_v1.types.GetSubscriptionRequest(subscription=dead_letter_subscription_path)
+            self.subscriber.get_subscription(request=request)
+            logging.info(f"Dead letter subscription {dead_letter_subscription_name} already exists.")
+        except NotFound:
+            logging.info(f"Dead letter subscription {dead_letter_subscription_name} not found. Creating...")
+
+            subscription = pubsub_v1.types.Subscription(
+                name=dead_letter_subscription_path,
+                topic=self.dl_topic_path,
+                ack_deadline_seconds=60,
+                retain_acked_messages=False,
+                message_retention_duration={"seconds": self.retention_duration},
+            )
+
+            self.subscriber.create_subscription(subscription)
+            logging.info(f"Dead letter subscription {dead_letter_subscription_name} created successfully.")
+
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
@@ -79,3 +103,4 @@ if __name__ == "__main__":
         env = os.getenv('ENV', 'dev') 
     )
     manager.manage_subscription()
+    manager.manage_dead_letter_subscription() 
