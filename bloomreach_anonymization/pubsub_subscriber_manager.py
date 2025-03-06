@@ -68,6 +68,8 @@ class PubSubSubscriberManager:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     config_path = "config.yaml"
-    env = os.getenv('ENV', 'dev') 
-    manager = PubSubSubscriberManager(config_path, env)
+    manager = PubSubSubscriberManager(
+        config_path = config_path,
+        env = os.getenv('ENV', 'dev')
+    )
     manager.manage_subscription()

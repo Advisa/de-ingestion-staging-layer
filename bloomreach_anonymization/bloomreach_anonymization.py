@@ -4,6 +4,8 @@ import json
 import logging
 import yaml
 from google.cloud import pubsub_v1, secretmanager
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 class BloomreachAnonymizer:
     def __init__(self, config_path, env='dev'):
@@ -18,6 +20,16 @@ class BloomreachAnonymizer:
         self.subscription_path = self.subscriber.subscription_path(self.project_id, self.subscription_name)
         self.market_configs = self.anonymization_config.get('anonymize_markets', [])
         self.project_secrets = self.get_secrets(self.anonymization_config.get('secret_name'))
+
+        # Create a requests session with retries
+        self.session = requests.Session()
+        retries = Retry(
+            total=5,  # Max retries
+            backoff_factor=1,  # Exponential backoff (1s, 2s, 4s, etc.)
+            status_forcelist=[500, 502, 503, 504],  # Retry on these HTTP errors
+            allowed_methods={"POST"}  # Only retry POST requests
+        )
+        self.session.mount("https://", HTTPAdapter(max_retries=retries))
 
     def load_config(self, config_path):
         try:
@@ -83,14 +95,13 @@ class BloomreachAnonymizer:
         return {"customer_ids": customer_ids}, project_keys
 
     def send_request(self, payload, project_keys, message_id):
-        """Send anonymization request to the corresponding projects."""
+        """Send anonymization request to the corresponding projects with retries."""
         anonymised = False
 
         if isinstance(project_keys, str):
             project_keys = [project_keys]
 
         for project_key in project_keys:
-            # print(project_key)
             secret_data = self.project_secrets.get(project_key)
             if not secret_data:
                 logging.error(f"No secret found for project {project_key}. Skipping.")
@@ -98,8 +109,7 @@ class BloomreachAnonymizer:
 
             url = self.url_template.format(secret_data['project_token'])
             try:
-                print(payload)
-                response = requests.post(
+                response = self.session.post(
                     url, headers=self.headers, json=payload,
                     auth=(secret_data['api_key_id'], secret_data['api_secret'])
                 )
@@ -129,7 +139,6 @@ class BloomreachAnonymizer:
 
             ack_ids = []
             for received_message in response.received_messages:
-                # print(received_message.message.data)
                 message_id = received_message.message.message_id
                 try:
                     decoded_data = json.loads(received_message.message.data.decode('utf-8'))
@@ -156,7 +165,6 @@ class BloomreachAnonymizer:
 
 
 # Uncomment for testing
-
 # if __name__ == "__main__": 
 #     logging.basicConfig(level=logging.INFO)
 #     anonymizer = BloomreachAnonymizer(config_path="config.yaml", env=os.getenv('ENV', 'dev'))

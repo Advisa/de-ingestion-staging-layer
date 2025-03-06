@@ -7,11 +7,11 @@ default: # change default values for testing
     secret_name: "projects/716492863037/secrets/bloomreach-gdpr-anonymization-api-dev/versions/latest"
     anonymize_markets:
       - market: "FI"
-        bloomreach_projects: ["dummy", "dummy2"]
+        bloomreach_projects: "dummy"
       - market: "SE"
         bloomreach_projects: "dummy"
       - market: "DK"
-        bloomreach_projects: ["dummy", "dummy2"]
+        bloomreach_projects: "dummy"
       - market: "NO"
         bloomreach_projects: "dummy"
 
