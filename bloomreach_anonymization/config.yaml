@@ -1,0 +1,33 @@
+default: # change default values for testing
+  anonymization_service:
+    raw_layer_project: "sambla-data-staging-compliance"
+    pubsub_subscriber: "pull_anonymization_events_dev"
+    pubsub_topic: "test_anonymization_events"
+    topic_retention_days: 1
+    secret_name: "projects/716492863037/secrets/bloomreach-gdpr-anonymization-api-dev/versions/latest"
+    anonymize_markets:
+      - market: "FI"
+        bloomreach_projects: ["dummy", "dummy2"]
+      - market: "SE"
+        bloomreach_projects: "dummy"
+      - market: "DK"
+        bloomreach_projects: ["dummy", "dummy2"]
+      - market: "NO"
+        bloomreach_projects: "dummy"
+
+prod:
+  anonymization_service:
+    raw_layer_project: "sambla-data-staging-compliance"
+    pubsub_subscriber: "pull_anonymization_events"
+    pubsub_topic: "anonymization_events"
+    secret_name: "projects/716492863037/secrets/bloomreach-gdpr-anonymization-api/versions/latest"
+    topic_retention_days: 7
+    anonymize_markets:
+      - market: "SE"
+        bloomreach_projects: ["advisa_se", "sambla_se"]
+      - market: "NO"
+        bloomreach_projects: ["digifinans_no", "sambla_no"]
+      - market: "FI"
+        bloomreach_projects: ["omalaina_fi", "rahalaitos_fi", "rahoitu_fi"]
+      - market: "DK"
+        bloomreach_projects: Null
