@@ -22,7 +22,9 @@ class AuthorizedViewService:
         self.base_folder = self.authorized_view_config.get('base_folder')
         self.generate_encrypted  = self.authorized_view_config.get('generate_encrypted')
         self.gdpr_vault_table  = self.authorized_view_config.get('gdpr_vault_table')
-        self.table_names  = self.authorized_view_config.get('table_names', [])
+        self.se_table_names  = self.authorized_view_config.get('se_table_names', [])
+        self.fi_table_names  = self.authorized_view_config.get('fi_table_names', [])
+        self.no_table_names  = self.authorized_view_config.get('no_table_names', [])
 
         # Initialize the current path where this service is located
         project_root = Path(__file__).resolve().parent.parent  
@@ -199,7 +201,9 @@ class AuthorizedViewService:
                     raw_layer_project=self.raw_layer_project,
                     gdpr_vault_table=self.gdpr_vault_table,
                     exposure_project=self.exposure_project,
-                    table_names=self.table_names
+                    se_table_names=self.se_table_names,
+                    fi_table_names=self.fi_table_names,
+                    no_table_names=self.no_table_names
                 )
                 self.generate_encryption_queries_cdc(encrypted_query_template)
             else:
