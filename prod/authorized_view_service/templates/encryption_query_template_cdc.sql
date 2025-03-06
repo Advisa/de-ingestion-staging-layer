@@ -2,10 +2,21 @@ WITH table_columns AS (
     -- Replace this with your actual query for table columns
     SELECT * FROM `{{exposure_project}}.sambla_group_data_stream`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS 
     WHERE table_name IN (
-            {% for table in table_names %}
+            {% for table in se_table_names %}
                 "{{ table }}"{% if not loop.last %}, {% endif %}
-            {% endfor %}
-)
+            {% endfor %})
+    UNION ALL
+    SELECT * FROM `{{exposure_project}}.sambla_group_data_stream_fi`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS 
+    WHERE table_name IN (
+            {% for table in fi_table_names %}
+                "{{ table }}"{% if not loop.last %}, {% endif %}
+            {% endfor %})
+    UNION ALL
+    SELECT * FROM `{{exposure_project}}.sambla_group_data_stream_no`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS 
+    WHERE table_name IN (
+            {% for table in no_table_names %}
+                "{{ table }}"{% if not loop.last %}, {% endif %}
+            {% endfor %})
 ),
 
 policy_tags_all AS (
@@ -23,7 +34,7 @@ policy_tags_pii_child_tags AS (
   INNER JOIN 
     policy_tags_all t2 
   ON t1.parent_policy_tag_id = t2.policy_tag_id
-  WHERE t2.display_name IN ('employer', 'email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number', 'address', 'post_code','data','business_organization_number')
+  WHERE t2.display_name IN ('employer', 'email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number', 'address', 'post_code','data','business_organization_number','attributes_raw_json','employment_industry')
   
 ),
 policy_tags_pii_parent_tags AS (
@@ -34,7 +45,7 @@ policy_tags_pii_parent_tags AS (
   INNER JOIN 
     policy_tags_all t2 
   ON t1.parent_policy_tag_id = t2.policy_tag_id
-  WHERE t2.display_name IN ('email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number','address', 'post_code','data','business_organization_number')
+  WHERE t2.display_name IN ('email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number','address', 'post_code','data','business_organization_number','attributes_raw_json','employment_industry')
   
 ),
 
@@ -176,7 +187,7 @@ non_nested_field_encryption AS (
          AS encryption_logic
     FROM unnested_join_keys AS t1
     INNER JOIN sensitive_fields AS t2
-        ON t1.sensitive_field = t2.field_path and t1.table_name = t2.table_name
+        ON t1.sensitive_field = t2.field_path and t1.table_name = t2.table_name and t1.table_schema = t2.table_schema
     WHERE is_nested = FALSE
 ),
 
@@ -203,7 +214,7 @@ nested_field_encryption AS (
                                 ELSE ""  
                                 END,  
                               " AND VAULT.uuid IS NOT NULL THEN TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(raw.", t2.field_path, " AS STRING), VAULT.uuid)) ",
-                              "ELSE CAST(raw.", t2.field_path, " AS STRING) END "
+                              "ELSE CAST(raw.", t2.field_path, " AS STRING) END AS ", t2.display_name
                           )
                     WHEN data_type = 'ARRAY<STRING>' THEN 
                           CONCAT(
@@ -216,7 +227,7 @@ nested_field_encryption AS (
                                 ELSE ""  
                                 END, 
                               " AND VAULT.uuid IS NOT NULL THEN TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(f_", t2.column_name, " AS STRING), VAULT.uuid)) ",
-                              "ELSE CAST(f_", t2.column_name, " AS STRING) END "
+                              "ELSE CAST(f_", t2.column_name, " AS STRING) END AS ", t2.display_name
                           )
                     WHEN parent_datatype  LIKE 'ARRAY%' THEN
                           -- Apply encryption logic for sensitive fields (based on display_name)
@@ -244,8 +255,8 @@ nested_field_encryption AS (
          AS encryption_logic
     FROM unnested_join_keys AS t1
     INNER JOIN sensitive_fields AS t2
-       ON t1.sensitive_field = t2.column_name and t1.table_name = t2.table_name
-    WHERE t2.is_nested = TRUE and valid_nested_field > 1 AND t1.table_schema in ("sambla_legacy_integration_legacy","sambla_group_data_stream")
+       ON t1.sensitive_field = t2.column_name and t1.table_name = t2.table_name and t1.table_schema = t2.table_schema
+    WHERE t2.is_nested = TRUE and valid_nested_field > 1 AND t1.table_schema in ("sambla_legacy_integration_legacy","sambla_group_data_stream",'sambla_group_data_stream_fi','sambla_group_data_stream_no')
 ),
 
 all_fields_encryption AS (
@@ -281,7 +292,7 @@ all_fields_encryption AS (
         encryption_logic, 
         ", "
       ) OVER (PARTITION BY table_schema, table_name, sensitive_field, column_name),
-      " FROM UNNEST(", column_name, ") AS f_", column_name, ") AS", column_name
+      " FROM UNNEST(", column_name, ") AS f_", column_name, ") AS ", column_name
     )
     
   WHEN parent_datatype LIKE 'ARRAY<STRUCT%' THEN 
@@ -291,7 +302,7 @@ all_fields_encryption AS (
         encryption_logic, 
         ", "
       ) OVER (PARTITION BY table_schema, table_name, sensitive_field, column_name),
-      ") FROM UNNEST(", column_name, ") AS f_", column_name, ") AS", column_name
+      ") FROM UNNEST(", column_name, ") AS f_", column_name, ") AS ", column_name
     ) END AS encrypted_fields
     FROM nested_field_encryption
     where parent_datatype like 'ARRAY%'
@@ -312,7 +323,7 @@ all_fields_encryption AS (
               encryption_logic,
               ", "
             ) OVER (PARTITION BY table_schema, table_name, sensitive_field, column_name),
-            ") AS", column_name
+            ") AS ", column_name
           ) AS encrypted_fields
     FROM nested_field_encryption
     WHERE parent_datatype LIKE 'STRUCT%'
@@ -330,7 +341,8 @@ market_legacystack_mapping AS (
         t1.field_path,
         CASE 
             WHEN t1.table_schema IN ('advisa_history_integration_legacy', 'maxwell_integration_legacy','sambla_group_data_stream') THEN 'SE'
-            WHEN t1.table_schema IN ('rahalaitos_integration_legacy', 'lvs_integration_legacy') THEN 'FI'
+            WHEN t1.table_schema IN ('rahalaitos_integration_legacy', 'lvs_integration_legacy','sambla_group_data_stream_fi') THEN 'FI'
+            WHEN t1.table_schema IN ('sambla_group_data_stream_no') THEN 'NO'
             ELSE 'OTHER MARKETS'
         END AS market_identifier
     FROM 
@@ -376,9 +388,13 @@ final AS (
             CONCAT(
               'LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) AS ssn_clean'
             )
+          WHEN mlm.market_identifier = 'NO' THEN 
+            CONCAT(
+              'LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9]", ""), 11) AS ssn_clean'
+            )
         END
         ,
-        ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream') THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw) ',
+        ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw) ',
         
         'SELECT ',
         STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
@@ -389,13 +405,18 @@ final AS (
               ELSE NULL 
             END, ', ' 
           ),
-        ') FROM `data_with_ssn_rules` raw ',
+        '),',
+        'CASE ',
+          'WHEN (raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' IS NOT NULL AND raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' <> "" AND VAULT.uuid IS NOT NULL) OR LOWER(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ') =  "anonymized" THEN TRUE ',
+          'ELSE FALSE ',
+        'END AS is_anonymised ',
+        'FROM `data_with_ssn_rules` raw ',
         'LEFT JOIN `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` VAULT ',
         'ON CAST(raw.ssn_clean AS STRING) = VAULT.ssn'
       )
 
       ELSE CONCAT(
-        'SELECT * FROM ', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream') THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END,
+        'SELECT * , False AS is_anonymised FROM ', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END,
         mlm.table_schema,
         '.',
         mlm.table_name,
@@ -411,5 +432,5 @@ GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
 
 select * from final 
 WHERE final_encrypted_columns IS NOT NULL
-AND table_schema IN ("sambla_group_data_stream")
+--AND table_schema IN ("sambla_group_data_stream_no")
 
