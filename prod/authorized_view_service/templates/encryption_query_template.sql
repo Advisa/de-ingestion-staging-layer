@@ -300,13 +300,18 @@ final AS (
               ELSE NULL 
             END, ', ' 
           ),
-        ') FROM `data_with_ssn_rules` raw ',
+        '),',
+        'CASE ',
+          'WHEN (raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' IS NOT NULL AND raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' <> "" AND VAULT.uuid IS NOT NULL) OR LOWER(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ') =  "anonymized" THEN TRUE ',
+          'ELSE FALSE ',
+        'END AS is_anonymised ',
+        'FROM `data_with_ssn_rules` raw ',
         'LEFT JOIN `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` VAULT ',
         'ON CAST(raw.ssn_clean AS STRING) = VAULT.ssn'
       )
 
       ELSE CONCAT(
-        'SELECT * FROM ', CASE WHEN mlm.table_schema = 'salus_group_integration' THEN '`{{ exposure_project }}.' ELSE '`{{ raw_layer_project }}.' END,
+        'SELECT *, False AS is_anonymised FROM FROM ', CASE WHEN mlm.table_schema = 'salus_group_integration' THEN '`{{ exposure_project }}.' ELSE '`{{ raw_layer_project }}.' END,
         mlm.table_schema,
         '.',
         mlm.table_name,
