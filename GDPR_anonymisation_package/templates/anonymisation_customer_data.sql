@@ -25,7 +25,7 @@ and is_anonymized = True
 --     vault.market,
 --     last_brand_interaction,
     -- email as latest_email,
-    -- phone as latest_mobile,
+    -- mobile_phone as latest_mobile,
 --     compliance_event,
 -- FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` vault
 -- LEFT JOIN `data-domain-data-warehouse.dbt_16a02f5fff.gdpr_events` gdpr
