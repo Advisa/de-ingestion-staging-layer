@@ -174,7 +174,7 @@ class BloomreachAnonymizer:
 
 
 ## Uncomment for testing
-if __name__ == "__main__": 
-    logging.basicConfig(level=logging.INFO)
-    anonymizer = BloomreachAnonymizer(config_path="config.yaml", env=os.getenv('ENV', 'dev'))
-    anonymizer.pull_messages()
+# if __name__ == "__main__": 
+#     logging.basicConfig(level=logging.INFO)
+#     anonymizer = BloomreachAnonymizer(config_path="config.yaml", env=os.getenv('ENV', 'dev'))
+#     anonymizer.pull_messages()
