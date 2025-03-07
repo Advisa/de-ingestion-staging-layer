@@ -20,7 +20,7 @@ echo "Deploying the Google Cloud Scheduler..."
 gcloud scheduler jobs update http gdpr_anonymize_prod_trigger \
   --location "europe-west1" \
   --description "Triggers the prod anonymisation service" \
-  --schedule "5 0 * * *" \
+  --schedule "45 23 * * *" \
   --uri "https://europe-west1-sambla-data-staging-compliance.cloudfunctions.net/GDPR_anonymization" \
   --http-method POST \
   --time-zone "Europe/Stockholm" \

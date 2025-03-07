@@ -12,7 +12,7 @@ FROM `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` vault
 LEFT JOIN `{{exposure_project}}.{{gdpr_events_dataset}}.gdpr_events` gdpr
 on vault.ssn = gdpr.national_id
 and vault.market = gdpr.market
-WHERE DATE(vault.ingestion_timestamp, 'Europe/Stockholm') = current_date('Europe/Stockholm')
+WHERE vault.ingestion_timestamp >= current_timestamp() - interval 12 hour
 and is_anonymized = True
 {{limit_clause}}
 
