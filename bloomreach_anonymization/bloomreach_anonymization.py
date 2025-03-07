@@ -3,6 +3,7 @@ import hashlib
 import json
 import logging
 import yaml
+import os
 from google.cloud import pubsub_v1, secretmanager
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -97,6 +98,7 @@ class BloomreachAnonymizer:
     def send_request(self, payload, project_keys, message_id):
         """Send anonymization request to the corresponding projects with retries."""
         anonymised = False
+        successful_projects = []
 
         if isinstance(project_keys, str):
             project_keys = [project_keys]
@@ -117,19 +119,20 @@ class BloomreachAnonymizer:
                 if response.status_code == 200:
                     logging.info(f"Successfully anonymized customer for project {project_key}, message ID {message_id}")
                     anonymised = True
+                    successful_projects.append(project_key)
                 elif response.status_code == 404:
-                    # Customer does not exist in project
                     logging.warning(f"Failed to anonymize for project {project_key}, message ID {message_id}, status: {response.status_code}, response: {response.text}")
                 else:
                     logging.error(f"Failed to anonymize for project {project_key}, message ID {message_id}, status: {response.status_code}, response: {response.text}")
             except requests.exceptions.RequestException as e:
                 logging.error(f"Request failed for project {project_key}: {e}")
-        return anonymised
+        return anonymised, successful_projects
 
     def pull_messages(self):
         """Continuously pull messages until the queue is empty."""
         success_count = 0
         unsuccessful_count = 0
+        project_success_counts = {}
 
         while True:
             response = self.subscriber.pull(subscription=self.subscription_path, max_messages=1000)
@@ -137,7 +140,6 @@ class BloomreachAnonymizer:
             if not response.received_messages:
                 break  # Exit when there are no more messages
 
-            ack_ids = []
             for received_message in response.received_messages:
                 message_id = received_message.message.message_id
                 try:
@@ -145,27 +147,34 @@ class BloomreachAnonymizer:
                     payload, project_keys = self.extract_payload(decoded_data)
 
                     if payload and project_keys:
-                        result = self.send_request(payload, project_keys, message_id)
+                        result, successful_projects = self.send_request(payload, project_keys, message_id)
+                        
                         if result:
                             success_count += 1
+                            for project in successful_projects:
+                                project_success_counts[project] = project_success_counts.get(project, 0) + 1
                         else:
                             unsuccessful_count += 1
                     else:
                         unsuccessful_count += 1
 
-                    ack_ids.append(received_message.ack_id)
+                    self.subscriber.acknowledge(
+                        subscription=self.subscription_path, 
+                        ack_ids=[received_message.ack_id]
+                    )
 
                 except Exception as e:
                     logging.error(f"Error processing message {message_id}: {e}")
 
-            if ack_ids:
-                self.subscriber.acknowledge(subscription=self.subscription_path, ack_ids=ack_ids)
-
         logging.info(f"Anonymized {success_count} customers successfully in bloomreach. Failed {unsuccessful_count} times to anonymize a customer in any project in bloomreach")
 
+        # Log anonymization counts per project
+        for project, count in project_success_counts.items():
+            logging.info(f"Anonymized {count} customers in project {project}")
 
-# Uncomment for testing
-# if __name__ == "__main__": 
-#     logging.basicConfig(level=logging.INFO)
-#     anonymizer = BloomreachAnonymizer(config_path="config.yaml", env=os.getenv('ENV', 'dev'))
-#     anonymizer.pull_messages()
+
+## Uncomment for testing
+if __name__ == "__main__": 
+    logging.basicConfig(level=logging.INFO)
+    anonymizer = BloomreachAnonymizer(config_path="config.yaml", env=os.getenv('ENV', 'dev'))
+    anonymizer.pull_messages()
