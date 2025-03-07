@@ -311,7 +311,7 @@ final AS (
       )
 
       ELSE CONCAT(
-        'SELECT *, False AS is_anonymised FROM FROM ', CASE WHEN mlm.table_schema = 'salus_group_integration' THEN '`{{ exposure_project }}.' ELSE '`{{ raw_layer_project }}.' END,
+        'SELECT *, False AS is_anonymised FROM ', CASE WHEN mlm.table_schema = 'salus_group_integration' THEN '`{{ exposure_project }}.' ELSE '`{{ raw_layer_project }}.' END,
         mlm.table_schema,
         '.',
         mlm.table_name,
