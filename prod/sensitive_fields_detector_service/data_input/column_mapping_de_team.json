@@ -116,7 +116,8 @@
         "yv_bruttotulot",
         "yv_nettotulot",
         "salary_monthly_net",
-        "salary_monthly_gross"
+        "salary_monthly_gross",
+        "last_application_monthly_income_after_tax"
 
     ],
     "business_id": [
@@ -128,7 +129,8 @@
         "customer_organisation_name",
         "customer_passport_number",
         "customer_organisation_number",
-        "business_organization_number"
+        "business_organization_number",
+        "last_application_business_organization_number"
     ],
     "citizenship": [
         "citizenship_text",
@@ -199,14 +201,16 @@
         "education_level", 
         "education_level_text", 
         "yv_koulutus",
-        "koulutus"
+        "koulutus",
+        "last_application_education_level"
     ],
     "marital_status": [
         "yv_siviilisaaty",
         "civil_status_text",
         "civil_status",
         "siviilisaaty",
-        "siviilisääty"
+        "siviilisääty",
+        "last_application_civil_status"
     ],
     "json_col" : [
         "data",
@@ -222,7 +226,8 @@
         "creditScore",
         "currentDebt",
         "pastReportRequests",
-        "psd2Reports"
+        "psd2Reports",
+        "last_application_uc_score"
 
     ],
     "revenue": [
@@ -259,7 +264,13 @@
     "installment": [
         "installment_charges"
     ],
-    "occupation": [       
+    "last_application_occupation_title": [    
+        "last_application_education_level",
+        "last_application_citizenship",
+        "last_application_other_monthly_income_after_tax",
+        "last_application_other_monthly_income_before_tax",
+        "last_application_spouse_monthly_income_before_tax",
+        "last_application_rental_monthly_income_before_tax"
     ]
 
 }
