@@ -171,6 +171,11 @@
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
+                    },
+                    "iban": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
                     }
                 },
                 "sensitivity": "high",
@@ -387,6 +392,21 @@
                         "type": null
                     },
                     "customer_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "last_application_employer_phone": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
+                    },
+                    "telemarketing": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "contact_detail": {
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
                         "type": "STRING"
@@ -1000,7 +1020,65 @@
         "confidential": {}
     },
     "low_sensitivity_tags": {
-        "PII": {},
+        "PII": {
+            "attributes_raw_json": {
+                "children": {
+                    "owners_raw_json": {
+                        "sensitivity": "low",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "real_estate_raw_json": {
+                        "sensitivity": "low",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "special_constraints_raw_json": {
+                        "sensitivity": "low",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "mortgage_raw_json": {
+                        "sensitivity": "low",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "comment": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "push_notifications": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "creditor_data": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "low",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+
+            },
+            "employment_industry": {
+                "children": {
+                    "last_application_employer_name": {
+                        "sensitivity": "medium",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
+                    "sensitivity": "low",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "STRING",
+                    "category": "PII"
+            }
+        },
         "restricted": {
             "installment": {
                 "children": {
