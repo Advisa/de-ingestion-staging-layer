@@ -171,6 +171,11 @@
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
+                    },
+                    "iban": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
                     }
                 },
                 "sensitivity": "high",
