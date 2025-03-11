@@ -63,6 +63,7 @@ locals {
       schema = split("|", line)[0]
       table  = split("|", line)[1]
       query  = split("|", line)[2]
+      table_id = "${split("|", line)[1]}${(endswith(split("|", line)[0], "_fi") ? "_fi" : (endswith(split("|", line)[0], "_no") ? "_no" : ""))}"
 
     }
   })

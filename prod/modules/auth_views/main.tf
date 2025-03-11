@@ -121,7 +121,7 @@ resource "google_bigquery_table" "cdc_auth_views_test" {
   for_each = local.cdc_schema_table_queries
 
   dataset_id         = "auth_view_testing"
-  table_id           = "view_${each.value.table}"
+  table_id           = "view_${each.value.table_id}"
   deletion_protection = true
 
   view {
