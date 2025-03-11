@@ -140,17 +140,18 @@ class AnonymizationService:
     def main(self):
         """Main function to execute the workflow."""
         try:
-            logging.info("Executing key generation.")
-            key_generation_query = self.key_generation_query_template.render(
-                exposure_project=self.exposure_project,
-                compliance_project=self.compliance_project,
-                gdpr_events_dataset=self.gdpr_events_dataset,
-                gdpr_vault_table=self.gdpr_vault_table,
-                temp_encr_table=self.temp_encr_table
-            )
-            self.execute_query(self.clients['raw_layer_project'], key_generation_query)
+            if self.env == 'dev': #TODO Remove this for production go live
+                logging.info("Executing key generation.")
+                key_generation_query = self.key_generation_query_template.render(
+                    exposure_project=self.exposure_project,
+                    compliance_project=self.compliance_project,
+                    gdpr_events_dataset=self.gdpr_events_dataset,
+                    gdpr_vault_table=self.gdpr_vault_table,
+                    temp_encr_table=self.temp_encr_table
+                )
+                self.execute_query(self.clients['raw_layer_project'], key_generation_query)
 
-            logging.info("Updating flags to anonymized in the GDPR vault.")
+                logging.info("Updating flags to anonymized in the GDPR vault.")
             join_keys = {}
             self.update_anonymized_flags(join_keys)
             logging.info("Workflow completed successfully.")
