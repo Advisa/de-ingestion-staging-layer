@@ -310,17 +310,15 @@ final AS (
         'END AS is_anonymised ',
         'FROM `data_with_ssn_rules` raw ',
         'LEFT JOIN `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` VAULT ',
-        'ON CAST(raw.ssn_clean AS STRING) = VAULT.ssn'
-      )
-
+                'ON CAST(raw.ssn_clean AS STRING) = VAULT.ssn'
+              )
       ELSE CONCAT(
         'SELECT *, False AS is_anonymised FROM ', CASE WHEN mlm.table_schema = 'salus_group_integration' THEN '`{{ exposure_project }}.' ELSE '`{{ raw_layer_project }}.' END,
         mlm.table_schema,
         '.',
         mlm.table_name,
         '`'
-      ) 
-      
+      )     
     END AS final_encrypted_columns
 FROM market_legacystack_mapping mlm
 left join sensitive_fields sf
