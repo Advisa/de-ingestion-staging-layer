@@ -6,6 +6,7 @@ default:
     base_folder: "authorized_view_service"
     generate_encrypted: "false"
     gdpr_vault_table: "gdpr_vault_rudolf"
+    output_file_name: "auth_view_mapping_lvs.txt"
 
 prod:
   authorized_view_service:
@@ -15,3 +16,4 @@ prod:
     base_folder: "authorized_view_service"
     generate_encrypted: "false"
     gdpr_vault_table: "gdpr_vault_rudolf"
+    output_file_name: "auth_view_mapping.txt"

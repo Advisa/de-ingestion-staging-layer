@@ -11,9 +11,9 @@ resource "google_bigquery_dataset" "auth_view_dataset" {
   
 }
 
-# Create non-encrypted auth views (only if view_type is "non_encrypted")
-resource "google_bigquery_table" "dynamic_auth_views_non_encrypted" {
-  for_each = local.unencrypted_schema_table_queries
+# Create production auth views
+resource "google_bigquery_table" "dynamic_auth_views_prod" {
+  for_each = local.production_schema_table_queries
 
   dataset_id         = google_bigquery_dataset.auth_view_dataset.dataset_id
   table_id           = "view_${each.value.table}"
