@@ -302,7 +302,7 @@ final AS (
           ),
         '),',
         'CASE ',
-          'WHEN (CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING) IS NOT NULL AND CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING) <> "" AND CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING) <> "0" AND VAULT.uuid IS NOT NULL) OR LOWER(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ') =  "anonymized" THEN TRUE ',
+          'WHEN (CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING) IS NOT NULL AND CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING) <> "" AND CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING) <> "0" AND VAULT.uuid IS NOT NULL) OR LOWER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)) =  "anonymized" THEN TRUE ',
           'ELSE FALSE ',
         'END AS is_anonymised ',
         'FROM `data_with_ssn_rules` raw ',
