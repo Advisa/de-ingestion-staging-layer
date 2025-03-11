@@ -126,7 +126,7 @@ class AuthorizedViewService:
             self.processed_tables.add(f"{schema}|{table}") 
 
         # Save the encryption queries to a file (for now it saves to lvs, please change this later)
-        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_rahalaitos.txt')
+        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_salus.txt')
         with open(mapping_file_path, 'w') as f:
             for eq in encryption_queries:
                 f.write(eq + "\n")

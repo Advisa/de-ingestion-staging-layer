@@ -34,7 +34,7 @@ policy_tags_pii_child_tags AS (
   INNER JOIN 
     policy_tags_all t2 
   ON t1.parent_policy_tag_id = t2.policy_tag_id
-  WHERE t2.display_name IN ('employer', 'email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number', 'address', 'post_code','data','business_organization_number')
+  WHERE t2.display_name IN ('employer', 'email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number', 'address', 'post_code','data','business_organization_number','attributes_raw_json','employment_industry')
   
 ),
 policy_tags_pii_parent_tags AS (
@@ -45,7 +45,7 @@ policy_tags_pii_parent_tags AS (
   INNER JOIN 
     policy_tags_all t2 
   ON t1.parent_policy_tag_id = t2.policy_tag_id
-  WHERE t2.display_name IN ('email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number','address', 'post_code','data','business_organization_number')
+  WHERE t2.display_name IN ('email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number','address', 'post_code','data','business_organization_number','attributes_raw_json','employment_industry')
   
 ),
 
@@ -111,7 +111,8 @@ join_keys AS (
       OR "nationalid" IN UNNEST(ARRAY_AGG(normalized_column)) 
       OR "sotu" IN UNNEST(ARRAY_AGG(normalized_column)) 
       OR "yvsotu" IN UNNEST(ARRAY_AGG(normalized_column))
-      OR "nationalidsensitive" IN UNNEST(ARRAY_AGG(normalized_column)),
+      OR "nationalidsensitive" IN UNNEST(ARRAY_AGG(normalized_column))
+      OR (table_name = 'applications_customers_sambq_p' AND "idnumber" IN UNNEST(ARRAY_AGG(normalized_column))),
       TRUE, FALSE
     ) AS is_table_contains_ssn
   FROM sensitive_fields 
@@ -133,6 +134,8 @@ unnested_join_keys AS (
      -- Exceptional case
       WHEN table_name = "people_adhis_r" 
         THEN "national_id_sensitive" 
+      WHEN table_name = "applications_customers_sambq_p" 
+        THEN "idNumber" 
     END AS j_key
   FROM join_keys, UNNEST(join_keys.join_keys) AS join_key
 ),
@@ -270,13 +273,13 @@ final AS (
           CONCAT(
             'CASE ',
             'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "SE" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 12) ',
+,'applications_sambq_p') THEN 'market' WHEN mlm.table_name IN ('applications_customers_sambq_p') THEN 'coalesce(market, citizenship)' ELSE 'country_code' END ,'= "SE" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 12) ',
             'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "NO" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 11) ',
+,'applications_sambq_p') THEN 'market' WHEN mlm.table_name IN ('applications_customers_sambq_p') THEN 'coalesce(market, citizenship)' ELSE 'country_code' END ,'= "NO" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 11) ',
             'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "DK" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 10) ',
+,'applications_sambq_p') THEN 'market' WHEN mlm.table_name IN ('applications_customers_sambq_p') THEN 'coalesce(market, citizenship)' ELSE 'country_code' END ,'= "DK" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 10) ',
             'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "FI" THEN LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) ' ,
+,'applications_sambq_p') THEN 'market' WHEN mlm.table_name IN ('applications_customers_sambq_p') THEN 'coalesce(market, citizenship)' ELSE 'country_code' END ,'= "FI" THEN LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) ' ,
             'END AS ssn_clean'
           ) 
           WHEN mlm.market_identifier = 'SE' THEN 
@@ -307,17 +310,15 @@ final AS (
         'END AS is_anonymised ',
         'FROM `data_with_ssn_rules` raw ',
         'LEFT JOIN `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` VAULT ',
-        'ON CAST(raw.ssn_clean AS STRING) = VAULT.ssn'
-      )
-
+                'ON CAST(raw.ssn_clean AS STRING) = VAULT.ssn'
+              )
       ELSE CONCAT(
         'SELECT *, False AS is_anonymised FROM ', CASE WHEN mlm.table_schema = 'salus_group_integration' THEN '`{{ exposure_project }}.' ELSE '`{{ raw_layer_project }}.' END,
         mlm.table_schema,
         '.',
         mlm.table_name,
         '`'
-      ) 
-      
+      )     
     END AS final_encrypted_columns
 FROM market_legacystack_mapping mlm
 left join sensitive_fields sf
@@ -326,4 +327,4 @@ GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
 )
 SELECT distinct * FROM final 
 WHERE final_encrypted_columns IS NOT NULL
-AND table_schema IN ("rahalaitos_integration_legacy")
+AND table_schema IN ("salus_integration_legacy","salus_group_integration")
