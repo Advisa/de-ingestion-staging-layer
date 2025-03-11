@@ -115,3 +115,18 @@ resource "google_bigquery_table" "rahalaitos_auth_views_test" {
   }
 
 }
+
+# Create cdc auth views in testing dataset
+resource "google_bigquery_table" "cdc_auth_views_test" {
+  for_each = local.rahalaitos_schema_table_queries
+
+  dataset_id         = "auth_view_testing"
+  table_id           = "view_${each.value.table}"
+  deletion_protection = true
+
+  view {
+    query           = each.value.query
+    use_legacy_sql  = false
+  }
+
+}

@@ -17,6 +17,9 @@ WITH table_columns AS (
             {% for table in no_table_names %}
                 "{{ table }}"{% if not loop.last %}, {% endif %}
             {% endfor %})
+    UNION ALL
+    SELECT * FROM `{{exposure_project}}.helios_staging`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS 
+    WHERE table_name LIKE "%_ppi_p" AND table_name NOT IN ('insurances_ppi_p')
 ),
 
 policy_tags_all AS (
@@ -371,13 +374,13 @@ final AS (
           CONCAT(
             'CASE ',
             'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market'  ELSE 'country_code' END ,'= "SE" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 12) ',
+,'applications_sambq_p','customers_ppi_p','insurance_products_ppi_p') THEN 'market'  ELSE 'country_code' END ,'= "SE" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 12) ',
             'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "NO" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 11) ',
+,'applications_sambq_p','customers_ppi_p','insurance_products_ppi_p') THEN 'market' ELSE 'country_code' END ,'= "NO" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 11) ',
             'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "DK" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 10) ',
+,'applications_sambq_p','customers_ppi_p','insurance_products_ppi_p') THEN 'market' ELSE 'country_code' END ,'= "DK" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 10) ',
             'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
-,'applications_sambq_p') THEN 'market' ELSE 'country_code' END ,'= "FI" THEN LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) ' ,
+,'applications_sambq_p','customers_ppi_p','insurance_products_ppi_p') THEN 'market' ELSE 'country_code' END ,'= "FI" THEN LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) ' ,
             'END AS ssn_clean'
           ) 
           WHEN mlm.market_identifier = 'SE' THEN 
@@ -394,7 +397,7 @@ final AS (
             )
         END
         ,
-        ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw) ',
+        ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw) ',
         
         'SELECT ',
         STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
@@ -416,7 +419,7 @@ final AS (
       )
 
       ELSE CONCAT(
-        'SELECT * , False AS is_anonymised FROM ', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END,
+        'SELECT * , False AS is_anonymised FROM ', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END,
         mlm.table_schema,
         '.',
         mlm.table_name,
