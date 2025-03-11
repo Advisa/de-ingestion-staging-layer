@@ -171,11 +171,6 @@
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
-                    },
-                    "iban": {
-                        "sensitivity": "medium",
-                        "masking_rule": "DEFAULT_MASKING_VALUE",
-                        "type": "STRING"
                     }
                 },
                 "sensitivity": "high",
@@ -550,16 +545,6 @@
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": null
-                    },
-                    "last_application_employer_name": {
-                        "sensitivity": "medium",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
-                    "employment_industry": {
-                        "sensitivity": "medium",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
                     }
                 },
                 "sensitivity": "medium",
@@ -701,21 +686,6 @@
                         "type": "STRING"
                     },
                     "comments": {
-                        "sensitivity": "medium",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
-                    "comment": {
-                        "sensitivity": "medium",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
-                    "push_notifications": {
-                        "sensitivity": "medium",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    },
-                    "creditor_data": {
                         "sensitivity": "medium",
                         "masking_rule": "SHA256",
                         "type": "STRING"
