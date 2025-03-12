@@ -13,7 +13,7 @@ WITH
   WHERE
     operationType != 'delete')
 
-SELECT
+SELECT DISTINCT
   _id AS application_id,
   amount,
   createdAt,
