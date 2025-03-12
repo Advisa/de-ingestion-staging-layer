@@ -397,6 +397,10 @@ final AS (
             )
         END
         ,
+        CASE 
+            WHEN mlm.table_schema IN ('sambla_group_data_stream', 'sambla_group_data_stream_fi','sambla_group_data_stream_no') THEN ' ,_PARTITIONTIME AS date_partition ' ELSE ''
+        END
+        ,
         ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw) ',
         
         'SELECT ',
@@ -419,7 +423,11 @@ final AS (
       )
 
       ELSE CONCAT(
-        'SELECT * , False AS is_anonymised FROM ', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END,
+        'SELECT * , False AS is_anonymised,',
+        CASE 
+        WHEN mlm.table_schema IN ('sambla_group_data_stream', 'sambla_group_data_stream_fi','sambla_group_data_stream_no')
+        THEN ' _PARTITIONTIME AS date_partition' ELSE ''
+        END,' FROM ', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END,
         mlm.table_schema,
         '.',
         mlm.table_name,
