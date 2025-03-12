@@ -651,6 +651,11 @@
                         "sensitivity": "medium",
                         "masking_rule": "SHA256",
                         "type": "STRING"
+                    },
+                    "last_application_business_organization_number": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
                     }
                 },
                 "sensitivity": "medium",
@@ -785,6 +790,11 @@
                         "type": "INT64"
                     },
                     "siviilisaaty": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
+                    "last_application_civil_status": {
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": null
@@ -1009,6 +1019,11 @@
                         "sensitivity": "medium",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": "STRING"
+                    },
+                    "last_application_monthly_income_after_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"
                     }
                 },
                 "sensitivity": "medium",
@@ -1108,6 +1123,41 @@
                 "category": "confidential"
 
             },
+            "last_application_occupation_title": {
+                "children": {
+                    "last_application_citizenship": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"      
+                    },
+                    "last_application_other_monthly_income_after_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"      
+                    },
+                    "last_application_other_monthly_income_before_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"      
+                    },
+                    "last_application_rental_monthly_income_before_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"      
+                    },
+                    "last_application_spouse_monthly_income_before_tax": {
+                        "sensitivity": "medium",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": "STRING"      
+                    }
+                },
+                "sensitivity": "medium",
+                "masking_rule": "DEFAULT_MASKING_VALUE",
+                "type": "STRING",
+                "category": "confidential"
+
+            },
+            
         "is_pep": {
             "children": {
                 "politicallyExposedPerson": {
@@ -1154,6 +1204,11 @@
                     "type": null
                 },
                 "koulutus": {
+                    "sensitivity": "medium",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": null
+                },
+                "last_application_education_level": {
                     "sensitivity": "medium",
                     "masking_rule": "DEFAULT_MASKING_VALUE",
                     "type": null
@@ -1253,6 +1308,11 @@
                     "type": "ARRAY"
                 },
                 "psd2Reports": {
+                    "sensitivity": "low",
+                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "type": "ARRAY"
+                },
+                "last_application_uc_score": {
                     "sensitivity": "low",
                     "masking_rule": "DEFAULT_MASKING_VALUE",
                     "type": "ARRAY"
