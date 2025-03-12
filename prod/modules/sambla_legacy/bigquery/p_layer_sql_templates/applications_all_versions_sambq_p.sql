@@ -14,11 +14,11 @@ WITH
     operationType != 'delete')
 
 SELECT
-  application_id,
+  _id AS application_id,
   amount,
   createdAt,
   updated_at
 FROM
   applications_all_versions_sambq_r a
-QUALIFY ROW_NUMBER() OVER(PARTITION BY a._id ORDER BY __v desc, ifnull(updatedAt,'1990-01-01') desc, ifnull(time_archived,'1990-01-01') DESC) =1
+QUALIFY ROW_NUMBER() OVER(PARTITION BY _id ORDER BY __v desc, ifnull(updatedAt,'1990-01-01') desc, ifnull(time_archived,'1990-01-01') DESC) =1
     
