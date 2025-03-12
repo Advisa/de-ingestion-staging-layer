@@ -217,7 +217,7 @@ nested_field_encryption AS (
                                 ELSE ""  
                                 END,  
                               " AND VAULT.uuid IS NOT NULL THEN TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(raw.", t2.field_path, " AS STRING), VAULT.uuid)) ",
-                              "ELSE CAST(raw.", t2.field_path, " AS STRING) END AS ", t2.display_name
+                              "ELSE CAST(raw.", t2.field_path, " AS STRING) END AS ", t2.nested_field
                           )
                     WHEN data_type = 'ARRAY<STRING>' THEN 
                           CONCAT(
