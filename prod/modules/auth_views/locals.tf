@@ -57,8 +57,8 @@ locals {
     }
   })
 
-  unencrypted_schema_table_queries = tomap({
-    for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping_non_encrypted.txt"))) :
+  production_schema_table_queries = tomap({
+    for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping.txt"))) :
     "${split("|", line)[0]}.${split("|", line)[1]}" => {
       schema = split("|", line)[0]
       table  = split("|", line)[1]
@@ -66,5 +66,5 @@ locals {
 
     }
   })
-  unique_schemas = distinct([for values in local.unencrypted_schema_table_queries : values.schema])
+  unique_schemas = distinct([for values in local.production_schema_table_queries : values.schema])
 }

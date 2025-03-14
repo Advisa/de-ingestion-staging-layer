@@ -21,7 +21,13 @@ class AuthorizedViewService:
         self.compliance_project = self.authorized_view_config.get('compliance_project')
         self.base_folder = self.authorized_view_config.get('base_folder')
         self.generate_encrypted  = self.authorized_view_config.get('generate_encrypted')
-        self.gdpr_vault_table  = self.authorized_view_config.get('gdpr_vault_table')
+        # In order to use the encryption template dynamically, we explicitly define the gdpr_vault table names as follows
+        self.gdpr_vault_table_dev  = self.config.get('default', {}).get('authorized_view_service', {}).get('gdpr_vault_table')
+        self.gdpr_vault_table_prod = self.config.get('prod', {}).get('authorized_view_service', {}).get('gdpr_vault_table')
+        # In order to deploy the auth views for production and dev datasets, we define the output file paths
+        self.output_file_name_dev  = self.config.get('default', {}).get('authorized_view_service', {}).get('output_file_name')
+        self.output_file_name_prod = self.config.get('prod', {}).get('authorized_view_service', {}).get('output_file_name')
+
 
         # Initialize the current path where this service is located
         project_root = Path(__file__).resolve().parent.parent  
@@ -112,7 +118,7 @@ class AuthorizedViewService:
         """
         return self.execute_query(self.clients['raw_layer_project'], query)
 
-    def generate_encryption_queries(self, encrypted_query_template):
+    def generate_encryption_queries(self, encrypted_query_template, output_file_name):
         """Generate encryption queries from the encrypted query template."""
         encryption_queries = []
         result = self.execute_query(self.clients['raw_layer_project'], encrypted_query_template)
@@ -126,12 +132,14 @@ class AuthorizedViewService:
             self.processed_tables.add(f"{schema}|{table}") 
 
         # Save the encryption queries to a file (for now it saves to lvs, please change this later)
-        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_salus.txt')
+
+        mapping_file_path = os.path.join(self.base_path, 'templates', output_file_name)
+
         with open(mapping_file_path, 'w') as f:
             for eq in encryption_queries:
                 f.write(eq + "\n")
 
-    def generate_non_encrypted_queries(self):
+    def generate_non_encrypted_queries(self, output_file_name):
         """Generate non-encrypted queries for each table."""
         non_encrypted_queries = []
         datasets = self.clients['raw_layer_project'].list_datasets()
@@ -160,7 +168,7 @@ class AuthorizedViewService:
         else:
             logging.error(f"No datasets found in project {self.raw_layer_project}")
         
-        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_non_encrypted.txt')
+        mapping_file_path = os.path.join(self.base_path, 'templates', output_file_name)
         with open(mapping_file_path, 'w') as f:
             for eq in non_encrypted_queries:
                 f.write(eq + "\n")
@@ -170,14 +178,31 @@ class AuthorizedViewService:
         """Main function to execute the workflow."""
 
         try:
-            # Render and execute the encryption query template
-            encrypted_query_template = self.encryption_query_template.render(
+            # Render and execute the encryption query template for dev
+            encrypted_query_template_dev = self.encryption_query_template.render(
                 compliance_project=self.compliance_project,
                 raw_layer_project=self.raw_layer_project,
-                gdpr_vault_table=self.gdpr_vault_table,
+                gdpr_vault_table=self.gdpr_vault_table_dev,
                 exposure_project = self.exposure_project
             )
-            self.generate_encryption_queries(encrypted_query_template)
+            
+            # Generate encryption queries for dev
+            # Uncomment it to test the generate the template for dev views
+            #self.generate_encryption_queries(encrypted_query_template_dev, self.output_file_name_dev)
+
+            # Render and execute the encryption query template for prod
+            encrypted_query_template_prod = self.encryption_query_template.render(
+                compliance_project=self.compliance_project,
+                raw_layer_project=self.raw_layer_project,
+                gdpr_vault_table=self.gdpr_vault_table_prod,
+                exposure_project = self.exposure_project
+            )
+
+            # Generate encryption queries for prod
+            self.generate_encryption_queries(encrypted_query_template_prod, self.output_file_name_prod)
+
+
+            # Generate encryption queries for prod
 
 
             logging.info("Workflow completed successfully.")
