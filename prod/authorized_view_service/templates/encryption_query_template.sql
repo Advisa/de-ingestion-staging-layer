@@ -327,4 +327,8 @@ GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
 )
 SELECT distinct * FROM final 
 WHERE final_encrypted_columns IS NOT NULL
+<<<<<<< HEAD
 AND table_schema IN ("salus_integration_legacy","salus_group_integration")
+=======
+--AND table_schema IN ("rahalaitos_integration_legacy")
+>>>>>>> 83441e5 (auth views are deployed for production dataset)

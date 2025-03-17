@@ -57,6 +57,7 @@ locals {
     }
   })
 
+<<<<<<< HEAD
   cdc_schema_table_queries = tomap({
     for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping_cdc.txt"))) :
     "${split("|", line)[0]}.${split("|", line)[1]}" => {
@@ -70,6 +71,10 @@ locals {
 
   unencrypted_schema_table_queries = tomap({
     for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping_non_encrypted.txt"))) :
+=======
+  production_schema_table_queries = tomap({
+    for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping.txt"))) :
+>>>>>>> 83441e5 (auth views are deployed for production dataset)
     "${split("|", line)[0]}.${split("|", line)[1]}" => {
       schema = split("|", line)[0]
       table  = split("|", line)[1]
@@ -77,5 +82,5 @@ locals {
 
     }
   })
-  unique_schemas = distinct([for values in local.unencrypted_schema_table_queries : values.schema])
+  unique_schemas = distinct([for values in local.production_schema_table_queries : values.schema])
 }
