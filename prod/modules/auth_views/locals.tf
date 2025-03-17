@@ -57,6 +57,17 @@ locals {
     }
   })
 
+  cdc_schema_table_queries = tomap({
+    for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping_cdc.txt"))) :
+    "${split("|", line)[0]}.${split("|", line)[1]}" => {
+      schema = split("|", line)[0]
+      table  = split("|", line)[1]
+      query  = split("|", line)[2]
+      table_id = "${split("|", line)[1]}${(endswith(split("|", line)[0], "_fi") ? "_fi" : (endswith(split("|", line)[0], "_no") ? "_no" : ""))}"
+
+    }
+  })
+
   unencrypted_schema_table_queries = tomap({
     for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping_non_encrypted.txt"))) :
     "${split("|", line)[0]}.${split("|", line)[1]}" => {
