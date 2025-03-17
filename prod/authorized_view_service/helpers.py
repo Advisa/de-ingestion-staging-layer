@@ -82,16 +82,6 @@ class AuthorizedViewService:
         except FileNotFoundError as e:
             logging.error(f"Template file not found: {str(e)}")
             raise e
-
-    def save_template(self,query,template_name):
-        """Upload a new SQL template to the templates directory."""
-        output_template_path = os.path.join(self.base_path, 'templates', template_name)
-        try:
-            with open(output_template_path, 'w') as f:
-                f.write(query)
-        except FileNotFoundError as e:
-            logging.error(f"Template file not found: {str(e)}")
-            raise e
         
     def execute_query(self, client, query):
         """Execute a query using a BigQuery client."""
@@ -104,24 +94,6 @@ class AuthorizedViewService:
         except Exception as e:
             logging.error(f"Error executing query: {str(e)}")
             raise e
-
-    def generate_union_all_query(self):
-        """Generate the UNION ALL query for all source tables/views."""
-        query = """
-            WITH tables AS (SELECT
-                table_schema
-                FROM
-                `sambla-data-staging-compliance`.`region-europe-north1`.INFORMATION_SCHEMA.TABLES
-                WHERE
-                table_schema like '%_integration_legacy'
-            )
-                SELECT
-                DISTINCT table_schema,
-                CONCAT( "SELECT * FROM `sambla-data-staging-compliance.", table_schema, "`.INFORMATION_SCHEMA.COLUMNS" ) AS column_query
-                FROM
-                tables
-        """
-        return self.execute_query(self.clients['raw_layer_project'], query)
 
     def generate_encryption_queries(self, encrypted_query_template, output_file_name):
         """Generate encryption queries from the encrypted query template."""
@@ -160,40 +132,6 @@ class AuthorizedViewService:
         mapping_file_path = os.path.join(self.base_path, 'templates', output_file_name)
         with open(mapping_file_path, 'w') as f:
             for eq in encryption_queries:
-                f.write(eq + "\n")
-
-    def generate_non_encrypted_queries(self, output_file_name):
-        """Generate non-encrypted queries for each table."""
-        non_encrypted_queries = []
-        datasets = self.clients['raw_layer_project'].list_datasets()
-
-        if datasets:
-            for dataset in datasets:
-                schema = dataset.dataset_id
-
-                if 'legacy' in schema and 'authorized' not in schema:
-                    logging.info(f"Processing dataset: {schema}")
-                    table_query = f"""
-                        SELECT table_name
-                        FROM `{self.raw_layer_project}.{schema}.INFORMATION_SCHEMA.TABLES`
-                    """
-                    table_result = self.execute_query(self.clients['raw_layer_project'], table_query)
-                    
-                    for table_row in table_result:
-                        table = table_row.table_name
-                        #if f"{schema}|{table}" not in self.processed_tables:
-                        if table == "providers_lvs_r":
-                                non_encrypted_query = f"SELECT *, _FILE_NAME as f FROM `{self.raw_layer_project}.{schema}.{table}`"
-                        else:
-                            non_encrypted_query = f"SELECT * FROM `{self.raw_layer_project}.{schema}.{table}`"
-                        non_encrypted_queries.append(f"{schema}|{table}|{non_encrypted_query}")
-            
-        else:
-            logging.error(f"No datasets found in project {self.raw_layer_project}")
-        
-        mapping_file_path = os.path.join(self.base_path, 'templates', output_file_name)
-        with open(mapping_file_path, 'w') as f:
-            for eq in non_encrypted_queries:
                 f.write(eq + "\n")
 
 
