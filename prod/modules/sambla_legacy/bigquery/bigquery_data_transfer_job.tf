@@ -67,9 +67,38 @@ resource "google_bigquery_job" "execute_sql" {
       use_legacy_sql = false
       write_disposition = "WRITE_TRUNCATE"
     }
-    depends_on = [
-    google_bigquery_table.partitioned_tables
-  ]
+    depends_on = [google_bigquery_table.partitioned_tables]
+    lifecycle {
+      ignore_changes = [ query, job_id ]
+    }
+  }
+
+# Run SQL queries from templates to create the tables
+resource "google_bigquery_job" "execute_sql_applications_all_versions" {
+  job_id      = "create_applications_all_versions_new_sambq_p_prod_tables_live_go"
+  project     = var.project_id
+  location    = "europe-north1"
+
+
+    query {
+      query  = templatefile("${path.module}/p_layer_sql_templates/applications_all_versions_sambq_p.sql", {
+        project_id = var.project_id
+        dataset_id = google_bigquery_dataset.sambla_legacy_dataset.dataset_id
+      })
+
+      destination_table {
+      project_id = var.project_id
+      dataset_id = google_bigquery_dataset.sambla_legacy_dataset.dataset_id
+      table_id   = "applications_all_versions_sambq_p"
+  }
+
+      use_legacy_sql = false
+      write_disposition = "WRITE_TRUNCATE"
+    }
+    depends_on = [google_bigquery_table.partitioned_tables]
+    lifecycle {
+      ignore_changes = [ query ]
+    }
   }
 
 #only for applications_loans_sambq as the current query logic doesnt work
