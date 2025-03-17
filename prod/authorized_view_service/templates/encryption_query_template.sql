@@ -14,7 +14,7 @@ WITH table_columns AS (
     SELECT * FROM `{{raw_layer_project}}.advisa_history_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
     UNION ALL 
     SELECT * FROM `{{raw_layer_project}}.sambla_legacy_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS 
-    WHERE TABLE_NAME LIKE '%sambq_p'
+    WHERE TABLE_NAME LIKE '%sambq_p' and TABLE_NAME != 'applications_all_versions_history_sambq_p'
     UNION ALL 
     SELECT * FROM `{{raw_layer_project}}.rahalaitos_integration_legacy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS
 ),
