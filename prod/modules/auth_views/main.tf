@@ -1,5 +1,5 @@
 
-# Creating the dataset for auth views
+# old dataset for auth views / must be deleted after fully go live!
 resource "google_bigquery_dataset" "auth_view_dataset" {
   dataset_id                  = "authorized_views"
   description                 = "Dataset for authorized views"
@@ -8,12 +8,23 @@ resource "google_bigquery_dataset" "auth_view_dataset" {
   lifecycle {
     prevent_destroy = true
   }
+}
+
+# prod dataset fir auth views
+resource "google_bigquery_dataset" "auth_view_dataset_prod" {
+  dataset_id                  = "prod_authorized_views"
+  description                 = "Dataset for prod authorized views"
+  friendly_name               = "Authorized view dataset"
+  location                    = var.region
+  lifecycle {
+    prevent_destroy = true
+  }
   
 }
 
-# Create production auth views
-resource "google_bigquery_table" "dynamic_auth_views_prod" {
-  for_each = local.production_schema_table_queries
+# old production auth views without encryption / should be deleted after fully go live!
+resource "google_bigquery_table" "dynamic_auth_views_non_encrypted" {
+  for_each = local.unencrypted_schema_table_queries
 
   dataset_id         = google_bigquery_dataset.auth_view_dataset.dataset_id
   table_id           = "view_${each.value.table}"
@@ -23,6 +34,44 @@ resource "google_bigquery_table" "dynamic_auth_views_prod" {
     query           = each.value.query
     use_legacy_sql  = false
   }
+  lifecycle {
+    ignore_changes = [ table_id, view ]
+  }
+}
+
+
+# main production auth views
+resource "google_bigquery_table" "dynamic_auth_views_prod" {
+  for_each = local.prod_schema_table_queries
+
+  dataset_id         = google_bigquery_dataset.auth_view_dataset_prod.dataset_id
+  table_id           = "view_${each.value.table}"
+  deletion_protection = true
+
+  view {
+    query           = each.value.query
+    use_legacy_sql  = false
+  }
+  #lifecycle {
+  #  ignore_changes = [ table_id, view ]
+  #}
+}
+
+# main production auth views fir cdc
+resource "google_bigquery_table" "dynamic_auth_views_cdc_prod" {
+  for_each = local.cdc_schema_table_queries_prod
+
+  dataset_id         = google_bigquery_dataset.auth_view_dataset_prod.dataset_id
+  table_id           = "view_${each.value.table}"
+  deletion_protection = true
+
+  view {
+    query           = each.value.query
+    use_legacy_sql  = false
+  }
+  #lifecycle {
+  #  ignore_changes = [ table_id, view ]
+  #}
 }
 
 # Create lvs auth views in testing dataset

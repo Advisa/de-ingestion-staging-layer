@@ -75,7 +75,7 @@ resource "google_bigquery_job" "execute_sql" {
 
 # Run SQL query from template to create the table for new "applications_all_versions" model
 resource "google_bigquery_job" "execute_sql_applications_all_versions" {
-  job_id      = "create_applications_all_versions_new_sambq_p_prod_tables_live_go"
+  job_id      = "create_applications_all_versions_remodeled_sambq_p_prod_tables_live_go"
   project     = var.project_id
   location    = "europe-north1"
 

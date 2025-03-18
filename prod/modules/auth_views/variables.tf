@@ -23,3 +23,17 @@ variable "auth_view_test_dataset_id" {
   type        = string
   default = "auth_view_testing"
 }
+
+variable "complaince_db_project_id" {
+   description = "The Project ID for complaince_db"
+  type        = string
+  default = "sambla-group-compliance-db" 
+  
+}
+
+variable "complaince_db_dataset_id" {
+   description = "The Dataset ID for complaince_db"
+  type        = string
+  default = "compilance_database"
+  
+}

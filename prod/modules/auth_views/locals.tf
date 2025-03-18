@@ -68,7 +68,28 @@ locals {
     }
   })
 
-  production_schema_table_queries = tomap({
+  cdc_schema_table_queries_prod = tomap({
+    for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping_cdc_prod.txt"))) :
+    "${split("|", line)[0]}.${split("|", line)[1]}" => {
+      schema = split("|", line)[0]
+      table  = split("|", line)[1]
+      query  = split("|", line)[2]
+      table_id = "${split("|", line)[1]}${(endswith(split("|", line)[0], "_fi") ? "_fi" : (endswith(split("|", line)[0], "_no") ? "_no" : ""))}"
+
+    }
+  })
+
+  unencrypted_schema_table_queries = tomap({
+    for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping_non_encrypted.txt"))) :
+    "${split("|", line)[0]}.${split("|", line)[1]}" => {
+      schema = split("|", line)[0]
+      table  = split("|", line)[1]
+      query  = split("|", line)[2]
+
+    }
+  })
+
+  prod_schema_table_queries = tomap({
     for line in split("\n", trimspace(file("../prod/authorized_view_service/templates/auth_view_mapping.txt"))) :
     "${split("|", line)[0]}.${split("|", line)[1]}" => {
       schema = split("|", line)[0]
@@ -77,5 +98,8 @@ locals {
 
     }
   })
-  unique_schemas = distinct([for values in local.production_schema_table_queries : values.schema])
+  unique_schemas = distinct([for values in local.unencrypted_schema_table_queries : values.schema])
+  unique_schemas_prod = distinct([for values in local.prod_schema_table_queries : values.schema])
+  unique_schemas_cdc_prod = distinct([for values in local.cdc_schema_table_queries_prod : values.schema])
+
 }

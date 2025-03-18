@@ -15,7 +15,7 @@ resource "google_bigquery_dataset_iam_binding" "auth_view_iam_access" {
     "group:data@samblagroup.com",
     "serviceAccount:data-flow-pipeline@data-domain-data-warehouse.iam.gserviceaccount.com"
   ]                 
-  depends_on = [google_bigquery_table.dynamic_auth_views_prod] 
+  depends_on = [google_bigquery_table.dynamic_auth_views_non_encrypted] 
 }
 
 # Dataset Access for GDPR Vault
@@ -30,7 +30,7 @@ resource "google_bigquery_dataset_access" "auth_dataset_access_to_gdpr_vault" {
     target_types = ["VIEWS"]
   }
 
-  depends_on = [google_bigquery_table.dynamic_auth_views_prod] 
+  depends_on = [google_bigquery_table.dynamic_auth_views_non_encrypted] 
 }
 
 # Dataset Access for legacy stack
@@ -47,7 +47,7 @@ resource "google_bigquery_dataset_access" "auth_view_access_legacy_dataset" {
     target_types = ["VIEWS"]
   }
 
-  depends_on = [google_bigquery_table.dynamic_auth_views_prod,google_bigquery_dataset.auth_view_dataset] 
+  depends_on = [google_bigquery_table.dynamic_auth_views_non_encrypted,google_bigquery_dataset.auth_view_dataset] 
 }
 
 

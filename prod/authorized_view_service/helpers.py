@@ -114,7 +114,7 @@ class AuthorizedViewService:
             for eq in encryption_queries:
                 f.write(eq + "\n")
     
-    def generate_encryption_queries_cdc(self, encrypted_query_template_cdc):
+    def generate_encryption_queries_cdc(self, encrypted_query_template_cdc, output_file_name):
         """Generate encryption queries from the encrypted query template."""
         encryption_queries = []
         result = self.execute_query(self.clients['raw_layer_project'], encrypted_query_template_cdc)
@@ -128,7 +128,6 @@ class AuthorizedViewService:
             self.processed_tables.add(f"{schema}|{table}") 
 
         # Save the encryption queries to a file (for now it saves to lvs, please change this later)
-        mapping_file_path = os.path.join(self.base_path, 'templates', 'auth_view_mapping_cdc.txt')
         mapping_file_path = os.path.join(self.base_path, 'templates', output_file_name)
         with open(mapping_file_path, 'w') as f:
             for eq in encryption_queries:
@@ -153,7 +152,7 @@ class AuthorizedViewService:
                 #)
                 # Generate encryption queries for dev
                 # Uncomment it to test the generate the template for dev views
-                # self.generate_encryption_queries_cdc(encrypted_query_template_dev)
+                # self.generate_encryption_queries_cdc(encrypted_query_template_dev,output_file_name="auth_view_mapping_cdc.txt)
                 encrypted_query_template_prod = self.encryption_query_template_cdc.render(
                     compliance_project=self.compliance_project,
                     raw_layer_project=self.raw_layer_project,
@@ -164,7 +163,7 @@ class AuthorizedViewService:
                     no_table_names=self.no_table_names
                 )
                 # Generate encryption queries for prod
-                self.generate_encryption_queries_cdc(encrypted_query_template_prod)
+                self.generate_encryption_queries_cdc(encrypted_query_template_prod, output_file_name="auth_view_mapping_cdc_prod.txt")
             else:
                 logging.info("Generating standard encryption queries...")
                 # Render and execute the encryption query template for dev
