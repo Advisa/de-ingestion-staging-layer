@@ -210,6 +210,11 @@
                         "masking_rule": "DEFAULT_MASKING_VALUE",
                         "type": null
                     },
+                    "coapp_national_id": {
+                        "sensitivity": "high",
+                        "masking_rule": "DEFAULT_MASKING_VALUE",
+                        "type": null
+                    },
                     "ssc": {
                         "sensitivity": "high",
                         "masking_rule": "DEFAULT_MASKING_VALUE",
@@ -302,11 +307,6 @@
                         "sensitivity": "high",
                         "masking_rule": "SHA256",
                         "type": null
-                    },
-                    "broker_email": {
-                        "sensitivity": "high",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
                     }
                 },
                 "sensitivity": "high",
@@ -1036,6 +1036,25 @@
     },
     "low_sensitivity_tags": {
         "PII": {
+            "broker_personal_information": {
+                "children": {
+                    "broker_email": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    },
+                    "broker_name": {
+                        "sensitivity": "high",
+                        "masking_rule": "SHA256",
+                        "type": "STRING"
+                    }
+                },
+                "sensitivity": "low",
+                "masking_rule": "SHA256",
+                "type": "STRING",
+                "category": "PII"
+               
+            },
             "attributes_raw_json": {
                 "children": {
                     "owners_raw_json": {
@@ -1080,16 +1099,12 @@
                 "category": "PII"
 
             },
-            "employment_industry": {
+            
+            "last_application_employer_name": {
                 "children": {
-                    "last_application_employer_name": {
-                        "sensitivity": "medium",
-                        "masking_rule": "SHA256",
-                        "type": "STRING"
-                    }
                 },
                     "sensitivity": "low",
-                    "masking_rule": "DEFAULT_MASKING_VALUE",
+                    "masking_rule": "SHA256",
                     "type": "STRING",
                     "category": "PII"
             }

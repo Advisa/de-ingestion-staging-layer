@@ -28,6 +28,14 @@ resource "google_storage_transfer_job" "replicate-from-old-to-new-bucket" {
       minutes = 00
       seconds = 0
       nanos   = 0
-    }
+    } 
   }
+
+   logging_config {
+    enable_on_prem_gcs_transfer_logs = false
+    log_action_states = ["SUCCEEDED", "FAILED"]
+    log_actions = ["COPY", "DELETE", "FIND"]
+  }
+
+
 }
