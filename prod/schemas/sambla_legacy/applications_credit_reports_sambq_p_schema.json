@@ -20,6 +20,11 @@
     }
   },
   {
+    "name": "market",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "credit_report_id",
     "type": "STRING",
     "mode": "NULLABLE"
