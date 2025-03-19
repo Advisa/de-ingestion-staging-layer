@@ -46,7 +46,7 @@ resource "google_bigquery_table" "dynamic_auth_views_prod" {
 
   dataset_id         = google_bigquery_dataset.auth_view_dataset_prod.dataset_id
   table_id           = "view_${each.value.table}"
-  deletion_protection = true
+  deletion_protection = false
 
   view {
     query           = each.value.query
@@ -62,16 +62,13 @@ resource "google_bigquery_table" "dynamic_auth_views_cdc_prod" {
   for_each = local.cdc_schema_table_queries_prod
 
   dataset_id         = google_bigquery_dataset.auth_view_dataset_prod.dataset_id
-  table_id           = "view_${each.value.table}"
-  deletion_protection = true
+  table_id           = "view_${each.value.table_id}"
+  deletion_protection = false
 
   view {
     query           = each.value.query
     use_legacy_sql  = false
   }
-  #lifecycle {
-  #  ignore_changes = [ table_id, view ]
-  #}
 }
 
 # Create lvs auth views in testing dataset

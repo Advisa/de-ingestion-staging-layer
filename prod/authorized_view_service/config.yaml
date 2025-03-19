@@ -5,7 +5,7 @@ default:
     compliance_project: "sambla-group-compliance-db"
     base_folder: "authorized_view_service"
     generate_encrypted: "false"
-    generate_cdc: "true"
+    generate_cdc: "false"
     gdpr_vault_table: "gdpr_vault_rudolf"
     se_table_names:
         - payments_api__PaymentToProduct_sgds_r

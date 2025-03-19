@@ -34,12 +34,14 @@ resource "google_bigquery_dataset_access" "auth_dataset_access_to_gdpr_vault_pro
   depends_on = [google_bigquery_table.dynamic_auth_views_prod] 
 }
 
-# Dataset Access for legacy stack
+# Dataset Access for legacy stack except for salus
+# Salus auth views are based on data-domain-data-warehouse.salus_group_integration incremental r tables
+# Therefore, we have to define a diff project_id for those
 resource "google_bigquery_dataset_access" "auth_view_access_legacy_dataset_prod" {
   for_each = { for schema in local.unique_schemas_prod : schema => schema }
 
   dataset_id = "${each.key}"                          
-  project    = var.project_id                   
+  project = each.key == "salus_group_integration" ? var.data-warehouse-project_id : var.project_id                  
   dataset {
     dataset{
       project_id = var.project_id
@@ -56,7 +58,7 @@ resource "google_bigquery_dataset_access" "auth_view_access_cdc_dataset_prod" {
   for_each = { for schema in local.unique_schemas_cdc_prod : schema => schema }
 
   dataset_id = "${each.key}"                          
-  project    = var.project_id                   
+  project    = var.data-warehouse-project_id                   
   dataset {
     dataset{
       project_id = var.project_id

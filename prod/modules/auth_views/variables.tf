@@ -37,3 +37,9 @@ variable "complaince_db_dataset_id" {
   default = "compilance_database"
   
 }
+
+variable "data-warehouse-project_id" {
+  description = "The GCP project ID"
+  type        = string
+  default = "data-domain-data-warehouse"
+}
