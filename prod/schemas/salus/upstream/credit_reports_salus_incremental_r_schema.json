@@ -17,7 +17,12 @@
   },
   {
     "name": "report",
-    "type": "STRING"
+    "type": "STRING",
+    "policyTags": {
+      "names": [
+        "projects/sambla-data-staging-compliance/locations/europe-north1/taxonomies/655384675748637071/policyTags/3654978517879767075"
+      ]
+    }
   },
   {
     "name": "created_at",
