@@ -4,7 +4,6 @@ default:
     exposure_project: "data-domain-data-warehouse"
     compliance_project: "sambla-group-compliance-db"
     base_folder: "authorized_view_service"
-    generate_encrypted: "false"
     generate_cdc: "false"
     gdpr_vault_table: "gdpr_vault_rudolf"
     se_table_names:
@@ -117,7 +116,8 @@ default:
         - experian_service_credit_reports_sgds_r
         - exp_bidding_service_invite_logs_sgds_r
         - exp_customer_service_customers_sgds_r
-    output_file_name: "auth_view_mapping_lvs.txt"
+    output_file_name_legacy: "auth_view_mapping_sambla_legacy.txt"
+    output_file_name_cdc: "auth_view_mapping_cdc.txt"
 
 prod:
   authorized_view_service:
@@ -125,9 +125,8 @@ prod:
     exposure_project: "data-domain-data-warehouse"
     compliance_project: "sambla-group-compliance-db"
     base_folder: "authorized_view_service"
-    generate_encrypted: "true"
-    generate_cdc: "true"
-    gdpr_vault_table: "gdpr_vault_rudolf"
+    generate_cdc: "false"
+    gdpr_vault_table: "gdpr_vault"
     se_table_names:
         - payments_api__PaymentToProduct_sgds_r
         - marketing_contact_service_contact_tokens_sgds_r
@@ -238,4 +237,5 @@ prod:
         - experian_service_credit_reports_sgds_r
         - exp_bidding_service_invite_logs_sgds_r
         - exp_customer_service_customers_sgds_r
-    output_file_name: "auth_view_mapping.txt"
+    output_file_name_legacy: "auth_view_mapping.txt"
+    output_file_name_cdc: "auth_view_mapping_cdc_prod.txt"
