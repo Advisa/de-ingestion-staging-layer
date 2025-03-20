@@ -34,7 +34,7 @@ policy_tags_pii_child_tags AS (
   INNER JOIN 
     policy_tags_all t2 
   ON t1.parent_policy_tag_id = t2.policy_tag_id
-  WHERE t2.display_name IN ('employer', 'email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number', 'address', 'post_code','data','business_organization_number','attributes_raw_json')
+  WHERE t2.display_name IN ('employer', 'email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number', 'address', 'post_code','data','business_organization_number','attributes_raw_json', 'PII')
   
 ),
 policy_tags_pii_parent_tags AS (
@@ -45,7 +45,7 @@ policy_tags_pii_parent_tags AS (
   INNER JOIN 
     policy_tags_all t2 
   ON t1.parent_policy_tag_id = t2.policy_tag_id
-  WHERE t2.display_name IN ('email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number','address', 'post_code','data','business_organization_number','attributes_raw_json')
+  WHERE t2.display_name IN ('email', 'phone', 'ssn', 'first_name', 'last_name', 'bank_account_number','address', 'post_code','data','business_organization_number','attributes_raw_json') OR t1.display_name = "last_application_employer_name"
   
 ),
 
@@ -327,4 +327,5 @@ GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
 )
 SELECT distinct * FROM final 
 WHERE final_encrypted_columns IS NOT NULL
---AND table_schema IN ("rahalaitos_integration_legacy")
+--AND table_schema IN ('sambla_legacy_integration_legacy')
+--("salus_group_integration","salus_integration_legacy")

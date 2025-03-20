@@ -6,7 +6,7 @@ from google.cloud import bigquery
 from pathlib import Path
 
 class AuthorizedViewService:
-    def __init__(self, config_path, env='dev'):
+    def __init__(self, config_path, env):
         self.config = self.load_config(config_path)
         self.env = env
         self.authorized_view_config = self.config.get(self.env, self.config.get('default', {})).get('authorized_view_service', {})
@@ -20,17 +20,16 @@ class AuthorizedViewService:
         self.exposure_project = self.authorized_view_config.get('exposure_project')
         self.compliance_project = self.authorized_view_config.get('compliance_project')
         self.base_folder = self.authorized_view_config.get('base_folder')
-        self.generate_encrypted  = self.authorized_view_config.get('generate_encrypted')
         self.gdpr_vault_table  = self.authorized_view_config.get('gdpr_vault_table')
         self.se_table_names  = self.authorized_view_config.get('se_table_names', [])
         self.fi_table_names  = self.authorized_view_config.get('fi_table_names', [])
         self.no_table_names  = self.authorized_view_config.get('no_table_names', [])
         # In order to use the encryption template dynamically, we explicitly define the gdpr_vault table names as follows
-        self.gdpr_vault_table_dev  = self.config.get('default', {}).get('authorized_view_service', {}).get('gdpr_vault_table')
-        self.gdpr_vault_table_prod = self.config.get('prod', {}).get('authorized_view_service', {}).get('gdpr_vault_table')
+        self.gdpr_vault_table  = self.config.get(self.env, self.config.get('default', {})).get('authorized_view_service', {}).get('gdpr_vault_table')
         # In order to deploy the auth views for production and dev datasets, we define the output file paths
-        self.output_file_name_dev  = self.config.get('default', {}).get('authorized_view_service', {}).get('output_file_name')
-        self.output_file_name_prod = self.config.get('prod', {}).get('authorized_view_service', {}).get('output_file_name')
+        self.output_file_name_legacy  = self.config.get(self.env, self.config.get('default', {})).get('authorized_view_service', {}).get('output_file_name_legacy')
+        self.output_file_name_cdc  = self.config.get(self.env, self.config.get('default', {})).get('authorized_view_service', {}).get('output_file_name_cdc')
+
 
 
         # Initialize the current path where this service is located
@@ -139,56 +138,31 @@ class AuthorizedViewService:
         try:
             # Check if generate_cdc is set to "true"
             if self.authorized_view_config.get('generate_cdc') == "true":
-                logging.info("Generating CDC encryption queries...")
-                # Render and execute the encryption query template for dev
-                #encrypted_query_template_dev = self.encryption_query_template_cdc.render(
-                #    compliance_project=self.compliance_project,
-                #    raw_layer_project=self.raw_layer_project,
-                #    gdpr_vault_table=self.gdpr_vault_table_prod,
-                #    exposure_project=self.exposure_project,
-                #    se_table_names=self.se_table_names,
-                #    fi_table_names=self.fi_table_names,
-                #    no_table_names=self.no_table_names
-                #)
-                # Generate encryption queries for dev
-                # Uncomment it to test the generate the template for dev views
-                # self.generate_encryption_queries_cdc(encrypted_query_template_dev,output_file_name="auth_view_mapping_cdc.txt)
+                logging.info(f"Generating CDC encryption queries for {self.env}...")
                 encrypted_query_template_prod = self.encryption_query_template_cdc.render(
                     compliance_project=self.compliance_project,
                     raw_layer_project=self.raw_layer_project,
-                    gdpr_vault_table=self.gdpr_vault_table_prod,
+                    gdpr_vault_table=self.gdpr_vault_table,
                     exposure_project=self.exposure_project,
                     se_table_names=self.se_table_names,
                     fi_table_names=self.fi_table_names,
                     no_table_names=self.no_table_names
                 )
                 # Generate encryption queries for prod
-                #self.generate_encryption_queries_cdc(encrypted_query_template_prod, output_file_name="auth_view_mapping_cdc_prod.txt")
+                self.generate_encryption_queries_cdc(encrypted_query_template_prod, self.output_file_name_cdc)
             else:
-                logging.info("Generating standard encryption queries...")
-                # Render and execute the encryption query template for dev
-                #encrypted_query_template_dev = self.encryption_query_template.render(
-                #    compliance_project=self.compliance_project,
-                #    raw_layer_project=self.raw_layer_project,
-                #    gdpr_vault_table=self.gdpr_vault_table_dev,
-                #    exposure_project = self.exposure_project
-                #)
-
-                # Generate encryption queries for dev
-                # Uncomment it to test the generate the template for dev views
-                #self.generate_encryption_queries(encrypted_query_template_dev, self.output_file_name_dev)
-
+                logging.info(f"Generating standard encryption queries for {self.env}...")
                 # Render and execute the encryption query template for prod
                 encrypted_query_template_prod = self.encryption_query_template.render(
                     compliance_project=self.compliance_project,
                     raw_layer_project=self.raw_layer_project,
-                    gdpr_vault_table=self.gdpr_vault_table_prod,
+                    gdpr_vault_table=self.gdpr_vault_table,
                     exposure_project = self.exposure_project)
-
                 # Generate encryption queries for prod
-                self.generate_encryption_queries(encrypted_query_template_prod, self.output_file_name_prod)
-
+                self.generate_encryption_queries(encrypted_query_template_prod, self.output_file_name_legacy)
             logging.info("Workflow completed successfully.")
+
+                
         except Exception as e:
             logging.error("An error occurred during the process.")
             raise e
