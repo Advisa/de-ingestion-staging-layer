@@ -16,7 +16,7 @@ locals {
 }
 
 
-resource "null_resource" "update_table_schema_salus_incremental_r_prod" {
+resource "null_resource" "update_table_schema_salus_incremental_r_prod_v2" {
   for_each = toset(local.table_names_salus_incremental_r)
 
   provisioner "local-exec" {
