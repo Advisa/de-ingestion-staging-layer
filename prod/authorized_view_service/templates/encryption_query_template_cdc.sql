@@ -456,7 +456,9 @@ market_legacystack_mapping AS (
 ),
 
 exclude_tables_list AS (
-  select ["marketing_contact_service_prospects_sgds_r", "exp_user_service_users_sgds_r", "exp_notification_service_mail_logs_sgds_r", "exp_notification_service_email_logs_sgds_r", "exp_tracking_service_sent_events_sgds_r", "advisory_service_application_creditor_notes_sgds_r"] as exclude_tables
+  select ["marketing_contact_service_prospects_sgds_r", "exp_user_service_users_sgds_r", "exp_notification_service_mail_logs_sgds_r", "exp_notification_service_email_logs_sgds_r", "exp_tracking_service_sent_events_sgds_r", 
+  "advisory_service_application_creditor_notes_sgds_r", "identity_verification_service_identity_verification_log_sgds_r", "exp_tracking_service_application_cookie_mappings_sgds_r",
+  "exp_bidding_service_bidding_logs_sgds_r", "eiendomsverdi_service_reports_sgds_r"] as exclude_tables
 ),
 
 final AS (
