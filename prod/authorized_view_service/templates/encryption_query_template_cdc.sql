@@ -79,7 +79,7 @@ sensitive_fields AS (
         )) AS normalized_column,
         CASE 
             WHEN r.data_type = 'ARRAY<STRING>' and r.column_name = 'comments' 
-                AND r.table_name IN ('applications_all_versions_sambq_p', 'applications_sambq_p') THEN TRUE
+                AND r.table_name IN ('applications_all_versions_sambq_p', 'applications_sambq_p', 'applications_bids_sambq_p') THEN TRUE
             WHEN r.field_path LIKE '%.%' THEN TRUE
             ELSE FALSE
         END AS is_nested,
@@ -128,12 +128,33 @@ join_keys AS (
       OR "nationalid" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name)) 
       OR "sotu" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name)) 
       OR "yvsotu" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
+      OR "identify" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
+      OR "contactdetail" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
       OR "nationalidsensitive" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name)),
       TRUE, FALSE
-    ) AS is_table_contains_ssn
+    ) AS is_table_contains_ssn,
+    IF (
+      "email" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name)) 
+      OR "emailaddress" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
+      OR "contactdetail" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
+      , TRUE, FALSE
+    ) AS is_table_contains_email,
+    IF (
+      "phone" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name)) 
+      OR "contactdetail" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
+      OR "mobilephone" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
+      OR "phonenumber" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
+      OR "puhelin" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
+      , TRUE, FALSE
+    ) AS is_table_contains_mobile,
+    IF (
+      "applicationid" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name)) 
+      OR "loanapplicationoid" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
+      OR "loanapplicationid" IN UNNEST(ARRAY_AGG(normalized_column) OVER (PARTITION BY table_schema, table_name))
+      , TRUE, FALSE
+    ) AS is_table_contains_app_id,
   FROM sensitive_fields 
 ),
-
 
 unnested_join_keys AS (
   -- Extract sensitive fields and parent fields
@@ -143,6 +164,9 @@ unnested_join_keys AS (
     join_key AS sensitive_field,
     field_path,
     is_table_contains_ssn,
+    is_table_contains_email,
+    is_table_contains_mobile,
+    is_table_contains_app_id,
     CASE 
       WHEN table_name != "people_adhis_r" 
         AND LOWER(REPLACE(
@@ -151,12 +175,42 @@ unnested_join_keys AS (
                 ELSE join_key
             END, "_", ""
         )) 
-        IN ('ssn', 'ssnid', 'nationalid', 'customerssn', 'sotu', 'yvsotu','nationalidsensitive') 
+        IN ('ssn', 'ssnid', 'nationalid', 'customerssn', 'sotu', 'yvsotu','nationalidsensitive','identify', 'contactdetail') 
         THEN  join_key
-     -- Exceptional case
-      WHEN table_name = "people_adhis_r" 
-        THEN "national_id_sensitive" 
-    END AS j_key
+    END AS j_key,
+    CASE 
+      WHEN table_name != "providers_lvs_p" 
+        AND LOWER(REPLACE(
+            CASE 
+                WHEN join_key LIKE '%.%' THEN SUBSTR(join_key, STRPOS(join_key, '.') + 1)
+                ELSE join_key
+            END, "_", ""
+        )) 
+        IN ('email', 'emailaddress', 'contactdetail') 
+        THEN  join_key 
+    END AS j_key_email,
+    CASE 
+      WHEN 1 != 0
+        AND LOWER(REPLACE(
+            CASE 
+                WHEN join_key LIKE '%.%' THEN SUBSTR(join_key, STRPOS(join_key, '.') + 1)
+                ELSE join_key
+            END, "_", ""
+        )) 
+        IN ('phone', 'mobilephone', 'puhelin', 'phone_number', 'contactdetail') 
+        THEN  join_key
+    END AS j_key_mobile,
+    CASE 
+      WHEN 1 != 0
+        AND LOWER(REPLACE(
+            CASE 
+                WHEN join_key LIKE '%.%' THEN SUBSTR(join_key, STRPOS(join_key, '.') + 1)
+                ELSE join_key
+            END, "_", ""
+        )) 
+        IN ('applicationid', 'loanapplicationoid', 'loanapplicationid') 
+        THEN  join_key
+    END AS j_key_app_id,
   FROM join_keys, UNNEST(join_keys.join_keys) AS join_key
 ),
 
@@ -182,9 +236,22 @@ non_nested_field_encryption AS (
                               THEN " AND raw." || column_name || " <> 0"  
                               ELSE ""  
                           END,  
+                          CASE WHEN is_table_contains_email AND is_table_contains_mobile AND not is_table_contains_ssn THEN CONCAT(
+                          " AND COALESCE(vault_email.uuid, vault_mobile.uuid) IS NOT NULL THEN ",  
+                          "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(COALESCE(vault_email.aead_key, vault_mobile.aead_key), CAST(raw.", column_name, " AS STRING), COALESCE(vault_email.uuid, vault_mobile.uuid))) ",  
+                          "ELSE CAST(raw.", column_name, " AS STRING) END AS ", column_name
+                          )
+                          WHEN is_table_contains_email AND is_table_contains_mobile AND is_table_contains_ssn AND t1.table_name = 'marketing_contact_service_contact_blocks_sgds_r' THEN CONCAT(
+                          " AND COALESCE(vault.uuid, vault_email.uuid, vault_mobile.uuid) IS NOT NULL THEN ",  
+                          "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(COALESCE(vault.aead_key, vault_email.aead_key, vault_mobile.aead_key), CAST(raw.", column_name, " AS STRING), COALESCE(vault.uuid, vault_email.uuid, vault_mobile.uuid))) ",  
+                          "ELSE CAST(raw.", column_name, " AS STRING) END AS ", column_name
+                          )
+                          ELSE CONCAT(
                           " AND VAULT.uuid IS NOT NULL THEN ",  
                           "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(raw.", column_name, " AS STRING), VAULT.uuid)) ",  
                           "ELSE CAST(raw.", column_name, " AS STRING) END AS ", column_name
+                          )
+                          END 
                       ) 
                 END
          AS encryption_logic
@@ -216,9 +283,19 @@ nested_field_encryption AS (
                                 THEN " AND raw." || t2.field_path || " <> 0"  
                                 ELSE ""  
                                 END,  
+                                  CASE WHEN is_table_contains_email AND is_table_contains_mobile AND not is_table_contains_ssn THEN CONCAT(
+                              " AND COALESCE(vault_email.uuid, vault_mobile.uuid) IS NOT NULL THEN TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(COALESCE(vault_email.aead_key, vault_mobile.aead_key), CAST(raw.", t2.field_path, " AS STRING), COALESCE(vault_email.uuid, vault_mobile.uuid))) ",
+                              "ELSE CAST(raw.", t2.field_path, " AS STRING) END AS ", t2.nested_field
+                          )
+                                  WHEN is_table_contains_email AND is_table_contains_mobile AND is_table_contains_ssn AND t1.table_name = 'marketing_contact_service_contact_blocks_sgds_r' THEN CONCAT(
+                              " AND COALESCE(vault.uuid, vault_email.uuid, vault_mobile.uuid) IS NOT NULL THEN TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(COALESCE(vault.aead_key, vault_email.aead_key, vault_mobile.aead_key), CAST(raw.", t2.field_path, " AS STRING), COALESCE(vault.uuid, vault_email.uuid, vault_mobile.uuid))) ",
+                              "ELSE CAST(raw.", t2.field_path, " AS STRING) END AS ", t2.nested_field
+                          )
+                                  ELSE CONCAT(
                               " AND VAULT.uuid IS NOT NULL THEN TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(raw.", t2.field_path, " AS STRING), VAULT.uuid)) ",
                               "ELSE CAST(raw.", t2.field_path, " AS STRING) END AS ", t2.nested_field
                           )
+                          END )
                     WHEN data_type = 'ARRAY<STRING>' THEN 
                           CONCAT(
                               "CASE WHEN f_", t2.column_name, " IS NOT NULL ",
@@ -229,9 +306,19 @@ nested_field_encryption AS (
                                 THEN " AND f_" || t2.column_name || " <> 0"  
                                 ELSE ""  
                                 END, 
+                                  CASE WHEN is_table_contains_email AND is_table_contains_mobile AND not is_table_contains_ssn THEN CONCAT(
+                              " AND COALESCE(vault_email.uuid, vault_mobile.uuid) IS NOT NULL THEN TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(COALESCE(vault_email.aead_key, vault_mobile.aead_key), CAST(f_", t2.column_name, " AS STRING), COALESCE(vault_email.uuid, vault_mobile.uuid))) ",
+                              "ELSE CAST(f_", t2.column_name, " AS STRING) END AS ", t2.display_name
+                          )
+                                  WHEN is_table_contains_email AND is_table_contains_mobile AND is_table_contains_ssn AND t1.table_name = 'marketing_contact_service_contact_blocks_sgds_r' THEN CONCAT(
+                              " AND COALESCE(vault.uuid, vault_email.uuid, vault_mobile.uuid) IS NOT NULL THEN TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(COALESCE(vault.aead_key, vault_email.aead_key, vault_mobile.aead_key), CAST(raw.", t2.column_name, " AS STRING), COALESCE(vault.uuid, vault_email.uuid, vault_mobile.uuid))) ",
+                              "ELSE CAST(raw.", t2.column_name, " AS STRING) END AS ", t2.display_name
+                          )
+                                  ELSE CONCAT(
                               " AND VAULT.uuid IS NOT NULL THEN TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(f_", t2.column_name, " AS STRING), VAULT.uuid)) ",
                               "ELSE CAST(f_", t2.column_name, " AS STRING) END AS ", t2.display_name
                           )
+                          END )
                     WHEN parent_datatype  LIKE 'ARRAY%' THEN
                           -- Apply encryption logic for sensitive fields (based on display_name)
                           CONCAT(
@@ -243,9 +330,16 @@ nested_field_encryption AS (
                                   THEN " AND f_" || t2.column_name || "." || t2.nested_field || " <> ''"  
                                   ELSE ""  
                               END,  
+                                  CASE WHEN is_table_contains_email AND is_table_contains_mobile AND not is_table_contains_ssn THEN CONCAT(
+                              " AND COALESCE(vault_email.uuid, vault_mobile.uuid) IS NOT NULL THEN ",  
+                              "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(COALESCE(vault_email.aead_key, vault_mobile.aead_key), CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING), COALESCE(vault_email.uuid, vault_mobile.uuid))) ",  
+                              "ELSE CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING) END AS ", t2.nested_field)
+                                  -- other cases not required for now
+                                  ELSE CONCAT(
                               " AND VAULT.uuid IS NOT NULL THEN ",  
                               "TO_HEX(SAFE.DETERMINISTIC_ENCRYPT(VAULT.aead_key, CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING), VAULT.uuid)) ",  
                               "ELSE CAST(f_", t2.column_name, ".", t2.nested_field, " AS STRING) END AS ", t2.nested_field)
+                          END )
                               END                           
             ELSE
                   CASE WHEN parent_datatype LIKE 'STRUCT%' THEN 
@@ -259,7 +353,7 @@ nested_field_encryption AS (
     FROM unnested_join_keys AS t1
     INNER JOIN sensitive_fields AS t2
        ON t1.sensitive_field = t2.column_name and t1.table_name = t2.table_name and t1.table_schema = t2.table_schema
-    WHERE t2.is_nested = TRUE and valid_nested_field > 1 AND t1.table_schema in ("sambla_legacy_integration_legacy","sambla_group_data_stream",'sambla_group_data_stream_fi','sambla_group_data_stream_no')
+    WHERE t2.is_nested = TRUE and valid_nested_field > 0 AND t1.table_schema in ("sambla_legacy_integration_legacy","sambla_group_data_stream",'sambla_group_data_stream_fi','sambla_group_data_stream_no')
 ),
 
 all_fields_encryption AS (
@@ -337,8 +431,14 @@ market_legacystack_mapping AS (
         t1.table_schema,
         t1.table_name,
         t2.is_table_contains_ssn,
+        t2.is_table_contains_email,
+        t2.is_table_contains_mobile,
+        t2.is_table_contains_app_id,
         t2.sensitive_field,
         t2.j_key,
+        t2.j_key_email,
+        t2.j_key_mobile,
+        t2.j_key_app_id,
         t1.encrypted_fields,
         t1.column_name,
         t1.field_path,
@@ -355,6 +455,9 @@ market_legacystack_mapping AS (
     
 ),
 
+exclude_tables_list AS (
+  select ["marketing_contact_service_prospects_sgds_r", "exp_user_service_users_sgds_r", "exp_notification_service_mail_logs_sgds_r", "exp_notification_service_email_logs_sgds_r", "exp_tracking_service_sent_events_sgds_r", "advisory_service_application_creditor_notes_sgds_r"] as exclude_tables
+),
 
 final AS (
   -- Construct the final query for each table
@@ -362,10 +465,13 @@ final AS (
     mlm.table_schema,
     mlm.table_name,
     mlm.is_table_contains_ssn,
+    mlm.is_table_contains_email,
+    mlm.is_table_contains_mobile,
+    mlm.is_table_contains_app_id,
     mlm.market_identifier,
+--------------- SSN join ---------------
     CASE 
-      WHEN mlm.is_table_contains_ssn AND mlm.table_schema != 'salus_integration_legacy' AND  mlm.table_name != 'credit_remarks_lvs_p'
-      THEN CONCAT(
+      WHEN mlm.is_table_contains_ssn AND mlm.table_name NOT IN (SELECT table FROM exclude_tables_list, UNNEST(exclude_tables) AS table) AND mlm.table_name != 'marketing_contact_service_contact_blocks_sgds_r' THEN CONCAT(
         'WITH data_with_ssn_rules AS (',
         'SELECT ',
         '*, ',
@@ -418,11 +524,404 @@ final AS (
           'ELSE FALSE ',
         'END AS is_anonymised ',
         'FROM `data_with_ssn_rules` raw ',
-        'LEFT JOIN `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` VAULT ',
+        'LEFT JOIN `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` VAULT ',
         'ON CAST(raw.ssn_clean AS STRING) = VAULT.ssn'
       )
+ ------ APPLICATION ID join -----------
+      WHEN mlm.is_table_contains_app_id AND mlm.table_name NOT IN (SELECT table FROM exclude_tables_list, UNNEST(exclude_tables) AS table) AND mlm.table_name != 'marketing_contact_service_contact_blocks_sgds_r' THEN 
+        CONCAT(
+          'WITH raw_data_with_stack AS (',
+            'SELECT *, ',
+            '"cdc" as stack',
+              CASE 
+                  WHEN mlm.table_schema IN ('sambla_group_data_stream', 'sambla_group_data_stream_fi','sambla_group_data_stream_no') THEN ' ,_PARTITIONTIME AS date_partition ' ELSE ''
+              END
+              ,
+              ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw), ',
+            ---
+            'stack_vault as ( '
+                'select uuid, aead_key, loan_application_oid, stack from `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf`, unnest(history) as history ',
+                'where history.stack  = "cdc" )',
+            ---
+              'SELECT ',
+              STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
+              ', raw.* EXCEPT(',
+              STRING_AGG(
+                  DISTINCT CASE 
+                    WHEN sf.display_name IS NOT NULL THEN sf.column_name
+                    ELSE NULL 
+                  END, ', ' 
+                ),
+              '),',
+            'CASE ',
+              'WHEN (CAST(raw.', STRING_AGG(DISTINCT mlm.j_key_app_id, ', '), ' AS STRING) IS NOT NULL AND CAST(raw.', STRING_AGG(DISTINCT mlm.j_key_app_id, ', '), ' AS STRING) <> "" AND CAST(raw.', STRING_AGG(DISTINCT mlm.j_key_app_id, ', '), ' AS STRING) <> "0" AND VAULT.uuid IS NOT NULL) OR LOWER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key_app_id, ', '), ' AS STRING)) =  "anonymized" THEN TRUE ',
+                'ELSE FALSE ',
+              'END AS is_anonymised ',
+              ' FROM raw_data_with_stack raw ',
+              'LEFT JOIN stack_vault vault ',
+                  'ON CAST(raw.', STRING_AGG(DISTINCT mlm.j_key_app_id, ', '), ' AS STRING) = vault.loan_application_oid '
+                  'AND raw.stack = vault.stack'
+                    )
+ ------ double join -----------
+      WHEN mlm.is_table_contains_mobile AND mlm.is_table_contains_email AND not mlm.is_table_contains_ssn AND mlm.table_name NOT IN (SELECT table FROM exclude_tables_list, UNNEST(exclude_tables) AS table) AND mlm.table_name != 'marketing_contact_service_contact_blocks_sgds_r' THEN 
+        CONCAT(
+          'WITH vault_mobiles_flattened_intial AS (',
+            'SELECT history.mobile_phone AS mobile,',
+              'history.stack,',
+              'history.created_at,',
+              'vault.uuid,',
+              'vault.aead_key ',
+              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'CROSS JOIN UNNEST(vault.history) AS history '
+              'WHERE history.mobile_phone IS NOT NULL AND history.mobile_phone != ""), '
+          'vault_mobiles_flattened AS ( '
+          'SELECT mobile, stack, uuid, aead_key FROM vault_mobiles_flattened_intial '
+          'QUALIFY ROW_NUMBER() OVER (PARTITION BY mobile ORDER BY created_at DESC) = 1 ), '
+          'vault_emails_flattened_initial AS (',
+            'SELECT history.email AS email,',
+              'history.stack,',
+              'history.created_at,',
+              'vault.uuid,',
+              'vault.aead_key ',
+              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'CROSS JOIN UNNEST(vault.history) AS history '
+              'WHERE history.email IS NOT NULL AND history.email != ""), '
+          'vault_emails_flattened AS ( '
+          'SELECT email, stack, uuid, aead_key FROM vault_emails_flattened_initial '
+          'QUALIFY ROW_NUMBER() OVER (PARTITION BY email ORDER BY created_at DESC) = 1 ), '
+  -- Mobile clean CTE
+      'mobile_cleaned AS ( ',
+        'SELECT *, ',
+        'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = " +" THEN SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) ',
+        'WHEN raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ' NOT LIKE "%+%" THEN ',
+CASE
+-- For the FI market
+    WHEN mlm.market_identifier = "FI" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "358" THEN ',
+                'CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) BETWEEN 9 AND 15 THEN CONCAT("+", REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) ELSE NULL END ',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN ',
+            'CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) BETWEEN 7 AND 13 THEN CONCAT("+358", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 2)) ELSE NULL END ',
+            'WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) BETWEEN 6 AND 12 THEN "+358" || REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "") ELSE NULL END '
+        )
 
-      ELSE CONCAT(
+-- For the SE market
+    WHEN mlm.market_identifier = "SE" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = "46" THEN CONCAT("+", raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ')',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "046" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 4) = "0046" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN CONCAT("+46", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'ELSE "+46" || ', STRING_AGG(DISTINCT mlm.j_key_mobile, ', ') ,' END '
+        )
+
+-- -- For the DK market
+    WHEN mlm.market_identifier = "DK" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = "45" THEN CONCAT("+", raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ')',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "045" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 4) = "0045" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN CONCAT("+45", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'ELSE "+45" || ', STRING_AGG(DISTINCT mlm.j_key_mobile, ', ') ,' END '
+        )
+
+-- For the NO market
+    WHEN mlm.market_identifier = "NO" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = "47" THEN ',
+                'CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 10 THEN CONCAT("+", REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) ELSE NULL END ',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "047" AND LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 11 THEN CONCAT("+", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 2)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 4) = "0047" AND LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 12 THEN CONCAT("+", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 3)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 9 THEN CONCAT("+47", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 2)) ELSE NULL END '
+            'WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 8 THEN "+47" || REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "") END '
+        )
+END,
+      'ELSE CASE WHEN LENGTH(REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', " ", "")) > 6 AND LENGTH(REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', " ", "")) < 18 THEN REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', " ", "") END END AS mobile_clean, ',
+                CASE WHEN mlm.table_schema IN ('sambla_group_data_stream', 'sambla_group_data_stream_fi','sambla_group_data_stream_no') THEN '_PARTITIONTIME AS date_partition ' ELSE '' END,
+  -- Mobile clean CTE ends
+  CONCAT(
+                ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw ) ',
+
+              'SELECT ',
+              STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
+              ', raw.* EXCEPT(',
+              STRING_AGG(
+                  DISTINCT CASE 
+                    WHEN sf.display_name IS NOT NULL THEN sf.column_name
+                    ELSE NULL 
+                  END, ', ' 
+                ),
+              '),',
+              'CASE ',
+                'WHEN (raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' IS NOT NULL AND raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' <> "" AND raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' <> "0" AND vault_email.uuid IS NOT NULL) OR (raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ' IS NOT NULL AND raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ' <> "" AND raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ' <> "0" AND vault_mobile.uuid IS NOT NULL) OR LOWER(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ') =  "anonymized" OR LOWER(raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ') =  "anonymized" THEN TRUE ',
+                  'ELSE FALSE ',
+              'END AS is_anonymised ',
+      'FROM mobile_cleaned raw ',
+              'LEFT JOIN vault_mobiles_flattened vault_mobile ',
+                      'ON raw.mobile_clean = vault_mobile.mobile '
+              'LEFT JOIN vault_emails_flattened vault_email ',
+                      'ON raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' = vault_email.email '
+                    )
+        )
+ ------ EMAIL join -----------
+      WHEN mlm.is_table_contains_email AND mlm.table_name NOT IN (SELECT table FROM exclude_tables_list, UNNEST(exclude_tables) AS table) AND mlm.table_name != 'marketing_contact_service_contact_blocks_sgds_r' THEN 
+        CONCAT(
+          'WITH vault_emails_flattened_initial AS (',
+            'SELECT history.email AS email,',
+              'history.stack,',
+              'history.created_at,',
+              'vault.uuid,',
+              'vault.aead_key ',
+              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'CROSS JOIN UNNEST(vault.history) AS history '
+              'WHERE history.email IS NOT NULL AND history.email != ""), '
+          'vault_emails_flattened AS ( '
+          'SELECT email, stack, uuid, aead_key FROM vault_emails_flattened_initial '
+          'QUALIFY ROW_NUMBER() OVER (PARTITION BY email ORDER BY created_at DESC) = 1 ) '
+              'SELECT ',
+              STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
+              ', raw.* EXCEPT(',
+              STRING_AGG(
+                  DISTINCT CASE 
+                    WHEN sf.display_name IS NOT NULL THEN sf.column_name
+                    ELSE NULL 
+                  END, ', ' 
+                ),
+              '),',
+              'CASE ',
+                'WHEN (raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' IS NOT NULL AND raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' <> "" AND raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' <> "0" AND VAULT.uuid IS NOT NULL) OR LOWER(raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ') =  "anonymized" THEN TRUE ',
+              'END AS is_anonymised, ',
+                CASE 
+                    WHEN mlm.table_schema IN ('sambla_group_data_stream', 'sambla_group_data_stream_fi','sambla_group_data_stream_no') THEN '_PARTITIONTIME AS date_partition ' ELSE ''
+                END
+                ,
+                ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw ',
+              'LEFT JOIN vault_emails_flattened vault ',
+                      'ON raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' = vault.email'
+                    )
+ ------ mobile join -----------
+      WHEN mlm.is_table_contains_mobile AND mlm.table_name NOT IN (SELECT table FROM exclude_tables_list, UNNEST(exclude_tables) AS table) AND mlm.table_name != 'marketing_contact_service_contact_blocks_sgds_r' THEN 
+        CONCAT(
+          'WITH vault_mobiles_flattened_intial AS (',
+            'SELECT history.mobile_phone AS mobile,',
+              'history.stack,',
+              'history.created_at,',
+              'vault.uuid,',
+              'vault.aead_key ',
+              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'CROSS JOIN UNNEST(vault.history) AS history '
+              'WHERE history.mobile_phone IS NOT NULL AND history.mobile_phone != ""), '
+          'vault_mobiles_flattened AS ( '
+          'SELECT mobile, stack, uuid, aead_key FROM vault_mobiles_flattened_intial '
+          'QUALIFY ROW_NUMBER() OVER (PARTITION BY mobile ORDER BY created_at DESC) = 1 ), '
+  -- Mobile clean CTE
+      'mobile_cleaned AS ( ',
+        'SELECT *, ',
+        'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = " +" THEN SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) ',
+        'WHEN raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ' NOT LIKE "%+%" THEN ',
+CASE
+-- For the FI market
+    WHEN mlm.market_identifier = "FI" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "358" THEN ',
+                'CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) BETWEEN 9 AND 15 THEN CONCAT("+", REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) ELSE NULL END ',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN ',
+            'CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) BETWEEN 7 AND 13 THEN CONCAT("+358", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 2)) ELSE NULL END ',
+            'WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) BETWEEN 6 AND 12 THEN "+358" || REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "") ELSE NULL END '
+        )
+
+-- For the SE market
+    WHEN mlm.market_identifier = "SE" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = "46" THEN CONCAT("+", raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ')',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "046" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 4) = "0046" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN CONCAT("+46", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'ELSE "+46" || ', STRING_AGG(DISTINCT mlm.j_key_mobile, ', ') ,' END '
+        )
+
+-- -- For the DK market
+    WHEN mlm.market_identifier = "DK" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = "45" THEN CONCAT("+", raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ')',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "045" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 4) = "0045" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN CONCAT("+45", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'ELSE "+45" || ', STRING_AGG(DISTINCT mlm.j_key_mobile, ', ') ,' END '
+        )
+
+-- For the NO market
+    WHEN mlm.market_identifier = "NO" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = "47" THEN ',
+                'CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 10 THEN CONCAT("+", REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) ELSE NULL END ',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "047" AND LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 11 THEN CONCAT("+", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 2)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 4) = "0047" AND LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 12 THEN CONCAT("+", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 3)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 9 THEN CONCAT("+47", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 2)) ELSE NULL END '
+            'WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 8 THEN "+47" || REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "") END '
+        )
+END,
+      'ELSE CASE WHEN LENGTH(REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', " ", "")) > 6 AND LENGTH(REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', " ", "")) < 18 THEN REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', " ", "") END END AS mobile_clean, ',
+                CASE WHEN mlm.table_schema IN ('sambla_group_data_stream', 'sambla_group_data_stream_fi','sambla_group_data_stream_no') THEN '_PARTITIONTIME AS date_partition ' ELSE '' END,
+  -- Mobile clean CTE ends
+  CONCAT(
+                ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw ) ',
+
+              'SELECT ',
+              STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
+              ', raw.* EXCEPT(',
+              STRING_AGG(
+                  DISTINCT CASE 
+                    WHEN sf.display_name IS NOT NULL THEN sf.column_name
+                    ELSE NULL 
+                  END, ', ' 
+                ),
+              '),',
+              'CASE ',
+                'WHEN (CAST(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ' AS STRING) IS NOT NULL AND CAST(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ' AS STRING) <> "" AND CAST(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ' AS STRING) <> "0" AND VAULT.uuid IS NOT NULL) OR LOWER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ' AS STRING)) =  "anonymized" THEN TRUE ',
+                  'ELSE FALSE ',
+                'ELSE FALSE ',
+              'END AS is_anonymised ',
+      'FROM mobile_cleaned raw ',
+              'LEFT JOIN vault_mobiles_flattened vault_mobile ',
+                      'ON raw.mobile_clean = vault_mobile.mobile '
+                    )
+        )
+------ triple join -------
+      WHEN mlm.table_name = 'marketing_contact_service_contact_blocks_sgds_r' THEN CONCAT(
+          'WITH vault_mobiles_flattened_intial AS (',
+            'SELECT history.mobile_phone AS mobile,',
+              'history.stack,',
+              'history.created_at,',
+              'vault.uuid,',
+              'vault.aead_key ',
+              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'CROSS JOIN UNNEST(vault.history) AS history '
+              'WHERE history.mobile_phone IS NOT NULL AND history.mobile_phone != ""), '
+          'vault_mobiles_flattened AS ( '
+          'SELECT mobile, stack, uuid, aead_key FROM vault_mobiles_flattened_intial '
+          'QUALIFY ROW_NUMBER() OVER (PARTITION BY mobile ORDER BY created_at DESC) = 1 ), '
+          'vault_emails_flattened_initial AS (',
+            'SELECT history.email AS email,',
+              'history.stack,',
+              'history.created_at,',
+              'vault.uuid,',
+              'vault.aead_key ',
+              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'CROSS JOIN UNNEST(vault.history) AS history '
+              'WHERE history.email IS NOT NULL AND history.email != ""), '
+          'vault_emails_flattened AS ( '
+          'SELECT email, stack, uuid, aead_key FROM vault_emails_flattened_initial '
+          'QUALIFY ROW_NUMBER() OVER (PARTITION BY email ORDER BY created_at DESC) = 1 ), '
+  -- Mobile clean CTE
+      'mobile_and_ssn_cleaned AS ( ',
+        'SELECT *, ',
+        'CASE WHEN raw.payload.type != "mobile_phone" THEN NULL '
+        'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = " +" THEN SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) ',
+        'WHEN raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ' NOT LIKE "%+%" THEN ',
+CASE
+-- For the FI market
+    WHEN mlm.market_identifier = "FI" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "358" THEN ',
+                'CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) BETWEEN 9 AND 15 THEN CONCAT("+", REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) ELSE NULL END ',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN ',
+            'CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) BETWEEN 7 AND 13 THEN CONCAT("+358", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 2)) ELSE NULL END ',
+            'WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) BETWEEN 6 AND 12 THEN "+358" || REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "") ELSE NULL END '
+        )
+
+-- For the SE market
+    WHEN mlm.market_identifier = "SE" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = "46" THEN CONCAT("+", raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ')',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "046" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 4) = "0046" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN CONCAT("+46", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'ELSE "+46" || ', STRING_AGG(DISTINCT mlm.j_key_mobile, ', ') ,' END '
+        )
+
+-- -- For the DK market
+    WHEN mlm.market_identifier = "DK" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = "45" THEN CONCAT("+", raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ')',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "045" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 4) = "0045" THEN CONCAT("+", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN CONCAT("+45", SUBSTRING(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2)) '
+            'ELSE "+45" || ', STRING_AGG(DISTINCT mlm.j_key_mobile, ', ') ,' END '
+        )
+
+-- For the NO market
+    WHEN mlm.market_identifier = "NO" THEN 
+        CONCAT(
+            'CASE WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 2) = "47" THEN ',
+                'CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 10 THEN CONCAT("+", REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) ELSE NULL END ',
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 3) = "047" AND LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 11 THEN CONCAT("+", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 2)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 4) = "0047" AND LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 12 THEN CONCAT("+", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 3)) '
+            'WHEN LEFT(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', 1) = "0" THEN CASE WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 9 THEN CONCAT("+47", SUBSTRING(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", ""), 2)) ELSE NULL END '
+            'WHEN LENGTH(REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "")) = 8 THEN "+47" || REGEXP_REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', "[^0-9\\\\s]", "") END '
+        )
+END,
+      'ELSE CASE WHEN LENGTH(REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', " ", "")) > 6 AND LENGTH(REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', " ", "")) < 18 THEN REPLACE(raw.', STRING_AGG(DISTINCT mlm.j_key_mobile, ', '), ', " ", "") END END AS mobile_clean, ',
+                CASE WHEN mlm.table_schema IN ('sambla_group_data_stream', 'sambla_group_data_stream_fi','sambla_group_data_stream_no') THEN '_PARTITIONTIME AS date_partition, ' ELSE '' END,
+
+                ---
+        CASE 
+          WHEN mlm.market_identifier = 'OTHER MARKETS' THEN 
+          CONCAT(
+            'CASE ',
+            'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
+,'applications_sambq_p','customers_ppi_p','insurance_products_ppi_p') THEN 'market'  ELSE 'country_code' END ,'= "SE" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 12) ',
+            'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
+,'applications_sambq_p','customers_ppi_p','insurance_products_ppi_p') THEN 'market' ELSE 'country_code' END ,'= "NO" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 11) ',
+            'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
+,'applications_sambq_p','customers_ppi_p','insurance_products_ppi_p') THEN 'market' ELSE 'country_code' END ,'= "DK" THEN LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 10) ',
+            'WHEN ', CASE WHEN mlm.table_name IN ('applications_all_versions_sambq_p'
+,'applications_sambq_p','customers_ppi_p','insurance_products_ppi_p') THEN 'market' ELSE 'country_code' END ,'= "FI" THEN LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) ' ,
+            'END AS ssn_clean'
+          ) 
+          WHEN mlm.market_identifier = 'SE' THEN 
+            CONCAT(
+              'CASE WHEN raw.payload.type != "post" THEN NULL ELSE LEFT(REGEXP_REPLACE(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING), "[^0-9]", ""), 12) END AS ssn_clean'
+            )
+          WHEN mlm.market_identifier = 'FI' THEN 
+            CONCAT(
+              'CASE WHEN raw.payload.type != "post" THEN NULL ELSE LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9-+A-Z]", ""), 11) END AS ssn_clean'
+            )
+          WHEN mlm.market_identifier = 'NO' THEN 
+            CONCAT(
+              'CASE WHEN raw.payload.type != "post" THEN NULL ELSE LEFT(REGEXP_REPLACE(UPPER(CAST(raw.', STRING_AGG(DISTINCT mlm.j_key, ', '), ' AS STRING)), "[^0-9]", ""), 11) END AS ssn_clean'
+            )
+        END,
+                ---
+  -- Mobile clean CTE ends
+  CONCAT(
+                ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw ) ',
+
+              'SELECT ',
+              STRING_AGG(DISTINCT mlm.encrypted_fields, ", "),
+              ', raw.* EXCEPT(',
+              STRING_AGG(
+                  DISTINCT CASE 
+                    WHEN sf.display_name IS NOT NULL THEN sf.column_name
+                    ELSE NULL 
+                  END, ', ' 
+                ),
+              '),',
+              'CASE ',
+                'WHEN (raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' IS NOT NULL AND raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' <> "" AND raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' <> "0" AND COALESCE(vault.uuid, vault_email.uuid, vault_mobile.uuid) IS NOT NULL) THEN TRUE ',
+                  'ELSE FALSE ',
+              'END AS is_anonymised ',
+      'FROM mobile_and_ssn_cleaned raw ',
+              'LEFT JOIN `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` vault ',
+                      'ON CASE WHEN raw.payload.type = "post" THEN raw.ssn_clean ELSE NULL END = vault.ssn '
+              'LEFT JOIN vault_emails_flattened vault_email ',
+                      'ON CASE WHEN raw.payload.type = "email" THEN raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' ELSE NULL END = vault_email.email '
+              'LEFT JOIN vault_mobiles_flattened vault_mobile ',
+                      'ON CASE WHEN raw.payload.type = "mobile_phone" THEN raw.mobile_clean ELSE NULL END = vault_mobile.mobile '
+                    )
+        )
+------ NO join ---------
+      WHEN mlm.table_name NOT IN (SELECT table FROM exclude_tables_list, UNNEST(exclude_tables) AS table) THEN CONCAT(
         'SELECT * , False AS is_anonymised,',
         CASE 
         WHEN mlm.table_schema IN ('sambla_group_data_stream', 'sambla_group_data_stream_fi','sambla_group_data_stream_no')
@@ -438,10 +937,9 @@ final AS (
 FROM market_legacystack_mapping mlm
 left join sensitive_fields sf
 on mlm.table_schema=sf.table_schema and mlm.table_name=sf.table_name
-GROUP BY table_schema, table_name, is_table_contains_ssn, market_identifier
+GROUP BY table_schema, table_name, is_table_contains_ssn, is_table_contains_email, is_table_contains_mobile, is_table_contains_app_id, market_identifier
 )
 
 select * from final 
 WHERE final_encrypted_columns IS NOT NULL
 --AND table_schema IN ("sambla_group_data_stream_no")
-
