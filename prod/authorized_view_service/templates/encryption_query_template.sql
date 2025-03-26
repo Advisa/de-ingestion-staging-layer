@@ -309,7 +309,7 @@ market_legacystack_mapping AS (
 ),
 
 exclude_tables_list AS (
-  select ["users_sambq_p", "providers_lvs_p", "credit_remarks_lvs_p", "crm_user_raha_r"] as exclude_tables
+  select ["users_sambq_p", "providers_lvs_p", "credit_remarks_lvs_p", "crm_user_raha_r", "applications_all_versions_sambq_p", "applications_allpaidoutbysambla_sambq_p", "applications_scheduledcalls_sambq_p", "applications_utmhistory_sambq_p"] as exclude_tables
 ),
 
 final AS (
