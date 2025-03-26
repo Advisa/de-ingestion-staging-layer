@@ -5,7 +5,7 @@ from pathlib import Path
 
 def run_authorized_view_service():
     logging.basicConfig(level=logging.INFO)
-    env = os.getenv('ENV', 'prod')
+    env = os.getenv('ENV', 'dev')
     project_root = Path(__file__).resolve().parent.parent  
     config_path = project_root / "authorized_view_service" / "config.yaml"
     print(config_path)
