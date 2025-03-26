@@ -526,7 +526,7 @@ final AS (
           'ELSE FALSE ',
         'END AS is_anonymised ',
         'FROM `data_with_ssn_rules` raw ',
-        'LEFT JOIN `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` VAULT ',
+        'LEFT JOIN `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` VAULT ',
         'ON CAST(raw.ssn_clean AS STRING) = VAULT.ssn'
       )
  ------ APPLICATION ID join -----------
@@ -542,7 +542,7 @@ final AS (
               ' FROM', CASE WHEN mlm.table_schema in ('salus_group_integration','sambla_group_data_stream',"sambla_group_data_stream_fi","sambla_group_data_stream_no","helios_staging") THEN '`data-domain-data-warehouse.' ELSE '`sambla-data-staging-compliance.' END, mlm.table_schema, '.', mlm.table_name, '` raw), ',
             ---
             'stack_vault as ( '
-                'select uuid, aead_key, loan_application_oid, stack from `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf`, unnest(history) as history ',
+                'select uuid, aead_key, loan_application_oid, stack from `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}`, unnest(history) as history ',
                 'where history.stack  = "cdc" )',
             ---
               'SELECT ',
@@ -573,7 +573,7 @@ final AS (
               'history.created_at,',
               'vault.uuid,',
               'vault.aead_key ',
-              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'FROM `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` AS vault '
               'CROSS JOIN UNNEST(vault.history) AS history '
               'WHERE history.mobile_phone IS NOT NULL AND history.mobile_phone != ""), '
           'vault_mobiles_flattened AS ( '
@@ -585,7 +585,7 @@ final AS (
               'history.created_at,',
               'vault.uuid,',
               'vault.aead_key ',
-              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'FROM `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` AS vault '
               'CROSS JOIN UNNEST(vault.history) AS history '
               'WHERE history.email IS NOT NULL AND history.email != ""), '
           'vault_emails_flattened AS ( '
@@ -674,7 +674,7 @@ END,
               'history.created_at,',
               'vault.uuid,',
               'vault.aead_key ',
-              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'FROM `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` AS vault '
               'CROSS JOIN UNNEST(vault.history) AS history '
               'WHERE history.email IS NOT NULL AND history.email != ""), '
           'vault_emails_flattened AS ( '
@@ -710,7 +710,7 @@ END,
               'history.created_at,',
               'vault.uuid,',
               'vault.aead_key ',
-              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'FROM `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` AS vault '
               'CROSS JOIN UNNEST(vault.history) AS history '
               'WHERE history.mobile_phone IS NOT NULL AND history.mobile_phone != ""), '
           'vault_mobiles_flattened AS ( '
@@ -797,7 +797,7 @@ END,
               'history.created_at,',
               'vault.uuid,',
               'vault.aead_key ',
-              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'FROM `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` AS vault '
               'CROSS JOIN UNNEST(vault.history) AS history '
               'WHERE history.mobile_phone IS NOT NULL AND history.mobile_phone != ""), '
           'vault_mobiles_flattened AS ( '
@@ -809,7 +809,7 @@ END,
               'history.created_at,',
               'vault.uuid,',
               'vault.aead_key ',
-              'FROM `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` AS vault '
+              'FROM `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` AS vault '
               'CROSS JOIN UNNEST(vault.history) AS history '
               'WHERE history.email IS NOT NULL AND history.email != ""), '
           'vault_emails_flattened AS ( '
@@ -914,7 +914,7 @@ END,
                   'ELSE FALSE ',
               'END AS is_anonymised ',
       'FROM mobile_and_ssn_cleaned raw ',
-              'LEFT JOIN `sambla-group-compliance-db.compilance_database.gdpr_vault_rudolf` vault ',
+              'LEFT JOIN `{{compliance_project}}.compilance_database.{{gdpr_vault_table}}` vault ',
                       'ON CASE WHEN raw.payload.type = "post" THEN raw.ssn_clean ELSE NULL END = vault.ssn '
               'LEFT JOIN vault_emails_flattened vault_email ',
                       'ON CASE WHEN raw.payload.type = "email" THEN raw.', STRING_AGG(DISTINCT mlm.j_key_email, ', '), ' ELSE NULL END = vault_email.email '
