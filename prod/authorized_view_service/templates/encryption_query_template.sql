@@ -112,7 +112,7 @@ join_keys AS (
       OR "sotu" IN UNNEST(ARRAY_AGG(normalized_column)) 
       OR "yvsotu" IN UNNEST(ARRAY_AGG(normalized_column))
       OR "nationalidsensitive" IN UNNEST(ARRAY_AGG(normalized_column))
-      OR "identify" IN UNNEST(ARRAY_AGG(normalized_column))
+      OR (table_name = 'insurance_person_identify_raha_r' AND "identify" IN UNNEST(ARRAY_AGG(normalized_column)))
       OR (table_name = 'applications_customers_sambq_p' AND "idnumber" IN UNNEST(ARRAY_AGG(normalized_column)))
       OR (table_name = 'applications_credit_reports_sambq_p' AND "idnumber" IN UNNEST(ARRAY_AGG(normalized_column))),
       TRUE, FALSE
