@@ -309,7 +309,9 @@ market_legacystack_mapping AS (
 ),
 
 exclude_tables_list AS (
-  select ["users_sambq_p", "providers_lvs_p", "credit_remarks_lvs_p", "crm_user_raha_r", "applications_all_versions_sambq_p", "applications_allpaidoutbysambla_sambq_p", "applications_scheduledcalls_sambq_p", "applications_utmhistory_sambq_p"] as exclude_tables
+  select ["users_sambq_p", "providers_lvs_p", "credit_remarks_lvs_p", "crm_user_raha_r", "applications_all_versions_sambq_p", "applications_allpaidoutbysambla_sambq_p", 
+  "applications_scheduledcalls_sambq_p", "applications_utmhistory_sambq_p", "invites_adhis_r", "loan_application_drafts_sgmw_p", "cookie_mappings_sgmw_p",
+  "loan_application_versions_sgmw_p", "invites_sgmw_p"] as exclude_tables
 ),
 
 final AS (
