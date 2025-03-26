@@ -52,9 +52,6 @@ resource "google_bigquery_table" "dynamic_auth_views_prod" {
     query           = each.value.query
     use_legacy_sql  = false
   }
-  #lifecycle {
-  #  ignore_changes = [ table_id, view ]
-  #}
 }
 
 # main production auth views fir cdc
