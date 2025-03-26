@@ -923,7 +923,7 @@ END,
                     )
         )
 ------ NO join ---------
-      WHEN mlm.table_name NOT IN (SELECT table FROM exclude_tables_list, UNNEST(exclude_tables) AS table) THEN CONCAT(
+      ELSE CONCAT(
         'SELECT * , False AS is_anonymised,',
         CASE 
         WHEN mlm.table_schema IN ('sambla_group_data_stream', 'sambla_group_data_stream_fi','sambla_group_data_stream_no')
