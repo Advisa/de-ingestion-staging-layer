@@ -102,10 +102,4 @@ locals {
   unique_schemas_prod = distinct([for values in local.prod_schema_table_queries : values.schema])
   unique_schemas_cdc_prod = distinct([for values in local.cdc_schema_table_queries_prod : values.schema])
 
-
-
-}
-
-output "cdc_query_for_marketing_contact_service" {
-  value = [for key, values in local.cdc_schema_table_queries : values.query if values.table == "marketing_contact_service_contact_blocks_sgds_r"]
 }
