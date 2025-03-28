@@ -94,7 +94,7 @@ locals {
     "${split("|", line)[0]}.${split("|", line)[1]}" => {
       schema = split("|", line)[0]
       table  = split("|", line)[1]
-      query  = split("|", line)[2]
+      query  = join("|", slice(split("|", line), 2, length(split("|", line))))
 
     }
   })
