@@ -49,8 +49,8 @@ rahalaitos_loan_raha_r,gs://sambla-group-rahalaitos-integration-legacy/tables/ra
 rahalaitos_laina_workinfo_raha_r,gs://sambla-group-rahalaitos-integration-legacy/tables/rahalaitos/laina_workinfo/*,0,NEWLINE_DELIMITED_JSON, None 
 insurance_history_details_raha_r,gs://sambla-group-rahalaitos-integration-legacy/tables/insurance/history_details/*,0,NEWLINE_DELIMITED_JSON, None 
 rahalaitos_customer_raha_r,gs://sambla-group-rahalaitos-integration-legacy/tables/rahalaitos/customer/*,0,NEWLINE_DELIMITED_JSON, None 
-rahalaitos_incomplete_applications_r,gs://sambla-group-rahalaitos-integration-legacy/ongage/incomplete_applications.csv*,0,CSV, None 
-rahalaitos_all_customers_r,gs://sambla-group-rahalaitos-integration-legacy/ongage/AllConsumerContacts.export.1716953250.1675162775.csv*,0,CSV, None 
+rahalaitos_incomplete_applications_r,gs://sambla-group-rahalaitos-integration-legacy/ongage/incomplete_applications.csv,0,CSV, None 
+rahalaitos_all_customers_r,gs://sambla-group-rahalaitos-integration-legacy/ongage/AllConsumerContacts.export.1716953250.1675162775.csv,0,CSV, None 
 insurance_insurance_language_raha_r,gs://sambla-group-rahalaitos-integration-legacy/tables/insurance/insurance_language/*,0,NEWLINE_DELIMITED_JSON, None 
 rahalaitos_laina_yv_candidateinfo_raha_r,gs://sambla-group-rahalaitos-integration-legacy/tables/rahalaitos/laina_yv_candidateinfo/*,0,NEWLINE_DELIMITED_JSON, None 
 insurance_insurance_status_raha_r,gs://sambla-group-rahalaitos-integration-legacy/tables/insurance/insurance_status/*,0,NEWLINE_DELIMITED_JSON, None 

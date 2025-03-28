@@ -30,11 +30,20 @@ resource "google_bigquery_table" "external_tables" {
   table_id                  = "${each.key}"
   deletion_protection       = true
     external_data_configuration {
+    
     autodetect    = false
     source_format = each.value.source_format
     connection_id = var.connection_id
     source_uris   = [each.value.gcs_path]
-  }
+    dynamic "csv_options" {
+      for_each = each.value.source_format == "CSV" ? [1] : []
+      content {
+        skip_leading_rows = 1
+        quote             = "\""
+        field_delimiter   = ","
+      }
+    }
+    }
     # must to define a schema when we create a table
     schema = file("schemas/rahalaitos/${each.key}_schema.json")
     depends_on = [ google_bigquery_dataset.rahalaitos_dataset ]
