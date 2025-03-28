@@ -655,6 +655,6 @@ GROUP BY table_schema, table_name, is_table_contains_ssn, is_table_contains_emai
 )
 SELECT distinct * FROM final 
 WHERE final_encrypted_columns IS NOT NULL
-and table_schema in ('rahalaitos_integration_legacy')
+--and table_schema in ('rahalaitos_integration_legacy')
 --AND table_schema IN ('sambla_legacy_integration_legacy')
 --("salus_group_integration","salus_integration_legacy")
