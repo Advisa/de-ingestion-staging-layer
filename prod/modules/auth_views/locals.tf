@@ -99,6 +99,7 @@ locals {
     }
   })
   unique_schemas = distinct([for values in local.unencrypted_schema_table_queries : values.schema])
+  unique_schemas_cdc = distinct([for values in local.cdc_schema_table_queries : values.schema])
   unique_schemas_prod = distinct([for values in local.prod_schema_table_queries : values.schema])
   unique_schemas_cdc_prod = distinct([for values in local.cdc_schema_table_queries_prod : values.schema])
 
