@@ -94,7 +94,7 @@ resource "google_bigquery_dataset_access" "auth_dataset_access_to_gdpr_vault_tes
   ] 
 }
 
-# Dataset Access for legacy stack
+# Dev Auth Views Access to consume legacy stack
 resource "google_bigquery_dataset_access" "auth_view_access_legacy_dataset_test" {
   for_each = { for schema in local.unique_schemas : schema => schema }
 
@@ -107,7 +107,6 @@ resource "google_bigquery_dataset_access" "auth_view_access_legacy_dataset_test"
     }
     target_types = ["VIEWS"]
   }
-
   depends_on = [
     google_bigquery_table.lvs_auth_views_test,
     google_bigquery_table.maxwell_auth_views_test,
@@ -116,4 +115,23 @@ resource "google_bigquery_dataset_access" "auth_view_access_legacy_dataset_test"
     google_bigquery_table.salus_auth_views_test,
     google_bigquery_table.sambla_legacy_auth_views_test
   ] 
+}
+
+
+# Dev Auth Views Access to consume legacy stack
+resource "google_bigquery_dataset_access" "auth_view_access_cdc_test" {
+  for_each = { for schema in local.unique_schemas_cdc : schema => schema }
+
+  dataset_id = "${each.key}"                          
+  project    = var.data-warehouse-project_id                   
+  dataset {
+    dataset{
+      project_id = var.project_id
+      dataset_id = var.auth_view_test_dataset_id
+    }
+    target_types = ["VIEWS"]
+  }
+
+  depends_on = [ google_bigquery_table.cdc_auth_views_test ]
+
 }

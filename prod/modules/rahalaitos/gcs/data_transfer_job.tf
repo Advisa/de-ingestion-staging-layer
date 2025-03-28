@@ -6,8 +6,16 @@ resource "google_storage_transfer_job" "replicate-from-old-to-new-bucket" {
 
   transfer_spec {
     transfer_options {
+      metadata_options {
+      acl            = "ACL_DESTINATION_BUCKET_DEFAULT"
+      kms_key        = "KMS_KEY_DESTINATION_BUCKET_DEFAULT"
+      storage_class  = "STORAGE_CLASS_DESTINATION_BUCKET_DEFAULT"
+      temporary_hold = "TEMPORARY_HOLD_PRESERVE"
+      time_created   = "TIME_CREATED_PRESERVE_AS_CUSTOM_TIME"
+    }
       overwrite_when = "DIFFERENT"
     }
+    
     gcs_data_source {
       bucket_name = var.rahalaitos_bucket_name 
     }
