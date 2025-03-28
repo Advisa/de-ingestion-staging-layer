@@ -125,7 +125,7 @@ prod:
     exposure_project: "data-domain-data-warehouse"
     compliance_project: "sambla-group-compliance-db"
     base_folder: "authorized_view_service"
-    generate_cdc: "false"
+    generate_cdc: "true"
     gdpr_vault_table: "gdpr_vault"
     se_table_names:
         - payments_api__PaymentToProduct_sgds_r
